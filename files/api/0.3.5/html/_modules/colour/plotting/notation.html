@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.plotting.notation &mdash; Colour 0.3.5 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.5 documentation" href="../../../index.html" />
+    <link rel="up" title="colour.plotting" href="../plotting.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for colour.plotting.notation</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Colour Notation Systems Plotting</span>
+<span class="sd">================================</span>
+
+<span class="sd">Defines the colour notation systems plotting objects:</span>
+
+<span class="sd">-   :func:`single_munsell_value_function_plot`</span>
+<span class="sd">-   :func:`multi_munsell_value_function_plot`</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pylab</span>
+
+<span class="kn">from</span> <span class="nn">colour.notation</span> <span class="kn">import</span> <span class="n">MUNSELL_VALUE_METHODS</span>
+<span class="kn">from</span> <span class="nn">colour.plotting</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">DEFAULT_FIGURE_WIDTH</span><span class="p">,</span>
+    <span class="n">boundaries</span><span class="p">,</span>
+    <span class="n">canvas</span><span class="p">,</span>
+    <span class="n">decorate</span><span class="p">,</span>
+    <span class="n">display</span><span class="p">)</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s">&#39;Copyright (C) 2013 - 2015 - Colour Developers&#39;</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s">&#39;New BSD License - http://opensource.org/licenses/BSD-3-Clause&#39;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s">&#39;colour-science@googlegroups.com&#39;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s">&#39;Production&#39;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;single_munsell_value_function_plot&#39;</span><span class="p">,</span>
+           <span class="s">&#39;multi_munsell_value_function_plot&#39;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="single_munsell_value_function_plot"><a class="viewcode-back" href="../../../colour.plotting.notation.html#colour.plotting.notation.single_munsell_value_function_plot">[docs]</a><span class="k">def</span> <span class="nf">single_munsell_value_function_plot</span><span class="p">(</span><span class="n">function</span><span class="o">=</span><span class="s">&#39;ASTM D1535-08&#39;</span><span class="p">,</span>
+                                       <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Plots given *Lightness* function.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    function : unicode, optional</span>
+<span class="sd">        *Munsell* value function to plot.</span>
+<span class="sd">    \*\*kwargs : \*\*</span>
+<span class="sd">        Keywords arguments.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        Definition success.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; f = &#39;ASTM D1535-08&#39;</span>
+<span class="sd">    &gt;&gt;&gt; single_munsell_value_function_plot(f)  # doctest: +SKIP</span>
+<span class="sd">    True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">settings</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="s">&#39;{0} - Munsell Value Function&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">function</span><span class="p">)}</span>
+    <span class="n">settings</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">multi_munsell_value_function_plot</span><span class="p">((</span><span class="n">function</span><span class="p">,</span> <span class="p">),</span> <span class="o">**</span><span class="n">settings</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="multi_munsell_value_function_plot"><a class="viewcode-back" href="../../../colour.plotting.notation.html#colour.plotting.notation.multi_munsell_value_function_plot">[docs]</a><span class="k">def</span> <span class="nf">multi_munsell_value_function_plot</span><span class="p">(</span>
+        <span class="n">functions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Plots given *Munsell* value functions.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    functions : array_like, optional</span>
+<span class="sd">        *Munsell* value functions to plot.</span>
+<span class="sd">    \*\*kwargs : \*\*</span>
+<span class="sd">        Keywords arguments.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        Definition success.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    KeyError</span>
+<span class="sd">        If one of the given *Munsell* value function is not found in the</span>
+<span class="sd">        factory *Munsell* value functions.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; fs = (&#39;ASTM D1535-08&#39;, &#39;McCamy 1987&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; multi_munsell_value_function_plot(fs)  # doctest: +SKIP</span>
+<span class="sd">    True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">settings</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;figure_size&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">DEFAULT_FIGURE_WIDTH</span><span class="p">,</span> <span class="n">DEFAULT_FIGURE_WIDTH</span><span class="p">)}</span>
+    <span class="n">settings</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="n">canvas</span><span class="p">(</span><span class="o">**</span><span class="n">settings</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">functions</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">functions</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;ASTM D1535-08&#39;</span><span class="p">,</span>
+                     <span class="s">&#39;McCamy 1987&#39;</span><span class="p">)</span>
+
+    <span class="n">samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">function</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">functions</span><span class="p">):</span>
+        <span class="n">function</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">MUNSELL_VALUE_METHODS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">function</span><span class="p">),</span> <span class="n">function</span>
+        <span class="k">if</span> <span class="n">function</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span>
+                <span class="p">(</span><span class="s">&#39;&quot;{0}&quot; &quot;Munsell&quot; value function not found in &#39;</span>
+                 <span class="s">&#39;factory &quot;Munsell&quot; value functions: &quot;{1}&quot;.&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">name</span><span class="p">,</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">MUNSELL_VALUE_METHODS</span><span class="o">.</span><span class="n">keys</span><span class="p">())))</span>
+
+        <span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span>
+                   <span class="p">[</span><span class="n">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">samples</span><span class="p">],</span>
+                   <span class="n">label</span><span class="o">=</span><span class="s">u&#39;{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">),</span>
+                   <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">settings</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+        <span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="s">&#39;{0} - Munsell Functions&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">functions</span><span class="p">)),</span>
+        <span class="s">&#39;x_label&#39;</span><span class="p">:</span> <span class="s">&#39;Luminance Y&#39;</span><span class="p">,</span>
+        <span class="s">&#39;y_label&#39;</span><span class="p">:</span> <span class="s">&#39;Munsell Value V&#39;</span><span class="p">,</span>
+        <span class="s">&#39;x_tighten&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+        <span class="s">&#39;legend&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+        <span class="s">&#39;legend_location&#39;</span><span class="p">:</span> <span class="s">&#39;upper left&#39;</span><span class="p">,</span>
+        <span class="s">&#39;x_ticker&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+        <span class="s">&#39;y_ticker&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+        <span class="s">&#39;grid&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+        <span class="s">&#39;bounding_box&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+        <span class="s">&#39;aspect&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
+    <span class="n">settings</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="n">boundaries</span><span class="p">(</span><span class="o">**</span><span class="n">settings</span><span class="p">)</span>
+    <span class="n">decorate</span><span class="p">(</span><span class="o">**</span><span class="n">settings</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">display</span><span class="p">(</span><span class="o">**</span><span class="n">settings</span><span class="p">)</span></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2015, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -6,7 +6,6 @@
 .. link:
 .. description:
 .. type: text
-.. hidetitle: True
 
 .. class:: row
 
@@ -20,7 +19,7 @@ Development & Technical Support
 .. class:: col-md-4
 
 Thomas Mansencal
-~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^
 
 *Visual Effects Artist* @ `Weta Digital <wetafx.co.nz>`__
 
@@ -33,7 +32,7 @@ Project coordination, overall development.
 .. class:: col-md-4
 
 Michael Mauderer
-~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^
 
 *HCI Researcher* @ `University of St Andrews <https://www.st-andrews.ac.uk/>`__
 
@@ -44,7 +43,7 @@ Colour appearance models, overall development.
 .. class:: col-md-4
 
 Michael Parsons
-~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^
 
 *Colour Scientist* @ `The Moving Picture Company <http://www.moving-picture.com/>`__
 
@@ -55,7 +54,7 @@ Continuous technical support.
 .. class:: col-md-4
 
 Luke Canavan
-~~~~~~~~~~~~
+^^^^^^^^^^^^
 
 Colour Quality Scale, Luminous Flux.
 
@@ -73,18 +72,18 @@ Acknowledgements
 .. class:: col-md-4
 
 Paul Centore
-~~~~~~~~~~~~
+^^^^^^^^^^^^
 
 *Mathematician & Colour Scientist*
 
 Matlab *Munsell Renotation System* implementation.
 
-`Website <http://99main.com/~centore/>`__
+`Website <http://99main.com/^centore/>`__
 
 .. class:: col-md-4
 
 Yoshi Ohno
-~~~~~~~~~~
+^^^^^^^^^^
 
 *Mathematician & Colour Scientist*
 
@@ -95,7 +94,7 @@ Yoshi Ohno
 .. class:: col-md-4
 
 Mark D. Fairchild
-~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^
 
 *Director* @ `Munsell Color Science Lab <https://www.rit.edu/cos/colorscience/>`__, *Director* @ `Program of Color Science <https://www.rit.edu/cos/colorscience/>`__
 
@@ -108,7 +107,7 @@ Technical support.
 .. class:: col-md-4
 
 Charles Poynton
-~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^
 
 *Mathematician & Colour Scientist*
 
@@ -119,7 +118,7 @@ Technical support.
 .. class:: col-md-4
 
 Alex Forsythe
-~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 *Image Engineering Manager* @ `Academy of Motion Picture Arts and Sciences <http://www.oscars.org>`__
 
@@ -130,7 +129,7 @@ Alex Forsythe
 .. class:: col-md-4
 
 Scott Dyer
-~~~~~~~~~~
+^^^^^^^^^^
 
 *Image Engineering* @ `Academy of Motion Picture Arts and Sciences <http://www.oscars.org>`__
 
@@ -150,7 +149,7 @@ Special Mentions
 .. class:: col-md-4
 
 Aurélia Sellier
-~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^
 
 *Line Producer* @ `Cube Creative <http://www.cube-creative.fr/>`__
 

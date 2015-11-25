@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.adaptation.cmccat2000 Module &mdash; Colour 0.3.3 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.3.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.3 documentation" href="index.html" />
+    <link rel="up" title="colour.adaptation Package" href="colour.adaptation.html" />
+    <link rel="next" title="colour.adaptation.fairchild1990 Module" href="colour.adaptation.fairchild1990.html" />
+    <link rel="prev" title="colour.adaptation.cie1994 Module" href="colour.adaptation.cie1994.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+  <li>
+    <a href="colour.adaptation.cie1994.html" title="Previous Chapter: colour.adaptation.cie1994 Module"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; colour.adaptatio...</span>
+    </a>
+  </li>
+  <li>
+    <a href="colour.adaptation.fairchild1990.html" title="Next Chapter: colour.adaptation.fairchild1990 Module"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">colour.adaptatio... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="module-colour.adaptation.cmccat2000">
+<span id="colour-adaptation-cmccat2000-module"></span><h1>colour.adaptation.cmccat2000 Module<a class="headerlink" href="#module-colour.adaptation.cmccat2000" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="cmccat2000-chromatic-adaptation-model">
+<h2>CMCCAT2000 Chromatic Adaptation Model<a class="headerlink" href="#cmccat2000-chromatic-adaptation-model" title="Permalink to this headline">¶</a></h2>
+<p>Defines CMCCAT2000 chromatic adaptation model objects:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#colour.adaptation.cmccat2000.CMCCAT2000_InductionFactors" title="colour.adaptation.cmccat2000.CMCCAT2000_InductionFactors"><tt class="xref py py-class docutils literal"><span class="pre">CMCCAT2000_InductionFactors</span></tt></a></li>
+<li><a class="reference internal" href="#colour.adaptation.cmccat2000.CMCCAT2000_VIEWING_CONDITIONS" title="colour.adaptation.cmccat2000.CMCCAT2000_VIEWING_CONDITIONS"><tt class="xref py py-class docutils literal"><span class="pre">CMCCAT2000_VIEWING_CONDITIONS</span></tt></a></li>
+<li><a class="reference internal" href="#colour.adaptation.cmccat2000.CMCCAT2000_forward" title="colour.adaptation.cmccat2000.CMCCAT2000_forward"><tt class="xref py py-func docutils literal"><span class="pre">CMCCAT2000_forward()</span></tt></a></li>
+<li><a class="reference internal" href="#colour.adaptation.cmccat2000.CMCCAT2000_reverse" title="colour.adaptation.cmccat2000.CMCCAT2000_reverse"><tt class="xref py py-func docutils literal"><span class="pre">CMCCAT2000_reverse()</span></tt></a></li>
+<li><a class="reference internal" href="#colour.adaptation.cmccat2000.chromatic_adaptation_CMCCAT2000" title="colour.adaptation.cmccat2000.chromatic_adaptation_CMCCAT2000"><tt class="xref py py-func docutils literal"><span class="pre">chromatic_adaptation_CMCCAT2000()</span></tt></a></li>
+</ul>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/adaptation/cmccat2000.ipynb">CMCCAT2000 Chromatic Adaptation Model IPython Notebook</a></p>
+</div>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td>Li, C., Luo, M. R., Rigg, B., &amp; Hunt, R. W. G. (2002). CMC 2000
+chromatic adaptation transform: CMCCAT2000. Color Research &amp; …, 27(1),
+49–58. doi:10.1002/col.10005</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[2]</td><td>Westland, S., Ripamonti, C., &amp; Cheung, V. (2012). CMCCAT2000. In
+Computational Colour Science Using MATLAB (2nd ed., pp. 83–86).
+ISBN:978-0-470-66569-5</td></tr>
+</tbody>
+</table>
+<dl class="data">
+<dt id="colour.adaptation.cmccat2000.CMCCAT2000_INVERSE_CAT">
+<tt class="descclassname">colour.adaptation.cmccat2000.</tt><tt class="descname">CMCCAT2000_INVERSE_CAT</tt><em class="property"> = array([[ 1.07645005, -0.23766239,  0.16121234],        [ 0.41096433,  0.5543418 ,  0.03469387],        [-0.01095377, -0.01338936,  1.02434312]])</em><a class="headerlink" href="#colour.adaptation.cmccat2000.CMCCAT2000_INVERSE_CAT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse CMCCAT2000_CAT chromatic adaptation transform.</p>
+<p>CMCCAT2000_INVERSE_CAT : array_like, (3, 3)</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="colour.adaptation.cmccat2000.CMCCAT2000_InductionFactors">
+<em class="property">class </em><tt class="descclassname">colour.adaptation.cmccat2000.</tt><tt class="descname">CMCCAT2000_InductionFactors</tt><a class="reference internal" href="_modules/colour/adaptation/cmccat2000.html#CMCCAT2000_InductionFactors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.adaptation.cmccat2000.CMCCAT2000_InductionFactors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#colour.adaptation.cmccat2000.CMCCAT2000_InductionFactors" title="colour.adaptation.cmccat2000.CMCCAT2000_InductionFactors"><tt class="xref py py-class docutils literal"><span class="pre">colour.adaptation.cmccat2000.CMCCAT2000_InductionFactors</span></tt></a></p>
+<p>CMCCAT2000 chromatic adaptation model induction factors.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>F</strong> (<em>numeric</em>) &#8211; <span class="math">\(F\)</span> surround condition.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.adaptation.cmccat2000.CMCCAT2000_VIEWING_CONDITIONS">
+<tt class="descclassname">colour.adaptation.cmccat2000.</tt><tt class="descname">CMCCAT2000_VIEWING_CONDITIONS</tt><em class="property"> = CaseInsensitiveMapping({u'Dark': CMCCAT2000_InductionFactors(F=0.8), u'Dim': CMCCAT2000_InductionFactors(F=0.8), u'Average': CMCCAT2000_InductionFactors(F=1.0)})</em><a class="headerlink" href="#colour.adaptation.cmccat2000.CMCCAT2000_VIEWING_CONDITIONS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reference CMCCAT2000 chromatic adaptation model viewing conditions.</p>
+<dl class="docutils">
+<dt>CMCCAT2000_VIEWING_CONDITIONS <span class="classifier-delimiter">:</span> <span class="classifier">CaseInsensitiveMapping</span></dt>
+<dd>(&#8216;Average&#8217;, &#8216;Dim&#8217;, &#8216;Dark&#8217;)</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.adaptation.cmccat2000.CMCCAT2000_forward">
+<tt class="descclassname">colour.adaptation.cmccat2000.</tt><tt class="descname">CMCCAT2000_forward</tt><big>(</big><em>XYZ</em>, <em>XYZ_w</em>, <em>XYZ_wr</em>, <em>L_A1</em>, <em>L_A2</em>, <em>surround=CMCCAT2000_InductionFactors(F=1.0)</em><big>)</big><a class="reference internal" href="_modules/colour/adaptation/cmccat2000.html#CMCCAT2000_forward"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.adaptation.cmccat2000.CMCCAT2000_forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adapts given <em>CIE XYZ</em> colourspace stimulus from test viewing conditions
+<em>CIE XYZ_w</em> colourspace matrix to reference viewing conditions <em>CIE XYZ_wr</em>
+colourspace matrix using CMCCAT2000 forward chromatic adaptation model.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>XYZ</strong> (<em>array_like, (3,)</em>) &#8211; <em>CIE XYZ</em> colourspace stimulus to adapt.</li>
+<li><strong>XYZ_w</strong> (<em>array_like, (3,)</em>) &#8211; Test viewing condition <em>CIE XYZ</em> colourspace matrix.</li>
+<li><strong>XYZ_wr</strong> (<em>array_like, (3,)</em>) &#8211; Reference viewing condition <em>CIE XYZ</em> colourspace matrix.</li>
+<li><strong>L_A1</strong> (<em>numeric</em>) &#8211; Luminance of test adapting field <span class="math">\(L_{A1}\)</span> in <span class="math">\(cd/m^2\)</span>.</li>
+<li><strong>L_A2</strong> (<em>numeric</em>) &#8211; Luminance of reference adapting field <span class="math">\(L_{A2}\)</span> in <span class="math">\(cd/m^2\)</span>.</li>
+<li><strong>surround</strong> (<em>CMCCAT2000_InductionFactors, optional</em>) &#8211; Surround viewing conditions induction factors.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>CIE XYZ_c</em> colourspace matrix of the stimulus corresponding colour.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray, (3,)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The input and output domains of that definition are non standard!</p>
+</div>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <em>CIE XYZ</em>, <em>CIE XYZ_w</em> and <em>CIE XYZ_wr</em> colourspace matrices are
+in domain [0, 100].</li>
+<li>Output <em>CIE XYZ_c</em> colourspace matrix is in domain [0, 100].</li>
+</ul>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">22.48</span><span class="p">,</span> <span class="mf">22.74</span><span class="p">,</span> <span class="mf">8.54</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">111.15</span><span class="p">,</span> <span class="mf">100.00</span><span class="p">,</span> <span class="mf">35.20</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_wr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">94.81</span><span class="p">,</span> <span class="mf">100.00</span><span class="p">,</span> <span class="mf">107.30</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L_A1</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L_A2</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">CMCCAT2000_forward</span><span class="p">(</span><span class="n">XYZ</span><span class="p">,</span> <span class="n">XYZ_w</span><span class="p">,</span> <span class="n">XYZ_wr</span><span class="p">,</span> <span class="n">L_A1</span><span class="p">,</span> <span class="n">L_A2</span><span class="p">)</span>    
+<span class="go">array([ 19.5269832...,  23.0683396...,  24.9717522...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.adaptation.cmccat2000.CMCCAT2000_reverse">
+<tt class="descclassname">colour.adaptation.cmccat2000.</tt><tt class="descname">CMCCAT2000_reverse</tt><big>(</big><em>XYZ_c</em>, <em>XYZ_w</em>, <em>XYZ_wr</em>, <em>L_A1</em>, <em>L_A2</em>, <em>surround=CMCCAT2000_InductionFactors(F=1.0)</em><big>)</big><a class="reference internal" href="_modules/colour/adaptation/cmccat2000.html#CMCCAT2000_reverse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.adaptation.cmccat2000.CMCCAT2000_reverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adapts given <em>CIE XYZ</em> colourspace matrix of the stimulus corresponding
+colour from reference viewing conditions <em>CIE XYZ_wr</em> colourspace matrix to
+test viewing conditions <em>CIE XYZ_w</em> colourspace matrix using CMCCAT2000
+reverse chromatic adaptation model.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>XYZ</strong> (<em>array_like, (3,)</em>) &#8211; <em>CIE XYZ</em> colourspace stimulus to adapt.</li>
+<li><strong>XYZ_w</strong> (<em>array_like, (3,)</em>) &#8211; Test viewing condition <em>CIE XYZ</em> colourspace whitepoint matrix.</li>
+<li><strong>XYZ_wr</strong> (<em>array_like, (3,)</em>) &#8211; Reference viewing condition <em>CIE XYZ</em> colourspace whitepoint matrix.</li>
+<li><strong>L_A1</strong> (<em>numeric</em>) &#8211; Luminance of test adapting field <span class="math">\(L_{A1}\)</span> in <span class="math">\(cd/m^2\)</span>.</li>
+<li><strong>L_A2</strong> (<em>numeric</em>) &#8211; Luminance of reference adapting field <span class="math">\(L_{A2}\)</span> in <span class="math">\(cd/m^2\)</span>.</li>
+<li><strong>surround</strong> (<em>CMCCAT2000_InductionFactors, optional</em>) &#8211; Surround viewing conditions induction factors.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>CIE XYZ_c</em> stimulus colourspace matrix.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray, (3,)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The input and output domains of that definition are non standard!</p>
+</div>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <em>CIE XYZ_c</em>, <em>CIE XYZ_w</em> and <em>CIE XYZ_wr</em> colourspace matrices
+are in domain [0, 100].</li>
+<li>Output <em>CIE XYZ</em> colourspace matrix is in domain [0, 100].</li>
+</ul>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">19.53</span><span class="p">,</span> <span class="mf">23.07</span><span class="p">,</span> <span class="mf">24.97</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">111.15</span><span class="p">,</span> <span class="mf">100.00</span><span class="p">,</span> <span class="mf">35.20</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_wr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">94.81</span><span class="p">,</span> <span class="mf">100.00</span><span class="p">,</span> <span class="mf">107.30</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L_A1</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L_A2</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">CMCCAT2000_reverse</span><span class="p">(</span><span class="n">XYZ_c</span><span class="p">,</span> <span class="n">XYZ_w</span><span class="p">,</span> <span class="n">XYZ_wr</span><span class="p">,</span> <span class="n">L_A1</span><span class="p">,</span> <span class="n">L_A2</span><span class="p">)</span>    
+<span class="go">array([ 22.4839876...,  22.7419485...,   8.5393392...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.adaptation.cmccat2000.chromatic_adaptation_CMCCAT2000">
+<tt class="descclassname">colour.adaptation.cmccat2000.</tt><tt class="descname">chromatic_adaptation_CMCCAT2000</tt><big>(</big><em>XYZ</em>, <em>XYZ_w</em>, <em>XYZ_wr</em>, <em>L_A1</em>, <em>L_A2</em>, <em>surround=CMCCAT2000_InductionFactors(F=1.0)</em>, <em>method=u'Forward'</em><big>)</big><a class="reference internal" href="_modules/colour/adaptation/cmccat2000.html#chromatic_adaptation_CMCCAT2000"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.adaptation.cmccat2000.chromatic_adaptation_CMCCAT2000" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adapts given <em>CIE XYZ</em> colourspace matrix using given viewing conditions.</p>
+<p>This definition is a convenient wrapper around <a class="reference internal" href="#colour.adaptation.cmccat2000.CMCCAT2000_forward" title="colour.adaptation.cmccat2000.CMCCAT2000_forward"><tt class="xref py py-func docutils literal"><span class="pre">CMCCAT2000_forward()</span></tt></a>
+and <a class="reference internal" href="#colour.adaptation.cmccat2000.CMCCAT2000_reverse" title="colour.adaptation.cmccat2000.CMCCAT2000_reverse"><tt class="xref py py-func docutils literal"><span class="pre">CMCCAT2000_reverse()</span></tt></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>XYZ</strong> (<em>array_like, (3,)</em>) &#8211; <em>CIE XYZ</em> colourspace matrix to adapt.</li>
+<li><strong>XYZ_w</strong> (<em>array_like, (3,)</em>) &#8211; Source viewing condition <em>CIE XYZ</em> colourspace whitepoint matrix.</li>
+<li><strong>XYZ_wr</strong> (<em>array_like, (3,)</em>) &#8211; Target viewing condition <em>CIE XYZ</em> colourspace whitepoint matrix.</li>
+<li><strong>L_A1</strong> (<em>numeric</em>) &#8211; Luminance of test adapting field <span class="math">\(L_{A1}\)</span> in <span class="math">\(cd/m^2\)</span>.</li>
+<li><strong>L_A2</strong> (<em>numeric</em>) &#8211; Luminance of reference adapting field <span class="math">\(L_{A2}\)</span> in <span class="math">\(cd/m^2\)</span>.</li>
+<li><strong>surround</strong> (<em>CMCCAT2000_InductionFactors, optional</em>) &#8211; Surround viewing conditions induction factors.</li>
+<li><strong>method</strong> (<em>unicode, optional</em>) &#8211; {&#8216;Forward&#8217;, &#8216;Reverse&#8217;}
+Chromatic adaptation method.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Adapted <em>CIE XYZ</em> colourspace matrix.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray, (3,)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The input and output domains of that definition are non standard!</p>
+</div>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <em>CIE XYZ</em>, <em>CIE XYZ_w</em> and <em>CIE XYZ_wr</em> colourspace matrices
+are in domain [0, 100].</li>
+<li>Output <em>CIE XYZ</em> colourspace matrix is in domain [0, 100].</li>
+</ul>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">22.48</span><span class="p">,</span> <span class="mf">22.74</span><span class="p">,</span> <span class="mf">8.54</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">111.15</span><span class="p">,</span> <span class="mf">100.00</span><span class="p">,</span> <span class="mf">35.20</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_wr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">94.81</span><span class="p">,</span> <span class="mf">100.00</span><span class="p">,</span> <span class="mf">107.30</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L_A1</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L_A2</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">chromatic_adaptation_CMCCAT2000</span><span class="p">(</span><span class="n">XYZ</span><span class="p">,</span> <span class="n">XYZ_w</span><span class="p">,</span> <span class="n">XYZ_wr</span><span class="p">,</span> <span class="n">L_A1</span><span class="p">,</span> <span class="n">L_A2</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&#39;Forward&#39;</span><span class="p">)</span>    
+<span class="go">array([ 19.5269832...,  23.0683396...,  24.9717522...])</span>
+</pre></div>
+</div>
+<p>Using the CMCCAT2000 reverse model:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">19.52698326</span><span class="p">,</span> <span class="mf">23.0683396</span><span class="p">,</span> <span class="mf">24.97175229</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">111.15</span><span class="p">,</span> <span class="mf">100.00</span><span class="p">,</span> <span class="mf">35.20</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_wr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">94.81</span><span class="p">,</span> <span class="mf">100.00</span><span class="p">,</span> <span class="mf">107.30</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L_A1</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L_A2</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">chromatic_adaptation_CMCCAT2000</span><span class="p">(</span><span class="n">XYZ</span><span class="p">,</span> <span class="n">XYZ_w</span><span class="p">,</span> <span class="n">XYZ_wr</span><span class="p">,</span> <span class="n">L_A1</span><span class="p">,</span> <span class="n">L_A2</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&#39;Reverse&#39;</span><span class="p">)</span>    
+<span class="go">array([ 22.48,  22.74,   8.54])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2014, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

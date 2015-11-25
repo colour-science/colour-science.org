@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.models.dataset.aces Module &mdash; Colour 0.3.5 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.5 documentation" href="index.html" />
+    <link rel="up" title="colour.models.dataset Package" href="colour.models.dataset.html" />
+    <link rel="next" title="colour.models.dataset.aces_it Module" href="colour.models.dataset.aces_it.html" />
+    <link rel="prev" title="colour.models.dataset Package" href="colour.models.dataset.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+  <li>
+    <a href="colour.models.dataset.html" title="Previous Chapter: colour.models.dataset Package"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; colour.models.da...</span>
+    </a>
+  </li>
+  <li>
+    <a href="colour.models.dataset.aces_it.html" title="Next Chapter: colour.models.dataset.aces_it Module"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">colour.models.da... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="module-colour.models.dataset.aces">
+<span id="colour-models-dataset-aces-module"></span><h1>colour.models.dataset.aces Module<a class="headerlink" href="#module-colour.models.dataset.aces" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="academy-color-encoding-system">
+<h2>Academy Color Encoding System<a class="headerlink" href="#academy-color-encoding-system" title="Permalink to this headline">¶</a></h2>
+<p>Defines the <em>Academy Color Encoding System</em> (ACES) related encodings:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#colour.models.dataset.aces.ACES_2065_1_COLOURSPACE" title="colour.models.dataset.aces.ACES_2065_1_COLOURSPACE"><tt class="xref py py-attr docutils literal"><span class="pre">ACES_2065_1_COLOURSPACE</span></tt></a></li>
+<li><a class="reference internal" href="#colour.models.dataset.aces.ACES_CC_COLOURSPACE" title="colour.models.dataset.aces.ACES_CC_COLOURSPACE"><tt class="xref py py-attr docutils literal"><span class="pre">ACES_CC_COLOURSPACE</span></tt></a></li>
+<li><a class="reference internal" href="#colour.models.dataset.aces.ACES_PROXY_COLOURSPACE" title="colour.models.dataset.aces.ACES_PROXY_COLOURSPACE"><tt class="xref py py-attr docutils literal"><span class="pre">ACES_PROXY_COLOURSPACE</span></tt></a></li>
+<li><a class="reference internal" href="#colour.models.dataset.aces.ACES_CG_COLOURSPACE" title="colour.models.dataset.aces.ACES_CG_COLOURSPACE"><tt class="xref py py-attr docutils literal"><span class="pre">ACES_CG_COLOURSPACE</span></tt></a></li>
+</ul>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/models/rgb.ipynb">RGB Colourspaces IPython Notebook</a></p>
+</div>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td>The Academy of Motion Picture Arts and Sciences, Science and
+Technology Council, &amp; Academy Color Encoding System (ACES) Project
+Subcommittee. (n.d.). Academy Color Encoding System. Retrieved
+February 24, 2014, from
+<a class="reference external" href="http://www.oscars.org/science-technology/council/projects/aces.html">http://www.oscars.org/science-technology/council/projects/aces.html</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[2]</td><td>The Academy of Motion Picture Arts and Sciences, Science and
+Technology Council, &amp; Academy Color Encoding System (ACES) Project
+Subcommittee. (2014). Technical Bulletin TB-2014-004 - Informative
+Notes on SMPTE ST 2065-1 – Academy Color Encoding Specification
+(ACES). Retrieved from
+<a class="reference external" href="https://github.com/ampas/aces-dev/tree/master/documents">https://github.com/ampas/aces-dev/tree/master/documents</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[3]</td><td>The Academy of Motion Picture Arts and Sciences, Science and
+Technology Council, &amp; Academy Color Encoding System (ACES) Project
+Subcommittee. (2014). Specification S-2014-003 - ACEScc , A
+Logarithmic Encoding of ACES Data for use within Color Grading
+Systems. Retrieved from
+<a class="reference external" href="https://github.com/ampas/aces-dev/tree/master/documents">https://github.com/ampas/aces-dev/tree/master/documents</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[4]</td><td>The Academy of Motion Picture Arts and Sciences, Science and
+Technology Council, &amp; Academy Color Encoding System (ACES) Project
+Subcommittee. (2014). Specification S-2013-001 - ACESproxy , an
+Integer Log Encoding of ACES Image Data. Retrieved from
+<a class="reference external" href="https://github.com/ampas/aces-dev/tree/master/documents">https://github.com/ampas/aces-dev/tree/master/documents</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id5" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[5]</td><td>The Academy of Motion Picture Arts and Sciences, Science and
+Technology Council, &amp; Academy Color Encoding System (ACES) Project
+Subcommittee. (2014). Technical Bulletin TB-2014-012 - Academy Color
+Encoding System Version 1.0 Component Names. Retrieved from
+<a class="reference external" href="https://github.com/ampas/aces-dev/tree/master/documents">https://github.com/ampas/aces-dev/tree/master/documents</a></td></tr>
+</tbody>
+</table>
+<dl class="data">
+<dt id="colour.models.dataset.aces.AP0">
+<tt class="descclassname">colour.models.dataset.aces.</tt><tt class="descname">AP0</tt><em class="property"> = array([[  7.34700000e-01,   2.65300000e-01],        [  0.00000000e+00,   1.00000000e+00],        [  1.00000000e-04,  -7.70000000e-02]])</em><a class="headerlink" href="#colour.models.dataset.aces.AP0" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>ACES Primaries 0</em> or <em>AP0</em> primaries.</p>
+<p>AP0 : ndarray, (3, 2)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.aces.AP1">
+<tt class="descclassname">colour.models.dataset.aces.</tt><tt class="descname">AP1</tt><em class="property"> = array([[ 0.713,  0.293],        [ 0.165,  0.83 ],        [ 0.128,  0.044]])</em><a class="headerlink" href="#colour.models.dataset.aces.AP1" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>ACES Primaries 1</em> or <em>AP1</em> primaries (known as <em>Rec. 2020+</em> primaries prior
+to <em>ACES</em> 1.0 release).</p>
+<p>AP1 : ndarray, (3, 2)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.aces.ACES_ILLUMINANT">
+<tt class="descclassname">colour.models.dataset.aces.</tt><tt class="descname">ACES_ILLUMINANT</tt><em class="property"> = u'D60'</em><a class="headerlink" href="#colour.models.dataset.aces.ACES_ILLUMINANT" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>ACES2065-1</em> colourspace whitepoint name as illuminant.</p>
+<p>ACES_ILLUMINANT : unicode</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.aces.ACES_WHITEPOINT">
+<tt class="descclassname">colour.models.dataset.aces.</tt><tt class="descname">ACES_WHITEPOINT</tt><em class="property"> = (0.32168, 0.33767)</em><a class="headerlink" href="#colour.models.dataset.aces.ACES_WHITEPOINT" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>ACES2065-1</em> colourspace whitepoint.</p>
+<p>ACES_WHITEPOINT : tuple</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.aces.AP0_TO_XYZ_MATRIX">
+<tt class="descclassname">colour.models.dataset.aces.</tt><tt class="descname">AP0_TO_XYZ_MATRIX</tt><em class="property"> = array([[  9.52552396e-01,   0.00000000e+00,   9.36786317e-05],        [  3.43966450e-01,   7.28166097e-01,  -7.21325464e-02],        [  0.00000000e+00,   0.00000000e+00,   1.00882518e+00]])</em><a class="headerlink" href="#colour.models.dataset.aces.AP0_TO_XYZ_MATRIX" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>ACES Primaries 0</em> to <em>CIE XYZ</em> tristimulus values matrix.</p>
+<p>AP0_TO_XYZ_MATRIX : array_like, (3, 3)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.aces.XYZ_TO_AP0_MATRIX">
+<tt class="descclassname">colour.models.dataset.aces.</tt><tt class="descname">XYZ_TO_AP0_MATRIX</tt><em class="property"> = array([[  1.04981102e+00,   0.00000000e+00,  -9.74845410e-05],        [ -4.95903023e-01,   1.37331305e+00,   9.82400365e-02],        [  0.00000000e+00,   0.00000000e+00,   9.91252022e-01]])</em><a class="headerlink" href="#colour.models.dataset.aces.XYZ_TO_AP0_MATRIX" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>CIE XYZ</em> tristimulus values to <em>ACES Primaries 0</em> matrix.</p>
+<p>XYZ_TO_AP0_MATRIX : array_like, (3, 3)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.aces.AP1_TO_XYZ_MATRIX">
+<tt class="descclassname">colour.models.dataset.aces.</tt><tt class="descname">AP1_TO_XYZ_MATRIX</tt><em class="property"> = array([[ 0.66245418,  0.13400421,  0.15618769],        [ 0.27222872,  0.67408177,  0.05368952],        [-0.00557465,  0.00406073,  1.0103391 ]])</em><a class="headerlink" href="#colour.models.dataset.aces.AP1_TO_XYZ_MATRIX" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>ACES Primaries 1</em> to <em>CIE XYZ</em> tristimulus values matrix.</p>
+<p>AP1_TO_XYZ_MATRIX : array_like, (3, 3)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.aces.XYZ_TO_AP1_MATRIX">
+<tt class="descclassname">colour.models.dataset.aces.</tt><tt class="descname">XYZ_TO_AP1_MATRIX</tt><em class="property"> = array([[ 1.64102338, -0.32480329, -0.2364247 ],        [-0.66366286,  1.61533159,  0.01675635],        [ 0.01172189, -0.00828444,  0.98839486]])</em><a class="headerlink" href="#colour.models.dataset.aces.XYZ_TO_AP1_MATRIX" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>CIE XYZ</em> tristimulus values to <em>ACES Primaries 1</em> matrix.</p>
+<p>XYZ_TO_AP1_MATRIX : array_like, (3, 3)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.dataset.aces.ACES_2065_1_TRANSFER_FUNCTION">
+<tt class="descclassname">colour.models.dataset.aces.</tt><tt class="descname">ACES_2065_1_TRANSFER_FUNCTION</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#colour.models.dataset.aces.ACES_2065_1_TRANSFER_FUNCTION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transfer function from linear to <em>ACES2065-1</em> colourspace.</p>
+<p>ACES_2065_1_TRANSFER_FUNCTION : object</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.dataset.aces.ACES_2065_1_INVERSE_TRANSFER_FUNCTION">
+<tt class="descclassname">colour.models.dataset.aces.</tt><tt class="descname">ACES_2065_1_INVERSE_TRANSFER_FUNCTION</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#colour.models.dataset.aces.ACES_2065_1_INVERSE_TRANSFER_FUNCTION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse transfer function from <em>ACES2065-1</em> colourspace to linear.</p>
+<p>ACES_2065_1_INVERSE_TRANSFER_FUNCTION : object</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.aces.ACES_2065_1_COLOURSPACE">
+<tt class="descclassname">colour.models.dataset.aces.</tt><tt class="descname">ACES_2065_1_COLOURSPACE</tt><em class="property"> = &lt;colour.models.rgb.RGB_Colourspace object at 0x2adc37b06e50&gt;</em><a class="headerlink" href="#colour.models.dataset.aces.ACES_2065_1_COLOURSPACE" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>ACES2065-1</em> colourspace, base encoding, used for exchange of full fidelity
+images and archiving.</p>
+<p>ACES_2065_1_COLOURSPACE : RGB_Colourspace</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.dataset.aces.ACES_CC_TRANSFER_FUNCTION">
+<tt class="descclassname">colour.models.dataset.aces.</tt><tt class="descname">ACES_CC_TRANSFER_FUNCTION</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#colour.models.dataset.aces.ACES_CC_TRANSFER_FUNCTION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transfer function from linear to <em>ACEScc</em> colourspace.</p>
+<p>ACES_CC_TRANSFER_FUNCTION : object</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.dataset.aces.ACES_CC_INVERSE_TRANSFER_FUNCTION">
+<tt class="descclassname">colour.models.dataset.aces.</tt><tt class="descname">ACES_CC_INVERSE_TRANSFER_FUNCTION</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#colour.models.dataset.aces.ACES_CC_INVERSE_TRANSFER_FUNCTION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse transfer function from <em>ACEScc</em> colourspace to linear.</p>
+<p>ACES_CC_INVERSE_TRANSFER_FUNCTION : object</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.aces.ACES_CC_COLOURSPACE">
+<tt class="descclassname">colour.models.dataset.aces.</tt><tt class="descname">ACES_CC_COLOURSPACE</tt><em class="property"> = &lt;colour.models.rgb.RGB_Colourspace object at 0x2adc37b06ed0&gt;</em><a class="headerlink" href="#colour.models.dataset.aces.ACES_CC_COLOURSPACE" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>ACEScc</em> colourspace, a working space for color correctors, target for ASC-CDL
+values created on-set.</p>
+<p>ACES_CC_COLOURSPACE : RGB_Colourspace</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.aces.ACES_PROXY_10_CONSTANTS">
+<tt class="descclassname">colour.models.dataset.aces.</tt><tt class="descname">ACES_PROXY_10_CONSTANTS</tt><em class="property"> = {'CV_min': 64, 'steps_per_stop': 50, 'mid_CV_offset': 425, 'CV_max': 940, 'mid_log_offset': 2.5}</em><a class="headerlink" href="#colour.models.dataset.aces.ACES_PROXY_10_CONSTANTS" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>ACESproxy</em> 10 bit colourspace constants.</p>
+<p>ACES_PROXY_10_CONSTANTS : Structure</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.aces.ACES_PROXY_12_CONSTANTS">
+<tt class="descclassname">colour.models.dataset.aces.</tt><tt class="descname">ACES_PROXY_12_CONSTANTS</tt><em class="property"> = {'CV_min': 256, 'steps_per_stop': 200, 'mid_CV_offset': 1700, 'CV_max': 3760, 'mid_log_offset': 2.5}</em><a class="headerlink" href="#colour.models.dataset.aces.ACES_PROXY_12_CONSTANTS" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>ACESproxy</em> 12 bit colourspace constants.</p>
+<p>ACES_PROXY_12_CONSTANTS : Structure</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.aces.ACES_PROXY_CONSTANTS">
+<tt class="descclassname">colour.models.dataset.aces.</tt><tt class="descname">ACES_PROXY_CONSTANTS</tt><em class="property"> = CaseInsensitiveMapping({u'12 Bit': {'CV_min': 256, 'steps_per_stop': 200, 'mid_CV_offset': 1700, 'CV_max': 3760, 'mid_log_offset': 2.5}, u'10 Bit': {'CV_min': 64, 'steps_per_stop': 50, 'mid_CV_offset': 425, 'CV_max': 940, 'mid_log_offset': 2.5}})</em><a class="headerlink" href="#colour.models.dataset.aces.ACES_PROXY_CONSTANTS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aggregated <em>ACESproxy</em> colourspace constants.</p>
+<dl class="docutils">
+<dt>ACES_PROXY_CONSTANTS <span class="classifier-delimiter">:</span> <span class="classifier">CaseInsensitiveMapping</span></dt>
+<dd>{&#8216;10 Bit&#8217;, &#8216;12 Bit&#8217;}</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.dataset.aces.ACES_PROXY_TRANSFER_FUNCTION">
+<tt class="descclassname">colour.models.dataset.aces.</tt><tt class="descname">ACES_PROXY_TRANSFER_FUNCTION</tt><big>(</big><em>value</em>, <em>bit_depth=u'10 Bit'</em><big>)</big><a class="headerlink" href="#colour.models.dataset.aces.ACES_PROXY_TRANSFER_FUNCTION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transfer function from linear to <em>ACESproxy</em> colourspace.</p>
+<p>ACES_PROXY_TRANSFER_FUNCTION : object</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.dataset.aces.ACES_PROXY_INVERSE_TRANSFER_FUNCTION">
+<tt class="descclassname">colour.models.dataset.aces.</tt><tt class="descname">ACES_PROXY_INVERSE_TRANSFER_FUNCTION</tt><big>(</big><em>value</em>, <em>bit_depth=u'10 Bit'</em><big>)</big><a class="headerlink" href="#colour.models.dataset.aces.ACES_PROXY_INVERSE_TRANSFER_FUNCTION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse transfer function from <em>ACESproxy</em> colourspace to linear.</p>
+<p>ACES_PROXY_INVERSE_TRANSFER_FUNCTION : object</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.aces.ACES_PROXY_COLOURSPACE">
+<tt class="descclassname">colour.models.dataset.aces.</tt><tt class="descname">ACES_PROXY_COLOURSPACE</tt><em class="property"> = &lt;colour.models.rgb.RGB_Colourspace object at 0x2adc37b06fd0&gt;</em><a class="headerlink" href="#colour.models.dataset.aces.ACES_PROXY_COLOURSPACE" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>ACESproxy</em> colourspace, a lightweight encoding for transmission over HD-SDI
+(or other production transmission schemes), onset look management. Not
+intended to be stored or used in production imagery or for final color
+grading/mastering.</p>
+<p>ACES_PROXY_COLOURSPACE : RGB_Colourspace</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.aces.ACES_CG_COLOURSPACE">
+<tt class="descclassname">colour.models.dataset.aces.</tt><tt class="descname">ACES_CG_COLOURSPACE</tt><em class="property"> = &lt;colour.models.rgb.RGB_Colourspace object at 0x2adc37b0d050&gt;</em><a class="headerlink" href="#colour.models.dataset.aces.ACES_CG_COLOURSPACE" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>ACEScg</em> colourspace, a working space for paint/compositor applications that
+don’t support ACES2065-1 or ACEScc.</p>
+<p>ACES_CG_COLOURSPACE : RGB_Colourspace</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2015, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

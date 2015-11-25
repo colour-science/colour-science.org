@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.appearance.atd95 Module &mdash; Colour 0.3.5 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.5 documentation" href="index.html" />
+    <link rel="up" title="colour.appearance Package" href="colour.appearance.html" />
+    <link rel="next" title="colour.appearance.ciecam02 Module" href="colour.appearance.ciecam02.html" />
+    <link rel="prev" title="colour.appearance Package" href="colour.appearance.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+  <li>
+    <a href="colour.appearance.html" title="Previous Chapter: colour.appearance Package"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; colour.appearanc...</span>
+    </a>
+  </li>
+  <li>
+    <a href="colour.appearance.ciecam02.html" title="Next Chapter: colour.appearance.ciecam02 Module"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">colour.appearanc... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="module-colour.appearance.atd95">
+<span id="colour-appearance-atd95-module"></span><h1>colour.appearance.atd95 Module<a class="headerlink" href="#module-colour.appearance.atd95" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="atd-1995-colour-vision-model">
+<h2>ATD (1995) Colour Vision Model<a class="headerlink" href="#atd-1995-colour-vision-model" title="Permalink to this headline">¶</a></h2>
+<p>Defines ATD (1995) colour vision model objects:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#colour.appearance.atd95.ATD95_Specification" title="colour.appearance.atd95.ATD95_Specification"><tt class="xref py py-class docutils literal"><span class="pre">ATD95_Specification</span></tt></a></li>
+<li><a class="reference internal" href="#colour.appearance.atd95.XYZ_to_ATD95" title="colour.appearance.atd95.XYZ_to_ATD95"><tt class="xref py py-func docutils literal"><span class="pre">XYZ_to_ATD95()</span></tt></a></li>
+</ul>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/appearance/atd95.ipynb">ATD (1995) Colour Vision Model IPython Notebook</a></p>
+</div>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>According to CIE TC1-34 definition of a colour appearance model, the
+<em>ATD95</em> model cannot be considered as a colour appearance model. It was
+developed with different aims and is described as a model of colour vision.</li>
+</ul>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td>Fairchild, M. D. (2013). ATD Model. In Color Appearance Models
+(3rd ed., pp. 5852–5991). Wiley. ASIN:B00DAYO8E2</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[2]</td><td>Guth, S. L. (1995). Further applications of the ATD model for color
+vision. In E. Walowit (Ed.), IS&amp;T/SPIE’s Symposium on Electronic …
+(Vol. 2414, pp. 12–26). doi:10.1117/12.206546</td></tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="colour.appearance.atd95.ATD95_ReferenceSpecification">
+<em class="property">class </em><tt class="descclassname">colour.appearance.atd95.</tt><tt class="descname">ATD95_ReferenceSpecification</tt><a class="reference internal" href="_modules/colour/appearance/atd95.html#ATD95_ReferenceSpecification"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.appearance.atd95.ATD95_ReferenceSpecification" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#colour.appearance.atd95.ATD95_ReferenceSpecification" title="colour.appearance.atd95.ATD95_ReferenceSpecification"><tt class="xref py py-class docutils literal"><span class="pre">colour.appearance.atd95.ATD95_ReferenceSpecification</span></tt></a></p>
+<p>Defines the ATD (1995) colour vision model reference specification.</p>
+<p>This specification has field names consistent with Fairchild (2013)
+reference.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>H</strong> (<em>numeric or array_like</em>) &#8211; <em>Hue</em> angle <span class="math">\(H\)</span> in degrees.</li>
+<li><strong>C</strong> (<em>numeric or array_like</em>) &#8211; Correlate of <em>saturation</em> <span class="math">\(C\)</span>. Guth (1995) incorrectly uses the
+terms saturation and chroma interchangeably. However, <span class="math">\(C\)</span> is here
+a measure of saturation rather than chroma since it is measured
+relative to the achromatic response for the stimulus rather than that
+of a similarly illuminated white.</li>
+<li><strong>Br</strong> (<em>numeric or array_like</em>) &#8211; Correlate of <em>brightness</em> <span class="math">\(Br\)</span>.</li>
+<li><strong>A_1</strong> (<em>numeric or array_like</em>) &#8211; First stage <span class="math">\(A_1\)</span> response.</li>
+<li><strong>T_1</strong> (<em>numeric or array_like</em>) &#8211; First stage <span class="math">\(T_1\)</span> response.</li>
+<li><strong>D_1</strong> (<em>numeric or array_like</em>) &#8211; First stage <span class="math">\(D_1\)</span> response.</li>
+<li><strong>A_2</strong> (<em>numeric or array_like</em>) &#8211; Second stage <span class="math">\(A_2\)</span> response.</li>
+<li><strong>T_2</strong> (<em>numeric or array_like</em>) &#8211; Second stage <span class="math">\(A_2\)</span> response.</li>
+<li><strong>D_2</strong> (<em>numeric or array_like</em>) &#8211; Second stage <span class="math">\(D_2\)</span> response.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="colour.appearance.atd95.ATD95_Specification">
+<em class="property">class </em><tt class="descclassname">colour.appearance.atd95.</tt><tt class="descname">ATD95_Specification</tt><a class="reference internal" href="_modules/colour/appearance/atd95.html#ATD95_Specification"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.appearance.atd95.ATD95_Specification" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#colour.appearance.atd95.ATD95_Specification" title="colour.appearance.atd95.ATD95_Specification"><tt class="xref py py-class docutils literal"><span class="pre">colour.appearance.atd95.ATD95_Specification</span></tt></a></p>
+<p>Defines the ATD (1995) colour vision model specification.</p>
+<p>This specification has field names consistent with the remaining colour
+appearance models in <a class="reference internal" href="colour.appearance.html#module-colour.appearance" title="colour.appearance"><tt class="xref py py-mod docutils literal"><span class="pre">colour.appearance</span></tt></a> but diverge from Fairchild
+(2013) reference.</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>This specification is the one used in the current model implementation.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>h</strong> (<em>numeric or array_like</em>) &#8211; <em>Hue</em> angle <span class="math">\(H\)</span> in degrees.</li>
+<li><strong>C</strong> (<em>numeric or array_like</em>) &#8211; Correlate of <em>saturation</em> <span class="math">\(C\)</span>. Guth (1995) incorrectly uses the
+terms saturation and chroma interchangeably. However, <span class="math">\(C\)</span> is here
+a measure of saturation rather than chroma since it is measured
+relative to the achromatic response for the stimulus rather than that
+of a similarly illuminated white.</li>
+<li><strong>Q</strong> (<em>numeric or array_like</em>) &#8211; Correlate of <em>brightness</em> <span class="math">\(Br\)</span>.</li>
+<li><strong>A_1</strong> (<em>numeric or array_like</em>) &#8211; First stage <span class="math">\(A_1\)</span> response.</li>
+<li><strong>T_1</strong> (<em>numeric or array_like</em>) &#8211; First stage <span class="math">\(T_1\)</span> response.</li>
+<li><strong>D_1</strong> (<em>numeric or array_like</em>) &#8211; First stage <span class="math">\(D_1\)</span> response.</li>
+<li><strong>A_2</strong> (<em>numeric or array_like</em>) &#8211; Second stage <span class="math">\(A_2\)</span> response.</li>
+<li><strong>T_2</strong> (<em>numeric or array_like</em>) &#8211; Second stage <span class="math">\(A_2\)</span> response.</li>
+<li><strong>D_2</strong> (<em>numeric or array_like</em>) &#8211; Second stage <span class="math">\(D_2\)</span> response.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.appearance.atd95.XYZ_to_ATD95">
+<tt class="descclassname">colour.appearance.atd95.</tt><tt class="descname">XYZ_to_ATD95</tt><big>(</big><em>XYZ</em>, <em>XYZ_0</em>, <em>Y_0</em>, <em>k_1</em>, <em>k_2</em>, <em>sigma=300</em><big>)</big><a class="reference internal" href="_modules/colour/appearance/atd95.html#XYZ_to_ATD95"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.appearance.atd95.XYZ_to_ATD95" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the ATD (1995) colour vision model correlates.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>XYZ</strong> (<em>array_like</em>) &#8211; <em>CIE XYZ</em> tristimulus values of test sample / stimulus in domain
+[0, 100].</li>
+<li><strong>XYZ_0</strong> (<em>array_like</em>) &#8211; <em>CIE XYZ</em> tristimulus values of reference white in domain [0, 100].</li>
+<li><strong>Y_0</strong> (<em>numeric or array_like</em>) &#8211; Absolute adapting field luminance in <span class="math">\(cd/m^2\)</span>.</li>
+<li><strong>k_1</strong> (<em>numeric or array_like</em>) &#8211; Application specific weight <span class="math">\(k_1\)</span>.</li>
+<li><strong>k_2</strong> (<em>numeric or array_like</em>) &#8211; Application specific weight <span class="math">\(k_2\)</span>.</li>
+<li><strong>sigma</strong> (<em>numeric or array_like, optional</em>) &#8211; Constant <span class="math">\(\sigma\)</span> varied to predict different types of data.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">ATD (1995) colour vision model specification.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ATD95_Specification</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The input domain of that definition is non standard!</p>
+</div>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <em>CIE XYZ</em> tristimulus values are in domain [0, 100].</li>
+<li>Input <em>CIE XYZ_0</em> tristimulus values are in domain [0, 100].</li>
+<li>For unrelated colors, there is only self-adaptation, and <span class="math">\(k_1\)</span> is
+set to 1.0 while <span class="math">\(k_2\)</span> is set to 0.0. For related colors such as
+typical colorimetric applications, <span class="math">\(k_1\)</span> is set to 0.0 and
+<span class="math">\(k_2\)</span> is set to a value between 15 and 50 <em>(Guth, 1995)</em>.</li>
+</ul>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">19.01</span><span class="p">,</span> <span class="mf">20.00</span><span class="p">,</span> <span class="mf">21.78</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">95.05</span><span class="p">,</span> <span class="mf">100.00</span><span class="p">,</span> <span class="mf">108.88</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Y_0</span> <span class="o">=</span> <span class="mf">318.31</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k_1</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k_2</span> <span class="o">=</span> <span class="mf">50.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_to_ATD95</span><span class="p">(</span><span class="n">XYZ</span><span class="p">,</span> <span class="n">XYZ_0</span><span class="p">,</span> <span class="n">Y_0</span><span class="p">,</span> <span class="n">k_1</span><span class="p">,</span> <span class="n">k_2</span><span class="p">)</span>  
+<span class="go">ATD95_Specification(h=1.9089869..., C=1.2064060..., Q=0.1814003..., A_1=0.1787931... T_1=0.0286942..., D_1=0.0107584..., A_2=0.0192182..., T_2=0.0205377..., D_2=0.0107584...)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.appearance.atd95.luminance_to_retinal_illuminance">
+<tt class="descclassname">colour.appearance.atd95.</tt><tt class="descname">luminance_to_retinal_illuminance</tt><big>(</big><em>XYZ</em>, <em>Y_c</em><big>)</big><a class="reference internal" href="_modules/colour/appearance/atd95.html#luminance_to_retinal_illuminance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.appearance.atd95.luminance_to_retinal_illuminance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from luminance in <span class="math">\(cd/m^2\)</span> to retinal illuminance in
+trolands.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>XYZ</strong> (<em>array_like</em>) &#8211; <em>CIE XYZ</em> tristimulus values.</li>
+<li><strong>Y_c</strong> (<em>numeric or array_like</em>) &#8211; Absolute adapting field luminance in <span class="math">\(cd/m^2\)</span>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Converted <em>CIE XYZ</em> tristimulus values in trolands.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">19.01</span><span class="p">,</span> <span class="mf">20.00</span><span class="p">,</span> <span class="mf">21.78</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Y_0</span> <span class="o">=</span> <span class="mf">318.31</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">luminance_to_retinal_illuminance</span><span class="p">(</span><span class="n">XYZ</span><span class="p">,</span> <span class="n">Y_0</span><span class="p">)</span>  
+<span class="go">array([ 479.4445924...,  499.3174313...,  534.5631673...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.appearance.atd95.XYZ_to_LMS_ATD95">
+<tt class="descclassname">colour.appearance.atd95.</tt><tt class="descname">XYZ_to_LMS_ATD95</tt><big>(</big><em>XYZ</em><big>)</big><a class="reference internal" href="_modules/colour/appearance/atd95.html#XYZ_to_LMS_ATD95"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.appearance.atd95.XYZ_to_LMS_ATD95" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from <em>CIE XYZ</em> tristimulus values to <em>LMS</em> cone responses.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>XYZ</strong> (<em>array_like</em>) &#8211; <em>CIE XYZ</em> tristimulus values.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>LMS</em> cone responses.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">ndarray</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">19.01</span><span class="p">,</span> <span class="mf">20.00</span><span class="p">,</span> <span class="mf">21.78</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_to_LMS_ATD95</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>  
+<span class="go">array([ 6.2283272...,  7.4780666...,  3.8859772...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.appearance.atd95.opponent_colour_dimensions">
+<tt class="descclassname">colour.appearance.atd95.</tt><tt class="descname">opponent_colour_dimensions</tt><big>(</big><em>LMS_g</em><big>)</big><a class="reference internal" href="_modules/colour/appearance/atd95.html#opponent_colour_dimensions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.appearance.atd95.opponent_colour_dimensions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns opponent colour dimensions from given post adaptation cone signals.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>LMS_g</strong> (<em>array_like</em>) &#8211; Post adaptation cone signals.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Opponent colour dimensions.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">ndarray</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">LMS_g</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">6.95457922</span><span class="p">,</span> <span class="mf">7.08945043</span><span class="p">,</span> <span class="mf">6.44069316</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">opponent_colour_dimensions</span><span class="p">(</span><span class="n">LMS_g</span><span class="p">)</span>  
+<span class="go">array([ 0.1787931...,  0.0286942...,  0.0107584...,  0.0192182...,  0.0205377...,</span>
+<span class="go">        0.0107584...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.appearance.atd95.final_response">
+<tt class="descclassname">colour.appearance.atd95.</tt><tt class="descname">final_response</tt><big>(</big><em>value</em><big>)</big><a class="reference internal" href="_modules/colour/appearance/atd95.html#final_response"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.appearance.atd95.final_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the final response of given opponent colour dimension.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>numeric or array_like</em>) &#8211; Opponent colour dimension.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Final response of opponent colour dimension.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">numeric or ndarray</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">final_response</span><span class="p">(</span><span class="mf">43.54399695501678</span><span class="p">)</span>  
+<span class="go">0.1787931...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2015, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

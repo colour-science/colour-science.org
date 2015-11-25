@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.colorimetry.luminance &mdash; Colour 0.3.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.3.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.1 documentation" href="../../../index.html" />
+    <link rel="up" title="colour.colorimetry" href="../colorimetry.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for colour.colorimetry.luminance</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Luminance :math:`Y`</span>
+<span class="sd">===================</span>
+
+<span class="sd">Defines *luminance* :math:`Y` computation objects.</span>
+
+<span class="sd">The following methods are available:</span>
+
+<span class="sd">-   :func:`luminance_newhall1943`: *luminance* :math:`Y` computation of given</span>
+<span class="sd">    *Munsell* value :math:`V` using *Newhall, Nickerson, and Judd (1943)*</span>
+<span class="sd">    method.</span>
+<span class="sd">-   :func:`luminance_1976`: *luminance* :math:`Y` computation of given</span>
+<span class="sd">    *Lightness* :math:`L^*` as per *CIE Lab* implementation.</span>
+<span class="sd">-   :func:`luminance_ASTM_D1535_08`: *luminance* :math:`Y` computation of given</span>
+<span class="sd">    *Munsell* value :math:`V` using *ASTM D1535-08e1 (2008)* method.</span>
+
+<span class="sd">See Also</span>
+<span class="sd">--------</span>
+<span class="sd">`Luminance IPython Notebook</span>
+<span class="sd">&lt;http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colorimetry/luminance.ipynb&gt;`_  # noqa</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">unicode_literals</span>
+
+<span class="kn">from</span> <span class="nn">colour.constants</span> <span class="kn">import</span> <span class="n">CIE_E</span><span class="p">,</span> <span class="n">CIE_K</span>
+<span class="kn">from</span> <span class="nn">colour.utilities</span> <span class="kn">import</span> <span class="n">CaseInsensitiveMapping</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s">&#39;Copyright (C) 2013 - 2014 - Colour Developers&#39;</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s">&#39;New BSD License - http://opensource.org/licenses/BSD-3-Clause&#39;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s">&#39;colour-science@googlegroups.com&#39;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s">&#39;Production&#39;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;luminance_newhall1943&#39;</span><span class="p">,</span>
+           <span class="s">&#39;luminance_1976&#39;</span><span class="p">,</span>
+           <span class="s">&#39;luminance_ASTM_D1535_08&#39;</span><span class="p">,</span>
+           <span class="s">&#39;LUMINANCE_METHODS&#39;</span><span class="p">,</span>
+           <span class="s">&#39;luminance&#39;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="luminance_newhall1943"><a class="viewcode-back" href="../../../colour.colorimetry.luminance.html#colour.colorimetry.luminance.luminance_newhall1943">[docs]</a><span class="k">def</span> <span class="nf">luminance_newhall1943</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *luminance* :math:`Y` of given *Munsell* value :math:`V` using</span>
+<span class="sd">    *Newhall, Nickerson, and Judd (1943)* method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    V : numeric</span>
+<span class="sd">        *Munsell* value :math:`V`.</span>
+<span class="sd">    \*\*kwargs : \*\*, optional</span>
+<span class="sd">        Unused parameter provided for signature compatibility with other</span>
+<span class="sd">        *luminance* computation objects.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric</span>
+<span class="sd">        *luminance* :math:`Y`.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   Input *Munsell* value :math:`V` is in domain [0, 10].</span>
+<span class="sd">    -   Output *luminance* :math:`Y` is in domain [0, 100].</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [1]  http://en.wikipedia.org/wiki/Lightness</span>
+<span class="sd">            (Last accessed 13 April 2014)</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; luminance_newhall1943(3.74629715382)  # doctest: +ELLIPSIS</span>
+<span class="sd">    10.4089874...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">Y</span> <span class="o">=</span> <span class="mf">1.2219</span> <span class="o">*</span> <span class="n">V</span> <span class="o">-</span> <span class="mf">0.23111</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span> <span class="o">*</span> <span class="n">V</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.23951</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.021009</span> <span class="o">*</span> <span class="p">(</span>
+        <span class="n">V</span> <span class="o">**</span> <span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.0008404</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span> <span class="o">**</span> <span class="mi">5</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">Y</span>
+
+</div>
+<div class="viewcode-block" id="luminance_1976"><a class="viewcode-back" href="../../../colour.colorimetry.luminance.html#colour.colorimetry.luminance.luminance_1976">[docs]</a><span class="k">def</span> <span class="nf">luminance_1976</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">Yn</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *luminance* :math:`Y` of given *Lightness* :math:`L^*` with</span>
+<span class="sd">    given reference white *luminance* :math:`Y_n`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    L : numeric</span>
+<span class="sd">        *Lightness* :math:`L^*`</span>
+<span class="sd">    Yn : numeric</span>
+<span class="sd">        White reference *luminance* :math:`Y_n`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric</span>
+<span class="sd">        *luminance* :math:`Y`.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   Input *Lightness* :math:`L^*` is in domain [0, 100].</span>
+<span class="sd">    -   Output *luminance* :math:`Y` is in domain [0, 100].</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [2]  http://www.poynton.com/PDFs/GammaFAQ.pdf</span>
+<span class="sd">            (Last accessed 12 April 2014)</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; luminance_1976(37.9856290977)  # doctest: +ELLIPSIS</span>
+<span class="sd">    10.0800000...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">Y</span> <span class="o">=</span> <span class="p">((((</span><span class="n">L</span> <span class="o">+</span> <span class="mi">16</span><span class="p">)</span> <span class="o">/</span> <span class="mi">116</span><span class="p">)</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">Yn</span>
+         <span class="k">if</span> <span class="n">L</span> <span class="o">&gt;</span> <span class="n">CIE_K</span> <span class="o">*</span> <span class="n">CIE_E</span> <span class="k">else</span>
+         <span class="p">(</span><span class="n">L</span> <span class="o">/</span> <span class="n">CIE_K</span><span class="p">)</span> <span class="o">*</span> <span class="n">Yn</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">Y</span>
+
+</div>
+<div class="viewcode-block" id="luminance_ASTM_D1535_08"><a class="viewcode-back" href="../../../colour.colorimetry.luminance.html#colour.colorimetry.luminance.luminance_ASTM_D1535_08">[docs]</a><span class="k">def</span> <span class="nf">luminance_ASTM_D1535_08</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *luminance* :math:`Y` of given *Munsell* value :math:`V` using</span>
+<span class="sd">    *ASTM D1535-08e1 (2008)* method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    V : numeric</span>
+<span class="sd">        *Munsell* value :math:`V`.</span>
+<span class="sd">    \*\*kwargs : \*\*, optional</span>
+<span class="sd">        Unused parameter provided for signature compatibility with other</span>
+<span class="sd">        *luminance* computation objects.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric</span>
+<span class="sd">        *luminance* :math:`Y`.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   Input *Munsell* value :math:`V` is in domain [0, 10].</span>
+<span class="sd">    -   Output *luminance* :math:`Y` is in domain [0, 100].</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    -  http://www.scribd.com/doc/89648322/ASTM-D1535-08e1-Standard-Practice-for-Specifying-Color-by-the-Munsell-System  # noqa</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; luminance_ASTM_D1535_08(3.74629715382)  # doctest: +ELLIPSIS</span>
+<span class="sd">    10.1488096...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">Y</span> <span class="o">=</span> <span class="mf">1.1914</span> <span class="o">*</span> <span class="n">V</span> <span class="o">-</span> <span class="mf">0.22533</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span> <span class="o">*</span> <span class="n">V</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.23352</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.020484</span> <span class="o">*</span> <span class="p">(</span>
+        <span class="n">V</span> <span class="o">**</span> <span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.00081939</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span> <span class="o">**</span> <span class="mi">5</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">Y</span>
+
+</div>
+<span class="n">LUMINANCE_METHODS</span> <span class="o">=</span> <span class="n">CaseInsensitiveMapping</span><span class="p">(</span>
+    <span class="p">{</span><span class="s">&#39;Newhall 1943&#39;</span><span class="p">:</span> <span class="n">luminance_newhall1943</span><span class="p">,</span>
+     <span class="s">&#39;CIE 1976&#39;</span><span class="p">:</span> <span class="n">luminance_1976</span><span class="p">,</span>
+     <span class="s">&#39;ASTM D1535-08&#39;</span><span class="p">:</span> <span class="n">luminance_ASTM_D1535_08</span><span class="p">})</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Supported *luminance* computations methods.</span>
+
+<span class="sd">LUMINANCE_METHODS : dict</span>
+<span class="sd">    (&#39;Newhall 1943&#39;, &#39;CIE 1976&#39;, &#39;ASTM D1535-08&#39;)</span>
+
+<span class="sd">Aliases:</span>
+
+<span class="sd">-   &#39;cie1976&#39;: &#39;CIE 1976&#39;</span>
+<span class="sd">-   &#39;astm2008&#39;: &#39;ASTM D1535-08&#39;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">LUMINANCE_METHODS</span><span class="p">[</span><span class="s">&#39;cie1976&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">LUMINANCE_METHODS</span><span class="p">[</span><span class="s">&#39;CIE 1976&#39;</span><span class="p">])</span>
+<span class="n">LUMINANCE_METHODS</span><span class="p">[</span><span class="s">&#39;astm2008&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">LUMINANCE_METHODS</span><span class="p">[</span><span class="s">&#39;ASTM D1535-08&#39;</span><span class="p">])</span>
+
+
+<div class="viewcode-block" id="luminance"><a class="viewcode-back" href="../../../colour.colorimetry.luminance.html#colour.colorimetry.luminance.luminance">[docs]</a><span class="k">def</span> <span class="nf">luminance</span><span class="p">(</span><span class="n">LV</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&#39;CIE 1976&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *luminance* :math:`Y` of given *Lightness* :math:`L^*` or given</span>
+<span class="sd">    *Munsell* value :math:`V`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    LV : numeric</span>
+<span class="sd">        *Lightness* :math:`L^*` or *Munsell* value :math:`V`.</span>
+<span class="sd">    method : unicode, optional</span>
+<span class="sd">        (&#39;Newhall 1943&#39;, &#39;CIE 1976&#39;, &#39;ASTM D1535-08&#39;)</span>
+<span class="sd">        Computation method.</span>
+<span class="sd">    \*\*kwargs : \*\*</span>
+<span class="sd">        Keywords arguments.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric</span>
+<span class="sd">        *luminance* :math:`Y`.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   Input *LV* is in domain [0, 100] or [0, 10] and optional *luminance*</span>
+<span class="sd">        :math:`Y_n` is in domain [0, 100].</span>
+<span class="sd">    -   Output *luminance* :math:`Y` is in domain [0, 100].</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; luminance(37.9856290977)  # doctest: +ELLIPSIS</span>
+<span class="sd">    10.0800000...</span>
+<span class="sd">    &gt;&gt;&gt; luminance(37.9856290977, Yn=100)  # doctest: +ELLIPSIS</span>
+<span class="sd">    10.0800000...</span>
+<span class="sd">    &gt;&gt;&gt; luminance(37.9856290977, Yn=95)  # doctest: +ELLIPSIS</span>
+<span class="sd">    9.5760000...</span>
+<span class="sd">    &gt;&gt;&gt; luminance(3.74629715382, method=&#39;Newhall 1943&#39;)  # doctest: +ELLIPSIS</span>
+<span class="sd">    10.4089874...</span>
+<span class="sd">    &gt;&gt;&gt; luminance(3.74629715382, method=&#39;ASTM D1535-08&#39;)  # doctest: +ELLIPSIS</span>
+<span class="sd">    10.1488096...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">LUMINANCE_METHODS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">method</span><span class="p">)(</span><span class="n">LV</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2014, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

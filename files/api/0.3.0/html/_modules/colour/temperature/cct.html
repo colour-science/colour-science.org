@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.temperature.cct &mdash; Colour 0.3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.0 documentation" href="../../../index.html" />
+    <link rel="up" title="colour.temperature" href="../temperature.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for colour.temperature.cct</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Correlated Colour Temperature :math:`T_{cp}`</span>
+<span class="sd">============================================</span>
+
+<span class="sd">Defines correlated colour temperature :math:`T_{cp}` computations objects:</span>
+
+<span class="sd">-   :func:`uv_to_CCT_ohno2013`: Correlated colour temperature :math:`T_{cp}`</span>
+<span class="sd">    and :math:`\Delta_{uv}` computation of given *CIE UCS* colourspace *uv*</span>
+<span class="sd">    chromaticity coordinates using *Yoshi Ohno (2013)* method.</span>
+<span class="sd">-   :func:`CCT_to_uv_ohno2013`: *CIE UCS* colourspace *uv* chromaticity</span>
+<span class="sd">    coordinates computation of given correlated colour temperature</span>
+<span class="sd">    :math:`T_{cp}`, :math:`\Delta_{uv}` using *Yoshi Ohno (2013)* method.</span>
+<span class="sd">-   :func:`uv_to_CCT_robertson1968`: Correlated colour temperature</span>
+<span class="sd">    :math:`T_{cp}` and :math:`\Delta_{uv}` computation of given *CIE UCS*</span>
+<span class="sd">    colourspace *uv* chromaticity coordinates using *Robertson (1968)* method.</span>
+<span class="sd">-   :func:`CCT_to_uv_robertson1968`: *CIE UCS* colourspace *uv* chromaticity</span>
+<span class="sd">    coordinates computation of given correlated colour temperature</span>
+<span class="sd">    :math:`T_{cp}` and :math:`\Delta_{uv}` using *Robertson (1968)* method.</span>
+<span class="sd">-   :func:`xy_to_CCT_mccamy1992`: Correlated colour temperature :math:`T_{cp}`</span>
+<span class="sd">    computation of given *CIE XYZ* colourspace *xy* chromaticity coordinates</span>
+<span class="sd">    using *McCamy (1992)* method.</span>
+<span class="sd">-   :func:`xy_to_CCT_hernandez1999`: Correlated colour temperature</span>
+<span class="sd">    :math:`T_{cp}` computation of given *CIE XYZ* colourspace *xy* chromaticity</span>
+<span class="sd">    coordinates using *Hernandez-Andres, Lee &amp; Romero (1999)* method.</span>
+<span class="sd">-   :func:`CCT_to_xy_kang2002`: *CIE XYZ* colourspace *xy* chromaticity</span>
+<span class="sd">    coordinates computation of given correlated colour temperature</span>
+<span class="sd">    :math:`T_{cp}` using *Kang, Moon, Hong, Lee, Cho and Kim (2002)* method.</span>
+<span class="sd">-   :func:`CCT_to_xy_illuminant_D`: *CIE XYZ* colourspace *xy* chromaticity</span>
+<span class="sd">    coordinates computation of *CIE Illuminant D Series* from given correlated</span>
+<span class="sd">    colour temperature :math:`T_{cp}` of that *CIE Illuminant D Series*.</span>
+
+<span class="sd">See Also</span>
+<span class="sd">--------</span>
+<span class="sd">`Colour Temperature &amp; Correlated Colour Temperature IPython Notebook</span>
+<span class="sd">&lt;http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/temperature/cct.ipynb&gt;`_  # noqa</span>
+
+<span class="sd">References</span>
+<span class="sd">----------</span>
+<span class="sd">.. [1]  http://en.wikipedia.org/wiki/Color_temperature</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+
+<span class="kn">from</span> <span class="nn">colour.colorimetry</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">STANDARD_OBSERVERS_CMFS</span><span class="p">,</span>
+    <span class="n">blackbody_spd</span><span class="p">,</span>
+    <span class="n">spectral_to_XYZ</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">colour.models</span> <span class="kn">import</span> <span class="n">UCS_to_uv</span><span class="p">,</span> <span class="n">XYZ_to_UCS</span>
+<span class="kn">from</span> <span class="nn">colour.utilities</span> <span class="kn">import</span> <span class="n">CaseInsensitiveMapping</span><span class="p">,</span> <span class="n">warning</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s">&#39;Copyright (C) 2013 - 2014 - Colour Developers&#39;</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s">&#39;New BSD License - http://opensource.org/licenses/BSD-3-Clause&#39;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s">&#39;colour-science@googlegroups.com&#39;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s">&#39;Production&#39;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;PLANCKIAN_TABLE_TUVD&#39;</span><span class="p">,</span>
+           <span class="s">&#39;CCT_MINIMAL&#39;</span><span class="p">,</span>
+           <span class="s">&#39;CCT_MAXIMAL&#39;</span><span class="p">,</span>
+           <span class="s">&#39;CCT_SAMPLES&#39;</span><span class="p">,</span>
+           <span class="s">&#39;CCT_CALCULATION_ITERATIONS&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ROBERTSON_ISOTEMPERATURE_LINES_DATA&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ROBERTSON_ISOTEMPERATURE_LINES_RUVT&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ROBERTSON_ISOTEMPERATURE_LINES&#39;</span><span class="p">,</span>
+           <span class="s">&#39;planckian_table&#39;</span><span class="p">,</span>
+           <span class="s">&#39;planckian_table_minimal_distance_index&#39;</span><span class="p">,</span>
+           <span class="s">&#39;uv_to_CCT_ohno2013&#39;</span><span class="p">,</span>
+           <span class="s">&#39;CCT_to_uv_ohno2013&#39;</span><span class="p">,</span>
+           <span class="s">&#39;uv_to_CCT_robertson1968&#39;</span><span class="p">,</span>
+           <span class="s">&#39;CCT_to_uv_robertson1968&#39;</span><span class="p">,</span>
+           <span class="s">&#39;UV_TO_CCT_METHODS&#39;</span><span class="p">,</span>
+           <span class="s">&#39;uv_to_CCT&#39;</span><span class="p">,</span>
+           <span class="s">&#39;CCT_TO_UV_METHODS&#39;</span><span class="p">,</span>
+           <span class="s">&#39;CCT_to_uv&#39;</span><span class="p">,</span>
+           <span class="s">&#39;xy_to_CCT_mccamy1992&#39;</span><span class="p">,</span>
+           <span class="s">&#39;xy_to_CCT_hernandez1999&#39;</span><span class="p">,</span>
+           <span class="s">&#39;CCT_to_xy_kang2002&#39;</span><span class="p">,</span>
+           <span class="s">&#39;CCT_to_xy_illuminant_D&#39;</span><span class="p">,</span>
+           <span class="s">&#39;XY_TO_CCT_METHODS&#39;</span><span class="p">,</span>
+           <span class="s">&#39;xy_to_CCT&#39;</span><span class="p">,</span>
+           <span class="s">&#39;CCT_TO_XY_METHODS&#39;</span><span class="p">,</span>
+           <span class="s">&#39;CCT_to_xy&#39;</span><span class="p">]</span>
+
+<span class="n">PLANCKIAN_TABLE_TUVD</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">&#39;PlanckianTable_Tuvdi&#39;</span><span class="p">,</span>
+                                  <span class="p">(</span><span class="s">&#39;Ti&#39;</span><span class="p">,</span> <span class="s">&#39;ui&#39;</span><span class="p">,</span> <span class="s">&#39;vi&#39;</span><span class="p">,</span> <span class="s">&#39;di&#39;</span><span class="p">))</span>
+
+<span class="n">CCT_MINIMAL</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">CCT_MAXIMAL</span> <span class="o">=</span> <span class="mi">100000</span>
+<span class="n">CCT_SAMPLES</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">CCT_CALCULATION_ITERATIONS</span> <span class="o">=</span> <span class="mi">6</span>
+
+<span class="n">ROBERTSON_ISOTEMPERATURE_LINES_DATA</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.18006</span><span class="p">,</span> <span class="mf">0.26352</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.24341</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">0.18066</span><span class="p">,</span> <span class="mf">0.26589</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.25479</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mf">0.18133</span><span class="p">,</span> <span class="mf">0.26846</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.26876</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mf">0.18208</span><span class="p">,</span> <span class="mf">0.27119</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.28539</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mf">0.18293</span><span class="p">,</span> <span class="mf">0.27407</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.30470</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mf">0.18388</span><span class="p">,</span> <span class="mf">0.27709</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.32675</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mf">0.18494</span><span class="p">,</span> <span class="mf">0.28021</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.35156</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">70</span><span class="p">,</span> <span class="mf">0.18611</span><span class="p">,</span> <span class="mf">0.28342</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.37915</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mf">0.18740</span><span class="p">,</span> <span class="mf">0.28668</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.40955</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mf">0.18880</span><span class="p">,</span> <span class="mf">0.28997</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.44278</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mf">0.19032</span><span class="p">,</span> <span class="mf">0.29326</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.47888</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">125</span><span class="p">,</span> <span class="mf">0.19462</span><span class="p">,</span> <span class="mf">0.30141</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.58204</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mf">0.19962</span><span class="p">,</span> <span class="mf">0.30921</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.70471</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">175</span><span class="p">,</span> <span class="mf">0.20525</span><span class="p">,</span> <span class="mf">0.31647</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.84901</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mf">0.21142</span><span class="p">,</span> <span class="mf">0.32312</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0182</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">225</span><span class="p">,</span> <span class="mf">0.21807</span><span class="p">,</span> <span class="mf">0.32909</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.2168</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mf">0.22511</span><span class="p">,</span> <span class="mf">0.33439</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.4512</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">275</span><span class="p">,</span> <span class="mf">0.23247</span><span class="p">,</span> <span class="mf">0.33904</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.7298</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mf">0.24010</span><span class="p">,</span> <span class="mf">0.34308</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0637</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">325</span><span class="p">,</span> <span class="mf">0.24792</span><span class="p">,</span> <span class="mf">0.34655</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.4681</span><span class="p">),</span>  <span class="c"># 0.24702 ---&gt; 0.24792 Bruce Lindbloom</span>
+    <span class="p">(</span><span class="mi">350</span><span class="p">,</span> <span class="mf">0.25591</span><span class="p">,</span> <span class="mf">0.34951</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.9641</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">375</span><span class="p">,</span> <span class="mf">0.26400</span><span class="p">,</span> <span class="mf">0.35200</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.5814</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mf">0.27218</span><span class="p">,</span> <span class="mf">0.35407</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.3633</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">425</span><span class="p">,</span> <span class="mf">0.28039</span><span class="p">,</span> <span class="mf">0.35577</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.3762</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">450</span><span class="p">,</span> <span class="mf">0.28863</span><span class="p">,</span> <span class="mf">0.35714</span><span class="p">,</span> <span class="o">-</span><span class="mf">6.7262</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">475</span><span class="p">,</span> <span class="mf">0.29685</span><span class="p">,</span> <span class="mf">0.35823</span><span class="p">,</span> <span class="o">-</span><span class="mf">8.5955</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mf">0.30505</span><span class="p">,</span> <span class="mf">0.35907</span><span class="p">,</span> <span class="o">-</span><span class="mf">11.324</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">525</span><span class="p">,</span> <span class="mf">0.31320</span><span class="p">,</span> <span class="mf">0.35968</span><span class="p">,</span> <span class="o">-</span><span class="mf">15.628</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">550</span><span class="p">,</span> <span class="mf">0.32129</span><span class="p">,</span> <span class="mf">0.36011</span><span class="p">,</span> <span class="o">-</span><span class="mf">23.325</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">575</span><span class="p">,</span> <span class="mf">0.32931</span><span class="p">,</span> <span class="mf">0.36038</span><span class="p">,</span> <span class="o">-</span><span class="mf">40.770</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mf">0.33724</span><span class="p">,</span> <span class="mf">0.36051</span><span class="p">,</span> <span class="o">-</span><span class="mf">116.45</span><span class="p">))</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*Robertson* iso-temperature lines.</span>
+
+<span class="sd">ROBERTSON_ISOTEMPERATURE_LINES_DATA : tuple</span>
+<span class="sd">    (Reciprocal Megakelvin,</span>
+<span class="sd">    CIE 1960 Chromaticity Coordinate *u*,</span>
+<span class="sd">    CIE 1960 Chromaticity Coordinate *v*,</span>
+<span class="sd">    Slope)</span>
+
+<span class="sd">Notes</span>
+<span class="sd">-----</span>
+<span class="sd">-   A correction has been done by *Bruce Lindbloom* for *325* Megakelvin</span>
+<span class="sd">    temperature: 0.24702 ---&gt; 0.24792</span>
+
+<span class="sd">References</span>
+<span class="sd">----------</span>
+<span class="sd">.. [1]  **Wyszecki &amp; Stiles**,</span>
+<span class="sd">        *Color Science - Concepts and Methods Data and Formulae -</span>
+<span class="sd">        Second Edition*,</span>
+<span class="sd">        Wiley Classics Library Edition, published 2000, ISBN-10: 0-471-39918-3,</span>
+<span class="sd">        page  228.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">ROBERTSON_ISOTEMPERATURE_LINES_RUVT</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span>
+    <span class="s">&#39;WyszeckiRobertson_ruvt&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;r&#39;</span><span class="p">,</span> <span class="s">&#39;u&#39;</span><span class="p">,</span> <span class="s">&#39;v&#39;</span><span class="p">,</span> <span class="s">&#39;t&#39;</span><span class="p">))</span>
+
+<span class="n">ROBERTSON_ISOTEMPERATURE_LINES</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">ROBERTSON_ISOTEMPERATURE_LINES_RUVT</span><span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">ROBERTSON_ISOTEMPERATURE_LINES_DATA</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="planckian_table"><a class="viewcode-back" href="../../../colour.temperature.cct.html#colour.temperature.cct.planckian_table">[docs]</a><span class="k">def</span> <span class="nf">planckian_table</span><span class="p">(</span><span class="n">uv</span><span class="p">,</span> <span class="n">cmfs</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns a planckian table from given *CIE UCS* colourspace *uv*</span>
+<span class="sd">    chromaticity coordinates, colour matching functions and temperature range</span>
+<span class="sd">    using *Yoshi Ohno (2013)* method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    uv : array_like</span>
+<span class="sd">        *uv* chromaticity coordinates.</span>
+<span class="sd">    cmfs : XYZ_ColourMatchingFunctions</span>
+<span class="sd">        Standard observer colour matching functions.</span>
+<span class="sd">    start : numeric</span>
+<span class="sd">        Temperature range start in kelvins.</span>
+<span class="sd">    end : numeric</span>
+<span class="sd">        Temperature range end in kelvins.</span>
+<span class="sd">    count : int</span>
+<span class="sd">        Temperatures count in the planckian table.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list</span>
+<span class="sd">        Planckian table.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from colour import STANDARD_OBSERVERS_CMFS</span>
+<span class="sd">    &gt;&gt;&gt; from pprint import pprint</span>
+<span class="sd">    &gt;&gt;&gt; cmfs = &#39;CIE 1931 2 Degree Standard Observer&#39;</span>
+<span class="sd">    &gt;&gt;&gt; cmfs = STANDARD_OBSERVERS_CMFS.get(cmfs)</span>
+<span class="sd">    &gt;&gt;&gt; pprint(planckian_table((0.1978, 0.3122), cmfs, 1000, 1010, 10))  # noqa  # doctest: +ELLIPSIS</span>
+<span class="sd">    [PlanckianTable_Tuvdi(Ti=1000.0, ui=0.4480108..., vi=0.3546249..., di=0.2537821...),</span>
+<span class="sd">     PlanckianTable_Tuvdi(Ti=1001.1111111..., ui=0.4477508..., vi=0.3546475..., di=0.2535294...),</span>
+<span class="sd">     PlanckianTable_Tuvdi(Ti=1002.2222222..., ui=0.4474910..., vi=0.3546700..., di=0.2532771...),</span>
+<span class="sd">     PlanckianTable_Tuvdi(Ti=1003.3333333..., ui=0.4472316..., vi=0.3546924..., di=0.2530251...),</span>
+<span class="sd">     PlanckianTable_Tuvdi(Ti=1004.4444444..., ui=0.4469724..., vi=0.3547148..., di=0.2527734...),</span>
+<span class="sd">     PlanckianTable_Tuvdi(Ti=1005.5555555..., ui=0.4467136..., vi=0.3547372..., di=0.2525220...),</span>
+<span class="sd">     PlanckianTable_Tuvdi(Ti=1006.6666666..., ui=0.4464550..., vi=0.3547595..., di=0.2522710...),</span>
+<span class="sd">     PlanckianTable_Tuvdi(Ti=1007.7777777..., ui=0.4461968..., vi=0.3547817..., di=0.2520202...),</span>
+<span class="sd">     PlanckianTable_Tuvdi(Ti=1008.8888888..., ui=0.4459389..., vi=0.3548040..., di=0.2517697...),</span>
+<span class="sd">     PlanckianTable_Tuvdi(Ti=1010.0, ui=0.4456812..., vi=0.3548261..., di=0.2515196...)]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">ux</span><span class="p">,</span> <span class="n">vx</span> <span class="o">=</span> <span class="n">uv</span>
+
+    <span class="n">shape</span> <span class="o">=</span> <span class="n">cmfs</span><span class="o">.</span><span class="n">shape</span>
+
+    <span class="n">table</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">Ti</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
+        <span class="n">spd</span> <span class="o">=</span> <span class="n">blackbody_spd</span><span class="p">(</span><span class="n">Ti</span><span class="p">,</span> <span class="n">shape</span><span class="p">)</span>
+        <span class="n">XYZ</span> <span class="o">=</span> <span class="n">spectral_to_XYZ</span><span class="p">(</span><span class="n">spd</span><span class="p">,</span> <span class="n">cmfs</span><span class="p">)</span>
+        <span class="n">XYZ</span> <span class="o">*=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>
+        <span class="n">UVW</span> <span class="o">=</span> <span class="n">XYZ_to_UCS</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>
+        <span class="n">ui</span><span class="p">,</span> <span class="n">vi</span> <span class="o">=</span> <span class="n">UCS_to_uv</span><span class="p">(</span><span class="n">UVW</span><span class="p">)</span>
+        <span class="n">di</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">ux</span> <span class="o">-</span> <span class="n">ui</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">vx</span> <span class="o">-</span> <span class="n">vi</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PLANCKIAN_TABLE_TUVD</span><span class="p">(</span><span class="n">Ti</span><span class="p">,</span> <span class="n">ui</span><span class="p">,</span> <span class="n">vi</span><span class="p">,</span> <span class="n">di</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">table</span>
+
+</div>
+<div class="viewcode-block" id="planckian_table_minimal_distance_index"><a class="viewcode-back" href="../../../colour.temperature.cct.html#colour.temperature.cct.planckian_table_minimal_distance_index">[docs]</a><span class="k">def</span> <span class="nf">planckian_table_minimal_distance_index</span><span class="p">(</span><span class="n">planckian_table</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the shortest distance index in given planckian table using</span>
+<span class="sd">    *Yoshi Ohno (2013)* method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    planckian_table : list</span>
+<span class="sd">        Planckian table.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    int</span>
+<span class="sd">        Shortest distance index.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from colour import STANDARD_OBSERVERS_CMFS</span>
+<span class="sd">    &gt;&gt;&gt; cmfs = &#39;CIE 1931 2 Degree Standard Observer&#39;</span>
+<span class="sd">    &gt;&gt;&gt; cmfs = STANDARD_OBSERVERS_CMFS.get(cmfs)</span>
+<span class="sd">    &gt;&gt;&gt; table = planckian_table((0.1978, 0.3122), cmfs, 1000, 1010, 10)</span>
+<span class="sd">    &gt;&gt;&gt; planckian_table_minimal_distance_index(table)</span>
+<span class="sd">    9</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">distances</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">di</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">planckian_table</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">distances</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">distances</span><span class="p">))</span>
+
+</div>
+<div class="viewcode-block" id="uv_to_CCT_ohno2013"><a class="viewcode-back" href="../../../colour.temperature.cct.html#colour.temperature.cct.uv_to_CCT_ohno2013">[docs]</a><span class="k">def</span> <span class="nf">uv_to_CCT_ohno2013</span><span class="p">(</span><span class="n">uv</span><span class="p">,</span>
+                       <span class="n">cmfs</span><span class="o">=</span><span class="n">STANDARD_OBSERVERS_CMFS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+                           <span class="s">&#39;CIE 1931 2 Degree Standard Observer&#39;</span><span class="p">),</span>
+                       <span class="n">start</span><span class="o">=</span><span class="n">CCT_MINIMAL</span><span class="p">,</span>
+                       <span class="n">end</span><span class="o">=</span><span class="n">CCT_MAXIMAL</span><span class="p">,</span>
+                       <span class="n">count</span><span class="o">=</span><span class="n">CCT_SAMPLES</span><span class="p">,</span>
+                       <span class="n">iterations</span><span class="o">=</span><span class="n">CCT_CALCULATION_ITERATIONS</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the correlated colour temperature :math:`T_{cp}` and</span>
+<span class="sd">    :math:`\Delta_{uv}` from given *CIE UCS* colourspace *uv* chromaticity</span>
+<span class="sd">    coordinates, colour matching functions and temperature range using</span>
+<span class="sd">    *Yoshi Ohno (2013)* method.</span>
+
+<span class="sd">    The iterations parameter defines the calculations precision: The higher its</span>
+<span class="sd">    value, the more planckian tables will be generated through cascade</span>
+<span class="sd">    expansion in order to converge to the exact solution.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    uv : array_like</span>
+<span class="sd">        *CIE UCS* colourspace *uv* chromaticity coordinates.</span>
+<span class="sd">    cmfs : XYZ_ColourMatchingFunctions, optional</span>
+<span class="sd">        Standard observer colour matching functions.</span>
+<span class="sd">    start : numeric, optional</span>
+<span class="sd">        Temperature range start in kelvins.</span>
+<span class="sd">    end : numeric, optional</span>
+<span class="sd">        Temperature range end in kelvins.</span>
+<span class="sd">    count : int, optional</span>
+<span class="sd">        Temperatures count in the planckian tables.</span>
+<span class="sd">    iterations : int, optional</span>
+<span class="sd">        Number of planckian tables to generate.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tuple</span>
+<span class="sd">        Correlated colour temperature :math:`T_{cp}`, :math:`\Delta_{uv}`.</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [2]  **Yoshi Ohno**, `Practical Use and Calculation of CCT and Duv</span>
+<span class="sd">            &lt;http://dx.doi.org/10.1080/15502724.2014.839020&gt;`_</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from colour import STANDARD_OBSERVERS_CMFS</span>
+<span class="sd">    &gt;&gt;&gt; cmfs = &#39;CIE 1931 2 Degree Standard Observer&#39;</span>
+<span class="sd">    &gt;&gt;&gt; cmfs = STANDARD_OBSERVERS_CMFS.get(cmfs)</span>
+<span class="sd">    &gt;&gt;&gt; uv_to_CCT_ohno2013((0.1978, 0.3122), cmfs)  # doctest: +ELLIPSIS</span>
+<span class="sd">    (6507.5470349..., 0.0032236...)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c"># Ensuring we do at least one iteration to initialise variables.</span>
+    <span class="k">if</span> <span class="n">iterations</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">iterations</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="c"># Planckian table creation through cascade expansion.</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iterations</span><span class="p">):</span>
+        <span class="n">table</span> <span class="o">=</span> <span class="n">planckian_table</span><span class="p">(</span><span class="n">uv</span><span class="p">,</span> <span class="n">cmfs</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">planckian_table_minimal_distance_index</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">warning</span><span class="p">(</span>
+                <span class="p">(</span><span class="s">&#39;Minimal distance index is on lowest planckian table bound, &#39;</span>
+                 <span class="s">&#39;unpredictable results may occur!&#39;</span><span class="p">))</span>
+            <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">index</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">table</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">warning</span><span class="p">(</span>
+                <span class="p">(</span><span class="s">&#39;Minimal distance index is on highest planckian table bound, &#39;</span>
+                 <span class="s">&#39;unpredictable results may occur!&#39;</span><span class="p">))</span>
+            <span class="n">index</span> <span class="o">-=</span> <span class="mi">1</span>
+
+        <span class="n">start</span> <span class="o">=</span> <span class="n">table</span><span class="p">[</span><span class="n">index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">Ti</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="n">table</span><span class="p">[</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">Ti</span>
+
+    <span class="n">ux</span><span class="p">,</span> <span class="n">vx</span> <span class="o">=</span> <span class="n">uv</span>
+
+    <span class="n">Tuvdip</span><span class="p">,</span> <span class="n">Tuvdi</span><span class="p">,</span> <span class="n">Tuvdin</span> <span class="o">=</span> <span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="n">index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">table</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">table</span><span class="p">[</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">Tip</span><span class="p">,</span> <span class="n">uip</span><span class="p">,</span> <span class="n">vip</span><span class="p">,</span> <span class="n">dip</span> <span class="o">=</span> <span class="n">Tuvdip</span><span class="o">.</span><span class="n">Ti</span><span class="p">,</span> <span class="n">Tuvdip</span><span class="o">.</span><span class="n">ui</span><span class="p">,</span> <span class="n">Tuvdip</span><span class="o">.</span><span class="n">vi</span><span class="p">,</span> <span class="n">Tuvdip</span><span class="o">.</span><span class="n">di</span>
+    <span class="n">Ti</span><span class="p">,</span> <span class="n">ui</span><span class="p">,</span> <span class="n">vi</span><span class="p">,</span> <span class="n">di</span> <span class="o">=</span> <span class="n">Tuvdi</span><span class="o">.</span><span class="n">Ti</span><span class="p">,</span> <span class="n">Tuvdi</span><span class="o">.</span><span class="n">ui</span><span class="p">,</span> <span class="n">Tuvdi</span><span class="o">.</span><span class="n">vi</span><span class="p">,</span> <span class="n">Tuvdi</span><span class="o">.</span><span class="n">di</span>
+    <span class="n">Tin</span><span class="p">,</span> <span class="n">uin</span><span class="p">,</span> <span class="n">vin</span><span class="p">,</span> <span class="n">din</span> <span class="o">=</span> <span class="n">Tuvdin</span><span class="o">.</span><span class="n">Ti</span><span class="p">,</span> <span class="n">Tuvdin</span><span class="o">.</span><span class="n">ui</span><span class="p">,</span> <span class="n">Tuvdin</span><span class="o">.</span><span class="n">vi</span><span class="p">,</span> <span class="n">Tuvdin</span><span class="o">.</span><span class="n">di</span>
+
+    <span class="c"># Triangular solution.</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">uin</span> <span class="o">-</span> <span class="n">uip</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">vin</span> <span class="o">-</span> <span class="n">vip</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">dip</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">din</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">l</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">l</span><span class="p">)</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="n">Tip</span> <span class="o">+</span> <span class="p">(</span><span class="n">Tin</span> <span class="o">-</span> <span class="n">Tip</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="n">l</span><span class="p">)</span>
+
+    <span class="n">vtx</span> <span class="o">=</span> <span class="n">vip</span> <span class="o">+</span> <span class="p">(</span><span class="n">vin</span> <span class="o">-</span> <span class="n">vip</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="n">l</span><span class="p">)</span>
+    <span class="n">sign</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">vx</span> <span class="o">-</span> <span class="n">vtx</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="n">Duv</span> <span class="o">=</span> <span class="p">(</span><span class="n">dip</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">sign</span>
+
+    <span class="c"># Parabolic solution.</span>
+    <span class="k">if</span> <span class="n">Duv</span> <span class="o">&lt;</span> <span class="mf">0.002</span><span class="p">:</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="p">(</span><span class="n">Tin</span> <span class="o">-</span> <span class="n">Ti</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">Tip</span> <span class="o">-</span> <span class="n">Tin</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">Ti</span> <span class="o">-</span> <span class="n">Tip</span><span class="p">)</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">Tip</span> <span class="o">*</span> <span class="p">(</span><span class="n">din</span> <span class="o">-</span> <span class="n">di</span><span class="p">)</span> <span class="o">+</span> <span class="n">Ti</span> <span class="o">*</span> <span class="p">(</span><span class="n">dip</span> <span class="o">-</span> <span class="n">din</span><span class="p">)</span> <span class="o">+</span> <span class="n">Tin</span> <span class="o">*</span> <span class="p">(</span><span class="n">di</span> <span class="o">-</span> <span class="n">dip</span><span class="p">))</span> <span class="o">*</span> <span class="n">X</span> <span class="o">**</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">Tip</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">din</span> <span class="o">-</span> <span class="n">di</span><span class="p">)</span> <span class="o">+</span> <span class="n">Ti</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">dip</span> <span class="o">-</span> <span class="n">din</span><span class="p">)</span> <span class="o">+</span> <span class="n">Tin</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span>
+               <span class="p">(</span><span class="n">di</span> <span class="o">-</span> <span class="n">dip</span><span class="p">))</span> <span class="o">*</span> <span class="n">X</span> <span class="o">**</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">dip</span> <span class="o">*</span> <span class="p">(</span><span class="n">Tin</span> <span class="o">-</span> <span class="n">Ti</span><span class="p">)</span> <span class="o">*</span> <span class="n">Ti</span> <span class="o">*</span> <span class="n">Tin</span> <span class="o">+</span> <span class="n">di</span> <span class="o">*</span> <span class="p">(</span><span class="n">Tip</span> <span class="o">-</span> <span class="n">Tin</span><span class="p">)</span> <span class="o">*</span> <span class="n">Tip</span> <span class="o">*</span> <span class="n">Tin</span>
+               <span class="o">+</span> <span class="n">din</span> <span class="o">*</span> <span class="p">(</span><span class="n">Ti</span> <span class="o">-</span> <span class="n">Tip</span><span class="p">)</span> <span class="o">*</span> <span class="n">Tip</span> <span class="o">*</span> <span class="n">Ti</span><span class="p">)</span> <span class="o">*</span> <span class="n">X</span> <span class="o">**</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">T</span> <span class="o">=</span> <span class="o">-</span><span class="n">b</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+
+        <span class="n">Duv</span> <span class="o">=</span> <span class="n">sign</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">T</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">b</span> <span class="o">*</span> <span class="n">T</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">T</span><span class="p">,</span> <span class="n">Duv</span>
+
+</div>
+<div class="viewcode-block" id="CCT_to_uv_ohno2013"><a class="viewcode-back" href="../../../colour.temperature.cct.html#colour.temperature.cct.CCT_to_uv_ohno2013">[docs]</a><span class="k">def</span> <span class="nf">CCT_to_uv_ohno2013</span><span class="p">(</span><span class="n">CCT</span><span class="p">,</span>
+                       <span class="n">Duv</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                       <span class="n">cmfs</span><span class="o">=</span><span class="n">STANDARD_OBSERVERS_CMFS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+                           <span class="s">&#39;CIE 1931 2 Degree Standard Observer&#39;</span><span class="p">)):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *CIE UCS* colourspace *uv* chromaticity coordinates from given</span>
+<span class="sd">    correlated colour temperature :math:`T_{cp}`, :math:`\Delta_{uv}` and</span>
+<span class="sd">    colour matching functions using *Yoshi Ohno (2013)* method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    CCT : numeric</span>
+<span class="sd">        Correlated colour temperature :math:`T_{cp}`.</span>
+<span class="sd">    Duv : numeric, optional</span>
+<span class="sd">        :math:`\Delta_{uv}`.</span>
+<span class="sd">    cmfs : XYZ_ColourMatchingFunctions, optional</span>
+<span class="sd">        Standard observer colour matching functions.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tuple</span>
+<span class="sd">        *CIE UCS* colourspace *uv* chromaticity coordinates.</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [3]  **Yoshi Ohno**, `Practical Use and Calculation of CCT and Duv</span>
+<span class="sd">            &lt;http://dx.doi.org/10.1080/15502724.2014.839020&gt;`_</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from colour import STANDARD_OBSERVERS_CMFS</span>
+<span class="sd">    &gt;&gt;&gt; cmfs = &#39;CIE 1931 2 Degree Standard Observer&#39;</span>
+<span class="sd">    &gt;&gt;&gt; cmfs = STANDARD_OBSERVERS_CMFS.get(cmfs)</span>
+<span class="sd">    &gt;&gt;&gt; CCT = 6507.4342201047066</span>
+<span class="sd">    &gt;&gt;&gt; Duv = 0.003223690901512735</span>
+<span class="sd">    &gt;&gt;&gt; CCT_to_uv_ohno2013(CCT, Duv, cmfs)  # doctest: +ELLIPSIS</span>
+<span class="sd">    (0.1978003..., 0.3122005...)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">shape</span> <span class="o">=</span> <span class="n">cmfs</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">delta</span> <span class="o">=</span> <span class="mf">0.01</span>
+
+    <span class="n">spd</span> <span class="o">=</span> <span class="n">blackbody_spd</span><span class="p">(</span><span class="n">CCT</span><span class="p">,</span> <span class="n">shape</span><span class="p">)</span>
+    <span class="n">XYZ</span> <span class="o">=</span> <span class="n">spectral_to_XYZ</span><span class="p">(</span><span class="n">spd</span><span class="p">,</span> <span class="n">cmfs</span><span class="p">)</span>
+    <span class="n">XYZ</span> <span class="o">*=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>
+    <span class="n">UVW</span> <span class="o">=</span> <span class="n">XYZ_to_UCS</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>
+    <span class="n">u0</span><span class="p">,</span> <span class="n">v0</span> <span class="o">=</span> <span class="n">UCS_to_uv</span><span class="p">(</span><span class="n">UVW</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">Duv</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">u0</span><span class="p">,</span> <span class="n">v0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">spd</span> <span class="o">=</span> <span class="n">blackbody_spd</span><span class="p">(</span><span class="n">CCT</span> <span class="o">+</span> <span class="n">delta</span><span class="p">,</span> <span class="n">shape</span><span class="p">)</span>
+        <span class="n">XYZ</span> <span class="o">=</span> <span class="n">spectral_to_XYZ</span><span class="p">(</span><span class="n">spd</span><span class="p">,</span> <span class="n">cmfs</span><span class="p">)</span>
+        <span class="n">XYZ</span> <span class="o">*=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>
+        <span class="n">UVW</span> <span class="o">=</span> <span class="n">XYZ_to_UCS</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>
+        <span class="n">u1</span><span class="p">,</span> <span class="n">v1</span> <span class="o">=</span> <span class="n">UCS_to_uv</span><span class="p">(</span><span class="n">UVW</span><span class="p">)</span>
+
+        <span class="n">du</span> <span class="o">=</span> <span class="n">u0</span> <span class="o">-</span> <span class="n">u1</span>
+        <span class="n">dv</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">-</span> <span class="n">v1</span>
+
+        <span class="n">u</span> <span class="o">=</span> <span class="n">u0</span> <span class="o">-</span> <span class="n">Duv</span> <span class="o">*</span> <span class="p">(</span><span class="n">dv</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">du</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">dv</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">+</span> <span class="n">Duv</span> <span class="o">*</span> <span class="p">(</span><span class="n">du</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">du</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">dv</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span>
+
+</div>
+<div class="viewcode-block" id="uv_to_CCT_robertson1968"><a class="viewcode-back" href="../../../colour.temperature.cct.html#colour.temperature.cct.uv_to_CCT_robertson1968">[docs]</a><span class="k">def</span> <span class="nf">uv_to_CCT_robertson1968</span><span class="p">(</span><span class="n">uv</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the correlated colour temperature :math:`T_{cp}` and</span>
+<span class="sd">    :math:`\Delta_{uv}` from given *CIE UCS* colourspace *uv* chromaticity</span>
+<span class="sd">    coordinates using *Robertson (1968)* method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    uv : array_like</span>
+<span class="sd">        *CIE UCS* colourspace *uv* chromaticity coordinates.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tuple</span>
+<span class="sd">        Correlated colour temperature :math:`T_{cp}`, :math:`\Delta_{uv}`.</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [4]  **Wyszecki &amp; Stiles**,</span>
+<span class="sd">            *Color Science - Concepts and Methods Data and Formulae -</span>
+<span class="sd">            Second Edition*,</span>
+<span class="sd">            Wiley Classics Library Edition, published 2000,</span>
+<span class="sd">            ISBN-10: 0-471-39918-3,</span>
+<span class="sd">            page  227.</span>
+<span class="sd">    .. [5]  *Adobe DNG SDK 1.3.0.0*:</span>
+<span class="sd">            *dng_sdk_1_3/dng_sdk/source/dng_temperature.cpp*:</span>
+<span class="sd">            *dng_temperature::Set_xy_coord*.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; uv = (0.19374137599822966, 0.31522104394059397)</span>
+<span class="sd">    &gt;&gt;&gt; uv_to_CCT_robertson1968(uv)  # doctest: +ELLIPSIS</span>
+<span class="sd">    (6500.0162879..., 0.0083333...)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">uv</span>
+
+    <span class="n">last_dt</span> <span class="o">=</span> <span class="n">last_dv</span> <span class="o">=</span> <span class="n">last_du</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">):</span>
+        <span class="n">wr_ruvt</span> <span class="o">=</span> <span class="n">ROBERTSON_ISOTEMPERATURE_LINES</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">wr_ruvt_previous</span> <span class="o">=</span> <span class="n">ROBERTSON_ISOTEMPERATURE_LINES</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+
+        <span class="n">du</span> <span class="o">=</span> <span class="mf">1.0</span>
+        <span class="n">dv</span> <span class="o">=</span> <span class="n">wr_ruvt</span><span class="o">.</span><span class="n">t</span>
+
+        <span class="n">length</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">dv</span> <span class="o">*</span> <span class="n">dv</span><span class="p">)</span>
+
+        <span class="n">du</span> <span class="o">/=</span> <span class="n">length</span>
+        <span class="n">dv</span> <span class="o">/=</span> <span class="n">length</span>
+
+        <span class="n">uu</span> <span class="o">=</span> <span class="n">u</span> <span class="o">-</span> <span class="n">wr_ruvt</span><span class="o">.</span><span class="n">u</span>
+        <span class="n">vv</span> <span class="o">=</span> <span class="n">v</span> <span class="o">-</span> <span class="n">wr_ruvt</span><span class="o">.</span><span class="n">v</span>
+
+        <span class="n">dt</span> <span class="o">=</span> <span class="o">-</span><span class="n">uu</span> <span class="o">*</span> <span class="n">dv</span> <span class="o">+</span> <span class="n">vv</span> <span class="o">*</span> <span class="n">du</span>
+
+        <span class="k">if</span> <span class="n">dt</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">30</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">dt</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">:</span>
+                <span class="n">dt</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+            <span class="n">dt</span> <span class="o">=</span> <span class="o">-</span><span class="n">dt</span>
+
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">f</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">f</span> <span class="o">=</span> <span class="n">dt</span> <span class="o">/</span> <span class="p">(</span><span class="n">last_dt</span> <span class="o">+</span> <span class="n">dt</span><span class="p">)</span>
+
+            <span class="n">T</span> <span class="o">=</span> <span class="mf">1.0e6</span> <span class="o">/</span> <span class="p">(</span><span class="n">wr_ruvt_previous</span><span class="o">.</span><span class="n">r</span> <span class="o">*</span> <span class="n">f</span> <span class="o">+</span> <span class="n">wr_ruvt</span><span class="o">.</span><span class="n">r</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">f</span><span class="p">))</span>
+
+            <span class="n">uu</span> <span class="o">=</span> <span class="n">u</span> <span class="o">-</span> <span class="p">(</span><span class="n">wr_ruvt_previous</span><span class="o">.</span><span class="n">u</span> <span class="o">*</span> <span class="n">f</span> <span class="o">+</span> <span class="n">wr_ruvt</span><span class="o">.</span><span class="n">u</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">f</span><span class="p">))</span>
+            <span class="n">vv</span> <span class="o">=</span> <span class="n">v</span> <span class="o">-</span> <span class="p">(</span><span class="n">wr_ruvt_previous</span><span class="o">.</span><span class="n">v</span> <span class="o">*</span> <span class="n">f</span> <span class="o">+</span> <span class="n">wr_ruvt</span><span class="o">.</span><span class="n">v</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">f</span><span class="p">))</span>
+
+            <span class="n">du</span> <span class="o">=</span> <span class="n">du</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">f</span><span class="p">)</span> <span class="o">+</span> <span class="n">last_du</span> <span class="o">*</span> <span class="n">f</span>
+            <span class="n">dv</span> <span class="o">=</span> <span class="n">dv</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">f</span><span class="p">)</span> <span class="o">+</span> <span class="n">last_dv</span> <span class="o">*</span> <span class="n">f</span>
+
+            <span class="n">length</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">du</span> <span class="o">*</span> <span class="n">du</span> <span class="o">+</span> <span class="n">dv</span> <span class="o">*</span> <span class="n">dv</span><span class="p">)</span>
+
+            <span class="n">du</span> <span class="o">/=</span> <span class="n">length</span>
+            <span class="n">dv</span> <span class="o">/=</span> <span class="n">length</span>
+
+            <span class="n">Duv</span> <span class="o">=</span> <span class="n">uu</span> <span class="o">*</span> <span class="n">du</span> <span class="o">+</span> <span class="n">vv</span> <span class="o">*</span> <span class="n">dv</span>
+
+            <span class="k">break</span>
+
+        <span class="n">last_dt</span> <span class="o">=</span> <span class="n">dt</span>
+        <span class="n">last_du</span> <span class="o">=</span> <span class="n">du</span>
+        <span class="n">last_dv</span> <span class="o">=</span> <span class="n">dv</span>
+
+    <span class="k">return</span> <span class="n">T</span><span class="p">,</span> <span class="o">-</span><span class="n">Duv</span>
+
+</div>
+<div class="viewcode-block" id="CCT_to_uv_robertson1968"><a class="viewcode-back" href="../../../colour.temperature.cct.html#colour.temperature.cct.CCT_to_uv_robertson1968">[docs]</a><span class="k">def</span> <span class="nf">CCT_to_uv_robertson1968</span><span class="p">(</span><span class="n">CCT</span><span class="p">,</span> <span class="n">Duv</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *CIE UCS* colourspace *uv* chromaticity coordinates from given</span>
+<span class="sd">    correlated colour temperature :math:`T_{cp}` and :math:`\Delta_{uv}` using</span>
+<span class="sd">    *Robertson (1968)* method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    CCT : numeric</span>
+<span class="sd">        Correlated colour temperature :math:`T_{cp}`.</span>
+<span class="sd">    Duv : numeric</span>
+<span class="sd">        :math:`\Delta_{uv}`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tuple</span>
+<span class="sd">        *CIE UCS* colourspace *uv* chromaticity coordinates.</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [6]  **Wyszecki &amp; Stiles**,</span>
+<span class="sd">            *Color Science - Concepts and Methods Data and Formulae -</span>
+<span class="sd">            Second Edition*,</span>
+<span class="sd">            Wiley Classics Library Edition, published 2000,</span>
+<span class="sd">            ISBN-10: 0-471-39918-3,</span>
+<span class="sd">            page  227.</span>
+<span class="sd">    .. [7]  *Adobe DNG SDK 1.3.0.0*:</span>
+<span class="sd">            *dng_sdk_1_3/dng_sdk/source/dng_temperature.cpp*:</span>
+<span class="sd">            *dng_temperature::xy_coord*.</span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; CCT = 6500.0081378199056</span>
+<span class="sd">    &gt;&gt;&gt; Duv = 0.0083333312442250979</span>
+<span class="sd">    &gt;&gt;&gt; CCT_to_uv_robertson1968(CCT, Duv)  # doctest: +ELLIPSIS</span>
+<span class="sd">    (0.1937413..., 0.3152210...)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">r</span> <span class="o">=</span> <span class="mf">1.0e6</span> <span class="o">/</span> <span class="n">CCT</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>
+        <span class="n">wr_ruvt</span> <span class="o">=</span> <span class="n">ROBERTSON_ISOTEMPERATURE_LINES</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">wr_ruvt_next</span> <span class="o">=</span> <span class="n">ROBERTSON_ISOTEMPERATURE_LINES</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">wr_ruvt_next</span><span class="o">.</span><span class="n">r</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">29</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">wr_ruvt_next</span><span class="o">.</span><span class="n">r</span> <span class="o">-</span> <span class="n">r</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">wr_ruvt_next</span><span class="o">.</span><span class="n">r</span> <span class="o">-</span> <span class="n">wr_ruvt</span><span class="o">.</span><span class="n">r</span><span class="p">)</span>
+
+            <span class="n">u</span> <span class="o">=</span> <span class="n">wr_ruvt</span><span class="o">.</span><span class="n">u</span> <span class="o">*</span> <span class="n">f</span> <span class="o">+</span> <span class="n">wr_ruvt_next</span><span class="o">.</span><span class="n">u</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">f</span><span class="p">)</span>
+            <span class="n">v</span> <span class="o">=</span> <span class="n">wr_ruvt</span><span class="o">.</span><span class="n">v</span> <span class="o">*</span> <span class="n">f</span> <span class="o">+</span> <span class="n">wr_ruvt_next</span><span class="o">.</span><span class="n">v</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">f</span><span class="p">)</span>
+
+            <span class="n">uu1</span> <span class="o">=</span> <span class="n">uu2</span> <span class="o">=</span> <span class="mf">1.0</span>
+            <span class="n">vv1</span><span class="p">,</span> <span class="n">vv2</span> <span class="o">=</span> <span class="n">wr_ruvt</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">wr_ruvt_next</span><span class="o">.</span><span class="n">t</span>
+
+            <span class="n">length1</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">vv1</span> <span class="o">*</span> <span class="n">vv1</span><span class="p">)</span>
+            <span class="n">length2</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">vv2</span> <span class="o">*</span> <span class="n">vv2</span><span class="p">)</span>
+
+            <span class="n">uu1</span> <span class="o">/=</span> <span class="n">length1</span>
+            <span class="n">vv1</span> <span class="o">/=</span> <span class="n">length1</span>
+
+            <span class="n">uu2</span> <span class="o">/=</span> <span class="n">length2</span>
+            <span class="n">vv2</span> <span class="o">/=</span> <span class="n">length2</span>
+
+            <span class="n">uu3</span> <span class="o">=</span> <span class="n">uu1</span> <span class="o">*</span> <span class="n">f</span> <span class="o">+</span> <span class="n">uu2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">f</span><span class="p">)</span>
+            <span class="n">vv3</span> <span class="o">=</span> <span class="n">vv1</span> <span class="o">*</span> <span class="n">f</span> <span class="o">+</span> <span class="n">vv2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">f</span><span class="p">)</span>
+
+            <span class="n">len3</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">uu3</span> <span class="o">*</span> <span class="n">uu3</span> <span class="o">+</span> <span class="n">vv3</span> <span class="o">*</span> <span class="n">vv3</span><span class="p">)</span>
+
+            <span class="n">uu3</span> <span class="o">/=</span> <span class="n">len3</span>
+            <span class="n">vv3</span> <span class="o">/=</span> <span class="n">len3</span>
+
+            <span class="n">u</span> <span class="o">+=</span> <span class="n">uu3</span> <span class="o">*</span> <span class="o">-</span><span class="n">Duv</span>
+            <span class="n">v</span> <span class="o">+=</span> <span class="n">vv3</span> <span class="o">*</span> <span class="o">-</span><span class="n">Duv</span>
+
+            <span class="k">return</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span>
+
+</div>
+<span class="n">UV_TO_CCT_METHODS</span> <span class="o">=</span> <span class="n">CaseInsensitiveMapping</span><span class="p">(</span>
+    <span class="p">{</span><span class="s">&#39;Ohno 2013&#39;</span><span class="p">:</span> <span class="n">uv_to_CCT_ohno2013</span><span class="p">,</span>
+     <span class="s">&#39;Robertson 1968&#39;</span><span class="p">:</span> <span class="n">uv_to_CCT_robertson1968</span><span class="p">})</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Supported *CIE UCS* colourspace *uv* chromaticity coordinates to correlated</span>
+<span class="sd">colour temperature :math:`T_{cp}` computation methods.</span>
+
+<span class="sd">UV_TO_CCT_METHODS : dict</span>
+<span class="sd">    (&#39;Ohno 2013&#39;, &#39;Robertson 1968&#39;)</span>
+
+<span class="sd">Aliases:</span>
+
+<span class="sd">-   &#39;ohno2013&#39;: &#39;Ohno 2013&#39;</span>
+<span class="sd">-   &#39;robertson1968&#39;: &#39;Robertson 1968&#39;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">UV_TO_CCT_METHODS</span><span class="p">[</span><span class="s">&#39;ohno2013&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">UV_TO_CCT_METHODS</span><span class="p">[</span><span class="s">&#39;Ohno 2013&#39;</span><span class="p">]</span>
+<span class="n">UV_TO_CCT_METHODS</span><span class="p">[</span><span class="s">&#39;robertson1968&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">UV_TO_CCT_METHODS</span><span class="p">[</span><span class="s">&#39;Robertson 1968&#39;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="uv_to_CCT"><a class="viewcode-back" href="../../../colour.temperature.cct.html#colour.temperature.cct.uv_to_CCT">[docs]</a><span class="k">def</span> <span class="nf">uv_to_CCT</span><span class="p">(</span><span class="n">uv</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&#39;Ohno 2013&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the correlated colour temperature :math:`T_{cp}` and</span>
+<span class="sd">    :math:`\Delta_{uv}` from given *CIE UCS* colourspace *uv* chromaticity</span>
+<span class="sd">    coordinates using given method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    uv : array_like</span>
+<span class="sd">        *CIE UCS* colourspace *uv* chromaticity coordinates.</span>
+<span class="sd">    method : unicode</span>
+<span class="sd">        (&#39;Ohno 2013&#39;, &#39;Robertson 1968&#39;)</span>
+<span class="sd">        Computation method.</span>
+<span class="sd">    \*\*kwargs : \*\*</span>
+<span class="sd">        Keywords arguments.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tuple</span>
+<span class="sd">        Correlated colour temperature :math:`T_{cp}`, :math:`\Delta_{uv}`.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If the computation method is not defined.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from colour import STANDARD_OBSERVERS_CMFS</span>
+<span class="sd">    &gt;&gt;&gt; cmfs = &#39;CIE 1931 2 Degree Standard Observer&#39;</span>
+<span class="sd">    &gt;&gt;&gt; cmfs = STANDARD_OBSERVERS_CMFS.get(cmfs)</span>
+<span class="sd">    &gt;&gt;&gt; uv_to_CCT((0.1978, 0.3122), cmfs=cmfs)  # doctest: +ELLIPSIS</span>
+<span class="sd">    (6507.5470349..., 0.0032236...)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s">&#39;Ohno 2013&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">UV_TO_CCT_METHODS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">method</span><span class="p">)(</span><span class="n">uv</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s">&#39;cmfs&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;cmfs&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">name</span> <span class="o">!=</span> <span class="p">(</span>
+                    <span class="s">&#39;CIE 1931 2 Degree Standard Observer&#39;</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="p">(</span><span class="s">&#39;&quot;Robertson (1968)&quot; method is only valid for &#39;</span>
+                     <span class="s">&#39;&quot;CIE 1931 2 Degree Standard Observer&quot;!&#39;</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">UV_TO_CCT_METHODS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">method</span><span class="p">)(</span><span class="n">uv</span><span class="p">)</span>
+
+</div>
+<span class="n">CCT_TO_UV_METHODS</span> <span class="o">=</span> <span class="n">CaseInsensitiveMapping</span><span class="p">(</span>
+    <span class="p">{</span><span class="s">&#39;Ohno 2013&#39;</span><span class="p">:</span> <span class="n">CCT_to_uv_ohno2013</span><span class="p">,</span>
+     <span class="s">&#39;Robertson 1968&#39;</span><span class="p">:</span> <span class="n">CCT_to_uv_robertson1968</span><span class="p">})</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Supported correlated colour temperature :math:`T_{cp}` to *CIE UCS* colourspace</span>
+<span class="sd">*uv* chromaticity coordinates computation methods.</span>
+
+<span class="sd">CCT_TO_UV_METHODS : dict</span>
+<span class="sd">    (&#39;Ohno 2013&#39;, &#39;Robertson 1968&#39;)</span>
+
+<span class="sd">Aliases:</span>
+
+<span class="sd">-   &#39;ohno2013&#39;: &#39;Ohno 2013&#39;</span>
+<span class="sd">-   &#39;robertson1968&#39;: &#39;Robertson 1968&#39;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">CCT_TO_UV_METHODS</span><span class="p">[</span><span class="s">&#39;ohno2013&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">CCT_TO_UV_METHODS</span><span class="p">[</span><span class="s">&#39;Ohno 2013&#39;</span><span class="p">]</span>
+<span class="n">CCT_TO_UV_METHODS</span><span class="p">[</span><span class="s">&#39;robertson1968&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">CCT_TO_UV_METHODS</span><span class="p">[</span><span class="s">&#39;Robertson 1968&#39;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="CCT_to_uv"><a class="viewcode-back" href="../../../colour.temperature.cct.html#colour.temperature.cct.CCT_to_uv">[docs]</a><span class="k">def</span> <span class="nf">CCT_to_uv</span><span class="p">(</span><span class="n">CCT</span><span class="p">,</span> <span class="n">Duv</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&#39;Ohno 2013&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *CIE UCS* colourspace *uv* chromaticity coordinates from given</span>
+<span class="sd">    correlated colour temperature :math:`T_{cp}` and :math:`\Delta_{uv}` using</span>
+<span class="sd">    given method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    CCT : numeric</span>
+<span class="sd">        Correlated colour temperature :math:`T_{cp}`.</span>
+<span class="sd">    Duv : numeric</span>
+<span class="sd">        :math:`\Delta_{uv}`.</span>
+<span class="sd">    method : unicode</span>
+<span class="sd">        (&#39;Ohno 2013&#39;, &#39;Robertson 1968&#39;)</span>
+<span class="sd">        Computation method.</span>
+<span class="sd">    \*\*kwargs : \*\*</span>
+<span class="sd">        Keywords arguments.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tuple</span>
+<span class="sd">        *CIE UCS* colourspace *uv* chromaticity coordinates.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If the computation method is not defined.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from colour import STANDARD_OBSERVERS_CMFS</span>
+<span class="sd">    &gt;&gt;&gt; cmfs = &#39;CIE 1931 2 Degree Standard Observer&#39;</span>
+<span class="sd">    &gt;&gt;&gt; cmfs = STANDARD_OBSERVERS_CMFS.get(cmfs)</span>
+<span class="sd">    &gt;&gt;&gt; CCT = 6507.4342201047066</span>
+<span class="sd">    &gt;&gt;&gt; Duv = 0.003223690901512735</span>
+<span class="sd">    &gt;&gt;&gt; CCT_to_uv(CCT, Duv, cmfs=cmfs)  # doctest: +ELLIPSIS</span>
+<span class="sd">    (0.1978003..., 0.3122005...)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s">&#39;Ohno 2013&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">CCT_TO_UV_METHODS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">method</span><span class="p">)(</span><span class="n">CCT</span><span class="p">,</span> <span class="n">Duv</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s">&#39;cmfs&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;cmfs&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">name</span> <span class="o">!=</span> <span class="p">(</span>
+                    <span class="s">&#39;CIE 1931 2 Degree Standard Observer&#39;</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="p">(</span><span class="s">&#39;&quot;Robertson (1968)&quot; method is only valid for &#39;</span>
+                     <span class="s">&#39;&quot;CIE 1931 2 Degree Standard Observer&quot;!&#39;</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">CCT_TO_UV_METHODS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">method</span><span class="p">)(</span><span class="n">CCT</span><span class="p">,</span> <span class="n">Duv</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="xy_to_CCT_mccamy1992"><a class="viewcode-back" href="../../../colour.temperature.cct.html#colour.temperature.cct.xy_to_CCT_mccamy1992">[docs]</a><span class="k">def</span> <span class="nf">xy_to_CCT_mccamy1992</span><span class="p">(</span><span class="n">xy</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the correlated colour temperature :math:`T_{cp}` from given</span>
+<span class="sd">    *CIE XYZ* colourspace *xy* chromaticity coordinates using *McCamy (1992)*</span>
+<span class="sd">    method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    xy : array_like</span>
+<span class="sd">        *xy* chromaticity coordinates.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric</span>
+<span class="sd">        Correlated colour temperature :math:`T_{cp}`.</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [8]  http://en.wikipedia.org/wiki/Color_temperature#Approximation</span>
+<span class="sd">            (Last accessed 28 June 2014)</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; xy_to_CCT_mccamy1992((0.31271, 0.32902))  # doctest: +ELLIPSIS</span>
+<span class="sd">    6504.3893830...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">xy</span>
+
+    <span class="n">n</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.3320</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="mf">0.1858</span><span class="p">)</span>
+    <span class="n">CCT</span> <span class="o">=</span> <span class="o">-</span><span class="mi">449</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mi">3525</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mf">6823.3</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span> <span class="mf">5520.33</span>
+
+    <span class="k">return</span> <span class="n">CCT</span>
+
+</div>
+<div class="viewcode-block" id="xy_to_CCT_hernandez1999"><a class="viewcode-back" href="../../../colour.temperature.cct.html#colour.temperature.cct.xy_to_CCT_hernandez1999">[docs]</a><span class="k">def</span> <span class="nf">xy_to_CCT_hernandez1999</span><span class="p">(</span><span class="n">xy</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the correlated colour temperature :math:`T_{cp}` from given</span>
+<span class="sd">    *CIE XYZ* colourspace *xy* chromaticity coordinates using</span>
+<span class="sd">    *Hernandez-Andres, Lee &amp; Romero (1999)* method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    xy : array_like</span>
+<span class="sd">        *xy* chromaticity coordinates.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric</span>
+<span class="sd">        Correlated colour temperature :math:`T_{cp}`.</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [9]  `Calculating correlated color temperatures across the entire gamut</span>
+<span class="sd">            of daylight and skylight chromaticities</span>
+<span class="sd">            &lt;http://www.ugr.es/~colorimg/pdfs/ao_1999_5703.pdf&gt;`_</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; xy_to_CCT_hernandez1999((0.31271, 0.32902))  # doctest: +ELLIPSIS</span>
+<span class="sd">    6500.0421533...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">xy</span>
+
+    <span class="n">n</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.3366</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="mf">0.1735</span><span class="p">)</span>
+    <span class="n">CCT</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">949.86315</span> <span class="o">+</span>
+           <span class="mf">6253.80338</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">n</span> <span class="o">/</span> <span class="mf">0.92159</span><span class="p">)</span> <span class="o">+</span>
+           <span class="mf">28.70599</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">n</span> <span class="o">/</span> <span class="mf">0.20039</span><span class="p">)</span> <span class="o">+</span>
+           <span class="mf">0.00004</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">n</span> <span class="o">/</span> <span class="mf">0.07125</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">CCT</span> <span class="o">&gt;</span> <span class="mi">50000</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.3356</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="mf">0.1691</span><span class="p">)</span>
+        <span class="n">CCT</span> <span class="o">=</span> <span class="p">(</span><span class="mf">36284.48953</span> <span class="o">+</span>
+               <span class="mf">0.00228</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">n</span> <span class="o">/</span> <span class="mf">0.07861</span><span class="p">)</span> <span class="o">+</span>
+               <span class="mf">5.4535e-36</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">n</span> <span class="o">/</span> <span class="mf">0.01543</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">CCT</span>
+
+</div>
+<div class="viewcode-block" id="CCT_to_xy_kang2002"><a class="viewcode-back" href="../../../colour.temperature.cct.html#colour.temperature.cct.CCT_to_xy_kang2002">[docs]</a><span class="k">def</span> <span class="nf">CCT_to_xy_kang2002</span><span class="p">(</span><span class="n">CCT</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *CIE XYZ* colourspace *xy* chromaticity coordinates from given</span>
+<span class="sd">    correlated colour temperature :math:`T_{cp}` using</span>
+<span class="sd">    *Kang, Moon, Hong, Lee, Cho and Kim (2002)* method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    CCT : numeric</span>
+<span class="sd">        Correlated colour temperature :math:`T_{cp}`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tuple</span>
+<span class="sd">        *xy* chromaticity coordinates.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If the correlated colour temperature is not in appropriate domain.</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [10] `Design of Advanced Color -</span>
+<span class="sd">            Temperature Control System for HDTV Applications</span>
+<span class="sd">            &lt;http://icpr.snu.ac.kr/resource/wop.pdf/J01/2002/041/R06/J012002041R060865.pdf&gt;`_  # noqa</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; CCT_to_xy_kang2002(6504.38938305)  # doctest: +ELLIPSIS</span>
+<span class="sd">    (0.3134259..., 0.3235959...)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="mi">1667</span> <span class="o">&lt;=</span> <span class="n">CCT</span> <span class="o">&lt;=</span> <span class="mi">4000</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.2661239</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">9</span> <span class="o">/</span> <span class="n">CCT</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">-</span>
+             <span class="mf">0.2343589</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">6</span> <span class="o">/</span> <span class="n">CCT</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span>
+             <span class="mf">0.8776956</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">/</span> <span class="n">CCT</span> <span class="o">+</span>
+             <span class="mf">0.179910</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="mi">4000</span> <span class="o">&lt;=</span> <span class="n">CCT</span> <span class="o">&lt;=</span> <span class="mi">25000</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">3.0258469</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">9</span> <span class="o">/</span> <span class="n">CCT</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">+</span>
+             <span class="mf">2.1070379</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">6</span> <span class="o">/</span> <span class="n">CCT</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span>
+             <span class="mf">0.2226347</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">/</span> <span class="n">CCT</span> <span class="o">+</span>
+             <span class="mf">0.24039</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s">&#39;Correlated colour temperature must be in domain [1667, 25000]!&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="mi">1667</span> <span class="o">&lt;=</span> <span class="n">CCT</span> <span class="o">&lt;=</span> <span class="mi">2222</span><span class="p">:</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.1063814</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">-</span>
+             <span class="mf">1.34811020</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span>
+             <span class="mf">2.18555832</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span>
+             <span class="mf">0.20219683</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="mi">2222</span> <span class="o">&lt;=</span> <span class="n">CCT</span> <span class="o">&lt;=</span> <span class="mi">4000</span><span class="p">:</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.9549476</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">-</span>
+             <span class="mf">1.37418593</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span>
+             <span class="mf">2.09137015</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span>
+             <span class="mf">0.16748867</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="mi">4000</span> <span class="o">&lt;=</span> <span class="n">CCT</span> <span class="o">&lt;=</span> <span class="mi">25000</span><span class="p">:</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mf">3.0817580</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">-</span>
+             <span class="mf">5.8733867</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span>
+             <span class="mf">3.75112997</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span>
+             <span class="mf">0.37001483</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+
+</div>
+<div class="viewcode-block" id="CCT_to_xy_illuminant_D"><a class="viewcode-back" href="../../../colour.temperature.cct.html#colour.temperature.cct.CCT_to_xy_illuminant_D">[docs]</a><span class="k">def</span> <span class="nf">CCT_to_xy_illuminant_D</span><span class="p">(</span><span class="n">CCT</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Converts from the correlated colour temperature :math:`T_{cp}` of a</span>
+<span class="sd">    *CIE Illuminant D Series* to the chromaticity of that</span>
+<span class="sd">    *CIE Illuminant D Series*.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    CCT : numeric</span>
+<span class="sd">        Correlated colour temperature :math:`T_{cp}`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tuple</span>
+<span class="sd">        *xy* chromaticity coordinates.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If the correlated colour temperature is not in appropriate domain.</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [11] **Wyszecki &amp; Stiles**,</span>
+<span class="sd">            *Color Science - Concepts and Methods Data and Formulae -</span>
+<span class="sd">            Second Edition*,</span>
+<span class="sd">            Wiley Classics Library Edition, published 2000,</span>
+<span class="sd">            ISBN-10: 0-471-39918-3,</span>
+<span class="sd">            page  145.</span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; CCT_to_xy_illuminant_D(6504.38938305)  # doctest: +ELLIPSIS</span>
+<span class="sd">    (0.3127077..., 0.3291128...)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="mi">4000</span> <span class="o">&lt;=</span> <span class="n">CCT</span> <span class="o">&lt;=</span> <span class="mi">7000</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">4.607</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">9</span> <span class="o">/</span> <span class="n">CCT</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">+</span>
+             <span class="mf">2.9678</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">6</span> <span class="o">/</span> <span class="n">CCT</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span>
+             <span class="mf">0.09911</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">/</span> <span class="n">CCT</span> <span class="o">+</span>
+             <span class="mf">0.244063</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="mi">7000</span> <span class="o">&lt;</span> <span class="n">CCT</span> <span class="o">&lt;=</span> <span class="mi">25000</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">2.0064</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">9</span> <span class="o">/</span> <span class="n">CCT</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">+</span>
+             <span class="mf">1.9018</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">6</span> <span class="o">/</span> <span class="n">CCT</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span>
+             <span class="mf">0.24748</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">/</span> <span class="n">CCT</span> <span class="o">+</span>
+             <span class="mf">0.23704</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s">&#39;Correlated colour temperature must be in domain [4000, 25000]!&#39;</span><span class="p">)</span>
+
+    <span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mf">2.87</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mf">0.275</span>
+
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+
+</div>
+<span class="n">XY_TO_CCT_METHODS</span> <span class="o">=</span> <span class="n">CaseInsensitiveMapping</span><span class="p">(</span>
+    <span class="p">{</span><span class="s">&#39;McCamy 1992&#39;</span><span class="p">:</span> <span class="n">xy_to_CCT_mccamy1992</span><span class="p">,</span>
+     <span class="s">&#39;Hernandez 1999&#39;</span><span class="p">:</span> <span class="n">xy_to_CCT_hernandez1999</span><span class="p">})</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Supported *CIE XYZ* colourspace *xy* chromaticity coordinates to correlated</span>
+<span class="sd">colour temperature :math:`T_{cp}` computation methods.</span>
+
+<span class="sd">XY_TO_CCT_METHODS : dict</span>
+<span class="sd">    (&#39;McCamy 1992&#39;, &#39;Hernandez 1999&#39;)</span>
+
+<span class="sd">Aliases:</span>
+
+<span class="sd">-   &#39;mccamy1992&#39;: &#39;McCamy 1992&#39;</span>
+<span class="sd">-   &#39;hernandez1999&#39;: &#39;Hernandez 1999&#39;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">XY_TO_CCT_METHODS</span><span class="p">[</span><span class="s">&#39;mccamy1992&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">XY_TO_CCT_METHODS</span><span class="p">[</span><span class="s">&#39;McCamy 1992&#39;</span><span class="p">]</span>
+<span class="n">XY_TO_CCT_METHODS</span><span class="p">[</span><span class="s">&#39;hernandez1999&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">XY_TO_CCT_METHODS</span><span class="p">[</span><span class="s">&#39;Hernandez 1999&#39;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="xy_to_CCT"><a class="viewcode-back" href="../../../colour.temperature.cct.html#colour.temperature.cct.xy_to_CCT">[docs]</a><span class="k">def</span> <span class="nf">xy_to_CCT</span><span class="p">(</span><span class="n">xy</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&#39;McCamy 1992&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the correlated colour temperature :math:`T_{cp}` from given</span>
+<span class="sd">    *CIE XYZ* colourspace *xy* chromaticity coordinates using given method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    xy : array_like</span>
+<span class="sd">        *xy* chromaticity coordinates.</span>
+<span class="sd">    method : unicode (&#39;McCamy 1992&#39;, &#39;Hernandez 1999&#39;)</span>
+<span class="sd">        Computation method.</span>
+<span class="sd">    \*\*kwargs : \*\*</span>
+<span class="sd">        Keywords arguments.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric</span>
+<span class="sd">        Correlated colour temperature :math:`T_{cp}`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">XY_TO_CCT_METHODS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">method</span><span class="p">)(</span><span class="n">xy</span><span class="p">)</span>
+
+</div>
+<span class="n">CCT_TO_XY_METHODS</span> <span class="o">=</span> <span class="n">CaseInsensitiveMapping</span><span class="p">(</span>
+    <span class="p">{</span><span class="s">&#39;Kang 2002&#39;</span><span class="p">:</span> <span class="n">CCT_to_xy_kang2002</span><span class="p">,</span>
+     <span class="s">&#39;CIE Illuminant D Series&#39;</span><span class="p">:</span> <span class="n">CCT_to_xy_illuminant_D</span><span class="p">})</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Supported correlated colour temperature :math:`T_{cp}` to *CIE XYZ* colourspace</span>
+<span class="sd">*xy* chromaticity coordinates computation methods.</span>
+
+<span class="sd">CCT_TO_XY_METHODS : dict</span>
+<span class="sd">    (&#39;Kang 2002&#39;, &#39;CIE Illuminant D Series&#39;)</span>
+
+<span class="sd">Aliases:</span>
+
+<span class="sd">-   &#39;kang2002&#39;: &#39;Kang 2002&#39;</span>
+<span class="sd">-   &#39;cie_d&#39;: &#39;Hernandez 1999&#39;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">CCT_TO_XY_METHODS</span><span class="p">[</span><span class="s">&#39;kang2002&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">CCT_TO_XY_METHODS</span><span class="p">[</span><span class="s">&#39;Kang 2002&#39;</span><span class="p">]</span>
+<span class="n">CCT_TO_XY_METHODS</span><span class="p">[</span><span class="s">&#39;cie_d&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">CCT_TO_XY_METHODS</span><span class="p">[</span><span class="s">&#39;CIE Illuminant D Series&#39;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="CCT_to_xy"><a class="viewcode-back" href="../../../colour.temperature.cct.html#colour.temperature.cct.CCT_to_xy">[docs]</a><span class="k">def</span> <span class="nf">CCT_to_xy</span><span class="p">(</span><span class="n">CCT</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&#39;Kang 2002&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *CIE XYZ* colourspace *xy* chromaticity coordinates from given</span>
+<span class="sd">    correlated colour temperature :math:`T_{cp}` using given method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    CCT : numeric</span>
+<span class="sd">        Correlated colour temperature :math:`T_{cp}`.</span>
+<span class="sd">    method : unicode (&#39;Kang 2002&#39;, &#39;CIE Illuminant D Series&#39;)</span>
+<span class="sd">        Computation method.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tuple</span>
+<span class="sd">        *xy* chromaticity coordinates.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">CCT_TO_XY_METHODS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">method</span><span class="p">)(</span><span class="n">CCT</span><span class="p">)</span></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2014, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.models.ipt &mdash; Colour 0.3.3 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.3.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.3 documentation" href="../../../index.html" />
+    <link rel="up" title="colour.models" href="../models.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for colour.models.ipt</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">IPT Colourspace</span>
+<span class="sd">===============</span>
+
+<span class="sd">Defines the *IPT* colourspace transformations:</span>
+
+<span class="sd">-   :func:`XYZ_to_IPT`</span>
+<span class="sd">-   :func:`IPT_to_XYZ`</span>
+
+<span class="sd">And computation of correlates:</span>
+
+<span class="sd">-   :func:`IPT_hue_angle`</span>
+
+<span class="sd">References</span>
+<span class="sd">----------</span>
+<span class="sd">.. [1]  Fairchild, M. D. (2013). IPT Colourspace. In Color Appearance Models</span>
+<span class="sd">        (3rd ed., pp. 8492–8567). Wiley. ISBN:B00DAYO8E2</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s">&#39;Copyright (C) 2013 - 2014 - Colour Developers&#39;</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s">&#39;New BSD License - http://opensource.org/licenses/BSD-3-Clause&#39;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s">&#39;colour-science@googlegroups.com&#39;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s">&#39;Production&#39;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;IPT_XYZ_TO_LMS_MATRIX&#39;</span><span class="p">,</span>
+           <span class="s">&#39;IPT_LMS_TO_XYZ_MATRIX&#39;</span><span class="p">,</span>
+           <span class="s">&#39;IPT_LMS_TO_IPT_MATRIX&#39;</span><span class="p">,</span>
+           <span class="s">&#39;IPT_IPT_TO_LMS_MATRIX&#39;</span><span class="p">,</span>
+           <span class="s">&#39;XYZ_to_IPT&#39;</span><span class="p">,</span>
+           <span class="s">&#39;IPT_to_XYZ&#39;</span><span class="p">,</span>
+           <span class="s">&#39;IPT_hue_angle&#39;</span><span class="p">]</span>
+
+<span class="n">IPT_XYZ_TO_LMS_MATRIX</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mf">0.4002</span><span class="p">,</span> <span class="mf">0.7075</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0807</span><span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mf">0.2280</span><span class="p">,</span> <span class="mf">1.1500</span><span class="p">,</span> <span class="mf">0.0612</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">0.0000</span><span class="p">,</span> <span class="mf">0.0000</span><span class="p">,</span> <span class="mf">0.9184</span><span class="p">]])</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*CIE XYZ* colourspace to *IPT* colourspace normalised cone responses matrix.</span>
+
+<span class="sd">IPT_XYZ_TO_LMS_MATRIX : array_like, (3, 3)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">IPT_LMS_TO_XYZ_MATRIX</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">IPT_XYZ_TO_LMS_MATRIX</span><span class="p">)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*IPT* colourspace normalised cone responses to *CIE XYZ* colourspace matrix.</span>
+
+<span class="sd">IPT_LMS_TO_XYZ_MATRIX : array_like, (3, 3)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">IPT_LMS_TO_IPT_MATRIX</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mf">0.4000</span><span class="p">,</span> <span class="mf">0.4000</span><span class="p">,</span> <span class="mf">0.2000</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">4.4550</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.8510</span><span class="p">,</span> <span class="mf">0.3960</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">0.8056</span><span class="p">,</span> <span class="mf">0.3572</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.1628</span><span class="p">]])</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*IPT* colourspace normalised cone responses to *IPT* colourspace matrix.</span>
+
+<span class="sd">IPT_LMS_TO_IPT_MATRIX : array_like, (3, 3)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">IPT_IPT_TO_LMS_MATRIX</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">IPT_LMS_TO_IPT_MATRIX</span><span class="p">)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*IPT* colourspace to *IPT* colourspace normalised cone responses matrix.</span>
+
+<span class="sd">IPT_IPT_TO_LMS_MATRIX : array_like, (3, 3)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="XYZ_to_IPT"><a class="viewcode-back" href="../../../colour.models.ipt.html#colour.models.ipt.XYZ_to_IPT">[docs]</a><span class="k">def</span> <span class="nf">XYZ_to_IPT</span><span class="p">(</span><span class="n">XYZ</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Converts from *CIE XYZ* colourspace to *IPT* colourspace. [1]_</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    XYZ : array_like, (3,)</span>
+<span class="sd">        *CIE XYZ* colourspace matrix.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray, (3,)</span>
+<span class="sd">        *IPT* colourspace matrix.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   Input *CIE XYZ* colourspace matrix needs to be adapted for</span>
+<span class="sd">        *CIE Standard Illuminant D Series* *D65*.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; XYZ = np.array([0.96907232, 1, 1.12179215])</span>
+<span class="sd">    &gt;&gt;&gt; XYZ_to_IPT(XYZ)  # doctest: +ELLIPSIS</span>
+<span class="sd">    array([ 1.0030082...,  0.0190691..., -0.0136929...])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">LMS</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">IPT_XYZ_TO_LMS_MATRIX</span><span class="p">,</span> <span class="n">XYZ</span><span class="p">)</span>
+    <span class="n">LMS_prime</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">LMS</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">LMS</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.43</span>
+    <span class="n">IPT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">IPT_LMS_TO_IPT_MATRIX</span><span class="p">,</span> <span class="n">LMS_prime</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">IPT</span>
+
+</div>
+<div class="viewcode-block" id="IPT_to_XYZ"><a class="viewcode-back" href="../../../colour.models.ipt.html#colour.models.ipt.IPT_to_XYZ">[docs]</a><span class="k">def</span> <span class="nf">IPT_to_XYZ</span><span class="p">(</span><span class="n">IPT</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Converts from *IPT* colourspace to *CIE XYZ* colourspace. [1]_</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    IPT : array_like, (3,)</span>
+<span class="sd">        *IPT* colourspace matrix.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray, (3,)</span>
+<span class="sd">        *CIE XYZ* colourspace matrix.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; IPT = np.array([1.00300825, 0.01906918, -0.01369292])</span>
+<span class="sd">    &gt;&gt;&gt; IPT_to_XYZ(IPT)  # doctest: +ELLIPSIS</span>
+<span class="sd">    array([ 0.9690723...,  1.        ,  1.1217921...])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">LMS</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">IPT_IPT_TO_LMS_MATRIX</span><span class="p">,</span> <span class="n">IPT</span><span class="p">)</span>
+    <span class="n">LMS_prime</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">LMS</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">LMS</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mf">0.43</span><span class="p">)</span>
+    <span class="n">XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">IPT_LMS_TO_XYZ_MATRIX</span><span class="p">,</span> <span class="n">LMS_prime</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">XYZ</span>
+
+</div>
+<div class="viewcode-block" id="IPT_hue_angle"><a class="viewcode-back" href="../../../colour.models.ipt.html#colour.models.ipt.IPT_hue_angle">[docs]</a><span class="k">def</span> <span class="nf">IPT_hue_angle</span><span class="p">(</span><span class="n">IPT</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Computes the hue angle from *IPT* colourspace. [1]_</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    IPT : array_like, (3,)</span>
+<span class="sd">        *IPT* colourspace matrix.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric</span>
+<span class="sd">        Hue angle.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; IPT_hue_angle(([0.96907232, 1, 1.12179215]))  # doctest: +ELLIPSIS</span>
+<span class="sd">    0.8427358...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">IPT</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">IPT</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2014, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

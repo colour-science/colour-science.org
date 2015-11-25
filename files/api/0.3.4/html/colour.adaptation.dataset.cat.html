@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.adaptation.dataset.cat Module &mdash; Colour 0.3.4 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.3.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.4 documentation" href="index.html" />
+    <link rel="up" title="colour.adaptation.dataset Package" href="colour.adaptation.dataset.html" />
+    <link rel="next" title="colour.adaptation.cie1994 Module" href="colour.adaptation.cie1994.html" />
+    <link rel="prev" title="colour.adaptation.dataset Package" href="colour.adaptation.dataset.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+  <li>
+    <a href="colour.adaptation.dataset.html" title="Previous Chapter: colour.adaptation.dataset Package"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; colour.adaptatio...</span>
+    </a>
+  </li>
+  <li>
+    <a href="colour.adaptation.cie1994.html" title="Next Chapter: colour.adaptation.cie1994 Module"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">colour.adaptatio... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="module-colour.adaptation.dataset.cat">
+<span id="colour-adaptation-dataset-cat-module"></span><h1>colour.adaptation.dataset.cat Module<a class="headerlink" href="#module-colour.adaptation.dataset.cat" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="chromatic-adaptation-transforms">
+<h2>Chromatic Adaptation Transforms<a class="headerlink" href="#chromatic-adaptation-transforms" title="Permalink to this headline">¶</a></h2>
+<p>Defines various chromatic adaptation transforms (CAT):</p>
+<ul class="simple">
+<li><a class="reference internal" href="#colour.adaptation.dataset.cat.XYZ_SCALING_CAT" title="colour.adaptation.dataset.cat.XYZ_SCALING_CAT"><tt class="xref py py-attr docutils literal"><span class="pre">XYZ_SCALING_CAT</span></tt></a>: XYZ Scaling CAT <a class="footnote-reference" href="#id13" id="id1">[1]</a></li>
+<li><a class="reference internal" href="#colour.adaptation.dataset.cat.VON_KRIES_CAT" title="colour.adaptation.dataset.cat.VON_KRIES_CAT"><tt class="xref py py-attr docutils literal"><span class="pre">VON_KRIES_CAT</span></tt></a>: Von Kries CAT <a class="footnote-reference" href="#id13" id="id2">[1]</a></li>
+<li><a class="reference internal" href="#colour.adaptation.dataset.cat.BRADFORD_CAT" title="colour.adaptation.dataset.cat.BRADFORD_CAT"><tt class="xref py py-attr docutils literal"><span class="pre">BRADFORD_CAT</span></tt></a>: Bradford CAT <a class="footnote-reference" href="#id13" id="id3">[1]</a></li>
+<li><a class="reference internal" href="#colour.adaptation.dataset.cat.SHARP_CAT" title="colour.adaptation.dataset.cat.SHARP_CAT"><tt class="xref py py-attr docutils literal"><span class="pre">SHARP_CAT</span></tt></a>: Sharp CAT <a class="footnote-reference" href="#id16" id="id4">[4]</a></li>
+<li><a class="reference internal" href="#colour.adaptation.dataset.cat.FAIRCHILD_CAT" title="colour.adaptation.dataset.cat.FAIRCHILD_CAT"><tt class="xref py py-attr docutils literal"><span class="pre">FAIRCHILD_CAT</span></tt></a>: Fairchild CAT <a class="footnote-reference" href="#id14" id="id5">[2]</a></li>
+<li><a class="reference internal" href="#colour.adaptation.dataset.cat.CMCCAT97_CAT" title="colour.adaptation.dataset.cat.CMCCAT97_CAT"><tt class="xref py py-attr docutils literal"><span class="pre">CMCCAT97_CAT</span></tt></a>: CMCCAT97 CAT <a class="footnote-reference" href="#id17" id="id6">[5]</a></li>
+<li><a class="reference internal" href="#colour.adaptation.dataset.cat.CMCCAT2000_CAT" title="colour.adaptation.dataset.cat.CMCCAT2000_CAT"><tt class="xref py py-attr docutils literal"><span class="pre">CMCCAT2000_CAT</span></tt></a>: CMCCAT2000 CAT <a class="footnote-reference" href="#id17" id="id7">[5]</a></li>
+<li><a class="reference internal" href="#colour.adaptation.dataset.cat.CAT02_CAT" title="colour.adaptation.dataset.cat.CAT02_CAT"><tt class="xref py py-attr docutils literal"><span class="pre">CAT02_CAT</span></tt></a>: CAT02 CAT <a class="footnote-reference" href="#id15" id="id8">[3]</a></li>
+<li><a class="reference internal" href="#colour.adaptation.dataset.cat.CAT02_BRILL_CAT" title="colour.adaptation.dataset.cat.CAT02_BRILL_CAT"><tt class="xref py py-attr docutils literal"><span class="pre">CAT02_BRILL_CAT</span></tt></a>: Brill and Süsstrunk (2008) corrected CAT02
+CAT <a class="footnote-reference" href="#id18" id="id9">[6]</a> <a class="footnote-reference" href="#id19" id="id10">[7]</a></li>
+<li><a class="reference internal" href="#colour.adaptation.dataset.cat.BS_CAT" title="colour.adaptation.dataset.cat.BS_CAT"><tt class="xref py py-attr docutils literal"><span class="pre">BS_CAT</span></tt></a>: Bianco and Schettini (2010) CAT <a class="footnote-reference" href="#id16" id="id11">[4]</a></li>
+<li><a class="reference internal" href="#colour.adaptation.dataset.cat.BS_PC_CAT" title="colour.adaptation.dataset.cat.BS_PC_CAT"><tt class="xref py py-attr docutils literal"><span class="pre">BS_PC_CAT</span></tt></a>: Bianco and Schettini PC (2010) CAT <a class="footnote-reference" href="#id16" id="id12">[4]</a></li>
+</ul>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/adaptation/vonkries.ipynb">Chromatic Adaptation IPython Notebook</a></p>
+</div>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id13" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>, <a class="fn-backref" href="#id3">3</a>, <a class="fn-backref" href="#id20">4</a>, <a class="fn-backref" href="#id21">5</a>, <a class="fn-backref" href="#id22">6</a>)</em> Lindbloom, B. (2009). Chromatic Adaptation. Retrieved February 24,
+2014, from <a class="reference external" href="http://brucelindbloom.com/Eqn_ChromAdapt.html">http://brucelindbloom.com/Eqn_ChromAdapt.html</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id14" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[2]</td><td><em>(<a class="fn-backref" href="#id5">1</a>, <a class="fn-backref" href="#id24">2</a>)</em> Fairchild, M. D. (n.d.). Fairchild YSh. Retrieved from
+<a class="reference external" href="http://rit-mcsl.org/fairchild//files/FairchildYSh.zip">http://rit-mcsl.org/fairchild//files/FairchildYSh.zip</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id15" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[3]</td><td><em>(<a class="fn-backref" href="#id8">1</a>, <a class="fn-backref" href="#id27">2</a>)</em> Wikipedia. (n.d.). CAT02. Retrieved February 24, 2014,
+from <a class="reference external" href="http://en.wikipedia.org/wiki/CIECAM02#CAT02">http://en.wikipedia.org/wiki/CIECAM02#CAT02</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id16" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[4]</td><td><em>(<a class="fn-backref" href="#id4">1</a>, <a class="fn-backref" href="#id11">2</a>, <a class="fn-backref" href="#id12">3</a>, <a class="fn-backref" href="#id23">4</a>, <a class="fn-backref" href="#id29">5</a>, <a class="fn-backref" href="#id30">6</a>)</em> Bianco, S., &amp; Schettini, R. (2010). Two New von Kries Based Chromatic
+Adaptation Transforms Found by Numerical Optimization. Color Research
+&amp; Application, 35(3), 184–192. doi:10.1002/col.20573</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id17" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[5]</td><td><em>(<a class="fn-backref" href="#id6">1</a>, <a class="fn-backref" href="#id7">2</a>, <a class="fn-backref" href="#id25">3</a>, <a class="fn-backref" href="#id26">4</a>)</em> Westland, S., Ripamonti, C., &amp; Cheung, V. (2012). CMCCAT97. In
+Computational Colour Science Using MATLAB (2nd ed., p. 80).
+ISBN:978-0-470-66569-5</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id18" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[6]</td><td><em>(<a class="fn-backref" href="#id9">1</a>, <a class="fn-backref" href="#id28">2</a>)</em> Brill, M. H., &amp; Süsstrunk, S. (2008). Repairing gamut problems in
+CIECAM02: A progress report. Color Research &amp; Application, 33(5),
+424–426. doi:10.1002/col.20432</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id19" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id10">[7]</a></td><td>Li, C., Perales, E., Luo, M. R., &amp; Martínez-verdú, F. (2007). The
+Problem with CAT02 and Its Correction, (July), 1–10.</td></tr>
+</tbody>
+</table>
+<dl class="data">
+<dt id="colour.adaptation.dataset.cat.XYZ_SCALING_CAT">
+<tt class="descclassname">colour.adaptation.dataset.cat.</tt><tt class="descname">XYZ_SCALING_CAT</tt><em class="property"> = array([[ 1.,  0.,  0.],        [ 0.,  1.,  0.],        [ 0.,  0.,  1.]])</em><a class="headerlink" href="#colour.adaptation.dataset.cat.XYZ_SCALING_CAT" title="Permalink to this definition">¶</a></dt>
+<dd><p>XYZ Scaling chromatic adaptation transform. <a class="footnote-reference" href="#id13" id="id20">[1]</a></p>
+<p>XYZ_SCALING_CAT : array_like, (3, 3)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.adaptation.dataset.cat.VON_KRIES_CAT">
+<tt class="descclassname">colour.adaptation.dataset.cat.</tt><tt class="descname">VON_KRIES_CAT</tt><em class="property"> = array([[ 0.40024,  0.7076 , -0.08081],        [-0.2263 ,  1.16532,  0.0457 ],        [ 0.     ,  0.     ,  0.91822]])</em><a class="headerlink" href="#colour.adaptation.dataset.cat.VON_KRIES_CAT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Von Kries chromatic adaptation transform. <a class="footnote-reference" href="#id13" id="id21">[1]</a></p>
+<p>VON_KRIES_CAT : array_like, (3, 3)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.adaptation.dataset.cat.BRADFORD_CAT">
+<tt class="descclassname">colour.adaptation.dataset.cat.</tt><tt class="descname">BRADFORD_CAT</tt><em class="property"> = array([[ 0.8951,  0.2664, -0.1614],        [-0.7502,  1.7135,  0.0367],        [ 0.0389, -0.0685,  1.0296]])</em><a class="headerlink" href="#colour.adaptation.dataset.cat.BRADFORD_CAT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bradford chromatic adaptation transform. <a class="footnote-reference" href="#id13" id="id22">[1]</a></p>
+<p>BRADFORD_CAT : array_like, (3, 3)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.adaptation.dataset.cat.SHARP_CAT">
+<tt class="descclassname">colour.adaptation.dataset.cat.</tt><tt class="descname">SHARP_CAT</tt><em class="property"> = array([[ 1.2694, -0.0988, -0.1706],        [-0.8364,  1.8006,  0.0357],        [ 0.0297, -0.0315,  1.0018]])</em><a class="headerlink" href="#colour.adaptation.dataset.cat.SHARP_CAT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sharp chromatic adaptation transform. <a class="footnote-reference" href="#id16" id="id23">[4]</a></p>
+<p>SHARP_CAT : array_like, (3, 3)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.adaptation.dataset.cat.FAIRCHILD_CAT">
+<tt class="descclassname">colour.adaptation.dataset.cat.</tt><tt class="descname">FAIRCHILD_CAT</tt><em class="property"> = array([[ 0.8562,  0.3372, -0.1934],        [-0.836 ,  1.8327,  0.0033],        [ 0.0357, -0.0469,  1.0112]])</em><a class="headerlink" href="#colour.adaptation.dataset.cat.FAIRCHILD_CAT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fairchild chromatic adaptation transform. <a class="footnote-reference" href="#id14" id="id24">[2]</a></p>
+<p>FAIRCHILD_CAT : array_like, (3, 3)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.adaptation.dataset.cat.CMCCAT97_CAT">
+<tt class="descclassname">colour.adaptation.dataset.cat.</tt><tt class="descname">CMCCAT97_CAT</tt><em class="property"> = array([[ 0.8951, -0.7502,  0.0389],        [ 0.2664,  1.7135,  0.0685],        [-0.1614,  0.0367,  1.0296]])</em><a class="headerlink" href="#colour.adaptation.dataset.cat.CMCCAT97_CAT" title="Permalink to this definition">¶</a></dt>
+<dd><p>CMCCAT97 chromatic adaptation transform. <a class="footnote-reference" href="#id17" id="id25">[5]</a></p>
+<p>CMCCAT97_CAT : array_like, (3, 3)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.adaptation.dataset.cat.CMCCAT2000_CAT">
+<tt class="descclassname">colour.adaptation.dataset.cat.</tt><tt class="descname">CMCCAT2000_CAT</tt><em class="property"> = array([[  7.98200000e-01,   3.38900000e-01,  -1.37100000e-01],        [ -5.91800000e-01,   1.55120000e+00,   4.06000000e-02],        [  8.00000000e-04,   2.39000000e-02,   9.75300000e-01]])</em><a class="headerlink" href="#colour.adaptation.dataset.cat.CMCCAT2000_CAT" title="Permalink to this definition">¶</a></dt>
+<dd><p>CMCCAT2000 chromatic adaptation transform. <a class="footnote-reference" href="#id17" id="id26">[5]</a></p>
+<p>CMCCAT2000_CAT : array_like, (3, 3)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.adaptation.dataset.cat.CAT02_CAT">
+<tt class="descclassname">colour.adaptation.dataset.cat.</tt><tt class="descname">CAT02_CAT</tt><em class="property"> = array([[ 0.7328,  0.4296, -0.1624],        [-0.7036,  1.6975,  0.0061],        [ 0.003 ,  0.0136,  0.9834]])</em><a class="headerlink" href="#colour.adaptation.dataset.cat.CAT02_CAT" title="Permalink to this definition">¶</a></dt>
+<dd><p>CAT02 chromatic adaptation transform. <a class="footnote-reference" href="#id15" id="id27">[3]</a></p>
+<p>CAT02_CAT : array_like, (3, 3)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.adaptation.dataset.cat.CAT02_BRILL_CAT">
+<tt class="descclassname">colour.adaptation.dataset.cat.</tt><tt class="descname">CAT02_BRILL_CAT</tt><em class="property"> = array([[ 0.7328,  0.4296, -0.1624],        [-0.7036,  1.6975,  0.0061],        [ 0.    ,  0.    ,  1.    ]])</em><a class="headerlink" href="#colour.adaptation.dataset.cat.CAT02_BRILL_CAT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Brill and Süsstrunk (2008) corrected CAT02 chromatic adaptation
+transform. <a class="footnote-reference" href="#id18" id="id28">[6]</a> [7]</p>
+<p>CAT02_BRILL_CAT : array_like, (3, 3)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.adaptation.dataset.cat.BS_CAT">
+<tt class="descclassname">colour.adaptation.dataset.cat.</tt><tt class="descname">BS_CAT</tt><em class="property"> = array([[ 0.8752,  0.2787, -0.1539],        [-0.8904,  1.8709,  0.0195],        [-0.0061,  0.0162,  0.9899]])</em><a class="headerlink" href="#colour.adaptation.dataset.cat.BS_CAT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bianco and Schettini (2010) chromatic adaptation transform. <a class="footnote-reference" href="#id16" id="id29">[4]</a></p>
+<p>BS_CAT : array_like, (3, 3)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.adaptation.dataset.cat.BS_PC_CAT">
+<tt class="descclassname">colour.adaptation.dataset.cat.</tt><tt class="descname">BS_PC_CAT</tt><em class="property"> = array([[ 0.6489,  0.3915, -0.0404],        [-0.3775,  1.3055,  0.072 ],        [-0.0271,  0.0888,  0.9383]])</em><a class="headerlink" href="#colour.adaptation.dataset.cat.BS_PC_CAT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bianco and Schettini PC (2010) chromatic adaptation transform. <a class="footnote-reference" href="#id16" id="id30">[4]</a></p>
+<p>BS_PC_CAT : array_like, (3, 3)</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>This chromatic adaptation transform has no negative lobes.</li>
+</ul>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.adaptation.dataset.cat.CHROMATIC_ADAPTATION_TRANSFORMS">
+<tt class="descclassname">colour.adaptation.dataset.cat.</tt><tt class="descname">CHROMATIC_ADAPTATION_TRANSFORMS</tt><em class="property"> = CaseInsensitiveMapping({u'Bradford': array([[ 0.8951,  0.2664, -0.1614],        [-0.7502,  1.7135,  0.0367],        [ 0.0389, -0.0685,  1.0296]]), u'Fairchild': array([[ 0.8562,  0.3372, -0.1934],        [-0.836 ,  1.8327,  0.0033],        [ 0.0357, -0.0469,  1.0112]]), u'CAT02_BRILL_CAT': array([[ 0.7328,  0.4296, -0.1624],        [-0.7036,  1.6975,  0.0061],        [ 0.    ,  0.    ,  1.    ]]), u'CAT02': array([[ 0.7328,  0.4296, -0.1624],        [-0.7036,  1.6975,  0.0061],        [ 0.003 ,  0.0136,  0.9834]]), u'Von Kries': array([[ 0.40024,  0.7076 , -0.08081],        [-0.2263 ,  1.16532,  0.0457 ],        [ 0.     ,  0.     ,  0.91822]]), u'CMCCAT97': array([[ 0.8951, -0.7502,  0.0389],        [ 0.2664,  1.7135,  0.0685],        [-0.1614,  0.0367,  1.0296]]), u'XYZ Scaling': array([[ 1.,  0.,  0.],        [ 0.,  1.,  0.],        [ 0.,  0.,  1.]]), u'Bianco PC': array([[ 0.6489,  0.3915, -0.0404],        [-0.3775,  1.3055,  0.072 ],        [-0.0271,  0.0888,  0.9383]]), u'Sharp': array([[ 1.2694, -0.0988, -0.1706],        [-0.8364,  1.8006,  0.0357],        [ 0.0297, -0.0315,  1.0018]]), u'Bianco': array([[ 0.8752,  0.2787, -0.1539],        [-0.8904,  1.8709,  0.0195],        [-0.0061,  0.0162,  0.9899]]), u'CMCCAT2000': array([[  7.98200000e-01,   3.38900000e-01,  -1.37100000e-01],        [ -5.91800000e-01,   1.55120000e+00,   4.06000000e-02],        [  8.00000000e-04,   2.39000000e-02,   9.75300000e-01]])})</em><a class="headerlink" href="#colour.adaptation.dataset.cat.CHROMATIC_ADAPTATION_TRANSFORMS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Supported chromatic adaptation transforms.</p>
+<dl class="docutils">
+<dt>CHROMATIC_ADAPTATION_TRANSFORMS <span class="classifier-delimiter">:</span> <span class="classifier">CaseInsensitiveMapping</span></dt>
+<dd>{&#8216;XYZ Scaling&#8217;, &#8216;Von Kries&#8217;, &#8216;Bradford&#8217;, &#8216;Sharp&#8217;, &#8216;CMCCAT97&#8217;, &#8216;CMCCAT2000&#8217;,
+&#8216;Fairchild, &#8216;CAT02&#8217;, &#8216;CAT02_BRILL_CAT&#8217;, &#8216;Bianco&#8217;, &#8216;Bianco PC&#8217;}</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2015, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

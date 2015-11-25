@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.models.dataset.aces_it &mdash; Colour 0.3.5 documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '0.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.5 documentation" href="../../../../index.html" />
+    <link rel="up" title="colour.models.dataset" href="../dataset.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../../index.html"><img src="../../../../_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for colour.models.dataset.aces_it</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Academy Color Encoding System - Input Transform Dataset</span>
+<span class="sd">=======================================================</span>
+
+<span class="sd">Defines the *Academy Color Encoding System* (ACES) *Input Transform* dataset.</span>
+
+<span class="sd">See Also</span>
+<span class="sd">--------</span>
+<span class="sd">`RGB Colourspaces IPython Notebook</span>
+<span class="sd">&lt;http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/models/rgb.ipynb&gt;`_  # noqa</span>
+
+<span class="sd">References</span>
+<span class="sd">----------</span>
+<span class="sd">.. [1]  The Academy of Motion Picture Arts and Sciences, Science and</span>
+<span class="sd">        Technology Council, &amp; Academy Color Encoding System (ACES) Project</span>
+<span class="sd">        Subcommittee. (n.d.). Academy Color Encoding System. Retrieved</span>
+<span class="sd">        February 24, 2014, from</span>
+<span class="sd">        http://www.oscars.org/science-technology/council/projects/aces.html</span>
+<span class="sd">.. [2]  The Academy of Motion Picture Arts and Sciences, Science and</span>
+<span class="sd">        Technology Council, &amp; Academy Color Encoding System (ACES) Project</span>
+<span class="sd">        Subcommittee. (2014). Technical Bulletin TB-2014-004 - Informative</span>
+<span class="sd">        Notes on SMPTE ST 2065-1 – Academy Color Encoding Specification</span>
+<span class="sd">        (ACES). Retrieved from</span>
+<span class="sd">        https://github.com/ampas/aces-dev/tree/master/documents</span>
+<span class="sd">.. [3]  The Academy of Motion Picture Arts and Sciences, Science and</span>
+<span class="sd">        Technology Council, &amp; Academy Color Encoding System (ACES) Project</span>
+<span class="sd">        Subcommittee. (2014). Technical Bulletin TB-2014-012 - Academy Color</span>
+<span class="sd">        Encoding System Version 1.0 Component Names. Retrieved from</span>
+<span class="sd">        https://github.com/ampas/aces-dev/tree/master/documents</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">unicode_literals</span>
+
+<span class="kn">from</span> <span class="nn">colour.colorimetry</span> <span class="kn">import</span> <span class="n">RGB_ColourMatchingFunctions</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s">&#39;Copyright (C) 2013 - 2015 - Colour Developers&#39;</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s">&#39;New BSD License - http://opensource.org/licenses/BSD-3-Clause&#39;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s">&#39;colour-science@googlegroups.com&#39;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s">&#39;Production&#39;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;ACES_RICD_DATA&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ACES_RICD&#39;</span><span class="p">]</span>
+
+<span class="n">ACES_RICD_DATA</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&#39;r_bar&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="mf">360.0</span><span class="p">:</span> <span class="mf">1.20e-06</span><span class="p">,</span>
+        <span class="mf">361.0</span><span class="p">:</span> <span class="mf">1.40e-06</span><span class="p">,</span>
+        <span class="mf">362.0</span><span class="p">:</span> <span class="mf">1.50e-06</span><span class="p">,</span>
+        <span class="mf">363.0</span><span class="p">:</span> <span class="mf">1.70e-06</span><span class="p">,</span>
+        <span class="mf">364.0</span><span class="p">:</span> <span class="mf">1.90e-06</span><span class="p">,</span>
+        <span class="mf">365.0</span><span class="p">:</span> <span class="mf">2.20e-06</span><span class="p">,</span>
+        <span class="mf">366.0</span><span class="p">:</span> <span class="mf">2.40e-06</span><span class="p">,</span>
+        <span class="mf">367.0</span><span class="p">:</span> <span class="mf">2.70e-06</span><span class="p">,</span>
+        <span class="mf">368.0</span><span class="p">:</span> <span class="mf">3.10e-06</span><span class="p">,</span>
+        <span class="mf">369.0</span><span class="p">:</span> <span class="mf">3.50e-06</span><span class="p">,</span>
+        <span class="mf">370.0</span><span class="p">:</span> <span class="mf">3.90e-06</span><span class="p">,</span>
+        <span class="mf">371.0</span><span class="p">:</span> <span class="mf">4.30e-06</span><span class="p">,</span>
+        <span class="mf">372.0</span><span class="p">:</span> <span class="mf">4.90e-06</span><span class="p">,</span>
+        <span class="mf">373.0</span><span class="p">:</span> <span class="mf">5.40e-06</span><span class="p">,</span>
+        <span class="mf">374.0</span><span class="p">:</span> <span class="mf">6.10e-06</span><span class="p">,</span>
+        <span class="mf">375.0</span><span class="p">:</span> <span class="mf">6.90e-06</span><span class="p">,</span>
+        <span class="mf">376.0</span><span class="p">:</span> <span class="mf">7.90e-06</span><span class="p">,</span>
+        <span class="mf">377.0</span><span class="p">:</span> <span class="mf">9.00e-06</span><span class="p">,</span>
+        <span class="mf">378.0</span><span class="p">:</span> <span class="mf">1.02e-05</span><span class="p">,</span>
+        <span class="mf">379.0</span><span class="p">:</span> <span class="mf">1.15e-05</span><span class="p">,</span>
+        <span class="mf">380.0</span><span class="p">:</span> <span class="mf">1.28e-05</span><span class="p">,</span>
+        <span class="mf">381.0</span><span class="p">:</span> <span class="mf">1.41e-05</span><span class="p">,</span>
+        <span class="mf">382.0</span><span class="p">:</span> <span class="mf">1.54e-05</span><span class="p">,</span>
+        <span class="mf">383.0</span><span class="p">:</span> <span class="mf">1.69e-05</span><span class="p">,</span>
+        <span class="mf">384.0</span><span class="p">:</span> <span class="mf">1.87e-05</span><span class="p">,</span>
+        <span class="mf">385.0</span><span class="p">:</span> <span class="mf">2.09e-05</span><span class="p">,</span>
+        <span class="mf">386.0</span><span class="p">:</span> <span class="mf">2.37e-05</span><span class="p">,</span>
+        <span class="mf">387.0</span><span class="p">:</span> <span class="mf">2.71e-05</span><span class="p">,</span>
+        <span class="mf">388.0</span><span class="p">:</span> <span class="mf">3.09e-05</span><span class="p">,</span>
+        <span class="mf">389.0</span><span class="p">:</span> <span class="mf">3.51e-05</span><span class="p">,</span>
+        <span class="mf">390.0</span><span class="p">:</span> <span class="mf">3.97e-05</span><span class="p">,</span>
+        <span class="mf">391.0</span><span class="p">:</span> <span class="mf">4.45e-05</span><span class="p">,</span>
+        <span class="mf">392.0</span><span class="p">:</span> <span class="mf">4.99e-05</span><span class="p">,</span>
+        <span class="mf">393.0</span><span class="p">:</span> <span class="mf">5.59e-05</span><span class="p">,</span>
+        <span class="mf">394.0</span><span class="p">:</span> <span class="mf">6.31e-05</span><span class="p">,</span>
+        <span class="mf">395.0</span><span class="p">:</span> <span class="mf">7.16e-05</span><span class="p">,</span>
+        <span class="mf">396.0</span><span class="p">:</span> <span class="mf">8.19e-05</span><span class="p">,</span>
+        <span class="mf">397.0</span><span class="p">:</span> <span class="mf">9.38e-05</span><span class="p">,</span>
+        <span class="mf">398.0</span><span class="p">:</span> <span class="mf">0.0001068</span><span class="p">,</span>
+        <span class="mf">399.0</span><span class="p">:</span> <span class="mf">0.0001204</span><span class="p">,</span>
+        <span class="mf">400.0</span><span class="p">:</span> <span class="mf">0.0001339</span><span class="p">,</span>
+        <span class="mf">401.0</span><span class="p">:</span> <span class="mf">0.0001469</span><span class="p">,</span>
+        <span class="mf">402.0</span><span class="p">:</span> <span class="mf">0.0001604</span><span class="p">,</span>
+        <span class="mf">403.0</span><span class="p">:</span> <span class="mf">0.0001757</span><span class="p">,</span>
+        <span class="mf">404.0</span><span class="p">:</span> <span class="mf">0.0001941</span><span class="p">,</span>
+        <span class="mf">405.0</span><span class="p">:</span> <span class="mf">0.0002169</span><span class="p">,</span>
+        <span class="mf">406.0</span><span class="p">:</span> <span class="mf">0.0002452</span><span class="p">,</span>
+        <span class="mf">407.0</span><span class="p">:</span> <span class="mf">0.0002786</span><span class="p">,</span>
+        <span class="mf">408.0</span><span class="p">:</span> <span class="mf">0.0003169</span><span class="p">,</span>
+        <span class="mf">409.0</span><span class="p">:</span> <span class="mf">0.0003598</span><span class="p">,</span>
+        <span class="mf">410.0</span><span class="p">:</span> <span class="mf">0.0004070</span><span class="p">,</span>
+        <span class="mf">411.0</span><span class="p">:</span> <span class="mf">0.0004583</span><span class="p">,</span>
+        <span class="mf">412.0</span><span class="p">:</span> <span class="mf">0.0005147</span><span class="p">,</span>
+        <span class="mf">413.0</span><span class="p">:</span> <span class="mf">0.0005773</span><span class="p">,</span>
+        <span class="mf">414.0</span><span class="p">:</span> <span class="mf">0.0006474</span><span class="p">,</span>
+        <span class="mf">415.0</span><span class="p">:</span> <span class="mf">0.0007262</span><span class="p">,</span>
+        <span class="mf">416.0</span><span class="p">:</span> <span class="mf">0.0008134</span><span class="p">,</span>
+        <span class="mf">417.0</span><span class="p">:</span> <span class="mf">0.0009090</span><span class="p">,</span>
+        <span class="mf">418.0</span><span class="p">:</span> <span class="mf">0.0010141</span><span class="p">,</span>
+        <span class="mf">419.0</span><span class="p">:</span> <span class="mf">0.0011297</span><span class="p">,</span>
+        <span class="mf">420.0</span><span class="p">:</span> <span class="mf">0.0012570</span><span class="p">,</span>
+        <span class="mf">421.0</span><span class="p">:</span> <span class="mf">0.0013971</span><span class="p">,</span>
+        <span class="mf">422.0</span><span class="p">:</span> <span class="mf">0.0015472</span><span class="p">,</span>
+        <span class="mf">423.0</span><span class="p">:</span> <span class="mf">0.0017023</span><span class="p">,</span>
+        <span class="mf">424.0</span><span class="p">:</span> <span class="mf">0.0018579</span><span class="p">,</span>
+        <span class="mf">425.0</span><span class="p">:</span> <span class="mf">0.0020090</span><span class="p">,</span>
+        <span class="mf">426.0</span><span class="p">:</span> <span class="mf">0.0021532</span><span class="p">,</span>
+        <span class="mf">427.0</span><span class="p">:</span> <span class="mf">0.0022907</span><span class="p">,</span>
+        <span class="mf">428.0</span><span class="p">:</span> <span class="mf">0.0024207</span><span class="p">,</span>
+        <span class="mf">429.0</span><span class="p">:</span> <span class="mf">0.0025425</span><span class="p">,</span>
+        <span class="mf">430.0</span><span class="p">:</span> <span class="mf">0.0026557</span><span class="p">,</span>
+        <span class="mf">431.0</span><span class="p">:</span> <span class="mf">0.0027590</span><span class="p">,</span>
+        <span class="mf">432.0</span><span class="p">:</span> <span class="mf">0.0028521</span><span class="p">,</span>
+        <span class="mf">433.0</span><span class="p">:</span> <span class="mf">0.0029352</span><span class="p">,</span>
+        <span class="mf">434.0</span><span class="p">:</span> <span class="mf">0.0030087</span><span class="p">,</span>
+        <span class="mf">435.0</span><span class="p">:</span> <span class="mf">0.0030728</span><span class="p">,</span>
+        <span class="mf">436.0</span><span class="p">:</span> <span class="mf">0.0031276</span><span class="p">,</span>
+        <span class="mf">437.0</span><span class="p">:</span> <span class="mf">0.0031730</span><span class="p">,</span>
+        <span class="mf">438.0</span><span class="p">:</span> <span class="mf">0.0032096</span><span class="p">,</span>
+        <span class="mf">439.0</span><span class="p">:</span> <span class="mf">0.0032377</span><span class="p">,</span>
+        <span class="mf">440.0</span><span class="p">:</span> <span class="mf">0.0032578</span><span class="p">,</span>
+        <span class="mf">441.0</span><span class="p">:</span> <span class="mf">0.0032702</span><span class="p">,</span>
+        <span class="mf">442.0</span><span class="p">:</span> <span class="mf">0.0032753</span><span class="p">,</span>
+        <span class="mf">443.0</span><span class="p">:</span> <span class="mf">0.0032740</span><span class="p">,</span>
+        <span class="mf">444.0</span><span class="p">:</span> <span class="mf">0.0032672</span><span class="p">,</span>
+        <span class="mf">445.0</span><span class="p">:</span> <span class="mf">0.0032557</span><span class="p">,</span>
+        <span class="mf">446.0</span><span class="p">:</span> <span class="mf">0.0032400</span><span class="p">,</span>
+        <span class="mf">447.0</span><span class="p">:</span> <span class="mf">0.0032202</span><span class="p">,</span>
+        <span class="mf">448.0</span><span class="p">:</span> <span class="mf">0.0031972</span><span class="p">,</span>
+        <span class="mf">449.0</span><span class="p">:</span> <span class="mf">0.0031718</span><span class="p">,</span>
+        <span class="mf">450.0</span><span class="p">:</span> <span class="mf">0.0031448</span><span class="p">,</span>
+        <span class="mf">451.0</span><span class="p">:</span> <span class="mf">0.0031167</span><span class="p">,</span>
+        <span class="mf">452.0</span><span class="p">:</span> <span class="mf">0.0030871</span><span class="p">,</span>
+        <span class="mf">453.0</span><span class="p">:</span> <span class="mf">0.0030553</span><span class="p">,</span>
+        <span class="mf">454.0</span><span class="p">:</span> <span class="mf">0.0030202</span><span class="p">,</span>
+        <span class="mf">455.0</span><span class="p">:</span> <span class="mf">0.0029810</span><span class="p">,</span>
+        <span class="mf">456.0</span><span class="p">:</span> <span class="mf">0.0029373</span><span class="p">,</span>
+        <span class="mf">457.0</span><span class="p">:</span> <span class="mf">0.0028892</span><span class="p">,</span>
+        <span class="mf">458.0</span><span class="p">:</span> <span class="mf">0.0028368</span><span class="p">,</span>
+        <span class="mf">459.0</span><span class="p">:</span> <span class="mf">0.0027804</span><span class="p">,</span>
+        <span class="mf">460.0</span><span class="p">:</span> <span class="mf">0.0027200</span><span class="p">,</span>
+        <span class="mf">461.0</span><span class="p">:</span> <span class="mf">0.0026561</span><span class="p">,</span>
+        <span class="mf">462.0</span><span class="p">:</span> <span class="mf">0.0025883</span><span class="p">,</span>
+        <span class="mf">463.0</span><span class="p">:</span> <span class="mf">0.0025153</span><span class="p">,</span>
+        <span class="mf">464.0</span><span class="p">:</span> <span class="mf">0.0024358</span><span class="p">,</span>
+        <span class="mf">465.0</span><span class="p">:</span> <span class="mf">0.0023486</span><span class="p">,</span>
+        <span class="mf">466.0</span><span class="p">:</span> <span class="mf">0.0022527</span><span class="p">,</span>
+        <span class="mf">467.0</span><span class="p">:</span> <span class="mf">0.0021498</span><span class="p">,</span>
+        <span class="mf">468.0</span><span class="p">:</span> <span class="mf">0.0020427</span><span class="p">,</span>
+        <span class="mf">469.0</span><span class="p">:</span> <span class="mf">0.0019343</span><span class="p">,</span>
+        <span class="mf">470.0</span><span class="p">:</span> <span class="mf">0.0018271</span><span class="p">,</span>
+        <span class="mf">471.0</span><span class="p">:</span> <span class="mf">0.0017229</span><span class="p">,</span>
+        <span class="mf">472.0</span><span class="p">:</span> <span class="mf">0.0016210</span><span class="p">,</span>
+        <span class="mf">473.0</span><span class="p">:</span> <span class="mf">0.0015215</span><span class="p">,</span>
+        <span class="mf">474.0</span><span class="p">:</span> <span class="mf">0.0014242</span><span class="p">,</span>
+        <span class="mf">475.0</span><span class="p">:</span> <span class="mf">0.0013289</span><span class="p">,</span>
+        <span class="mf">476.0</span><span class="p">:</span> <span class="mf">0.0012361</span><span class="p">,</span>
+        <span class="mf">477.0</span><span class="p">:</span> <span class="mf">0.0011462</span><span class="p">,</span>
+        <span class="mf">478.0</span><span class="p">:</span> <span class="mf">0.0010593</span><span class="p">,</span>
+        <span class="mf">479.0</span><span class="p">:</span> <span class="mf">0.0009753</span><span class="p">,</span>
+        <span class="mf">480.0</span><span class="p">:</span> <span class="mf">0.0008943</span><span class="p">,</span>
+        <span class="mf">481.0</span><span class="p">:</span> <span class="mf">0.0008163</span><span class="p">,</span>
+        <span class="mf">482.0</span><span class="p">:</span> <span class="mf">0.0007416</span><span class="p">,</span>
+        <span class="mf">483.0</span><span class="p">:</span> <span class="mf">0.0006706</span><span class="p">,</span>
+        <span class="mf">484.0</span><span class="p">:</span> <span class="mf">0.0006038</span><span class="p">,</span>
+        <span class="mf">485.0</span><span class="p">:</span> <span class="mf">0.0005418</span><span class="p">,</span>
+        <span class="mf">486.0</span><span class="p">:</span> <span class="mf">0.0004848</span><span class="p">,</span>
+        <span class="mf">487.0</span><span class="p">:</span> <span class="mf">0.0004326</span><span class="p">,</span>
+        <span class="mf">488.0</span><span class="p">:</span> <span class="mf">0.0003847</span><span class="p">,</span>
+        <span class="mf">489.0</span><span class="p">:</span> <span class="mf">0.0003403</span><span class="p">,</span>
+        <span class="mf">490.0</span><span class="p">:</span> <span class="mf">0.0002992</span><span class="p">,</span>
+        <span class="mf">491.0</span><span class="p">:</span> <span class="mf">0.0002609</span><span class="p">,</span>
+        <span class="mf">492.0</span><span class="p">:</span> <span class="mf">0.0002256</span><span class="p">,</span>
+        <span class="mf">493.0</span><span class="p">:</span> <span class="mf">0.0001933</span><span class="p">,</span>
+        <span class="mf">494.0</span><span class="p">:</span> <span class="mf">0.0001638</span><span class="p">,</span>
+        <span class="mf">495.0</span><span class="p">:</span> <span class="mf">0.0001373</span><span class="p">,</span>
+        <span class="mf">496.0</span><span class="p">:</span> <span class="mf">0.0001135</span><span class="p">,</span>
+        <span class="mf">497.0</span><span class="p">:</span> <span class="mf">9.26e-05</span><span class="p">,</span>
+        <span class="mf">498.0</span><span class="p">:</span> <span class="mf">7.43e-05</span><span class="p">,</span>
+        <span class="mf">499.0</span><span class="p">:</span> <span class="mf">5.87e-05</span><span class="p">,</span>
+        <span class="mf">500.0</span><span class="p">:</span> <span class="mf">4.56e-05</span><span class="p">,</span>
+        <span class="mf">501.0</span><span class="p">:</span> <span class="mf">3.51e-05</span><span class="p">,</span>
+        <span class="mf">502.0</span><span class="p">:</span> <span class="mf">2.73e-05</span><span class="p">,</span>
+        <span class="mf">503.0</span><span class="p">:</span> <span class="mf">2.25e-05</span><span class="p">,</span>
+        <span class="mf">504.0</span><span class="p">:</span> <span class="mf">2.07e-05</span><span class="p">,</span>
+        <span class="mf">505.0</span><span class="p">:</span> <span class="mf">2.23e-05</span><span class="p">,</span>
+        <span class="mf">506.0</span><span class="p">:</span> <span class="mf">2.72e-05</span><span class="p">,</span>
+        <span class="mf">507.0</span><span class="p">:</span> <span class="mf">3.57e-05</span><span class="p">,</span>
+        <span class="mf">508.0</span><span class="p">:</span> <span class="mf">4.83e-05</span><span class="p">,</span>
+        <span class="mf">509.0</span><span class="p">:</span> <span class="mf">6.52e-05</span><span class="p">,</span>
+        <span class="mf">510.0</span><span class="p">:</span> <span class="mf">8.69e-05</span><span class="p">,</span>
+        <span class="mf">511.0</span><span class="p">:</span> <span class="mf">0.0001136</span><span class="p">,</span>
+        <span class="mf">512.0</span><span class="p">:</span> <span class="mf">0.0001453</span><span class="p">,</span>
+        <span class="mf">513.0</span><span class="p">:</span> <span class="mf">0.0001822</span><span class="p">,</span>
+        <span class="mf">514.0</span><span class="p">:</span> <span class="mf">0.0002244</span><span class="p">,</span>
+        <span class="mf">515.0</span><span class="p">:</span> <span class="mf">0.0002722</span><span class="p">,</span>
+        <span class="mf">516.0</span><span class="p">:</span> <span class="mf">0.0003257</span><span class="p">,</span>
+        <span class="mf">517.0</span><span class="p">:</span> <span class="mf">0.0003847</span><span class="p">,</span>
+        <span class="mf">518.0</span><span class="p">:</span> <span class="mf">0.0004490</span><span class="p">,</span>
+        <span class="mf">519.0</span><span class="p">:</span> <span class="mf">0.0005182</span><span class="p">,</span>
+        <span class="mf">520.0</span><span class="p">:</span> <span class="mf">0.0005920</span><span class="p">,</span>
+        <span class="mf">521.0</span><span class="p">:</span> <span class="mf">0.0006703</span><span class="p">,</span>
+        <span class="mf">522.0</span><span class="p">:</span> <span class="mf">0.0007529</span><span class="p">,</span>
+        <span class="mf">523.0</span><span class="p">:</span> <span class="mf">0.0008398</span><span class="p">,</span>
+        <span class="mf">524.0</span><span class="p">:</span> <span class="mf">0.0009307</span><span class="p">,</span>
+        <span class="mf">525.0</span><span class="p">:</span> <span class="mf">0.0010256</span><span class="p">,</span>
+        <span class="mf">526.0</span><span class="p">:</span> <span class="mf">0.0011245</span><span class="p">,</span>
+        <span class="mf">527.0</span><span class="p">:</span> <span class="mf">0.0012270</span><span class="p">,</span>
+        <span class="mf">528.0</span><span class="p">:</span> <span class="mf">0.0013323</span><span class="p">,</span>
+        <span class="mf">529.0</span><span class="p">:</span> <span class="mf">0.0014398</span><span class="p">,</span>
+        <span class="mf">530.0</span><span class="p">:</span> <span class="mf">0.0015488</span><span class="p">,</span>
+        <span class="mf">531.0</span><span class="p">:</span> <span class="mf">0.0016588</span><span class="p">,</span>
+        <span class="mf">532.0</span><span class="p">:</span> <span class="mf">0.0017700</span><span class="p">,</span>
+        <span class="mf">533.0</span><span class="p">:</span> <span class="mf">0.0018826</span><span class="p">,</span>
+        <span class="mf">534.0</span><span class="p">:</span> <span class="mf">0.0019967</span><span class="p">,</span>
+        <span class="mf">535.0</span><span class="p">:</span> <span class="mf">0.0021126</span><span class="p">,</span>
+        <span class="mf">536.0</span><span class="p">:</span> <span class="mf">0.0022303</span><span class="p">,</span>
+        <span class="mf">537.0</span><span class="p">:</span> <span class="mf">0.0023496</span><span class="p">,</span>
+        <span class="mf">538.0</span><span class="p">:</span> <span class="mf">0.0024705</span><span class="p">,</span>
+        <span class="mf">539.0</span><span class="p">:</span> <span class="mf">0.0025932</span><span class="p">,</span>
+        <span class="mf">540.0</span><span class="p">:</span> <span class="mf">0.0027177</span><span class="p">,</span>
+        <span class="mf">541.0</span><span class="p">:</span> <span class="mf">0.0028439</span><span class="p">,</span>
+        <span class="mf">542.0</span><span class="p">:</span> <span class="mf">0.0029720</span><span class="p">,</span>
+        <span class="mf">543.0</span><span class="p">:</span> <span class="mf">0.0031017</span><span class="p">,</span>
+        <span class="mf">544.0</span><span class="p">:</span> <span class="mf">0.0032332</span><span class="p">,</span>
+        <span class="mf">545.0</span><span class="p">:</span> <span class="mf">0.0033662</span><span class="p">,</span>
+        <span class="mf">546.0</span><span class="p">:</span> <span class="mf">0.0035008</span><span class="p">,</span>
+        <span class="mf">547.0</span><span class="p">:</span> <span class="mf">0.0036370</span><span class="p">,</span>
+        <span class="mf">548.0</span><span class="p">:</span> <span class="mf">0.0037750</span><span class="p">,</span>
+        <span class="mf">549.0</span><span class="p">:</span> <span class="mf">0.0039147</span><span class="p">,</span>
+        <span class="mf">550.0</span><span class="p">:</span> <span class="mf">0.0040564</span><span class="p">,</span>
+        <span class="mf">551.0</span><span class="p">:</span> <span class="mf">0.0042000</span><span class="p">,</span>
+        <span class="mf">552.0</span><span class="p">:</span> <span class="mf">0.0043454</span><span class="p">,</span>
+        <span class="mf">553.0</span><span class="p">:</span> <span class="mf">0.0044926</span><span class="p">,</span>
+        <span class="mf">554.0</span><span class="p">:</span> <span class="mf">0.0046415</span><span class="p">,</span>
+        <span class="mf">555.0</span><span class="p">:</span> <span class="mf">0.0047920</span><span class="p">,</span>
+        <span class="mf">556.0</span><span class="p">:</span> <span class="mf">0.0049440</span><span class="p">,</span>
+        <span class="mf">557.0</span><span class="p">:</span> <span class="mf">0.0050975</span><span class="p">,</span>
+        <span class="mf">558.0</span><span class="p">:</span> <span class="mf">0.0052520</span><span class="p">,</span>
+        <span class="mf">559.0</span><span class="p">:</span> <span class="mf">0.0054075</span><span class="p">,</span>
+        <span class="mf">560.0</span><span class="p">:</span> <span class="mf">0.0055636</span><span class="p">,</span>
+        <span class="mf">561.0</span><span class="p">:</span> <span class="mf">0.0057201</span><span class="p">,</span>
+        <span class="mf">562.0</span><span class="p">:</span> <span class="mf">0.0058769</span><span class="p">,</span>
+        <span class="mf">563.0</span><span class="p">:</span> <span class="mf">0.0060339</span><span class="p">,</span>
+        <span class="mf">564.0</span><span class="p">:</span> <span class="mf">0.0061913</span><span class="p">,</span>
+        <span class="mf">565.0</span><span class="p">:</span> <span class="mf">0.0063488</span><span class="p">,</span>
+        <span class="mf">566.0</span><span class="p">:</span> <span class="mf">0.0065063</span><span class="p">,</span>
+        <span class="mf">567.0</span><span class="p">:</span> <span class="mf">0.0066637</span><span class="p">,</span>
+        <span class="mf">568.0</span><span class="p">:</span> <span class="mf">0.0068207</span><span class="p">,</span>
+        <span class="mf">569.0</span><span class="p">:</span> <span class="mf">0.0069769</span><span class="p">,</span>
+        <span class="mf">570.0</span><span class="p">:</span> <span class="mf">0.0071321</span><span class="p">,</span>
+        <span class="mf">571.0</span><span class="p">:</span> <span class="mf">0.0072859</span><span class="p">,</span>
+        <span class="mf">572.0</span><span class="p">:</span> <span class="mf">0.0074383</span><span class="p">,</span>
+        <span class="mf">573.0</span><span class="p">:</span> <span class="mf">0.0075890</span><span class="p">,</span>
+        <span class="mf">574.0</span><span class="p">:</span> <span class="mf">0.0077378</span><span class="p">,</span>
+        <span class="mf">575.0</span><span class="p">:</span> <span class="mf">0.0078845</span><span class="p">,</span>
+        <span class="mf">576.0</span><span class="p">:</span> <span class="mf">0.0080289</span><span class="p">,</span>
+        <span class="mf">577.0</span><span class="p">:</span> <span class="mf">0.0081707</span><span class="p">,</span>
+        <span class="mf">578.0</span><span class="p">:</span> <span class="mf">0.0083093</span><span class="p">,</span>
+        <span class="mf">579.0</span><span class="p">:</span> <span class="mf">0.0084443</span><span class="p">,</span>
+        <span class="mf">580.0</span><span class="p">:</span> <span class="mf">0.0085751</span><span class="p">,</span>
+        <span class="mf">581.0</span><span class="p">:</span> <span class="mf">0.0087015</span><span class="p">,</span>
+        <span class="mf">582.0</span><span class="p">:</span> <span class="mf">0.0088231</span><span class="p">,</span>
+        <span class="mf">583.0</span><span class="p">:</span> <span class="mf">0.0089399</span><span class="p">,</span>
+        <span class="mf">584.0</span><span class="p">:</span> <span class="mf">0.0090516</span><span class="p">,</span>
+        <span class="mf">585.0</span><span class="p">:</span> <span class="mf">0.0091582</span><span class="p">,</span>
+        <span class="mf">586.0</span><span class="p">:</span> <span class="mf">0.0092591</span><span class="p">,</span>
+        <span class="mf">587.0</span><span class="p">:</span> <span class="mf">0.0093542</span><span class="p">,</span>
+        <span class="mf">588.0</span><span class="p">:</span> <span class="mf">0.0094435</span><span class="p">,</span>
+        <span class="mf">589.0</span><span class="p">:</span> <span class="mf">0.0095269</span><span class="p">,</span>
+        <span class="mf">590.0</span><span class="p">:</span> <span class="mf">0.0096046</span><span class="p">,</span>
+        <span class="mf">591.0</span><span class="p">:</span> <span class="mf">0.0096765</span><span class="p">,</span>
+        <span class="mf">592.0</span><span class="p">:</span> <span class="mf">0.0097420</span><span class="p">,</span>
+        <span class="mf">593.0</span><span class="p">:</span> <span class="mf">0.0098000</span><span class="p">,</span>
+        <span class="mf">594.0</span><span class="p">:</span> <span class="mf">0.0098494</span><span class="p">,</span>
+        <span class="mf">595.0</span><span class="p">:</span> <span class="mf">0.0098891</span><span class="p">,</span>
+        <span class="mf">596.0</span><span class="p">:</span> <span class="mf">0.0099180</span><span class="p">,</span>
+        <span class="mf">597.0</span><span class="p">:</span> <span class="mf">0.0099368</span><span class="p">,</span>
+        <span class="mf">598.0</span><span class="p">:</span> <span class="mf">0.0099462</span><span class="p">,</span>
+        <span class="mf">599.0</span><span class="p">:</span> <span class="mf">0.0099472</span><span class="p">,</span>
+        <span class="mf">600.0</span><span class="p">:</span> <span class="mf">0.0099405</span><span class="p">,</span>
+        <span class="mf">601.0</span><span class="p">:</span> <span class="mf">0.0099268</span><span class="p">,</span>
+        <span class="mf">602.0</span><span class="p">:</span> <span class="mf">0.0099054</span><span class="p">,</span>
+        <span class="mf">603.0</span><span class="p">:</span> <span class="mf">0.0098752</span><span class="p">,</span>
+        <span class="mf">604.0</span><span class="p">:</span> <span class="mf">0.0098355</span><span class="p">,</span>
+        <span class="mf">605.0</span><span class="p">:</span> <span class="mf">0.0097852</span><span class="p">,</span>
+        <span class="mf">606.0</span><span class="p">:</span> <span class="mf">0.0097238</span><span class="p">,</span>
+        <span class="mf">607.0</span><span class="p">:</span> <span class="mf">0.0096519</span><span class="p">,</span>
+        <span class="mf">608.0</span><span class="p">:</span> <span class="mf">0.0095705</span><span class="p">,</span>
+        <span class="mf">609.0</span><span class="p">:</span> <span class="mf">0.0094805</span><span class="p">,</span>
+        <span class="mf">610.0</span><span class="p">:</span> <span class="mf">0.0093828</span><span class="p">,</span>
+        <span class="mf">611.0</span><span class="p">:</span> <span class="mf">0.0092776</span><span class="p">,</span>
+        <span class="mf">612.0</span><span class="p">:</span> <span class="mf">0.0091650</span><span class="p">,</span>
+        <span class="mf">613.0</span><span class="p">:</span> <span class="mf">0.0090448</span><span class="p">,</span>
+        <span class="mf">614.0</span><span class="p">:</span> <span class="mf">0.0089172</span><span class="p">,</span>
+        <span class="mf">615.0</span><span class="p">:</span> <span class="mf">0.0087819</span><span class="p">,</span>
+        <span class="mf">616.0</span><span class="p">:</span> <span class="mf">0.0086396</span><span class="p">,</span>
+        <span class="mf">617.0</span><span class="p">:</span> <span class="mf">0.0084904</span><span class="p">,</span>
+        <span class="mf">618.0</span><span class="p">:</span> <span class="mf">0.0083337</span><span class="p">,</span>
+        <span class="mf">619.0</span><span class="p">:</span> <span class="mf">0.0081692</span><span class="p">,</span>
+        <span class="mf">620.0</span><span class="p">:</span> <span class="mf">0.0079963</span><span class="p">,</span>
+        <span class="mf">621.0</span><span class="p">:</span> <span class="mf">0.0078151</span><span class="p">,</span>
+        <span class="mf">622.0</span><span class="p">:</span> <span class="mf">0.0076266</span><span class="p">,</span>
+        <span class="mf">623.0</span><span class="p">:</span> <span class="mf">0.0074323</span><span class="p">,</span>
+        <span class="mf">624.0</span><span class="p">:</span> <span class="mf">0.0072336</span><span class="p">,</span>
+        <span class="mf">625.0</span><span class="p">:</span> <span class="mf">0.0070319</span><span class="p">,</span>
+        <span class="mf">626.0</span><span class="p">:</span> <span class="mf">0.0068278</span><span class="p">,</span>
+        <span class="mf">627.0</span><span class="p">:</span> <span class="mf">0.0066219</span><span class="p">,</span>
+        <span class="mf">628.0</span><span class="p">:</span> <span class="mf">0.0064162</span><span class="p">,</span>
+        <span class="mf">629.0</span><span class="p">:</span> <span class="mf">0.0062122</span><span class="p">,</span>
+        <span class="mf">630.0</span><span class="p">:</span> <span class="mf">0.0060119</span><span class="p">,</span>
+        <span class="mf">631.0</span><span class="p">:</span> <span class="mf">0.0058164</span><span class="p">,</span>
+        <span class="mf">632.0</span><span class="p">:</span> <span class="mf">0.0056255</span><span class="p">,</span>
+        <span class="mf">633.0</span><span class="p">:</span> <span class="mf">0.0054382</span><span class="p">,</span>
+        <span class="mf">634.0</span><span class="p">:</span> <span class="mf">0.0052538</span><span class="p">,</span>
+        <span class="mf">635.0</span><span class="p">:</span> <span class="mf">0.0050713</span><span class="p">,</span>
+        <span class="mf">636.0</span><span class="p">:</span> <span class="mf">0.0048907</span><span class="p">,</span>
+        <span class="mf">637.0</span><span class="p">:</span> <span class="mf">0.0047124</span><span class="p">,</span>
+        <span class="mf">638.0</span><span class="p">:</span> <span class="mf">0.0045364</span><span class="p">,</span>
+        <span class="mf">639.0</span><span class="p">:</span> <span class="mf">0.0043628</span><span class="p">,</span>
+        <span class="mf">640.0</span><span class="p">:</span> <span class="mf">0.0041916</span><span class="p">,</span>
+        <span class="mf">641.0</span><span class="p">:</span> <span class="mf">0.0040228</span><span class="p">,</span>
+        <span class="mf">642.0</span><span class="p">:</span> <span class="mf">0.0038566</span><span class="p">,</span>
+        <span class="mf">643.0</span><span class="p">:</span> <span class="mf">0.0036932</span><span class="p">,</span>
+        <span class="mf">644.0</span><span class="p">:</span> <span class="mf">0.0035331</span><span class="p">,</span>
+        <span class="mf">645.0</span><span class="p">:</span> <span class="mf">0.0033765</span><span class="p">,</span>
+        <span class="mf">646.0</span><span class="p">:</span> <span class="mf">0.0032236</span><span class="p">,</span>
+        <span class="mf">647.0</span><span class="p">:</span> <span class="mf">0.0030744</span><span class="p">,</span>
+        <span class="mf">648.0</span><span class="p">:</span> <span class="mf">0.0029294</span><span class="p">,</span>
+        <span class="mf">649.0</span><span class="p">:</span> <span class="mf">0.0027888</span><span class="p">,</span>
+        <span class="mf">650.0</span><span class="p">:</span> <span class="mf">0.0026531</span><span class="p">,</span>
+        <span class="mf">651.0</span><span class="p">:</span> <span class="mf">0.0025225</span><span class="p">,</span>
+        <span class="mf">652.0</span><span class="p">:</span> <span class="mf">0.0023969</span><span class="p">,</span>
+        <span class="mf">653.0</span><span class="p">:</span> <span class="mf">0.0022759</span><span class="p">,</span>
+        <span class="mf">654.0</span><span class="p">:</span> <span class="mf">0.0021592</span><span class="p">,</span>
+        <span class="mf">655.0</span><span class="p">:</span> <span class="mf">0.0020467</span><span class="p">,</span>
+        <span class="mf">656.0</span><span class="p">:</span> <span class="mf">0.0019381</span><span class="p">,</span>
+        <span class="mf">657.0</span><span class="p">:</span> <span class="mf">0.0018335</span><span class="p">,</span>
+        <span class="mf">658.0</span><span class="p">:</span> <span class="mf">0.0017329</span><span class="p">,</span>
+        <span class="mf">659.0</span><span class="p">:</span> <span class="mf">0.0016362</span><span class="p">,</span>
+        <span class="mf">660.0</span><span class="p">:</span> <span class="mf">0.0015432</span><span class="p">,</span>
+        <span class="mf">661.0</span><span class="p">:</span> <span class="mf">0.0014540</span><span class="p">,</span>
+        <span class="mf">662.0</span><span class="p">:</span> <span class="mf">0.0013685</span><span class="p">,</span>
+        <span class="mf">663.0</span><span class="p">:</span> <span class="mf">0.0012867</span><span class="p">,</span>
+        <span class="mf">664.0</span><span class="p">:</span> <span class="mf">0.0012086</span><span class="p">,</span>
+        <span class="mf">665.0</span><span class="p">:</span> <span class="mf">0.0011342</span><span class="p">,</span>
+        <span class="mf">666.0</span><span class="p">:</span> <span class="mf">0.0010635</span><span class="p">,</span>
+        <span class="mf">667.0</span><span class="p">:</span> <span class="mf">0.0009963</span><span class="p">,</span>
+        <span class="mf">668.0</span><span class="p">:</span> <span class="mf">0.0009329</span><span class="p">,</span>
+        <span class="mf">669.0</span><span class="p">:</span> <span class="mf">0.0008734</span><span class="p">,</span>
+        <span class="mf">670.0</span><span class="p">:</span> <span class="mf">0.0008179</span><span class="p">,</span>
+        <span class="mf">671.0</span><span class="p">:</span> <span class="mf">0.0007665</span><span class="p">,</span>
+        <span class="mf">672.0</span><span class="p">:</span> <span class="mf">0.0007188</span><span class="p">,</span>
+        <span class="mf">673.0</span><span class="p">:</span> <span class="mf">0.0006745</span><span class="p">,</span>
+        <span class="mf">674.0</span><span class="p">:</span> <span class="mf">0.0006334</span><span class="p">,</span>
+        <span class="mf">675.0</span><span class="p">:</span> <span class="mf">0.0005952</span><span class="p">,</span>
+        <span class="mf">676.0</span><span class="p">:</span> <span class="mf">0.0005597</span><span class="p">,</span>
+        <span class="mf">677.0</span><span class="p">:</span> <span class="mf">0.0005267</span><span class="p">,</span>
+        <span class="mf">678.0</span><span class="p">:</span> <span class="mf">0.0004957</span><span class="p">,</span>
+        <span class="mf">679.0</span><span class="p">:</span> <span class="mf">0.0004662</span><span class="p">,</span>
+        <span class="mf">680.0</span><span class="p">:</span> <span class="mf">0.0004377</span><span class="p">,</span>
+        <span class="mf">681.0</span><span class="p">:</span> <span class="mf">0.0004097</span><span class="p">,</span>
+        <span class="mf">682.0</span><span class="p">:</span> <span class="mf">0.0003825</span><span class="p">,</span>
+        <span class="mf">683.0</span><span class="p">:</span> <span class="mf">0.0003563</span><span class="p">,</span>
+        <span class="mf">684.0</span><span class="p">:</span> <span class="mf">0.0003313</span><span class="p">,</span>
+        <span class="mf">685.0</span><span class="p">:</span> <span class="mf">0.0003079</span><span class="p">,</span>
+        <span class="mf">686.0</span><span class="p">:</span> <span class="mf">0.0002860</span><span class="p">,</span>
+        <span class="mf">687.0</span><span class="p">:</span> <span class="mf">0.0002656</span><span class="p">,</span>
+        <span class="mf">688.0</span><span class="p">:</span> <span class="mf">0.0002465</span><span class="p">,</span>
+        <span class="mf">689.0</span><span class="p">:</span> <span class="mf">0.0002288</span><span class="p">,</span>
+        <span class="mf">690.0</span><span class="p">:</span> <span class="mf">0.0002124</span><span class="p">,</span>
+        <span class="mf">691.0</span><span class="p">:</span> <span class="mf">0.0001973</span><span class="p">,</span>
+        <span class="mf">692.0</span><span class="p">:</span> <span class="mf">0.0001834</span><span class="p">,</span>
+        <span class="mf">693.0</span><span class="p">:</span> <span class="mf">0.0001707</span><span class="p">,</span>
+        <span class="mf">694.0</span><span class="p">:</span> <span class="mf">0.0001590</span><span class="p">,</span>
+        <span class="mf">695.0</span><span class="p">:</span> <span class="mf">0.0001482</span><span class="p">,</span>
+        <span class="mf">696.0</span><span class="p">:</span> <span class="mf">0.0001384</span><span class="p">,</span>
+        <span class="mf">697.0</span><span class="p">:</span> <span class="mf">0.0001294</span><span class="p">,</span>
+        <span class="mf">698.0</span><span class="p">:</span> <span class="mf">0.0001212</span><span class="p">,</span>
+        <span class="mf">699.0</span><span class="p">:</span> <span class="mf">0.0001135</span><span class="p">,</span>
+        <span class="mf">700.0</span><span class="p">:</span> <span class="mf">0.0001063</span><span class="p">,</span>
+        <span class="mf">701.0</span><span class="p">:</span> <span class="mf">9.95e-05</span><span class="p">,</span>
+        <span class="mf">702.0</span><span class="p">:</span> <span class="mf">9.30e-05</span><span class="p">,</span>
+        <span class="mf">703.0</span><span class="p">:</span> <span class="mf">8.69e-05</span><span class="p">,</span>
+        <span class="mf">704.0</span><span class="p">:</span> <span class="mf">8.12e-05</span><span class="p">,</span>
+        <span class="mf">705.0</span><span class="p">:</span> <span class="mf">7.59e-05</span><span class="p">,</span>
+        <span class="mf">706.0</span><span class="p">:</span> <span class="mf">7.10e-05</span><span class="p">,</span>
+        <span class="mf">707.0</span><span class="p">:</span> <span class="mf">6.63e-05</span><span class="p">,</span>
+        <span class="mf">708.0</span><span class="p">:</span> <span class="mf">6.20e-05</span><span class="p">,</span>
+        <span class="mf">709.0</span><span class="p">:</span> <span class="mf">5.80e-05</span><span class="p">,</span>
+        <span class="mf">710.0</span><span class="p">:</span> <span class="mf">5.42e-05</span><span class="p">,</span>
+        <span class="mf">711.0</span><span class="p">:</span> <span class="mf">5.06e-05</span><span class="p">,</span>
+        <span class="mf">712.0</span><span class="p">:</span> <span class="mf">4.73e-05</span><span class="p">,</span>
+        <span class="mf">713.0</span><span class="p">:</span> <span class="mf">4.41e-05</span><span class="p">,</span>
+        <span class="mf">714.0</span><span class="p">:</span> <span class="mf">4.12e-05</span><span class="p">,</span>
+        <span class="mf">715.0</span><span class="p">:</span> <span class="mf">3.85e-05</span><span class="p">,</span>
+        <span class="mf">716.0</span><span class="p">:</span> <span class="mf">3.59e-05</span><span class="p">,</span>
+        <span class="mf">717.0</span><span class="p">:</span> <span class="mf">3.35e-05</span><span class="p">,</span>
+        <span class="mf">718.0</span><span class="p">:</span> <span class="mf">3.12e-05</span><span class="p">,</span>
+        <span class="mf">719.0</span><span class="p">:</span> <span class="mf">2.91e-05</span><span class="p">,</span>
+        <span class="mf">720.0</span><span class="p">:</span> <span class="mf">2.71e-05</span><span class="p">,</span>
+        <span class="mf">721.0</span><span class="p">:</span> <span class="mf">2.53e-05</span><span class="p">,</span>
+        <span class="mf">722.0</span><span class="p">:</span> <span class="mf">2.36e-05</span><span class="p">,</span>
+        <span class="mf">723.0</span><span class="p">:</span> <span class="mf">2.20e-05</span><span class="p">,</span>
+        <span class="mf">724.0</span><span class="p">:</span> <span class="mf">2.06e-05</span><span class="p">,</span>
+        <span class="mf">725.0</span><span class="p">:</span> <span class="mf">1.92e-05</span><span class="p">,</span>
+        <span class="mf">726.0</span><span class="p">:</span> <span class="mf">1.79e-05</span><span class="p">,</span>
+        <span class="mf">727.0</span><span class="p">:</span> <span class="mf">1.67e-05</span><span class="p">,</span>
+        <span class="mf">728.0</span><span class="p">:</span> <span class="mf">1.55e-05</span><span class="p">,</span>
+        <span class="mf">729.0</span><span class="p">:</span> <span class="mf">1.45e-05</span><span class="p">,</span>
+        <span class="mf">730.0</span><span class="p">:</span> <span class="mf">1.35e-05</span><span class="p">,</span>
+        <span class="mf">731.0</span><span class="p">:</span> <span class="mf">1.25e-05</span><span class="p">,</span>
+        <span class="mf">732.0</span><span class="p">:</span> <span class="mf">1.17e-05</span><span class="p">,</span>
+        <span class="mf">733.0</span><span class="p">:</span> <span class="mf">1.08e-05</span><span class="p">,</span>
+        <span class="mf">734.0</span><span class="p">:</span> <span class="mf">1.01e-05</span><span class="p">,</span>
+        <span class="mf">735.0</span><span class="p">:</span> <span class="mf">9.40e-06</span><span class="p">,</span>
+        <span class="mf">736.0</span><span class="p">:</span> <span class="mf">8.70e-06</span><span class="p">,</span>
+        <span class="mf">737.0</span><span class="p">:</span> <span class="mf">8.10e-06</span><span class="p">,</span>
+        <span class="mf">738.0</span><span class="p">:</span> <span class="mf">7.50e-06</span><span class="p">,</span>
+        <span class="mf">739.0</span><span class="p">:</span> <span class="mf">7.00e-06</span><span class="p">,</span>
+        <span class="mf">740.0</span><span class="p">:</span> <span class="mf">6.50e-06</span><span class="p">,</span>
+        <span class="mf">741.0</span><span class="p">:</span> <span class="mf">6.00e-06</span><span class="p">,</span>
+        <span class="mf">742.0</span><span class="p">:</span> <span class="mf">5.60e-06</span><span class="p">,</span>
+        <span class="mf">743.0</span><span class="p">:</span> <span class="mf">5.20e-06</span><span class="p">,</span>
+        <span class="mf">744.0</span><span class="p">:</span> <span class="mf">4.80e-06</span><span class="p">,</span>
+        <span class="mf">745.0</span><span class="p">:</span> <span class="mf">4.50e-06</span><span class="p">,</span>
+        <span class="mf">746.0</span><span class="p">:</span> <span class="mf">4.10e-06</span><span class="p">,</span>
+        <span class="mf">747.0</span><span class="p">:</span> <span class="mf">3.90e-06</span><span class="p">,</span>
+        <span class="mf">748.0</span><span class="p">:</span> <span class="mf">3.60e-06</span><span class="p">,</span>
+        <span class="mf">749.0</span><span class="p">:</span> <span class="mf">3.30e-06</span><span class="p">,</span>
+        <span class="mf">750.0</span><span class="p">:</span> <span class="mf">3.10e-06</span><span class="p">,</span>
+        <span class="mf">751.0</span><span class="p">:</span> <span class="mf">2.90e-06</span><span class="p">,</span>
+        <span class="mf">752.0</span><span class="p">:</span> <span class="mf">2.70e-06</span><span class="p">,</span>
+        <span class="mf">753.0</span><span class="p">:</span> <span class="mf">2.50e-06</span><span class="p">,</span>
+        <span class="mf">754.0</span><span class="p">:</span> <span class="mf">2.40e-06</span><span class="p">,</span>
+        <span class="mf">755.0</span><span class="p">:</span> <span class="mf">2.20e-06</span><span class="p">,</span>
+        <span class="mf">756.0</span><span class="p">:</span> <span class="mf">2.10e-06</span><span class="p">,</span>
+        <span class="mf">757.0</span><span class="p">:</span> <span class="mf">1.90e-06</span><span class="p">,</span>
+        <span class="mf">758.0</span><span class="p">:</span> <span class="mf">1.80e-06</span><span class="p">,</span>
+        <span class="mf">759.0</span><span class="p">:</span> <span class="mf">1.70e-06</span><span class="p">,</span>
+        <span class="mf">760.0</span><span class="p">:</span> <span class="mf">1.60e-06</span><span class="p">,</span>
+        <span class="mf">761.0</span><span class="p">:</span> <span class="mf">1.50e-06</span><span class="p">,</span>
+        <span class="mf">762.0</span><span class="p">:</span> <span class="mf">1.40e-06</span><span class="p">,</span>
+        <span class="mf">763.0</span><span class="p">:</span> <span class="mf">1.30e-06</span><span class="p">,</span>
+        <span class="mf">764.0</span><span class="p">:</span> <span class="mf">1.20e-06</span><span class="p">,</span>
+        <span class="mf">765.0</span><span class="p">:</span> <span class="mf">1.10e-06</span><span class="p">,</span>
+        <span class="mf">766.0</span><span class="p">:</span> <span class="mf">1.00e-06</span><span class="p">,</span>
+        <span class="mf">767.0</span><span class="p">:</span> <span class="mf">1.00e-06</span><span class="p">,</span>
+        <span class="mf">768.0</span><span class="p">:</span> <span class="mf">9.00e-07</span><span class="p">,</span>
+        <span class="mf">769.0</span><span class="p">:</span> <span class="mf">8.00e-07</span><span class="p">,</span>
+        <span class="mf">770.0</span><span class="p">:</span> <span class="mf">8.00e-07</span><span class="p">,</span>
+        <span class="mf">771.0</span><span class="p">:</span> <span class="mf">7.00e-07</span><span class="p">,</span>
+        <span class="mf">772.0</span><span class="p">:</span> <span class="mf">7.00e-07</span><span class="p">,</span>
+        <span class="mf">773.0</span><span class="p">:</span> <span class="mf">6.00e-07</span><span class="p">,</span>
+        <span class="mf">774.0</span><span class="p">:</span> <span class="mf">6.00e-07</span><span class="p">,</span>
+        <span class="mf">775.0</span><span class="p">:</span> <span class="mf">5.00e-07</span><span class="p">,</span>
+        <span class="mf">776.0</span><span class="p">:</span> <span class="mf">5.00e-07</span><span class="p">,</span>
+        <span class="mf">777.0</span><span class="p">:</span> <span class="mf">5.00e-07</span><span class="p">,</span>
+        <span class="mf">778.0</span><span class="p">:</span> <span class="mf">4.00e-07</span><span class="p">,</span>
+        <span class="mf">779.0</span><span class="p">:</span> <span class="mf">4.00e-07</span><span class="p">,</span>
+        <span class="mf">780.0</span><span class="p">:</span> <span class="mf">4.00e-07</span><span class="p">,</span>
+        <span class="mf">781.0</span><span class="p">:</span> <span class="mf">4.00e-07</span><span class="p">,</span>
+        <span class="mf">782.0</span><span class="p">:</span> <span class="mf">3.00e-07</span><span class="p">,</span>
+        <span class="mf">783.0</span><span class="p">:</span> <span class="mf">3.00e-07</span><span class="p">,</span>
+        <span class="mf">784.0</span><span class="p">:</span> <span class="mf">3.00e-07</span><span class="p">,</span>
+        <span class="mf">785.0</span><span class="p">:</span> <span class="mf">3.00e-07</span><span class="p">,</span>
+        <span class="mf">786.0</span><span class="p">:</span> <span class="mf">3.00e-07</span><span class="p">,</span>
+        <span class="mf">787.0</span><span class="p">:</span> <span class="mf">2.00e-07</span><span class="p">,</span>
+        <span class="mf">788.0</span><span class="p">:</span> <span class="mf">2.00e-07</span><span class="p">,</span>
+        <span class="mf">789.0</span><span class="p">:</span> <span class="mf">2.00e-07</span><span class="p">,</span>
+        <span class="mf">790.0</span><span class="p">:</span> <span class="mf">2.00e-07</span><span class="p">,</span>
+        <span class="mf">791.0</span><span class="p">:</span> <span class="mf">2.00e-07</span><span class="p">,</span>
+        <span class="mf">792.0</span><span class="p">:</span> <span class="mf">2.00e-07</span><span class="p">,</span>
+        <span class="mf">793.0</span><span class="p">:</span> <span class="mf">2.00e-07</span><span class="p">,</span>
+        <span class="mf">794.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">795.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">796.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">797.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">798.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">799.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">800.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">801.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">802.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">803.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">804.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">805.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">806.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">807.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">808.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">809.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">810.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">811.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">812.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">813.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">814.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">815.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">816.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">817.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">818.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">819.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">820.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">821.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">822.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">823.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">824.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">825.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">826.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">827.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">828.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">829.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">830.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">},</span>
+    <span class="s">&#39;g_bar&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="mf">360.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">361.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">362.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">363.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">364.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">365.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">366.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">367.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">368.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">369.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">370.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">371.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">372.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">373.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">374.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">375.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">376.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">377.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">378.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">379.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">380.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">381.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">382.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">383.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">384.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">385.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">386.0</span><span class="p">:</span> <span class="mf">2.00e-07</span><span class="p">,</span>
+        <span class="mf">387.0</span><span class="p">:</span> <span class="mf">2.00e-07</span><span class="p">,</span>
+        <span class="mf">388.0</span><span class="p">:</span> <span class="mf">2.00e-07</span><span class="p">,</span>
+        <span class="mf">389.0</span><span class="p">:</span> <span class="mf">3.00e-07</span><span class="p">,</span>
+        <span class="mf">390.0</span><span class="p">:</span> <span class="mf">3.00e-07</span><span class="p">,</span>
+        <span class="mf">391.0</span><span class="p">:</span> <span class="mf">3.00e-07</span><span class="p">,</span>
+        <span class="mf">392.0</span><span class="p">:</span> <span class="mf">4.00e-07</span><span class="p">,</span>
+        <span class="mf">393.0</span><span class="p">:</span> <span class="mf">5.00e-07</span><span class="p">,</span>
+        <span class="mf">394.0</span><span class="p">:</span> <span class="mf">5.00e-07</span><span class="p">,</span>
+        <span class="mf">395.0</span><span class="p">:</span> <span class="mf">6.00e-07</span><span class="p">,</span>
+        <span class="mf">396.0</span><span class="p">:</span> <span class="mf">7.00e-07</span><span class="p">,</span>
+        <span class="mf">397.0</span><span class="p">:</span> <span class="mf">8.00e-07</span><span class="p">,</span>
+        <span class="mf">398.0</span><span class="p">:</span> <span class="mf">9.00e-07</span><span class="p">,</span>
+        <span class="mf">399.0</span><span class="p">:</span> <span class="mf">1.00e-06</span><span class="p">,</span>
+        <span class="mf">400.0</span><span class="p">:</span> <span class="mf">1.10e-06</span><span class="p">,</span>
+        <span class="mf">401.0</span><span class="p">:</span> <span class="mf">1.20e-06</span><span class="p">,</span>
+        <span class="mf">402.0</span><span class="p">:</span> <span class="mf">1.30e-06</span><span class="p">,</span>
+        <span class="mf">403.0</span><span class="p">:</span> <span class="mf">1.50e-06</span><span class="p">,</span>
+        <span class="mf">404.0</span><span class="p">:</span> <span class="mf">1.70e-06</span><span class="p">,</span>
+        <span class="mf">405.0</span><span class="p">:</span> <span class="mf">2.00e-06</span><span class="p">,</span>
+        <span class="mf">406.0</span><span class="p">:</span> <span class="mf">2.30e-06</span><span class="p">,</span>
+        <span class="mf">407.0</span><span class="p">:</span> <span class="mf">2.70e-06</span><span class="p">,</span>
+        <span class="mf">408.0</span><span class="p">:</span> <span class="mf">3.20e-06</span><span class="p">,</span>
+        <span class="mf">409.0</span><span class="p">:</span> <span class="mf">3.80e-06</span><span class="p">,</span>
+        <span class="mf">410.0</span><span class="p">:</span> <span class="mf">4.40e-06</span><span class="p">,</span>
+        <span class="mf">411.0</span><span class="p">:</span> <span class="mf">5.10e-06</span><span class="p">,</span>
+        <span class="mf">412.0</span><span class="p">:</span> <span class="mf">5.90e-06</span><span class="p">,</span>
+        <span class="mf">413.0</span><span class="p">:</span> <span class="mf">6.90e-06</span><span class="p">,</span>
+        <span class="mf">414.0</span><span class="p">:</span> <span class="mf">8.00e-06</span><span class="p">,</span>
+        <span class="mf">415.0</span><span class="p">:</span> <span class="mf">9.30e-06</span><span class="p">,</span>
+        <span class="mf">416.0</span><span class="p">:</span> <span class="mf">1.09e-05</span><span class="p">,</span>
+        <span class="mf">417.0</span><span class="p">:</span> <span class="mf">1.28e-05</span><span class="p">,</span>
+        <span class="mf">418.0</span><span class="p">:</span> <span class="mf">1.51e-05</span><span class="p">,</span>
+        <span class="mf">419.0</span><span class="p">:</span> <span class="mf">1.81e-05</span><span class="p">,</span>
+        <span class="mf">420.0</span><span class="p">:</span> <span class="mf">2.18e-05</span><span class="p">,</span>
+        <span class="mf">421.0</span><span class="p">:</span> <span class="mf">2.65e-05</span><span class="p">,</span>
+        <span class="mf">422.0</span><span class="p">:</span> <span class="mf">3.20e-05</span><span class="p">,</span>
+        <span class="mf">423.0</span><span class="p">:</span> <span class="mf">3.84e-05</span><span class="p">,</span>
+        <span class="mf">424.0</span><span class="p">:</span> <span class="mf">4.56e-05</span><span class="p">,</span>
+        <span class="mf">425.0</span><span class="p">:</span> <span class="mf">5.37e-05</span><span class="p">,</span>
+        <span class="mf">426.0</span><span class="p">:</span> <span class="mf">6.26e-05</span><span class="p">,</span>
+        <span class="mf">427.0</span><span class="p">:</span> <span class="mf">7.25e-05</span><span class="p">,</span>
+        <span class="mf">428.0</span><span class="p">:</span> <span class="mf">8.33e-05</span><span class="p">,</span>
+        <span class="mf">429.0</span><span class="p">:</span> <span class="mf">9.51e-05</span><span class="p">,</span>
+        <span class="mf">430.0</span><span class="p">:</span> <span class="mf">0.0001081</span><span class="p">,</span>
+        <span class="mf">431.0</span><span class="p">:</span> <span class="mf">0.0001221</span><span class="p">,</span>
+        <span class="mf">432.0</span><span class="p">:</span> <span class="mf">0.0001372</span><span class="p">,</span>
+        <span class="mf">433.0</span><span class="p">:</span> <span class="mf">0.0001534</span><span class="p">,</span>
+        <span class="mf">434.0</span><span class="p">:</span> <span class="mf">0.0001705</span><span class="p">,</span>
+        <span class="mf">435.0</span><span class="p">:</span> <span class="mf">0.0001886</span><span class="p">,</span>
+        <span class="mf">436.0</span><span class="p">:</span> <span class="mf">0.0002077</span><span class="p">,</span>
+        <span class="mf">437.0</span><span class="p">:</span> <span class="mf">0.0002277</span><span class="p">,</span>
+        <span class="mf">438.0</span><span class="p">:</span> <span class="mf">0.0002486</span><span class="p">,</span>
+        <span class="mf">439.0</span><span class="p">:</span> <span class="mf">0.0002702</span><span class="p">,</span>
+        <span class="mf">440.0</span><span class="p">:</span> <span class="mf">0.0002926</span><span class="p">,</span>
+        <span class="mf">441.0</span><span class="p">:</span> <span class="mf">0.0003156</span><span class="p">,</span>
+        <span class="mf">442.0</span><span class="p">:</span> <span class="mf">0.0003394</span><span class="p">,</span>
+        <span class="mf">443.0</span><span class="p">:</span> <span class="mf">0.0003640</span><span class="p">,</span>
+        <span class="mf">444.0</span><span class="p">:</span> <span class="mf">0.0003897</span><span class="p">,</span>
+        <span class="mf">445.0</span><span class="p">:</span> <span class="mf">0.0004167</span><span class="p">,</span>
+        <span class="mf">446.0</span><span class="p">:</span> <span class="mf">0.0004450</span><span class="p">,</span>
+        <span class="mf">447.0</span><span class="p">:</span> <span class="mf">0.0004745</span><span class="p">,</span>
+        <span class="mf">448.0</span><span class="p">:</span> <span class="mf">0.0005054</span><span class="p">,</span>
+        <span class="mf">449.0</span><span class="p">:</span> <span class="mf">0.0005377</span><span class="p">,</span>
+        <span class="mf">450.0</span><span class="p">:</span> <span class="mf">0.0005713</span><span class="p">,</span>
+        <span class="mf">451.0</span><span class="p">:</span> <span class="mf">0.0006062</span><span class="p">,</span>
+        <span class="mf">452.0</span><span class="p">:</span> <span class="mf">0.0006426</span><span class="p">,</span>
+        <span class="mf">453.0</span><span class="p">:</span> <span class="mf">0.0006803</span><span class="p">,</span>
+        <span class="mf">454.0</span><span class="p">:</span> <span class="mf">0.0007194</span><span class="p">,</span>
+        <span class="mf">455.0</span><span class="p">:</span> <span class="mf">0.0007598</span><span class="p">,</span>
+        <span class="mf">456.0</span><span class="p">:</span> <span class="mf">0.0008017</span><span class="p">,</span>
+        <span class="mf">457.0</span><span class="p">:</span> <span class="mf">0.0008449</span><span class="p">,</span>
+        <span class="mf">458.0</span><span class="p">:</span> <span class="mf">0.0008891</span><span class="p">,</span>
+        <span class="mf">459.0</span><span class="p">:</span> <span class="mf">0.0009342</span><span class="p">,</span>
+        <span class="mf">460.0</span><span class="p">:</span> <span class="mf">0.0009800</span><span class="p">,</span>
+        <span class="mf">461.0</span><span class="p">:</span> <span class="mf">0.0010264</span><span class="p">,</span>
+        <span class="mf">462.0</span><span class="p">:</span> <span class="mf">0.0010734</span><span class="p">,</span>
+        <span class="mf">463.0</span><span class="p">:</span> <span class="mf">0.0011211</span><span class="p">,</span>
+        <span class="mf">464.0</span><span class="p">:</span> <span class="mf">0.0011696</span><span class="p">,</span>
+        <span class="mf">465.0</span><span class="p">:</span> <span class="mf">0.0012190</span><span class="p">,</span>
+        <span class="mf">466.0</span><span class="p">:</span> <span class="mf">0.0012693</span><span class="p">,</span>
+        <span class="mf">467.0</span><span class="p">:</span> <span class="mf">0.0013205</span><span class="p">,</span>
+        <span class="mf">468.0</span><span class="p">:</span> <span class="mf">0.0013729</span><span class="p">,</span>
+        <span class="mf">469.0</span><span class="p">:</span> <span class="mf">0.0014269</span><span class="p">,</span>
+        <span class="mf">470.0</span><span class="p">:</span> <span class="mf">0.0014826</span><span class="p">,</span>
+        <span class="mf">471.0</span><span class="p">:</span> <span class="mf">0.0015401</span><span class="p">,</span>
+        <span class="mf">472.0</span><span class="p">:</span> <span class="mf">0.0015995</span><span class="p">,</span>
+        <span class="mf">473.0</span><span class="p">:</span> <span class="mf">0.0016608</span><span class="p">,</span>
+        <span class="mf">474.0</span><span class="p">:</span> <span class="mf">0.0017240</span><span class="p">,</span>
+        <span class="mf">475.0</span><span class="p">:</span> <span class="mf">0.0017891</span><span class="p">,</span>
+        <span class="mf">476.0</span><span class="p">:</span> <span class="mf">0.0018563</span><span class="p">,</span>
+        <span class="mf">477.0</span><span class="p">:</span> <span class="mf">0.0019256</span><span class="p">,</span>
+        <span class="mf">478.0</span><span class="p">:</span> <span class="mf">0.0019967</span><span class="p">,</span>
+        <span class="mf">479.0</span><span class="p">:</span> <span class="mf">0.0020690</span><span class="p">,</span>
+        <span class="mf">480.0</span><span class="p">:</span> <span class="mf">0.0021424</span><span class="p">,</span>
+        <span class="mf">481.0</span><span class="p">:</span> <span class="mf">0.0022166</span><span class="p">,</span>
+        <span class="mf">482.0</span><span class="p">:</span> <span class="mf">0.0022922</span><span class="p">,</span>
+        <span class="mf">483.0</span><span class="p">:</span> <span class="mf">0.0023700</span><span class="p">,</span>
+        <span class="mf">484.0</span><span class="p">:</span> <span class="mf">0.0024507</span><span class="p">,</span>
+        <span class="mf">485.0</span><span class="p">:</span> <span class="mf">0.0025351</span><span class="p">,</span>
+        <span class="mf">486.0</span><span class="p">:</span> <span class="mf">0.0026236</span><span class="p">,</span>
+        <span class="mf">487.0</span><span class="p">:</span> <span class="mf">0.0027165</span><span class="p">,</span>
+        <span class="mf">488.0</span><span class="p">:</span> <span class="mf">0.0028142</span><span class="p">,</span>
+        <span class="mf">489.0</span><span class="p">:</span> <span class="mf">0.0029173</span><span class="p">,</span>
+        <span class="mf">490.0</span><span class="p">:</span> <span class="mf">0.0030263</span><span class="p">,</span>
+        <span class="mf">491.0</span><span class="p">:</span> <span class="mf">0.0031418</span><span class="p">,</span>
+        <span class="mf">492.0</span><span class="p">:</span> <span class="mf">0.0032640</span><span class="p">,</span>
+        <span class="mf">493.0</span><span class="p">:</span> <span class="mf">0.0033928</span><span class="p">,</span>
+        <span class="mf">494.0</span><span class="p">:</span> <span class="mf">0.0035280</span><span class="p">,</span>
+        <span class="mf">495.0</span><span class="p">:</span> <span class="mf">0.0036695</span><span class="p">,</span>
+        <span class="mf">496.0</span><span class="p">:</span> <span class="mf">0.0038168</span><span class="p">,</span>
+        <span class="mf">497.0</span><span class="p">:</span> <span class="mf">0.0039706</span><span class="p">,</span>
+        <span class="mf">498.0</span><span class="p">:</span> <span class="mf">0.0041327</span><span class="p">,</span>
+        <span class="mf">499.0</span><span class="p">:</span> <span class="mf">0.0043045</span><span class="p">,</span>
+        <span class="mf">500.0</span><span class="p">:</span> <span class="mf">0.0044878</span><span class="p">,</span>
+        <span class="mf">501.0</span><span class="p">:</span> <span class="mf">0.0046836</span><span class="p">,</span>
+        <span class="mf">502.0</span><span class="p">:</span> <span class="mf">0.0048904</span><span class="p">,</span>
+        <span class="mf">503.0</span><span class="p">:</span> <span class="mf">0.0051060</span><span class="p">,</span>
+        <span class="mf">504.0</span><span class="p">:</span> <span class="mf">0.0053279</span><span class="p">,</span>
+        <span class="mf">505.0</span><span class="p">:</span> <span class="mf">0.0055539</span><span class="p">,</span>
+        <span class="mf">506.0</span><span class="p">:</span> <span class="mf">0.0057824</span><span class="p">,</span>
+        <span class="mf">507.0</span><span class="p">:</span> <span class="mf">0.0060137</span><span class="p">,</span>
+        <span class="mf">508.0</span><span class="p">:</span> <span class="mf">0.0062484</span><span class="p">,</span>
+        <span class="mf">509.0</span><span class="p">:</span> <span class="mf">0.0064873</span><span class="p">,</span>
+        <span class="mf">510.0</span><span class="p">:</span> <span class="mf">0.0067307</span><span class="p">,</span>
+        <span class="mf">511.0</span><span class="p">:</span> <span class="mf">0.0069786</span><span class="p">,</span>
+        <span class="mf">512.0</span><span class="p">:</span> <span class="mf">0.0072292</span><span class="p">,</span>
+        <span class="mf">513.0</span><span class="p">:</span> <span class="mf">0.0074806</span><span class="p">,</span>
+        <span class="mf">514.0</span><span class="p">:</span> <span class="mf">0.0077310</span><span class="p">,</span>
+        <span class="mf">515.0</span><span class="p">:</span> <span class="mf">0.0079785</span><span class="p">,</span>
+        <span class="mf">516.0</span><span class="p">:</span> <span class="mf">0.0082225</span><span class="p">,</span>
+        <span class="mf">517.0</span><span class="p">:</span> <span class="mf">0.0084618</span><span class="p">,</span>
+        <span class="mf">518.0</span><span class="p">:</span> <span class="mf">0.0086938</span><span class="p">,</span>
+        <span class="mf">519.0</span><span class="p">:</span> <span class="mf">0.0089159</span><span class="p">,</span>
+        <span class="mf">520.0</span><span class="p">:</span> <span class="mf">0.0091254</span><span class="p">,</span>
+        <span class="mf">521.0</span><span class="p">:</span> <span class="mf">0.0093204</span><span class="p">,</span>
+        <span class="mf">522.0</span><span class="p">:</span> <span class="mf">0.0095018</span><span class="p">,</span>
+        <span class="mf">523.0</span><span class="p">:</span> <span class="mf">0.0096712</span><span class="p">,</span>
+        <span class="mf">524.0</span><span class="p">:</span> <span class="mf">0.0098304</span><span class="p">,</span>
+        <span class="mf">525.0</span><span class="p">:</span> <span class="mf">0.0099812</span><span class="p">,</span>
+        <span class="mf">526.0</span><span class="p">:</span> <span class="mf">0.0101242</span><span class="p">,</span>
+        <span class="mf">527.0</span><span class="p">:</span> <span class="mf">0.0102587</span><span class="p">,</span>
+        <span class="mf">528.0</span><span class="p">:</span> <span class="mf">0.0103843</span><span class="p">,</span>
+        <span class="mf">529.0</span><span class="p">:</span> <span class="mf">0.0105006</span><span class="p">,</span>
+        <span class="mf">530.0</span><span class="p">:</span> <span class="mf">0.0106074</span><span class="p">,</span>
+        <span class="mf">531.0</span><span class="p">:</span> <span class="mf">0.0107046</span><span class="p">,</span>
+        <span class="mf">532.0</span><span class="p">:</span> <span class="mf">0.0107925</span><span class="p">,</span>
+        <span class="mf">533.0</span><span class="p">:</span> <span class="mf">0.0108717</span><span class="p">,</span>
+        <span class="mf">534.0</span><span class="p">:</span> <span class="mf">0.0109425</span><span class="p">,</span>
+        <span class="mf">535.0</span><span class="p">:</span> <span class="mf">0.0110054</span><span class="p">,</span>
+        <span class="mf">536.0</span><span class="p">:</span> <span class="mf">0.0110606</span><span class="p">,</span>
+        <span class="mf">537.0</span><span class="p">:</span> <span class="mf">0.0111082</span><span class="p">,</span>
+        <span class="mf">538.0</span><span class="p">:</span> <span class="mf">0.0111480</span><span class="p">,</span>
+        <span class="mf">539.0</span><span class="p">:</span> <span class="mf">0.0111802</span><span class="p">,</span>
+        <span class="mf">540.0</span><span class="p">:</span> <span class="mf">0.0112046</span><span class="p">,</span>
+        <span class="mf">541.0</span><span class="p">:</span> <span class="mf">0.0112213</span><span class="p">,</span>
+        <span class="mf">542.0</span><span class="p">:</span> <span class="mf">0.0112306</span><span class="p">,</span>
+        <span class="mf">543.0</span><span class="p">:</span> <span class="mf">0.0112326</span><span class="p">,</span>
+        <span class="mf">544.0</span><span class="p">:</span> <span class="mf">0.0112273</span><span class="p">,</span>
+        <span class="mf">545.0</span><span class="p">:</span> <span class="mf">0.0112149</span><span class="p">,</span>
+        <span class="mf">546.0</span><span class="p">:</span> <span class="mf">0.0111954</span><span class="p">,</span>
+        <span class="mf">547.0</span><span class="p">:</span> <span class="mf">0.0111690</span><span class="p">,</span>
+        <span class="mf">548.0</span><span class="p">:</span> <span class="mf">0.0111362</span><span class="p">,</span>
+        <span class="mf">549.0</span><span class="p">:</span> <span class="mf">0.0110973</span><span class="p">,</span>
+        <span class="mf">550.0</span><span class="p">:</span> <span class="mf">0.0110527</span><span class="p">,</span>
+        <span class="mf">551.0</span><span class="p">:</span> <span class="mf">0.0110022</span><span class="p">,</span>
+        <span class="mf">552.0</span><span class="p">:</span> <span class="mf">0.0109459</span><span class="p">,</span>
+        <span class="mf">553.0</span><span class="p">:</span> <span class="mf">0.0108839</span><span class="p">,</span>
+        <span class="mf">554.0</span><span class="p">:</span> <span class="mf">0.0108161</span><span class="p">,</span>
+        <span class="mf">555.0</span><span class="p">:</span> <span class="mf">0.0107425</span><span class="p">,</span>
+        <span class="mf">556.0</span><span class="p">:</span> <span class="mf">0.0106629</span><span class="p">,</span>
+        <span class="mf">557.0</span><span class="p">:</span> <span class="mf">0.0105773</span><span class="p">,</span>
+        <span class="mf">558.0</span><span class="p">:</span> <span class="mf">0.0104855</span><span class="p">,</span>
+        <span class="mf">559.0</span><span class="p">:</span> <span class="mf">0.0103873</span><span class="p">,</span>
+        <span class="mf">560.0</span><span class="p">:</span> <span class="mf">0.0102827</span><span class="p">,</span>
+        <span class="mf">561.0</span><span class="p">:</span> <span class="mf">0.0101713</span><span class="p">,</span>
+        <span class="mf">562.0</span><span class="p">:</span> <span class="mf">0.0100537</span><span class="p">,</span>
+        <span class="mf">563.0</span><span class="p">:</span> <span class="mf">0.0099302</span><span class="p">,</span>
+        <span class="mf">564.0</span><span class="p">:</span> <span class="mf">0.0098011</span><span class="p">,</span>
+        <span class="mf">565.0</span><span class="p">:</span> <span class="mf">0.0096665</span><span class="p">,</span>
+        <span class="mf">566.0</span><span class="p">:</span> <span class="mf">0.0095268</span><span class="p">,</span>
+        <span class="mf">567.0</span><span class="p">:</span> <span class="mf">0.0093819</span><span class="p">,</span>
+        <span class="mf">568.0</span><span class="p">:</span> <span class="mf">0.0092320</span><span class="p">,</span>
+        <span class="mf">569.0</span><span class="p">:</span> <span class="mf">0.0090771</span><span class="p">,</span>
+        <span class="mf">570.0</span><span class="p">:</span> <span class="mf">0.0089174</span><span class="p">,</span>
+        <span class="mf">571.0</span><span class="p">:</span> <span class="mf">0.0087528</span><span class="p">,</span>
+        <span class="mf">572.0</span><span class="p">:</span> <span class="mf">0.0085837</span><span class="p">,</span>
+        <span class="mf">573.0</span><span class="p">:</span> <span class="mf">0.0084104</span><span class="p">,</span>
+        <span class="mf">574.0</span><span class="p">:</span> <span class="mf">0.0082333</span><span class="p">,</span>
+        <span class="mf">575.0</span><span class="p">:</span> <span class="mf">0.0080525</span><span class="p">,</span>
+        <span class="mf">576.0</span><span class="p">:</span> <span class="mf">0.0078685</span><span class="p">,</span>
+        <span class="mf">577.0</span><span class="p">:</span> <span class="mf">0.0076814</span><span class="p">,</span>
+        <span class="mf">578.0</span><span class="p">:</span> <span class="mf">0.0074915</span><span class="p">,</span>
+        <span class="mf">579.0</span><span class="p">:</span> <span class="mf">0.0072987</span><span class="p">,</span>
+        <span class="mf">580.0</span><span class="p">:</span> <span class="mf">0.0071033</span><span class="p">,</span>
+        <span class="mf">581.0</span><span class="p">:</span> <span class="mf">0.0069055</span><span class="p">,</span>
+        <span class="mf">582.0</span><span class="p">:</span> <span class="mf">0.0067057</span><span class="p">,</span>
+        <span class="mf">583.0</span><span class="p">:</span> <span class="mf">0.0065044</span><span class="p">,</span>
+        <span class="mf">584.0</span><span class="p">:</span> <span class="mf">0.0063021</span><span class="p">,</span>
+        <span class="mf">585.0</span><span class="p">:</span> <span class="mf">0.0060993</span><span class="p">,</span>
+        <span class="mf">586.0</span><span class="p">:</span> <span class="mf">0.0058964</span><span class="p">,</span>
+        <span class="mf">587.0</span><span class="p">:</span> <span class="mf">0.0056937</span><span class="p">,</span>
+        <span class="mf">588.0</span><span class="p">:</span> <span class="mf">0.0054917</span><span class="p">,</span>
+        <span class="mf">589.0</span><span class="p">:</span> <span class="mf">0.0052906</span><span class="p">,</span>
+        <span class="mf">590.0</span><span class="p">:</span> <span class="mf">0.0050910</span><span class="p">,</span>
+        <span class="mf">591.0</span><span class="p">:</span> <span class="mf">0.0048931</span><span class="p">,</span>
+        <span class="mf">592.0</span><span class="p">:</span> <span class="mf">0.0046974</span><span class="p">,</span>
+        <span class="mf">593.0</span><span class="p">:</span> <span class="mf">0.0045043</span><span class="p">,</span>
+        <span class="mf">594.0</span><span class="p">:</span> <span class="mf">0.0043144</span><span class="p">,</span>
+        <span class="mf">595.0</span><span class="p">:</span> <span class="mf">0.0041283</span><span class="p">,</span>
+        <span class="mf">596.0</span><span class="p">:</span> <span class="mf">0.0039465</span><span class="p">,</span>
+        <span class="mf">597.0</span><span class="p">:</span> <span class="mf">0.0037690</span><span class="p">,</span>
+        <span class="mf">598.0</span><span class="p">:</span> <span class="mf">0.0035956</span><span class="p">,</span>
+        <span class="mf">599.0</span><span class="p">:</span> <span class="mf">0.0034261</span><span class="p">,</span>
+        <span class="mf">600.0</span><span class="p">:</span> <span class="mf">0.0032602</span><span class="p">,</span>
+        <span class="mf">601.0</span><span class="p">:</span> <span class="mf">0.0030979</span><span class="p">,</span>
+        <span class="mf">602.0</span><span class="p">:</span> <span class="mf">0.0029397</span><span class="p">,</span>
+        <span class="mf">603.0</span><span class="p">:</span> <span class="mf">0.0027858</span><span class="p">,</span>
+        <span class="mf">604.0</span><span class="p">:</span> <span class="mf">0.0026369</span><span class="p">,</span>
+        <span class="mf">605.0</span><span class="p">:</span> <span class="mf">0.0024933</span><span class="p">,</span>
+        <span class="mf">606.0</span><span class="p">:</span> <span class="mf">0.0023553</span><span class="p">,</span>
+        <span class="mf">607.0</span><span class="p">:</span> <span class="mf">0.0022229</span><span class="p">,</span>
+        <span class="mf">608.0</span><span class="p">:</span> <span class="mf">0.0020958</span><span class="p">,</span>
+        <span class="mf">609.0</span><span class="p">:</span> <span class="mf">0.0019739</span><span class="p">,</span>
+        <span class="mf">610.0</span><span class="p">:</span> <span class="mf">0.0018572</span><span class="p">,</span>
+        <span class="mf">611.0</span><span class="p">:</span> <span class="mf">0.0017455</span><span class="p">,</span>
+        <span class="mf">612.0</span><span class="p">:</span> <span class="mf">0.0016389</span><span class="p">,</span>
+        <span class="mf">613.0</span><span class="p">:</span> <span class="mf">0.0015372</span><span class="p">,</span>
+        <span class="mf">614.0</span><span class="p">:</span> <span class="mf">0.0014404</span><span class="p">,</span>
+        <span class="mf">615.0</span><span class="p">:</span> <span class="mf">0.0013484</span><span class="p">,</span>
+        <span class="mf">616.0</span><span class="p">:</span> <span class="mf">0.0012610</span><span class="p">,</span>
+        <span class="mf">617.0</span><span class="p">:</span> <span class="mf">0.0011783</span><span class="p">,</span>
+        <span class="mf">618.0</span><span class="p">:</span> <span class="mf">0.0010998</span><span class="p">,</span>
+        <span class="mf">619.0</span><span class="p">:</span> <span class="mf">0.0010253</span><span class="p">,</span>
+        <span class="mf">620.0</span><span class="p">:</span> <span class="mf">0.0009547</span><span class="p">,</span>
+        <span class="mf">621.0</span><span class="p">:</span> <span class="mf">0.0008876</span><span class="p">,</span>
+        <span class="mf">622.0</span><span class="p">:</span> <span class="mf">0.0008241</span><span class="p">,</span>
+        <span class="mf">623.0</span><span class="p">:</span> <span class="mf">0.0007641</span><span class="p">,</span>
+        <span class="mf">624.0</span><span class="p">:</span> <span class="mf">0.0007075</span><span class="p">,</span>
+        <span class="mf">625.0</span><span class="p">:</span> <span class="mf">0.0006544</span><span class="p">,</span>
+        <span class="mf">626.0</span><span class="p">:</span> <span class="mf">0.0006045</span><span class="p">,</span>
+        <span class="mf">627.0</span><span class="p">:</span> <span class="mf">0.0005578</span><span class="p">,</span>
+        <span class="mf">628.0</span><span class="p">:</span> <span class="mf">0.0005141</span><span class="p">,</span>
+        <span class="mf">629.0</span><span class="p">:</span> <span class="mf">0.0004733</span><span class="p">,</span>
+        <span class="mf">630.0</span><span class="p">:</span> <span class="mf">0.0004351</span><span class="p">,</span>
+        <span class="mf">631.0</span><span class="p">:</span> <span class="mf">0.0003996</span><span class="p">,</span>
+        <span class="mf">632.0</span><span class="p">:</span> <span class="mf">0.0003666</span><span class="p">,</span>
+        <span class="mf">633.0</span><span class="p">:</span> <span class="mf">0.0003359</span><span class="p">,</span>
+        <span class="mf">634.0</span><span class="p">:</span> <span class="mf">0.0003074</span><span class="p">,</span>
+        <span class="mf">635.0</span><span class="p">:</span> <span class="mf">0.0002809</span><span class="p">,</span>
+        <span class="mf">636.0</span><span class="p">:</span> <span class="mf">0.0002562</span><span class="p">,</span>
+        <span class="mf">637.0</span><span class="p">:</span> <span class="mf">0.0002334</span><span class="p">,</span>
+        <span class="mf">638.0</span><span class="p">:</span> <span class="mf">0.0002123</span><span class="p">,</span>
+        <span class="mf">639.0</span><span class="p">:</span> <span class="mf">0.0001928</span><span class="p">,</span>
+        <span class="mf">640.0</span><span class="p">:</span> <span class="mf">0.0001747</span><span class="p">,</span>
+        <span class="mf">641.0</span><span class="p">:</span> <span class="mf">0.0001581</span><span class="p">,</span>
+        <span class="mf">642.0</span><span class="p">:</span> <span class="mf">0.0001428</span><span class="p">,</span>
+        <span class="mf">643.0</span><span class="p">:</span> <span class="mf">0.0001287</span><span class="p">,</span>
+        <span class="mf">644.0</span><span class="p">:</span> <span class="mf">0.0001159</span><span class="p">,</span>
+        <span class="mf">645.0</span><span class="p">:</span> <span class="mf">0.0001043</span><span class="p">,</span>
+        <span class="mf">646.0</span><span class="p">:</span> <span class="mf">9.38e-05</span><span class="p">,</span>
+        <span class="mf">647.0</span><span class="p">:</span> <span class="mf">8.43e-05</span><span class="p">,</span>
+        <span class="mf">648.0</span><span class="p">:</span> <span class="mf">7.57e-05</span><span class="p">,</span>
+        <span class="mf">649.0</span><span class="p">:</span> <span class="mf">6.80e-05</span><span class="p">,</span>
+        <span class="mf">650.0</span><span class="p">:</span> <span class="mf">6.10e-05</span><span class="p">,</span>
+        <span class="mf">651.0</span><span class="p">:</span> <span class="mf">5.46e-05</span><span class="p">,</span>
+        <span class="mf">652.0</span><span class="p">:</span> <span class="mf">4.88e-05</span><span class="p">,</span>
+        <span class="mf">653.0</span><span class="p">:</span> <span class="mf">4.36e-05</span><span class="p">,</span>
+        <span class="mf">654.0</span><span class="p">:</span> <span class="mf">3.89e-05</span><span class="p">,</span>
+        <span class="mf">655.0</span><span class="p">:</span> <span class="mf">3.46e-05</span><span class="p">,</span>
+        <span class="mf">656.0</span><span class="p">:</span> <span class="mf">3.08e-05</span><span class="p">,</span>
+        <span class="mf">657.0</span><span class="p">:</span> <span class="mf">2.74e-05</span><span class="p">,</span>
+        <span class="mf">658.0</span><span class="p">:</span> <span class="mf">2.43e-05</span><span class="p">,</span>
+        <span class="mf">659.0</span><span class="p">:</span> <span class="mf">2.16e-05</span><span class="p">,</span>
+        <span class="mf">660.0</span><span class="p">:</span> <span class="mf">1.92e-05</span><span class="p">,</span>
+        <span class="mf">661.0</span><span class="p">:</span> <span class="mf">1.70e-05</span><span class="p">,</span>
+        <span class="mf">662.0</span><span class="p">:</span> <span class="mf">1.52e-05</span><span class="p">,</span>
+        <span class="mf">663.0</span><span class="p">:</span> <span class="mf">1.35e-05</span><span class="p">,</span>
+        <span class="mf">664.0</span><span class="p">:</span> <span class="mf">1.21e-05</span><span class="p">,</span>
+        <span class="mf">665.0</span><span class="p">:</span> <span class="mf">1.07e-05</span><span class="p">,</span>
+        <span class="mf">666.0</span><span class="p">:</span> <span class="mf">9.50e-06</span><span class="p">,</span>
+        <span class="mf">667.0</span><span class="p">:</span> <span class="mf">8.40e-06</span><span class="p">,</span>
+        <span class="mf">668.0</span><span class="p">:</span> <span class="mf">7.50e-06</span><span class="p">,</span>
+        <span class="mf">669.0</span><span class="p">:</span> <span class="mf">6.60e-06</span><span class="p">,</span>
+        <span class="mf">670.0</span><span class="p">:</span> <span class="mf">5.80e-06</span><span class="p">,</span>
+        <span class="mf">671.0</span><span class="p">:</span> <span class="mf">5.10e-06</span><span class="p">,</span>
+        <span class="mf">672.0</span><span class="p">:</span> <span class="mf">4.50e-06</span><span class="p">,</span>
+        <span class="mf">673.0</span><span class="p">:</span> <span class="mf">4.00e-06</span><span class="p">,</span>
+        <span class="mf">674.0</span><span class="p">:</span> <span class="mf">3.50e-06</span><span class="p">,</span>
+        <span class="mf">675.0</span><span class="p">:</span> <span class="mf">3.10e-06</span><span class="p">,</span>
+        <span class="mf">676.0</span><span class="p">:</span> <span class="mf">2.70e-06</span><span class="p">,</span>
+        <span class="mf">677.0</span><span class="p">:</span> <span class="mf">2.30e-06</span><span class="p">,</span>
+        <span class="mf">678.0</span><span class="p">:</span> <span class="mf">2.00e-06</span><span class="p">,</span>
+        <span class="mf">679.0</span><span class="p">:</span> <span class="mf">1.70e-06</span><span class="p">,</span>
+        <span class="mf">680.0</span><span class="p">:</span> <span class="mf">1.50e-06</span><span class="p">,</span>
+        <span class="mf">681.0</span><span class="p">:</span> <span class="mf">1.20e-06</span><span class="p">,</span>
+        <span class="mf">682.0</span><span class="p">:</span> <span class="mf">1.00e-06</span><span class="p">,</span>
+        <span class="mf">683.0</span><span class="p">:</span> <span class="mf">8.00e-07</span><span class="p">,</span>
+        <span class="mf">684.0</span><span class="p">:</span> <span class="mf">7.00e-07</span><span class="p">,</span>
+        <span class="mf">685.0</span><span class="p">:</span> <span class="mf">5.00e-07</span><span class="p">,</span>
+        <span class="mf">686.0</span><span class="p">:</span> <span class="mf">4.00e-07</span><span class="p">,</span>
+        <span class="mf">687.0</span><span class="p">:</span> <span class="mf">3.00e-07</span><span class="p">,</span>
+        <span class="mf">688.0</span><span class="p">:</span> <span class="mf">3.00e-07</span><span class="p">,</span>
+        <span class="mf">689.0</span><span class="p">:</span> <span class="mf">2.00e-07</span><span class="p">,</span>
+        <span class="mf">690.0</span><span class="p">:</span> <span class="mf">2.00e-07</span><span class="p">,</span>
+        <span class="mf">691.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">692.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">693.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">694.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">695.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">696.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">697.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">698.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">699.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">700.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">701.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">702.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">703.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">704.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">705.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">706.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">707.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">708.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">709.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">710.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">711.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">712.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">713.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">714.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">715.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">716.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">717.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">718.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">719.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">720.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">721.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">722.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">723.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">724.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">725.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">726.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">727.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">728.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">729.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">730.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">731.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">732.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">733.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">734.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">735.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">736.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">737.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">738.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">739.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">740.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">741.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">742.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">743.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">744.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">745.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">746.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">747.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">748.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">749.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">750.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">751.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">752.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">753.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">754.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">755.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">756.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">757.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">758.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">759.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">760.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">761.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">762.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">763.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">764.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">765.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">766.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">767.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">768.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">769.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">770.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">771.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">772.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">773.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">774.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">775.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">776.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">777.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">778.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">779.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">780.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">781.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">782.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">783.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">784.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">785.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">786.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">787.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">788.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">789.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">790.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">791.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">792.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">793.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">794.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">795.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">796.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">797.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">798.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">799.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">800.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">801.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">802.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">803.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">804.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">805.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">806.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">807.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">808.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">809.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">810.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">811.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">812.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">813.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">814.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">815.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">816.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">817.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">818.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">819.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">820.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">821.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">822.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">823.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">824.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">825.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">826.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">827.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">828.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">829.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">830.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">},</span>
+    <span class="s">&#39;b_bar&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="mf">360.0</span><span class="p">:</span> <span class="mf">5.70e-06</span><span class="p">,</span>
+        <span class="mf">361.0</span><span class="p">:</span> <span class="mf">6.40e-06</span><span class="p">,</span>
+        <span class="mf">362.0</span><span class="p">:</span> <span class="mf">7.20e-06</span><span class="p">,</span>
+        <span class="mf">363.0</span><span class="p">:</span> <span class="mf">8.00e-06</span><span class="p">,</span>
+        <span class="mf">364.0</span><span class="p">:</span> <span class="mf">9.00e-06</span><span class="p">,</span>
+        <span class="mf">365.0</span><span class="p">:</span> <span class="mf">1.02e-05</span><span class="p">,</span>
+        <span class="mf">366.0</span><span class="p">:</span> <span class="mf">1.14e-05</span><span class="p">,</span>
+        <span class="mf">367.0</span><span class="p">:</span> <span class="mf">1.28e-05</span><span class="p">,</span>
+        <span class="mf">368.0</span><span class="p">:</span> <span class="mf">1.44e-05</span><span class="p">,</span>
+        <span class="mf">369.0</span><span class="p">:</span> <span class="mf">1.62e-05</span><span class="p">,</span>
+        <span class="mf">370.0</span><span class="p">:</span> <span class="mf">1.82e-05</span><span class="p">,</span>
+        <span class="mf">371.0</span><span class="p">:</span> <span class="mf">2.04e-05</span><span class="p">,</span>
+        <span class="mf">372.0</span><span class="p">:</span> <span class="mf">2.28e-05</span><span class="p">,</span>
+        <span class="mf">373.0</span><span class="p">:</span> <span class="mf">2.56e-05</span><span class="p">,</span>
+        <span class="mf">374.0</span><span class="p">:</span> <span class="mf">2.88e-05</span><span class="p">,</span>
+        <span class="mf">375.0</span><span class="p">:</span> <span class="mf">3.26e-05</span><span class="p">,</span>
+        <span class="mf">376.0</span><span class="p">:</span> <span class="mf">3.72e-05</span><span class="p">,</span>
+        <span class="mf">377.0</span><span class="p">:</span> <span class="mf">4.25e-05</span><span class="p">,</span>
+        <span class="mf">378.0</span><span class="p">:</span> <span class="mf">4.83e-05</span><span class="p">,</span>
+        <span class="mf">379.0</span><span class="p">:</span> <span class="mf">5.43e-05</span><span class="p">,</span>
+        <span class="mf">380.0</span><span class="p">:</span> <span class="mf">6.03e-05</span><span class="p">,</span>
+        <span class="mf">381.0</span><span class="p">:</span> <span class="mf">6.63e-05</span><span class="p">,</span>
+        <span class="mf">382.0</span><span class="p">:</span> <span class="mf">7.25e-05</span><span class="p">,</span>
+        <span class="mf">383.0</span><span class="p">:</span> <span class="mf">7.95e-05</span><span class="p">,</span>
+        <span class="mf">384.0</span><span class="p">:</span> <span class="mf">8.81e-05</span><span class="p">,</span>
+        <span class="mf">385.0</span><span class="p">:</span> <span class="mf">9.87e-05</span><span class="p">,</span>
+        <span class="mf">386.0</span><span class="p">:</span> <span class="mf">0.0001119</span><span class="p">,</span>
+        <span class="mf">387.0</span><span class="p">:</span> <span class="mf">0.0001278</span><span class="p">,</span>
+        <span class="mf">388.0</span><span class="p">:</span> <span class="mf">0.0001458</span><span class="p">,</span>
+        <span class="mf">389.0</span><span class="p">:</span> <span class="mf">0.0001659</span><span class="p">,</span>
+        <span class="mf">390.0</span><span class="p">:</span> <span class="mf">0.0001876</span><span class="p">,</span>
+        <span class="mf">391.0</span><span class="p">:</span> <span class="mf">0.0002106</span><span class="p">,</span>
+        <span class="mf">392.0</span><span class="p">:</span> <span class="mf">0.0002358</span><span class="p">,</span>
+        <span class="mf">393.0</span><span class="p">:</span> <span class="mf">0.0002646</span><span class="p">,</span>
+        <span class="mf">394.0</span><span class="p">:</span> <span class="mf">0.0002984</span><span class="p">,</span>
+        <span class="mf">395.0</span><span class="p">:</span> <span class="mf">0.0003388</span><span class="p">,</span>
+        <span class="mf">396.0</span><span class="p">:</span> <span class="mf">0.0003877</span><span class="p">,</span>
+        <span class="mf">397.0</span><span class="p">:</span> <span class="mf">0.0004444</span><span class="p">,</span>
+        <span class="mf">398.0</span><span class="p">:</span> <span class="mf">0.0005063</span><span class="p">,</span>
+        <span class="mf">399.0</span><span class="p">:</span> <span class="mf">0.0005706</span><span class="p">,</span>
+        <span class="mf">400.0</span><span class="p">:</span> <span class="mf">0.0006348</span><span class="p">,</span>
+        <span class="mf">401.0</span><span class="p">:</span> <span class="mf">0.0006968</span><span class="p">,</span>
+        <span class="mf">402.0</span><span class="p">:</span> <span class="mf">0.0007612</span><span class="p">,</span>
+        <span class="mf">403.0</span><span class="p">:</span> <span class="mf">0.0008341</span><span class="p">,</span>
+        <span class="mf">404.0</span><span class="p">:</span> <span class="mf">0.0009219</span><span class="p">,</span>
+        <span class="mf">405.0</span><span class="p">:</span> <span class="mf">0.0010309</span><span class="p">,</span>
+        <span class="mf">406.0</span><span class="p">:</span> <span class="mf">0.0011658</span><span class="p">,</span>
+        <span class="mf">407.0</span><span class="p">:</span> <span class="mf">0.0013256</span><span class="p">,</span>
+        <span class="mf">408.0</span><span class="p">:</span> <span class="mf">0.0015090</span><span class="p">,</span>
+        <span class="mf">409.0</span><span class="p">:</span> <span class="mf">0.0017144</span><span class="p">,</span>
+        <span class="mf">410.0</span><span class="p">:</span> <span class="mf">0.0019403</span><span class="p">,</span>
+        <span class="mf">411.0</span><span class="p">:</span> <span class="mf">0.0021862</span><span class="p">,</span>
+        <span class="mf">412.0</span><span class="p">:</span> <span class="mf">0.0024568</span><span class="p">,</span>
+        <span class="mf">413.0</span><span class="p">:</span> <span class="mf">0.0027577</span><span class="p">,</span>
+        <span class="mf">414.0</span><span class="p">:</span> <span class="mf">0.0030947</span><span class="p">,</span>
+        <span class="mf">415.0</span><span class="p">:</span> <span class="mf">0.0034736</span><span class="p">,</span>
+        <span class="mf">416.0</span><span class="p">:</span> <span class="mf">0.0038937</span><span class="p">,</span>
+        <span class="mf">417.0</span><span class="p">:</span> <span class="mf">0.0043545</span><span class="p">,</span>
+        <span class="mf">418.0</span><span class="p">:</span> <span class="mf">0.0048619</span><span class="p">,</span>
+        <span class="mf">419.0</span><span class="p">:</span> <span class="mf">0.0054216</span><span class="p">,</span>
+        <span class="mf">420.0</span><span class="p">:</span> <span class="mf">0.0060397</span><span class="p">,</span>
+        <span class="mf">421.0</span><span class="p">:</span> <span class="mf">0.0067216</span><span class="p">,</span>
+        <span class="mf">422.0</span><span class="p">:</span> <span class="mf">0.0074534</span><span class="p">,</span>
+        <span class="mf">423.0</span><span class="p">:</span> <span class="mf">0.0082124</span><span class="p">,</span>
+        <span class="mf">424.0</span><span class="p">:</span> <span class="mf">0.0089758</span><span class="p">,</span>
+        <span class="mf">425.0</span><span class="p">:</span> <span class="mf">0.0097205</span><span class="p">,</span>
+        <span class="mf">426.0</span><span class="p">:</span> <span class="mf">0.0104345</span><span class="p">,</span>
+        <span class="mf">427.0</span><span class="p">:</span> <span class="mf">0.0111186</span><span class="p">,</span>
+        <span class="mf">428.0</span><span class="p">:</span> <span class="mf">0.0117700</span><span class="p">,</span>
+        <span class="mf">429.0</span><span class="p">:</span> <span class="mf">0.0123856</span><span class="p">,</span>
+        <span class="mf">430.0</span><span class="p">:</span> <span class="mf">0.0129626</span><span class="p">,</span>
+        <span class="mf">431.0</span><span class="p">:</span> <span class="mf">0.0134962</span><span class="p">,</span>
+        <span class="mf">432.0</span><span class="p">:</span> <span class="mf">0.0139842</span><span class="p">,</span>
+        <span class="mf">433.0</span><span class="p">:</span> <span class="mf">0.0144275</span><span class="p">,</span>
+        <span class="mf">434.0</span><span class="p">:</span> <span class="mf">0.0148269</span><span class="p">,</span>
+        <span class="mf">435.0</span><span class="p">:</span> <span class="mf">0.0151831</span><span class="p">,</span>
+        <span class="mf">436.0</span><span class="p">:</span> <span class="mf">0.0154960</span><span class="p">,</span>
+        <span class="mf">437.0</span><span class="p">:</span> <span class="mf">0.0157663</span><span class="p">,</span>
+        <span class="mf">438.0</span><span class="p">:</span> <span class="mf">0.0159962</span><span class="p">,</span>
+        <span class="mf">439.0</span><span class="p">:</span> <span class="mf">0.0161881</span><span class="p">,</span>
+        <span class="mf">440.0</span><span class="p">:</span> <span class="mf">0.0163441</span><span class="p">,</span>
+        <span class="mf">441.0</span><span class="p">:</span> <span class="mf">0.0164656</span><span class="p">,</span>
+        <span class="mf">442.0</span><span class="p">:</span> <span class="mf">0.0165552</span><span class="p">,</span>
+        <span class="mf">443.0</span><span class="p">:</span> <span class="mf">0.0166173</span><span class="p">,</span>
+        <span class="mf">444.0</span><span class="p">:</span> <span class="mf">0.0166563</span><span class="p">,</span>
+        <span class="mf">445.0</span><span class="p">:</span> <span class="mf">0.0166766</span><span class="p">,</span>
+        <span class="mf">446.0</span><span class="p">:</span> <span class="mf">0.0166801</span><span class="p">,</span>
+        <span class="mf">447.0</span><span class="p">:</span> <span class="mf">0.0166682</span><span class="p">,</span>
+        <span class="mf">448.0</span><span class="p">:</span> <span class="mf">0.0166448</span><span class="p">,</span>
+        <span class="mf">449.0</span><span class="p">:</span> <span class="mf">0.0166136</span><span class="p">,</span>
+        <span class="mf">450.0</span><span class="p">:</span> <span class="mf">0.0165785</span><span class="p">,</span>
+        <span class="mf">451.0</span><span class="p">:</span> <span class="mf">0.0165424</span><span class="p">,</span>
+        <span class="mf">452.0</span><span class="p">:</span> <span class="mf">0.0165030</span><span class="p">,</span>
+        <span class="mf">453.0</span><span class="p">:</span> <span class="mf">0.0164553</span><span class="p">,</span>
+        <span class="mf">454.0</span><span class="p">:</span> <span class="mf">0.0163947</span><span class="p">,</span>
+        <span class="mf">455.0</span><span class="p">:</span> <span class="mf">0.0163164</span><span class="p">,</span>
+        <span class="mf">456.0</span><span class="p">:</span> <span class="mf">0.0162178</span><span class="p">,</span>
+        <span class="mf">457.0</span><span class="p">:</span> <span class="mf">0.0160990</span><span class="p">,</span>
+        <span class="mf">458.0</span><span class="p">:</span> <span class="mf">0.0159594</span><span class="p">,</span>
+        <span class="mf">459.0</span><span class="p">:</span> <span class="mf">0.0157985</span><span class="p">,</span>
+        <span class="mf">460.0</span><span class="p">:</span> <span class="mf">0.0156157</span><span class="p">,</span>
+        <span class="mf">461.0</span><span class="p">:</span> <span class="mf">0.0154130</span><span class="p">,</span>
+        <span class="mf">462.0</span><span class="p">:</span> <span class="mf">0.0151874</span><span class="p">,</span>
+        <span class="mf">463.0</span><span class="p">:</span> <span class="mf">0.0149311</span><span class="p">,</span>
+        <span class="mf">464.0</span><span class="p">:</span> <span class="mf">0.0146365</span><span class="p">,</span>
+        <span class="mf">465.0</span><span class="p">:</span> <span class="mf">0.0142957</span><span class="p">,</span>
+        <span class="mf">466.0</span><span class="p">:</span> <span class="mf">0.0139029</span><span class="p">,</span>
+        <span class="mf">467.0</span><span class="p">:</span> <span class="mf">0.0134670</span><span class="p">,</span>
+        <span class="mf">468.0</span><span class="p">:</span> <span class="mf">0.0130026</span><span class="p">,</span>
+        <span class="mf">469.0</span><span class="p">:</span> <span class="mf">0.0125242</span><span class="p">,</span>
+        <span class="mf">470.0</span><span class="p">:</span> <span class="mf">0.0120461</span><span class="p">,</span>
+        <span class="mf">471.0</span><span class="p">:</span> <span class="mf">0.0115764</span><span class="p">,</span>
+        <span class="mf">472.0</span><span class="p">:</span> <span class="mf">0.0111124</span><span class="p">,</span>
+        <span class="mf">473.0</span><span class="p">:</span> <span class="mf">0.0106534</span><span class="p">,</span>
+        <span class="mf">474.0</span><span class="p">:</span> <span class="mf">0.0101986</span><span class="p">,</span>
+        <span class="mf">475.0</span><span class="p">:</span> <span class="mf">0.0097472</span><span class="p">,</span>
+        <span class="mf">476.0</span><span class="p">:</span> <span class="mf">0.0093009</span><span class="p">,</span>
+        <span class="mf">477.0</span><span class="p">:</span> <span class="mf">0.0088626</span><span class="p">,</span>
+        <span class="mf">478.0</span><span class="p">:</span> <span class="mf">0.0084333</span><span class="p">,</span>
+        <span class="mf">479.0</span><span class="p">:</span> <span class="mf">0.0080139</span><span class="p">,</span>
+        <span class="mf">480.0</span><span class="p">:</span> <span class="mf">0.0076053</span><span class="p">,</span>
+        <span class="mf">481.0</span><span class="p">:</span> <span class="mf">0.0072084</span><span class="p">,</span>
+        <span class="mf">482.0</span><span class="p">:</span> <span class="mf">0.0068241</span><span class="p">,</span>
+        <span class="mf">483.0</span><span class="p">:</span> <span class="mf">0.0064543</span><span class="p">,</span>
+        <span class="mf">484.0</span><span class="p">:</span> <span class="mf">0.0061006</span><span class="p">,</span>
+        <span class="mf">485.0</span><span class="p">:</span> <span class="mf">0.0057647</span><span class="p">,</span>
+        <span class="mf">486.0</span><span class="p">:</span> <span class="mf">0.0054478</span><span class="p">,</span>
+        <span class="mf">487.0</span><span class="p">:</span> <span class="mf">0.0051493</span><span class="p">,</span>
+        <span class="mf">488.0</span><span class="p">:</span> <span class="mf">0.0048679</span><span class="p">,</span>
+        <span class="mf">489.0</span><span class="p">:</span> <span class="mf">0.0046025</span><span class="p">,</span>
+        <span class="mf">490.0</span><span class="p">:</span> <span class="mf">0.0043519</span><span class="p">,</span>
+        <span class="mf">491.0</span><span class="p">:</span> <span class="mf">0.0041156</span><span class="p">,</span>
+        <span class="mf">492.0</span><span class="p">:</span> <span class="mf">0.0038935</span><span class="p">,</span>
+        <span class="mf">493.0</span><span class="p">:</span> <span class="mf">0.0036849</span><span class="p">,</span>
+        <span class="mf">494.0</span><span class="p">:</span> <span class="mf">0.0034890</span><span class="p">,</span>
+        <span class="mf">495.0</span><span class="p">:</span> <span class="mf">0.0033052</span><span class="p">,</span>
+        <span class="mf">496.0</span><span class="p">:</span> <span class="mf">0.0031327</span><span class="p">,</span>
+        <span class="mf">497.0</span><span class="p">:</span> <span class="mf">0.0029708</span><span class="p">,</span>
+        <span class="mf">498.0</span><span class="p">:</span> <span class="mf">0.0028191</span><span class="p">,</span>
+        <span class="mf">499.0</span><span class="p">:</span> <span class="mf">0.0026772</span><span class="p">,</span>
+        <span class="mf">500.0</span><span class="p">:</span> <span class="mf">0.0025446</span><span class="p">,</span>
+        <span class="mf">501.0</span><span class="p">:</span> <span class="mf">0.0024213</span><span class="p">,</span>
+        <span class="mf">502.0</span><span class="p">:</span> <span class="mf">0.0023059</span><span class="p">,</span>
+        <span class="mf">503.0</span><span class="p">:</span> <span class="mf">0.0021963</span><span class="p">,</span>
+        <span class="mf">504.0</span><span class="p">:</span> <span class="mf">0.0020905</span><span class="p">,</span>
+        <span class="mf">505.0</span><span class="p">:</span> <span class="mf">0.0019861</span><span class="p">,</span>
+        <span class="mf">506.0</span><span class="p">:</span> <span class="mf">0.0018820</span><span class="p">,</span>
+        <span class="mf">507.0</span><span class="p">:</span> <span class="mf">0.0017786</span><span class="p">,</span>
+        <span class="mf">508.0</span><span class="p">:</span> <span class="mf">0.0016767</span><span class="p">,</span>
+        <span class="mf">509.0</span><span class="p">:</span> <span class="mf">0.0015769</span><span class="p">,</span>
+        <span class="mf">510.0</span><span class="p">:</span> <span class="mf">0.0014800</span><span class="p">,</span>
+        <span class="mf">511.0</span><span class="p">:</span> <span class="mf">0.0013859</span><span class="p">,</span>
+        <span class="mf">512.0</span><span class="p">:</span> <span class="mf">0.0012945</span><span class="p">,</span>
+        <span class="mf">513.0</span><span class="p">:</span> <span class="mf">0.0012068</span><span class="p">,</span>
+        <span class="mf">514.0</span><span class="p">:</span> <span class="mf">0.0011233</span><span class="p">,</span>
+        <span class="mf">515.0</span><span class="p">:</span> <span class="mf">0.0010450</span><span class="p">,</span>
+        <span class="mf">516.0</span><span class="p">:</span> <span class="mf">0.0009721</span><span class="p">,</span>
+        <span class="mf">517.0</span><span class="p">:</span> <span class="mf">0.0009043</span><span class="p">,</span>
+        <span class="mf">518.0</span><span class="p">:</span> <span class="mf">0.0008418</span><span class="p">,</span>
+        <span class="mf">519.0</span><span class="p">:</span> <span class="mf">0.0007844</span><span class="p">,</span>
+        <span class="mf">520.0</span><span class="p">:</span> <span class="mf">0.0007320</span><span class="p">,</span>
+        <span class="mf">521.0</span><span class="p">:</span> <span class="mf">0.0006849</span><span class="p">,</span>
+        <span class="mf">522.0</span><span class="p">:</span> <span class="mf">0.0006425</span><span class="p">,</span>
+        <span class="mf">523.0</span><span class="p">:</span> <span class="mf">0.0006040</span><span class="p">,</span>
+        <span class="mf">524.0</span><span class="p">:</span> <span class="mf">0.0005687</span><span class="p">,</span>
+        <span class="mf">525.0</span><span class="p">:</span> <span class="mf">0.0005356</span><span class="p">,</span>
+        <span class="mf">526.0</span><span class="p">:</span> <span class="mf">0.0005043</span><span class="p">,</span>
+        <span class="mf">527.0</span><span class="p">:</span> <span class="mf">0.0004747</span><span class="p">,</span>
+        <span class="mf">528.0</span><span class="p">:</span> <span class="mf">0.0004467</span><span class="p">,</span>
+        <span class="mf">529.0</span><span class="p">:</span> <span class="mf">0.0004200</span><span class="p">,</span>
+        <span class="mf">530.0</span><span class="p">:</span> <span class="mf">0.0003944</span><span class="p">,</span>
+        <span class="mf">531.0</span><span class="p">:</span> <span class="mf">0.0003696</span><span class="p">,</span>
+        <span class="mf">532.0</span><span class="p">:</span> <span class="mf">0.0003455</span><span class="p">,</span>
+        <span class="mf">533.0</span><span class="p">:</span> <span class="mf">0.0003224</span><span class="p">,</span>
+        <span class="mf">534.0</span><span class="p">:</span> <span class="mf">0.0003002</span><span class="p">,</span>
+        <span class="mf">535.0</span><span class="p">:</span> <span class="mf">0.0002792</span><span class="p">,</span>
+        <span class="mf">536.0</span><span class="p">:</span> <span class="mf">0.0002592</span><span class="p">,</span>
+        <span class="mf">537.0</span><span class="p">:</span> <span class="mf">0.0002404</span><span class="p">,</span>
+        <span class="mf">538.0</span><span class="p">:</span> <span class="mf">0.0002225</span><span class="p">,</span>
+        <span class="mf">539.0</span><span class="p">:</span> <span class="mf">0.0002057</span><span class="p">,</span>
+        <span class="mf">540.0</span><span class="p">:</span> <span class="mf">0.0001899</span><span class="p">,</span>
+        <span class="mf">541.0</span><span class="p">:</span> <span class="mf">0.0001751</span><span class="p">,</span>
+        <span class="mf">542.0</span><span class="p">:</span> <span class="mf">0.0001613</span><span class="p">,</span>
+        <span class="mf">543.0</span><span class="p">:</span> <span class="mf">0.0001484</span><span class="p">,</span>
+        <span class="mf">544.0</span><span class="p">:</span> <span class="mf">0.0001364</span><span class="p">,</span>
+        <span class="mf">545.0</span><span class="p">:</span> <span class="mf">0.0001254</span><span class="p">,</span>
+        <span class="mf">546.0</span><span class="p">:</span> <span class="mf">0.0001151</span><span class="p">,</span>
+        <span class="mf">547.0</span><span class="p">:</span> <span class="mf">0.0001057</span><span class="p">,</span>
+        <span class="mf">548.0</span><span class="p">:</span> <span class="mf">9.71e-05</span><span class="p">,</span>
+        <span class="mf">549.0</span><span class="p">:</span> <span class="mf">8.91e-05</span><span class="p">,</span>
+        <span class="mf">550.0</span><span class="p">:</span> <span class="mf">8.19e-05</span><span class="p">,</span>
+        <span class="mf">551.0</span><span class="p">:</span> <span class="mf">7.52e-05</span><span class="p">,</span>
+        <span class="mf">552.0</span><span class="p">:</span> <span class="mf">6.91e-05</span><span class="p">,</span>
+        <span class="mf">553.0</span><span class="p">:</span> <span class="mf">6.35e-05</span><span class="p">,</span>
+        <span class="mf">554.0</span><span class="p">:</span> <span class="mf">5.84e-05</span><span class="p">,</span>
+        <span class="mf">555.0</span><span class="p">:</span> <span class="mf">5.38e-05</span><span class="p">,</span>
+        <span class="mf">556.0</span><span class="p">:</span> <span class="mf">4.96e-05</span><span class="p">,</span>
+        <span class="mf">557.0</span><span class="p">:</span> <span class="mf">4.58e-05</span><span class="p">,</span>
+        <span class="mf">558.0</span><span class="p">:</span> <span class="mf">4.24e-05</span><span class="p">,</span>
+        <span class="mf">559.0</span><span class="p">:</span> <span class="mf">3.93e-05</span><span class="p">,</span>
+        <span class="mf">560.0</span><span class="p">:</span> <span class="mf">3.65e-05</span><span class="p">,</span>
+        <span class="mf">561.0</span><span class="p">:</span> <span class="mf">3.39e-05</span><span class="p">,</span>
+        <span class="mf">562.0</span><span class="p">:</span> <span class="mf">3.15e-05</span><span class="p">,</span>
+        <span class="mf">563.0</span><span class="p">:</span> <span class="mf">2.94e-05</span><span class="p">,</span>
+        <span class="mf">564.0</span><span class="p">:</span> <span class="mf">2.75e-05</span><span class="p">,</span>
+        <span class="mf">565.0</span><span class="p">:</span> <span class="mf">2.57e-05</span><span class="p">,</span>
+        <span class="mf">566.0</span><span class="p">:</span> <span class="mf">2.42e-05</span><span class="p">,</span>
+        <span class="mf">567.0</span><span class="p">:</span> <span class="mf">2.28e-05</span><span class="p">,</span>
+        <span class="mf">568.0</span><span class="p">:</span> <span class="mf">2.16e-05</span><span class="p">,</span>
+        <span class="mf">569.0</span><span class="p">:</span> <span class="mf">2.06e-05</span><span class="p">,</span>
+        <span class="mf">570.0</span><span class="p">:</span> <span class="mf">1.96e-05</span><span class="p">,</span>
+        <span class="mf">571.0</span><span class="p">:</span> <span class="mf">1.89e-05</span><span class="p">,</span>
+        <span class="mf">572.0</span><span class="p">:</span> <span class="mf">1.82e-05</span><span class="p">,</span>
+        <span class="mf">573.0</span><span class="p">:</span> <span class="mf">1.77e-05</span><span class="p">,</span>
+        <span class="mf">574.0</span><span class="p">:</span> <span class="mf">1.72e-05</span><span class="p">,</span>
+        <span class="mf">575.0</span><span class="p">:</span> <span class="mf">1.68e-05</span><span class="p">,</span>
+        <span class="mf">576.0</span><span class="p">:</span> <span class="mf">1.65e-05</span><span class="p">,</span>
+        <span class="mf">577.0</span><span class="p">:</span> <span class="mf">1.63e-05</span><span class="p">,</span>
+        <span class="mf">578.0</span><span class="p">:</span> <span class="mf">1.60e-05</span><span class="p">,</span>
+        <span class="mf">579.0</span><span class="p">:</span> <span class="mf">1.57e-05</span><span class="p">,</span>
+        <span class="mf">580.0</span><span class="p">:</span> <span class="mf">1.54e-05</span><span class="p">,</span>
+        <span class="mf">581.0</span><span class="p">:</span> <span class="mf">1.51e-05</span><span class="p">,</span>
+        <span class="mf">582.0</span><span class="p">:</span> <span class="mf">1.46e-05</span><span class="p">,</span>
+        <span class="mf">583.0</span><span class="p">:</span> <span class="mf">1.42e-05</span><span class="p">,</span>
+        <span class="mf">584.0</span><span class="p">:</span> <span class="mf">1.36e-05</span><span class="p">,</span>
+        <span class="mf">585.0</span><span class="p">:</span> <span class="mf">1.31e-05</span><span class="p">,</span>
+        <span class="mf">586.0</span><span class="p">:</span> <span class="mf">1.25e-05</span><span class="p">,</span>
+        <span class="mf">587.0</span><span class="p">:</span> <span class="mf">1.19e-05</span><span class="p">,</span>
+        <span class="mf">588.0</span><span class="p">:</span> <span class="mf">1.13e-05</span><span class="p">,</span>
+        <span class="mf">589.0</span><span class="p">:</span> <span class="mf">1.07e-05</span><span class="p">,</span>
+        <span class="mf">590.0</span><span class="p">:</span> <span class="mf">1.03e-05</span><span class="p">,</span>
+        <span class="mf">591.0</span><span class="p">:</span> <span class="mf">1.00e-05</span><span class="p">,</span>
+        <span class="mf">592.0</span><span class="p">:</span> <span class="mf">9.80e-06</span><span class="p">,</span>
+        <span class="mf">593.0</span><span class="p">:</span> <span class="mf">9.70e-06</span><span class="p">,</span>
+        <span class="mf">594.0</span><span class="p">:</span> <span class="mf">9.60e-06</span><span class="p">,</span>
+        <span class="mf">595.0</span><span class="p">:</span> <span class="mf">9.40e-06</span><span class="p">,</span>
+        <span class="mf">596.0</span><span class="p">:</span> <span class="mf">9.10e-06</span><span class="p">,</span>
+        <span class="mf">597.0</span><span class="p">:</span> <span class="mf">8.70e-06</span><span class="p">,</span>
+        <span class="mf">598.0</span><span class="p">:</span> <span class="mf">8.30e-06</span><span class="p">,</span>
+        <span class="mf">599.0</span><span class="p">:</span> <span class="mf">7.90e-06</span><span class="p">,</span>
+        <span class="mf">600.0</span><span class="p">:</span> <span class="mf">7.50e-06</span><span class="p">,</span>
+        <span class="mf">601.0</span><span class="p">:</span> <span class="mf">7.10e-06</span><span class="p">,</span>
+        <span class="mf">602.0</span><span class="p">:</span> <span class="mf">6.80e-06</span><span class="p">,</span>
+        <span class="mf">603.0</span><span class="p">:</span> <span class="mf">6.40e-06</span><span class="p">,</span>
+        <span class="mf">604.0</span><span class="p">:</span> <span class="mf">6.00e-06</span><span class="p">,</span>
+        <span class="mf">605.0</span><span class="p">:</span> <span class="mf">5.60e-06</span><span class="p">,</span>
+        <span class="mf">606.0</span><span class="p">:</span> <span class="mf">5.10e-06</span><span class="p">,</span>
+        <span class="mf">607.0</span><span class="p">:</span> <span class="mf">4.60e-06</span><span class="p">,</span>
+        <span class="mf">608.0</span><span class="p">:</span> <span class="mf">4.10e-06</span><span class="p">,</span>
+        <span class="mf">609.0</span><span class="p">:</span> <span class="mf">3.60e-06</span><span class="p">,</span>
+        <span class="mf">610.0</span><span class="p">:</span> <span class="mf">3.20e-06</span><span class="p">,</span>
+        <span class="mf">611.0</span><span class="p">:</span> <span class="mf">2.90e-06</span><span class="p">,</span>
+        <span class="mf">612.0</span><span class="p">:</span> <span class="mf">2.60e-06</span><span class="p">,</span>
+        <span class="mf">613.0</span><span class="p">:</span> <span class="mf">2.50e-06</span><span class="p">,</span>
+        <span class="mf">614.0</span><span class="p">:</span> <span class="mf">2.40e-06</span><span class="p">,</span>
+        <span class="mf">615.0</span><span class="p">:</span> <span class="mf">2.20e-06</span><span class="p">,</span>
+        <span class="mf">616.0</span><span class="p">:</span> <span class="mf">2.10e-06</span><span class="p">,</span>
+        <span class="mf">617.0</span><span class="p">:</span> <span class="mf">2.10e-06</span><span class="p">,</span>
+        <span class="mf">618.0</span><span class="p">:</span> <span class="mf">2.00e-06</span><span class="p">,</span>
+        <span class="mf">619.0</span><span class="p">:</span> <span class="mf">1.90e-06</span><span class="p">,</span>
+        <span class="mf">620.0</span><span class="p">:</span> <span class="mf">1.80e-06</span><span class="p">,</span>
+        <span class="mf">621.0</span><span class="p">:</span> <span class="mf">1.60e-06</span><span class="p">,</span>
+        <span class="mf">622.0</span><span class="p">:</span> <span class="mf">1.50e-06</span><span class="p">,</span>
+        <span class="mf">623.0</span><span class="p">:</span> <span class="mf">1.30e-06</span><span class="p">,</span>
+        <span class="mf">624.0</span><span class="p">:</span> <span class="mf">1.10e-06</span><span class="p">,</span>
+        <span class="mf">625.0</span><span class="p">:</span> <span class="mf">9.00e-07</span><span class="p">,</span>
+        <span class="mf">626.0</span><span class="p">:</span> <span class="mf">8.00e-07</span><span class="p">,</span>
+        <span class="mf">627.0</span><span class="p">:</span> <span class="mf">7.00e-07</span><span class="p">,</span>
+        <span class="mf">628.0</span><span class="p">:</span> <span class="mf">6.00e-07</span><span class="p">,</span>
+        <span class="mf">629.0</span><span class="p">:</span> <span class="mf">5.00e-07</span><span class="p">,</span>
+        <span class="mf">630.0</span><span class="p">:</span> <span class="mf">5.00e-07</span><span class="p">,</span>
+        <span class="mf">631.0</span><span class="p">:</span> <span class="mf">4.00e-07</span><span class="p">,</span>
+        <span class="mf">632.0</span><span class="p">:</span> <span class="mf">4.00e-07</span><span class="p">,</span>
+        <span class="mf">633.0</span><span class="p">:</span> <span class="mf">3.00e-07</span><span class="p">,</span>
+        <span class="mf">634.0</span><span class="p">:</span> <span class="mf">3.00e-07</span><span class="p">,</span>
+        <span class="mf">635.0</span><span class="p">:</span> <span class="mf">3.00e-07</span><span class="p">,</span>
+        <span class="mf">636.0</span><span class="p">:</span> <span class="mf">3.00e-07</span><span class="p">,</span>
+        <span class="mf">637.0</span><span class="p">:</span> <span class="mf">2.00e-07</span><span class="p">,</span>
+        <span class="mf">638.0</span><span class="p">:</span> <span class="mf">2.00e-07</span><span class="p">,</span>
+        <span class="mf">639.0</span><span class="p">:</span> <span class="mf">2.00e-07</span><span class="p">,</span>
+        <span class="mf">640.0</span><span class="p">:</span> <span class="mf">2.00e-07</span><span class="p">,</span>
+        <span class="mf">641.0</span><span class="p">:</span> <span class="mf">2.00e-07</span><span class="p">,</span>
+        <span class="mf">642.0</span><span class="p">:</span> <span class="mf">2.00e-07</span><span class="p">,</span>
+        <span class="mf">643.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">644.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">645.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">646.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">647.0</span><span class="p">:</span> <span class="mf">1.00e-07</span><span class="p">,</span>
+        <span class="mf">648.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">649.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">650.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">651.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">652.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">653.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">654.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">655.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">656.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">657.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">658.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">659.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">660.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">661.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">662.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">663.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">664.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">665.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">666.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">667.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">668.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">669.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">670.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">671.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">672.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">673.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">674.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">675.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">676.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">677.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">678.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">679.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">680.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">681.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">682.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">683.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">684.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">685.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">686.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">687.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">688.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">689.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">690.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">691.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">692.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">693.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">694.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">695.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">696.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">697.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">698.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">699.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">700.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">701.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">702.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">703.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">704.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">705.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">706.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">707.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">708.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">709.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">710.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">711.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">712.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">713.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">714.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">715.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">716.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">717.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">718.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">719.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">720.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">721.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">722.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">723.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">724.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">725.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">726.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">727.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">728.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">729.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">730.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">731.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">732.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">733.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">734.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">735.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">736.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">737.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">738.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">739.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">740.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">741.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">742.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">743.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">744.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">745.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">746.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">747.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">748.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">749.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">750.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">751.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">752.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">753.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">754.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">755.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">756.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">757.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">758.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">759.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">760.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">761.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">762.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">763.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">764.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">765.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">766.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">767.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">768.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">769.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">770.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">771.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">772.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">773.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">774.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">775.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">776.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">777.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">778.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">779.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">780.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">781.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">782.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">783.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">784.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">785.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">786.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">787.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">788.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">789.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">790.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">791.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">792.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">793.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">794.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">795.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">796.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">797.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">798.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">799.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">800.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">801.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">802.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">803.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">804.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">805.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">806.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">807.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">808.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">809.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">810.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">811.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">812.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">813.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">814.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">815.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">816.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">817.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">818.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">819.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">820.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">821.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">822.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">823.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">824.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">825.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">826.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">827.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">828.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">829.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">,</span>
+        <span class="mf">830.0</span><span class="p">:</span> <span class="mf">0.0000000</span><span class="p">}}</span>
+
+<span class="n">ACES_RICD</span> <span class="o">=</span> <span class="n">RGB_ColourMatchingFunctions</span><span class="p">(</span><span class="s">&#39;ACES RICD&#39;</span><span class="p">,</span> <span class="n">ACES_RICD_DATA</span><span class="p">)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*ACES Reference Input Capture Device* spectral sensitivities.</span>
+
+<span class="sd">ACES_RICD : RGB_ColourMatchingFunctions</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2015, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

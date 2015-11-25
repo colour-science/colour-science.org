@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.appearance.llab Module &mdash; Colour 0.3.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.0 documentation" href="index.html" />
+    <link rel="up" title="colour.appearance Package" href="colour.appearance.html" />
+    <link rel="next" title="colour.appearance.nayatani95 Module" href="colour.appearance.nayatani95.html" />
+    <link rel="prev" title="colour.appearance.hunt Module" href="colour.appearance.hunt.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+  <li>
+    <a href="colour.appearance.hunt.html" title="Previous Chapter: colour.appearance.hunt Module"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; colour.appearanc...</span>
+    </a>
+  </li>
+  <li>
+    <a href="colour.appearance.nayatani95.html" title="Next Chapter: colour.appearance.nayatani95 Module"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">colour.appearanc... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="module-colour.appearance.llab">
+<span id="colour-appearance-llab-module"></span><h1>colour.appearance.llab Module<a class="headerlink" href="#module-colour.appearance.llab" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="llab-l-c-colour-appearance-model">
+<h2>LLAB(l:c) Colour Appearance Model<a class="headerlink" href="#llab-l-c-colour-appearance-model" title="Permalink to this headline">¶</a></h2>
+<p>Defines <em>LLAB(l:c)</em> colour appearance model objects:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#colour.appearance.llab.LLAB_InductionFactors" title="colour.appearance.llab.LLAB_InductionFactors"><tt class="xref py py-class docutils literal"><span class="pre">LLAB_InductionFactors</span></tt></a></li>
+<li><a class="reference internal" href="#colour.appearance.llab.LLAB_VIEWING_CONDITIONS" title="colour.appearance.llab.LLAB_VIEWING_CONDITIONS"><tt class="xref py py-attr docutils literal"><span class="pre">LLAB_VIEWING_CONDITIONS</span></tt></a></li>
+<li><a class="reference internal" href="#colour.appearance.llab.LLAB_Specification" title="colour.appearance.llab.LLAB_Specification"><tt class="xref py py-class docutils literal"><span class="pre">LLAB_Specification</span></tt></a></li>
+<li><a class="reference internal" href="#colour.appearance.llab.XYZ_to_LLAB" title="colour.appearance.llab.XYZ_to_LLAB"><tt class="xref py py-func docutils literal"><span class="pre">XYZ_to_LLAB()</span></tt></a></li>
+</ul>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/appearance/llab.ipynb">LLAB(l:c) Colour Appearance Model IPython Notebook</a></p>
+</div>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td><strong>Mark D. Fairchild</strong>, <em>Color Appearance Models, 3nd Edition</em>,
+The Wiley-IS&amp;T Series in Imaging Science and Technology,
+published June 2013, ASIN: B00DAYO8E2,
+locations 6019-6178.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[2]</td><td><strong>Luo, M. R., &amp; Morovic, J.</strong>,
+<em>Two Unsolved Issues in Colour Management – Colour Appearance and
+Gamut Mapping</em>,
+<em>5th International Conference on High Technology: Imaging Science and
+Technology – Evolution &amp; Promise</em>
+published 1996, pp. 136–147.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[3]</td><td><strong>Luo, M. R., Lo, M. C., &amp; Kuo, W. G.</strong>,
+<em>The LLAB (l:c) colour model</em>,
+<em>Color Research &amp; Application, Volume 21, Issue 6, pages 412–429,
+December 1996</em></td></tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="colour.appearance.llab.LLAB_InductionFactors">
+<em class="property">class </em><tt class="descclassname">colour.appearance.llab.</tt><tt class="descname">LLAB_InductionFactors</tt><a class="reference internal" href="_modules/colour/appearance/llab.html#LLAB_InductionFactors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.appearance.llab.LLAB_InductionFactors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#colour.appearance.llab.LLAB_InductionFactors" title="colour.appearance.llab.LLAB_InductionFactors"><tt class="xref py py-class docutils literal"><span class="pre">colour.appearance.llab.LLAB_InductionFactors</span></tt></a></p>
+<p><em>LLAB(l:c)</em> colour appearance model induction factors.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>D</strong> (<em>numeric</em>) &#8211; <em>Discounting-the-Illuminant</em> factor <span class="math">\(D\)</span> in domain [0, 1].</li>
+<li><strong>F_S</strong> (<em>numeric</em>) &#8211; Surround induction factor <span class="math">\(F_S\)</span>.</li>
+<li><strong>F_L</strong> (<em>numeric</em>) &#8211; <em>Lightness</em> induction factor <span class="math">\(F_L\)</span>.</li>
+<li><strong>F_C</strong> (<em>numeric</em>) &#8211; <em>Chroma</em> induction factor <span class="math">\(F_C\)</span>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.appearance.llab.LLAB_VIEWING_CONDITIONS">
+<tt class="descclassname">colour.appearance.llab.</tt><tt class="descname">LLAB_VIEWING_CONDITIONS</tt><em class="property"> = CaseInsensitiveMapping({u'35mm Projection Transparency, Dark Surround': LLAB_InductionFactors(D=0.7, F_S=4, F_L=1, F_C=1), u'Cut Sheet Transparency, Dim Surround': LLAB_InductionFactors(D=1, F_S=5, F_L=1, F_C=1.1), u'ref_average_4_plus': LLAB_InductionFactors(D=1, F_S=3, F_L=0, F_C=1), u'Reference Samples &amp; Images, Average Surround, Subtending &lt; 4': LLAB_InductionFactors(D=1, F_S=3, F_L=1, F_C=1), u'Television &amp; VDU Displays, Dim Surround': LLAB_InductionFactors(D=0.7, F_S=3.5, F_L=1, F_C=1), u'sheet_dim': LLAB_InductionFactors(D=1, F_S=5, F_L=1, F_C=1.1), u'projected_dark': LLAB_InductionFactors(D=0.7, F_S=4, F_L=1, F_C=1), u'ref_average_4_minus': LLAB_InductionFactors(D=1, F_S=3, F_L=1, F_C=1), u'Reference Samples &amp; Images, Average Surround, Subtending &gt; 4': LLAB_InductionFactors(D=1, F_S=3, F_L=0, F_C=1), u'tv_dim': LLAB_InductionFactors(D=0.7, F_S=3.5, F_L=1, F_C=1)})</em><a class="headerlink" href="#colour.appearance.llab.LLAB_VIEWING_CONDITIONS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reference <em>LLAB(l:c)</em> colour appearance model viewing conditions.</p>
+<dl class="docutils">
+<dt>LLAB_VIEWING_CONDITIONS <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd>(&#8216;Reference Samples &amp; Images, Average Surround, Subtending &gt; 4&#8217;,
+&#8216;Reference Samples &amp; Images, Average Surround, Subtending &lt; 4&#8217;,
+&#8216;Television &amp; VDU Displays, Dim Surround&#8217;,
+&#8216;Cut Sheet Transparency, Dim Surround&#8217;:,
+&#8216;35mm Projection Transparency, Dark Surround&#8217;)</dd>
+</dl>
+<p>Aliases:</p>
+<ul class="simple">
+<li>&#8216;ref_average_4_plus&#8217;:
+&#8216;Reference Samples &amp; Images, Average Surround, Subtending &gt; 4&#8217;</li>
+<li>&#8216;ref_average_4_minus&#8217;:
+&#8216;Reference Samples &amp; Images, Average Surround, Subtending &lt; 4&#8217;</li>
+<li>&#8216;tv_dim&#8217;: &#8216;Television &amp; VDU Displays, Dim Surround&#8217;</li>
+<li>&#8216;sheet_dim&#8217;: &#8216;Cut Sheet Transparency, Dim Surround&#8217;</li>
+<li>&#8216;projected_dark&#8217;: &#8216;35mm Projection Transparency, Dark Surround&#8217;</li>
+</ul>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.appearance.llab.LLAB_XYZ_TO_RGB_MATRIX">
+<tt class="descclassname">colour.appearance.llab.</tt><tt class="descname">LLAB_XYZ_TO_RGB_MATRIX</tt><em class="property"> = array([[ 0.8951,  0.2664, -0.1614],        [-0.7502,  1.7135,  0.0367],        [ 0.0389, -0.0685,  1.0296]])</em><a class="headerlink" href="#colour.appearance.llab.LLAB_XYZ_TO_RGB_MATRIX" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>LLAB(l:c)</em> colour appearance model <em>CIE XYZ</em> colourspace matrix to normalised
+cone responses matrix.</p>
+<p>LLAB_XYZ_TO_RGB_MATRIX : array_like, (3, 3)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.appearance.llab.LLAB_RGB_TO_XYZ_MATRIX">
+<tt class="descclassname">colour.appearance.llab.</tt><tt class="descname">LLAB_RGB_TO_XYZ_MATRIX</tt><em class="property"> = array([[ 0.987 , -0.1471,  0.16  ],        [ 0.4323,  0.5184,  0.0493],        [-0.0085,  0.04  ,  0.9685]])</em><a class="headerlink" href="#colour.appearance.llab.LLAB_RGB_TO_XYZ_MATRIX" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>LLAB(l:c)</em> colour appearance model normalised cone responses to <em>CIE XYZ</em>
+colourspace matrix.</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>This matrix has been rounded on purpose to 4 decimals so that we keep
+consistency with <strong>Mark D. Fairchild</strong> implementation results.</li>
+</ul>
+<p>LLAB_RGB_TO_XYZ_MATRIX : array_like, (3, 3)</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="colour.appearance.llab.LLAB_ReferenceSpecification">
+<em class="property">class </em><tt class="descclassname">colour.appearance.llab.</tt><tt class="descname">LLAB_ReferenceSpecification</tt><a class="reference internal" href="_modules/colour/appearance/llab.html#LLAB_ReferenceSpecification"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.appearance.llab.LLAB_ReferenceSpecification" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#colour.appearance.llab.LLAB_ReferenceSpecification" title="colour.appearance.llab.LLAB_ReferenceSpecification"><tt class="xref py py-class docutils literal"><span class="pre">colour.appearance.llab.LLAB_ReferenceSpecification</span></tt></a></p>
+<p>Defines the <em>LLAB(l:c)</em> colour appearance model reference specification.</p>
+<p>This specification has field names consistent with <strong>Mark D. Fairchild</strong>
+reference.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>L_L</strong> (<em>numeric</em>) &#8211; Correlate of <em>Lightness</em> <span class="math">\(L_L\)</span>.</li>
+<li><strong>Ch_L</strong> (<em>numeric</em>) &#8211; Correlate of <em>chroma</em> <span class="math">\(Ch_L\)</span>.</li>
+<li><strong>h_L</strong> (<em>numeric</em>) &#8211; <em>Hue</em> angle <span class="math">\(h_L\)</span> in degrees.</li>
+<li><strong>s_L</strong> (<em>numeric</em>) &#8211; Correlate of <em>saturation</em> <span class="math">\(s_L\)</span>.</li>
+<li><strong>C_L</strong> (<em>numeric</em>) &#8211; Correlate of <em>colourfulness</em> <span class="math">\(C_L\)</span>.</li>
+<li><strong>HC</strong> (<em>numeric</em>) &#8211; <em>Hue</em> <span class="math">\(h\)</span> composition <span class="math">\(H^C\)</span>.</li>
+<li><strong>A_L</strong> (<em>numeric</em>) &#8211; Opponent signal <span class="math">\(A_L\)</span>.</li>
+<li><strong>B_L</strong> (<em>numeric</em>) &#8211; Opponent signal <span class="math">\(B_L\)</span>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="colour.appearance.llab.LLAB_Specification">
+<em class="property">class </em><tt class="descclassname">colour.appearance.llab.</tt><tt class="descname">LLAB_Specification</tt><a class="reference internal" href="_modules/colour/appearance/llab.html#LLAB_Specification"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.appearance.llab.LLAB_Specification" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#colour.appearance.llab.LLAB_Specification" title="colour.appearance.llab.LLAB_Specification"><tt class="xref py py-class docutils literal"><span class="pre">colour.appearance.llab.LLAB_Specification</span></tt></a></p>
+<p>Defines the <em>LLAB(l:c)</em> colour appearance model specification.</p>
+<p>This specification has field names consistent with the remaining colour
+appearance models in <a class="reference internal" href="colour.appearance.html#module-colour.appearance" title="colour.appearance"><tt class="xref py py-mod docutils literal"><span class="pre">colour.appearance</span></tt></a> but diverge from
+<strong>Mark D. Fairchild</strong> reference.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>J</strong> (<em>numeric</em>) &#8211; Correlate of <em>Lightness</em> <span class="math">\(L_L\)</span>.</li>
+<li><strong>C</strong> (<em>numeric</em>) &#8211; Correlate of <em>chroma</em> <span class="math">\(Ch_L\)</span>.</li>
+<li><strong>h</strong> (<em>numeric</em>) &#8211; <em>Hue</em> angle <span class="math">\(h_L\)</span> in degrees.</li>
+<li><strong>s</strong> (<em>numeric</em>) &#8211; Correlate of <em>saturation</em> <span class="math">\(s_L\)</span>.</li>
+<li><strong>M</strong> (<em>numeric</em>) &#8211; Correlate of <em>colourfulness</em> <span class="math">\(C_L\)</span>.</li>
+<li><strong>HC</strong> (<em>numeric</em>) &#8211; <em>Hue</em> <span class="math">\(h\)</span> composition <span class="math">\(H^C\)</span>.</li>
+<li><strong>a</strong> (<em>numeric</em>) &#8211; Opponent signal <span class="math">\(A_L\)</span>.</li>
+<li><strong>b</strong> (<em>numeric</em>) &#8211; Opponent signal <span class="math">\(B_L\)</span>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.appearance.llab.XYZ_to_LLAB">
+<tt class="descclassname">colour.appearance.llab.</tt><tt class="descname">XYZ_to_LLAB</tt><big>(</big><em>XYZ</em>, <em>XYZ_0</em>, <em>Y_b</em>, <em>L</em>, <em>surround=LLAB_InductionFactors(D=1</em>, <em>F_S=3</em>, <em>F_L=1</em>, <em>F_C=1)</em><big>)</big><a class="reference internal" href="_modules/colour/appearance/llab.html#XYZ_to_LLAB"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.appearance.llab.XYZ_to_LLAB" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the <em>LLAB(L:c)</em> colour appearance model correlates.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>XYZ</strong> (<em>array_like, (3,)</em>) &#8211; <em>CIE XYZ</em> colourspace matrix of test sample / stimulus in domain
+[0, 100].</li>
+<li><strong>XYZ_0</strong> (<em>array_like, (3,)</em>) &#8211; <em>CIE XYZ</em> colourspace matrix of reference white in domain [0, 100].</li>
+<li><strong>Y_b</strong> (<em>numeric</em>) &#8211; Luminance factor of the background in <span class="math">\(cd/m^2\)</span>.</li>
+<li><strong>L</strong> (<em>numeric</em>) &#8211; Absolute luminance <span class="math">\(L\)</span> of reference white in <span class="math">\(cd/m^2\)</span>.</li>
+<li><strong>surround</strong> (<em>LLAB_InductionFactors, optional</em>) &#8211; Surround viewing conditions induction factors.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>LLAB(L:c)</em> colour appearance model specification.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">LLAB_Specification</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The output domain of that definition is non standard!</p>
+</div>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <em>CIE XYZ</em> colourspace matrix is in domain [0, 100].</li>
+<li>Input <em>CIE XYZ_0</em> colourspace matrix is in domain [0, 100].</li>
+</ul>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">19.01</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mf">21.78</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">95.05</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mf">108.88</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Y_b</span> <span class="o">=</span> <span class="mf">20.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span> <span class="o">=</span> <span class="mf">318.31</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">surround</span> <span class="o">=</span> <span class="n">LLAB_VIEWING_CONDITIONS</span><span class="p">[</span><span class="s">&#39;ref_average_4_minus&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_to_LLAB</span><span class="p">(</span><span class="n">XYZ</span><span class="p">,</span> <span class="n">XYZ_0</span><span class="p">,</span> <span class="n">Y_b</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">surround</span><span class="p">)</span>  
+<span class="go">LLAB_Specification(J=37.3680474..., C=0.0086506..., h=229.4635727..., s=0.0002314..., M=0.0183832..., HC=None, a=-0.0119478..., b=-0.0139711...)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.appearance.llab.XYZ_to_RGB_LLAB">
+<tt class="descclassname">colour.appearance.llab.</tt><tt class="descname">XYZ_to_RGB_LLAB</tt><big>(</big><em>XYZ</em><big>)</big><a class="reference internal" href="_modules/colour/appearance/llab.html#XYZ_to_RGB_LLAB"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.appearance.llab.XYZ_to_RGB_LLAB" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from <em>CIE XYZ</em> colourspace to normalised cone responses.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>XYZ</strong> (<em>array_like, (3,)</em>) &#8211; <em>CIE XYZ</em> colourspace matrix.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Normalised cone responses.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">ndarray, (3,)</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">19.01</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mf">21.78</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_to_RGB_LLAB</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>  
+<span class="go">array([ 0.9414279...,  1.0404012...,  1.0897088...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.appearance.llab.chromatic_adaptation">
+<tt class="descclassname">colour.appearance.llab.</tt><tt class="descname">chromatic_adaptation</tt><big>(</big><em>RGB</em>, <em>RGB_0</em>, <em>RGB_0r</em>, <em>Y</em>, <em>D=1</em><big>)</big><a class="reference internal" href="_modules/colour/appearance/llab.html#chromatic_adaptation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.appearance.llab.chromatic_adaptation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies chromatic adaptation to given <em>RGB</em> normalised cone responses
+matrix.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>RGB</strong> (<em>array_like, (3,)</em>) &#8211; <em>RGB</em> normalised cone responses matrix of test sample / stimulus.</li>
+<li><strong>RGB_0</strong> (<em>array_like, (3,)</em>) &#8211; <em>RGB</em> normalised cone responses matrix of reference white.</li>
+<li><strong>RGB_0r</strong> (<em>array_like, (3,)</em>) &#8211; <em>RGB</em> normalised cone responses matrix of reference illuminant
+<em>CIE Standard Illuminant D Series</em> <em>D65</em>.</li>
+<li><strong>Y</strong> (<em>numeric</em>) &#8211; Tristimulus values <span class="math">\(Y\)</span> of the stimulus.</li>
+<li><strong>D</strong> (<em>numeric, optional</em>) &#8211; <em>Discounting-the-Illuminant</em> factor in domain [0, 1].</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Adapted <em>CIE XYZ</em> colourspace matrix.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray, (3,)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">RGB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.94142795</span><span class="p">,</span> <span class="mf">1.0404012</span><span class="p">,</span> <span class="mf">1.08970885</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">RGB_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.94146023</span><span class="p">,</span> <span class="mf">1.04039386</span><span class="p">,</span> <span class="mf">1.08950293</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">RGB_0r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.94146023</span><span class="p">,</span> <span class="mf">1.04039386</span><span class="p">,</span> <span class="mf">1.08950293</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Y</span> <span class="o">=</span> <span class="mf">20.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">chromatic_adaptation</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span> <span class="n">RGB_0</span><span class="p">,</span> <span class="n">RGB_0r</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>  
+<span class="go">array([ 19.0099957...,  20.0009186...,  21.7799386...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.appearance.llab.f">
+<tt class="descclassname">colour.appearance.llab.</tt><tt class="descname">f</tt><big>(</big><em>x</em>, <em>F_S</em><big>)</big><a class="reference internal" href="_modules/colour/appearance/llab.html#f"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.appearance.llab.f" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the nonlinear response function of the <em>LLAB(L:c)</em> colour
+appearance model used to model the nonlinear behavior of various visual
+responses.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> (<em>numeric or array_like</em>) &#8211; Visual response variable <span class="math">\(x\)</span>.</li>
+<li><strong>F_S</strong> (<em>numeric</em>) &#8211; Surround induction factor <span class="math">\(F_S\)</span>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Modeled visual response variable <span class="math">\(x\)</span>.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or array_like</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.23350512</span><span class="p">,</span> <span class="mf">0.23351103</span><span class="p">,</span> <span class="mf">0.23355179</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="mf">0.20000918623399996</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  
+<span class="go">array(0.5848125...)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.appearance.llab.opponent_colour_dimensions">
+<tt class="descclassname">colour.appearance.llab.</tt><tt class="descname">opponent_colour_dimensions</tt><big>(</big><em>XYZ</em>, <em>Y_b</em>, <em>F_S</em>, <em>F_L</em><big>)</big><a class="reference internal" href="_modules/colour/appearance/llab.html#opponent_colour_dimensions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.appearance.llab.opponent_colour_dimensions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns opponent colour dimensions from given adapted <em>CIE XYZ</em> colourspace
+matrix.</p>
+<p>The opponent colour dimensions are based on a modified <em>CIE Lab</em>
+colourspace formulae.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>XYZ</strong> (<em>array_like, (3,)</em>) &#8211; Adapted <em>CIE XYZ</em> colourspace matrix.</li>
+<li><strong>Y_b</strong> (<em>numeric</em>) &#8211; Luminance factor of the background in <span class="math">\(cd/m^2\)</span>.</li>
+<li><strong>F_S</strong> (<em>numeric</em>) &#8211; Surround induction factor <span class="math">\(F_S\)</span>.</li>
+<li><strong>F_L</strong> (<em>numeric</em>) &#8211; Lightness induction factor <span class="math">\(F_L\)</span>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Opponent colour dimensions.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray, (3,)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">19.00999572</span><span class="p">,</span> <span class="mf">20.00091862</span><span class="p">,</span> <span class="mf">21.77993863</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Y_b</span> <span class="o">=</span> <span class="mf">20.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">F_S</span> <span class="o">=</span> <span class="mf">3.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">F_L</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">opponent_colour_dimensions</span><span class="p">(</span><span class="n">XYZ</span><span class="p">,</span> <span class="n">Y_b</span><span class="p">,</span> <span class="n">F_S</span><span class="p">,</span> <span class="n">F_L</span><span class="p">)</span>  
+<span class="go">array([  3.7368047...e+01,  -4.4986443...e-03,  -5.2604647...e-03])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.appearance.llab.hue_angle">
+<tt class="descclassname">colour.appearance.llab.</tt><tt class="descname">hue_angle</tt><big>(</big><em>a</em>, <em>b</em><big>)</big><a class="reference internal" href="_modules/colour/appearance/llab.html#hue_angle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.appearance.llab.hue_angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <em>hue</em> angle <span class="math">\(h_L\)</span> in degrees.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>a</strong> (<em>numeric</em>) &#8211; Opponent colour dimension <span class="math">\(a\)</span>.</li>
+<li><strong>b</strong> (<em>numeric</em>) &#8211; Opponent colour dimension <span class="math">\(b\)</span>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>Hue</em> angle <span class="math">\(h_L\)</span> in degrees.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hue_angle</span><span class="p">(</span><span class="o">-</span><span class="mf">4.49864756e-03</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.26046353e-03</span><span class="p">)</span>  
+<span class="go">229.4635727...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.appearance.llab.chroma_correlate">
+<tt class="descclassname">colour.appearance.llab.</tt><tt class="descname">chroma_correlate</tt><big>(</big><em>a</em>, <em>b</em><big>)</big><a class="reference internal" href="_modules/colour/appearance/llab.html#chroma_correlate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.appearance.llab.chroma_correlate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the correlate of <em>chroma</em> <span class="math">\(Ch_L\)</span>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>a</strong> (<em>numeric</em>) &#8211; Opponent colour dimension <span class="math">\(a\)</span>.</li>
+<li><strong>b</strong> (<em>numeric</em>) &#8211; Opponent colour dimension <span class="math">\(b\)</span>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Correlate of <em>chroma</em> <span class="math">\(Ch_L\)</span>.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mf">4.49864756e-03</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mf">5.26046353e-03</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">chroma_correlate</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>  
+<span class="go">0.0086506...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.appearance.llab.colourfulness_correlate">
+<tt class="descclassname">colour.appearance.llab.</tt><tt class="descname">colourfulness_correlate</tt><big>(</big><em>L</em>, <em>L_L</em>, <em>Ch_L</em>, <em>F_C</em><big>)</big><a class="reference internal" href="_modules/colour/appearance/llab.html#colourfulness_correlate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.appearance.llab.colourfulness_correlate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the correlate of <em>colourfulness</em> <span class="math">\(C_L\)</span>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>L</strong> (<em>numeric</em>) &#8211; Absolute luminance <span class="math">\(L\)</span> of reference white in <span class="math">\(cd/m^2\)</span>.</li>
+<li><strong>L_L</strong> (<em>numeric</em>) &#8211; Correlate of <em>Lightness</em> <span class="math">\(L_L\)</span>.</li>
+<li><strong>Ch_L</strong> (<em>numeric</em>) &#8211; Correlate of <em>chroma</em> <span class="math">\(Ch_L\)</span>.</li>
+<li><strong>F_C</strong> (<em>numeric</em>) &#8211; Chroma induction factor <span class="math">\(F_C\)</span>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Correlate of <em>colourfulness</em> <span class="math">\(C_L\)</span>.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">L</span> <span class="o">=</span> <span class="mf">318.31</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L_L</span> <span class="o">=</span> <span class="mf">37.368047493928195</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Ch_L</span> <span class="o">=</span> <span class="mf">0.0086506620517144972</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">F_C</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">colourfulness_correlate</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">L_L</span><span class="p">,</span> <span class="n">Ch_L</span><span class="p">,</span> <span class="n">F_C</span><span class="p">)</span>  
+<span class="go">0.0183832...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.appearance.llab.saturation_correlate">
+<tt class="descclassname">colour.appearance.llab.</tt><tt class="descname">saturation_correlate</tt><big>(</big><em>Ch_L</em>, <em>L_L</em><big>)</big><a class="reference internal" href="_modules/colour/appearance/llab.html#saturation_correlate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.appearance.llab.saturation_correlate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the correlate of <em>saturation</em> <span class="math">\(S_L\)</span>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>Ch_L</strong> (<em>numeric</em>) &#8211; Correlate of <em>chroma</em> <span class="math">\(Ch_L\)</span>.</li>
+<li><strong>L_L</strong> (<em>numeric</em>) &#8211; Correlate of <em>Lightness</em> <span class="math">\(L_L\)</span>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Correlate of <em>saturation</em> <span class="math">\(S_L\)</span>.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Ch_L</span> <span class="o">=</span> <span class="mf">0.0086506620517144972</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L_L</span> <span class="o">=</span> <span class="mf">37.368047493928195</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">saturation_correlate</span><span class="p">(</span><span class="n">Ch_L</span><span class="p">,</span> <span class="n">L_L</span><span class="p">)</span>  
+<span class="go">0.0002314...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.appearance.llab.final_opponent_signals">
+<tt class="descclassname">colour.appearance.llab.</tt><tt class="descname">final_opponent_signals</tt><big>(</big><em>C_L</em>, <em>h_L</em><big>)</big><a class="reference internal" href="_modules/colour/appearance/llab.html#final_opponent_signals"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.appearance.llab.final_opponent_signals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the final opponent signals <span class="math">\(A_L\)</span> and <span class="math">\(B_L\)</span>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>C_L</strong> (<em>numeric</em>) &#8211; Correlate of <em>colourfulness</em> <span class="math">\(C_L\)</span>.</li>
+<li><strong>h_L</strong> (<em>numeric</em>) &#8211; Correlate of <em>hue</em> <span class="math">\(h_L\)</span> in radians.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Final opponent signals <span class="math">\(A_L\)</span> and <span class="math">\(B_L\)</span>.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tuple</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">C_L</span> <span class="o">=</span> <span class="mf">0.0183832899143</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h_L</span> <span class="o">=</span> <span class="mf">4.004894857014253</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">final_opponent_signals</span><span class="p">(</span><span class="n">C_L</span><span class="p">,</span> <span class="n">h_L</span><span class="p">)</span>  
+<span class="go">(-0.0119478..., -0.0139711...)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2014, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
