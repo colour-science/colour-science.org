@@ -197,27 +197,8 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         (
             (
-                ('/contributors', 'Contributors'),
-                ('/history', 'History'),
-                ('mailto:colour-science@googlegroups.com', 'Contact Us'),
-            ),
-            'About'
-        ),
-        (
-            (
-                ('/installation-guide', 'Installation Guide'),
-                ('/tutorial', 'Tutorial'),
-                ('/contributing', 'Contributing'),
-                ('/faq', 'FAQ'),
-                ('/search', 'Search'),
-            ),
-            'Getting Started'
-        ),
-        (
-            (
                 ('https://github.com/colour-science/colour/releases', 'All Releases'),
                 ('https://github.com/colour-science/colour', 'Source Code'),
-                ('http://opensource.org/licenses/BSD-3-Clause', 'License'),
             ),
             'Downloads'
         ),
@@ -233,14 +214,32 @@ NAVIGATION_LINKS = {
         ),
         (
             (
+                ('/installation-guide', 'Installation Guide'),
+                ('/tutorial', 'Tutorial'),
                 ('/api-reference', 'API Reference'),
                 ('http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', 'IPython Notebooks'),
+                ('/features', 'Features'),
+                ('/history', 'History'),
+                ('/contributors', 'Contributors'),
+                ('/contributing', 'Contributing'),
                 ('/bibliography', 'Bibliography'),
                 ('/cited-by', 'Cited By'),
-                ('/features', 'Features'),
-                ('/contributing', 'Contributing'),
+                ('/faq', 'FAQ'),
+                ('http://opensource.org/licenses/BSD-3-Clause', 'License'),
+                ('/search', 'Search'),
             ),
             'Documentation'
+        ),
+        ('/blog', 'Blog'),
+        (
+            (
+                ('mailto:colour-science@googlegroups.com', 'Contact Us'),
+                ('https://groups.google.com/forum/#!forum/colour-science', 'Mailing List'),
+                ('https://twitter.com/colour_science', 'Twitter'),
+                ('https://www.facebook.com/python.colour.science', 'Facebook'),
+                ('https://plus.google.com/u/0/b/101380914519940603334/101380914519940603334/about', 'Google Plus'),
+            ),
+            'Social'
         ),
         ("/archive.html", "Archive"),
         ("/categories/", "Tags"),
@@ -249,7 +248,7 @@ NAVIGATION_LINKS = {
 }
 
 # Name of the theme to use.
-THEME = "ipython"
+THEME = "bootstrap3-jinja"
 
 # Primary color of your theme. This will be used to customize your theme and
 # auto-generate related colors in POSTS_SECTION_COLORS. Must be a HEX value.

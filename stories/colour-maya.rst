@@ -15,7 +15,7 @@ Features
 
 The following features are available:
 
--  RGB Colourspaces plotting.
+-   RGB Colourspaces plotting.
 
 Examples
 ^^^^^^^^
@@ -32,4 +32,4 @@ The wide *ACES RGB* colourspace against *sRGB* colourspace:
 Downloads
 ^^^^^^^^^
 
--  `colour-maya Github Repository <http://github.com/colour-science/colour-maya>`_
+-   `colour-maya Github Repository <http://github.com/colour-science/colour-maya>`_

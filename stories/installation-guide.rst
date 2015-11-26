@@ -42,7 +42,6 @@ Documentation Building Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  `Sphinx <https://sphinx-doc.org>`_
--  `Sphinxcontrib-napoleon <https://pypi.python.org/pypi/sphinxcontrib-napoleon>`_
 
 Pypi
 ----

@@ -15,7 +15,7 @@ Features
 
 The following features are available:
 
--  Various objects for Fraunhofer lines analysis.
+-   Various objects for Fraunhofer lines analysis.
 
 Examples
 ^^^^^^^^
@@ -25,4 +25,4 @@ Examples
 Downloads
 ^^^^^^^^^
 
--  `colour-spectroscope Github Repository <http://github.com/colour-science/colour-spectroscope>`_
+-   `colour-spectroscope Github Repository <http://github.com/colour-science/colour-spectroscope>`_

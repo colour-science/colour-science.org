@@ -21,16 +21,16 @@ Features
 
 The following features are available:
 
--  Lookup node from '.csv' file.
--  Adobe Camera Raw derived and exact tone curves.
--  `dcraw <https://www.cybercom.net/~dcoffin/dcraw/>`_ highlights recovery
-   group.
--  Various Global Tonemapping Operators which are also available from
-   `Nukepedia <http://www.nukepedia.com/gizmos/colour/global_tonemapping_operators>`__.
--  Various Tangent Space Normals utilities which are also available from
-   `Nukepedia <http://www.nukepedia.com/gizmos/filter/tangent_space_normals_utilities>`__.
--  X-Rite ColorChecker 2005 Classic which is also available from
-   `Nukepedia <http://www.nukepedia.com/gizmos/draw/x-rite-colorchecker-classic-2005-gretagmacbeth>`__.
+-   Lookup node from '.csv' file.
+-   Adobe Camera Raw derived and exact tone curves.
+-   `dcraw <https://www.cybercom.net/~dcoffin/dcraw/>`_ highlights recovery
+    group.
+-   Various Global Tonemapping Operators which are also available from
+    `Nukepedia <http://www.nukepedia.com/gizmos/colour/global_tonemapping_operators>`__.
+-   Various Tangent Space Normals utilities which are also available from
+    `Nukepedia <http://www.nukepedia.com/gizmos/filter/tangent_space_normals_utilities>`__.
+-   X-Rite ColorChecker 2005 Classic which is also available from
+    `Nukepedia <http://www.nukepedia.com/gizmos/draw/x-rite-colorchecker-classic-2005-gretagmacbeth>`__.
 
 Examples
 ^^^^^^^^
@@ -39,4 +39,4 @@ Examples
 Downloads
 ^^^^^^^^^
 
--  `colour-nuke Github Repository <http://github.com/colour-science/colour-nuke>`_
+-   `colour-nuke Github Repository <http://github.com/colour-science/colour-nuke>`_
