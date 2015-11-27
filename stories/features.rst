@@ -465,7 +465,7 @@ Volume
 Comprehensive Plotting Capabilities
 -----------------------------------
 
-Input / Output
+Input & Output
 --------------
 
 -   CSV tabular data files

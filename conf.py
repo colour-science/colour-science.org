@@ -130,75 +130,9 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         (
             (
-                ('/contributors', 'Contributors'),
-                ('/history', 'History'),
-                ('mailto:colour-science@googlegroups.com', 'Contact Us'),
-            ),
-            'About'
-        ),
-        (
-            (
-                ('/installation-guide', 'Installation Guide'),
-                ('/tutorial', 'Tutorial'),
-                ('/contributing', 'Contributing'),
-                ('/faq', 'FAQ'),
-                ('/search', 'Search'),
-            ),
-            'Getting Started'
-        ),
-        (
-            (
+                ('https://github.com/colour-science/colour/archive/v0.3.6.zip', 'Latest (v0.3.6)'),
                 ('https://github.com/colour-science/colour/releases', 'All Releases'),
-                ('https://github.com/colour-science/colour', 'Source Code'),
-                ('http://opensource.org/licenses/BSD-3-Clause', 'License'),
-            ),
-            'Downloads'
-        ),
-        (
-            (
-                ('/utilities', 'Utilities'),
-                ('/experiments', 'Experiments'),
-                ('/colour-maya', 'Colour - Maya'),
-                ('/colour-nuke', 'Colour - Nuke'),
-                ('/colour-spectroscope', 'Colour - Spectroscope'),
-            ),
-            'Projects'
-        ),
-        (
-            (
-                # (
-                #     (
-                #         ('http://colour.readthedocs.org/en/latest/', 'Latest'),
-                #         ('/api/0.3.6/html/index.html', '0.3.6'),
-                #         ('/api/0.3.5/html/index.html', '0.3.5'),
-                #         ('/api/0.3.4/html/index.html', '0.3.4'),
-                #         ('/api/0.3.3/html/index.html', '0.3.3'),
-                #         ('/api/0.3.2/html/index.html', '0.3.2'),
-                #         ('/api/0.3.1/html/index.html', '0.3.1'),
-                #         ('/api/0.3.0/html/index.html', '0.3.0'),
-                #     ),
-                #     'Api Reference'
-                # ),
-                ('http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', 'IPython Notebooks'),
-                ('/bibliography', 'Bibliography'),
-                ('/cited-by', 'Cited By'),
-                ('/features', 'Features'),
-                ('/contributing', 'Contributing'),
-            ),
-            'Documentation'
-        ),
-        ("/archive.html", "Archive"),
-        ("/categories/", "Tags"),
-        ("/rss.xml", "RSS feed"),
-    ),
-}
-
-NAVIGATION_LINKS = {
-    DEFAULT_LANG: (
-        (
-            (
-                ('https://github.com/colour-science/colour/releases', 'All Releases'),
-                ('https://github.com/colour-science/colour', 'Source Code'),
+                ('https://pypi.python.org/pypi/colour-science/', 'Pypi'),
             ),
             'Downloads'
         ),
@@ -220,15 +154,28 @@ NAVIGATION_LINKS = {
                 ('http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', 'IPython Notebooks'),
                 ('/features', 'Features'),
                 ('/history', 'History'),
-                ('/contributors', 'Contributors'),
                 ('/contributing', 'Contributing'),
+                ('/contributors', 'Contributors'),
                 ('/bibliography', 'Bibliography'),
+                ('http://dx.doi.org/10.5281/zenodo.27234', 'Cite Us'),
                 ('/cited-by', 'Cited By'),
-                ('/faq', 'FAQ'),
                 ('http://opensource.org/licenses/BSD-3-Clause', 'License'),
                 ('/search', 'Search'),
             ),
             'Documentation'
+        ),
+        (
+            (
+                ('https://github.com/colour-science/colour', 'Source Code'),
+                ('https://github.com/colour-science/colour/issues', 'Issues'),
+                ('https://github.com/colour-science/colour/pulls', 'Pull Requests'),
+                ('https://travis-ci.org/colour-science/colour', 'Continuous Integration'),
+                ('https://coveralls.io/r/colour-science/colour', 'Coverage'),
+                ('https://scrutinizer-ci.com/g/colour-science/colour/', 'Code Health (Scrutinizer-ci)'),
+                ('https://landscape.io/github/colour-science/colour', 'Code Health (Landscape.io)'),
+                ('https://gemnasium.com/colour-science/colour', 'Dependencies'),
+            ),
+            'Development'
         ),
         ('/blog', 'Blog'),
         (
@@ -241,18 +188,18 @@ NAVIGATION_LINKS = {
             ),
             'Social'
         ),
-        ("/archive.html", "Archive"),
-        ("/categories/", "Tags"),
-        ("/rss.xml", "RSS feed"),
+        # ("/archive.html", "Archive"),
+        # ("/categories/", "Tags"),
+        # ("/rss.xml", "RSS feed"),
     ),
 }
 
 # Name of the theme to use.
-THEME = "bootstrap3-jinja"
+THEME = "colour-science"
 
 # Primary color of your theme. This will be used to customize your theme and
 # auto-generate related colors in POSTS_SECTION_COLORS. Must be a HEX value.
-THEME_COLOR = '#5670d4'
+THEME_COLOR = '#FFFFFF'
 
 # POSTS and PAGES contains (wildcard, destination, template) tuples.
 #
