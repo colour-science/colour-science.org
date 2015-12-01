@@ -11,16 +11,12 @@ Use the form below to perform a search on the whole website.
 
 .. raw:: html
 
-  <script>
-      (function () {
-          var cx = '000762316508951405781:3vxrswkfq8i';
-          var gcse = document.createElement('script');
-          gcse.type = 'text/javascript';
-          gcse.async = true;
-          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-                  '//www.google.com/cse/cse.js?cx=' + cx;
-          var s = document.getElementsByTagName('script')[0];
-          s.parentNode.insertBefore(gcse, s);
-      })();
-  </script>
-  <gcse:search></gcse:search>
+    <form method="get" action="https://www.google.com/search" id="search-form" class="navbar-form" role="search">
+    <div class="form-group">
+    <input type="text" name="q" class="form-control" placeholder="Search">
+    </div>
+    <button type="submit" class="btn btn-primary">
+    	<span class="glyphicon glyphicon-search"></span>
+    </button>
+    <input type="hidden" name="sitesearch" value="http://colour-science.org/">
+    </form>

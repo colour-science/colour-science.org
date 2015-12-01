@@ -35,9 +35,9 @@ There are many ways to help:
     ` <http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb>`_
     IPython Notebooks, we aim to provide a good scientific support to the API
     and there is still a lot to do.
--   Improving related packages like `Colour - Maya <colour_maya.php>`_,
-    `Colour - Nuke <colour_nuke.php>`_ or `Colour -
-    Spectroscope <colour_spectroscope.php>`_
+-   Improving related packages like `Colour - Maya </colour-maya/>`_,
+    `Colour - Nuke </colour-nuke/>`_ or `Colour -
+    Spectroscope </colour-spectroscope/>`_
 -   Participating in discussions on the `Mailing
     List <colour-science@googlegroups.com>`_.
 
