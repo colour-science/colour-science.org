@@ -167,13 +167,7 @@ NAVIGATION_LINKS = {
         (
             (
                 ('https://github.com/colour-science/colour', 'Source Code'),
-                ('https://github.com/colour-science/colour/issues', 'Issues'),
-                ('https://github.com/colour-science/colour/pulls', 'Pull Requests'),
-                ('https://travis-ci.org/colour-science/colour', 'Continuous Integration'),
-                ('https://coveralls.io/r/colour-science/colour', 'Coverage'),
-                ('https://scrutinizer-ci.com/g/colour-science/colour/', 'Code Health (Scrutinizer-ci)'),
-                ('https://landscape.io/github/colour-science/colour', 'Code Health (Landscape.io)'),
-                ('https://gemnasium.com/colour-science/colour', 'Dependencies'),
+                ('/api-status-and-badges', 'API Status and Badges'),
             ),
             'Development'
         ),
@@ -836,7 +830,36 @@ LICENSE = ""
 
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
-CONTENT_FOOTER = 'Contents &copy; {date}         <a href="mailto:{email}">{author}</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         {license}'
+CONTENT_FOOTER = """
+<ul class="list-inline">
+    <li>
+        <a href="mailto:colour-science@googlegroups.com">
+            <span class="fa fa-envelope fa-2x footer-links"></span>
+        </a>
+    </li>
+    <li>
+        <a href="https://groups.google.com/forum/#!forum/colour-science">
+            <span class="fa fa-users fa-2x footer-links"></span>
+        </a>
+    </li>
+    <li>
+        <a href="https://twitter.com/colour_science">
+            <span class="fa fa-twitter fa-2x footer-links"></span>
+        </a>
+    </li>
+    <li>
+        <a href="https://www.facebook.com/python.colour.science">
+            <span class="fa fa-facebook fa-2x footer-links"></span>
+        </a>
+    </li>
+    <li>
+        <a href="https://plus.google.com/u/0/b/101380914519940603334/101380914519940603334/about">
+            <span class="fa fa-google-plus fa-2x footer-links"></span>
+        </a>
+    </li>
+</ul>
+Copyright © 2013 - {date} – {author} – {email}
+"""
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
 # for translatability, as dicts are not formattable.  Nikola will
@@ -1105,7 +1128,11 @@ MARKDOWN_EXTENSIONS = ['fenced_code', 'codehilite', 'extra']
 # Extra things you want in the pages HEAD tag. This will be added right
 # before </head>
 # (translatable)
-# EXTRA_HEAD_DATA = ""
+EXTRA_HEAD_DATA = """
+<script src="/assets/js/jquery.min.js"></script>
+<link href="/assets/css/font-awesome.css" rel="stylesheet">
+"""
+
 # Google Analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
 # (translatable)

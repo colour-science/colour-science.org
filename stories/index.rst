@@ -24,13 +24,19 @@
         </p>
 
         <p>
-            <a class="btn btn-primary btn-lg get-started" href="/installation-guide/" role="button">
-                Getting started with Colour
-            </a>
-            <a class="btn btn-default btn-lg" href="https://github.com/colour-science/colour/archive/v0.3.6.zip" role="button">
-                <span class="fa fa-download">&nbsp;</span>
-                Colour 0.3.6 Alpha
-            </a>
+            <ul class="list-inline">
+                <li>
+                    <a class="btn btn-primary btn-lg" href="/installation-guide/" role="button">
+                        Get started with Colour
+                    </a>
+                </li>
+                <li>
+                    <a class="btn btn-default btn-lg" href="https://github.com/colour-science/colour/archive/v0.3.6.zip" role="button">
+                        <span class="fa fa-download">&nbsp;</span>
+                        Colour 0.3.6 Alpha
+                    </a>
+                </li>
+            </ul>
         </p>
 
         <p>
@@ -39,3 +45,8 @@
                 <a href="http://opensource.org/licenses/BSD-3-Clause">New BSD License</a> terms.
             </small>
         </p>
+
+.. raw:: html
+
+    <div id="colour-science-for-python"></div>
+    <script>$('#colour-science-for-python').load('/colour-science-for-python/index.html #notebook');</script>
