@@ -121,7 +121,7 @@
 -   Luo, M. R., & Morovic, J. (1996). Two Unsolved Issues in Colour Management – Colour Appearance and Gamut Mapping. In Conference: 5th International Conference on High Technology: Imaging Science and Technology – Evolution & Promise (pp. 136–147). Retrieved from http://www.researchgate.net/publication/236348295_Two_Unsolved_Issues_in_Colour_Management__Colour_Appearance_and_Gamut_Mapping
 -   Luo, M. R., Lo, M.-C., & Kuo, W.-G. (1996). The LLAB (l:c) colour model. Color Research & Application, 21(6), 412–429. doi:10.1002/(SICI)1520-6378(199612)21:6<412::AID-COL4>3.0.CO;2-Z
 -   MacAdam, D. L. (1935). Maximum Visual Efficiency of Colored Materials. J. Opt. Soc. Am., 25(11), 361–367. doi:10.1364/JOSA.25.000361
--   Mansencal, T. (2015). RED Colourspaces Derivation. Retrieved May 20, 2015, from http://colour-science.org/blog_red_colourspaces_derivation.php
+-   Mansencal, T. (2015). RED Colourspaces Derivation. Retrieved May 20, 2015, from http://colour-science.org/posts/red-colourspaces-derivation
 -   Mansencal, T. (n.d.). Lookup. Retrieved from https://github.com/KelSolaar/Foundations/blob/develop/foundations/data_structures.py
 -   Mansencal, T. (n.d.). Structure. Retrieved from https://github.com/KelSolaar/Foundations/blob/develop/foundations/data_structures.py
 -   Moroney, N., Fairchild, M. D., Hunt, R. W. G., Li, C., Luo, M. R., & Newman, T. (n.d.). The CIECAM02 Color Appearance Model. Color and Imaging Conference, 2002(1), 23–27. Retrieved from http://www.ingentaconnect.com/content/ist/cic/2002/00002002/00000001/art00006

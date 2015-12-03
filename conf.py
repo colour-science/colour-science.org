@@ -171,7 +171,14 @@ NAVIGATION_LINKS = {
             ),
             'Development'
         ),
-        ('/blog', 'Blog'),
+        (
+            (
+                ('/blog', 'Posts'),
+                ("/archive.html", "Archive"),
+                ("/categories/", "Tags"),
+            ),
+            'Blog'
+        ),
         (
             (
                 ('mailto:colour-science@googlegroups.com', 'Contact Us'),
@@ -179,12 +186,10 @@ NAVIGATION_LINKS = {
                 ('https://twitter.com/colour_science', 'Twitter'),
                 ('https://www.facebook.com/python.colour.science', 'Facebook'),
                 ('https://plus.google.com/u/0/b/101380914519940603334/101380914519940603334/about', 'Google Plus'),
+                ('/rss.xml', 'RSS Feed'),
             ),
             'Social'
         ),
-        # ("/archive.html", "Archive"),
-        # ("/categories/", "Tags"),
-        # ("/rss.xml", "RSS feed"),
     ),
 }
 
@@ -549,7 +554,7 @@ INDEX_PATH = "blog"
 # the browser resolve relative links.
 # In some rare cases, this will be a problem, and you can
 # disable it by setting USE_BASE_TAG to False.
-# USE_BASE_TAG = True
+USE_BASE_TAG = False
 
 # Final location for the blog main RSS feed is:
 # output / TRANSLATION[lang] / RSS_PATH / rss.xml

@@ -21,7 +21,7 @@ Development & Technical Support
 Thomas Mansencal
 ^^^^^^^^^^^^^^^^
 
-*Visual Effects Artist* @ `Weta Digital <wetafx.co.nz>`__
+*Visual Effects Artist* @ `Weta Digital <http://wetafx.co.nz>`__
 
 Project coordination, overall development.
 
