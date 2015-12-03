@@ -46,7 +46,7 @@ try:
         <head>
             <meta charset="utf-8">
             <title>RGB Colourspace Models Derivation</title>
-            <link rel="stylesheet" type="text/css" href="/css/cgi-form.css">
+            <link rel="stylesheet" type="text/css" href="/assets/css/cgi-form.css">
             <link href="http://fonts.googleapis.com/css?family=Lato" id="google-font-selector" rel="stylesheet" type="text/css">
         </head>
         <body>

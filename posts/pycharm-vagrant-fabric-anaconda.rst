@@ -10,8 +10,8 @@
 Installing the whole development toolchain for **Colour** roughly means
 deploying:
 
--   `Python 2.7 <https://www.python.org/download/releases/>`_ and `Python
-    3.4 <https://www.python.org/download/releases/>`_
+-   `Python 2.7 <https://www.python.org/download/releases/>`_ and
+    `Python 3.5 <https://www.python.org/download/releases/>`_
 -   `NumPy <http://www.numpy.org/>`_
 -   `Matplotlib <http://matplotlib.org/>`_
 -   `SciPy <http://www.scipy.org/>`_
@@ -141,7 +141,7 @@ You can go grab a coffee, the initial provisioning will take roughly
 If the provisioning ended smoothly, you should have the following
 elements available:
 
--  **colour**, **colour-ipython** and **colour-website** repositories
+-  **colour**, **colour-ipython** and **colour-science.org** repositories
    cloned into the :code:`colour-science` directory right next to the
    :code:`colour-vagrant` one.
 
@@ -156,7 +156,7 @@ elements available:
        drwxrwxr-x  5 vagrant vagrant 4096 Sep  5 10:00 ./
        drwxrwxr-x 14 vagrant vagrant 4096 Sep  5 10:00 ../
        drwxrwxr-x 12 vagrant vagrant 4096 Sep  5 10:00 python2.7/
-       drwxrwxr-x 11 vagrant vagrant 4096 Sep  5 09:58 python3.4/
+       drwxrwxr-x 11 vagrant vagrant 4096 Sep  5 09:58 python3.5/
 
 
 -  The **colour-science.org** website served from the virtual machine at
@@ -173,7 +173,7 @@ PyCharm Environment Configuration
    The remote Python interpreters paths are as follows:
 
    -  /home/vagrant/anaconda/envs/python2.7/bin/python
-   -  /home/vagrant/anaconda/envs/python3.4/bin/python
+   -  /home/vagrant/anaconda/envs/python3.5/bin/python
 
 -  Add the paths mappings from the *Mac Os X* host to the virtual
    machine in the :code:`Defaults` configurations, in my case the mappings
@@ -237,8 +237,8 @@ For **python2.7**:
 
     source activate python2.7
 
-For **python3.4**:
+For **python3.5**:
 
 .. code:: shell
 
-    source activate python3.4
+    source activate python3.5

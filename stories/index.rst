@@ -27,7 +27,7 @@
             <ul class="list-inline">
                 <li>
                     <a class="btn btn-primary btn-lg" href="/installation-guide/" role="button">
-                        Get started with Colour
+                        Getting started with Colour
                     </a>
                 </li>
                 <li>

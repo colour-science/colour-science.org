@@ -24,7 +24,7 @@ BLOG_TITLE = "colour-science"  # (translatable)
 SITE_URL = "http://colour-science.org/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
-BASE_URL = "http://kelsolaar.github.io/colour-science.org/"
+# BASE_URL = "http://localhost:8080/"
 BLOG_EMAIL = "colour-science@googlegroups.com"
 BLOG_DESCRIPTION = "Colour: Colour Science for Python"  # (translatable)
 
@@ -858,7 +858,7 @@ CONTENT_FOOTER = """
         </a>
     </li>
 </ul>
-Copyright © 2013 - {date} – {author} – {email}
+Copyright © 2013 - {date} – {author} – <a href="mailto:{email}">{email}</a>
 """
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
