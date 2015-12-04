@@ -32,9 +32,9 @@ There are many ways to help:
     `Enhancement <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AEnhancement>`_
     labels are a good place to start.
 -   Improving the
-    ` <http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb>`_
-    IPython Notebooks, we aim to provide a good scientific support to the API
-    and there is still a lot to do.
+    `IPython Notebooks <http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb>`_,
+    we aim to provide a good scientific support to the API and there is still a
+    lot to do.
 -   Improving related packages like `Colour - Maya </colour-maya/>`_,
     `Colour - Nuke </colour-nuke/>`_ or `Colour -
     Spectroscope </colour-spectroscope/>`_
@@ -321,6 +321,11 @@ Python Style Rules
     For instance, a variable defined \\(D\_{uv}\\) in a paper would be defined
     as *D\_uv* in the code, \\(L^\*\\) as *Lstar* and \\(X\_{ab}^{\\prime}\\) as
     *Xp\_ab*.
+-   Try using uppercase for author names in definitions:
+
+.. code:: python
+
+    def CCT_to_xy_Kang2002(CCT):
 
 -   Please use *British English* words instead of *American English* ones as
     the **CIE** does, the most important of all being **colour** instead of

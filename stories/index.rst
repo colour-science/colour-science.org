@@ -48,5 +48,7 @@
 
 .. raw:: html
 
+    <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Overview</a></h1>
+
     <div id="colour-science-for-python"></div>
     <script>$('#colour-science-for-python').load('/colour-science-for-python/index.html #notebook');</script>

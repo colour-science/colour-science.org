@@ -1,7 +1,7 @@
 .. title: Colour 0.3.6 is available!
 .. slug: colour-036-is-available
 .. date: 2015-08-09 10:31:00 PM GMT+12
-.. tags: 
+.. tags: release, colour
 .. category: 
 .. link: 
 .. description: 

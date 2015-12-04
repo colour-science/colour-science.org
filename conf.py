@@ -862,6 +862,11 @@ CONTENT_FOOTER = """
             <span class="fa fa-google-plus fa-2x footer-links"></span>
         </a>
     </li>
+    <li>
+        <a href="/rss">
+            <span class="fa fa-rss fa-2x footer-links"></span>
+        </a>
+    </li>
 </ul>
 Copyright © 2013 - {date} – {author} – <a href="mailto:{email}">{email}</a>
 """
@@ -1040,7 +1045,7 @@ MARKDOWN_EXTENSIONS = ['fenced_code', 'codehilite', 'extra']
 
 # Modify the number of Post per Index Page
 # Defaults to 10
-# INDEX_DISPLAY_POST_COUNT = 10
+INDEX_DISPLAY_POST_COUNT = 3
 
 # By default, Nikola generates RSS files for the website and for tags, and
 # links to it.  Set this to False to disable everything RSS-related.
@@ -1141,7 +1146,27 @@ EXTRA_HEAD_DATA = """
 # Google Analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
 # (translatable)
-# BODY_END = ""
+BODY_END = """
+<!-- >>> Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-53791280-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+<!-- <<< Google Analytics -->
+"""
 
 # The possibility to extract metadata from the filename by using a
 # regular expression.

@@ -96,7 +96,8 @@ Yoshi Ohno
 Mark D. Fairchild
 ^^^^^^^^^^^^^^^^^
 
-*Director* @ `Munsell Color Science Lab <https://www.rit.edu/cos/colorscience/>`__, *Director* @ `Program of Color Science <https://www.rit.edu/cos/colorscience/>`__
+*Director* @ `Munsell Color Science Lab <https://www.rit.edu/cos/colorscience/>`__,
+*Director* @ `Program of Color Science <https://www.rit.edu/cos/colorscience/>`__
 
 Technical support.
 
@@ -154,3 +155,27 @@ Aurélia Sellier
 *Line Producer* @ `Cube Creative <http://www.cube-creative.fr/>`__
 
 Infinite patience
+
+.. class:: row
+
+.. class:: text-center
+
+Other Contributors
+------------------
+
+.. raw:: html
+
+    <ul class="list-unstyled">
+        <li>
+            <a href="https://www.facebook.com/invisiblelightimages">Nick Spiker</a>
+        </li>
+        <li>
+            <a href="https://github.com/fangjy88">fangjy88</a>
+        </li>
+        <li>
+            <a href="https://github.com/henczati">henczati</a>
+        </li>
+        <li>
+            <a href="https://github.com/zachlewis">zachlewis</a>
+        </li>
+    </ul>

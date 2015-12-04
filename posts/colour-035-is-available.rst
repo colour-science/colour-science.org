@@ -1,7 +1,7 @@
 .. title: Colour 0.3.5 is available!
 .. slug: colour-035-is-available
 .. date: 2015-05-07 01:01:00 AM GMT+12
-.. tags:
+.. tags: release, colour
 .. category:
 .. link:
 .. description:
