@@ -21,12 +21,13 @@ It makes blogging with Jupyter Notebooks a breeze.
 We also now have a proper dedicated `blog </blog>`_ section.
 
 `Colour 0.3.7 <https://github.com/colour-science/colour/milestones/v0.3.7>`_
-is around the corner, this is a maintenance release providing API support
-for the soon to be officially deployed
+is around the corner. This is a maintenance release providing API support
+for the soon to be deployed
 `Colour - Demosaicing <https://github.com/colour-science/colour-demosaicing>`_
 and
 `Colour - HDRI <https://github.com/colour-science/colour-hdri>`_ repositories.
-When they are released we will focus back on `Colour <https://github.com/colour-science/colour>`_
+When they are officially released we will focus back on
+`Colour <https://github.com/colour-science/colour>`_
 itself as the next big step is the
 `spectral code refactoring <https://github.com/colour-science/colour-ramblings/blob/master/spectral_signal.ipynb>`_
 we started back in September.

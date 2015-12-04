@@ -185,7 +185,6 @@ NAVIGATION_LINKS = {
                 ('https://groups.google.com/forum/#!forum/colour-science', 'Mailing List'),
                 ('https://twitter.com/colour_science', 'Twitter'),
                 ('https://www.facebook.com/python.colour.science', 'Facebook'),
-                ('https://plus.google.com/u/0/b/101380914519940603334/101380914519940603334/about', 'Google Plus'),
                 ('/rss.xml', 'RSS Feed'),
             ),
             'Social'
@@ -855,11 +854,6 @@ CONTENT_FOOTER = """
     <li>
         <a href="https://www.facebook.com/python.colour.science">
             <span class="fa fa-facebook fa-2x footer-links"></span>
-        </a>
-    </li>
-    <li>
-        <a href="https://plus.google.com/u/0/b/101380914519940603334/101380914519940603334/about">
-            <span class="fa fa-google-plus fa-2x footer-links"></span>
         </a>
     </li>
     <li>
