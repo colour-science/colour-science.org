@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contributing | colour-science</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/font-awesome.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta content="#FFFFFF" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="canonical" href="http://colour-science.org/contributing/">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><script src="../assets/js/jquery.min.js"></script><link href="../assets/css/font-awesome.css" rel="stylesheet">
+<meta name="author" content="Colour Developers">
+<meta property="og:site_name" content="colour-science">
+<meta property="og:title" content="Contributing">
+<meta property="og:url" content="http://colour-science.org/contributing/">
+<meta property="og:description" content="Colour is open source and we happily welcome contributions. This guide will
+give you an overview on how to contribute.
+There are many ways to help:
+
+Reporting a defect, proposing a new feature or enha">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2015-11-25T05:35:44Z">
+</head>
+<body>
+<div id="logo-banner"></div>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://colour-science.org/">
+
+                <span id="blog-title">colour-science</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Downloads <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://github.com/colour-science/colour/archive/v0.3.6.zip">Latest (v0.3.6)</a>
+                    </li>
+<li>
+<a href="https://github.com/colour-science/colour/releases">All Releases</a>
+                    </li>
+<li>
+<a href="https://pypi.python.org/pypi/colour-science/">Pypi</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="../utilities">Utilities</a>
+                    </li>
+<li>
+<a href="../experiments">Experiments</a>
+                    </li>
+<li>
+<a href="../colour-maya">Colour - Maya</a>
+                    </li>
+<li>
+<a href="../colour-nuke">Colour - Nuke</a>
+                    </li>
+<li>
+<a href="../colour-spectroscope">Colour - Spectroscope</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="../installation-guide">Installation Guide</a>
+                    </li>
+<li>
+<a href="../tutorial">Tutorial</a>
+                    </li>
+<li>
+<a href="../api-reference">API Reference</a>
+                    </li>
+<li>
+<a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb">IPython Notebooks</a>
+                    </li>
+<li>
+<a href="../features">Features</a>
+                    </li>
+<li>
+<a href="../history">History</a>
+                    </li>
+<li>
+<a href="../contributing">Contributing</a>
+                    </li>
+<li>
+<a href="../contributors">Contributors</a>
+                    </li>
+<li>
+<a href="../bibliography">Bibliography</a>
+                    </li>
+<li>
+<a href="http://dx.doi.org/10.5281/zenodo.27234">Cite Us</a>
+                    </li>
+<li>
+<a href="../cited-by">Cited By</a>
+                    </li>
+<li>
+<a href="http://opensource.org/licenses/BSD-3-Clause">License</a>
+                    </li>
+<li>
+<a href="../search">Search</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Development <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://github.com/colour-science/colour">Source Code</a>
+                    </li>
+<li>
+<a href="../api-status-and-badges">API Status and Badges</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="../blog">Posts</a>
+                    </li>
+<li>
+<a href="../archive.html">Archive</a>
+                    </li>
+<li>
+<a href="../categories/">Tags</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Social <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="mailto:colour-science@googlegroups.com">Contact Us</a>
+                    </li>
+<li>
+<a href="https://groups.google.com/forum/#!forum/colour-science">Mailing List</a>
+                    </li>
+<li>
+<a href="https://twitter.com/colour_science">Twitter</a>
+                    </li>
+<li>
+<a href="https://www.facebook.com/python.colour.science">Facebook</a>
+                    </li>
+<li>
+<a href="https://plus.google.com/u/0/b/101380914519940603334/101380914519940603334/about">Google Plus</a>
+                    </li>
+<li>
+<a href="../rss.xml">RSS Feed</a>
+            </li>
+</ul>
+</li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="index.rst" id="sourcelink">Source</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Contributing</a></h1>
+
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p><strong>Colour</strong> is open source and we happily welcome contributions. This guide will
+give you an overview on how to contribute.</p>
+<p>There are many ways to help:</p>
+<ul class="simple">
+<li>Reporting a defect, proposing a new feature or enhancement or
+commenting existing issues on the <a class="reference external" href="https://github.com/colour-science/colour/issues">Issue
+Tracker</a>
+</li>
+<li>Contributing new code by implementing new features or adding
+examples, for some ideas you can take a look at the issues with the
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AEnhancement">Enhancement</a>,
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AFeature">Feature</a>
+and
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AReady">Ready</a>
+labels or the
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+milestone%3Av9.9.9">v9.9.9</a>
+milestone.</li>
+<li>Maintaining the existing code base, improving the code style and quality,
+improving the coverage, updating the documentation, fixing bugs, addressing
+TODOs, etc... Issues with the
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ADefect">Defect</a>
+or
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AEnhancement">Enhancement</a>
+labels are a good place to start.</li>
+<li>Improving the
+<a class="reference external" href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb">IPython Notebooks</a>,
+we aim to provide a good scientific support to the API and there is still a
+lot to do.</li>
+<li>Improving related packages like <a class="reference external" href="../colour-maya/">Colour - Maya</a>,
+<a class="reference external" href="../colour-nuke/">Colour - Nuke</a> or <a class="reference external" href="../colour-spectroscope/">Colour -
+Spectroscope</a>
+</li>
+<li>Participating in discussions on the <a class="reference external" href="mailto:colour-science@googlegroups.com">Mailing
+List</a>.</li>
+</ul>
+<div class="section" id="reporting-issues">
+<h2>Reporting Issues</h2>
+<p>The three major issue types one can report on the issue tracker are the
+following:
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ADefect">Defect</a>,
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AEnhancement">Enhancement</a>
+and
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AFeature">Feature</a>.</p>
+<p>We currently use a large set of labels to categorise issues:</p>
+<ul class="simple">
+<li>
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ADefect">Defect</a>:
+Used for any kind of defect reported.<ul>
+<li>
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ACritical">Critical</a>:
+Used for issues either rendering the software unusable, causing loss of
+data, or preventing people to work. These issues need to be fixed
+immediately.</li>
+<li>
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AMajor">Major</a>:
+Used for issues which have significant consequences on the ability of
+people to work but do not lead to the whole API being unusable.</li>
+<li>
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ANormal">Normal</a>:
+Used for issues affecting one piece of functionality. Those are usually
+self-contained and don't impact the overall functionality of the API.</li>
+<li>
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AMinor">Minor</a>:
+Used for cosmetic issues that don't prevent the API to run properly.</li>
+</ul>
+</li>
+<li>
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AEnhancement">Enhancement</a>:
+Used for an enhancement of an existing feature, can also be used for new
+feature suggestion, although
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AFeature">Feature</a>
+label should be preferred.</li>
+<li>
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AFeature">Feature</a>:
+Used for a new feature, functionality suggestion.<ul>
+<li>
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AP1">P1</a>:
+Used for the highest priority.</li>
+<li>
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AP2">P2</a>:
+Used for average priority.</li>
+<li>
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AP3">P3</a>:
+Used for the lowest priority.</li>
+</ul>
+</li>
+<li>
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AAPI">API</a>:
+Used for issues related to the API.</li>
+<li>
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aclose+is%3Aissue+label%3ADiscarded">Discarded</a>:
+Used for a discarded / canceled issue.</li>
+<li>
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ADiscussion">Discussion</a>:
+Used to discuss any subject, those issues often turn into features or
+enhancement.</li>
+<li>
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ADistribution">Distribution</a>:
+Used to discuss distribution and packaging of the API.</li>
+<li>
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ADocumentation">Documentation</a>:
+Used for issues related to the documentation.</li>
+<li>
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ADuplicate">Duplicate</a>:
+Used for a duplicate issue.</li>
+<li>
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AExamples">Examples</a>:
+Used for issues related to the examples.</li>
+<li>
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AIn%20Progress">In Progress</a>:
+Used for an issue started and ongoing with very long development time.</li>
+<li>
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3APostponed">Postponed</a>:
+Used for an issue postponed for a future milestone.</li>
+<li>
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AReady">Ready</a>:
+Used for an issue ready to be addressed.</li>
+<li>
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ATask">Task</a>:
+Used for a task not directly related to pure programming.</li>
+</ul>
+<div class="section" id="defects">
+<h3>Defects</h3>
+<p>You encountered a problem while using <strong>Colour</strong>, please consider reporting it
+on the <a class="reference external" href="https://github.com/colour-science/colour/issues">Issue Tracker</a>.</p>
+<p>The first thing to do, is to check if there are any existing issues describing
+your problem, if there is one, you are welcome commenting into it and provide
+more details. However, please avoid creating duplicates, they add noise to the
+issue tracker and we will have to label them as
+<a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ADuplicate">Duplicate</a>
+and close them.</p>
+<p>When reporting a defect please provide the following details if possible and
+makes sense to do so:</p>
+<ul class="simple">
+<li>
+<strong>Colour</strong> version.</li>
+<li>
+<a class="reference external" href="https://www.python.org/">Python</a> version.</li>
+<li>
+<a class="reference external" href="http://www.numpy.org/">NumPy</a> and <a class="reference external" href="http://www.scipy.org/">SciPy</a>
+versions.</li>
+</ul>
+<p>If you are reporting an exception, please provide the complete traceback, it
+will tremendously help us understand what happened.</p>
+</div>
+<div class="section" id="features-enhancements">
+<h3>Features &amp; Enhancements</h3>
+<p>If you would like a new feature to be supported or an enhancement of an
+existing feature, don't hesitate to link any resources or references you feel
+like would help its implementation: publications, wikipedia article, etc...</p>
+<p>If there is an implementation existing in another language, we will be most
+likely be able to port it although the licence must be compatible with the
+<a class="reference external" href="http://opensource.org/licenses/BSD-3-Clause">New BSD License</a> terms.</p>
+<p>We are also running <a class="reference external" href="http://www.mathworks.fr/products/matlab/">Matlab</a>, so
+don't hesitate to provide snippets for it if you have functions you would like
+to be ported.</p>
+</div>
+</div>
+<div class="section" id="contributing-code">
+<h2>Contributing Code</h2>
+<p>Assuming you have something to work on, you will have to get the code and
+follow the guidelines.</p>
+<div class="section" id="development-for-colour">
+<h3>Development for Colour</h3>
+<p>Here is a succinct overview of the steps you will most likely go through:</p>
+<ol class="arabic simple">
+<li>
+<a class="reference external" href="https://github.com/colour-science/colour/fork">Fork</a> the
+<a class="reference external" href="https://github.com/colour-science/colour">Colour</a> repository.</li>
+<li>Activate <a class="reference external" href="http://travis-ci.org/">Travis-CI</a> for your <em>fork</em> so that the
+tests suite is run when you push your changes.</li>
+<li>Clone the repository locally to your workspace:</li>
+</ol>
+<pre class="code shell"><a name="rest_code_a34bc181089a4e488094898c10e75aea-1"></a>git clone git@github.com:<span class="nv">$USER</span>/colour.git
+</pre>
+<ol class="arabic simple" start="4">
+<li>Connect your clone to the original <em>upstream</em> repository by adding it as a
+remote:</li>
+</ol>
+<pre class="code shell"><a name="rest_code_8c12451337094d3b8b187c16a1fc1653-1"></a>git remote add upstream git@github.com:colour-science/colour
+</pre>
+<ol class="arabic simple" start="5">
+<li>You should now have two remotes:</li>
+</ol>
+<pre class="code shell"><a name="rest_code_9034017d64134d988450f90b4c8c0b4a-1"></a>git remote -v
+<a name="rest_code_9034017d64134d988450f90b4c8c0b4a-2"></a>origin  https://github.com/<span class="nv">$USER</span>/colour <span class="o">(</span>fetch<span class="o">)</span>
+<a name="rest_code_9034017d64134d988450f90b4c8c0b4a-3"></a>origin  https://github.com/<span class="nv">$USER</span>/colour <span class="o">(</span>push<span class="o">)</span>
+<a name="rest_code_9034017d64134d988450f90b4c8c0b4a-4"></a>upstream  https://github.com/colour-science/colour <span class="o">(</span>fetch<span class="o">)</span>
+<a name="rest_code_9034017d64134d988450f90b4c8c0b4a-5"></a>upstream  https://github.com/colour-science/colour <span class="o">(</span>push<span class="o">)</span>
+</pre>
+<ol class="arabic simple" start="6">
+<li>Pull the latest changes from <em>upstream</em>:</li>
+</ol>
+<pre class="code shell"><a name="rest_code_4e14b6e04e2b4a66837b17d9b6c5b029-1"></a>git checkout master
+<a name="rest_code_4e14b6e04e2b4a66837b17d9b6c5b029-2"></a>git pull upstream master
+</pre>
+<ol class="arabic simple" start="7">
+<li>Create a branch for your contribution:</li>
+</ol>
+<pre class="code shell"><a name="rest_code_a6e7dcb1a28445fbb809a9069db662b3-1"></a>git checkout -b feature/mie_scattering
+<a name="rest_code_a6e7dcb1a28445fbb809a9069db662b3-2"></a>
+<a name="rest_code_a6e7dcb1a28445fbb809a9069db662b3-3"></a>The core developers are using the
+<a name="rest_code_a6e7dcb1a28445fbb809a9069db662b3-4"></a><span class="sb">`</span>git flow branching model &lt;http://nvie.com/posts/a-successful-git-branching-model/&gt;<span class="sb">`</span>_
+<a name="rest_code_a6e7dcb1a28445fbb809a9069db662b3-5"></a><span class="k">for</span> most of the development tasks and since the branch name appears in the
+<a name="rest_code_a6e7dcb1a28445fbb809a9069db662b3-6"></a>commit message and <span class="k">for</span> consistency, please use the following branch
+<a name="rest_code_a6e7dcb1a28445fbb809a9069db662b3-7"></a>prefixes:
+<a name="rest_code_a6e7dcb1a28445fbb809a9069db662b3-8"></a>
+<a name="rest_code_a6e7dcb1a28445fbb809a9069db662b3-9"></a>-   Feature branch prefix: **feature/**
+<a name="rest_code_a6e7dcb1a28445fbb809a9069db662b3-10"></a>-   Release branch prefix: **release/**
+<a name="rest_code_a6e7dcb1a28445fbb809a9069db662b3-11"></a>-   Hotfix branch prefix: **hotfix/**
+</pre>
+<ol class="arabic simple" start="8">
+<li>Check if the unit tests and doctests are running properly.</li>
+<li>
+<a class="reference external" href="https://pypi.python.org/pypi/flake8">flake8</a> is currently set to error if
+anything incorrect is found, thus we advice that you run it before
+committing and pushing your code to <em>origin</em>, your own fork.</li>
+<li>Commit your changes:</li>
+</ol>
+<pre class="code shell"><a name="rest_code_cca67ef4da7a4bc39fa1a65e5842637a-1"></a>git add mie_scattering.py
+<a name="rest_code_cca67ef4da7a4bc39fa1a65e5842637a-2"></a>git commit -m <span class="s1">'Implement "Mie Scattering" support'</span>.
+</pre>
+<ol class="arabic simple" start="11">
+<li>Push your changes back to <em>origin</em>, your own fork:</li>
+</ol>
+<pre class="code shell"><a name="rest_code_53151b52a5a64eb7bcd75b4abd1692ae-1"></a>git push origin feature/mie_scattering
+</pre>
+<ol class="arabic simple" start="12">
+<li>Ensure that the test suite is all right on <a class="reference external" href="http://travis-ci.org/">Travis-CI</a>.</li>
+<li>Visit your repository fork on <a class="reference external" href="http://github.com/">Github</a>. Your branch
+should have a green <em>Pull Request</em> button, this will open a <em>pull request</em>
+and let us know that we have some code to review :)</li>
+</ol>
+</div>
+</div>
+<div class="section" id="code-reviews">
+<h2>Code Reviews</h2>
+<p>Your <em>pull request</em> will be reviewed by the maintainers and any other developer
+interested in the project.</p>
+<p>Every single developer has his code reviewed, this is a natural process helping
+to raise the codebase quality while having a friendly discussion. Comments will
+be made on various aspects such as the documentation and references, the code
+style and its implementation. Those can be discouraging, although they are not
+meant to criticize but aim at improving the quality of your submission. We all
+learn from that process and the project ultimately benefits from them.</p>
+</div>
+<div class="section" id="guidelines">
+<h2>Guidelines</h2>
+<p>Most of the conventions used in <strong>Colour</strong> are the same than
+<a class="reference external" href="http://www.numpy.org/">NumPy</a>, <a class="reference external" href="http://www.scipy.org/">SciPy</a> and
+<a class="reference external" href="http://scikit-image.org/">scikit-image</a>.</p>
+<div class="section" id="overview">
+<h3>Overview</h3>
+<p>We follow the <a class="reference external" href="https://google-styleguide.googlecode.com/svn/trunk/pyguide.html">Google Python Style Guide</a>
+and especially the <em>Python Language Rules</em> although with the main exception
+being the docstrings / documentation formatted with <a class="reference external" href="https://github.com/numpy/numpy/blob/master/doc/example.py">Numpy Docstrings Style</a>.</p>
+<p>The code has to be <a class="reference external" href="http://legacy.python.org/dev/peps/pep-0008/">PEP 8</a>
+compliant although but before anything else, it needs to be consistent with the
+Colour Science litterature:</p>
+<p>For example, the base <strong>CIE</strong> colourspace is <strong>CIE XYZ</strong> with upper case
+notation. It can be converted to chromaticity coordinates <strong>xy</strong> with lower
+case notation. If we were to follow the <a class="reference external" href="http://legacy.python.org/dev/peps/pep-0008/">PEP 8</a>
+recommendations, we would have written a conversion definition as follows:</p>
+<pre class="code python"><a name="rest_code_2d7cc925b5744b44ad57182bcad060c4-1"></a><span class="k">def</span> <span class="nf">xyz_to_xy</span><span class="p">(</span><span class="n">xyz</span><span class="p">):</span>
+<a name="rest_code_2d7cc925b5744b44ad57182bcad060c4-2"></a>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">xyz</span><span class="p">)</span>
+<a name="rest_code_2d7cc925b5744b44ad57182bcad060c4-3"></a>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span><span class="p">),</span> <span class="n">y</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span>
+<a name="rest_code_2d7cc925b5744b44ad57182bcad060c4-4"></a>    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+</pre>
+<p>Abstracting the fact the above definition is totally undocumented, it can be
+confusing to understand when we are referencing big <strong>X</strong> tristimulus value or
+little <strong>x</strong> chromaticity coordinate.</p>
+<p>For those cases, and there are legions of them in Colour Science, we have
+decided to go for clarity and consistency with the literature for the object
+names:</p>
+<pre class="code python"><a name="rest_code_3e1a913e99b34c3294b4503b54e11baa-1"></a><span class="k">def</span> <span class="nf">XYZ_to_xy</span><span class="p">(</span><span class="n">XYZ</span><span class="p">):</span>
+<a name="rest_code_3e1a913e99b34c3294b4503b54e11baa-2"></a>    <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>
+<a name="rest_code_3e1a913e99b34c3294b4503b54e11baa-3"></a>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">X</span> <span class="o">/</span> <span class="p">(</span><span class="n">X</span> <span class="o">+</span> <span class="n">Y</span> <span class="o">+</span> <span class="n">Z</span><span class="p">),</span> <span class="n">Y</span> <span class="o">/</span> <span class="p">(</span><span class="n">X</span> <span class="o">+</span> <span class="n">Y</span> <span class="o">+</span> <span class="n">Z</span><span class="p">)</span>
+<a name="rest_code_3e1a913e99b34c3294b4503b54e11baa-4"></a>    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+</pre>
+<p>When the reference is using upper case named variables, we try to follow
+the same convention, it is unfortunately not <a class="reference external" href="http://legacy.python.org/dev/peps/pep-0008/">PEP 8</a>
+compliant but has the benefit of a much easier comparison between the
+implementation and the reference.</p>
+<p>We suggest that contributors follow the same rule.</p>
+</div>
+<div class="section" id="python-language-rules">
+<h3>Python Language Rules</h3>
+<ul class="simple">
+<li>All the code must be covered by unit tests and doctests.</li>
+<li>All the code must be documented to the same standard than
+<a class="reference external" href="http://www.numpy.org/">NumPy</a>, <a class="reference external" href="http://www.scipy.org/">SciPy</a>
+and <a class="reference external" href="http://scikit-image.org/">scikit-image</a>.</li>
+<li>All the code must be checked with the static analysis tool of your choice
+(we use <a class="reference external" href="http://www.jetbrains.com/pycharm/">PyCharm</a> extensively),
+<a class="reference external" href="https://pypi.python.org/pypi/flake8">flake8</a>,  <a class="reference external" href="https://landscape.io/">Landscape</a>
+and <a class="reference external" href="https://scrutinizer-ci.com/">Scrutinizer</a>
+</li>
+<li>No <em>pull request</em> should be merged without being reviewed and ensuring that
+the tests suite pass in <a class="reference external" href="http://travis-ci.org/">Travis-CI</a>.</li>
+<li>Examples should be provided for new features.</li>
+</ul>
+</div>
+<div class="section" id="python-style-rules">
+<h3>Python Style Rules</h3>
+<ul>
+<li>
+<p class="first">Ensure consistency with Colour Science literature first.</p>
+</li>
+<li>
+<p class="first">Ensure <a class="reference external" href="http://legacy.python.org/dev/peps/pep-0008/">PEP 8</a> compliance.</p>
+</li>
+<li>
+<p class="first">Try using a close to <em>Latex</em> syntax for variables names so that they are
+easier to compare to the reference.</p>
+<p>For instance, a variable defined \(D_{uv}\) in a paper would be defined
+as <em>D_uv</em> in the code, \(L^*\) as <em>Lstar</em> and \(X_{ab}^{\prime}\) as
+<em>Xp_ab</em>.</p>
+</li>
+<li>
+<p class="first">Try using uppercase for author names in definitions:</p>
+</li>
+</ul>
+<pre class="code python"><a name="rest_code_2b3e599b89fb453091ce81ef89ba9443-1"></a><span class="k">def</span> <span class="nf">CCT_to_xy_Kang2002</span><span class="p">(</span><span class="n">CCT</span><span class="p">):</span>
+</pre>
+<ul class="simple">
+<li>Please use <em>British English</em> words instead of <em>American English</em> ones as
+the <strong>CIE</strong> does, the most important of all being <strong>colour</strong> instead of
+<strong>color</strong>. You can consult the <a class="reference external" href="http://eilv.cie.co.at/">CIE Termlist</a> if
+any doubts.</li>
+<li>Import <a class="reference external" href="http://www.numpy.org/">NumPy</a> as follows:</li>
+</ul>
+<pre class="code python"><a name="rest_code_07c7c8619b1c4cc5a7c5b22aace8c1d2-1"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+</pre>
+<ul class="simple">
+<li>Doctests may need <strong>ellipsis</strong>, don't rely on global <strong>nose</strong> settings and
+specify it using the dedicated pragma as follows:</li>
+</ul>
+<pre class="code python"><a name="rest_code_5cf8e61588ca4d30928e78bbc4ece9dd-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">Lab</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.41787844</span><span class="p">,</span> <span class="o">-</span><span class="mf">15.85742105</span><span class="p">])</span>
+<a name="rest_code_5cf8e61588ca4d30928e78bbc4ece9dd-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">Lab_to_LCHab</span><span class="p">(</span><span class="n">Lab</span><span class="p">)</span>  <span class="c"># doctest: +ELLIPSIS</span>
+<a name="rest_code_5cf8e61588ca4d30928e78bbc4ece9dd-3"></a><span class="n">array</span><span class="p">([</span> <span class="mf">100.</span>        <span class="p">,</span>   <span class="mf">17.5066479</span><span class="o">...</span><span class="p">,</span>  <span class="mf">244.9304684</span><span class="o">...</span><span class="p">])</span>
+</pre>
+<ul class="simple">
+<li>Some commonly used dataset elements have aliases like <strong>'cie_2_1931'</strong>
+for <strong>'CIE 1931 2 Degree Standard Observer'</strong>. Those are provided for
+convenience and are reserved for external usage, please use the long form
+for consistency across the API.</li>
+<li>In the same way as above, some computation methods are using a title case
+like <strong>'Ohno 2013'</strong>, while the mapping object holding them is case
+insensitive, please use the title case form for consistency across the API.</li>
+<li>Some very big lines sometimes cannot be wrapped (doctests, html links), you
+can use the <strong># noqa</strong> pragma in those cases, although do it in last resort,
+we have already too much of them.</li>
+<li>Avoid <strong>/</strong> to wrap lines, prefer using the parenthesis <strong>()</strong>.</li>
+<li>The code formatting is right now done with
+<a class="reference external" href="http://www.jetbrains.com/pycharm/">PyCharm</a> reformat (although there are
+still some rough corner with it), and we may run a pass from time to time.</li>
+<li>Inline comments must have two spaces.</li>
+<li>Ensure that you have blank line at the end of the files.</li>
+<li>Ensure that trailing whitespaces are stripped.</li>
+<li>Prefix unused variable with an underscore:</li>
+</ul>
+<pre class="code python"><a name="rest_code_83588ea2ce6d48d789610521371f93ff-1"></a><span class="n">_L</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">Lab</span><span class="p">)</span>
+</pre>
+</div>
+<div class="section" id="citations">
+<h3>Citations</h3>
+<p>It's likely that the code you contribute will be based upon references, we are
+using the <a class="reference external" href="http://www.apastyle.org/">APA 6th Edition</a> citation style:</p>
+<pre class="literal-block">
+Davis, W., &amp; Ohno, Y. (2010). Color quality scale. Optical Engineering, 49(3), 33602–33616. doi:10.1117/1.3360335
+</pre>
+<pre class="literal-block">
+Wyszecki, G., &amp; Stiles, W. S. (2000). Table I(6.5.3) Whiteness Formulae (Whiteness Measure Denoted by W). In Color Science: Concepts and Methods, Quantitative Data and Formulae (pp. 837–839). Wiley. ISBN:978-0471399186
+</pre>
+<pre class="literal-block">
+Lindbloom, B. (2014). RGB Working Space Information. Retrieved April 11, 2014, from http://www.brucelindbloom.com/WorkingSpaceInfo.html
+</pre>
+<p>We are storing all our citations in a database maintained by
+<a class="reference external" href="http://www.mendeley.com/">Mendeley</a>.</p>
+</div>
+<div class="section" id="commits">
+<h3>Commits</h3>
+<p>A good committing strategy implies that separated commits should be done for
+any particular changes: One should not commit multiple bugs fixes or large
+change sets at once.</p>
+<p>This unnecessarily increase complexity for any code merge or rollbacks needs
+and prevent a grainier control over the version control. One exception to this
+rule is for the initial design steps when creating a new sub-package or
+feature (please consider squashing the commits), but once the said sub-package
+is in production, a regular committing strategy should be applied.</p>
+<p>Commit messages need to use imperative syntax, the first commit line must be a
+quick description of the modification content finished by a punctuation mark
+and can be followed by a detailed description separated by one line break. If
+the commit fixes a particular issue in the issue tracker, it's advised to state
+it in the commit message using the following syntax: <strong>Closes #32.</strong></p>
+<pre class="literal-block">
+Yes:
+Implement "Yoshi Ohno" correlated colour temperature calculation.
+
+Closes #32.
+This implementation allows for a more precise correlated colour temperature
+calculation by using a two solutions hybrid approach.
+</pre>
+<pre class="literal-block">
+No:
+Coded new cool cct method
+</pre>
+</div>
+<div class="section" id="feature-branches-history">
+<h3>Feature Branches &amp; History</h3>
+<p>History should never be re-written, although while working on your local
+<strong>feature</strong> branch, you may want to provide a cleaner commits history before
+submitting a <em>pull request</em>. It is perfectly fine to modify your local branch
+as you wish.</p>
+<p>However, if you need to change history on a public and used <strong>feature</strong>
+branch, please inform the <a class="reference external" href="mailto:colour-science@googlegroups.com">Colour developers</a>
+in order to avoid commit losses or a merging disaster.</p>
+</div>
+</div>
+</div>
+    </div>
+    
+
+</article>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer"><ul class="list-inline">
+<li>
+        <a href="mailto:colour-science@googlegroups.com">
+            <span class="fa fa-envelope fa-2x footer-links"></span>
+        </a>
+    </li>
+    <li>
+        <a href="https://groups.google.com/forum/#!forum/colour-science">
+            <span class="fa fa-users fa-2x footer-links"></span>
+        </a>
+    </li>
+    <li>
+        <a href="https://twitter.com/colour_science">
+            <span class="fa fa-twitter fa-2x footer-links"></span>
+        </a>
+    </li>
+    <li>
+        <a href="https://www.facebook.com/python.colour.science">
+            <span class="fa fa-facebook fa-2x footer-links"></span>
+        </a>
+    </li>
+    <li>
+        <a href="https://plus.google.com/u/0/b/101380914519940603334/101380914519940603334/about">
+            <span class="fa fa-google-plus fa-2x footer-links"></span>
+        </a>
+    </li>
+    <li>
+        <a href="../rss">
+            <span class="fa fa-rss fa-2x footer-links"></span>
+        </a>
+    </li>
+</ul>
+Copyright © 2013 - 2015 – Colour Developers – <a href="mailto:colour-science@googlegroups.com">colour-science@googlegroups.com</a>
+
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><!-- >>> Google Analytics --><script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-53791280-1', 'auto');
+    ga('send', 'pageview');
+
+</script><!-- <<< Google Analytics -->
+</body>
+</html>

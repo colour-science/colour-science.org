@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Features | colour-science</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/font-awesome.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta content="#FFFFFF" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="canonical" href="http://colour-science.org/features/">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><script src="../assets/js/jquery.min.js"></script><link href="../assets/css/font-awesome.css" rel="stylesheet">
+<meta name="author" content="Colour Developers">
+<meta property="og:site_name" content="colour-science">
+<meta property="og:title" content="Features">
+<meta property="og:url" content="http://colour-science.org/features/">
+<meta property="og:description" content="Colour features a rich dataset and collection of objects, here are
+some highlights:
+
+Algebra
+
+Sprague Interpolation
+
+
+
+Colorimetry
+
+Spectral Power Distribution Computations
+
+Wavelength to XYZ
+Spectral">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2015-11-25T09:47:50Z">
+</head>
+<body>
+<div id="logo-banner"></div>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://colour-science.org/">
+
+                <span id="blog-title">colour-science</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Downloads <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://github.com/colour-science/colour/archive/v0.3.6.zip">Latest (v0.3.6)</a>
+                    </li>
+<li>
+<a href="https://github.com/colour-science/colour/releases">All Releases</a>
+                    </li>
+<li>
+<a href="https://pypi.python.org/pypi/colour-science/">Pypi</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="../utilities">Utilities</a>
+                    </li>
+<li>
+<a href="../experiments">Experiments</a>
+                    </li>
+<li>
+<a href="../colour-maya">Colour - Maya</a>
+                    </li>
+<li>
+<a href="../colour-nuke">Colour - Nuke</a>
+                    </li>
+<li>
+<a href="../colour-spectroscope">Colour - Spectroscope</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="../installation-guide">Installation Guide</a>
+                    </li>
+<li>
+<a href="../tutorial">Tutorial</a>
+                    </li>
+<li>
+<a href="../api-reference">API Reference</a>
+                    </li>
+<li>
+<a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb">IPython Notebooks</a>
+                    </li>
+<li>
+<a href="../features">Features</a>
+                    </li>
+<li>
+<a href="../history">History</a>
+                    </li>
+<li>
+<a href="../contributing">Contributing</a>
+                    </li>
+<li>
+<a href="../contributors">Contributors</a>
+                    </li>
+<li>
+<a href="../bibliography">Bibliography</a>
+                    </li>
+<li>
+<a href="http://dx.doi.org/10.5281/zenodo.27234">Cite Us</a>
+                    </li>
+<li>
+<a href="../cited-by">Cited By</a>
+                    </li>
+<li>
+<a href="http://opensource.org/licenses/BSD-3-Clause">License</a>
+                    </li>
+<li>
+<a href="../search">Search</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Development <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://github.com/colour-science/colour">Source Code</a>
+                    </li>
+<li>
+<a href="../api-status-and-badges">API Status and Badges</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="../blog">Posts</a>
+                    </li>
+<li>
+<a href="../archive.html">Archive</a>
+                    </li>
+<li>
+<a href="../categories/">Tags</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Social <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="mailto:colour-science@googlegroups.com">Contact Us</a>
+                    </li>
+<li>
+<a href="https://groups.google.com/forum/#!forum/colour-science">Mailing List</a>
+                    </li>
+<li>
+<a href="https://twitter.com/colour_science">Twitter</a>
+                    </li>
+<li>
+<a href="https://www.facebook.com/python.colour.science">Facebook</a>
+                    </li>
+<li>
+<a href="https://plus.google.com/u/0/b/101380914519940603334/101380914519940603334/about">Google Plus</a>
+                    </li>
+<li>
+<a href="../rss.xml">RSS Feed</a>
+            </li>
+</ul>
+</li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="index.rst" id="sourcelink">Source</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Features</a></h1>
+
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p><strong>Colour</strong> features a rich dataset and collection of objects, here are
+some highlights:</p>
+<div class="section" id="algebra">
+<h2>Algebra</h2>
+<div class="section" id="sprague-interpolation">
+<h3>Sprague Interpolation</h3>
+</div>
+</div>
+<div class="section" id="colorimetry">
+<h2>Colorimetry</h2>
+<div class="section" id="spectral-power-distribution-computations">
+<h3>Spectral Power Distribution Computations</h3>
+<ul class="simple">
+<li>Wavelength to XYZ</li>
+<li>Spectral to XYZ</li>
+<li>Interpolation</li>
+<li>Extrapolation</li>
+</ul>
+</div>
+<div class="section" id="spectral-bandpass-correction">
+<h3>Spectral Bandpass Correction</h3>
+<ul class="simple">
+<li>Stearns and Stearns (1988)</li>
+</ul>
+</div>
+<div class="section" id="rgb-and-xyz-colour-matching-functions-spectral-dataset">
+<h3>RGB and XYZ Colour Matching Functions Spectral Dataset</h3>
+<ul class="simple">
+<li>Wright &amp; Guild 1931 2° RGB CMFs RGB colour matching functions</li>
+<li>Stiles &amp; Burch 1955 2° RGB CMFs RGB colour matching functions</li>
+<li>Stiles &amp; Burch 1959 10° RGB CMFs RGB colour matching functions</li>
+<li>CIE 1931 2° Standard Observer XYZ colour matching functions</li>
+<li>CIE 1964 10° Standard Observer XYZ colour matching functions</li>
+<li>CIE 2012 2° Standard Observer XYZ colour matching functions</li>
+<li>CIE 2012 10° Standard Observer XYZ colour matching functions</li>
+</ul>
+</div>
+<div class="section" id="cone-fundamentals-spectral-dataset">
+<h3>Cone Fundamentals Spectral Dataset</h3>
+<ul class="simple">
+<li>Stockman &amp; Sharpe 2° Cone Fundamentals</li>
+<li>Stockman &amp; Sharpe 10° Cone Fundamentals</li>
+</ul>
+</div>
+<div class="section" id="photopic-scotopic-luminous-efficiency-functions-spectral-dataset">
+<h3>Photopic &amp; Scotopic Luminous Efficiency Functions Spectral Dataset</h3>
+<ul class="simple">
+<li>CIE 1924 Photopic Standard Observer</li>
+<li>Judd Modified CIE 1951 Photopic Standard Observer</li>
+<li>Judd-Vos Modified CIE 1978 Photopic Standard Observer</li>
+<li>CIE 1964 Photopic 10° Standard Observer</li>
+<li>CIE 2008 2° Physiologically Relevant LEF</li>
+<li>CIE 2008 10° Physiologically Relevant LEF</li>
+<li>CIE 1951 Scotopic Standard Observer</li>
+</ul>
+</div>
+<div class="section" id="blackbody-spectral-radiance-computation">
+<h3>Blackbody Spectral Radiance Computation</h3>
+</div>
+<div class="section" id="illuminants-spectral-dataset">
+<h3>Illuminants Spectral Dataset</h3>
+<ul class="simple">
+<li>A</li>
+<li>B</li>
+<li>C</li>
+<li>D50</li>
+<li>D55</li>
+<li>D60</li>
+<li>D65</li>
+<li>D75</li>
+<li>E</li>
+<li>F1</li>
+<li>F2</li>
+<li>F3</li>
+<li>F4</li>
+<li>F5</li>
+<li>F6</li>
+<li>F7</li>
+<li>F8</li>
+<li>F9</li>
+<li>F10</li>
+<li>F11</li>
+<li>F12</li>
+<li>FL3.1</li>
+<li>FL3.2</li>
+<li>FL3.3</li>
+<li>FL3.4</li>
+<li>FL3.5</li>
+<li>FL3.6</li>
+<li>FL3.7</li>
+<li>FL3.8</li>
+<li>FL3.9</li>
+<li>FL3.10</li>
+<li>FL3.11</li>
+<li>FL3.12</li>
+<li>FL3.13</li>
+<li>FL3.14</li>
+<li>FL3.15</li>
+<li>HP1</li>
+<li>HP2</li>
+<li>HP3</li>
+<li>HP4</li>
+<li>HP5</li>
+</ul>
+</div>
+<div class="section" id="illuminants-chromaticity-coordinates">
+<h3>Illuminants Chromaticity Coordinates</h3>
+</div>
+<div class="section" id="light-sources-dataset">
+<h3>Light Sources Dataset</h3>
+<ul class="simple">
+<li>Natural</li>
+<li>Philips TL-84</li>
+<li>T8 Luxline Plus White</li>
+<li>SA</li>
+<li>SC</li>
+<li>T8 Polylux 3000</li>
+<li>T8 Polylux 4000</li>
+<li>Thorn Kolor-rite</li>
+<li>Cool White FL</li>
+<li>Daylight FL</li>
+<li>HPS</li>
+<li>Incandescent</li>
+<li>LPS</li>
+<li>Mercury</li>
+<li>Metal Halide</li>
+<li>Neodimium Incandescent</li>
+<li>Super HPS</li>
+<li>Triphosphor FL</li>
+<li>3-LED-1 (457/540/605)</li>
+<li>3-LED-2 (473/545/616)</li>
+<li>3-LED-2 Yellow</li>
+<li>3-LED-3 (465/546/614)</li>
+<li>3-LED-4 (455/547/623)</li>
+<li>4-LED No Yellow</li>
+<li>4-LED Yellow</li>
+<li>4-LED-1 (461/526/576/624)</li>
+<li>4-LED-2 (447/512/573/627)</li>
+<li>Luxeon WW 2880</li>
+<li>PHOS-1</li>
+<li>PHOS-2</li>
+<li>PHOS-3</li>
+<li>PHOS-4</li>
+<li>Phosphor LED YAG</li>
+<li>60 A/W (Soft White)</li>
+<li>C100S54 (HPS)</li>
+<li>C100S54C (HPS)</li>
+<li>F32T8/TL830 (Triphosphor)</li>
+<li>F32T8/TL835 (Triphosphor)</li>
+<li>F32T8/TL841 (Triphosphor)</li>
+<li>F32T8/TL850 (Triphosphor)</li>
+<li>F32T8/TL865 /PLUS (Triphosphor)</li>
+<li>F34/CW/RS/EW (Cool White FL)</li>
+<li>F34T12/LW/RS /EW</li>
+<li>F34T12WW/RS /EW (Warm White FL)</li>
+<li>F40/C50 (Broadband FL)</li>
+<li>F40/C75 (Broadband FL)</li>
+<li>F40/CWX (Broadband FL)</li>
+<li>F40/DX (Broadband FL)</li>
+<li>F40/DXTP (Delux FL)</li>
+<li>F40/N (Natural FL)</li>
+<li>H38HT-100 (Mercury)</li>
+<li>H38JA-100/DX (Mercury DX)</li>
+<li>MHC100/U/MP /3K</li>
+<li>MHC100/U/MP /4K</li>
+<li>SDW-T 100W/LV (Super HPS)</li>
+<li>Kinoton 75P</li>
+</ul>
+</div>
+<div class="section" id="light-sources-chromaticity-coordinates">
+<h3>Light Sources Chromaticity Coordinates</h3>
+</div>
+<div class="section" id="colour-matching-functions-conversions-for-educational-purpose">
+<h3>Colour Matching Functions Conversions for Educational Purpose</h3>
+<ul class="simple">
+<li>Wright &amp; Guild 1931 2° RGB CMFs to CIE 1931 2° Standard Observer</li>
+<li>Stiles &amp; Burch 1959 10° RGB CMFs to CIE 1964 10° Standard Observer</li>
+<li>Stiles &amp; Burch 1959 10° RGB CMFs to Stockman &amp; Sharpe 10° Cone Fundamentals</li>
+<li>Stockman &amp; Sharpe 2° Cone Fundamentals to CIE 2012 2° Standard Observer</li>
+<li>Stockman &amp; Sharpe 10° Cone Fundamentals to CIE 2012 10° Standard Observer</li>
+</ul>
+</div>
+<div class="section" id="lightness-computation">
+<h3>Lightness Computation</h3>
+<ul class="simple">
+<li>Glasser, McKinney, Reilly and Schnelle (1958)</li>
+<li>Wyszecki (1963)</li>
+<li>CIE 1976</li>
+</ul>
+</div>
+<div class="section" id="luminance-computation">
+<h3>Luminance Computation</h3>
+<ul class="simple">
+<li>Newhall, Nickerson and Judd (1943)</li>
+<li>CIE 1976</li>
+<li>ASTM D1535-08</li>
+</ul>
+</div>
+<div class="section" id="whiteness-computation">
+<h3>Whiteness Computation</h3>
+<ul class="simple">
+<li>Berger (1959)</li>
+<li>Taube (1960)</li>
+<li>Stensby (1968)</li>
+<li>ASTM 313</li>
+<li>Ganz and Griesser (1979)</li>
+<li>CIE 2004</li>
+</ul>
+</div>
+<div class="section" id="luminous-efficacy-computation">
+<h3>Luminous Efficacy Computation</h3>
+</div>
+<div class="section" id="luminous-flux-computation">
+<h3>Luminous Flux Computation</h3>
+</div>
+</div>
+<div class="section" id="colour-temperature-correlated-colour-temperature">
+<h2>Colour Temperature &amp; Correlated Colour Temperature</h2>
+<div class="section" id="correlated-colour-temperature-computation-methods">
+<h3>Correlated Colour Temperature Computation Methods</h3>
+<ul class="simple">
+<li>Roberston (1968)</li>
+<li>Ohno (2013)</li>
+<li>McCamy (1992)</li>
+<li>Hernández-Andrés, Lee and Romero (1999)</li>
+<li>Kang et al. (2002)</li>
+<li>CIE Illuminant D Series</li>
+</ul>
+</div>
+</div>
+<div class="section" id="chromatic-adaptation">
+<h2>Chromatic Adaptation</h2>
+<div class="section" id="chromatic-adaptation-models">
+<h3>Chromatic Adaptation Models</h3>
+<ul class="simple">
+<li>Von Kries</li>
+<li>Fairchild (1990)</li>
+<li>CIE 1994</li>
+<li>CMCCAT2000</li>
+</ul>
+</div>
+<div class="section" id="chromatic-adaptation-transforms">
+<h3>Chromatic Adaptation Transforms</h3>
+<ul class="simple">
+<li>XYZ Scaling</li>
+<li>Von Kries</li>
+<li>Bradford</li>
+<li>Sharp</li>
+<li>Fairchild</li>
+<li>CMCCAT97</li>
+<li>CMCCAT2000</li>
+<li>CAT02</li>
+<li>Brill and Süsstrunk (2008) corrected CAT02</li>
+<li>Bianco and Schettini (2010)</li>
+<li>Bianco and Schettini (2010) PC</li>
+</ul>
+</div>
+<div class="section" id="corresponding-chromaticities-computations">
+<h3>Corresponding Chromaticities Computations</h3>
+</div>
+</div>
+<div class="section" id="colour-appearance-models">
+<h2>Colour Appearance Models</h2>
+<ul class="simple">
+<li>ATD95</li>
+<li>CIECAM02</li>
+<li>Hunt</li>
+<li>LLAB</li>
+<li>Nayatani95</li>
+<li>RLAB</li>
+</ul>
+</div>
+<div class="section" id="colour-models">
+<h2>Colour Models</h2>
+<div class="section" id="colourspaces-transformations">
+<h3>Colourspaces Transformations</h3>
+<ul class="simple">
+<li>XYZ to xyY</li>
+<li>xyY to XYZ</li>
+<li>xy to XYZ</li>
+<li>XYZ to xy</li>
+<li>XYZ to RGB</li>
+<li>RGB to XYZ</li>
+<li>RGB to RGB</li>
+<li>XYZ to sRGB</li>
+<li>sRGB to XYZ</li>
+<li>XYZ to UCS</li>
+<li>UCS to XYZ</li>
+<li>UCS to uv</li>
+<li>UCS uv to xy</li>
+<li>XYZ to UVW</li>
+<li>XYZ to Luv</li>
+<li>Luv to XYZ</li>
+<li>Luv to uv</li>
+<li>Luv uv to xy</li>
+<li>Luv to LCHuv</li>
+<li>LCHuv to Luv</li>
+<li>XYZ to Lab</li>
+<li>Lab to XYZ</li>
+<li>Lab to LCHab</li>
+<li>LCHab to Lab</li>
+<li>XYZ to IPT</li>
+<li>IPT to XYZ</li>
+</ul>
+</div>
+<div class="section" id="log-conversion">
+<h3>Log Conversion</h3>
+<ul class="simple">
+<li>Cineon</li>
+<li>Panalog</li>
+<li>ViperLog</li>
+<li>PLog</li>
+<li>C-Log</li>
+<li>ACEScc</li>
+<li>ALEXA Log C</li>
+<li>DCI-P3</li>
+<li>REDLogFilm</li>
+<li>S-Log</li>
+<li>S-Log2</li>
+<li>S-Log3</li>
+<li>V-Log</li>
+</ul>
+</div>
+<div class="section" id="rgb-colourspaces-derivation">
+<h3>RGB Colourspaces Derivation</h3>
+</div>
+<div class="section" id="rgb-colourspaces-primaries-computation">
+<h3>RGB Colourspaces Primaries Computation</h3>
+</div>
+<div class="section" id="rgb-colourspaces">
+<h3>RGB Colourspaces</h3>
+<ul class="simple">
+<li>ACES2065-1</li>
+<li>ACEScc</li>
+<li>ACEScg</li>
+<li>ACESproxy</li>
+<li>ALEXA Wide Gamut RGB</li>
+<li>Adobe RGB 1998</li>
+<li>Adobe Wide Gamut RGB</li>
+<li>Apple RGB</li>
+<li>Best RGB</li>
+<li>Beta RGB</li>
+<li>CIE RGB</li>
+<li>Cinema Gamut</li>
+<li>ColorMatch RGB</li>
+<li>DCI-P3</li>
+<li>DCI-P3+</li>
+<li>DRAGONcolor</li>
+<li>DRAGONcolor2</li>
+<li>Don RGB 4</li>
+<li>ECI RGB v2</li>
+<li>Ekta Space PS 5</li>
+<li>Max RGB</li>
+<li>NTSC RGB</li>
+<li>Pal/Secam RGB</li>
+<li>ProPhoto RGB</li>
+<li>REDcolor</li>
+<li>REDcolor2</li>
+<li>REDcolor3</li>
+<li>REDcolor4</li>
+<li>Rec. 2020</li>
+<li>Rec. 709</li>
+<li>Russell RGB</li>
+<li>S-Gamut</li>
+<li>S-Gamut3</li>
+<li>S-Gamut3.Cine</li>
+<li>SMPTE-C RGB</li>
+<li>V-Gamut</li>
+<li>Xtreme RGB</li>
+<li>sRGB</li>
+</ul>
+</div>
+<div class="section" id="convenience-deprecated-colourspaces-transformations">
+<h3>Convenience Deprecated Colourspaces Transformations</h3>
+<ul class="simple">
+<li>RGB to HSV</li>
+<li>HSV to RGB</li>
+<li>RGB to HSL</li>
+<li>HSL to RGB</li>
+<li>RGB to CMY</li>
+<li>CMY to RGB</li>
+<li>CMY to CMYK</li>
+<li>CMYK to CMY</li>
+</ul>
+</div>
+</div>
+<div class="section" id="colour-difference">
+<h2>Colour Difference</h2>
+<div class="section" id="delta-e-computation">
+<h3>
+<span class="math">\(\Delta E\)</span> Computation</h3>
+<ul class="simple">
+<li>
+<span class="math">\(\Delta E\)</span> CIE 1976</li>
+<li>
+<span class="math">\(\Delta E\)</span> CIE 1994</li>
+<li>
+<span class="math">\(\Delta E\)</span> CIE 2000</li>
+<li>
+<span class="math">\(\Delta E\)</span> CMC</li>
+</ul>
+</div>
+</div>
+<div class="section" id="colour-notation-systems">
+<h2>Colour Notation Systems</h2>
+<div class="section" id="munsell-value-computation">
+<h3>Munsell Value Computation</h3>
+<ul class="simple">
+<li>Priest (1920)</li>
+<li>Munsell (1933)</li>
+<li>Moon (1943)</li>
+<li>Saunderson (1944)</li>
+<li>Ladd (1955)</li>
+<li>McCamy (1987)</li>
+<li>ASTM D1535-08</li>
+</ul>
+</div>
+<div class="section" id="munsell-colour-transformations">
+<h3>Munsell Colour Transformations</h3>
+<ul class="simple">
+<li>xyY to Munsell Colour</li>
+<li>Munsell Colour to xyY</li>
+</ul>
+</div>
+<div class="section" id="munsell-colours-dataset">
+<h3>Munsell Colours Dataset</h3>
+<ul class="simple">
+<li>Munsell Colours All</li>
+<li>Munsell Colours Real</li>
+<li>Munsell Colours 1929</li>
+</ul>
+</div>
+<div class="section" id="hexadecimal">
+<h3>Hexadecimal</h3>
+<ul class="simple">
+<li>RGB to HEX</li>
+<li>HEX to RGB</li>
+</ul>
+</div>
+</div>
+<div class="section" id="characterisation">
+<h2>Characterisation</h2>
+<div class="section" id="colour-rendition-charts-spectral-dataset">
+<h3>Colour Rendition Charts Spectral Dataset</h3>
+<ul class="simple">
+<li>BabelColor Average</li>
+<li>ColorChecker N. Ohta</li>
+</ul>
+</div>
+<div class="section" id="colour-rendition-charts-chromaticity-coordinates">
+<h3>Colour Rendition Charts Chromaticity Coordinates</h3>
+<ul class="simple">
+<li>BabelColor Average</li>
+<li>ColorChecker 1976</li>
+<li>ColorChecker 2005</li>
+</ul>
+</div>
+<div class="section" id="first-order-colour-fit">
+<h3>First Order Colour Fit</h3>
+</div>
+</div>
+<div class="section" id="light-quality">
+<h2>Light Quality</h2>
+<ul class="simple">
+<li>Colour Rendering Index computation</li>
+<li>Colour Quality Scale computation</li>
+</ul>
+</div>
+<div class="section" id="optical-phenomenons">
+<h2>Optical Phenomenons</h2>
+<ul class="simple">
+<li>Rayleigh Optical Depth</li>
+</ul>
+</div>
+<div class="section" id="reflectance-recovery">
+<h2>Reflectance Recovery</h2>
+<ul class="simple">
+<li>Smits (1999)</li>
+</ul>
+</div>
+<div class="section" id="volume">
+<h2>Volume</h2>
+<ul class="simple">
+<li>MacAdam Limits - Optimal Colour Stimuli</li>
+<li>Monte Carlo RGB Colourspace Volume Computation</li>
+<li>Monte Carlo Pointer's Gamut Colourspace Coverage Computation</li>
+<li>Monte Carlo Visible Spectrum Colourspace Coverage Computation</li>
+</ul>
+</div>
+<div class="section" id="comprehensive-plotting-capabilities">
+<h2>Comprehensive Plotting Capabilities</h2>
+</div>
+<div class="section" id="input-output">
+<h2>Input &amp; Output</h2>
+<ul class="simple">
+<li>CSV tabular data files</li>
+<li>IES TM-27-14 spectral data XML files</li>
+<li>X-Rite spectral data files</li>
+<li>Image I/O using <a class="reference external" href="http://openimageio.org">OpenImageIO</a>
+</li>
+</ul>
+</div>
+</div>
+    </div>
+    
+
+</article>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer"><ul class="list-inline">
+<li>
+        <a href="mailto:colour-science@googlegroups.com">
+            <span class="fa fa-envelope fa-2x footer-links"></span>
+        </a>
+    </li>
+    <li>
+        <a href="https://groups.google.com/forum/#!forum/colour-science">
+            <span class="fa fa-users fa-2x footer-links"></span>
+        </a>
+    </li>
+    <li>
+        <a href="https://twitter.com/colour_science">
+            <span class="fa fa-twitter fa-2x footer-links"></span>
+        </a>
+    </li>
+    <li>
+        <a href="https://www.facebook.com/python.colour.science">
+            <span class="fa fa-facebook fa-2x footer-links"></span>
+        </a>
+    </li>
+    <li>
+        <a href="https://plus.google.com/u/0/b/101380914519940603334/101380914519940603334/about">
+            <span class="fa fa-google-plus fa-2x footer-links"></span>
+        </a>
+    </li>
+    <li>
+        <a href="../rss">
+            <span class="fa fa-rss fa-2x footer-links"></span>
+        </a>
+    </li>
+</ul>
+Copyright © 2013 - 2015 – Colour Developers – <a href="mailto:colour-science@googlegroups.com">colour-science@googlegroups.com</a>
+
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><!-- >>> Google Analytics --><script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-53791280-1', 'auto');
+    ga('send', 'pageview');
+
+</script><!-- <<< Google Analytics -->
+</body>
+</html>
