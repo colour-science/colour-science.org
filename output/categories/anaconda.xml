@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>colour-science (anaconda)</title><link>http://colour-science.org/</link><description></description><atom:link href="http://colour-science.org/categories/anaconda.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 04 Dec 2015 07:42:18 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>PyCharm, Vagrant, Fabric &amp; Anaconda</title><link>http://colour-science.org/posts/pycharm-vagrant-fabric-anaconda/</link><dc:creator>Colour Developers</dc:creator><description>&lt;div&gt;&lt;p&gt;Installing the whole development toolchain for &lt;strong&gt;Colour&lt;/strong&gt; roughly means
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>colour-science (anaconda)</title><link>http://colour-science.org/</link><description></description><atom:link href="http://colour-science.org/categories/anaconda.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sun, 06 Dec 2015 09:56:17 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>PyCharm, Vagrant, Fabric &amp; Anaconda</title><link>http://colour-science.org/posts/pycharm-vagrant-fabric-anaconda/</link><dc:creator>Colour Developers</dc:creator><description>&lt;div&gt;&lt;p&gt;Installing the whole development toolchain for &lt;strong&gt;Colour&lt;/strong&gt; roughly means
 deploying:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://www.python.org/download/releases/"&gt;Python 2.7&lt;/a&gt; and
@@ -31,13 +31,13 @@ are using &lt;em&gt;Mac Os X&lt;/em&gt;, although it should pretty much be platf
 &lt;li&gt;On your local filesystem, in your development workspace, create a
 directory &lt;code&gt;colour-science&lt;/code&gt; and &lt;code&gt;cd&lt;/code&gt; into it:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre class="code shell"&gt;&lt;a name="rest_code_97852d44c98a44bf90f14cbcf3be067b-1"&gt;&lt;/a&gt;mkdir colour-science
-&lt;a name="rest_code_97852d44c98a44bf90f14cbcf3be067b-2"&gt;&lt;/a&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;colour-science
+&lt;pre class="code shell"&gt;&lt;a name="rest_code_63eaa88a62aa4e8984aaf84e687fbff8-1"&gt;&lt;/a&gt;mkdir colour-science
+&lt;a name="rest_code_63eaa88a62aa4e8984aaf84e687fbff8-2"&gt;&lt;/a&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;colour-science
 &lt;/pre&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;Clone the &lt;a class="reference external" href="https://github.com/colour-science/colour-vagrant"&gt;colour-vagrant&lt;/a&gt;
 repository:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre class="code shell"&gt;&lt;a name="rest_code_108ce4a81ce44c2fa81a138c6e6a14be-1"&gt;&lt;/a&gt;git clone git://github.com/colour-science/colour-vagrant.git
+&lt;pre class="code shell"&gt;&lt;a name="rest_code_1c27c33bfc1f43fa87f444c117081926-1"&gt;&lt;/a&gt;git clone git://github.com/colour-science/colour-vagrant.git
 &lt;/pre&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p class="first"&gt;You should now have a &lt;code&gt;colour-vagrant&lt;/code&gt; directory nested into the
 &lt;code&gt;colour-science&lt;/code&gt; one.&lt;/p&gt;
@@ -57,7 +57,7 @@ repository:&lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;Install &lt;a class="reference external" href="http://www.fabfile.org/"&gt;Fabric&lt;/a&gt;, this is the provider needed for
 the &lt;a class="reference external" href="https://github.com/colour-science/colour-vagrant"&gt;colour-vagrant&lt;/a&gt;
 environment:&lt;/p&gt;
-&lt;pre class="code shell"&gt;&lt;a name="rest_code_22e200e7c45f4f81ac254888241e8147-1"&gt;&lt;/a&gt;pip install fabric
+&lt;pre class="code shell"&gt;&lt;a name="rest_code_4eb5fae3d2c346678999d4ad6cbea58f-1"&gt;&lt;/a&gt;pip install fabric
 &lt;/pre&gt;&lt;p&gt;Initially, I was provisioning with &lt;a class="reference external" href="http://puppetlabs.com/"&gt;Puppet&lt;/a&gt;.
 It was cumbersome to use, so I decided to go for &lt;a class="reference external" href="http://www.fabfile.org/"&gt;Fabric&lt;/a&gt;
 and the &lt;a class="reference external" href="https://github.com/hlassiege/fabric-vagrant"&gt;fabric-vagrant&lt;/a&gt;
@@ -121,13 +121,13 @@ cloned into the &lt;code&gt;colour-science&lt;/code&gt; directory right next to 
 &lt;li&gt;Remote Python environments installed into the virtual machine at the
 following location with all the dependencies needed:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre class="code shell"&gt;&lt;a name="rest_code_95411f0cc12a462189eb6eadbedceece-1"&gt;&lt;/a&gt;vagrant@precise64:~&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /home/vagrant/anaconda/envs/
-&lt;a name="rest_code_95411f0cc12a462189eb6eadbedceece-2"&gt;&lt;/a&gt;vagrant@precise64:~/anaconda/envs&lt;span class="nv"&gt;$ &lt;/span&gt;ll
-&lt;a name="rest_code_95411f0cc12a462189eb6eadbedceece-3"&gt;&lt;/a&gt;total 20
-&lt;a name="rest_code_95411f0cc12a462189eb6eadbedceece-4"&gt;&lt;/a&gt;drwxrwxr-x  &lt;span class="m"&gt;5&lt;/span&gt; vagrant vagrant &lt;span class="m"&gt;4096&lt;/span&gt; Sep  &lt;span class="m"&gt;5&lt;/span&gt; 10:00 ./
-&lt;a name="rest_code_95411f0cc12a462189eb6eadbedceece-5"&gt;&lt;/a&gt;drwxrwxr-x &lt;span class="m"&gt;14&lt;/span&gt; vagrant vagrant &lt;span class="m"&gt;4096&lt;/span&gt; Sep  &lt;span class="m"&gt;5&lt;/span&gt; 10:00 ../
-&lt;a name="rest_code_95411f0cc12a462189eb6eadbedceece-6"&gt;&lt;/a&gt;drwxrwxr-x &lt;span class="m"&gt;12&lt;/span&gt; vagrant vagrant &lt;span class="m"&gt;4096&lt;/span&gt; Sep  &lt;span class="m"&gt;5&lt;/span&gt; 10:00 python2.7/
-&lt;a name="rest_code_95411f0cc12a462189eb6eadbedceece-7"&gt;&lt;/a&gt;drwxrwxr-x &lt;span class="m"&gt;11&lt;/span&gt; vagrant vagrant &lt;span class="m"&gt;4096&lt;/span&gt; Sep  &lt;span class="m"&gt;5&lt;/span&gt; 09:58 python3.5/
+&lt;pre class="code shell"&gt;&lt;a name="rest_code_c8fe4f35cc0842908dc0e0a6800b6176-1"&gt;&lt;/a&gt;vagrant@precise64:~&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /home/vagrant/anaconda/envs/
+&lt;a name="rest_code_c8fe4f35cc0842908dc0e0a6800b6176-2"&gt;&lt;/a&gt;vagrant@precise64:~/anaconda/envs&lt;span class="nv"&gt;$ &lt;/span&gt;ll
+&lt;a name="rest_code_c8fe4f35cc0842908dc0e0a6800b6176-3"&gt;&lt;/a&gt;total 20
+&lt;a name="rest_code_c8fe4f35cc0842908dc0e0a6800b6176-4"&gt;&lt;/a&gt;drwxrwxr-x  &lt;span class="m"&gt;5&lt;/span&gt; vagrant vagrant &lt;span class="m"&gt;4096&lt;/span&gt; Sep  &lt;span class="m"&gt;5&lt;/span&gt; 10:00 ./
+&lt;a name="rest_code_c8fe4f35cc0842908dc0e0a6800b6176-5"&gt;&lt;/a&gt;drwxrwxr-x &lt;span class="m"&gt;14&lt;/span&gt; vagrant vagrant &lt;span class="m"&gt;4096&lt;/span&gt; Sep  &lt;span class="m"&gt;5&lt;/span&gt; 10:00 ../
+&lt;a name="rest_code_c8fe4f35cc0842908dc0e0a6800b6176-6"&gt;&lt;/a&gt;drwxrwxr-x &lt;span class="m"&gt;12&lt;/span&gt; vagrant vagrant &lt;span class="m"&gt;4096&lt;/span&gt; Sep  &lt;span class="m"&gt;5&lt;/span&gt; 10:00 python2.7/
+&lt;a name="rest_code_c8fe4f35cc0842908dc0e0a6800b6176-7"&gt;&lt;/a&gt;drwxrwxr-x &lt;span class="m"&gt;11&lt;/span&gt; vagrant vagrant &lt;span class="m"&gt;4096&lt;/span&gt; Sep  &lt;span class="m"&gt;5&lt;/span&gt; 09:58 python3.5/
 &lt;/pre&gt;&lt;ul class="simple"&gt;
 &lt;li&gt;The &lt;strong&gt;colour-science.org&lt;/strong&gt; website served from the virtual machine at
 the following address: &lt;a class="reference external" href="http://localhost:8080/"&gt;http://localhost:8080/&lt;/a&gt;&lt;/li&gt;
@@ -164,18 +164,18 @@ are as follows:&lt;/p&gt;
 &lt;code&gt;PyCharm ---&amp;gt; Tools Start SSH session...&lt;/code&gt; menu item.&lt;/p&gt;
 &lt;p&gt;However if you want to be able to export the display and see the figures you
 will have to manually &lt;code&gt;ssh&lt;/code&gt; into the virtual machine:&lt;/p&gt;
-&lt;pre class="code shell"&gt;&lt;a name="rest_code_f66fc583887848fbae7a326477730de0-1"&gt;&lt;/a&gt;ssh -Y vagrant@192.168.32.64
+&lt;pre class="code shell"&gt;&lt;a name="rest_code_53c40a7bcf694ed0a1f81b18a67de257-1"&gt;&lt;/a&gt;ssh -Y vagrant@192.168.32.64
 &lt;/pre&gt;&lt;p&gt;Password is &lt;code&gt;vagrant&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;You will also need to add the virtual machine to the X11 hosts by issuing the
 following command on the &lt;em&gt;Mac Os X&lt;/em&gt; host:&lt;/p&gt;
-&lt;pre class="code shell"&gt;&lt;a name="rest_code_ec0b4670b2ad40679ca0557ddbb21ec9-1"&gt;&lt;/a&gt;xhost + 192.168.32.64
+&lt;pre class="code shell"&gt;&lt;a name="rest_code_9469e1da2c734eac913460d48cff16d4-1"&gt;&lt;/a&gt;xhost + 192.168.32.64
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="ipython-notebooks"&gt;
 &lt;h3&gt;IPython Notebooks&lt;/h3&gt;
 &lt;p&gt;The &lt;a class="reference external" href="http://ipython.org/notebook.html"&gt;IPython Notebooks&lt;/a&gt; server is started
 as follows:&lt;/p&gt;
-&lt;pre class="code shell"&gt;&lt;a name="rest_code_59de311dcef54fccab5d51d5317a3ac0-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /colour-science/colour-ipython/notebooks
-&lt;a name="rest_code_59de311dcef54fccab5d51d5317a3ac0-2"&gt;&lt;/a&gt;ipython notebook --pylab&lt;span class="o"&gt;=&lt;/span&gt;inline --ip&lt;span class="o"&gt;=&lt;/span&gt;0.0.0.0
+&lt;pre class="code shell"&gt;&lt;a name="rest_code_607773f1ab9f497ea139ce422e551180-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /colour-science/colour-ipython/notebooks
+&lt;a name="rest_code_607773f1ab9f497ea139ce422e551180-2"&gt;&lt;/a&gt;ipython notebook --pylab&lt;span class="o"&gt;=&lt;/span&gt;inline --ip&lt;span class="o"&gt;=&lt;/span&gt;0.0.0.0
 &lt;/pre&gt;&lt;p&gt;Then you can access it on the &lt;em&gt;Mac Os X&lt;/em&gt; host at the following url:
 &lt;a class="reference external" href="http://localhost:8888/"&gt;http://localhost:8888/&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
@@ -184,8 +184,8 @@ as follows:&lt;/p&gt;
 &lt;p&gt;You can activate the remote Python environments in the virtual machine by
 issuing those commands:&lt;/p&gt;
 &lt;p&gt;For &lt;strong&gt;python2.7&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre class="code shell"&gt;&lt;a name="rest_code_7843f3a8724b445d8c22ca8e53ac38bc-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;source &lt;/span&gt;activate python2.7
+&lt;pre class="code shell"&gt;&lt;a name="rest_code_a8a7616e50f64332a335128e51f9c503-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;source &lt;/span&gt;activate python2.7
 &lt;/pre&gt;&lt;p&gt;For &lt;strong&gt;python3.5&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre class="code shell"&gt;&lt;a name="rest_code_d53461c39a9b4e8f98d85f6bf7527516-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;source &lt;/span&gt;activate python3.5
+&lt;pre class="code shell"&gt;&lt;a name="rest_code_0a9eb1c3d8a4435987ddbb87ecb1e838-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;source &lt;/span&gt;activate python3.5
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;</description><category>anaconda</category><category>fabric</category><category>pycharm</category><category>vagrant</category><guid>http://colour-science.org/posts/pycharm-vagrant-fabric-anaconda/</guid><pubDate>Sat, 06 Sep 2014 14:45:00 GMT</pubDate></item></channel></rss>

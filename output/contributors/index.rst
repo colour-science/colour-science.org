@@ -176,6 +176,9 @@ Other Contributors
             <a href="https://github.com/henczati">henczati</a>
         </li>
         <li>
+            <a href="https://github.com/Nick-Shaw">Nick-Shaw</a>
+        </li>
+        <li>
             <a href="https://github.com/zachlewis">zachlewis</a>
         </li>
     </ul>

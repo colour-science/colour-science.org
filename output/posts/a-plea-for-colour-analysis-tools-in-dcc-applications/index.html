@@ -291,8 +291,8 @@ As we are increasingly using wide gamut colourspaces (ACES RGB, Rec. 2020, ProPh
 
 
 <span class="k">def</span> <span class="nf">image_plot</span><span class="p">(</span><span class="n">image</span><span class="p">,</span>
-               <span class="n">transfer_function</span><span class="o">=</span><span class="n">colour</span><span class="o">.</span><span class="n">sRGB_COLOURSPACE</span><span class="o">.</span><span class="n">transfer_function</span><span class="p">):</span>
-    <span class="n">vectorised_oecf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="n">transfer_function</span><span class="p">)</span>
+               <span class="n">OECF</span><span class="o">=</span><span class="n">colour</span><span class="o">.</span><span class="n">sRGB_COLOURSPACE</span><span class="o">.</span><span class="n">OECF</span><span class="p">):</span>
+    <span class="n">vectorised_oecf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="n">OECF</span><span class="p">)</span>
     <span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">vectorised_oecf</span><span class="p">(</span><span class="n">image</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="n">pylab</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 
