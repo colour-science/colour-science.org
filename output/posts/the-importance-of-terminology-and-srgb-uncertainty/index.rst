@@ -1,7 +1,7 @@
 .. title: The Importance of Terminology and sRGB Uncertainty
 .. slug: the-importance-of-terminology-and-srgb-uncertainty
 .. date: 2015-12-05 00:17:30 UTC
-.. tags: draft, sRGB, RGB colourspace, chromaticity diagram, OECF, EOCF, conversion function, primaries, gamut, whitepoint
+.. tags: sRGB, RGB colourspace, chromaticity diagram, OECF, EOCF, conversion function, primaries, gamut, whitepoint
 .. category: 
 .. link: 
 .. description: 
@@ -22,9 +22,9 @@ of **primaries**, **whitepoint** and **conversion functions** components.
     | **Note**
     |
     | **Conversion functions** are often named **transfer functions** but
-        the former naming convention is preferred by ISO standards.
+        the former convention should be preferred as used by ISO standards.
 
-The first description of *sRGB* is as follows:
+The article first description of *sRGB* is as follows:
 
     *sRGB is a slight tweaking of the simple gamma 2.2 curve.*
 
@@ -33,9 +33,9 @@ While this depiction of *sRGB* colourspace **EOCF**
 non experts by omitting an explicit emphasis of the components of an *RGB*
 colourspace.
 
-For people experienced with colour theory and science the post title and the
-fact that the context is **gamma** indicates that the article will likely only
-involves *sRGB* colourspace **EOCF** and **OECF** (Opto-electronic conversion function).
+For people experienced with colour theory and science, the post title and the
+mention of **gamma** indicates that the article will likely only involves
+*sRGB* colourspace **EOCF** and **OECF** (Opto-electronic conversion function).
 
 
 .. class:: alert alert-dismissible alert-info
@@ -77,7 +77,7 @@ but yet only a few can define it properly, in that regard, we often cite
 
 *sRGB* is not a bunch of **conversion functions**, it is an actual
 `RGB colourspace <https://en.wikipedia.org/wiki/RGB_color_space>`_, specified by
-the `IEC 61966-2-1:1999 <https://webstore.iec.ch/publication/6169>`_
+`IEC 61966-2-1:1999 <https://webstore.iec.ch/publication/6169>`_
 standard. An *RGB* colourspace is defined by those mandatory 3 components:
 
 - `Primaries`_
@@ -96,7 +96,7 @@ of colours) that can be encoded by a given *RGB colourspace*.
     |
     | When performing computations allowing for negative values and with
         enough precision, a given *RGB colorspace* can virtually encode any colours.
-        Colours exceeding its gamut are simply represented with negative values.
+        Colours exceeding its gamut are simply represented with negative coordinates.
 
 It is important to understand that while commonly represented as triangles on a
 *chromaticity diagram* (such as the *CIE 1931 chromaticity diagram*), *RGB colourspace*
@@ -107,86 +107,94 @@ along its *Y* *Luminance* axis.
 
 .. figure:: /images/ACES2065-1_ACEScg_DCI-P3_Rec__709_Rec__2020_CIE_1931_Chromaticity_Diagram.png
 
-    Various *RGB colourspace* **gamuts** compared in the *CIE 1931 chromaticity diagram*
+    Various *RGB colourspace* **gamuts** compared in the *CIE 1931 chromaticity diagram*.
 
 .. figure:: /images/Colour_-_Analysis_CIE_xyY.gif
 
     The *CIE 1931 chromaticity diagram* in the bottom right view is a 2D
-    projection of the *CIE xyY colourspace* in the left view
+    projection of the *CIE xyY colourspace* in the left view.
     (`Colour - Analysis <https://github.com/colour-science/colour-analysis>`_)
 
 Whitepoint
 ^^^^^^^^^^
 
-The `whitepoint <https://en.wikipedia.org/wiki/White_point>`_ is the neutral
-axis defining the white colour for a given *RGB colourspace*.
+The `whitepoint <https://en.wikipedia.org/wiki/White_point>`_  defines the white
+colour for a given *RGB colourspace*. Any set of colours lying on the *neutral
+axis* passing through the **whitepoint**, no matter their *Luminance*, will be
+neutral to that *RGB colourspace*.
 
-Any set of colours lying on this axis, no matter their *Luminance*, will be neutral
-to that *RGB colourspace*.
-An *RGB colourspace* can have different
-`whitepoints <https://github.com/colour-science/colour-ipython/blob/master/notebooks/colorimetry/illuminants.ipynb>`_
+.. figure:: /images/CIE_xyY_sRGB.png
+
+    *CIE Standard Illuminant D65* is located at the apex of *sRGB* colourspace
+    volume.
+
+An *RGB colourspace* can have
+`different whitepoints <https://github.com/colour-science/colour-ipython/blob/master/notebooks/colorimetry/illuminants.ipynb>`_
 depending its context usage, *sRGB colourspace* IEC 61966-2-1:1999 standard adopts
 `CIE Standard Illuminant D65 <https://en.wikipedia.org/wiki/Illuminant_D65>`_
-as **whitepoint** but the `ICC <https://en.wikipedia.org/wiki/International_Color_Consortium>`_
-*sRGB colourspace* profile is chromatically adapted to use *CIE Standard Illuminant D50*.
+as **whitepoint** but an `ICC <https://en.wikipedia.org/wiki/International_Color_Consortium>`_
+*sRGB colourspace* profile would likely have been chromatically adapted to
+*CIE Standard Illuminant D50*.
 
 .. figure:: /images/CIE_Illuminants_D_Series.png
 
-    Various *CIE Illuminants D Series* *illuminants* in the *CIE 1960 UCS Chromaticity Diagram*
+    Various *CIE Illuminants D Series* *illuminants* in the
+    *CIE 1960 UCS Chromaticity Diagram*.
 
 
 Conversion Functions (OECF and EOCF)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The conversions functions perform the mapping between the *linear* light components
-(tristimulus values) and a *non-linear* R'G'B' video signal:
+(tristimulus values) and a *non-linear* R'G'B' video signal (most of the time
+for coding optimisation and bandwidth performance). [2]_
 
 -   The **Opto-electronic conversion function** (**OECF**) maps estimated
     tristimulus values in a scene to a *non-linear* R'G'B' video component signal
     value. Typical **OECFs** are expressed by a power function with an exponent
     between 0.4 and 0.5. They can also be defined as piece-wise function, *sRGB*,
-    *Rec. 709* or *Rec. 2020* colourspace OECFs are such examples. [2]_
+    *Rec. 709* or *Rec. 2020* colourspace OECFs are such examples.
 
     .. figure:: /images/Rec__709_sRGB_OECF.png
 
-        Various **opto-electronic conversion functions**
+        Various **opto-electronic conversion functions**.
 
 -   The **Electro-optical conversion function** (**EOCF**) maps a *non-linear*
     R'G'B' video component signal to a tristimulus value at the display.
     Typical **EOCFs** are expressed by a power function with an exponent between
-    2.2 and 2.6 or a piece-wise function. [2]_
+    2.2 and 2.6 or a piece-wise function.
 
     .. figure:: /images/Rec__709_sRGB_EOCF.png
 
-        Various **electro-optical conversion functions**
-
+        Various **electro-optical conversion functions**.
 
 The Importance of Terminology
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-With the *RGB colourspace* specification described, it should make more sense
-why not being specific and using a clear **terminology** can lead to
-confusion and uncertainty: colour science vocabulary is deep and complex.
+With the *RGB colourspace* specification components outlined, it should now make
+more sense why not being specific and using a clear **terminology** can lead to
+confusion and uncertainty: colour science vocabulary is complex.
 
-We often encounter people (either online or at work) that don’t have a clear
-understanding on what are the components of an *RGB colourspace*, and often
-don't properly differentiate **conversion functions** and **gamut**. Both are
-very distinct and essential elements of the *RGB colourspace* specification.
+I often encounter people that don’t have a clear understanding on what
+composes an *RGB colourspace*, as a result they don't properly differentiate
+**gamut** and **conversion functions**. The cursory **terminology** recurrently
+used online is probably the root cause for that.
 
-When one talks about *sRGB*, is he describing its **primaries** or its
-**conversion functions**? The *sRGB* colourspace can be defined with linear
-**conversion functions**: A rendering engine uses linear input values, but
-renders using the *sRGB* colourspace **primaries** and **whitepoint**,
-thus technically still within the *sRGB* colourspace specification.
+When one talks about *sRGB*, is he describing the colourspace **primaries** or
+its **conversion functions**? Discussing about *sRGB* to *linear* transformation
+without emphasis on the **EOCF** component is unsettling: a rendering
+engine using linear *sRGB* colourspace input colours and textures, renders with
+the *sRGB* colourspace **primaries** and **whitepoint** (assuming no colour
+transformations are occurring internally), thus its output is within *sRGB*
+colourspace.
 
-When printing one will likely use an *sRGB* ICC profile chromatically adapted
-to *CIE Standard Illuminant D50*.
+When rendering using `Rec. 709 <https://en.wikipedia.org/wiki/Rec._709>`_
+colourspace for TV, one is actually adopting *sRGB* colourspace **primaries**
+and **whitepoint** with different specific **conversion functions**.
 
-When rendering using *Rec. 709* colourspace for TV, one will actually use *sRGB*
-colourspace **primaries** and **whitepoint** but the **conversion functions**
-will be different than the *sRGB* colourspace ones.Canon cameras (Canon EOS 1DC,
-Canon CX00) use *Rec. 709* **primaries** and **whitepoint** but encode their
-scene linear values with a custom log curve designated
+Movie cameras such as Canon ones (Canon EOS 1DC, Canon CX00) use *Rec. 709*
+**primaries** and **whitepoint** but encode their scene linear values with a
+custom log curve designated
 `C-Log <http://www.usa.canon.com/cusa/professional/standard_display/cinema-firmware-c500>`_.
 
 .. class:: alert alert-dismissible alert-info
@@ -198,28 +206,31 @@ scene linear values with a custom log curve designated
         *RGB colourspaces* specifications (ALEXA Wide Gamut RGB for ARRI Alexa
         cameras, REDcolor or DragonColor for RED cameras, etc...).
 
-It is perfectly valid to use the *sRGB* colourspace **conversion functions**
-with another set of **primaries** and **whitepoint**. Some VFX studios use a
-proprietary colourspace specification with *sRGB* colourspace **conversion functions**
-when working within Adobe Photoshop or The Foundry Mari. As it is commonly used
-in various DCC packages, it simplifies the various colour transformation
-operations between those packages.
+Likewise, it is perfectly valid to use the *sRGB* colourspace **conversion functions**
+with another set of **primaries** and **whitepoint**. When working within
+Adobe Photoshop or The Foundry Mari, some VFX studios use a proprietary colourspace
+specification along *sRGB* colourspace **conversion functions**: those
+**conversion functions** being commonly implemented in various DCC packages, the
+various colour transformation operations between those packages are simplified.
+
+Conclusion
+^^^^^^^^^^
 
 When one talks about *sRGB* alone, it should be safe to assume that he is
 referring to the *sRGB* colourspace as per IEC 61966-2-1:1999 standard,
 not just cherry picked components. Unfortunately it is not the case thus in order
 to lessen the uncertainty and improve the **terminology** used, we suggest that:
 
--   One should keep in mind at all time that a given *RGB* colourspace is defined
-    by the following mandatory three components:
+-   One remembers that a given *RGB* colourspace is defined by the following
+    essential three components:
 
     - `Primaries`_
     - `Whitepoint`_
     - `Conversion Functions (OECF and EOCF)`_
--   When writing on the subject, one should ideally remind about the previous
-    point, it will help people getting the grasp on the theory.
--   When talking about a given *RGB* colourspace component, one should make a
-    point on describing which component of the specification he is referring to:
+-   When writing on the *RGB* colourspace topic, one should ideally mention the
+    previous point, it will help people getting the grasp on the theory.
+-   When discussing about a given *RGB* colourspace component, one should make a
+    point of describing which specification's component he is referring to:
 
         *sRGB is a slight tweaking of the simple gamma 2.2 curve.*
 
@@ -234,21 +245,23 @@ to lessen the uncertainty and improve the **terminology** used, we suggest that:
         of the simple gamma 2.2 curve.*
 
 -   When describing an *RGB* colourspace not supported by an official specification
-    or standard, one should probably use a name that explicitly define the complete
+    or standard, one should probably use a name that explicitly defines the complete
     specification:
 
-    -   `sRGB-D60-Linear`: An *RGB* colourspace using *sRGB* **primaries**,
+    -   `sRGB-D60-Linear`: an *RGB* colourspace using *sRGB* **primaries**,
         *CIE Standard Illuminant D60* **whitepoint** and linear **conversion
         functions**.
-    -   `Adobe 1998 RGB-D65-Gamma1.8`: An *RGB* colourspace using *Adobe 1998 RGB*
+    -   `Adobe 1998 RGB-D65-Gamma1.8`: an *RGB* colourspace using *Adobe 1998 RGB*
         **primaries**, *CIE Standard Illuminant D65* **whitepoint** and gamma
         1.8 **conversion functions**.
 
-In the near future it will become even more important and relevant as new *RGB*
-colourspaces such as *Rec. 2020* or *ACES* family ones are becoming mainstream.
+In the near future it will likely become even more critical and relevant as
+new *RGB* colourspaces such as `Rec. 2020 <https://en.wikipedia.org/wiki/Rec._2020>`_
+or the `ACES encodings <http://www.oscars.org/science-technology/sci-tech-projects/aces>`_
+become mainstream.
 
 Bibliography
-============
+^^^^^^^^^^^^
 
 .. [1]  Fairchild, M. D. (2013). Color Appearance Models (3rd ed., pp. 1–10831).
         Wiley. ISBN:B00DAYO8E2

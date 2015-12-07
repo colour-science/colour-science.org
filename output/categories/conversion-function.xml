@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>colour-science (conversion function)</title><link>http://colour-science.org/</link><description></description><atom:link href="http://colour-science.org/categories/conversion-function.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Mon, 07 Dec 2015 08:20:44 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The Importance of Terminology and sRGB Uncertainty</title><link>http://colour-science.org/posts/the-importance-of-terminology-and-srgb-uncertainty/</link><dc:creator>Colour Developers</dc:creator><description>&lt;div&gt;&lt;p&gt;We were meant to write that entry since a while, and a
+&lt;a class="reference external" href="https://gamedevdaily.io/the-srgb-learning-curve-773b7f68cf7a#"&gt;great post&lt;/a&gt; by
+&lt;a class="reference external" href="https://twitter.com/tom_forsyth"&gt;Tom Forsyth&lt;/a&gt; from
+&lt;a class="reference external" href="https://www.oculus.com/en-us/"&gt;Oculus VR&lt;/a&gt; triggered us in doing so.&lt;/p&gt;
+&lt;p&gt;As I was quickly reading his article, I
+&lt;a class="reference external" href="https://twitter.com/colour_science/status/671647698546626560"&gt;tweeted&lt;/a&gt;
+back about the missing description of &lt;em&gt;sRGB&lt;/em&gt; as being an &lt;em&gt;RGB&lt;/em&gt; colourspace: a set
+of &lt;strong&gt;primaries&lt;/strong&gt;, &lt;strong&gt;whitepoint&lt;/strong&gt; and &lt;strong&gt;conversion functions&lt;/strong&gt; components.&lt;/p&gt;
+&lt;div class="alert alert-dismissible alert-info line-block"&gt;
+&lt;div class="line"&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;br&gt;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;strong&gt;Conversion functions&lt;/strong&gt; are often named &lt;strong&gt;transfer functions&lt;/strong&gt; but
+the former convention should be preferred as used by ISO standards.&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;The article first description of &lt;em&gt;sRGB&lt;/em&gt; is as follows:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;em&gt;sRGB is a slight tweaking of the simple gamma 2.2 curve.&lt;/em&gt;&lt;/blockquote&gt;
+&lt;p&gt;While this depiction of &lt;em&gt;sRGB&lt;/em&gt; colourspace &lt;strong&gt;EOCF&lt;/strong&gt;
+(Electro-optical conversion function) is exact, it may be confusing for
+non experts by omitting an explicit emphasis of the components of an &lt;em&gt;RGB&lt;/em&gt;
+colourspace.&lt;/p&gt;
+&lt;p&gt;For people experienced with colour theory and science, the post title and the
+mention of &lt;strong&gt;gamma&lt;/strong&gt; indicates that the article will likely only involves
+&lt;em&gt;sRGB&lt;/em&gt; colourspace &lt;strong&gt;EOCF&lt;/strong&gt; and &lt;strong&gt;OECF&lt;/strong&gt; (Opto-electronic conversion function).&lt;/p&gt;
+&lt;div class="alert alert-dismissible alert-info line-block"&gt;
+&lt;div class="line"&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;br&gt;&lt;/div&gt;
+&lt;div class="line"&gt;Charles Poynton's &lt;a class="reference external" href="http://www.poynton.com/notes/colour_and_gamma/GammaFAQ.html"&gt;Gamma FAQ&lt;/a&gt;
+is an extensive reference on gamma correction.&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Tom confirms that intuition a few paragraph later:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;em&gt;(the broader sRGB standard also has a bunch of gamut and colour-transform
+specifications, but we’ll ignore those and just focus on the gamma-curve
+part for now, since that is what concerns us for graphics rendering)&lt;/em&gt;&lt;/blockquote&gt;
+&lt;div class="alert alert-dismissible alert-info line-block"&gt;
+&lt;div class="line"&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;br&gt;&lt;/div&gt;
+&lt;div class="line"&gt;The &lt;em&gt;gamut&lt;/em&gt; defined by &lt;em&gt;sRGB&lt;/em&gt; colourspace should actually be of a
+concern if one tries to achieve photo-realistic rendering as shown by
+&lt;a class="reference external" href="http://nbviewer.ipython.org/gist/sagland/3c791e79353673fd24fa"&gt;Steve Agland&lt;/a&gt;
+and &lt;a class="reference external" href="http://colour-science.org/posts/about-rendering-engines-colourspaces-agnosticism/"&gt;us&lt;/a&gt;.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="what-is-srgb"&gt;
+&lt;h2&gt;What is sRGB?&lt;/h2&gt;
+&lt;p&gt;Terminology in a given scientific domain is a key to its understanding, this is
+especially true in colour science. For example, everybody knows what is colour
+but yet only a few can define it properly, in that regard, we often cite
+&lt;a class="reference external" href="https://twitter.com/MDFairchild"&gt;Mark D. Fairchild&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;em&gt;Why should it be particularly difficult to agree upon consistent
+terminology in the field of color appearance? Perhaps the answer lies in
+the very nature of the subject. Almost everyone knows what color is.
+After all, they have had firsthand experience of it since shortly after
+birth. However, very few can precisely describe their color experiences or
+even precisely define color.&lt;/em&gt; &lt;a class="footnote-reference" href="http://colour-science.org/posts/the-importance-of-terminology-and-srgb-uncertainty/#id4" id="id1"&gt;[1]&lt;/a&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;sRGB&lt;/em&gt; is not a bunch of &lt;strong&gt;conversion functions&lt;/strong&gt;, it is an actual
+&lt;a class="reference external" href="https://en.wikipedia.org/wiki/RGB_color_space"&gt;RGB colourspace&lt;/a&gt;, specified by
+&lt;a class="reference external" href="https://webstore.iec.ch/publication/6169"&gt;IEC 61966-2-1:1999&lt;/a&gt;
+standard. An &lt;em&gt;RGB&lt;/em&gt; colourspace is defined by those mandatory 3 components:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="http://colour-science.org/posts/the-importance-of-terminology-and-srgb-uncertainty/#primaries"&gt;Primaries&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://en.wikipedia.org/wiki/White_point"&gt;Whitepoint&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="http://colour-science.org/posts/the-importance-of-terminology-and-srgb-uncertainty/#conversion-functions-oecf-and-eocf"&gt;Conversion Functions (OECF and EOCF)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section" id="primaries"&gt;
+&lt;h3&gt;Primaries&lt;/h3&gt;
+&lt;p&gt;The &lt;strong&gt;primaries&lt;/strong&gt; &lt;em&gt;chromaticity coordinates&lt;/em&gt; define the &lt;strong&gt;gamut&lt;/strong&gt; (the triangle
+of colours) that can be encoded by a given &lt;em&gt;RGB colourspace&lt;/em&gt;.&lt;/p&gt;
+&lt;div class="alert alert-dismissible alert-info line-block"&gt;
+&lt;div class="line"&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;br&gt;&lt;/div&gt;
+&lt;div class="line"&gt;When performing computations allowing for negative values and with
+enough precision, a given &lt;em&gt;RGB colorspace&lt;/em&gt; can virtually encode any colours.
+Colours exceeding its gamut are simply represented with negative coordinates.&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;It is important to understand that while commonly represented as triangles on a
+&lt;em&gt;chromaticity diagram&lt;/em&gt; (such as the &lt;em&gt;CIE 1931 chromaticity diagram&lt;/em&gt;), &lt;em&gt;RGB colourspace&lt;/em&gt;
+&lt;strong&gt;gamuts&lt;/strong&gt; define the boundaries of an actual 3D volume within the
+&lt;a class="reference external" href="https://en.wikipedia.org/wiki/CIE_1931_color_space#CIE_xy_chromaticity_diagram_and_the_CIE_xyY_color_space"&gt;CIE xyY colourspace&lt;/a&gt;:
+The &lt;em&gt;chromaticity diagram&lt;/em&gt; is a 2D projection of the &lt;em&gt;CIE xyY colourspace&lt;/em&gt; volume
+along its &lt;em&gt;Y&lt;/em&gt; &lt;em&gt;Luminance&lt;/em&gt; axis.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="/images/ACES2065-1_ACEScg_DCI-P3_Rec__709_Rec__2020_CIE_1931_Chromaticity_Diagram.png" src="http://colour-science.org/images/ACES2065-1_ACEScg_DCI-P3_Rec__709_Rec__2020_CIE_1931_Chromaticity_Diagram.png"&gt;
+&lt;p class="caption"&gt;Various &lt;em&gt;RGB colourspace&lt;/em&gt; &lt;strong&gt;gamuts&lt;/strong&gt; compared in the &lt;em&gt;CIE 1931 chromaticity diagram&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="/images/Colour_-_Analysis_CIE_xyY.gif" src="http://colour-science.org/images/Colour_-_Analysis_CIE_xyY.gif"&gt;
+&lt;p class="caption"&gt;The &lt;em&gt;CIE 1931 chromaticity diagram&lt;/em&gt; in the bottom right view is a 2D
+projection of the &lt;em&gt;CIE xyY colourspace&lt;/em&gt; in the left view.
+(&lt;a class="reference external" href="https://github.com/colour-science/colour-analysis"&gt;Colour - Analysis&lt;/a&gt;)&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="whitepoint"&gt;
+&lt;h3&gt;Whitepoint&lt;/h3&gt;
+&lt;p&gt;The &lt;a class="reference external" href="https://en.wikipedia.org/wiki/White_point"&gt;whitepoint&lt;/a&gt;  defines the white
+colour for a given &lt;em&gt;RGB colourspace&lt;/em&gt;. Any set of colours lying on the &lt;em&gt;neutral
+axis&lt;/em&gt; passing through the &lt;strong&gt;whitepoint&lt;/strong&gt;, no matter their &lt;em&gt;Luminance&lt;/em&gt;, will be
+neutral to that &lt;em&gt;RGB colourspace&lt;/em&gt;.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="/images/CIE_xyY_sRGB.png" src="http://colour-science.org/images/CIE_xyY_sRGB.png"&gt;
+&lt;p class="caption"&gt;&lt;em&gt;CIE Standard Illuminant D65&lt;/em&gt; is located at the apex of &lt;em&gt;sRGB&lt;/em&gt; colourspace
+volume.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;An &lt;em&gt;RGB colourspace&lt;/em&gt; can have
+&lt;a class="reference external" href="https://github.com/colour-science/colour-ipython/blob/master/notebooks/colorimetry/illuminants.ipynb"&gt;different whitepoints&lt;/a&gt;
+depending its context usage, &lt;em&gt;sRGB colourspace&lt;/em&gt; IEC 61966-2-1:1999 standard adopts
+&lt;a class="reference external" href="https://en.wikipedia.org/wiki/Illuminant_D65"&gt;CIE Standard Illuminant D65&lt;/a&gt;
+as &lt;strong&gt;whitepoint&lt;/strong&gt; but an &lt;a class="reference external" href="https://en.wikipedia.org/wiki/International_Color_Consortium"&gt;ICC&lt;/a&gt;
+&lt;em&gt;sRGB colourspace&lt;/em&gt; profile would likely have been chromatically adapted to
+&lt;em&gt;CIE Standard Illuminant D50&lt;/em&gt;.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="/images/CIE_Illuminants_D_Series.png" src="http://colour-science.org/images/CIE_Illuminants_D_Series.png"&gt;
+&lt;p class="caption"&gt;Various &lt;em&gt;CIE Illuminants D Series&lt;/em&gt; &lt;em&gt;illuminants&lt;/em&gt; in the
+&lt;em&gt;CIE 1960 UCS Chromaticity Diagram&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="conversion-functions-oecf-and-eocf"&gt;
+&lt;h3&gt;Conversion Functions (OECF and EOCF)&lt;/h3&gt;
+&lt;p&gt;The conversions functions perform the mapping between the &lt;em&gt;linear&lt;/em&gt; light components
+(tristimulus values) and a &lt;em&gt;non-linear&lt;/em&gt; R'G'B' video signal (most of the time
+for coding optimisation and bandwidth performance). &lt;a class="footnote-reference" href="http://colour-science.org/posts/the-importance-of-terminology-and-srgb-uncertainty/#id5" id="id3"&gt;[2]&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;The &lt;strong&gt;Opto-electronic conversion function&lt;/strong&gt; (&lt;strong&gt;OECF&lt;/strong&gt;) maps estimated
+tristimulus values in a scene to a &lt;em&gt;non-linear&lt;/em&gt; R'G'B' video component signal
+value. Typical &lt;strong&gt;OECFs&lt;/strong&gt; are expressed by a power function with an exponent
+between 0.4 and 0.5. They can also be defined as piece-wise function, &lt;em&gt;sRGB&lt;/em&gt;,
+&lt;em&gt;Rec. 709&lt;/em&gt; or &lt;em&gt;Rec. 2020&lt;/em&gt; colourspace OECFs are such examples.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="/images/Rec__709_sRGB_OECF.png" src="http://colour-science.org/images/Rec__709_sRGB_OECF.png"&gt;
+&lt;p class="caption"&gt;Various &lt;strong&gt;opto-electronic conversion functions&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;The &lt;strong&gt;Electro-optical conversion function&lt;/strong&gt; (&lt;strong&gt;EOCF&lt;/strong&gt;) maps a &lt;em&gt;non-linear&lt;/em&gt;
+R'G'B' video component signal to a tristimulus value at the display.
+Typical &lt;strong&gt;EOCFs&lt;/strong&gt; are expressed by a power function with an exponent between
+2.2 and 2.6 or a piece-wise function.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="/images/Rec__709_sRGB_EOCF.png" src="http://colour-science.org/images/Rec__709_sRGB_EOCF.png"&gt;
+&lt;p class="caption"&gt;Various &lt;strong&gt;electro-optical conversion functions&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="the-importance-of-terminology"&gt;
+&lt;h3&gt;The Importance of Terminology&lt;/h3&gt;
+&lt;p&gt;With the &lt;em&gt;RGB colourspace&lt;/em&gt; specification components outlined, it should now make
+more sense why not being specific and using a clear &lt;strong&gt;terminology&lt;/strong&gt; can lead to
+confusion and uncertainty: colour science vocabulary is complex.&lt;/p&gt;
+&lt;p&gt;I often encounter people that don’t have a clear understanding on what
+composes an &lt;em&gt;RGB colourspace&lt;/em&gt;, as a result they don't properly differentiate
+&lt;strong&gt;gamut&lt;/strong&gt; and &lt;strong&gt;conversion functions&lt;/strong&gt;. The cursory &lt;strong&gt;terminology&lt;/strong&gt; recurrently
+used online is probably the root cause for that.&lt;/p&gt;
+&lt;p&gt;When one talks about &lt;em&gt;sRGB&lt;/em&gt;, is he describing the colourspace &lt;strong&gt;primaries&lt;/strong&gt; or
+its &lt;strong&gt;conversion functions&lt;/strong&gt;? Discussing about &lt;em&gt;sRGB&lt;/em&gt; to &lt;em&gt;linear&lt;/em&gt; transformation
+without emphasis on the &lt;strong&gt;EOCF&lt;/strong&gt; component is unsettling: a rendering
+engine using linear &lt;em&gt;sRGB&lt;/em&gt; colourspace input colours and textures, renders with
+the &lt;em&gt;sRGB&lt;/em&gt; colourspace &lt;strong&gt;primaries&lt;/strong&gt; and &lt;strong&gt;whitepoint&lt;/strong&gt; (assuming no colour
+transformations are occurring internally), thus its output is within &lt;em&gt;sRGB&lt;/em&gt;
+colourspace.&lt;/p&gt;
+&lt;p&gt;When rendering using &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Rec._709"&gt;Rec. 709&lt;/a&gt;
+colourspace for TV, one is actually adopting &lt;em&gt;sRGB&lt;/em&gt; colourspace &lt;strong&gt;primaries&lt;/strong&gt;
+and &lt;strong&gt;whitepoint&lt;/strong&gt; with different specific &lt;strong&gt;conversion functions&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Movie cameras such as Canon ones (Canon EOS 1DC, Canon CX00) use &lt;em&gt;Rec. 709&lt;/em&gt;
+&lt;strong&gt;primaries&lt;/strong&gt; and &lt;strong&gt;whitepoint&lt;/strong&gt; but encode their scene linear values with a
+custom log curve designated
+&lt;a class="reference external" href="http://www.usa.canon.com/cusa/professional/standard_display/cinema-firmware-c500"&gt;C-Log&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="alert alert-dismissible alert-info line-block"&gt;
+&lt;div class="line"&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;br&gt;&lt;/div&gt;
+&lt;div class="line"&gt;Most camera makers have their own log curves (ALEXA Log C for ARRI Alexa
+cameras, RED Log Film for RED cameras, etc...) and proprietary
+&lt;em&gt;RGB colourspaces&lt;/em&gt; specifications (ALEXA Wide Gamut RGB for ARRI Alexa
+cameras, REDcolor or DragonColor for RED cameras, etc...).&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Likewise, it is perfectly valid to use the &lt;em&gt;sRGB&lt;/em&gt; colourspace &lt;strong&gt;conversion functions&lt;/strong&gt;
+with another set of &lt;strong&gt;primaries&lt;/strong&gt; and &lt;strong&gt;whitepoint&lt;/strong&gt;. When working within
+Adobe Photoshop or The Foundry Mari, some VFX studios use a proprietary colourspace
+specification along &lt;em&gt;sRGB&lt;/em&gt; colourspace &lt;strong&gt;conversion functions&lt;/strong&gt;: those
+&lt;strong&gt;conversion functions&lt;/strong&gt; being commonly implemented in various DCC packages, the
+various colour transformation operations between those packages are simplified.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="conclusion"&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;When one talks about &lt;em&gt;sRGB&lt;/em&gt; alone, it should be safe to assume that he is
+referring to the &lt;em&gt;sRGB&lt;/em&gt; colourspace as per IEC 61966-2-1:1999 standard,
+not just cherry picked components. Unfortunately it is not the case thus in order
+to lessen the uncertainty and improve the &lt;strong&gt;terminology&lt;/strong&gt; used, we suggest that:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;One remembers that a given &lt;em&gt;RGB&lt;/em&gt; colourspace is defined by the following
+essential three components:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="http://colour-science.org/posts/the-importance-of-terminology-and-srgb-uncertainty/#primaries"&gt;Primaries&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://en.wikipedia.org/wiki/White_point"&gt;Whitepoint&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="http://colour-science.org/posts/the-importance-of-terminology-and-srgb-uncertainty/#conversion-functions-oecf-and-eocf"&gt;Conversion Functions (OECF and EOCF)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;When writing on the &lt;em&gt;RGB&lt;/em&gt; colourspace topic, one should ideally mention the
+previous point, it will help people getting the grasp on the theory.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;When discussing about a given &lt;em&gt;RGB&lt;/em&gt; colourspace component, one should make a
+point of describing which specification's component he is referring to:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;sRGB is a slight tweaking of the simple gamma 2.2 curve.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;would be better written as follows:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;The sRGB conversion function is a slight tweaking of the simple gamma
+2.2 curve.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;or for completeness:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;The sRGB electro-optical conversion function (EOCF) is a slight tweaking
+of the simple gamma 2.2 curve.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;When describing an &lt;em&gt;RGB&lt;/em&gt; colourspace not supported by an official specification
+or standard, one should probably use a name that explicitly defines the complete
+specification:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;cite&gt;sRGB-D60-Linear&lt;/cite&gt;: an &lt;em&gt;RGB&lt;/em&gt; colourspace using &lt;em&gt;sRGB&lt;/em&gt; &lt;strong&gt;primaries&lt;/strong&gt;,
+&lt;em&gt;CIE Standard Illuminant D60&lt;/em&gt; &lt;strong&gt;whitepoint&lt;/strong&gt; and linear &lt;strong&gt;conversion
+functions&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;cite&gt;Adobe 1998 RGB-D65-Gamma1.8&lt;/cite&gt;: an &lt;em&gt;RGB&lt;/em&gt; colourspace using &lt;em&gt;Adobe 1998 RGB&lt;/em&gt;
+&lt;strong&gt;primaries&lt;/strong&gt;, &lt;em&gt;CIE Standard Illuminant D65&lt;/em&gt; &lt;strong&gt;whitepoint&lt;/strong&gt; and gamma
+1.8 &lt;strong&gt;conversion functions&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the near future it will likely become even more critical and relevant as
+new &lt;em&gt;RGB&lt;/em&gt; colourspaces such as &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Rec._2020"&gt;Rec. 2020&lt;/a&gt;
+or the &lt;a class="reference external" href="http://www.oscars.org/science-technology/sci-tech-projects/aces"&gt;ACES encodings&lt;/a&gt;
+become mainstream.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="bibliography"&gt;
+&lt;h3&gt;Bibliography&lt;/h3&gt;
+&lt;table class="docutils footnote" frame="void" id="id4" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="http://colour-science.org/posts/the-importance-of-terminology-and-srgb-uncertainty/#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Fairchild, M. D. (2013). Color Appearance Models (3rd ed., pp. 1–10831).
+Wiley. ISBN:B00DAYO8E2&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table class="docutils footnote" frame="void" id="id5" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label"&gt;&lt;col&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="http://colour-science.org/posts/the-importance-of-terminology-and-srgb-uncertainty/#id3"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Poynton, C. (2012). Digital Video and HDTV - Algorithms and Interfaces
+- Second Edition (2nd ed.). Morgan Kaufmann. ISBN:9780123919267&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>chromaticity diagram</category><category>conversion function</category><category>EOCF</category><category>gamut</category><category>OECF</category><category>primaries</category><category>RGB colourspace</category><category>sRGB</category><category>whitepoint</category><guid>http://colour-science.org/posts/the-importance-of-terminology-and-srgb-uncertainty/</guid><pubDate>Sat, 05 Dec 2015 00:17:30 GMT</pubDate></item></channel></rss>

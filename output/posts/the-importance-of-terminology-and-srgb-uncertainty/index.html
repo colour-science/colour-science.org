@@ -13,7 +13,7 @@
 <link rel="canonical" href="http://colour-science.org/posts/the-importance-of-terminology-and-srgb-uncertainty/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script src="../../assets/js/jquery.min.js"></script><link href="../../assets/css/font-awesome.css" rel="stylesheet">
 <meta name="author" content="Colour Developers">
-<meta name="robots" content="noindex">
+<link rel="prev" href="../a-new-logo-and-website/" title="A New Logo and Website!" type="text/html">
 <meta property="og:site_name" content="colour-science">
 <meta property="og:title" content="The Importance of Terminology and sRGB Uncertainty">
 <meta property="og:url" content="http://colour-science.org/posts/the-importance-of-terminology-and-srgb-uncertainty/">
@@ -234,9 +234,9 @@ of <strong>primaries</strong>, <strong>whitepoint</strong> and <strong>conversio
 <div class="line"><br></div>
 <div class="line">
 <strong>Conversion functions</strong> are often named <strong>transfer functions</strong> but
-the former naming convention is preferred by ISO standards.</div>
+the former convention should be preferred as used by ISO standards.</div>
 </div>
-<p>The first description of <em>sRGB</em> is as follows:</p>
+<p>The article first description of <em>sRGB</em> is as follows:</p>
 <blockquote>
 <em>sRGB is a slight tweaking of the simple gamma 2.2 curve.</em>
 </blockquote>
@@ -244,9 +244,9 @@ the former naming convention is preferred by ISO standards.</div>
 (Electro-optical conversion function) is exact, it may be confusing for
 non experts by omitting an explicit emphasis of the components of an <em>RGB</em>
 colourspace.</p>
-<p>For people experienced with colour theory and science the post title and the
-fact that the context is <strong>gamma</strong> indicates that the article will likely only
-involves <em>sRGB</em> colourspace <strong>EOCF</strong> and <strong>OECF</strong> (Opto-electronic conversion function).</p>
+<p>For people experienced with colour theory and science, the post title and the
+mention of <strong>gamma</strong> indicates that the article will likely only involves
+<em>sRGB</em> colourspace <strong>EOCF</strong> and <strong>OECF</strong> (Opto-electronic conversion function).</p>
 <div class="alert alert-dismissible alert-info line-block">
 <div class="line"><strong>Note</strong></div>
 <div class="line"><br></div>
@@ -279,11 +279,11 @@ terminology in the field of color appearance? Perhaps the answer lies in
 the very nature of the subject. Almost everyone knows what color is.
 After all, they have had firsthand experience of it since shortly after
 birth. However, very few can precisely describe their color experiences or
-even precisely define color.</em> <a class="footnote-reference" href=".#id5" id="id1">[1]</a>
+even precisely define color.</em> <a class="footnote-reference" href=".#id4" id="id1">[1]</a>
 </blockquote>
 <p><em>sRGB</em> is not a bunch of <strong>conversion functions</strong>, it is an actual
 <a class="reference external" href="https://en.wikipedia.org/wiki/RGB_color_space">RGB colourspace</a>, specified by
-the <a class="reference external" href="https://webstore.iec.ch/publication/6169">IEC 61966-2-1:1999</a>
+<a class="reference external" href="https://webstore.iec.ch/publication/6169">IEC 61966-2-1:1999</a>
 standard. An <em>RGB</em> colourspace is defined by those mandatory 3 components:</p>
 <ul class="simple">
 <li><a class="reference internal" href=".#primaries">Primaries</a></li>
@@ -299,7 +299,7 @@ of colours) that can be encoded by a given <em>RGB colourspace</em>.</p>
 <div class="line"><br></div>
 <div class="line">When performing computations allowing for negative values and with
 enough precision, a given <em>RGB colorspace</em> can virtually encode any colours.
-Colours exceeding its gamut are simply represented with negative values.</div>
+Colours exceeding its gamut are simply represented with negative coordinates.</div>
 </div>
 <p>It is important to understand that while commonly represented as triangles on a
 <em>chromaticity diagram</em> (such as the <em>CIE 1931 chromaticity diagram</em>), <em>RGB colourspace</em>
@@ -308,77 +308,85 @@ Colours exceeding its gamut are simply represented with negative values.</div>
 The <em>chromaticity diagram</em> is a 2D projection of the <em>CIE xyY colourspace</em> volume
 along its <em>Y</em> <em>Luminance</em> axis.</p>
 <div class="figure">
-<img alt="/images/ACES2065-1_ACEScg_DCI-P3_Rec__709_Rec__2020_CIE_1931_Chromaticity_Diagram.png" src="../../images/ACES2065-1_ACEScg_DCI-P3_Rec__709_Rec__2020_CIE_1931_Chromaticity_Diagram.png"><p class="caption">Various <em>RGB colourspace</em> <strong>gamuts</strong> compared in the <em>CIE 1931 chromaticity diagram</em></p>
+<img alt="/images/ACES2065-1_ACEScg_DCI-P3_Rec__709_Rec__2020_CIE_1931_Chromaticity_Diagram.png" src="../../images/ACES2065-1_ACEScg_DCI-P3_Rec__709_Rec__2020_CIE_1931_Chromaticity_Diagram.png"><p class="caption">Various <em>RGB colourspace</em> <strong>gamuts</strong> compared in the <em>CIE 1931 chromaticity diagram</em>.</p>
 </div>
 <div class="figure">
 <img alt="/images/Colour_-_Analysis_CIE_xyY.gif" src="../../images/Colour_-_Analysis_CIE_xyY.gif"><p class="caption">The <em>CIE 1931 chromaticity diagram</em> in the bottom right view is a 2D
-projection of the <em>CIE xyY colourspace</em> in the left view
+projection of the <em>CIE xyY colourspace</em> in the left view.
 (<a class="reference external" href="https://github.com/colour-science/colour-analysis">Colour - Analysis</a>)</p>
 </div>
 </div>
 <div class="section" id="whitepoint">
 <h3>Whitepoint</h3>
-<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/White_point">whitepoint</a> is the neutral
-axis defining the white colour for a given <em>RGB colourspace</em>.</p>
-<p>Any set of colours lying on this axis, no matter their <em>Luminance</em>, will be neutral
-to that <em>RGB colourspace</em>.
-An <em>RGB colourspace</em> can have different
-<a class="reference external" href="https://github.com/colour-science/colour-ipython/blob/master/notebooks/colorimetry/illuminants.ipynb">whitepoints</a>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/White_point">whitepoint</a>  defines the white
+colour for a given <em>RGB colourspace</em>. Any set of colours lying on the <em>neutral
+axis</em> passing through the <strong>whitepoint</strong>, no matter their <em>Luminance</em>, will be
+neutral to that <em>RGB colourspace</em>.</p>
+<div class="figure">
+<img alt="/images/CIE_xyY_sRGB.png" src="../../images/CIE_xyY_sRGB.png"><p class="caption"><em>CIE Standard Illuminant D65</em> is located at the apex of <em>sRGB</em> colourspace
+volume.</p>
+</div>
+<p>An <em>RGB colourspace</em> can have
+<a class="reference external" href="https://github.com/colour-science/colour-ipython/blob/master/notebooks/colorimetry/illuminants.ipynb">different whitepoints</a>
 depending its context usage, <em>sRGB colourspace</em> IEC 61966-2-1:1999 standard adopts
 <a class="reference external" href="https://en.wikipedia.org/wiki/Illuminant_D65">CIE Standard Illuminant D65</a>
-as <strong>whitepoint</strong> but the <a class="reference external" href="https://en.wikipedia.org/wiki/International_Color_Consortium">ICC</a>
-<em>sRGB colourspace</em> profile is chromatically adapted to use <em>CIE Standard Illuminant D50</em>.</p>
+as <strong>whitepoint</strong> but an <a class="reference external" href="https://en.wikipedia.org/wiki/International_Color_Consortium">ICC</a>
+<em>sRGB colourspace</em> profile would likely have been chromatically adapted to
+<em>CIE Standard Illuminant D50</em>.</p>
 <div class="figure">
-<img alt="/images/CIE_Illuminants_D_Series.png" src="../../images/CIE_Illuminants_D_Series.png"><p class="caption">Various <em>CIE Illuminants D Series</em> <em>illuminants</em> in the <em>CIE 1960 UCS Chromaticity Diagram</em></p>
+<img alt="/images/CIE_Illuminants_D_Series.png" src="../../images/CIE_Illuminants_D_Series.png"><p class="caption">Various <em>CIE Illuminants D Series</em> <em>illuminants</em> in the
+<em>CIE 1960 UCS Chromaticity Diagram</em>.</p>
 </div>
 </div>
 <div class="section" id="conversion-functions-oecf-and-eocf">
 <h3>Conversion Functions (OECF and EOCF)</h3>
 <p>The conversions functions perform the mapping between the <em>linear</em> light components
-(tristimulus values) and a <em>non-linear</em> R'G'B' video signal:</p>
+(tristimulus values) and a <em>non-linear</em> R'G'B' video signal (most of the time
+for coding optimisation and bandwidth performance). <a class="footnote-reference" href=".#id5" id="id3">[2]</a></p>
 <ul>
 <li>
 <p class="first">The <strong>Opto-electronic conversion function</strong> (<strong>OECF</strong>) maps estimated
 tristimulus values in a scene to a <em>non-linear</em> R'G'B' video component signal
 value. Typical <strong>OECFs</strong> are expressed by a power function with an exponent
 between 0.4 and 0.5. They can also be defined as piece-wise function, <em>sRGB</em>,
-<em>Rec. 709</em> or <em>Rec. 2020</em> colourspace OECFs are such examples. <a class="footnote-reference" href=".#id6" id="id3">[2]</a></p>
+<em>Rec. 709</em> or <em>Rec. 2020</em> colourspace OECFs are such examples.</p>
 <div class="figure">
-<img alt="/images/Rec__709_sRGB_OECF.png" src="../../images/Rec__709_sRGB_OECF.png"><p class="caption">Various <strong>opto-electronic conversion functions</strong></p>
+<img alt="/images/Rec__709_sRGB_OECF.png" src="../../images/Rec__709_sRGB_OECF.png"><p class="caption">Various <strong>opto-electronic conversion functions</strong>.</p>
 </div>
 </li>
 <li>
 <p class="first">The <strong>Electro-optical conversion function</strong> (<strong>EOCF</strong>) maps a <em>non-linear</em>
 R'G'B' video component signal to a tristimulus value at the display.
 Typical <strong>EOCFs</strong> are expressed by a power function with an exponent between
-2.2 and 2.6 or a piece-wise function. <a class="footnote-reference" href=".#id6" id="id4">[2]</a></p>
+2.2 and 2.6 or a piece-wise function.</p>
 <div class="figure">
-<img alt="/images/Rec__709_sRGB_EOCF.png" src="../../images/Rec__709_sRGB_EOCF.png"><p class="caption">Various <strong>electro-optical conversion functions</strong></p>
+<img alt="/images/Rec__709_sRGB_EOCF.png" src="../../images/Rec__709_sRGB_EOCF.png"><p class="caption">Various <strong>electro-optical conversion functions</strong>.</p>
 </div>
 </li>
 </ul>
 </div>
 <div class="section" id="the-importance-of-terminology">
 <h3>The Importance of Terminology</h3>
-<p>With the <em>RGB colourspace</em> specification described, it should make more sense
-why not being specific and using a clear <strong>terminology</strong> can lead to
-confusion and uncertainty: colour science vocabulary is deep and complex.</p>
-<p>We often encounter people (either online or at work) that don’t have a clear
-understanding on what are the components of an <em>RGB colourspace</em>, and often
-don't properly differentiate <strong>conversion functions</strong> and <strong>gamut</strong>. Both are
-very distinct and essential elements of the <em>RGB colourspace</em> specification.</p>
-<p>When one talks about <em>sRGB</em>, is he describing its <strong>primaries</strong> or its
-<strong>conversion functions</strong>? The <em>sRGB</em> colourspace can be defined with linear
-<strong>conversion functions</strong>: A rendering engine uses linear input values, but
-renders using the <em>sRGB</em> colourspace <strong>primaries</strong> and <strong>whitepoint</strong>,
-thus technically still within the <em>sRGB</em> colourspace specification.</p>
-<p>When printing one will likely use an <em>sRGB</em> ICC profile chromatically adapted
-to <em>CIE Standard Illuminant D50</em>.</p>
-<p>When rendering using <em>Rec. 709</em> colourspace for TV, one will actually use <em>sRGB</em>
-colourspace <strong>primaries</strong> and <strong>whitepoint</strong> but the <strong>conversion functions</strong>
-will be different than the <em>sRGB</em> colourspace ones.Canon cameras (Canon EOS 1DC,
-Canon CX00) use <em>Rec. 709</em> <strong>primaries</strong> and <strong>whitepoint</strong> but encode their
-scene linear values with a custom log curve designated
+<p>With the <em>RGB colourspace</em> specification components outlined, it should now make
+more sense why not being specific and using a clear <strong>terminology</strong> can lead to
+confusion and uncertainty: colour science vocabulary is complex.</p>
+<p>I often encounter people that don’t have a clear understanding on what
+composes an <em>RGB colourspace</em>, as a result they don't properly differentiate
+<strong>gamut</strong> and <strong>conversion functions</strong>. The cursory <strong>terminology</strong> recurrently
+used online is probably the root cause for that.</p>
+<p>When one talks about <em>sRGB</em>, is he describing the colourspace <strong>primaries</strong> or
+its <strong>conversion functions</strong>? Discussing about <em>sRGB</em> to <em>linear</em> transformation
+without emphasis on the <strong>EOCF</strong> component is unsettling: a rendering
+engine using linear <em>sRGB</em> colourspace input colours and textures, renders with
+the <em>sRGB</em> colourspace <strong>primaries</strong> and <strong>whitepoint</strong> (assuming no colour
+transformations are occurring internally), thus its output is within <em>sRGB</em>
+colourspace.</p>
+<p>When rendering using <a class="reference external" href="https://en.wikipedia.org/wiki/Rec._709">Rec. 709</a>
+colourspace for TV, one is actually adopting <em>sRGB</em> colourspace <strong>primaries</strong>
+and <strong>whitepoint</strong> with different specific <strong>conversion functions</strong>.</p>
+<p>Movie cameras such as Canon ones (Canon EOS 1DC, Canon CX00) use <em>Rec. 709</em>
+<strong>primaries</strong> and <strong>whitepoint</strong> but encode their scene linear values with a
+custom log curve designated
 <a class="reference external" href="http://www.usa.canon.com/cusa/professional/standard_display/cinema-firmware-c500">C-Log</a>.</p>
 <div class="alert alert-dismissible alert-info line-block">
 <div class="line"><strong>Note</strong></div>
@@ -388,20 +396,23 @@ cameras, RED Log Film for RED cameras, etc...) and proprietary
 <em>RGB colourspaces</em> specifications (ALEXA Wide Gamut RGB for ARRI Alexa
 cameras, REDcolor or DragonColor for RED cameras, etc...).</div>
 </div>
-<p>It is perfectly valid to use the <em>sRGB</em> colourspace <strong>conversion functions</strong>
-with another set of <strong>primaries</strong> and <strong>whitepoint</strong>. Some VFX studios use a
-proprietary colourspace specification with <em>sRGB</em> colourspace <strong>conversion functions</strong>
-when working within Adobe Photoshop or The Foundry Mari. As it is commonly used
-in various DCC packages, it simplifies the various colour transformation
-operations between those packages.</p>
+<p>Likewise, it is perfectly valid to use the <em>sRGB</em> colourspace <strong>conversion functions</strong>
+with another set of <strong>primaries</strong> and <strong>whitepoint</strong>. When working within
+Adobe Photoshop or The Foundry Mari, some VFX studios use a proprietary colourspace
+specification along <em>sRGB</em> colourspace <strong>conversion functions</strong>: those
+<strong>conversion functions</strong> being commonly implemented in various DCC packages, the
+various colour transformation operations between those packages are simplified.</p>
+</div>
+<div class="section" id="conclusion">
+<h3>Conclusion</h3>
 <p>When one talks about <em>sRGB</em> alone, it should be safe to assume that he is
 referring to the <em>sRGB</em> colourspace as per IEC 61966-2-1:1999 standard,
 not just cherry picked components. Unfortunately it is not the case thus in order
 to lessen the uncertainty and improve the <strong>terminology</strong> used, we suggest that:</p>
 <ul>
 <li>
-<p class="first">One should keep in mind at all time that a given <em>RGB</em> colourspace is defined
-by the following mandatory three components:</p>
+<p class="first">One remembers that a given <em>RGB</em> colourspace is defined by the following
+essential three components:</p>
 <ul class="simple">
 <li><a class="reference internal" href=".#primaries">Primaries</a></li>
 <li><a class="reference external" href="https://en.wikipedia.org/wiki/White_point">Whitepoint</a></li>
@@ -409,12 +420,12 @@ by the following mandatory three components:</p>
 </ul>
 </li>
 <li>
-<p class="first">When writing on the subject, one should ideally remind about the previous
-point, it will help people getting the grasp on the theory.</p>
+<p class="first">When writing on the <em>RGB</em> colourspace topic, one should ideally mention the
+previous point, it will help people getting the grasp on the theory.</p>
 </li>
 <li>
-<p class="first">When talking about a given <em>RGB</em> colourspace component, one should make a
-point on describing which component of the specification he is referring to:</p>
+<p class="first">When discussing about a given <em>RGB</em> colourspace component, one should make a
+point of describing which specification's component he is referring to:</p>
 <blockquote>
 <p><em>sRGB is a slight tweaking of the simple gamma 2.2 curve.</em></p>
 </blockquote>
@@ -431,25 +442,28 @@ of the simple gamma 2.2 curve.</em></p>
 </li>
 <li>
 <p class="first">When describing an <em>RGB</em> colourspace not supported by an official specification
-or standard, one should probably use a name that explicitly define the complete
+or standard, one should probably use a name that explicitly defines the complete
 specification:</p>
 <ul class="simple">
 <li>
-<cite>sRGB-D60-Linear</cite>: An <em>RGB</em> colourspace using <em>sRGB</em> <strong>primaries</strong>,
+<cite>sRGB-D60-Linear</cite>: an <em>RGB</em> colourspace using <em>sRGB</em> <strong>primaries</strong>,
 <em>CIE Standard Illuminant D60</em> <strong>whitepoint</strong> and linear <strong>conversion
 functions</strong>.</li>
 <li>
-<cite>Adobe 1998 RGB-D65-Gamma1.8</cite>: An <em>RGB</em> colourspace using <em>Adobe 1998 RGB</em>
+<cite>Adobe 1998 RGB-D65-Gamma1.8</cite>: an <em>RGB</em> colourspace using <em>Adobe 1998 RGB</em>
 <strong>primaries</strong>, <em>CIE Standard Illuminant D65</em> <strong>whitepoint</strong> and gamma
 1.8 <strong>conversion functions</strong>.</li>
 </ul>
 </li>
 </ul>
-<p>In the near future it will become even more important and relevant as new <em>RGB</em>
-colourspaces such as <em>Rec. 2020</em> or <em>ACES</em> family ones are becoming mainstream.</p>
+<p>In the near future it will likely become even more critical and relevant as
+new <em>RGB</em> colourspaces such as <a class="reference external" href="https://en.wikipedia.org/wiki/Rec._2020">Rec. 2020</a>
+or the <a class="reference external" href="http://www.oscars.org/science-technology/sci-tech-projects/aces">ACES encodings</a>
+become mainstream.</p>
+</div>
 <div class="section" id="bibliography">
-<h4>Bibliography</h4>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
+<h3>Bibliography</h3>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
 <colgroup>
 <col class="label">
 <col>
@@ -460,19 +474,17 @@ colourspaces such as <em>Rec. 2020</em> or <em>ACES</em> family ones are becomin
 Wiley. ISBN:B00DAYO8E2</td>
 </tr></tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id6" rules="none">
+<table class="docutils footnote" frame="void" id="id5" rules="none">
 <colgroup>
 <col class="label">
 <col>
 </colgroup>
 <tbody valign="top"><tr>
-<td class="label">[2]</td>
-<td>
-<em>(<a class="fn-backref" href=".#id3">1</a>, <a class="fn-backref" href=".#id4">2</a>)</em> Poynton, C. (2012). Digital Video and HDTV - Algorithms and Interfaces
+<td class="label"><a class="fn-backref" href=".#id3">[2]</a></td>
+<td>Poynton, C. (2012). Digital Video and HDTV - Algorithms and Interfaces
 - Second Edition (2nd ed.). Morgan Kaufmann. ISBN:9780123919267</td>
 </tr></tbody>
 </table>
-</div>
 </div>
 </div>
 </div>
@@ -487,6 +499,11 @@ Wiley. ISBN:B00DAYO8E2</td>
             <li><a class="tag p-category" href="../../categories/rgb-colourspace/" rel="tag">RGB colourspace</a></li>
             <li><a class="tag p-category" href="../../categories/srgb/" rel="tag">sRGB</a></li>
             <li><a class="tag p-category" href="../../categories/whitepoint/" rel="tag">whitepoint</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../a-new-logo-and-website/" rel="prev" title="A New Logo and Website!">Previous post</a>
+            </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
         
