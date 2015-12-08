@@ -113,7 +113,7 @@ along its *Y* *Luminance* axis.
 
     The *CIE 1931 Chromaticity Diagram* in the bottom right view is a 2D
     projection of the *CIE xyY colourspace* in the left view.
-    (`Colour - Analysis <https://github.com/colour-science/colour-analysis>`_)
+    (`Colour - Analysis <https://github.com/colour-science/colour-analysis>`__)
 
 Whitepoint
 ^^^^^^^^^^
@@ -126,7 +126,8 @@ neutral to that *RGB colourspace*.
 .. figure:: /images/CIE_xyY_sRGB.png
 
     *CIE Standard Illuminant D65* is located at the apex of *sRGB* colourspace
-    volume. (`Colour - Analysis <https://github.com/colour-science/colour-analysis>`_)
+    volume.
+    (`Colour - Analysis <https://github.com/colour-science/colour-analysis>`__)
 
 An *RGB colourspace* can have
 `different whitepoints <https://github.com/colour-science/colour-ipython/blob/master/notebooks/colorimetry/illuminants.ipynb>`_
@@ -248,8 +249,8 @@ to lessen the uncertainty and improve the **terminology** used, we suggest that:
     or standard, one should probably use a name that explicitly defines the complete
     specification:
 
-    -   `sRGB-D60-Linear`: an *RGB* colourspace using *sRGB* chromatically
-        adapted **primaries** to *CIE Standard Illuminant D60* **whitepoint**
+    -   `sRGB-D60-Linear`: an *RGB* colourspace using *sRGB* **primaries**
+        chromatically adapted to *CIE Standard Illuminant D60* **whitepoint**
         and linear **conversion functions**.
     -   `Adobe 1998 RGB-D65-Gamma1.8`: an *RGB* colourspace using *Adobe 1998 RGB*
         **primaries**, *CIE Standard Illuminant D65* **whitepoint** and gamma

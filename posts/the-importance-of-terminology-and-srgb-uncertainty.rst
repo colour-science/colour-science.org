@@ -113,7 +113,7 @@ along its *Y* *Luminance* axis.
 
     The *CIE 1931 Chromaticity Diagram* in the bottom right view is a 2D
     projection of the *CIE xyY colourspace* in the left view.
-    (`Colour - Analysis <https://github.com/colour-science/colour-analysis>`_)
+    (`Colour - Analysis <https://github.com/colour-science/colour-analysis>`__)
 
 Whitepoint
 ^^^^^^^^^^
@@ -126,7 +126,8 @@ neutral to that *RGB colourspace*.
 .. figure:: /images/CIE_xyY_sRGB.png
 
     *CIE Standard Illuminant D65* is located at the apex of *sRGB* colourspace
-    volume. (`Colour - Analysis <https://github.com/colour-science/colour-analysis>`_)
+    volume.
+    (`Colour - Analysis <https://github.com/colour-science/colour-analysis>`__)
 
 An *RGB colourspace* can have
 `different whitepoints <https://github.com/colour-science/colour-ipython/blob/master/notebooks/colorimetry/illuminants.ipynb>`_
