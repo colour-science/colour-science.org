@@ -18,5 +18,5 @@ Publications
 Presentations
 -------------
 
--   Duiker, H.-P., Forsythe, A., Dyer, S., Houston, J., McCown, W., Feeney, R., … Walker, D. (n.d.). ACEScg: A Common Color Encoding for Visual Effects Applications - Talk. Retrieved August 15, 2015, from http://dp2015.digiproconf.org/program
--   Hoffman, N. (2015). Physics and Math of Shading. Retrieved August 15, 2015, from http://blog.selfshadow.com/publications/s2015-shading-course/hoffman/s2015_pbs_physics_math_slides.pdf>
+-   Duiker, H.-P., Forsythe, A., Dyer, S., Houston, J., McCown, W., Feeney, R., … Walker, D. (n.d.). ACEScg: A Common Color Encoding for Visual Effects Applications - Talk. Retrieved August 15, 2015, from http://www.slideshare.net/hpduiker/acescg-a-common-color-encoding-for-visual-effects-applications
+-   Hoffman, N. (2015). Physics and Math of Shading. Retrieved August 15, 2015, from http://blog.selfshadow.com/publications/s2015-shading-course/hoffman/s2015_pbs_physics_math_slides.pdf
