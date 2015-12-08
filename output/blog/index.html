@@ -5,8 +5,13 @@
 <meta name="description" content="Colour: Colour Science for Python">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>colour-science</title>
-<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/font-awesome.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta content="#FFFFFF" name="theme-color">
@@ -248,7 +253,7 @@ terminology in the field of color appearance? Perhaps the answer lies in
 the very nature of the subject. Almost everyone knows what color is.
 After all, they have had firsthand experience of it since shortly after
 birth. However, very few can precisely describe their color experiences or
-even precisely define color.</em> <a class="footnote-reference" href="../posts/the-importance-of-terminology-and-srgb-uncertainty/#id4" id="id1">[1]</a>
+even precisely define color.</em> <a class="footnote-reference" href="../posts/the-importance-of-terminology-and-srgb-uncertainty/#id5" id="id1">[1]</a>
 </blockquote>
 <p><em>sRGB</em> is not a bunch of <strong>conversion functions</strong>, it is an actual
 <a class="reference external" href="https://en.wikipedia.org/wiki/RGB_color_space">RGB colourspace</a>, specified by
@@ -271,16 +276,16 @@ enough precision, a given <em>RGB colorspace</em> can virtually encode any colou
 Colours exceeding its gamut are simply represented with negative coordinates.</div>
 </div>
 <p>It is important to understand that while commonly represented as triangles on a
-<em>chromaticity diagram</em> (such as the <em>CIE 1931 chromaticity diagram</em>), <em>RGB colourspace</em>
+<em>Chromaticity Diagram</em> (such as the <em>CIE 1931 Chromaticity Diagram</em>), <em>RGB colourspace</em>
 <strong>gamuts</strong> define the boundaries of an actual 3D volume within the
 <a class="reference external" href="https://en.wikipedia.org/wiki/CIE_1931_color_space#CIE_xy_chromaticity_diagram_and_the_CIE_xyY_color_space">CIE xyY colourspace</a>:
-The <em>chromaticity diagram</em> is a 2D projection of the <em>CIE xyY colourspace</em> volume
+The <em>Chromaticity Diagram</em> is a 2D projection of the <em>CIE xyY colourspace</em> volume
 along its <em>Y</em> <em>Luminance</em> axis.</p>
 <div class="figure">
-<img alt="/images/ACES2065-1_ACEScg_DCI-P3_Rec__709_Rec__2020_CIE_1931_Chromaticity_Diagram.png" src="../images/ACES2065-1_ACEScg_DCI-P3_Rec__709_Rec__2020_CIE_1931_Chromaticity_Diagram.png"><p class="caption">Various <em>RGB colourspace</em> <strong>gamuts</strong> compared in the <em>CIE 1931 chromaticity diagram</em>.</p>
+<img alt="/images/ACES2065-1_ACEScg_DCI-P3_Rec__709_Rec__2020_CIE_1931_Chromaticity_Diagram.png" src="../images/ACES2065-1_ACEScg_DCI-P3_Rec__709_Rec__2020_CIE_1931_Chromaticity_Diagram.png"><p class="caption">Various <em>RGB colourspace</em> <strong>gamuts</strong> compared in the <em>CIE 1931 Chromaticity Diagram</em>.</p>
 </div>
 <div class="figure">
-<img alt="/images/Colour_-_Analysis_CIE_xyY.gif" src="../images/Colour_-_Analysis_CIE_xyY.gif"><p class="caption">The <em>CIE 1931 chromaticity diagram</em> in the bottom right view is a 2D
+<img alt="/images/Colour_-_Analysis_CIE_xyY.gif" src="../images/Colour_-_Analysis_CIE_xyY.gif"><p class="caption">The <em>CIE 1931 Chromaticity Diagram</em> in the bottom right view is a 2D
 projection of the <em>CIE xyY colourspace</em> in the left view.
 (<a class="reference external" href="https://github.com/colour-science/colour-analysis">Colour - Analysis</a>)</p>
 </div>
@@ -292,8 +297,18 @@ colour for a given <em>RGB colourspace</em>. Any set of colours lying on the <em
 axis</em> passing through the <strong>whitepoint</strong>, no matter their <em>Luminance</em>, will be
 neutral to that <em>RGB colourspace</em>.</p>
 <div class="figure">
-<img alt="/images/CIE_xyY_sRGB.png" src="../images/CIE_xyY_sRGB.png"><p class="caption"><em>CIE Standard Illuminant D65</em> is located at the apex of <em>sRGB</em> colourspace
-volume.</p>
+<img alt="/images/CIE_xyY_sRGB.png" src="../images/CIE_xyY_sRGB.png">
+</div>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">&lt;string&gt;</tt>, line 117)</p>
+<p>Figure caption must be a paragraph or empty comment.</p>
+<pre class="literal-block">
+.. figure:: /images/CIE_xyY_sRGB.png
+
+    *CIE Standard Illuminant D65* is located at the apex of *sRGB* colourspace
+    volume. (`Colour - Analysis &lt;https://github.com/colour-science/colour-analysis&gt;`_)
+
+</pre>
 </div>
 <p>An <em>RGB colourspace</em> can have
 <a class="reference external" href="https://github.com/colour-science/colour-ipython/blob/master/notebooks/colorimetry/illuminants.ipynb">different whitepoints</a>
@@ -311,7 +326,7 @@ as <strong>whitepoint</strong> but an <a class="reference external" href="https:
 <h3>Conversion Functions (OECF and EOCF)</h3>
 <p>The conversions functions perform the mapping between the <em>linear</em> light components
 (tristimulus values) and a <em>non-linear</em> R'G'B' video signal (most of the time
-for coding optimisation and bandwidth performance). <a class="footnote-reference" href="../posts/the-importance-of-terminology-and-srgb-uncertainty/#id5" id="id3">[2]</a></p>
+for coding optimisation and bandwidth performance). <a class="footnote-reference" href="../posts/the-importance-of-terminology-and-srgb-uncertainty/#id6" id="id4">[2]</a></p>
 <ul>
 <li>
 <p class="first">The <strong>Opto-electronic conversion function</strong> (<strong>OECF</strong>) maps estimated
@@ -415,9 +430,9 @@ or standard, one should probably use a name that explicitly defines the complete
 specification:</p>
 <ul class="simple">
 <li>
-<cite>sRGB-D60-Linear</cite>: an <em>RGB</em> colourspace using <em>sRGB</em> <strong>primaries</strong>,
-<em>CIE Standard Illuminant D60</em> <strong>whitepoint</strong> and linear <strong>conversion
-functions</strong>.</li>
+<cite>sRGB-D60-Linear</cite>: an <em>RGB</em> colourspace using <em>sRGB</em> chromatically
+adapted <strong>primaries</strong> to <em>CIE Standard Illuminant D60</em> <strong>whitepoint</strong>
+and linear <strong>conversion functions</strong>.</li>
 <li>
 <cite>Adobe 1998 RGB-D65-Gamma1.8</cite>: an <em>RGB</em> colourspace using <em>Adobe 1998 RGB</em>
 <strong>primaries</strong>, <em>CIE Standard Illuminant D65</em> <strong>whitepoint</strong> and gamma
@@ -432,7 +447,7 @@ become mainstream.</p>
 </div>
 <div class="section" id="bibliography">
 <h3>Bibliography</h3>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
+<table class="docutils footnote" frame="void" id="id5" rules="none">
 <colgroup>
 <col class="label">
 <col>
@@ -443,13 +458,13 @@ become mainstream.</p>
 Wiley. ISBN:B00DAYO8E2</td>
 </tr></tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
+<table class="docutils footnote" frame="void" id="id6" rules="none">
 <colgroup>
 <col class="label">
 <col>
 </colgroup>
 <tbody valign="top"><tr>
-<td class="label"><a class="fn-backref" href="../posts/the-importance-of-terminology-and-srgb-uncertainty/#id3">[2]</a></td>
+<td class="label"><a class="fn-backref" href="../posts/the-importance-of-terminology-and-srgb-uncertainty/#id4">[2]</a></td>
 <td>Poynton, C. (2012). Digital Video and HDTV - Algorithms and Interfaces
 - Second Edition (2nd ed.). Morgan Kaufmann. ISBN:9780123919267</td>
 </tr></tbody>
@@ -570,7 +585,7 @@ Copyright © 2013 - 2015 – Colour Developers – <a href="mailto:colour-scienc
 </div>
 
 
-            <script src="../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+            <script src="../assets/js/jquery.min.js"></script><script src="../assets/js/bootstrap.min.js"></script><script src="../assets/js/moment-with-locales.min.js"></script><script src="../assets/js/fancydates.js"></script><script src="../assets/js/jquery.colorbox-min.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
     moment.locale("en");
     fancydates(0, "YYYY-MM-DD HH:mm");
     </script><!-- end fancy dates --><!-- >>> Google Analytics --><script>

@@ -99,19 +99,19 @@ of colours) that can be encoded by a given *RGB colourspace*.
         Colours exceeding its gamut are simply represented with negative coordinates.
 
 It is important to understand that while commonly represented as triangles on a
-*chromaticity diagram* (such as the *CIE 1931 chromaticity diagram*), *RGB colourspace*
+*Chromaticity Diagram* (such as the *CIE 1931 Chromaticity Diagram*), *RGB colourspace*
 **gamuts** define the boundaries of an actual 3D volume within the
 `CIE xyY colourspace <https://en.wikipedia.org/wiki/CIE_1931_color_space#CIE_xy_chromaticity_diagram_and_the_CIE_xyY_color_space>`_:
-The *chromaticity diagram* is a 2D projection of the *CIE xyY colourspace* volume
+The *Chromaticity Diagram* is a 2D projection of the *CIE xyY colourspace* volume
 along its *Y* *Luminance* axis.
 
 .. figure:: /images/ACES2065-1_ACEScg_DCI-P3_Rec__709_Rec__2020_CIE_1931_Chromaticity_Diagram.png
 
-    Various *RGB colourspace* **gamuts** compared in the *CIE 1931 chromaticity diagram*.
+    Various *RGB colourspace* **gamuts** compared in the *CIE 1931 Chromaticity Diagram*.
 
 .. figure:: /images/Colour_-_Analysis_CIE_xyY.gif
 
-    The *CIE 1931 chromaticity diagram* in the bottom right view is a 2D
+    The *CIE 1931 Chromaticity Diagram* in the bottom right view is a 2D
     projection of the *CIE xyY colourspace* in the left view.
     (`Colour - Analysis <https://github.com/colour-science/colour-analysis>`_)
 
@@ -126,7 +126,7 @@ neutral to that *RGB colourspace*.
 .. figure:: /images/CIE_xyY_sRGB.png
 
     *CIE Standard Illuminant D65* is located at the apex of *sRGB* colourspace
-    volume.
+    volume. (`Colour - Analysis <https://github.com/colour-science/colour-analysis>`_)
 
 An *RGB colourspace* can have
 `different whitepoints <https://github.com/colour-science/colour-ipython/blob/master/notebooks/colorimetry/illuminants.ipynb>`_
@@ -248,9 +248,9 @@ to lessen the uncertainty and improve the **terminology** used, we suggest that:
     or standard, one should probably use a name that explicitly defines the complete
     specification:
 
-    -   `sRGB-D60-Linear`: an *RGB* colourspace using *sRGB* **primaries**,
-        *CIE Standard Illuminant D60* **whitepoint** and linear **conversion
-        functions**.
+    -   `sRGB-D60-Linear`: an *RGB* colourspace using *sRGB* chromatically
+        adapted **primaries** to *CIE Standard Illuminant D60* **whitepoint**
+        and linear **conversion functions**.
     -   `Adobe 1998 RGB-D65-Gamma1.8`: an *RGB* colourspace using *Adobe 1998 RGB*
         **primaries**, *CIE Standard Illuminant D65* **whitepoint** and gamma
         1.8 **conversion functions**.
