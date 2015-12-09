@@ -21,8 +21,8 @@ of **primaries**, **whitepoint** and **conversion functions** components.
 
     | **Note**
     |
-    | **Conversion functions** are often named **transfer functions** but
-        the former convention should be preferred as used by ISO standards.
+    | **Conversion functions** are also named **transfer functions** although
+        the former convention is emphasized in ISO standards.
 
 The article first description of *sRGB* is as follows:
 
