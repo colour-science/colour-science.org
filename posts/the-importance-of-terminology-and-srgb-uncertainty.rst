@@ -156,7 +156,7 @@ for coding optimisation and bandwidth performance). [2]_
     between 0.4 and 0.5. They can also be defined as piece-wise function, *sRGB*,
     *Rec. 709* or *Rec. 2020* colourspace OECFs are such examples.
 
-    .. figure:: /images/Rec__709_sRGB_OECF.png
+    .. figure:: /images/Adobe_RGB_1998_sRGB_OECF.png
 
         Various **opto-electronic conversion functions**.
 
@@ -165,7 +165,7 @@ for coding optimisation and bandwidth performance). [2]_
     Typical **EOCFs** are expressed by a power function with an exponent between
     2.2 and 2.6 or a piece-wise function.
 
-    .. figure:: /images/Rec__709_sRGB_EOCF.png
+    .. figure:: /images/Adobe_RGB_1998_sRGB_EOCF.png
 
         Various **electro-optical conversion functions**.
 
