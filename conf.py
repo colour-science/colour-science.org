@@ -857,7 +857,7 @@ CONTENT_FOOTER = """
         </a>
     </li>
     <li>
-        <a href="/rss">
+        <a href="/rss.xml">
             <span class="fa fa-rss fa-2x footer-links"></span>
         </a>
     </li>
