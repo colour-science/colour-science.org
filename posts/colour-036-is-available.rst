@@ -10,6 +10,8 @@
 `Colour 0.3.6 <https://github.com/colour-science/colour/releases/tag/v0.3.6>`_
 is available!
 
+.. TEASER_END
+
 This release is mainly a maintenance release with various fixes, improvements
 and new objects in the *colour.colorimetry*, *colour.plotting* and
 *colour.volume* packages.

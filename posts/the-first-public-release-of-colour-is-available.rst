@@ -12,6 +12,8 @@ release of `Colour <https://github.com/colour-science/colour/releases/tag/v0.3.0
 is available! Although this is an alpha release, the code is well tested and
 covered and should be fairly stable.
 
+.. TEASER_END
+
 You can view the highlights of the project on the `features </features>`_ page.
 
 Please follow the `installation guide </installation-guide>`_ in order to

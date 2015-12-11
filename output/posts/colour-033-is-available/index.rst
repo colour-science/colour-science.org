@@ -10,6 +10,8 @@
 `Colour 0.3.3 <https://github.com/colour-science/colour/releases/tag/v0.3.3>`_
 is available!
 
+.. TEASER_END
+
 We would like to thanks `Luke Canavan <https://github.com/canavandl>`_
 and `Steve Agland <https://github.com/sagland>`_ for their contributions
 and help.

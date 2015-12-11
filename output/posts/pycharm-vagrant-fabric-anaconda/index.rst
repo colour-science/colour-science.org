@@ -36,6 +36,8 @@ That's where `Vagrant <https://www.vagrantup.com/>`_ kicks in along
 The following guide assume that you have that you have *PyCharm* installed and
 are using *Mac Os X*, although it should pretty much be platform agnostic.
 
+.. TEASER_END
+
 Development Workspace Creation
 ------------------------------
 

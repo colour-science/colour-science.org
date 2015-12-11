@@ -9,6 +9,8 @@
 
 We are pleased to share with you our new logo and website!
 
+.. TEASER_END
+
 The new logo, less abstract than the previous, represents the light and its
 `wave-particle duality <https://en.wikipedia.org/wiki/Wave%E2%80%93particle_duality>`_:
 

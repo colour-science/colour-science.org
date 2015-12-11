@@ -254,6 +254,15 @@ Thus there should be no surprise that component-wise multiply does not yield a p
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Colourspaces-Agnosticism">Colourspaces Agnosticism<a class="anchor-link" href=".#Colourspaces-Agnosticism">¶</a>
 </h3>
 </div>
@@ -276,7 +285,7 @@ Thus there should be no surprise that component-wise multiply does not yield a p
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">matplotlib</span> inline
+<div class=" highlight hl-ipython2"><pre><span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 
 </div>
@@ -289,11 +298,11 @@ Thus there should be no surprise that component-wise multiply does not yield a p
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pylab</span>
 
 <span class="kn">import</span> <span class="nn">colour</span>
-<span class="kn">from</span> <span class="nn">colour.utilities.verbose</span> <span class="k">import</span> <span class="n">message_box</span>
+<span class="kn">from</span> <span class="nn">colour.utilities.verbose</span> <span class="kn">import</span> <span class="n">message_box</span>
 
 <span class="n">name</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">illuminant</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">COLOURCHECKERS</span><span class="p">[</span><span class="s">'ColorChecker 2005'</span><span class="p">]</span>
 
@@ -438,7 +447,7 @@ Thus there should be no surprise that component-wise multiply does not yield a p
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">XYZ_sRGB1</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">RGB_to_XYZ</span><span class="p">(</span><span class="n">sRGB_r1</span><span class="p">,</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">XYZ_sRGB1</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">RGB_to_XYZ</span><span class="p">(</span><span class="n">sRGB_r1</span><span class="p">,</span>
                               <span class="n">sRGB_w</span><span class="p">,</span>
                               <span class="n">illuminant</span><span class="p">,</span>
                               <span class="n">sRGB_RGB_to_XYZ</span><span class="p">)</span>
@@ -529,7 +538,7 @@ $$<p>With $sRGB_k$ and $adobe98_k$ being equivalent arbitrary scaling factors fo
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">])</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">])</span>
 
 <span class="n">sRGB_k</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_RGB</span><span class="p">(</span><span class="n">k</span><span class="p">,</span>
                            <span class="n">illuminant</span><span class="p">,</span>
@@ -618,7 +627,7 @@ $$<p>With $sRGB_k$ and $adobe98_k$ being equivalent arbitrary scaling factors fo
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">colour.plotting</span> <span class="k">import</span> <span class="o">*</span>
+<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">colour.plotting</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">sRGB_m1</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_sRGB</span><span class="p">(</span><span class="n">XYZ_sRGB_m1</span><span class="p">)</span>
 <span class="n">adobe98_m1</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_sRGB</span><span class="p">(</span><span class="n">XYZ_adobe98_m1</span><span class="p">)</span>
@@ -679,9 +688,9 @@ $$<p>With $sRGB_k$ and $adobe98_k$ being equivalent arbitrary scaling factors fo
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">colourspaces_CIE_1931_chromaticity_diagram_plot</span><span class="p">(</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">colourspaces_CIE_1931_chromaticity_diagram_plot</span><span class="p">(</span>
     <span class="p">[</span><span class="s">'sRGB'</span><span class="p">,</span> <span class="s">'Adobe RGB 1998'</span><span class="p">],</span>
-<span class="n">standalone</span><span class="o">=</span><span class="k">False</span><span class="p">,</span>
+<span class="n">standalone</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
 <span class="n">title</span><span class="o">=</span><span class="s">'"dark skin" Colour Computation'</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">XYZ</span> <span class="ow">in</span> <span class="p">((</span><span class="s">'"dark skin"'</span><span class="p">,</span> <span class="n">XYZ_r1</span><span class="p">),</span>
@@ -697,7 +706,7 @@ $$<p>With $sRGB_k$ and $adobe98_k$ being equivalent arbitrary scaling factors fo
                    <span class="n">textcoords</span><span class="o">=</span><span class="s">'offset points'</span><span class="p">,</span>
                    <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s">'-&gt;'</span><span class="p">,</span> <span class="n">connectionstyle</span><span class="o">=</span><span class="s">'arc3, rad=0.2'</span><span class="p">))</span>
 
-<span class="n">display</span><span class="p">(</span><span class="n">standalone</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">standalone</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -747,10 +756,10 @@ $$<p>With $sRGB_k$ and $adobe98_k$ being equivalent arbitrary scaling factors fo
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">Lab1</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_Lab</span><span class="p">(</span><span class="n">XYZ_sRGB_m1</span><span class="p">,</span> <span class="n">illuminant</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">Lab1</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_Lab</span><span class="p">(</span><span class="n">XYZ_sRGB_m1</span><span class="p">,</span> <span class="n">illuminant</span><span class="p">)</span>
 <span class="n">Lab2</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_Lab</span><span class="p">(</span><span class="n">XYZ_adobe98_m1</span><span class="p">,</span> <span class="n">illuminant</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">colour</span><span class="o">.</span><span class="n">delta_E_CIE2000</span><span class="p">(</span><span class="n">Lab1</span><span class="p">,</span> <span class="n">Lab2</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">colour</span><span class="o">.</span><span class="n">delta_E_CIE2000</span><span class="p">(</span><span class="n">Lab1</span><span class="p">,</span> <span class="n">Lab2</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -808,7 +817,7 @@ $$<p>With $sRGB_k$ and $adobe98_k$ being equivalent arbitrary scaling factors fo
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">pprint</span> <span class="k">import</span> <span class="n">pprint</span>
+<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="n">aces_w</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">ACES_RGB_COLOURSPACE</span><span class="o">.</span><span class="n">whitepoint</span>
 <span class="n">aces_XYZ_to_RGB</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">ACES_RGB_COLOURSPACE</span><span class="o">.</span><span class="n">XYZ_to_RGB_matrix</span>
@@ -935,7 +944,7 @@ $$<p>With $sRGB_k$ and $adobe98_k$ being equivalent arbitrary scaling factors fo
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">deltas_E</span> <span class="o">=</span> <span class="p">[]</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">deltas_E</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">XYZ1</span><span class="p">,</span> <span class="n">XYZ2</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">XYZs_m</span><span class="p">):</span>
     <span class="n">Lab1</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_Lab</span><span class="p">(</span><span class="n">XYZ1</span><span class="p">,</span> <span class="n">illuminant</span><span class="p">)</span>
     <span class="n">Lab2</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_Lab</span><span class="p">(</span><span class="n">XYZ2</span><span class="p">,</span> <span class="n">illuminant</span><span class="p">)</span>
@@ -1002,7 +1011,7 @@ $$<p>With $sRGB_k$ and $adobe98_k$ being equivalent arbitrary scaling factors fo
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">([</span><span class="n">delta_E</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">delta_E</span> <span class="ow">in</span> <span class="n">deltas_E</span><span class="p">])</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">([</span><span class="n">delta_E</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">delta_E</span> <span class="ow">in</span> <span class="n">deltas_E</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -1052,7 +1061,7 @@ $$<p>With $sRGB_k$ and $adobe98_k$ being equivalent arbitrary scaling factors fo
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">pprint</span> <span class="k">import</span> <span class="n">pprint</span>
+<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="n">rec2020_w</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">REC_2020_COLOURSPACE</span><span class="o">.</span><span class="n">whitepoint</span>
 <span class="n">rec2020_XYZ_to_RGB</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">REC_2020_COLOURSPACE</span><span class="o">.</span><span class="n">XYZ_to_RGB_matrix</span>
@@ -1178,7 +1187,7 @@ $$<p>With $sRGB_k$ and $adobe98_k$ being equivalent arbitrary scaling factors fo
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">deltas_E</span> <span class="o">=</span> <span class="p">[]</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">deltas_E</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">XYZ1</span><span class="p">,</span> <span class="n">XYZ2</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">XYZs_m</span><span class="p">):</span>
     <span class="n">Lab1</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_Lab</span><span class="p">(</span><span class="n">XYZ1</span><span class="p">,</span> <span class="n">illuminant</span><span class="p">)</span>
     <span class="n">Lab2</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_Lab</span><span class="p">(</span><span class="n">XYZ2</span><span class="p">,</span> <span class="n">illuminant</span><span class="p">)</span>
@@ -1245,7 +1254,7 @@ $$<p>With $sRGB_k$ and $adobe98_k$ being equivalent arbitrary scaling factors fo
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">([</span><span class="n">delta_E</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">delta_E</span> <span class="ow">in</span> <span class="n">deltas_E</span><span class="p">]))</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">([</span><span class="n">delta_E</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">delta_E</span> <span class="ow">in</span> <span class="n">deltas_E</span><span class="p">]))</span>
 </pre></div>
 
 </div>
@@ -1347,7 +1356,7 @@ $$<p>We plot the functions by using a uniformly spaced incrementing $k$ variable
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">X_sRGB</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mf">0.41238656</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">0.35759149</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">0.18045049</span> <span class="o">*</span> <span class="n">x</span>
 <span class="n">X_ACES</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mf">0.9525524</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">0.00009368</span> <span class="o">*</span> <span class="n">x</span>
 
@@ -1357,11 +1366,11 @@ $$<p>We plot the functions by using a uniformly spaced incrementing $k$ variable
 <span class="n">settings</span> <span class="o">=</span> <span class="p">{</span><span class="s">'title'</span><span class="p">:</span> <span class="s">'sRGB - ACES RGB - Uniformly Spaced Incrementing RGB'</span><span class="p">,</span>
             <span class="s">'x_label'</span><span class="p">:</span> <span class="s">'k'</span><span class="p">,</span>
             <span class="s">'y_label'</span><span class="p">:</span> <span class="s">'X'</span><span class="p">,</span>
-            <span class="s">'x_tighten'</span><span class="p">:</span> <span class="k">True</span><span class="p">,</span>
-            <span class="s">'legend'</span><span class="p">:</span> <span class="k">True</span><span class="p">,</span>
+            <span class="s">'x_tighten'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+            <span class="s">'legend'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
             <span class="s">'legend_location'</span><span class="p">:</span> <span class="s">'upper left'</span><span class="p">,</span>
-            <span class="s">'x_ticker'</span><span class="p">:</span> <span class="k">True</span><span class="p">,</span>
-            <span class="s">'y_ticker'</span><span class="p">:</span> <span class="k">True</span><span class="p">}</span>
+            <span class="s">'x_ticker'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+            <span class="s">'y_ticker'</span><span class="p">:</span> <span class="bp">True</span><span class="p">}</span>
 <span class="n">decorate</span><span class="p">(</span><span class="o">**</span><span class="n">settings</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="o">**</span><span class="n">settings</span><span class="p">)</span>
 </pre></div>
@@ -1413,7 +1422,7 @@ $$<p>We plot the functions by using a uniformly spaced incrementing $k$ variable
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">X_sRGB</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mf">0.41238656</span> <span class="o">*</span> <span class="n">x</span>
 <span class="n">X_ACES</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mf">0.9525524</span> <span class="o">*</span> <span class="n">x</span>
 
@@ -1423,11 +1432,11 @@ $$<p>We plot the functions by using a uniformly spaced incrementing $k$ variable
 <span class="n">settings</span> <span class="o">=</span> <span class="p">{</span><span class="s">'title'</span><span class="p">:</span> <span class="s">'sRGB - ACES RGB - Uniformly Spaced Incrementing R'</span><span class="p">,</span>
             <span class="s">'x_label'</span><span class="p">:</span> <span class="s">'k'</span><span class="p">,</span>
             <span class="s">'y_label'</span><span class="p">:</span> <span class="s">'X'</span><span class="p">,</span>
-            <span class="s">'x_tighten'</span><span class="p">:</span> <span class="k">True</span><span class="p">,</span>
-            <span class="s">'legend'</span><span class="p">:</span> <span class="k">True</span><span class="p">,</span>
+            <span class="s">'x_tighten'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+            <span class="s">'legend'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
             <span class="s">'legend_location'</span><span class="p">:</span> <span class="s">'upper left'</span><span class="p">,</span>
-            <span class="s">'x_ticker'</span><span class="p">:</span> <span class="k">True</span><span class="p">,</span>
-            <span class="s">'y_ticker'</span><span class="p">:</span> <span class="k">True</span><span class="p">}</span>
+            <span class="s">'x_ticker'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+            <span class="s">'y_ticker'</span><span class="p">:</span> <span class="bp">True</span><span class="p">}</span>
 <span class="n">decorate</span><span class="p">(</span><span class="o">**</span><span class="n">settings</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="o">**</span><span class="n">settings</span><span class="p">)</span>
 </pre></div>
@@ -1480,16 +1489,16 @@ $$<p>We plot the functions by using a uniformly spaced incrementing $k$ variable
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_sRGB</span><span class="p">(</span><span class="mf">0.172906</span><span class="p">)</span> <span class="o">*</span> <span class="n">X_sRGB</span><span class="p">(</span><span class="mf">0.05440562</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="s">'o'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'red'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'X - "dark skin" * "green" sRGB'</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_sRGB</span><span class="p">(</span><span class="mf">0.172906</span><span class="p">)</span> <span class="o">*</span> <span class="n">X_sRGB</span><span class="p">(</span><span class="mf">0.05440562</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="s">'o'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'red'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'X - "dark skin" * "green" sRGB'</span><span class="p">)</span>
 <span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_ACES</span><span class="p">(</span><span class="mf">0.11758989</span><span class="p">)</span> <span class="o">*</span> <span class="n">X_ACES</span><span class="p">(</span><span class="mf">0.15129818</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="s">'o'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'green'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'X - "dark skin" * "green" ACES RGB'</span><span class="p">)</span>
 
 <span class="n">settings</span> <span class="o">=</span> <span class="p">{</span><span class="s">'title'</span><span class="p">:</span> <span class="s">'sRGB - ACES RGB - X Value - "dark skin" * "green"'</span><span class="p">,</span>
             <span class="s">'x_label'</span><span class="p">:</span> <span class="s">'X Value'</span><span class="p">,</span>
-            <span class="s">'x_tighten'</span><span class="p">:</span> <span class="k">True</span><span class="p">,</span>
-            <span class="s">'legend'</span><span class="p">:</span> <span class="k">True</span><span class="p">,</span>
+            <span class="s">'x_tighten'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+            <span class="s">'legend'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
             <span class="s">'legend_location'</span><span class="p">:</span> <span class="s">'upper left'</span><span class="p">,</span>
-            <span class="s">'x_ticker'</span><span class="p">:</span> <span class="k">True</span><span class="p">,</span>
-            <span class="s">'y_ticker'</span><span class="p">:</span> <span class="k">True</span><span class="p">}</span>
+            <span class="s">'x_ticker'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+            <span class="s">'y_ticker'</span><span class="p">:</span> <span class="bp">True</span><span class="p">}</span>
 <span class="n">decorate</span><span class="p">(</span><span class="o">**</span><span class="n">settings</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="o">**</span><span class="n">settings</span><span class="p">)</span>
 </pre></div>
@@ -1541,7 +1550,7 @@ $$<p>We plot the functions by using a uniformly spaced incrementing $k$ variable
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">colourspaces_CIE_1931_chromaticity_diagram_plot</span><span class="p">(</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">colourspaces_CIE_1931_chromaticity_diagram_plot</span><span class="p">(</span>
     <span class="p">[</span><span class="s">'Pointer Gamut'</span><span class="p">,</span> <span class="s">'sRGB'</span><span class="p">,</span> <span class="s">'Rec. 2020'</span><span class="p">,</span> <span class="s">'ACES RGB'</span><span class="p">])</span>
 </pre></div>
 
@@ -1628,7 +1637,7 @@ $$<p>We plot the functions by using a uniformly spaced incrementing $k$ variable
 <div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">XYZ_sRGB1</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">RGB_to_XYZ</span><span class="p">(</span><span class="n">sRGB_r1</span><span class="p">,</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">XYZ_sRGB1</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">RGB_to_XYZ</span><span class="p">(</span><span class="n">sRGB_r1</span><span class="p">,</span>
                               <span class="n">sRGB_w</span><span class="p">,</span>
                               <span class="n">illuminant</span><span class="p">,</span>
                               <span class="n">sRGB_RGB_to_XYZ</span><span class="p">)</span>
@@ -1654,7 +1663,7 @@ $$<p>We plot the functions by using a uniformly spaced incrementing $k$ variable
 <div class="prompt input_prompt">In [19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">XYZ_sRGB_m1</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">RGB_to_XYZ</span><span class="p">(</span><span class="n">sRGB_m</span><span class="p">,</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">XYZ_sRGB_m1</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">RGB_to_XYZ</span><span class="p">(</span><span class="n">sRGB_m</span><span class="p">,</span>
                                 <span class="n">sRGB_w</span><span class="p">,</span>
                                 <span class="n">illuminant</span><span class="p">,</span>
                                 <span class="n">sRGB_RGB_to_XYZ</span><span class="p">)</span>

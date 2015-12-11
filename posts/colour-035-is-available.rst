@@ -11,6 +11,8 @@ After months of work, we are pleased to announce that
 `Colour 0.3.5 <https://github.com/colour-science/colour/releases/tag/v0.3.5>`_
 is finally available. This release is a major milestone toward a stable API.
 
+.. TEASER_END
+
 The focus has been vectorisation of most of the API code. The average
 speed increase is a **x235** factor for over a hundred core definitions
 (details are available in this `Google Docs Spreadsheet <https://docs.google.com/spreadsheets/d/10O344GaDbZaS9dNLIhP-uSPIgJXEMgz0MKEPPECtTy0/edit?usp=sharing>`_).

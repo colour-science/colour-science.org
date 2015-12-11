@@ -12,6 +12,8 @@ We were meant to write that entry since a while, and a
 `Tom Forsyth <https://twitter.com/tom_forsyth>`_ from
 `Oculus VR <https://www.oculus.com/en-us/>`_ triggered us in doing so.
 
+.. TEASER_END
+
 As I was quickly reading his article, I
 `tweeted <https://twitter.com/colour_science/status/671647698546626560>`_
 back about the missing description of *sRGB* as being an *RGB* colourspace: a set

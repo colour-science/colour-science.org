@@ -10,6 +10,8 @@
 `Colour 0.3.4 <https://github.com/colour-science/colour/releases/tag/v0.3.4>`_
 is available!
 
+.. TEASER_END
+
 The most notable `features <https://github.com/colour-science/colour/releases/tag/v0.3.4>`_
 are:
 
