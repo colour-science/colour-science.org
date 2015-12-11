@@ -13,7 +13,7 @@ try:
     # import sys
     #
     # sys.path.append(
-    #     '/home/vagrant/anaconda/envs/python2.7/lib/python2.7/site-packages')
+    #     '/home/vagrant/anaconda3/envs/python2.7/lib/python2.7/site-packages')
     # sys.path.append('/colour-science/colour')
 
     try:
@@ -56,18 +56,19 @@ try:
         </html>"""
 
     form = """
-        <form id="form" class="form" style="height: 440px;width: 416px" action="/cgi-bin/rgb_colourspace_models_derivation.cgi" method="post">
+        <form id="form" class="form" style="height: 530px;width: 416px" action="/cgi-bin/rgb_colourspace_models_derivation.cgi" method="post">
             <h1>RGB Colourspace Models Derivation</h1>
             <p>
                 <a href="http://colour-science.org/">colour-science.org</a>
             </p>
             <div class="content">
                 <div class="introduction">
-                    This form computes the <em>Normalised Primary Matrix</em> from the <em>Input Colourspace</em> using the given <em>Illuminant</em>.
+                    <p>This form computes the <em>Normalised Primary Matrix</em> from the <em>Input RGB Colourspace</em> using the given <em>Illuminant</em>.</p>
+                    <p>If you need to compute a <em>chromatically adapted</em> <em>Normalised Primary Matrix</em> to a given <em>Illuminant</em>, you should use the <a href=/cgi-bin/rgb_colourspace_models_chromatically_adapted_derivation.cgi>RGB Colourspace Models Chromatically Adapted Derivation</a> tool instead.</p>
                 </div>
                 <div id="section0" >
                     <div class="field">
-                        <label>Input Colourspace</label>
+                        <label>Input RGB Colourspace</label>
                         {0}
                     </div>
                     <div class="field">
@@ -84,10 +85,8 @@ try:
         html_select('c_select', COLOURSPACES.keys(), C_SELECT_VALUE),
         html_select('w_select', ILLUMINANTS.keys(), W_SELECT_VALUE),
         html_format_matrix(colour.normalised_primary_matrix(
-            COLOURSPACES[COLOURSPACES.keys()[
-                             C_SELECT_VALUE]].primaries,
-                         ILLUMINANTS[ILLUMINANTS.keys()[
-                             W_SELECT_VALUE]])))
+            COLOURSPACES[COLOURSPACES.keys()[C_SELECT_VALUE]].primaries,
+                         ILLUMINANTS[ILLUMINANTS.keys()[W_SELECT_VALUE]])))
 
     print(html.format(ANALYTICS_TRACKING, form))
 

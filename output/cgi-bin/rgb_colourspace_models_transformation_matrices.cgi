@@ -13,7 +13,7 @@ try:
     # import sys
     #
     # sys.path.append(
-    #     '/home/vagrant/anaconda/envs/python2.7/lib/python2.7/site-packages')
+    #     '/home/vagrant/anaconda3/envs/python2.7/lib/python2.7/site-packages')
     # sys.path.append('/colour-science/colour')
 
     try:
@@ -74,15 +74,15 @@ try:
             </p>
             <div class="content">
                 <div class="introduction">
-                    This form computes the colour transformation matrix from the <em>Input Colourspace</em> to the <em>Output Colourspace</em> using the given <em>Chromatic Adaptation Transform</em>.
+                    <p>This form computes the colour transformation matrix from the <em>Input RGB Colourspace</em> to the <em>Output RGB Colourspace</em> using the given <em>Chromatic Adaptation Transform</em>.</p>
                 </div>
                 <div id="section0" >
                     <div class="field">
-                        <label>Input Colourspace</label>
+                        <label>Input RGB Colourspace</label>
                         {0}
                     </div>
                     <div class="field">
-                        <label>Output Colourspace</label>
+                        <label>Output RGB Colourspace</label>
                         {1}
                     </div>
                     <div class="field">
@@ -100,10 +100,8 @@ try:
         html_select('c_o_select', COLOURSPACES.keys(), C_O_SELECT_VALUE),
         html_select('cat_select', CAT.keys(), CAT_SELECT_VALUE),
         html_format_matrix(
-            RGB_to_RGB(COLOURSPACES[COLOURSPACES.keys()[
-                C_I_SELECT_VALUE]],
-                       COLOURSPACES[COLOURSPACES.keys()[
-                           C_O_SELECT_VALUE]],
+            RGB_to_RGB(COLOURSPACES[COLOURSPACES.keys()[C_I_SELECT_VALUE]],
+                       COLOURSPACES[COLOURSPACES.keys()[C_O_SELECT_VALUE]],
                        CAT.keys()[CAT_SELECT_VALUE])))
 
     print(html.format(ANALYTICS_TRACKING, form))
