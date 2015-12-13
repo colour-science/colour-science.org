@@ -28,7 +28,7 @@ ANALYTICS_TRACKING = """
 
 def html_format_matrix(M, precision=7):
     # Handling whitepoint tuples.
-    if type(M) is tuple:
+    if isinstance(M, tuple):
         M = np.array(M).reshape(1, 2)
 
     html = '<table class="matrix-table">'

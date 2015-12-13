@@ -318,6 +318,9 @@ Log Conversion
 RGB Colourspaces Derivation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+RGB Colourspaces Chromatically Adapted Primaries Computation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 RGB Colourspaces Primaries Computation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

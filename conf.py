@@ -130,7 +130,7 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         (
             (
-                ('https://github.com/colour-science/colour/archive/v0.3.6.zip', 'Latest (v0.3.6)'),
+                ('https://github.com/colour-science/colour/archive/v0.3.7.zip', 'Latest (v0.3.7)'),
                 ('https://github.com/colour-science/colour/releases', 'All Releases'),
                 ('https://pypi.python.org/pypi/colour-science/', 'Pypi'),
             ),
@@ -157,7 +157,7 @@ NAVIGATION_LINKS = {
                 ('/contributing', 'Contributing'),
                 ('/contributors', 'Contributors'),
                 ('/bibliography', 'Bibliography'),
-                ('http://dx.doi.org/10.5281/zenodo.27234', 'Cite Us'),
+                ('http://dx.doi.org/10.5281/zenodo.35309', 'Cite Us'),
                 ('/cited-by', 'Cited By'),
                 ('http://opensource.org/licenses/BSD-3-Clause', 'License'),
                 ('/search', 'Search'),
