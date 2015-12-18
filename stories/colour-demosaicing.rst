@@ -22,6 +22,12 @@ The following CFA (Colour Filter Array) demosaicing algorithms are implemented:
 -   Malvar (2004)
 -   DDFAPD - Menon (2007)
 
+API
+^^^
+
+The main reference for `Colour - Demosaicing <https://github.com/colour-science/colour-demosaicing>`_
+is the Sphinx `API Reference <http://colour-demosaicing.readthedocs.org/en/latest/>`_.
+
 Examples
 ^^^^^^^^
 

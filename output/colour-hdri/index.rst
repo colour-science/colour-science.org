@@ -23,6 +23,12 @@ The following features are available:
 -   Global Tonemapping Operators
 -   Raw Processing Helpers
 
+API
+^^^
+
+The main reference for `Colour - HDRI <https://github.com/colour-science/colour-hdri>`_
+is the Sphinx `API Reference <http://colour-hdri.readthedocs.org/en/latest/>`_.
+
 Examples
 ^^^^^^^^
 
