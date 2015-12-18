@@ -62,6 +62,12 @@
 <a href="../experiments">Experiments</a>
                     </li>
 <li>
+<a href="../colour-demosaicing">Colour - Demosaicing</a>
+                    </li>
+<li>
+<a href="../colour-hdri">Colour - HDRI</a>
+                    </li>
+<li>
 <a href="../colour-maya">Colour - Maya</a>
                     </li>
 <li>
@@ -178,7 +184,35 @@
             
 
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../posts/colour-037-is-available/" class="u-url">Colour 0.3.7 is available!</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../posts/demosaicing-and-hdri-with-python/" class="u-url">Demosaicing and High Dynamic Range Imaging with Python</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Colour Developers
+            </span></p>
+            <p class="dateline"><a href="../posts/demosaicing-and-hdri-with-python/" rel="bookmark"><time class="published dt-published" datetime="2015-12-18T06:15:31Z" title="2015-12-18 06:15">2015-12-18 06:15</time></a></p>
+                <p class="commentline">
+        
+    <a href="../posts/demosaicing-and-hdri-with-python/#disqus_thread" data-disqus-identifier="cache/posts/demosaicing-and-hdri-with-python.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>We have released two complementary image processing  <a class="reference external" href="https://www.python.org/">Python</a>
+packages:</p>
+<ul class="simple">
+<li>
+<a class="reference external" href="../colour-demosaicing">Colour - Demosaicing</a> which implements various CFA
+(Colour Filter Array) demosaicing algorithms and related utilities.</li>
+<li>
+<a class="reference external" href="../colour-hdri">Colour - HDRI</a> which implements various HDRI / Radiance image
+processing algorithms.</li>
+</ul>
+<p class="more"><a href="../posts/demosaicing-and-hdri-with-python/">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../posts/colour-037-is-available/" class="u-url">Colour 0.3.7 is available!</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 Colour Developers
@@ -419,60 +453,6 @@ is available!</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p class="more"><a href="../posts/about-rgb-colourspace-models-performance/">Read more…</a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../posts/a-plea-for-colour-analysis-tools-in-dcc-applications/" class="u-url">A Plea for Colour Analysis Tools in DCC Applications</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                Colour Developers
-            </span></p>
-            <p class="dateline"><a href="../posts/a-plea-for-colour-analysis-tools-in-dcc-applications/" rel="bookmark"><time class="published dt-published" datetime="2014-10-01T03:55:00-13:00" title="2014-10-01 03:55">2014-10-01 03:55</time></a></p>
-                <p class="commentline">
-        
-    <a href="../posts/a-plea-for-colour-analysis-tools-in-dcc-applications/#disqus_thread" data-disqus-identifier="cache/posts/a-plea-for-colour-analysis-tools-in-dcc-applications.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Introduction">Introduction<a class="anchor-link" href="../posts/a-plea-for-colour-analysis-tools-in-dcc-applications/#Introduction">¶</a>
-</h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>As we are increasingly using wide gamut colourspaces (<em>ACES RGB</em>, <em>Rec. 2020</em>, <em>ProPhoto RGB</em>) in the VFX industry, the need for better colour analysis tools is more important than ever. Today, nothing prevents an artist to generate or pick colours outside a given volume.</p>
-<p>We think that people working with DCC applications from <a href="http://www.autodesk.com/">Autodesk</a>, <a href="http://www.adobe.com/">Adobe</a> and <a href="http://www.thefoundry.co.uk/">The Foundry</a> need better tools to work with colour. This is especially true when we tend to work in scene referred lighting with floating point values.</p>
-<p>We are using the <em>ACES RGB</em> <em>Sony F35</em> still life image from this directory for our manipulation:</p>
-<p><a href="https://www.dropbox.com/sh/2uo12yepe8gg422/AAAtzFqm0eJgyf7TDHmTCXQFa/aces?dl=0">https://www.dropbox.com/sh/2uo12yepe8gg422/AAAtzFqm0eJgyf7TDHmTCXQFa/aces?dl=0</a></p>
-<p>More images are available there: <a href="https://www.dropbox.com/sh/bwfrqgyt20gz4dp/XShJffwvXR">https://www.dropbox.com/sh/bwfrqgyt20gz4dp/XShJffwvXR</a></p>
-<p>This still life image exhibits a lot of colours that are very hard to reproduce and is a great example for the purpose of this document.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p class="more"><a href="../posts/a-plea-for-colour-analysis-tools-in-dcc-applications/">Read more…</a></p>
 </div>
 </div>
 </div>

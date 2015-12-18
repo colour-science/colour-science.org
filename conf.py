@@ -140,6 +140,8 @@ NAVIGATION_LINKS = {
             (
                 ('/utilities', 'Utilities'),
                 ('/experiments', 'Experiments'),
+                ('/colour-demosaicing', 'Colour - Demosaicing'),
+                ('/colour-hdri', 'Colour - HDRI'),
                 ('/colour-maya', 'Colour - Maya'),
                 ('/colour-nuke', 'Colour - Nuke'),
                 ('/colour-spectroscope', 'Colour - Spectroscope'),
