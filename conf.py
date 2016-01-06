@@ -184,6 +184,7 @@ NAVIGATION_LINKS = {
         (
             (
                 ('mailto:colour-science@googlegroups.com', 'Contact Us'),
+                ('https://gitter.im/colour-science/colour', 'Gitter'),
                 ('https://groups.google.com/forum/#!forum/colour-science', 'Mailing List'),
                 ('https://twitter.com/colour_science', 'Twitter'),
                 ('https://www.facebook.com/python.colour.science', 'Facebook'),
@@ -845,6 +846,11 @@ CONTENT_FOOTER = """
         </a>
     </li>
     <li>
+        <a href="https://gitter.im/colour-science/colour">
+            <span class="fa fa-github-alt fa-2x footer-links"></span>
+        </a>
+    </li>
+    <li>
         <a href="https://groups.google.com/forum/#!forum/colour-science">
             <span class="fa fa-users fa-2x footer-links"></span>
         </a>
@@ -1149,6 +1155,14 @@ EXTRA_HEAD_DATA = """
 # in the default template (base.tmpl).
 # (translatable)
 BODY_END = """
+<!-- >>> Gitter -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: ''
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+<!-- <<< Gitter -->
 <!-- >>> Google Analytics -->
 <script>
     (function (i, s, o, g, r, a, m) {

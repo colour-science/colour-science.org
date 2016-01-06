@@ -11,6 +11,14 @@
 
     <ul class="list-inline">
         <li>
+            <a href="https://gitter.im/colour-science/colour/">
+                <img src="https://img.shields.io/gitter/room/colour-science/colour.svg" alt="Gitter">
+            </a>
+        </li>
+    </ul>
+
+    <ul class="list-inline">
+        <li>
             <a href="https://github.com/colour-science/colour/">
                 <img src="https://img.shields.io/github/watchers/colour-science/colour.svg?style=social&label=Watch" alt="Watch">
             </a>
