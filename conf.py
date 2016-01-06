@@ -1158,7 +1158,7 @@ BODY_END = """
 <!-- >>> Gitter -->
 <script>
   ((window.gitter = {}).chat = {}).options = {
-    room: ''
+    room: 'colour-science/colour'
   };
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
