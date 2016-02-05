@@ -217,7 +217,7 @@ Here is a succinct overview of the steps you will most likely go through:
 .. code:: shell
 
     git add mie_scattering.py
-    git commit -m 'Implement "Mie Scattering" support'.
+    git commit -m 'Implement "Mie Scattering" support.'.
 
 11. Push your changes back to *origin*, your own fork:
 
