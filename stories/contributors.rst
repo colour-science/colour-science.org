@@ -196,6 +196,12 @@
                         <a href="https://github.com/henczati">henczati</a>
                     </li>
                     <li>
+                        <a href="https://github.com/Ron024">Ron024</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/scooperly">scooperly</a>
+                    </li>
+                    <li>
                         <a href="https://github.com/zachlewis">zachlewis</a>
                     </li>
                 </ul>
