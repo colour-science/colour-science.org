@@ -16,7 +16,7 @@ deploying:
 -   `Matplotlib <http://matplotlib.org/>`_
 -   `SciPy <http://www.scipy.org/>`_
 -   `IPython <http://ipython.org/notebook.html>`_
--   `Nose <https://nose.readthedocs.org/en/latest>`_
+-   `Nose <https://nose.readthedocs.io/en/latest>`_
 -   `Coverage <https://pypi.python.org/pypi/coverage>`_
 -   `Flake8 <https://pypi.python.org/pypi/flake8>`_
 -   `Sphinx <https://sphinx-doc.org>`_

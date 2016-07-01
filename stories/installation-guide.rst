@@ -36,7 +36,7 @@ Testing Suite Dependencies
 -  `Coverage <https://pypi.python.org/pypi/coverage>`_
 -  `Flake8 <https://pypi.python.org/pypi/flake8>`_
 -  `Mock <https://pypi.python.org/pypi/mock>`_
--  `Nose <https://nose.readthedocs.org/en/latest>`_
+-  `Nose <https://nose.readthedocs.io/en/latest>`_
 
 Documentation Building Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -7,10 +7,10 @@
 .. description:
 .. type: text
 
-`Latest <http://colour.readthedocs.org/en/latest/>`_
+`Latest <http://colour.readthedocs.io/en/latest/>`_
 ----------------------------------------------------
 
-`0.3.7 <http://colour.readthedocs.org/en/v0.3.7/>`_
+`0.3.7 <http://colour.readthedocs.io/en/v0.3.7/>`_
 ---------------------------------------------------
 
 `0.3.6 <../api/0.3.6/html/index.html>`_
