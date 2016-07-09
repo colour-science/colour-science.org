@@ -19,5 +19,5 @@ You can view the highlights of the project on the `features </features>`_ page.
 Please follow the `installation guide </installation-guide>`_ in order to
 retrieve the code.
 
-We have a few `IPython Notebooks <http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb>`_
+We have a few `Jupyter Notebooks <http://nbviewer.jupyter.org/github/colour-science/colour-notebooks/blob/master/notebooks/colour.ipynb>`_
 already done to cover the theoretical aspect of the API.

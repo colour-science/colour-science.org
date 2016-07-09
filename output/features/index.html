@@ -27,10 +27,10 @@ Sprague Interpolation
 
 Colorimetry
 
-Spectral Power Distribution Computations
+Spectral Computations
 
 Wavelength to XYZ
-Spectral">
+Spectral to Tristimulus Val">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2015-11-25T09:47:50Z">
 </head>
@@ -61,7 +61,7 @@ Spectral">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Downloads <b class="caret"></b></a>
             <ul class="dropdown-menu">
 <li>
-<a href="https://github.com/colour-science/colour/archive/v0.3.7.zip">Latest (v0.3.7)</a>
+<a href="https://github.com/colour-science/colour/archive/v0.3.8.zip">Latest (v0.3.8)</a>
                     </li>
 <li>
 <a href="https://github.com/colour-science/colour/releases">All Releases</a>
@@ -110,7 +110,7 @@ Spectral">
 <a href="../api-reference">API Reference</a>
                     </li>
 <li>
-<a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb">IPython Notebooks</a>
+<a href="http://nbviewer.jupyter.org/github/colour-science/colour-notebooks/blob/master/notebooks/colour.ipynb">Jupyter Notebooks</a>
                     </li>
 <li>
 <a href="../features">Features</a>
@@ -128,7 +128,7 @@ Spectral">
 <a href="../bibliography">Bibliography</a>
                     </li>
 <li>
-<a href="http://dx.doi.org/10.5281/zenodo.35309">Cite Us</a>
+<a href="http://dx.doi.org/10.5281/zenodo.57294">Cite Us</a>
                     </li>
 <li>
 <a href="../cited-by">Cited By</a>
@@ -226,12 +226,13 @@ some highlights:</p>
 </div>
 <div class="section" id="colorimetry">
 <h2>Colorimetry</h2>
-<div class="section" id="spectral-power-distribution-computations">
-<h3>Spectral Power Distribution Computations</h3>
+<div class="section" id="spectral-computations">
+<h3>Spectral Computations</h3>
 <ul class="simple">
 <li>Wavelength to XYZ</li>
-<li>Spectral to XYZ</li>
-<li>Interpolation</li>
+<li>Spectral to Tristimulus Values - ASTM E308–15</li>
+<li>Tristimulus Weighting Factors - ASTM E2022–11</li>
+<li>Interpolation - Linear, Cubic Spline, Pchip, Sprague (1880)</li>
 <li>Extrapolation</li>
 </ul>
 </div>
@@ -272,11 +273,31 @@ some highlights:</p>
 <li>CIE 1951 Scotopic Standard Observer</li>
 </ul>
 </div>
+<div class="section" id="colour-matching-functions-conversions-for-educational-purpose">
+<h3>Colour Matching Functions Conversions for Educational Purpose</h3>
+<ul class="simple">
+<li>Wright &amp; Guild 1931 2° RGB CMFs to CIE 1931 2° Standard Observer</li>
+<li>Stiles &amp; Burch 1959 10° RGB CMFs to CIE 1964 10° Standard Observer</li>
+<li>Stiles &amp; Burch 1959 10° RGB CMFs to Stockman &amp; Sharpe 10° Cone Fundamentals</li>
+<li>Stockman &amp; Sharpe 2° Cone Fundamentals to CIE 2012 2° Standard Observer</li>
+<li>Stockman &amp; Sharpe 10° Cone Fundamentals to CIE 2012 10° Standard Observer</li>
+</ul>
+</div>
 <div class="section" id="blackbody-spectral-radiance-computation">
 <h3>Blackbody Spectral Radiance Computation</h3>
 </div>
-<div class="section" id="illuminants-spectral-dataset">
-<h3>Illuminants Spectral Dataset</h3>
+<div class="section" id="dominant-complementary-wavelength-colour-purity-computation">
+<h3>Dominant, Complementary Wavelength &amp; Colour Purity Computation</h3>
+</div>
+<div class="section" id="illuminant-spectral-power-distribution-computations">
+<h3>Illuminant Spectral Power Distribution Computations</h3>
+<ul class="simple">
+<li>CIE Standard Illuminant A</li>
+<li>CIE Standard Illuminant D Series</li>
+</ul>
+</div>
+<div class="section" id="illuminant-spectral-dataset">
+<h3>Illuminant Spectral Dataset</h3>
 <ul class="simple">
 <li>A</li>
 <li>B</li>
@@ -321,11 +342,14 @@ some highlights:</p>
 <li>HP5</li>
 </ul>
 </div>
-<div class="section" id="illuminants-chromaticity-coordinates">
-<h3>Illuminants Chromaticity Coordinates</h3>
+<div class="section" id="illuminant-chromaticity-coordinates">
+<h3>Illuminant Chromaticity Coordinates</h3>
 </div>
-<div class="section" id="light-sources-dataset">
-<h3>Light Sources Dataset</h3>
+<div class="section" id="hunter-lab-chromaticity-coordinates">
+<h3>Hunter Lab Chromaticity Coordinates</h3>
+</div>
+<div class="section" id="light-source-dataset">
+<h3>Light Source Dataset</h3>
 <ul class="simple">
 <li>Natural</li>
 <li>Philips TL-84</li>
@@ -385,18 +409,8 @@ some highlights:</p>
 <li>Kinoton 75P</li>
 </ul>
 </div>
-<div class="section" id="light-sources-chromaticity-coordinates">
-<h3>Light Sources Chromaticity Coordinates</h3>
-</div>
-<div class="section" id="colour-matching-functions-conversions-for-educational-purpose">
-<h3>Colour Matching Functions Conversions for Educational Purpose</h3>
-<ul class="simple">
-<li>Wright &amp; Guild 1931 2° RGB CMFs to CIE 1931 2° Standard Observer</li>
-<li>Stiles &amp; Burch 1959 10° RGB CMFs to CIE 1964 10° Standard Observer</li>
-<li>Stiles &amp; Burch 1959 10° RGB CMFs to Stockman &amp; Sharpe 10° Cone Fundamentals</li>
-<li>Stockman &amp; Sharpe 2° Cone Fundamentals to CIE 2012 2° Standard Observer</li>
-<li>Stockman &amp; Sharpe 10° Cone Fundamentals to CIE 2012 10° Standard Observer</li>
-</ul>
+<div class="section" id="light-source-chromaticity-coordinates">
+<h3>Light Source Chromaticity Coordinates</h3>
 </div>
 <div class="section" id="lightness-computation">
 <h3>Lightness Computation</h3>
@@ -425,11 +439,8 @@ some highlights:</p>
 <li>CIE 2004</li>
 </ul>
 </div>
-<div class="section" id="luminous-efficacy-computation">
-<h3>Luminous Efficacy Computation</h3>
-</div>
-<div class="section" id="luminous-flux-computation">
-<h3>Luminous Flux Computation</h3>
+<div class="section" id="luminous-flux-efficiency-efficacy-computation">
+<h3>Luminous Flux, Efficiency &amp; Efficacy Computation</h3>
 </div>
 </div>
 <div class="section" id="colour-temperature-correlated-colour-temperature">
@@ -493,50 +504,67 @@ some highlights:</p>
 <div class="section" id="colourspaces-transformations">
 <h3>Colourspaces Transformations</h3>
 <ul class="simple">
-<li>XYZ to xyY</li>
-<li>xyY to XYZ</li>
-<li>xy to XYZ</li>
-<li>XYZ to xy</li>
-<li>XYZ to RGB</li>
-<li>RGB to XYZ</li>
+<li>CIE XYZ to CIE xyY</li>
+<li>CIE xyY to CIE XYZ</li>
+<li>CIE xy to CIE XYZ</li>
+<li>CIE XYZ to CIE xy</li>
+<li>CIE XYZ to RGB</li>
+<li>RGB to CIE XYZ</li>
 <li>RGB to RGB</li>
-<li>XYZ to sRGB</li>
-<li>sRGB to XYZ</li>
-<li>XYZ to UCS</li>
-<li>UCS to XYZ</li>
-<li>UCS to uv</li>
-<li>UCS uv to xy</li>
-<li>XYZ to UVW</li>
-<li>XYZ to Luv</li>
-<li>Luv to XYZ</li>
-<li>Luv to uv</li>
-<li>Luv uv to xy</li>
-<li>Luv to LCHuv</li>
-<li>LCHuv to Luv</li>
-<li>XYZ to Lab</li>
-<li>Lab to XYZ</li>
-<li>Lab to LCHab</li>
-<li>LCHab to Lab</li>
-<li>XYZ to IPT</li>
-<li>IPT to XYZ</li>
+<li>CIE XYZ to sRGB</li>
+<li>sRGB to CIE XYZ</li>
+<li>CIE XYZ to CIE UCS</li>
+<li>CIE UCS to CIE XYZ</li>
+<li>CIE UCS to CIE UCS uv</li>
+<li>CIE UCS uv to CIE xy</li>
+<li>CIE XYZ to CIE UVW</li>
+<li>CIE XYZ to CIE Luv</li>
+<li>CIE Luv to CIE XYZ</li>
+<li>CIE Luv to CIE Luv uv</li>
+<li>CIE Luv uv to CIE xy</li>
+<li>CIE Luv to CIE LCHuv</li>
+<li>CIE LCHuv to CIE Luv</li>
+<li>CIE XYZ to CIE Lab</li>
+<li>CIE Lab to CIE XYZ</li>
+<li>CIE Lab to CIE LCHab</li>
+<li>CIE LCHab to CIE Lab</li>
+<li>CIE XYZ to IPT</li>
+<li>IPT to CIE XYZ</li>
+<li>CIE XYZ to Hunter Lab</li>
+<li>Hunter Lab to CIE XYZ</li>
+<li>CIE XYZ to Hunter Rdab</li>
 </ul>
 </div>
-<div class="section" id="log-conversion">
-<h3>Log Conversion</h3>
+<div class="section" id="oetfs-eotfs">
+<h3>OETFs / EOTFs</h3>
 <ul class="simple">
-<li>Cineon</li>
-<li>Panalog</li>
-<li>ViperLog</li>
-<li>PLog</li>
-<li>C-Log</li>
-<li>ACEScc</li>
-<li>ALEXA Log C</li>
+<li>BT.1886</li>
+<li>BT.2020</li>
+<li>BT.709</li>
 <li>DCI-P3</li>
+<li>sRGB</li>
+<li>ST 2084:2014</li>
+</ul>
+</div>
+<div class="section" id="log-encoding-curves">
+<h3>Log Encoding Curves</h3>
+<ul class="simple">
+<li>ACEScc</li>
+<li>ACESproxy</li>
+<li>ALEXA Log C</li>
+<li>C-Log</li>
+<li>Cineon</li>
+<li>DCI-P3</li>
+<li>ERIMM RGB</li>
+<li>Panalog</li>
+<li>PLog</li>
+<li>REDLog</li>
 <li>REDLogFilm</li>
 <li>S-Log</li>
 <li>S-Log2</li>
 <li>S-Log3</li>
 <li>V-Log</li>
+<li>ViperLog</li>
 </ul>
 </div>
 <div class="section" id="rgb-colourspaces-derivation">
@@ -555,9 +583,9 @@ some highlights:</p>
 <li>ACEScc</li>
 <li>ACEScg</li>
 <li>ACESproxy</li>
-<li>ALEXA Wide Gamut RGB</li>
 <li>Adobe RGB 1998</li>
 <li>Adobe Wide Gamut RGB</li>
+<li>ALEXA Wide Gamut RGB</li>
 <li>Apple RGB</li>
 <li>Best RGB</li>
 <li>Beta RGB</li>
@@ -566,29 +594,32 @@ some highlights:</p>
 <li>ColorMatch RGB</li>
 <li>DCI-P3</li>
 <li>DCI-P3+</li>
+<li>Don RGB 4</li>
 <li>DRAGONcolor</li>
 <li>DRAGONcolor2</li>
-<li>Don RGB 4</li>
 <li>ECI RGB v2</li>
 <li>Ekta Space PS 5</li>
+<li>ERIMM RGB</li>
 <li>Max RGB</li>
 <li>NTSC RGB</li>
 <li>Pal/Secam RGB</li>
 <li>ProPhoto RGB</li>
+<li>Rec. 2020</li>
+<li>Rec. 709</li>
 <li>REDcolor</li>
 <li>REDcolor2</li>
 <li>REDcolor3</li>
 <li>REDcolor4</li>
-<li>Rec. 2020</li>
-<li>Rec. 709</li>
+<li>RIMM RGB</li>
+<li>ROMM RGB</li>
 <li>Russell RGB</li>
 <li>S-Gamut</li>
 <li>S-Gamut3</li>
 <li>S-Gamut3.Cine</li>
 <li>SMPTE-C RGB</li>
+<li>sRGB</li>
 <li>V-Gamut</li>
 <li>Xtreme RGB</li>
-<li>sRGB</li>
 </ul>
 </div>
 <div class="section" id="convenience-deprecated-colourspaces-transformations">

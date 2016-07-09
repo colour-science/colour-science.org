@@ -19,10 +19,6 @@ Primary Dependencies
 -  `Python 2.7 <https://www.python.org/download/releases/>`_ or
    `Python 3.5 <https://www.python.org/download/releases/>`_
 -  `NumPy <http://www.numpy.org/>`_
-
-Optional Features Dependencies
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 -  `SciPy <http://www.scipy.org/>`_
 
 Optional Figures Plotting Dependencies
@@ -36,7 +32,7 @@ Testing Suite Dependencies
 -  `Coverage <https://pypi.python.org/pypi/coverage>`_
 -  `Flake8 <https://pypi.python.org/pypi/flake8>`_
 -  `Mock <https://pypi.python.org/pypi/mock>`_
--  `Nose <https://nose.readthedocs.org/en/latest>`_
+-  `Nose <https://nose.readthedocs.io/en/latest>`_
 
 Documentation Building Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

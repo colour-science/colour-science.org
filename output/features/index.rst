@@ -19,12 +19,13 @@ Sprague Interpolation
 Colorimetry
 -----------
 
-Spectral Power Distribution Computations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Spectral Computations
+^^^^^^^^^^^^^^^^^^^^^
 
 -   Wavelength to XYZ
--   Spectral to XYZ
--   Interpolation
+-   Spectral to Tristimulus Values - ASTM E308–15
+-   Tristimulus Weighting Factors - ASTM E2022–11
+-   Interpolation - Linear, Cubic Spline, Pchip, Sprague (1880)
 -   Extrapolation
 
 Spectral Bandpass Correction
@@ -60,11 +61,29 @@ Photopic & Scotopic Luminous Efficiency Functions Spectral Dataset
 -   CIE 2008 10° Physiologically Relevant LEF
 -   CIE 1951 Scotopic Standard Observer
 
+Colour Matching Functions Conversions for Educational Purpose
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-   Wright & Guild 1931 2° RGB CMFs to CIE 1931 2° Standard Observer
+-   Stiles & Burch 1959 10° RGB CMFs to CIE 1964 10° Standard Observer
+-   Stiles & Burch 1959 10° RGB CMFs to Stockman & Sharpe 10° Cone Fundamentals
+-   Stockman & Sharpe 2° Cone Fundamentals to CIE 2012 2° Standard Observer
+-   Stockman & Sharpe 10° Cone Fundamentals to CIE 2012 10° Standard Observer
+
 Blackbody Spectral Radiance Computation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Illuminants Spectral Dataset
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Dominant, Complementary Wavelength & Colour Purity Computation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Illuminant Spectral Power Distribution Computations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- CIE Standard Illuminant A
+- CIE Standard Illuminant D Series
+
+Illuminant Spectral Dataset
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -   A
 -   B
@@ -108,11 +127,14 @@ Illuminants Spectral Dataset
 -   HP4
 -   HP5
 
-Illuminants Chromaticity Coordinates
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Illuminant Chromaticity Coordinates
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Light Sources Dataset
-^^^^^^^^^^^^^^^^^^^^^
+Hunter Lab Chromaticity Coordinates
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Light Source Dataset
+^^^^^^^^^^^^^^^^^^^^
 
 -   Natural
 -   Philips TL-84
@@ -171,17 +193,8 @@ Light Sources Dataset
 -   SDW-T 100W/LV (Super HPS)
 -   Kinoton 75P
 
-Light Sources Chromaticity Coordinates
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Colour Matching Functions Conversions for Educational Purpose
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
--   Wright & Guild 1931 2° RGB CMFs to CIE 1931 2° Standard Observer
--   Stiles & Burch 1959 10° RGB CMFs to CIE 1964 10° Standard Observer
--   Stiles & Burch 1959 10° RGB CMFs to Stockman & Sharpe 10° Cone Fundamentals
--   Stockman & Sharpe 2° Cone Fundamentals to CIE 2012 2° Standard Observer
--   Stockman & Sharpe 10° Cone Fundamentals to CIE 2012 10° Standard Observer
+Light Source Chromaticity Coordinates
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Lightness Computation
 ^^^^^^^^^^^^^^^^^^^^^
@@ -207,11 +220,8 @@ Whiteness Computation
 -   Ganz and Griesser (1979)
 -   CIE 2004
 
-Luminous Efficacy Computation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Luminous Flux Computation
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Luminous Flux, Efficiency & Efficacy Computation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Colour Temperature & Correlated Colour Temperature
 --------------------------------------------------
@@ -271,49 +281,65 @@ Colour Models
 Colourspaces Transformations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--   XYZ to xyY
--   xyY to XYZ
--   xy to XYZ
--   XYZ to xy
--   XYZ to RGB
--   RGB to XYZ
+-   CIE XYZ to CIE xyY
+-   CIE xyY to CIE XYZ
+-   CIE xy to CIE XYZ
+-   CIE XYZ to CIE xy
+-   CIE XYZ to RGB
+-   RGB to CIE XYZ
 -   RGB to RGB
--   XYZ to sRGB
--   sRGB to XYZ
--   XYZ to UCS
--   UCS to XYZ
--   UCS to uv
--   UCS uv to xy
--   XYZ to UVW
--   XYZ to Luv
--   Luv to XYZ
--   Luv to uv
--   Luv uv to xy
--   Luv to LCHuv
--   LCHuv to Luv
--   XYZ to Lab
--   Lab to XYZ
--   Lab to LCHab
--   LCHab to Lab
--   XYZ to IPT
--   IPT to XYZ
+-   CIE XYZ to sRGB
+-   sRGB to CIE XYZ
+-   CIE XYZ to CIE UCS
+-   CIE UCS to CIE XYZ
+-   CIE UCS to CIE UCS uv
+-   CIE UCS uv to CIE xy
+-   CIE XYZ to CIE UVW
+-   CIE XYZ to CIE Luv
+-   CIE Luv to CIE XYZ
+-   CIE Luv to CIE Luv uv
+-   CIE Luv uv to CIE xy
+-   CIE Luv to CIE LCHuv
+-   CIE LCHuv to CIE Luv
+-   CIE XYZ to CIE Lab
+-   CIE Lab to CIE XYZ
+-   CIE Lab to CIE LCHab
+-   CIE LCHab to CIE Lab
+-   CIE XYZ to IPT
+-   IPT to CIE XYZ
+-   CIE XYZ to Hunter Lab
+-   Hunter Lab to CIE XYZ
+-   CIE XYZ to Hunter Rdab
 
-Log Conversion
-^^^^^^^^^^^^^^
+OETFs / EOTFs
+^^^^^^^^^^^^^
 
--   Cineon
--   Panalog
--   ViperLog
--   PLog
--   C-Log
--   ACEScc
--   ALEXA Log C
+-   BT.1886
+-   BT.2020
+-   BT.709
 -   DCI-P3
+-   sRGB
+-   ST 2084:2014
+
+Log Encoding Curves
+^^^^^^^^^^^^^^^^^^^
+
+-   ACEScc
+-   ACESproxy
+-   ALEXA Log C
+-   C-Log
+-   Cineon
+-   DCI-P3
+-   ERIMM RGB
+-   Panalog
+-   PLog
+-   REDLog
 -   REDLogFilm
 -   S-Log
 -   S-Log2
 -   S-Log3
 -   V-Log
+-   ViperLog
 
 RGB Colourspaces Derivation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -331,9 +357,9 @@ RGB Colourspaces
 -   ACEScc
 -   ACEScg
 -   ACESproxy
--   ALEXA Wide Gamut RGB
 -   Adobe RGB 1998
 -   Adobe Wide Gamut RGB
+-   ALEXA Wide Gamut RGB
 -   Apple RGB
 -   Best RGB
 -   Beta RGB
@@ -342,29 +368,32 @@ RGB Colourspaces
 -   ColorMatch RGB
 -   DCI-P3
 -   DCI-P3+
+-   Don RGB 4
 -   DRAGONcolor
 -   DRAGONcolor2
--   Don RGB 4
 -   ECI RGB v2
 -   Ekta Space PS 5
+-   ERIMM RGB
 -   Max RGB
 -   NTSC RGB
 -   Pal/Secam RGB
 -   ProPhoto RGB
+-   Rec. 2020
+-   Rec. 709
 -   REDcolor
 -   REDcolor2
 -   REDcolor3
 -   REDcolor4
--   Rec. 2020
--   Rec. 709
+-   RIMM RGB
+-   ROMM RGB
 -   Russell RGB
 -   S-Gamut
 -   S-Gamut3
 -   S-Gamut3.Cine
 -   SMPTE-C RGB
+-   sRGB
 -   V-Gamut
 -   Xtreme RGB
--   sRGB
 
 Convenience Deprecated Colourspaces Transformations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

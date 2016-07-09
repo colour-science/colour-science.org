@@ -32,7 +32,7 @@ There are many ways to help:
     `Enhancement <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AEnhancement>`_
     labels are a good place to start.
 -   Improving the
-    `IPython Notebooks <http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb>`_,
+    `Jupyter Notebooks <http://nbviewer.jupyter.org/github/colour-science/colour-notebooks/blob/master/notebooks/colour.ipynb>`_,
     we aim to provide a good scientific support to the API and there is still a
     lot to do.
 -   Improving related packages like `Colour - Maya </colour-maya/>`_,
@@ -342,10 +342,19 @@ Python Style Rules
 
 .. code:: python
 
-    >>> Lab = np.array([100, -7.41787844, -15.85742105])
+    >>> Lab = np.array([100.00000000, -7.41787844, -15.85742105])
     >>> Lab_to_LCHab(Lab)  # doctest: +ELLIPSIS
     array([ 100.        ,   17.5066479...,  244.9304684...])
 
+-   Numbers in the API are usually rounded as follows:
+
+    -   Dataset numbers are kept as is if they are from a known reference or
+        rounded to 15 digits if computed with the API (spectral power
+        distributions, chromaticity coordinates, etc...).
+    -   Unit tests and doctests input numbers are kept as is if they are from
+        a reference or rounded to 8 digits if computed with the API.
+    -   Unit tests output numbers are rounded to 8 digits.
+    -   Doctests output numbers trimmed with **ellipsis** to 7 digits.
 -   Some commonly used dataset elements have aliases like **'cie\_2\_1931'**
     for **'CIE 1931 2 Degree Standard Observer'**. Those are provided for
     convenience and are reserved for external usage, please use the long form

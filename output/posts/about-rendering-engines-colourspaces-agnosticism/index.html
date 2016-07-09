@@ -61,7 +61,7 @@ It has pretty much always been assumed by a lot of people, including myself, tha
 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Downloads <b class="caret"></b></a>
             <ul class="dropdown-menu">
 <li>
-<a href="https://github.com/colour-science/colour/archive/v0.3.7.zip">Latest (v0.3.7)</a>
+<a href="https://github.com/colour-science/colour/archive/v0.3.8.zip">Latest (v0.3.8)</a>
                     </li>
 <li>
 <a href="https://github.com/colour-science/colour/releases">All Releases</a>
@@ -110,7 +110,7 @@ It has pretty much always been assumed by a lot of people, including myself, tha
 <a href="../../api-reference">API Reference</a>
                     </li>
 <li>
-<a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb">IPython Notebooks</a>
+<a href="http://nbviewer.jupyter.org/github/colour-science/colour-notebooks/blob/master/notebooks/colour.ipynb">Jupyter Notebooks</a>
                     </li>
 <li>
 <a href="../../features">Features</a>
@@ -128,7 +128,7 @@ It has pretty much always been assumed by a lot of people, including myself, tha
 <a href="../../bibliography">Bibliography</a>
                     </li>
 <li>
-<a href="http://dx.doi.org/10.5281/zenodo.35309">Cite Us</a>
+<a href="http://dx.doi.org/10.5281/zenodo.57294">Cite Us</a>
                     </li>
 <li>
 <a href="../../cited-by">Cited By</a>
@@ -250,7 +250,7 @@ It has pretty much always been assumed by a lot of people, including myself, tha
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>It has pretty much always been assumed by a lot of people, including myself, that rendering engines are colourspaces agnostic, and whatever your primaries are, it should not make any differences.</p>
 <p>An interesting thread with some VFX industry veterans about the <a href="http://www.oscars.org/science-technology/council/projects/aces.html">Academy Color Encoding System</a> has been ignited by Steve Agland.</p>
-<p>He was describing issues while rendering in ACES RGB colourspace where the rendering equation could generate some very saturated colours, colour clipping and loss of details. Since we have started this notebook, Steve has written a post illustrating those issues, I suggest that you take a look at his <a href="http://nbviewer.ipython.org/gist/sagland/3c791e79353673fd24fa">notebook</a>.</p>
+<p>He was describing issues while rendering in ACES RGB colourspace where the rendering equation could generate some very saturated colours, colour clipping and loss of details. Since we have started this notebook, Steve has written a post illustrating those issues, I suggest that you take a look at his <a href="http://nbviewer.jupyter.org/gist/sagland/3c791e79353673fd24fa">notebook</a>.</p>
 <p>As we were discussing, <a href="http://mentalraytips.blogspot.fr/">Zap 'Master' Anderson</a> pointed that he was assuming primaries wouldn't matter but that it was wrong.</p>
 <p>The <a href="https://groups.google.com/d/msg/academyaces/9b4VuqPcOHQ/Hg8c9V6flOYJ">TL;DR; version</a> of <em>Rick Sayre</em> from <a href="http://www.pixar.com/">Pixar</a></p>
 <blockquote>
@@ -297,7 +297,7 @@ Thus there should be no surprise that component-wise multiply does not yield a p
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="o">%</span><span class="k">matplotlib</span> inline
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 
 </div>
@@ -310,13 +310,13 @@ Thus there should be no surprise that component-wise multiply does not yield a p
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pylab</span>
 
 <span class="kn">import</span> <span class="nn">colour</span>
 <span class="kn">from</span> <span class="nn">colour.utilities.verbose</span> <span class="kn">import</span> <span class="n">message_box</span>
 
-<span class="n">name</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">illuminant</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">COLOURCHECKERS</span><span class="p">[</span><span class="s">'ColorChecker 2005'</span><span class="p">]</span>
+<span class="n">name</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">illuminant</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">COLOURCHECKERS</span><span class="p">[</span><span class="s1">'ColorChecker 2005'</span><span class="p">]</span>
 
 <span class="n">sRGB_w</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">sRGB_COLOURSPACE</span><span class="o">.</span><span class="n">whitepoint</span>
 <span class="n">sRGB_XYZ_to_RGB</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">sRGB_COLOURSPACE</span><span class="o">.</span><span class="n">XYZ_to_RGB_matrix</span>
@@ -325,63 +325,63 @@ Thus there should be no surprise that component-wise multiply does not yield a p
 <span class="n">adobe98_XYZ_to_RGB</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">ADOBE_RGB_1998_COLOURSPACE</span><span class="o">.</span><span class="n">XYZ_to_RGB_matrix</span>
 <span class="n">adobe98_RGB_to_XYZ</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">ADOBE_RGB_1998_COLOURSPACE</span><span class="o">.</span><span class="n">RGB_to_XYZ_matrix</span>
 
-<span class="c"># Preparing *dark skin* colour in various colourspaces.</span>
+<span class="c1"># Preparing *dark skin* colour in various colourspaces.</span>
 <span class="n">index</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">XYZ_r1</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">xyY_to_XYZ</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">Y</span><span class="p">))</span>
 
-<span class="c"># *sRGB* colourspace 0-255 values with OETF applied.</span>
+<span class="c1"># *sRGB* colourspace 0-255 values with OETF applied.</span>
 <span class="n">sRGB_rd1</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_sRGB</span><span class="p">(</span><span class="n">XYZ_r1</span><span class="p">,</span> <span class="n">illuminant</span><span class="p">)</span>
 
-<span class="c"># *sRGB* colourspace linear values.</span>
+<span class="c1"># *sRGB* colourspace linear values.</span>
 <span class="n">sRGB_r1</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_RGB</span><span class="p">(</span><span class="n">XYZ_r1</span><span class="p">,</span>
                             <span class="n">illuminant</span><span class="p">,</span>
                             <span class="n">sRGB_w</span><span class="p">,</span>
                             <span class="n">sRGB_XYZ_to_RGB</span><span class="p">)</span>
 
-<span class="c"># *Adobe RGB 1998* colourspace linear values.</span>
+<span class="c1"># *Adobe RGB 1998* colourspace linear values.</span>
 <span class="n">adobe98_r1</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_RGB</span><span class="p">(</span><span class="n">XYZ_r1</span><span class="p">,</span>
                                <span class="n">illuminant</span><span class="p">,</span>
                                <span class="n">adobe98_w</span><span class="p">,</span>
                                <span class="n">adobe98_XYZ_to_RGB</span><span class="p">)</span>
 
-<span class="n">message_box</span><span class="p">((</span><span class="s">'Reference "dark skin" "CIE XYZ" colourspace tristimulus '</span>
-             <span class="s">'values:</span><span class="se">\n</span><span class="s">'</span>
-             <span class="s">'</span><span class="se">\t</span><span class="s">{0}</span><span class="se">\n</span><span class="s">'</span>
-             <span class="s">'</span><span class="se">\n</span><span class="s">"sRGB" colourspace values (OETF):</span><span class="se">\n</span><span class="s">'</span>
-             <span class="s">'</span><span class="se">\n\t</span><span class="s">{1}</span><span class="se">\n</span><span class="s">'</span>
-             <span class="s">'</span><span class="se">\n</span><span class="s">"sRGB" and "Adobe RGB 1998" colourspaces (Linear):</span><span class="se">\n</span><span class="s">'</span>
-             <span class="s">'</span><span class="se">\t</span><span class="s">sRGB: {2}</span><span class="se">\n\t</span><span class="s">Adobe RGB 1998: {3}'</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+<span class="n">message_box</span><span class="p">((</span><span class="s1">'Reference "dark skin" "CIE XYZ" colourspace tristimulus '</span>
+             <span class="s1">'values:</span><span class="se">\n</span><span class="s1">'</span>
+             <span class="s1">'</span><span class="se">\t</span><span class="s1">{0}</span><span class="se">\n</span><span class="s1">'</span>
+             <span class="s1">'</span><span class="se">\n</span><span class="s1">"sRGB" colourspace values (OETF):</span><span class="se">\n</span><span class="s1">'</span>
+             <span class="s1">'</span><span class="se">\n\t</span><span class="s1">{1}</span><span class="se">\n</span><span class="s1">'</span>
+             <span class="s1">'</span><span class="se">\n</span><span class="s1">"sRGB" and "Adobe RGB 1998" colourspaces (Linear):</span><span class="se">\n</span><span class="s1">'</span>
+             <span class="s1">'</span><span class="se">\t</span><span class="s1">sRGB: {2}</span><span class="se">\n\t</span><span class="s1">Adobe RGB 1998: {3}'</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
     <span class="n">XYZ_r1</span><span class="p">,</span>
     <span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="n">sRGB_rd1</span> <span class="o">*</span> <span class="mi">255</span><span class="p">),</span>
     <span class="n">sRGB_r1</span><span class="p">,</span>
     <span class="n">adobe98_r1</span><span class="p">))</span>
 
-<span class="c"># Preparing *green* colour in various colourspaces.</span>
+<span class="c1"># Preparing *green* colour in various colourspaces.</span>
 <span class="n">index</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span>
 <span class="n">XYZ_r2</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">xyY_to_XYZ</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">Y</span><span class="p">))</span>
 
-<span class="c"># *sRGB* colourspace 0-255 values with OETF applied.</span>
+<span class="c1"># *sRGB* colourspace 0-255 values with OETF applied.</span>
 <span class="n">sRGB_rd2</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_sRGB</span><span class="p">(</span><span class="n">XYZ_r2</span><span class="p">,</span> <span class="n">illuminant</span><span class="p">)</span>
 
-<span class="c"># *sRGB* colourspace linear values.</span>
+<span class="c1"># *sRGB* colourspace linear values.</span>
 <span class="n">sRGB_r2</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_RGB</span><span class="p">(</span><span class="n">XYZ_r2</span><span class="p">,</span>
                             <span class="n">illuminant</span><span class="p">,</span>
                             <span class="n">sRGB_w</span><span class="p">,</span>
                             <span class="n">sRGB_XYZ_to_RGB</span><span class="p">)</span>
 
-<span class="c"># *Adobe RGB 1998* colourspace linear values.</span>
+<span class="c1"># *Adobe RGB 1998* colourspace linear values.</span>
 <span class="n">adobe98_r2</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_RGB</span><span class="p">(</span><span class="n">XYZ_r2</span><span class="p">,</span>
                                <span class="n">illuminant</span><span class="p">,</span>
                                <span class="n">adobe98_w</span><span class="p">,</span>
                                <span class="n">adobe98_XYZ_to_RGB</span><span class="p">)</span>
 
-<span class="n">message_box</span><span class="p">((</span><span class="s">'Reference "green" "CIE XYZ" colourspace tristimulus '</span>
-             <span class="s">'values:</span><span class="se">\n</span><span class="s">'</span>
-             <span class="s">'</span><span class="se">\t</span><span class="s">{0}</span><span class="se">\n</span><span class="s">'</span>
-             <span class="s">'</span><span class="se">\n</span><span class="s">"sRGB" colourspace values (OETF):</span><span class="se">\n</span><span class="s">'</span>
-             <span class="s">'</span><span class="se">\t</span><span class="s">{1}</span><span class="se">\n</span><span class="s">'</span>
-             <span class="s">'</span><span class="se">\n</span><span class="s">"sRGB" and "Adobe RGB 1998" colourspaces (Linear):</span><span class="se">\n</span><span class="s">'</span>
-             <span class="s">'</span><span class="se">\t</span><span class="s">sRGB: {2}</span><span class="se">\n\t</span><span class="s">Adobe RGB 1998: {3}'</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+<span class="n">message_box</span><span class="p">((</span><span class="s1">'Reference "green" "CIE XYZ" colourspace tristimulus '</span>
+             <span class="s1">'values:</span><span class="se">\n</span><span class="s1">'</span>
+             <span class="s1">'</span><span class="se">\t</span><span class="s1">{0}</span><span class="se">\n</span><span class="s1">'</span>
+             <span class="s1">'</span><span class="se">\n</span><span class="s1">"sRGB" colourspace values (OETF):</span><span class="se">\n</span><span class="s1">'</span>
+             <span class="s1">'</span><span class="se">\t</span><span class="s1">{1}</span><span class="se">\n</span><span class="s1">'</span>
+             <span class="s1">'</span><span class="se">\n</span><span class="s1">"sRGB" and "Adobe RGB 1998" colourspaces (Linear):</span><span class="se">\n</span><span class="s1">'</span>
+             <span class="s1">'</span><span class="se">\t</span><span class="s1">sRGB: {2}</span><span class="se">\n\t</span><span class="s1">Adobe RGB 1998: {3}'</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
     <span class="n">XYZ_r2</span><span class="p">,</span>
     <span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="n">sRGB_rd2</span> <span class="o">*</span> <span class="mi">255</span><span class="p">),</span>
     <span class="n">sRGB_r2</span><span class="p">,</span>
@@ -459,7 +459,7 @@ Thus there should be no surprise that component-wise multiply does not yield a p
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">XYZ_sRGB1</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">RGB_to_XYZ</span><span class="p">(</span><span class="n">sRGB_r1</span><span class="p">,</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">XYZ_sRGB1</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">RGB_to_XYZ</span><span class="p">(</span><span class="n">sRGB_r1</span><span class="p">,</span>
                               <span class="n">sRGB_w</span><span class="p">,</span>
                               <span class="n">illuminant</span><span class="p">,</span>
                               <span class="n">sRGB_RGB_to_XYZ</span><span class="p">)</span>
@@ -469,11 +469,11 @@ Thus there should be no surprise that component-wise multiply does not yield a p
                                  <span class="n">illuminant</span><span class="p">,</span>
                                  <span class="n">adobe98_RGB_to_XYZ</span><span class="p">)</span>
 
-<span class="n">message_box</span><span class="p">((</span><span class="s">'Converting back "dark skin" "CIE XYZ" colourspace '</span>
-             <span class="s">'tristimulus values from "sRGB" and "Adobe RGB 1998" '</span>
-             <span class="s">'colourspaces:</span><span class="se">\n</span><span class="s">'</span>
-             <span class="s">'</span><span class="se">\t</span><span class="s">From sRGB: {0}</span><span class="se">\n\t</span><span class="s">From Adobe RGB 1998: {1}</span><span class="se">\n</span><span class="s">'</span>
-             <span class="s">'</span><span class="se">\n</span><span class="s">Everything looks fine!'</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+<span class="n">message_box</span><span class="p">((</span><span class="s1">'Converting back "dark skin" "CIE XYZ" colourspace '</span>
+             <span class="s1">'tristimulus values from "sRGB" and "Adobe RGB 1998" '</span>
+             <span class="s1">'colourspaces:</span><span class="se">\n</span><span class="s1">'</span>
+             <span class="s1">'</span><span class="se">\t</span><span class="s1">From sRGB: {0}</span><span class="se">\n\t</span><span class="s1">From Adobe RGB 1998: {1}</span><span class="se">\n</span><span class="s1">'</span>
+             <span class="s1">'</span><span class="se">\n</span><span class="s1">Everything looks fine!'</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
     <span class="n">XYZ_sRGB1</span><span class="p">,</span> <span class="n">XYZ_adobe981</span><span class="p">))</span>
 </pre></div>
 
@@ -550,7 +550,7 @@ $$<p>With $sRGB_k$ and $adobe98_k$ being equivalent arbitrary scaling factors fo
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">])</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">])</span>
 
 <span class="n">sRGB_k</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_RGB</span><span class="p">(</span><span class="n">k</span><span class="p">,</span>
                            <span class="n">illuminant</span><span class="p">,</span>
@@ -574,11 +574,11 @@ $$<p>With $sRGB_k$ and $adobe98_k$ being equivalent arbitrary scaling factors fo
                                    <span class="n">adobe98_w</span><span class="p">,</span>
                                    <span class="n">adobe98_RGB_to_XYZ</span><span class="p">)</span>
 
-<span class="n">message_box</span><span class="p">((</span><span class="s">'Multiplying "dark skin" with "green" and converting back to '</span>
-             <span class="s">'"CIE XYZ" colourspace tristimulus values from "sRGB" and '</span>
-             <span class="s">'"Adobe RGB 1998" colourspaces:</span><span class="se">\n</span><span class="s">'</span>
-             <span class="s">'</span><span class="se">\t</span><span class="s">From sRGB: {0}</span><span class="se">\n\t</span><span class="s">From Adobe RGB 1998: {1}</span><span class="se">\n</span><span class="s">'</span>
-             <span class="s">'</span><span class="se">\n</span><span class="s">Houston? We have a problem!'</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+<span class="n">message_box</span><span class="p">((</span><span class="s1">'Multiplying "dark skin" with "green" and converting back to '</span>
+             <span class="s1">'"CIE XYZ" colourspace tristimulus values from "sRGB" and '</span>
+             <span class="s1">'"Adobe RGB 1998" colourspaces:</span><span class="se">\n</span><span class="s1">'</span>
+             <span class="s1">'</span><span class="se">\t</span><span class="s1">From sRGB: {0}</span><span class="se">\n\t</span><span class="s1">From Adobe RGB 1998: {1}</span><span class="se">\n</span><span class="s1">'</span>
+             <span class="s1">'</span><span class="se">\n</span><span class="s1">Houston? We have a problem!'</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
     <span class="n">XYZ_sRGB_m1</span><span class="p">,</span> <span class="n">XYZ_adobe98_m1</span><span class="p">))</span>
 </pre></div>
 
@@ -639,18 +639,18 @@ $$<p>With $sRGB_k$ and $adobe98_k$ being equivalent arbitrary scaling factors fo
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">colour.plotting</span> <span class="kn">import</span> <span class="o">*</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">colour.plotting</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">sRGB_m1</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_sRGB</span><span class="p">(</span><span class="n">XYZ_sRGB_m1</span><span class="p">)</span>
 <span class="n">adobe98_m1</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_sRGB</span><span class="p">(</span><span class="n">XYZ_adobe98_m1</span><span class="p">)</span>
 
 <span class="n">sRGB_difference</span> <span class="o">=</span> <span class="n">sRGB_m1</span> <span class="o">-</span> <span class="n">adobe98_m1</span>
 
-<span class="c"># The difference is producing negative values thus we clip the result, although the</span>
-<span class="c"># remaining data should illustrate the effect.</span>
+<span class="c1"># The difference is producing negative values thus we clip the result, although the</span>
+<span class="c1"># remaining data should illustrate the effect.</span>
 <span class="n">sRGB_difference</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">sRGB_difference</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
-<span class="n">single_colour_plot</span><span class="p">(</span><span class="n">colour_parameter</span><span class="p">(</span><span class="s">'sRGB - Adobe RGB 1998'</span><span class="p">,</span> <span class="n">sRGB_difference</span><span class="p">),</span> <span class="n">text_size</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+<span class="n">single_colour_plot</span><span class="p">(</span><span class="n">colour_parameter</span><span class="p">(</span><span class="s1">'sRGB - Adobe RGB 1998'</span><span class="p">,</span> <span class="n">sRGB_difference</span><span class="p">),</span> <span class="n">text_size</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -700,23 +700,23 @@ $$<p>With $sRGB_k$ and $adobe98_k$ being equivalent arbitrary scaling factors fo
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">colourspaces_CIE_1931_chromaticity_diagram_plot</span><span class="p">(</span>
-    <span class="p">[</span><span class="s">'sRGB'</span><span class="p">,</span> <span class="s">'Adobe RGB 1998'</span><span class="p">],</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">colourspaces_CIE_1931_chromaticity_diagram_plot</span><span class="p">(</span>
+    <span class="p">[</span><span class="s1">'sRGB'</span><span class="p">,</span> <span class="s1">'Adobe RGB 1998'</span><span class="p">],</span>
 <span class="n">standalone</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
-<span class="n">title</span><span class="o">=</span><span class="s">'"dark skin" Colour Computation'</span><span class="p">)</span>
+<span class="n">title</span><span class="o">=</span><span class="s1">'"dark skin" Colour Computation'</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">XYZ</span> <span class="ow">in</span> <span class="p">((</span><span class="s">'"dark skin"'</span><span class="p">,</span> <span class="n">XYZ_r1</span><span class="p">),</span>
-                  <span class="p">(</span><span class="s">'"dark skin" * "green" - sRGB'</span><span class="p">,</span> <span class="n">XYZ_sRGB_m1</span><span class="p">),</span>
-                  <span class="p">(</span><span class="s">'"dark skin" * "green" - Adobe RGB 1998'</span><span class="p">,</span> <span class="n">XYZ_adobe98_m1</span><span class="p">)):</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">XYZ</span> <span class="ow">in</span> <span class="p">((</span><span class="s1">'"dark skin"'</span><span class="p">,</span> <span class="n">XYZ_r1</span><span class="p">),</span>
+                  <span class="p">(</span><span class="s1">'"dark skin" * "green" - sRGB'</span><span class="p">,</span> <span class="n">XYZ_sRGB_m1</span><span class="p">),</span>
+                  <span class="p">(</span><span class="s1">'"dark skin" * "green" - Adobe RGB 1998'</span><span class="p">,</span> <span class="n">XYZ_adobe98_m1</span><span class="p">)):</span>
     
     <span class="n">xy</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_xy</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>
 
-    <span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xy</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s">'o'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'white'</span><span class="p">)</span>
+    <span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xy</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">'o'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'white'</span><span class="p">)</span>
     <span class="n">pylab</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">name</span><span class="p">,</span>
                    <span class="n">xy</span><span class="o">=</span><span class="n">xy</span><span class="p">,</span>
                    <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
-                   <span class="n">textcoords</span><span class="o">=</span><span class="s">'offset points'</span><span class="p">,</span>
-                   <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s">'-&gt;'</span><span class="p">,</span> <span class="n">connectionstyle</span><span class="o">=</span><span class="s">'arc3, rad=0.2'</span><span class="p">))</span>
+                   <span class="n">textcoords</span><span class="o">=</span><span class="s1">'offset points'</span><span class="p">,</span>
+                   <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">'-&gt;'</span><span class="p">,</span> <span class="n">connectionstyle</span><span class="o">=</span><span class="s1">'arc3, rad=0.2'</span><span class="p">))</span>
 
 <span class="n">display</span><span class="p">(</span><span class="n">standalone</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
@@ -768,7 +768,7 @@ $$<p>With $sRGB_k$ and $adobe98_k$ being equivalent arbitrary scaling factors fo
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">Lab1</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_Lab</span><span class="p">(</span><span class="n">XYZ_sRGB_m1</span><span class="p">,</span> <span class="n">illuminant</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">Lab1</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_Lab</span><span class="p">(</span><span class="n">XYZ_sRGB_m1</span><span class="p">,</span> <span class="n">illuminant</span><span class="p">)</span>
 <span class="n">Lab2</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_Lab</span><span class="p">(</span><span class="n">XYZ_adobe98_m1</span><span class="p">,</span> <span class="n">illuminant</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">colour</span><span class="o">.</span><span class="n">delta_E_CIE2000</span><span class="p">(</span><span class="n">Lab1</span><span class="p">,</span> <span class="n">Lab2</span><span class="p">))</span>
@@ -829,7 +829,7 @@ $$<p>With $sRGB_k$ and $adobe98_k$ being equivalent arbitrary scaling factors fo
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="n">aces_w</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">ACES_RGB_COLOURSPACE</span><span class="o">.</span><span class="n">whitepoint</span>
 <span class="n">aces_XYZ_to_RGB</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">ACES_RGB_COLOURSPACE</span><span class="o">.</span><span class="n">XYZ_to_RGB_matrix</span>
@@ -956,7 +956,7 @@ $$<p>With $sRGB_k$ and $adobe98_k$ being equivalent arbitrary scaling factors fo
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">deltas_E</span> <span class="o">=</span> <span class="p">[]</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">deltas_E</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">XYZ1</span><span class="p">,</span> <span class="n">XYZ2</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">XYZs_m</span><span class="p">):</span>
     <span class="n">Lab1</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_Lab</span><span class="p">(</span><span class="n">XYZ1</span><span class="p">,</span> <span class="n">illuminant</span><span class="p">)</span>
     <span class="n">Lab2</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_Lab</span><span class="p">(</span><span class="n">XYZ2</span><span class="p">,</span> <span class="n">illuminant</span><span class="p">)</span>
@@ -1023,7 +1023,7 @@ $$<p>With $sRGB_k$ and $adobe98_k$ being equivalent arbitrary scaling factors fo
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">([</span><span class="n">delta_E</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">delta_E</span> <span class="ow">in</span> <span class="n">deltas_E</span><span class="p">])</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">([</span><span class="n">delta_E</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">delta_E</span> <span class="ow">in</span> <span class="n">deltas_E</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -1073,7 +1073,7 @@ $$<p>With $sRGB_k$ and $adobe98_k$ being equivalent arbitrary scaling factors fo
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="n">rec2020_w</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">REC_2020_COLOURSPACE</span><span class="o">.</span><span class="n">whitepoint</span>
 <span class="n">rec2020_XYZ_to_RGB</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">REC_2020_COLOURSPACE</span><span class="o">.</span><span class="n">XYZ_to_RGB_matrix</span>
@@ -1199,7 +1199,7 @@ $$<p>With $sRGB_k$ and $adobe98_k$ being equivalent arbitrary scaling factors fo
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">deltas_E</span> <span class="o">=</span> <span class="p">[]</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">deltas_E</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">XYZ1</span><span class="p">,</span> <span class="n">XYZ2</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">XYZs_m</span><span class="p">):</span>
     <span class="n">Lab1</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_Lab</span><span class="p">(</span><span class="n">XYZ1</span><span class="p">,</span> <span class="n">illuminant</span><span class="p">)</span>
     <span class="n">Lab2</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_Lab</span><span class="p">(</span><span class="n">XYZ2</span><span class="p">,</span> <span class="n">illuminant</span><span class="p">)</span>
@@ -1266,7 +1266,7 @@ $$<p>With $sRGB_k$ and $adobe98_k$ being equivalent arbitrary scaling factors fo
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">([</span><span class="n">delta_E</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">delta_E</span> <span class="ow">in</span> <span class="n">deltas_E</span><span class="p">]))</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">([</span><span class="n">delta_E</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">delta_E</span> <span class="ow">in</span> <span class="n">deltas_E</span><span class="p">]))</span>
 </pre></div>
 
 </div>
@@ -1368,21 +1368,21 @@ $$<p>We plot the functions by using a uniformly spaced incrementing $k$ variable
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">X_sRGB</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mf">0.41238656</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">0.35759149</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">0.18045049</span> <span class="o">*</span> <span class="n">x</span>
 <span class="n">X_ACES</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mf">0.9525524</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">0.00009368</span> <span class="o">*</span> <span class="n">x</span>
 
-<span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">X_sRGB</span><span class="p">,</span> <span class="n">k</span><span class="p">)),</span> <span class="s">'o-'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'red'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'X - sRGB'</span><span class="p">)</span>
-<span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">X_ACES</span><span class="p">,</span> <span class="n">k</span><span class="p">)),</span> <span class="s">'o-'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'green'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'X - ACES RGB'</span><span class="p">)</span>
+<span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">X_sRGB</span><span class="p">,</span> <span class="n">k</span><span class="p">)),</span> <span class="s1">'o-'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'X - sRGB'</span><span class="p">)</span>
+<span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">X_ACES</span><span class="p">,</span> <span class="n">k</span><span class="p">)),</span> <span class="s1">'o-'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'green'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'X - ACES RGB'</span><span class="p">)</span>
 
-<span class="n">settings</span> <span class="o">=</span> <span class="p">{</span><span class="s">'title'</span><span class="p">:</span> <span class="s">'sRGB - ACES RGB - Uniformly Spaced Incrementing RGB'</span><span class="p">,</span>
-            <span class="s">'x_label'</span><span class="p">:</span> <span class="s">'k'</span><span class="p">,</span>
-            <span class="s">'y_label'</span><span class="p">:</span> <span class="s">'X'</span><span class="p">,</span>
-            <span class="s">'x_tighten'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
-            <span class="s">'legend'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
-            <span class="s">'legend_location'</span><span class="p">:</span> <span class="s">'upper left'</span><span class="p">,</span>
-            <span class="s">'x_ticker'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
-            <span class="s">'y_ticker'</span><span class="p">:</span> <span class="bp">True</span><span class="p">}</span>
+<span class="n">settings</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'title'</span><span class="p">:</span> <span class="s1">'sRGB - ACES RGB - Uniformly Spaced Incrementing RGB'</span><span class="p">,</span>
+            <span class="s1">'x_label'</span><span class="p">:</span> <span class="s1">'k'</span><span class="p">,</span>
+            <span class="s1">'y_label'</span><span class="p">:</span> <span class="s1">'X'</span><span class="p">,</span>
+            <span class="s1">'x_tighten'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+            <span class="s1">'legend'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+            <span class="s1">'legend_location'</span><span class="p">:</span> <span class="s1">'upper left'</span><span class="p">,</span>
+            <span class="s1">'x_ticker'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+            <span class="s1">'y_ticker'</span><span class="p">:</span> <span class="bp">True</span><span class="p">}</span>
 <span class="n">decorate</span><span class="p">(</span><span class="o">**</span><span class="n">settings</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="o">**</span><span class="n">settings</span><span class="p">)</span>
 </pre></div>
@@ -1434,21 +1434,21 @@ $$<p>We plot the functions by using a uniformly spaced incrementing $k$ variable
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">X_sRGB</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mf">0.41238656</span> <span class="o">*</span> <span class="n">x</span>
 <span class="n">X_ACES</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mf">0.9525524</span> <span class="o">*</span> <span class="n">x</span>
 
-<span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">X_sRGB</span><span class="p">,</span> <span class="n">k</span><span class="p">)),</span> <span class="s">'o-'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'red'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'X - sRGB'</span><span class="p">)</span>
-<span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">X_ACES</span><span class="p">,</span> <span class="n">k</span><span class="p">)),</span> <span class="s">'o-'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'green'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'X - ACES RGB'</span><span class="p">)</span>
+<span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">X_sRGB</span><span class="p">,</span> <span class="n">k</span><span class="p">)),</span> <span class="s1">'o-'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'X - sRGB'</span><span class="p">)</span>
+<span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">X_ACES</span><span class="p">,</span> <span class="n">k</span><span class="p">)),</span> <span class="s1">'o-'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'green'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'X - ACES RGB'</span><span class="p">)</span>
 
-<span class="n">settings</span> <span class="o">=</span> <span class="p">{</span><span class="s">'title'</span><span class="p">:</span> <span class="s">'sRGB - ACES RGB - Uniformly Spaced Incrementing R'</span><span class="p">,</span>
-            <span class="s">'x_label'</span><span class="p">:</span> <span class="s">'k'</span><span class="p">,</span>
-            <span class="s">'y_label'</span><span class="p">:</span> <span class="s">'X'</span><span class="p">,</span>
-            <span class="s">'x_tighten'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
-            <span class="s">'legend'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
-            <span class="s">'legend_location'</span><span class="p">:</span> <span class="s">'upper left'</span><span class="p">,</span>
-            <span class="s">'x_ticker'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
-            <span class="s">'y_ticker'</span><span class="p">:</span> <span class="bp">True</span><span class="p">}</span>
+<span class="n">settings</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'title'</span><span class="p">:</span> <span class="s1">'sRGB - ACES RGB - Uniformly Spaced Incrementing R'</span><span class="p">,</span>
+            <span class="s1">'x_label'</span><span class="p">:</span> <span class="s1">'k'</span><span class="p">,</span>
+            <span class="s1">'y_label'</span><span class="p">:</span> <span class="s1">'X'</span><span class="p">,</span>
+            <span class="s1">'x_tighten'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+            <span class="s1">'legend'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+            <span class="s1">'legend_location'</span><span class="p">:</span> <span class="s1">'upper left'</span><span class="p">,</span>
+            <span class="s1">'x_ticker'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+            <span class="s1">'y_ticker'</span><span class="p">:</span> <span class="bp">True</span><span class="p">}</span>
 <span class="n">decorate</span><span class="p">(</span><span class="o">**</span><span class="n">settings</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="o">**</span><span class="n">settings</span><span class="p">)</span>
 </pre></div>
@@ -1501,16 +1501,16 @@ $$<p>We plot the functions by using a uniformly spaced incrementing $k$ variable
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_sRGB</span><span class="p">(</span><span class="mf">0.172906</span><span class="p">)</span> <span class="o">*</span> <span class="n">X_sRGB</span><span class="p">(</span><span class="mf">0.05440562</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="s">'o'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'red'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'X - "dark skin" * "green" sRGB'</span><span class="p">)</span>
-<span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_ACES</span><span class="p">(</span><span class="mf">0.11758989</span><span class="p">)</span> <span class="o">*</span> <span class="n">X_ACES</span><span class="p">(</span><span class="mf">0.15129818</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="s">'o'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'green'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'X - "dark skin" * "green" ACES RGB'</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_sRGB</span><span class="p">(</span><span class="mf">0.172906</span><span class="p">)</span> <span class="o">*</span> <span class="n">X_sRGB</span><span class="p">(</span><span class="mf">0.05440562</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'X - "dark skin" * "green" sRGB'</span><span class="p">)</span>
+<span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_ACES</span><span class="p">(</span><span class="mf">0.11758989</span><span class="p">)</span> <span class="o">*</span> <span class="n">X_ACES</span><span class="p">(</span><span class="mf">0.15129818</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'green'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'X - "dark skin" * "green" ACES RGB'</span><span class="p">)</span>
 
-<span class="n">settings</span> <span class="o">=</span> <span class="p">{</span><span class="s">'title'</span><span class="p">:</span> <span class="s">'sRGB - ACES RGB - X Value - "dark skin" * "green"'</span><span class="p">,</span>
-            <span class="s">'x_label'</span><span class="p">:</span> <span class="s">'X Value'</span><span class="p">,</span>
-            <span class="s">'x_tighten'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
-            <span class="s">'legend'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
-            <span class="s">'legend_location'</span><span class="p">:</span> <span class="s">'upper left'</span><span class="p">,</span>
-            <span class="s">'x_ticker'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
-            <span class="s">'y_ticker'</span><span class="p">:</span> <span class="bp">True</span><span class="p">}</span>
+<span class="n">settings</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'title'</span><span class="p">:</span> <span class="s1">'sRGB - ACES RGB - X Value - "dark skin" * "green"'</span><span class="p">,</span>
+            <span class="s1">'x_label'</span><span class="p">:</span> <span class="s1">'X Value'</span><span class="p">,</span>
+            <span class="s1">'x_tighten'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+            <span class="s1">'legend'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+            <span class="s1">'legend_location'</span><span class="p">:</span> <span class="s1">'upper left'</span><span class="p">,</span>
+            <span class="s1">'x_ticker'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+            <span class="s1">'y_ticker'</span><span class="p">:</span> <span class="bp">True</span><span class="p">}</span>
 <span class="n">decorate</span><span class="p">(</span><span class="o">**</span><span class="n">settings</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="o">**</span><span class="n">settings</span><span class="p">)</span>
 </pre></div>
@@ -1562,8 +1562,8 @@ $$<p>We plot the functions by using a uniformly spaced incrementing $k$ variable
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">colourspaces_CIE_1931_chromaticity_diagram_plot</span><span class="p">(</span>
-    <span class="p">[</span><span class="s">'Pointer Gamut'</span><span class="p">,</span> <span class="s">'sRGB'</span><span class="p">,</span> <span class="s">'Rec. 2020'</span><span class="p">,</span> <span class="s">'ACES RGB'</span><span class="p">])</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">colourspaces_CIE_1931_chromaticity_diagram_plot</span><span class="p">(</span>
+    <span class="p">[</span><span class="s1">'Pointer Gamut'</span><span class="p">,</span> <span class="s1">'sRGB'</span><span class="p">,</span> <span class="s1">'Rec. 2020'</span><span class="p">,</span> <span class="s1">'ACES RGB'</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -1616,7 +1616,7 @@ $$<p>We plot the functions by using a uniformly spaced incrementing $k$ variable
 <li>Existing colours in a texture or a photo are within the volume of a real object colours gamut.</li>
 </ul>
 <p>The $RGB$ lighting model doesn't allow precise colorimetric value computations but we still can produce images faithful and pleasing thanks to our artistic sense. We have been doing that for years and this is probably the most important thing for the entertainment industry.</p>
-<p>Ultimately, the solution will be the switch to spectral rendering, it will happen. Question is when? There are already quite a lot of spectral renderers outside. Weta Digital has been using <a href="http://www.fxguide.com/featured/manuka-weta-digitals-new-renderer/">Manuka</a> on a few movies already. We still need to address the issues with reflectance data before they become mainstream. While its theoretically impossible to reconstruct a spectral power distribution from a single $RGB$ triplet because an infinity of spectral power distributions yield to the same tristimulus values, some research has been done on the problem and a few methods exists. For example, <em>Brian Smits (1999)</em> describes a method that leads to <a href="http://nbviewer.ipython.org/github/colour-science/colour-website/blob/master/ipython/about_reflectance_recovery.ipynb">very good results</a>. The recovered reflectance data is not useful for precise colorimetry but it yields very good results in the context of computer graphics imagery.</p>
+<p>Ultimately, the solution will be the switch to spectral rendering, it will happen. Question is when? There are already quite a lot of spectral renderers outside. Weta Digital has been using <a href="http://www.fxguide.com/featured/manuka-weta-digitals-new-renderer/">Manuka</a> on a few movies already. We still need to address the issues with reflectance data before they become mainstream. While its theoretically impossible to reconstruct a spectral power distribution from a single $RGB$ triplet because an infinity of spectral power distributions yield to the same tristimulus values, some research has been done on the problem and a few methods exists. For example, <em>Brian Smits (1999)</em> describes a method that leads to <a href="http://nbviewer.jupyter.org/github/colour-science/colour-website/blob/master/ipython/about_reflectance_recovery.ipynb">very good results</a>. The recovered reflectance data is not useful for precise colorimetry but it yields very good results in the context of computer graphics imagery.</p>
 <p>As of now, we continue discussing what colourspace is the best for computations in the $RGB$ lighting model and the issue has also been raised on the <a href="https://groups.google.com/forum/#!topic/academyaces/9b4VuqPcOHQ">ACES mailing list</a>.</p>
 
 </div>
@@ -1649,7 +1649,7 @@ $$<p>We plot the functions by using a uniformly spaced incrementing $k$ variable
 <div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">XYZ_sRGB1</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">RGB_to_XYZ</span><span class="p">(</span><span class="n">sRGB_r1</span><span class="p">,</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">XYZ_sRGB1</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">RGB_to_XYZ</span><span class="p">(</span><span class="n">sRGB_r1</span><span class="p">,</span>
                               <span class="n">sRGB_w</span><span class="p">,</span>
                               <span class="n">illuminant</span><span class="p">,</span>
                               <span class="n">sRGB_RGB_to_XYZ</span><span class="p">)</span>
@@ -1675,7 +1675,7 @@ $$<p>We plot the functions by using a uniformly spaced incrementing $k$ variable
 <div class="prompt input_prompt">In [19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">XYZ_sRGB_m1</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">RGB_to_XYZ</span><span class="p">(</span><span class="n">sRGB_m</span><span class="p">,</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">XYZ_sRGB_m1</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">RGB_to_XYZ</span><span class="p">(</span><span class="n">sRGB_m</span><span class="p">,</span>
                                 <span class="n">sRGB_w</span><span class="p">,</span>
                                 <span class="n">illuminant</span><span class="p">,</span>
                                 <span class="n">sRGB_RGB_to_XYZ</span><span class="p">)</span>

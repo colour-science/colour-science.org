@@ -48,11 +48,29 @@
         </div>
         <div class="row">
             <div class="col-md-4">
+                <h2>Nick Shaw</h2>
+                <p>
+                    <em>Workflow Consultant</em> @
+                    <a href="http://antlerpost.com/">Antler Post</a>
+                </p>
+                <p>YCbCr Colour Encoding, RED Colourspaces Derivation.</p>
+                <p>
+                    <a href="http://antlerpost.com/">Website</a>
+                </p>
+            </div>
+            <div class="col-md-4">
                 <h2>Luke Canavan</h2>
                 <p>Colour Quality Scale, Luminous Flux.</p>
                 <p>
                     <a href="https://twitter.com/canavandl">Twitter</a>
                 </p>
+            </div>
+            <div class="col-md-4">
+                <h2>Sean Cooper</h2>
+                <p>
+                    <em>Colour Scientist</em>
+                </p>
+                <p>Technical Support</p>
             </div>
         </div>
     </div>
@@ -149,17 +167,6 @@
                 </p>
             </div>
             <div class="col-md-4">
-                <h2>Nick Shaw</h2>
-                <p>
-                    <em>Workflow Consultant</em> @
-                    <a href="http://antlerpost.com/">Antler Post</a>
-                </p>
-                <p>RED Colourspaces Derivation.</p>
-                <p>
-                    <a href="http://antlerpost.com/">Website</a>
-                </p>
-            </div>
-            <div class="col-md-4">
                 <h2>Kevin Wheatley</h2>
                 <p>
                     <em>Head of Imaging at Framestore</em> @
@@ -196,10 +203,13 @@
                         <a href="https://github.com/henczati">henczati</a>
                     </li>
                     <li>
+                        <a href="https://github.com/jaguarondi">jaguarondi</a>
+                    </li>
+                    <li>
                         <a href="https://github.com/Ron024">Ron024</a>
                     </li>
                     <li>
-                        <a href="https://github.com/scooperly">scooperly</a>
+                        <a href="https://github.com/sobotka">sobotka</a>
                     </li>
                     <li>
                         <a href="https://github.com/zachlewis">zachlewis</a>

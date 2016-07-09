@@ -19,10 +19,6 @@ Primary Dependencies
 -  `Python 2.7 <https://www.python.org/download/releases/>`_ or
    `Python 3.5 <https://www.python.org/download/releases/>`_
 -  `NumPy <http://www.numpy.org/>`_
-
-Optional Features Dependencies
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 -  `SciPy <http://www.scipy.org/>`_
 
 Optional Figures Plotting Dependencies

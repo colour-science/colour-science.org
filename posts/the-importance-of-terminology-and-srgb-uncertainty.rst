@@ -59,7 +59,7 @@ Tom confirms that intuition a few paragraph later:
     |
     | The *gamut* defined by *sRGB* colourspace should actually be of a
         concern if one tries to achieve photo-realistic rendering as shown by
-        `Steve Agland <http://nbviewer.ipython.org/gist/sagland/3c791e79353673fd24fa>`_
+        `Steve Agland <http://nbviewer.jupyter.org/gist/sagland/3c791e79353673fd24fa>`_
         and `us <http://colour-science.org/posts/about-rendering-engines-colourspaces-agnosticism/>`_.
 
 What is sRGB?
@@ -132,7 +132,7 @@ neutral to that *RGB colourspace*.
     (`Colour - Analysis <https://github.com/colour-science/colour-analysis>`__)
 
 An *RGB colourspace* can have
-`different whitepoints <https://github.com/colour-science/colour-ipython/blob/master/notebooks/colorimetry/illuminants.ipynb>`_
+`different whitepoints <https://github.com/colour-science/colour-notebooks/blob/master/notebooks/colorimetry/illuminants.ipynb>`_
 depending its context usage, *sRGB colourspace* IEC 61966-2-1:1999 standard adopts
 `CIE Standard Illuminant D65 <https://en.wikipedia.org/wiki/Illuminant_D65>`_
 as **whitepoint** but an `ICC <https://en.wikipedia.org/wiki/International_Color_Consortium>`_

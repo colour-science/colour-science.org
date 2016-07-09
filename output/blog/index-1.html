@@ -42,7 +42,7 @@
 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Downloads <b class="caret"></b></a>
             <ul class="dropdown-menu">
 <li>
-<a href="https://github.com/colour-science/colour/archive/v0.3.7.zip">Latest (v0.3.7)</a>
+<a href="https://github.com/colour-science/colour/archive/v0.3.8.zip">Latest (v0.3.8)</a>
                     </li>
 <li>
 <a href="https://github.com/colour-science/colour/releases">All Releases</a>
@@ -91,7 +91,7 @@
 <a href="../api-reference">API Reference</a>
                     </li>
 <li>
-<a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb">IPython Notebooks</a>
+<a href="http://nbviewer.jupyter.org/github/colour-science/colour-notebooks/blob/master/notebooks/colour.ipynb">Jupyter Notebooks</a>
                     </li>
 <li>
 <a href="../features">Features</a>
@@ -109,7 +109,7 @@
 <a href="../bibliography">Bibliography</a>
                     </li>
 <li>
-<a href="http://dx.doi.org/10.5281/zenodo.35309">Cite Us</a>
+<a href="http://dx.doi.org/10.5281/zenodo.57294">Cite Us</a>
                     </li>
 <li>
 <a href="../cited-by">Cited By</a>
@@ -186,8 +186,63 @@
             
             
 
+    
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../posts/a-plea-for-colour-analysis-tools-in-dcc-applications/" class="u-url">A Plea for Colour Analysis Tools in DCC Applications</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../posts/about-rgb-colourspace-models-performance/" class="u-url">About RGB Colourspace Models Performance</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Colour Developers
+            </span></p>
+            <p class="dateline"><a href="../posts/about-rgb-colourspace-models-performance/" rel="bookmark"><time class="published dt-published" datetime="2014-10-09T03:38:00-13:00" title="2014-10-09 03:38">2014-10-09 03:38</time></a></p>
+                <p class="commentline">
+        
+    <a href="../posts/about-rgb-colourspace-models-performance/#disqus_thread" data-disqus-identifier="cache/posts/about-rgb-colourspace-models-performance.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Introduction">Introduction<a class="anchor-link" href="../posts/about-rgb-colourspace-models-performance/#Introduction">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The purpose of this document is to compare <em>RGB</em> colourspace models operations performance against spectral reference.</p>
+<p>Various mathematical operations because of the nature of matrices and linear algebra are dependent on given <em>RGB</em> colourspace primaries. The same operations performed in different <em>RGB</em> colourspaces will yield different tristimulus values once converted back to <em>CIE XYZ</em> colourspace. For example <em>multiplication</em>, <em>division</em> and <em>power</em> operations are <em>RGB</em> colourspace primaries dependent while <em>addition</em> and <em>subtraction</em> are not.</p>
+<p>The <em>rgb_colourspace_primaries_dependency</em> definition below demonstrates this behaviour: Two colours are selected from the colour rendition chart, they are then used as operands for different operations happening respectively in <em>sRGB</em> and <em>Rec. 2020</em> colourspaces. The two resulting colours are then converted back to <em>CIE XYZ</em> colourspace and compared.</p>
+<blockquote>
+<p>Note: A companion spreadsheet is available at the following url: <a href="http://goo.gl/akrH5m">http://goo.gl/akrH5m</a></p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="../posts/about-rgb-colourspace-models-performance/">Read more…</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../posts/a-plea-for-colour-analysis-tools-in-dcc-applications/" class="u-url">A Plea for Colour Analysis Tools in DCC Applications</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 Colour Developers
@@ -331,7 +386,7 @@
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>It has pretty much always been assumed by a lot of people, including myself, that rendering engines are colourspaces agnostic, and whatever your primaries are, it should not make any differences.</p>
 <p>An interesting thread with some VFX industry veterans about the <a href="http://www.oscars.org/science-technology/council/projects/aces.html">Academy Color Encoding System</a> has been ignited by Steve Agland.</p>
-<p>He was describing issues while rendering in ACES RGB colourspace where the rendering equation could generate some very saturated colours, colour clipping and loss of details. Since we have started this notebook, Steve has written a post illustrating those issues, I suggest that you take a look at his <a href="http://nbviewer.ipython.org/gist/sagland/3c791e79353673fd24fa">notebook</a>.</p>
+<p>He was describing issues while rendering in ACES RGB colourspace where the rendering equation could generate some very saturated colours, colour clipping and loss of details. Since we have started this notebook, Steve has written a post illustrating those issues, I suggest that you take a look at his <a href="http://nbviewer.jupyter.org/gist/sagland/3c791e79353673fd24fa">notebook</a>.</p>
 <p>As we were discussing, <a href="http://mentalraytips.blogspot.fr/">Zap 'Master' Anderson</a> pointed that he was assuming primaries wouldn't matter but that it was wrong.</p>
 <p>The <a href="https://groups.google.com/d/msg/academyaces/9b4VuqPcOHQ/Hg8c9V6flOYJ">TL;DR; version</a> of <em>Rick Sayre</em> from <a href="http://www.pixar.com/">Pixar</a></p>
 <blockquote>
@@ -380,7 +435,7 @@ deploying:</p>
 <li><a class="reference external" href="http://matplotlib.org/">Matplotlib</a></li>
 <li><a class="reference external" href="http://www.scipy.org/">SciPy</a></li>
 <li><a class="reference external" href="http://ipython.org/notebook.html">IPython</a></li>
-<li><a class="reference external" href="https://nose.readthedocs.org/en/latest">Nose</a></li>
+<li><a class="reference external" href="https://nose.readthedocs.io/en/latest">Nose</a></li>
 <li><a class="reference external" href="https://pypi.python.org/pypi/coverage">Coverage</a></li>
 <li><a class="reference external" href="https://pypi.python.org/pypi/flake8">Flake8</a></li>
 <li><a class="reference external" href="https://sphinx-doc.org">Sphinx</a></li>

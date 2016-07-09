@@ -62,7 +62,7 @@ As we are increasingly using wide gamut colourspaces (ACES RGB, Rec. 2020, ProPh
 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Downloads <b class="caret"></b></a>
             <ul class="dropdown-menu">
 <li>
-<a href="https://github.com/colour-science/colour/archive/v0.3.7.zip">Latest (v0.3.7)</a>
+<a href="https://github.com/colour-science/colour/archive/v0.3.8.zip">Latest (v0.3.8)</a>
                     </li>
 <li>
 <a href="https://github.com/colour-science/colour/releases">All Releases</a>
@@ -111,7 +111,7 @@ As we are increasingly using wide gamut colourspaces (ACES RGB, Rec. 2020, ProPh
 <a href="../../api-reference">API Reference</a>
                     </li>
 <li>
-<a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb">IPython Notebooks</a>
+<a href="http://nbviewer.jupyter.org/github/colour-science/colour-notebooks/blob/master/notebooks/colour.ipynb">Jupyter Notebooks</a>
                     </li>
 <li>
 <a href="../../features">Features</a>
@@ -129,7 +129,7 @@ As we are increasingly using wide gamut colourspaces (ACES RGB, Rec. 2020, ProPh
 <a href="../../bibliography">Bibliography</a>
                     </li>
 <li>
-<a href="http://dx.doi.org/10.5281/zenodo.35309">Cite Us</a>
+<a href="http://dx.doi.org/10.5281/zenodo.57294">Cite Us</a>
                     </li>
 <li>
 <a href="../../cited-by">Cited By</a>
@@ -293,7 +293,7 @@ As we are increasingly using wide gamut colourspaces (ACES RGB, Rec. 2020, ProPh
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pylab</span>
 <span class="kn">from</span> <span class="nn">OpenImageIO</span> <span class="kn">import</span> <span class="n">FLOAT</span><span class="p">,</span> <span class="n">ImageInput</span>
 
@@ -317,16 +317,16 @@ As we are increasingly using wide gamut colourspaces (ACES RGB, Rec. 2020, ProPh
     <span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">vectorised_oecf</span><span class="p">(</span><span class="n">image</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="n">pylab</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 
-    <span class="n">settings</span> <span class="o">=</span> <span class="p">{</span><span class="s">'no_ticks'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
-                <span class="s">'bounding_box'</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
-                <span class="s">'bbox_inches'</span><span class="p">:</span> <span class="s">'tight'</span><span class="p">,</span>
-                <span class="s">'pad_inches'</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+    <span class="n">settings</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'no_ticks'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+                <span class="s1">'bounding_box'</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+                <span class="s1">'bbox_inches'</span><span class="p">:</span> <span class="s1">'tight'</span><span class="p">,</span>
+                <span class="s1">'pad_inches'</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
 
     <span class="n">aspect</span><span class="p">(</span><span class="o">**</span><span class="n">settings</span><span class="p">)</span>
     <span class="n">display</span><span class="p">(</span><span class="o">**</span><span class="n">settings</span><span class="p">)</span>
 
 
-<span class="n">ACES_image</span> <span class="o">=</span> <span class="n">exr_image_as_array</span><span class="p">(</span><span class="s">'resources/images/SonyF35.StillLife_medium.exr'</span><span class="p">)</span>
+<span class="n">ACES_image</span> <span class="o">=</span> <span class="n">exr_image_as_array</span><span class="p">(</span><span class="s1">'resources/images/SonyF35.StillLife_medium.exr'</span><span class="p">)</span>
 <span class="n">image_plot</span><span class="p">(</span><span class="n">ACES_image</span><span class="p">)</span>
 </pre></div>
 
@@ -380,7 +380,7 @@ As we are increasingly using wide gamut colourspaces (ACES RGB, Rec. 2020, ProPh
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">sRGB_w</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">sRGB_COLOURSPACE</span><span class="o">.</span><span class="n">whitepoint</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">sRGB_w</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">sRGB_COLOURSPACE</span><span class="o">.</span><span class="n">whitepoint</span>
 <span class="n">sRGB_p</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">sRGB_COLOURSPACE</span><span class="o">.</span><span class="n">primaries</span>
 <span class="n">sRGB_XYZ_to_RGB</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">sRGB_COLOURSPACE</span><span class="o">.</span><span class="n">XYZ_to_RGB_matrix</span>
 <span class="n">sRGB_RGB_to_XYZ</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">sRGB_COLOURSPACE</span><span class="o">.</span><span class="n">RGB_to_XYZ_matrix</span>
@@ -390,7 +390,7 @@ As we are increasingly using wide gamut colourspaces (ACES RGB, Rec. 2020, ProPh
 <span class="n">ACES_XYZ_to_RGB</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">ACES_RGB_COLOURSPACE</span><span class="o">.</span><span class="n">XYZ_to_RGB_matrix</span>
 <span class="n">ACES_RGB_to_XYZ</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">ACES_RGB_COLOURSPACE</span><span class="o">.</span><span class="n">RGB_to_XYZ_matrix</span>
 
-<span class="n">message_box</span><span class="p">(</span><span class="s">'Computing "ACES RGB" colourspace to "sRGB" colourspace matrix.'</span><span class="p">)</span>
+<span class="n">message_box</span><span class="p">(</span><span class="s1">'Computing "ACES RGB" colourspace to "sRGB" colourspace matrix.'</span><span class="p">)</span>
 
 <span class="n">cat</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">chromatic_adaptation_matrix</span><span class="p">(</span><span class="n">colour</span><span class="o">.</span><span class="n">xy_to_XYZ</span><span class="p">(</span><span class="n">ACES_w</span><span class="p">),</span>
                                          <span class="n">colour</span><span class="o">.</span><span class="n">xy_to_XYZ</span><span class="p">(</span><span class="n">sRGB_w</span><span class="p">))</span>
@@ -442,7 +442,7 @@ As we are increasingly using wide gamut colourspaces (ACES RGB, Rec. 2020, ProPh
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">ACES_image_shape</span> <span class="o">=</span> <span class="n">ACES_image</span><span class="o">.</span><span class="n">shape</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">ACES_image_shape</span> <span class="o">=</span> <span class="n">ACES_image</span><span class="o">.</span><span class="n">shape</span>
 <span class="n">sRGB_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">ACES_RGB_to_sRGB_matrix</span><span class="p">,</span> <span class="n">RGB</span><span class="p">)</span> <span class="k">for</span> <span class="n">RGB</span> <span class="ow">in</span> <span class="n">ACES_image</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))])</span>
 <span class="n">sRGB_image</span> <span class="o">=</span> <span class="n">sRGB_image</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">ACES_image_shape</span><span class="p">)</span>
 <span class="n">image_plot</span><span class="p">(</span><span class="n">sRGB_image</span><span class="p">)</span>
@@ -495,7 +495,7 @@ As we are increasingly using wide gamut colourspaces (ACES RGB, Rec. 2020, ProPh
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">ACES_w</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">ACES_RGB_COLOURSPACE</span><span class="o">.</span><span class="n">whitepoint</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">ACES_w</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">ACES_RGB_COLOURSPACE</span><span class="o">.</span><span class="n">whitepoint</span>
 <span class="n">ACES_p</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">ACES_RGB_COLOURSPACE</span><span class="o">.</span><span class="n">primaries</span>
 <span class="n">ACES_XYZ_to_RGB</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">ACES_RGB_COLOURSPACE</span><span class="o">.</span><span class="n">XYZ_to_RGB_matrix</span>
 <span class="n">ACES_RGB_to_XYZ</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">ACES_RGB_COLOURSPACE</span><span class="o">.</span><span class="n">RGB_to_XYZ_matrix</span>
@@ -511,14 +511,14 @@ As we are increasingly using wide gamut colourspaces (ACES RGB, Rec. 2020, ProPh
 
 <span class="k">def</span> <span class="nf">image_chromaticities_plot</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">to_xy</span><span class="o">=</span><span class="n">ACES_to_xy</span><span class="p">):</span>
     <span class="n">colourspaces_CIE_1931_chromaticity_diagram_plot</span><span class="p">(</span>
-        <span class="p">[</span><span class="s">'Pointer Gamut'</span><span class="p">,</span> <span class="s">'sRGB'</span><span class="p">,</span> <span class="s">'Rec. 2020'</span><span class="p">,</span> <span class="s">'ACES RGB'</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">'Pointer Gamut'</span><span class="p">,</span> <span class="s1">'sRGB'</span><span class="p">,</span> <span class="s1">'Rec. 2020'</span><span class="p">,</span> <span class="s1">'ACES RGB'</span><span class="p">],</span>
         <span class="n">standalone</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 
-    <span class="n">alpha_p</span><span class="p">,</span> <span class="n">colour_p</span> <span class="o">=</span> <span class="mf">0.85</span><span class="p">,</span> <span class="s">'black'</span>
+    <span class="n">alpha_p</span><span class="p">,</span> <span class="n">colour_p</span> <span class="o">=</span> <span class="mf">0.85</span><span class="p">,</span> <span class="s1">'black'</span>
 
     <span class="n">xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">to_xy</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span> <span class="k">for</span> <span class="n">RGB</span> <span class="ow">in</span> <span class="n">image</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))])</span>
     <span class="n">pylab</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xy</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">xy</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha_p</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colour_p</span><span class="p">,</span>
-                  <span class="n">marker</span><span class="o">=</span><span class="s">'+'</span><span class="p">)</span>
+                  <span class="n">marker</span><span class="o">=</span><span class="s1">'+'</span><span class="p">)</span>
 
     <span class="n">display</span><span class="p">(</span><span class="n">standalone</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
@@ -572,7 +572,7 @@ As we are increasingly using wide gamut colourspaces (ACES RGB, Rec. 2020, ProPh
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">sRGB_CHROMATICITIES_CACHE</span> <span class="o">=</span> <span class="p">{}</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">sRGB_CHROMATICITIES_CACHE</span> <span class="o">=</span> <span class="p">{}</span>
 
 
 <span class="k">def</span> <span class="nf">sRGB_to_xy</span><span class="p">(</span><span class="n">RGB</span><span class="p">):</span>
@@ -650,7 +650,7 @@ As we are increasingly using wide gamut colourspaces (ACES RGB, Rec. 2020, ProPh
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">scipy.spatial</span> <span class="kn">import</span> <span class="n">Delaunay</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.spatial</span> <span class="kn">import</span> <span class="n">Delaunay</span>
 
 
 <span class="k">def</span> <span class="nf">within_boundaries</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">triangulation</span><span class="p">):</span>
@@ -720,12 +720,12 @@ As we are increasingly using wide gamut colourspaces (ACES RGB, Rec. 2020, ProPh
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">Rec_2020_w</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">REC_2020_COLOURSPACE</span><span class="o">.</span><span class="n">whitepoint</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">Rec_2020_w</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">REC_2020_COLOURSPACE</span><span class="o">.</span><span class="n">whitepoint</span>
 <span class="n">Rec_2020_p</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">REC_2020_COLOURSPACE</span><span class="o">.</span><span class="n">primaries</span>
 <span class="n">Rec_2020_XYZ_to_RGB</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">REC_2020_COLOURSPACE</span><span class="o">.</span><span class="n">XYZ_to_RGB_matrix</span>
 <span class="n">Rec_2020_RGB_to_XYZ</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">REC_2020_COLOURSPACE</span><span class="o">.</span><span class="n">RGB_to_XYZ_matrix</span>
 
-<span class="c"># Computing *sRGB* to *Rec. 2020* colourspace transformation matrix.</span>
+<span class="c1"># Computing *sRGB* to *Rec. 2020* colourspace transformation matrix.</span>
 <span class="n">cat</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">chromatic_adaptation_matrix</span><span class="p">(</span>
     <span class="n">colour</span><span class="o">.</span><span class="n">xy_to_XYZ</span><span class="p">(</span><span class="n">sRGB_w</span><span class="p">),</span>
     <span class="n">colour</span><span class="o">.</span><span class="n">xy_to_XYZ</span><span class="p">(</span><span class="n">Rec_2020_w</span><span class="p">))</span>
@@ -752,7 +752,7 @@ As we are increasingly using wide gamut colourspaces (ACES RGB, Rec. 2020, ProPh
                        <span class="n">Rec_2020_p</span><span class="p">,</span> 
                        <span class="n">Rec_2020_to_xy</span><span class="p">))</span>
 
-<span class="c"># Scaling the data to make it more obvious.</span>
+<span class="c1"># Scaling the data to make it more obvious.</span>
 <span class="n">Rec_2020_image_illegal</span> <span class="o">*=</span> <span class="mi">100</span>
 <span class="n">image_plot</span><span class="p">(</span><span class="n">Rec_2020_image_illegal</span><span class="p">)</span>
 </pre></div>
@@ -804,9 +804,9 @@ As we are increasingly using wide gamut colourspaces (ACES RGB, Rec. 2020, ProPh
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">pointer_gamut_illegal_image</span> <span class="o">=</span> <span class="n">mask_legal_colours</span><span class="p">(</span><span class="n">sRGB_image</span><span class="p">,</span> <span class="n">colour</span><span class="o">.</span><span class="n">POINTER_GAMUT_BOUNDARIES</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">pointer_gamut_illegal_image</span> <span class="o">=</span> <span class="n">mask_legal_colours</span><span class="p">(</span><span class="n">sRGB_image</span><span class="p">,</span> <span class="n">colour</span><span class="o">.</span><span class="n">POINTER_GAMUT_BOUNDARIES</span><span class="p">)</span>
 
-<span class="c"># Scaling the data to make it more obvious.</span>
+<span class="c1"># Scaling the data to make it more obvious.</span>
 <span class="n">pointer_gamut_illegal_image</span> <span class="o">*=</span> <span class="mi">100</span>
 <span class="n">image_plot</span><span class="p">(</span><span class="n">pointer_gamut_illegal_image</span><span class="p">)</span>
 </pre></div>
@@ -861,12 +861,12 @@ As we are increasingly using wide gamut colourspaces (ACES RGB, Rec. 2020, ProPh
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">cmfs</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">CMFS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'CIE 1931 2 Degree Standard Observer'</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">cmfs</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">CMFS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'CIE 1931 2 Degree Standard Observer'</span><span class="p">)</span>
 <span class="n">spectral_locus_xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_xy</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cmfs</span><span class="o">.</span><span class="n">values</span><span class="p">])</span>
 
 <span class="n">spectral_locus_illegal_image</span> <span class="o">=</span> <span class="n">mask_legal_colours</span><span class="p">(</span><span class="n">sRGB_image</span><span class="p">,</span> <span class="n">spectral_locus_xy</span><span class="p">)</span>
 
-<span class="c"># Scaling the data to make it more obvious.</span>
+<span class="c1"># Scaling the data to make it more obvious.</span>
 <span class="n">spectral_locus_illegal_image</span> <span class="o">*=</span> <span class="mi">100</span>
 <span class="n">image_plot</span><span class="p">(</span><span class="n">spectral_locus_illegal_image</span><span class="p">)</span>
 </pre></div>
@@ -909,7 +909,7 @@ As we are increasingly using wide gamut colourspaces (ACES RGB, Rec. 2020, ProPh
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The above images illustrate a simple case where we have taken a real world frame. More complex situations arise when you use an HDRI similarly exhibiting a wide colours volume to lit a scene, yielding "illegal" colours very quickly.</p>
-<p>As it was recentely shown by <a href="http://nbviewer.ipython.org/gist/sagland/3c791e79353673fd24fa">Steve Agland</a> and <a href="http://colour-science.org/posts/about-rendering-engines-colourspaces-agnosticism/">us</a>, it has turned into a problematic issue.</p>
+<p>As it was recentely shown by <a href="http://nbviewer.jupyter.org/gist/sagland/3c791e79353673fd24fa">Steve Agland</a> and <a href="http://colour-science.org/posts/about-rendering-engines-colourspaces-agnosticism/">us</a>, it has turned into a problematic issue.</p>
 <p>We don't think there is an easy and elegant way to fix that however DCC applications vendors can help us by providing new tools that will let us analyse colours properly. Such tools would also have shown that there is an issue with the image we are using.</p>
 <p>Follows some specifications on what we think would be useful:</p>
 <p>Given the following major volumes:</p>

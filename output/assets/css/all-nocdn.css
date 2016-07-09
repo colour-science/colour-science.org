@@ -7067,7 +7067,7 @@ img.align-center, .figure.align-center, object.align-center {
   text-align: right }
 
 /* reset inner alignment in figures */
-div.align-right {
+.figure.align-right {
   text-align: inherit }
 
 /* div.align-center * { */
@@ -7275,7 +7275,7 @@ table.codetable { width: 100%;} td.linenos {text-align: right; width: 4em;}
     Colorbox Core Style:
     The following CSS is consistent between example themes and should not be altered.
 */
-#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;}
+#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden; -webkit-transform: translate3d(0,0,0);}
 #cboxWrapper {max-width:none;}
 #cboxOverlay{position:fixed; width:100%; height:100%;}
 #cboxMiddleLeft, #cboxBottomLeft{clear:left;}
@@ -7437,7 +7437,7 @@ article.post-micro {
 }
 
 .metadata p:before,
-.postlist .listdate:before {
+.postlist .listdate:after {
     content: " — ";
 }
 
@@ -7539,7 +7539,7 @@ article.post-micro {
     padding: 12px 0;
 }
 
-/*** IPython Notebooks ***/
+/*** Jupyter Notebooks ***/
 #notebook-container {
     padding-left: 0;
     padding-right: 0;

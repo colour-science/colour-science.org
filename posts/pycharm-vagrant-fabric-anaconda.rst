@@ -143,7 +143,7 @@ You can go grab a coffee, the initial provisioning will take roughly
 If the provisioning ended smoothly, you should have the following
 elements available:
 
--  **colour**, **colour-ipython** and **colour-science.org** repositories
+-  **colour**, **colour-notebooks** and **colour-science.org** repositories
    cloned into the :code:`colour-science` directory right next to the
    :code:`colour-vagrant` one.
 
@@ -213,15 +213,15 @@ following command on the *Mac Os X* host:
 
     xhost + 192.168.32.64
 
-IPython Notebooks
+Jupyter Notebooks
 ^^^^^^^^^^^^^^^^^
 
-The `IPython Notebooks <http://ipython.org/notebook.html>`_ server is started
+The `Jupyter Notebooks <http://ipython.org/notebook.html>`_ server is started
 as follows:
 
 .. code:: shell
 
-    cd /colour-science/colour-ipython/notebooks
+    cd /colour-science/colour-notebooks/notebooks
     ipython notebook --pylab=inline --ip=0.0.0.0
 
 Then you can access it on the *Mac Os X* host at the following url:
