@@ -22,8 +22,11 @@ incompatible changes:
     adopt.
 -   The RGB colourspace transfer functions implementation has been overhauled in
     order to be easily extended in the future.
+-   `SciPy <https://www.scipy.org/>`_ is now a requirement.
 
-Please carefully refer to the releases page *Changes* section.
+Please carefully refer to the
+`releases page <https://github.com/colour-science/colour/releases/tag/v0.3.8>`_
+*Changes* section.
 
 Highlights of this release are:
 
@@ -40,8 +43,6 @@ A `Jupyter Notebook <https://github.com/colour-science/colour-ramblings/blob/mas
 is available to illustrate the expected computational differences. They should
 remain orders of magnitude under visual discrimination threshold however they
 will likely create computational discrepancies.
-
-With Colour 0.3.8, `SciPy <https://www.scipy.org/>`_ is now a requirement.
 
 `Colour - Demosaicing </colour-demosaicing>`_ and `Colour - HDRI </colour-hdri>`_
 packages have been updated accordingly.
