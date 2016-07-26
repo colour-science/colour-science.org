@@ -14,6 +14,8 @@ Publications
 ------------
 
 -   Meng, J., Simon, F., & Hanika, J. (2015). Physically Meaningful Rendering using Tristimulus Colours, 34(4). Retrieved from http://jo.dreggn.org/home/2015_spectrum.pdf
+-   Wheatley, K. J. (2016). A retrospective on the adoption of the ACES technology at Framestore. In Proceedings of the 2016 Symposium on Digital Production - DigiPro ’16 (pp. 19–30). New York, New York, USA: ACM Press. doi:10.1145/2947688.2947695
+-   Hart, E. (2016). UHD Color for Games. Retrieved from https://developer.nvidia.com/sites/default/files/akamai/gameworks/hdr/UHDColorForGames.pdf
 
 Presentations
 -------------
