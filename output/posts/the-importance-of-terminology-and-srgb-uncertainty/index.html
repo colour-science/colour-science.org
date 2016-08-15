@@ -29,14 +29,11 @@ back about the missing descri">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2015-12-05T00:17:30Z">
 <meta property="article:tag" content="chromaticity diagram">
-<meta property="article:tag" content="conversion function">
-<meta property="article:tag" content="EOCF">
-<meta property="article:tag" content="gamut">
-<meta property="article:tag" content="OECF">
-<meta property="article:tag" content="primaries">
+<meta property="article:tag" content="EOTF">
+<meta property="article:tag" content="OETF">
 <meta property="article:tag" content="RGB colourspace">
 <meta property="article:tag" content="sRGB">
-<meta property="article:tag" content="whitepoint">
+<meta property="article:tag" content="transfer">
 </head>
 <body>
 <div id="logo-banner"></div>
@@ -242,26 +239,19 @@ back about the missing descri">
 <!-- TEASER_END -->
 <p>As I was quickly reading his article, I
 <a class="reference external" href="https://twitter.com/colour_science/status/671647698546626560">tweeted</a>
-back about the missing description of <em>sRGB</em> as being an <em>RGB</em> colourspace: a set
-of <strong>primaries</strong>, <strong>whitepoint</strong> and <strong>conversion functions</strong> components.</p>
-<div class="alert alert-dismissible alert-info line-block">
-<div class="line"><strong>Note</strong></div>
-<div class="line"><br></div>
-<div class="line">
-<strong>Conversion functions</strong> are also named <strong>transfer functions</strong> although
-the former convention is emphasized in ISO standards.</div>
-</div>
+back about the missing description of <em>sRGB</em> as being an <em>RGB</em> colourspace: a
+set of <strong>primaries</strong>, <strong>whitepoint</strong> and <strong>transfer functions</strong> components.</p>
 <p>The article first description of <em>sRGB</em> is as follows:</p>
 <blockquote>
 <em>sRGB is a slight tweaking of the simple gamma 2.2 curve.</em>
 </blockquote>
-<p>While this depiction of <em>sRGB</em> colourspace <strong>EOCF</strong>
-(Electro-optical conversion function) is exact, it may be confusing for
+<p>While this depiction of <em>sRGB</em> colourspace <strong>EOTF</strong>
+(Electro-optical transfer function) is exact, it may be confusing for
 non experts by omitting an explicit emphasis of the components of an <em>RGB</em>
 colourspace.</p>
 <p>For people experienced with colour theory and science, the post title and the
 mention of <strong>gamma</strong> indicates that the article will likely only involves
-<em>sRGB</em> colourspace <strong>EOCF</strong> and <strong>OECF</strong> (Opto-electronic conversion function).</p>
+<em>sRGB</em> colourspace <strong>EOTF</strong> and <strong>OETF</strong> (Opto-electronic transfer function).</p>
 <div class="alert alert-dismissible alert-info line-block">
 <div class="line"><strong>Note</strong></div>
 <div class="line"><br></div>
@@ -296,15 +286,34 @@ After all, they have had firsthand experience of it since shortly after
 birth. However, very few can precisely describe their color experiences or
 even precisely define color.</em> <a class="footnote-reference" href="#id4" id="id1">[1]</a>
 </blockquote>
-<p><em>sRGB</em> is not a bunch of <strong>conversion functions</strong>, it is an actual
+<p><em>sRGB</em> is not a bunch of <strong>transfer functions</strong>, it is an actual
 <a class="reference external" href="https://en.wikipedia.org/wiki/RGB_color_space">RGB colourspace</a>, specified by
-<a class="reference external" href="https://webstore.iec.ch/publication/6169">IEC 61966-2-1:1999</a>
-standard. An <em>RGB</em> colourspace is defined by those mandatory 3 components:</p>
+<a class="reference external" href="https://webstore.iec.ch/publication/6169">IEC 61966-2-1:1999 Standard</a>
+standard. As per <a class="reference external" href="http://www.iso.org/iso/catalogue_detail.htm?csnumber=37161">ISO 22028-1 Standard</a>,
+an <em>RGB</em> colourspace is defined by those mandatory 3 components:</p>
 <ul class="simple">
 <li><a class="reference internal" href="#primaries">Primaries</a></li>
 <li><a class="reference external" href="https://en.wikipedia.org/wiki/White_point">Whitepoint</a></li>
-<li><a class="reference internal" href="#conversion-functions-oecf-and-eocf">Conversion Functions (OECF and EOCF)</a></li>
+<li><a class="reference internal" href="#transfer-functions-oetf-and-eotf">Transfer Functions (OETF and EOTF)</a></li>
 </ul>
+<p>The <em>ISO 22028-1 Standard</em> definition of an additive <em>RGB</em> colourspace is
+quoted in its entirety for reference:</p>
+<blockquote>
+<p><strong>3.3</strong></p>
+<p><strong>additive RGB colour space</strong></p>
+<p>colorimetric colour space having three colour primaries (generally red,
+green and blue) such that CIE XYZ tristimulus values can be determined
+from the RGB colour space values by forming a weighted combination of the
+CIE XYZ tristimulus values for the individual colour primaries, where the
+weights are proportional to the radiometrically linear colour space values
+for the corresponding colour primaries</p>
+<p>Note 1 to entry: A simple linear 3 × 3 matrix transformation can be used to
+transform between CIE XYZ tristimulus values and the radiometrically linear
+colour space values for an additive RGB colour space.</p>
+<p>Note 2 to entry: Additive RGB colour spaces are defined by specifying the
+CIE chromaticity values for a set of additive RGB primaries and a colour
+space white point, together with a colour component transfer function.</p>
+</blockquote>
 <div class="section" id="primaries">
 <h3>Primaries</h3>
 <p>The <strong>primaries</strong> <em>chromaticity coordinates</em> define the <strong>gamut</strong> (the triangle
@@ -344,8 +353,8 @@ volume.
 </div>
 <p>An <em>RGB colourspace</em> can have
 <a class="reference external" href="https://github.com/colour-science/colour-notebooks/blob/master/notebooks/colorimetry/illuminants.ipynb">different whitepoints</a>
-depending its context usage, <em>sRGB colourspace</em> IEC 61966-2-1:1999 standard adopts
-<a class="reference external" href="https://en.wikipedia.org/wiki/Illuminant_D65">CIE Standard Illuminant D65</a>
+depending its context usage, <em>sRGB colourspace</em> <em>IEC 61966-2-1:1999 Standard</em>
+adopts <a class="reference external" href="https://en.wikipedia.org/wiki/Illuminant_D65">CIE Standard Illuminant D65</a>
 as <strong>whitepoint</strong> but an <a class="reference external" href="https://en.wikipedia.org/wiki/International_Color_Consortium">ICC</a>
 <em>sRGB colourspace</em> profile would likely have been chromatically adapted to
 <em>CIE Standard Illuminant D50</em>.</p>
@@ -354,29 +363,29 @@ as <strong>whitepoint</strong> but an <a class="reference external" href="https:
 <em>CIE 1960 UCS Chromaticity Diagram</em>.</p>
 </div>
 </div>
-<div class="section" id="conversion-functions-oecf-and-eocf">
-<h3>Conversion Functions (OECF and EOCF)</h3>
-<p>The conversions functions perform the mapping between the <em>linear</em> light components
-(tristimulus values) and a <em>non-linear</em> R'G'B' video signal (most of the time
-for coding optimisation and bandwidth performance). <a class="footnote-reference" href="#id5" id="id3">[2]</a></p>
+<div class="section" id="transfer-functions-oetf-and-eotf">
+<h3>Transfer Functions (OETF and EOTF)</h3>
+<p>The transfers functions perform the mapping between the <em>linear</em> light
+components (tristimulus values) and a <em>non-linear</em> R'G'B' video signal (most
+of the time for coding optimisation and bandwidth performance). <a class="footnote-reference" href="#id5" id="id3">[2]</a></p>
 <ul>
 <li>
-<p class="first">The <strong>Opto-electronic conversion function</strong> (<strong>OECF</strong>) maps estimated
+<p class="first">The <strong>Opto-electronic transfer function</strong> (<strong>OETF</strong>) maps estimated
 tristimulus values in a scene to a <em>non-linear</em> R'G'B' video component signal
-value. Typical <strong>OECFs</strong> are expressed by a power function with an exponent
+value. Typical <strong>OETFs</strong> are expressed by a power function with an exponent
 between 0.4 and 0.5. They can also be defined as piece-wise function, <em>sRGB</em>,
-<em>Rec. 709</em> or <em>Rec. 2020</em> colourspace OECFs are such examples.</p>
+<em>Rec. 709</em> or <em>Rec. 2020</em> colourspace OETFs are such examples.</p>
 <div class="figure">
-<img alt="/images/Adobe_RGB_1998_sRGB_OECF.png" src="../../images/Adobe_RGB_1998_sRGB_OECF.png"><p class="caption">Various <strong>opto-electronic conversion functions</strong>.</p>
+<img alt="/images/sRGB_BT709_OETF.png" src="../../images/sRGB_BT709_OETF.png"><p class="caption">Various <strong>opto-electronic transfer functions</strong>.</p>
 </div>
 </li>
 <li>
-<p class="first">The <strong>Electro-optical conversion function</strong> (<strong>EOCF</strong>) maps a <em>non-linear</em>
+<p class="first">The <strong>Electro-optical transfer function</strong> (<strong>EOTF</strong>) maps a <em>non-linear</em>
 R'G'B' video component signal to a tristimulus value at the display.
-Typical <strong>EOCFs</strong> are expressed by a power function with an exponent between
-2.2 and 2.6 or a piece-wise function.</p>
+Typical <strong>EOTFs</strong> are expressed by a power function with an exponent
+between 2.2 and 2.6 or a piece-wise function.</p>
 <div class="figure">
-<img alt="/images/Adobe_RGB_1998_sRGB_EOCF.png" src="../../images/Adobe_RGB_1998_sRGB_EOCF.png"><p class="caption">Various <strong>electro-optical conversion functions</strong>.</p>
+<img alt="/images/DCI_P3_BT1886_EOTF.png" src="../../images/DCI_P3_BT1886_EOTF.png"><p class="caption">Various <strong>electro-optical transfer functions</strong>.</p>
 </div>
 </li>
 </ul>
@@ -388,18 +397,18 @@ more sense why not being specific and using a clear <strong>terminology</strong>
 confusion and uncertainty: colour science vocabulary is complex.</p>
 <p>I often encounter people that don’t have a clear understanding on what
 composes an <em>RGB colourspace</em>, as a result they don't properly differentiate
-<strong>gamut</strong> and <strong>conversion functions</strong>. The cursory <strong>terminology</strong> recurrently
+<strong>gamut</strong> and <strong>transfer functions</strong>. The cursory <strong>terminology</strong> recurrently
 used online is probably the root cause for that.</p>
 <p>When one talks about <em>sRGB</em>, is he describing the colourspace <strong>primaries</strong> or
-its <strong>conversion functions</strong>? Discussing about <em>sRGB</em> to <em>linear</em> transformation
-without emphasis on the <strong>EOCF</strong> component is unsettling: a rendering
+its <strong>transfer functions</strong>? Discussing about <em>sRGB</em> to <em>linear</em> transformation
+without emphasis on the <strong>EOTF</strong> component is unsettling: a rendering
 engine using linear <em>sRGB</em> colourspace input colours and textures, renders with
 the <em>sRGB</em> colourspace <strong>primaries</strong> and <strong>whitepoint</strong> (assuming no colour
 transformations are occurring internally), thus its output is within <em>sRGB</em>
 colourspace.</p>
 <p>When rendering using <a class="reference external" href="https://en.wikipedia.org/wiki/Rec._709">Rec. 709</a>
-colourspace for TV, one is actually adopting <em>sRGB</em> colourspace <strong>primaries</strong>
-and <strong>whitepoint</strong> with different specific <strong>conversion functions</strong>.</p>
+colourspace for HDTV, one is actually adopting <em>sRGB</em> colourspace <strong>primaries</strong>
+and <strong>whitepoint</strong> with different specific <strong>transfer functions</strong>.</p>
 <p>Movie cameras such as Canon ones (Canon EOS 1DC, Canon CX00) use <em>Rec. 709</em>
 <strong>primaries</strong> and <strong>whitepoint</strong> but encode their scene linear values with a
 custom log curve designated
@@ -412,17 +421,18 @@ cameras, RED Log Film for RED cameras, etc...) and proprietary
 <em>RGB colourspaces</em> specifications (ALEXA Wide Gamut RGB for ARRI Alexa
 cameras, REDcolor or DragonColor for RED cameras, etc...).</div>
 </div>
-<p>Likewise, it is perfectly valid to use the <em>sRGB</em> colourspace <strong>conversion functions</strong>
-with another set of <strong>primaries</strong> and <strong>whitepoint</strong>. When working within
-Adobe Photoshop or The Foundry Mari, some VFX studios use a proprietary colourspace
-specification along <em>sRGB</em> colourspace <strong>conversion functions</strong>: those
-<strong>conversion functions</strong> being commonly implemented in various DCC packages, the
-various colour transformation operations between those packages are simplified.</p>
+<p>Likewise, it is perfectly valid to use the <em>sRGB</em> colourspace <strong>transfer
+functions</strong> with another set of <strong>primaries</strong> and <strong>whitepoint</strong>. When
+working within Adobe Photoshop or The Foundry Mari, some VFX studios use a
+proprietary colourspace specification along <em>sRGB</em> colourspace <strong>transfer
+functions</strong>: those <strong>transfer functions</strong> being commonly implemented in
+various DCC packages, the various colour transformation operations between
+those packages are simplified.</p>
 </div>
 <div class="section" id="conclusion">
 <h3>Conclusion</h3>
 <p>When one talks about <em>sRGB</em> alone, it should be safe to assume that he is
-referring to the <em>sRGB</em> colourspace as per IEC 61966-2-1:1999 standard,
+referring to the <em>sRGB</em> colourspace as per <em>IEC 61966-2-1:1999 Standard</em>,
 not just cherry picked components. Unfortunately it is not the case thus in order
 to lessen the uncertainty and improve the <strong>terminology</strong> used, we suggest that:</p>
 <ul>
@@ -432,7 +442,7 @@ essential three components:</p>
 <ul class="simple">
 <li><a class="reference internal" href="#primaries">Primaries</a></li>
 <li><a class="reference external" href="https://en.wikipedia.org/wiki/White_point">Whitepoint</a></li>
-<li><a class="reference internal" href="#conversion-functions-oecf-and-eocf">Conversion Functions (OECF and EOCF)</a></li>
+<li><a class="reference internal" href="#transfer-functions-oetf-and-eotf">Transfer Functions (OETF and EOTF)</a></li>
 </ul>
 </li>
 <li>
@@ -447,12 +457,12 @@ point of describing which specification's component he is referring to:</p>
 </blockquote>
 <p>would be better written as follows:</p>
 <blockquote>
-<p><em>The sRGB conversion function is a slight tweaking of the simple gamma
+<p><em>The sRGB transfer function is a slight tweaking of the simple gamma
 2.2 curve.</em></p>
 </blockquote>
 <p>or for completeness:</p>
 <blockquote>
-<p><em>The sRGB electro-optical conversion function (EOCF) is a slight tweaking
+<p><em>The sRGB electro-optical transfer function (EOTF) is a slight tweaking
 of the simple gamma 2.2 curve.</em></p>
 </blockquote>
 </li>
@@ -464,11 +474,11 @@ specification:</p>
 <li>
 <cite>sRGB-D60-Linear</cite>: an <em>RGB</em> colourspace using <em>sRGB</em> <strong>primaries</strong>
 chromatically adapted to <em>CIE Standard Illuminant D60</em> <strong>whitepoint</strong>
-and linear <strong>conversion functions</strong>.</li>
+and linear <strong>transfer functions</strong>.</li>
 <li>
 <cite>Adobe 1998 RGB-D65-Gamma1.8</cite>: an <em>RGB</em> colourspace using <em>Adobe 1998 RGB</em>
 <strong>primaries</strong>, <em>CIE Standard Illuminant D65</em> <strong>whitepoint</strong> and gamma
-1.8 <strong>conversion functions</strong>.</li>
+1.8 <strong>transfer functions</strong>.</li>
 </ul>
 </li>
 </ul>
@@ -507,14 +517,11 @@ Wiley. ISBN:B00DAYO8E2</td>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../categories/chromaticity-diagram/" rel="tag">chromaticity diagram</a></li>
-            <li><a class="tag p-category" href="../../categories/conversion-function/" rel="tag">conversion function</a></li>
-            <li><a class="tag p-category" href="../../categories/eocf/" rel="tag">EOCF</a></li>
-            <li><a class="tag p-category" href="../../categories/gamut/" rel="tag">gamut</a></li>
-            <li><a class="tag p-category" href="../../categories/oecf/" rel="tag">OECF</a></li>
-            <li><a class="tag p-category" href="../../categories/primaries/" rel="tag">primaries</a></li>
+            <li><a class="tag p-category" href="../../categories/eotf/" rel="tag">EOTF</a></li>
+            <li><a class="tag p-category" href="../../categories/oetf/" rel="tag">OETF</a></li>
             <li><a class="tag p-category" href="../../categories/rgb-colourspace/" rel="tag">RGB colourspace</a></li>
             <li><a class="tag p-category" href="../../categories/srgb/" rel="tag">sRGB</a></li>
-            <li><a class="tag p-category" href="../../categories/whitepoint/" rel="tag">whitepoint</a></li>
+            <li><a class="tag p-category" href="../../categories/transfer/" rel="tag">transfer</a></li>
         </ul>
 <ul class="pager hidden-print">
 <li class="previous">
