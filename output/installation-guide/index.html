@@ -22,14 +22,10 @@ you may not need to install all of them.
 
 Primary Dependencies
 
-Python 2.7 or
-Python 3.5
-NumPy
-SciPy
-
-
-
-Optional">
+Python &gt;= 2.7 or
+Python &gt;= 3.5
+NumPy &gt;= 0.16
+Sci">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2015-11-24T09:38:23Z">
 </head>
@@ -223,11 +219,11 @@ you may not need to install all of them.</p>
 <h3>Primary Dependencies</h3>
 <ul class="simple">
 <li>
-<a class="reference external" href="https://www.python.org/download/releases/">Python 2.7</a> or
-<a class="reference external" href="https://www.python.org/download/releases/">Python 3.5</a>
+<a class="reference external" href="https://www.python.org/download/releases/">Python &gt;= 2.7</a> or
+<a class="reference external" href="https://www.python.org/download/releases/">Python &gt;= 3.5</a>
 </li>
-<li><a class="reference external" href="http://www.numpy.org/">NumPy</a></li>
-<li><a class="reference external" href="http://www.scipy.org/">SciPy</a></li>
+<li><a class="reference external" href="http://www.numpy.org/">NumPy &gt;= 0.16</a></li>
+<li><a class="reference external" href="http://www.scipy.org/">SciPy &gt;= 1.8</a></li>
 </ul>
 </div>
 <div class="section" id="optional-figures-plotting-dependencies">
@@ -257,29 +253,45 @@ you may not need to install all of them.</p>
 <p><strong>Colour</strong> can be easily installed from the
 <a class="reference external" href="https://pypi.python.org/pypi/colour-science/">Python Package Index</a> by
 issuing this command in a shell:</p>
-<pre class="code shell"><a name="rest_code_2f0a57fe5ea541adbc5ac95e8983d51a-1"></a>pip install colour-science
+<div class="alert alert-dismissible alert-info line-block">
+<div class="line"><strong>Note</strong></div>
+<div class="line"><br></div>
+<div class="line">Because of the non deterministic order in which <em>pip</em> installs
+dependencies, <a class="reference external" href="http://www.scipy.org/">SciPy</a> will require
+<a class="reference external" href="http://www.numpy.org/">NumPy</a> to be installed first which can be
+performed as follows: <cite>pip install numpy</cite>
+</div>
+</div>
+<pre class="code shell"><a name="rest_code_0216f9dcf8e248c6bd73f7fe63418e7f-1"></a>pip install colour-science
 </pre>
 <p>The optional features dependencies are installed as follows:</p>
-<pre class="code shell"><a name="rest_code_2fee0d41532f4a6b81a1aa1dbe7c552c-1"></a>pip install <span class="s1">'colour-science[optional]'</span>
+<pre class="code shell"><a name="rest_code_c454b5f395414299a05d837ea1574fca-1"></a>pip install <span class="s1">'colour-science[optional]'</span>
 </pre>
 <p>The figures plotting dependencies are installed as follows:</p>
-<pre class="code shell"><a name="rest_code_13757a4019fc4fdcb9b507e80e2c207e-1"></a>pip install <span class="s1">'colour-science[plotting]'</span>
+<pre class="code shell"><a name="rest_code_bcd6f4145e44416891c9cb1bc2c8a995-1"></a>pip install <span class="s1">'colour-science[plotting]'</span>
 </pre>
 <p>The tests suite dependencies are installed as follows:</p>
-<pre class="code shell"><a name="rest_code_f37d93d25bc3465e90f900f6aad648fd-1"></a>pip install <span class="s1">'colour-science[tests]'</span>
+<pre class="code shell"><a name="rest_code_fe7b16a5eae34a2dba3e08c7433582f6-1"></a>pip install <span class="s1">'colour-science[tests]'</span>
 </pre>
 <p>The documentation building dependencies are installed as follows:</p>
-<pre class="code shell"><a name="rest_code_92eaa074f54c4a49b0ce0f65c4686ab7-1"></a>pip install <span class="s1">'colour-science[docs]'</span>
+<pre class="code shell"><a name="rest_code_edf8dd65831e4318a838201e3ed4cfd7-1"></a>pip install <span class="s1">'colour-science[docs]'</span>
 </pre>
 </div>
 <div class="section" id="github">
 <h2>Github</h2>
 <p>Alternatively, you can also install directly from
 <a class="reference external" href="http://github.com/colour-science/colour">Github</a> source repository:</p>
-<pre class="code shell"><a name="rest_code_e057577d645341c9a7ca4319b8b7fde4-1"></a>git clone git://github.com/colour-science/colour.git
-<a name="rest_code_e057577d645341c9a7ca4319b8b7fde4-2"></a><span class="nb">cd</span> colour
-<a name="rest_code_e057577d645341c9a7ca4319b8b7fde4-3"></a>pip install .
+<pre class="code shell"><a name="rest_code_bc3eeb30f42a4d5aa1e0de3a27719067-1"></a>git clone git://github.com/colour-science/colour.git
+<a name="rest_code_bc3eeb30f42a4d5aa1e0de3a27719067-2"></a><span class="nb">cd</span> colour
+<a name="rest_code_bc3eeb30f42a4d5aa1e0de3a27719067-3"></a>pip install .
 </pre>
+</div>
+<div class="section" id="continuum-analytics-anaconda">
+<h2>Continuum Analytics Anaconda</h2>
+<p>Since a few years, <a class="reference external" href="https://www.continuum.io/downloads">Anaconda</a> from
+<em>Continuum Analytics</em> is the Python distribution we use to develop <strong>Colour</strong>:
+it ships all the scientific dependencies we require and is easily deployed
+cross-platform.</p>
 </div>
 <div class="section" id="vagrant">
 <h2>Vagrant</h2>

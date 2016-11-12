@@ -16,10 +16,10 @@ you may not need to install all of them.
 Primary Dependencies
 ^^^^^^^^^^^^^^^^^^^^
 
--  `Python 2.7 <https://www.python.org/download/releases/>`_ or
-   `Python 3.5 <https://www.python.org/download/releases/>`_
--  `NumPy <http://www.numpy.org/>`_
--  `SciPy <http://www.scipy.org/>`_
+-  `Python >= 2.7 <https://www.python.org/download/releases/>`_ or
+   `Python >= 3.5 <https://www.python.org/download/releases/>`_
+-  `NumPy >= 0.16 <http://www.numpy.org/>`_
+-  `SciPy >= 1.8 <http://www.scipy.org/>`_
 
 Optional Figures Plotting Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -45,6 +45,15 @@ Pypi
 **Colour** can be easily installed from the
 `Python Package Index <https://pypi.python.org/pypi/colour-science/>`_ by
 issuing this command in a shell:
+
+.. class:: alert alert-dismissible alert-info
+
+    | **Note**
+    |
+    | Because of the non deterministic order in which *pip* installs
+        dependencies, `SciPy <http://www.scipy.org/>`_ will require
+        `NumPy <http://www.numpy.org/>`_ to be installed first which can be
+        performed as follows: `pip install numpy`
 
 .. code:: shell
 
@@ -85,6 +94,14 @@ Alternatively, you can also install directly from
     git clone git://github.com/colour-science/colour.git
     cd colour
     pip install .
+
+Continuum Analytics Anaconda
+----------------------------
+
+Since a few years, `Anaconda <https://www.continuum.io/downloads>`_ from
+*Continuum Analytics* is the Python distribution we use to develop **Colour**:
+it ships all the scientific dependencies we require and is easily deployed
+cross-platform.
 
 Vagrant
 -------

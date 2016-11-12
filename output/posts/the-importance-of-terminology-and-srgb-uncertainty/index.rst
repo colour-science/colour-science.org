@@ -166,7 +166,7 @@ as **whitepoint** but an `ICC <https://en.wikipedia.org/wiki/International_Color
 Transfer Functions (OETF and EOTF)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The transfers functions perform the mapping between the *linear* light
+The transfer functions perform the mapping between the *linear* light
 components (tristimulus values) and a *non-linear* R'G'B' video signal (most
 of the time for coding optimisation and bandwidth performance). [2]_
 
