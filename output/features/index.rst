@@ -233,6 +233,7 @@ Correlated Colour Temperature Computation Methods
 -   Ohno (2013)
 -   McCamy (1992)
 -   Hernández-Andrés, Lee and Romero (1999)
+-   Krystek (1985)
 -   Kang et al. (2002)
 -   CIE Illuminant D Series
 
@@ -310,6 +311,18 @@ Colourspaces Transformations
 -   CIE XYZ to Hunter Lab
 -   Hunter Lab to CIE XYZ
 -   CIE XYZ to Hunter Rdab
+-   RGB to YCbCr
+-   YCbCr to RGB
+-   RGB to YcCbcCrc
+-   YcCbcCrc to RGB
+-   RGB to ICTCP
+-   ICTCP to RGB
+-   JMh CIECAM02 to CAM02LCD
+-   CAM02LCD to JMh CIECAM02
+-   JMh CIECAM02 to CAM02SCD
+-   CAM02SCD to JMh CIECAM02
+-   JMh CIECAM02 to CAM02UCS
+-   CAM02UCS to JMh CIECAM02
 
 OETFs / EOTFs
 ^^^^^^^^^^^^^
@@ -325,12 +338,17 @@ Log Encoding Curves
 ^^^^^^^^^^^^^^^^^^^
 
 -   ACEScc
+-   ACEScct
 -   ACESproxy
 -   ALEXA Log C
--   C-Log
+-   Canon Log
+-   Canon Log 2
+-   Canon Log 3
 -   Cineon
 -   DCI-P3
 -   ERIMM RGB
+-   Log3G10
+-   Log3G12
 -   Panalog
 -   PLog
 -   REDLog
@@ -384,6 +402,7 @@ RGB Colourspaces
 -   REDcolor2
 -   REDcolor3
 -   REDcolor4
+-   RedWideGamut RGB
 -   RIMM RGB
 -   ROMM RGB
 -   Russell RGB
@@ -417,6 +436,9 @@ Colour Difference
 -   :math:`\Delta E` CIE 1994
 -   :math:`\Delta E` CIE 2000
 -   :math:`\Delta E` CMC
+-   :math:`\Delta E` CAM02LCD
+-   :math:`\Delta E` CAM02SCD
+-   :math:`\Delta E` CAM02UCS
 
 Colour Notation Systems
 -----------------------

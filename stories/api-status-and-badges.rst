@@ -71,17 +71,12 @@
                 <img src="https://badge.fury.io/py/colour-science.svg" alt="PyPI version" height="18">
             </a>
         </li>
-        <li>
-            <a href="https://pypi.python.org/pypi/colour-science">
-                <img src="https://img.shields.io/pypi/dm/colour-science.svg" alt="PyPI Downloads" height="18">
-            </a>
-        </li>
     </ul>
 
     <ul class="list-inline">
         <li>
-            <a href="http://dx.doi.org/10.5281/zenodo.57294">
-                <img src="https://zenodo.org/badge/doi/10.5281/zenodo.57294.png" alt="10.5281/zenodo.57294">
+            <a href="http://dx.doi.org/10.5281/zenodo.376790">
+                <img src="https://zenodo.org/badge/doi/10.5281/zenodo.376790.png" alt="10.5281/zenodo.376790">
             </a>
         </li>
     </ul>

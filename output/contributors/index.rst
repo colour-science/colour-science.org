@@ -73,6 +73,19 @@
                 <p>Technical Support</p>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Kevin Wheatley</h2>
+                <p>
+                    <em>Head of Imaging at Framestore</em> @
+                    <a href="http://www.framestore.com/">Framestore</a>
+                </p>
+                <p>Technical support.</p>
+                <p>
+                    <a href="https://www.linkedin.com/in/kevin-wheatley-6551401a">Linkedin</a>
+                </p>
+            </div>
+        </div>
     </div>
     <div class="row text-center">
         <h1>Acknowledgements</h1>
@@ -166,17 +179,6 @@
                     <a href="http://www.nist.gov/pml/div685/grp03/ohno.cfm">Website</a>
                 </p>
             </div>
-            <div class="col-md-4">
-                <h2>Kevin Wheatley</h2>
-                <p>
-                    <em>Head of Imaging at Framestore</em> @
-                    <a href="http://www.framestore.com/">Framestore</a>
-                </p>
-                <p>Technical support.</p>
-                <p>
-                    <a href="https://www.linkedin.com/in/kevin-wheatley-6551401a">Linkedin</a>
-                </p>
-            </div>
         </div>
     </div>
     <div class="row text-center">
@@ -191,7 +193,7 @@
                 <p>Infinite patience</p>
             </div>
             <div class="col-md-4">
-                <h2>Others</h2>
+                <h2>Contributors</h2>
                 <ul class="list-unstyled">
                     <li>
                         <a href="https://www.facebook.com/invisiblelightimages">Nick Spiker</a>

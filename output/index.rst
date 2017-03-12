@@ -31,9 +31,9 @@
                     </a>
                 </li>
                 <li>
-                    <a class="btn btn-default btn-lg" href="https://github.com/colour-science/colour/archive/v0.3.8.zip" role="button">
+                    <a class="btn btn-default btn-lg" href="https://github.com/colour-science/colour/archive/v0.3.9.zip" role="button">
                         <span class="fa fa-download">&nbsp;</span>
-                        Colour 0.3.8 Alpha
+                        Colour 0.3.9 Alpha
                     </a>
                 </li>
             </ul>

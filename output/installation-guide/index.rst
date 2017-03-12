@@ -39,6 +39,20 @@ Documentation Building Dependencies
 
 -  `Sphinx <https://sphinx-doc.org>`_
 
+Continuum Analytics Anaconda
+----------------------------
+
+Since a few years, `Anaconda <https://www.continuum.io/downloads>`_ from
+*Continuum Analytics* is the Python distribution we use to develop **Colour**:
+it ships all the scientific dependencies we require and is easily deployed
+cross-platform.
+
+Colour is available on *conda* and can be installed as follows:
+
+.. code:: shell
+
+    conda install -c conda-forge colour-science
+
 Pypi
 ----
 
@@ -94,14 +108,6 @@ Alternatively, you can also install directly from
     git clone git://github.com/colour-science/colour.git
     cd colour
     pip install .
-
-Continuum Analytics Anaconda
-----------------------------
-
-Since a few years, `Anaconda <https://www.continuum.io/downloads>`_ from
-*Continuum Analytics* is the Python distribution we use to develop **Colour**:
-it ships all the scientific dependencies we require and is easily deployed
-cross-platform.
 
 Vagrant
 -------
