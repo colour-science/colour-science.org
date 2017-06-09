@@ -85,6 +85,14 @@
                     <a href="https://www.linkedin.com/in/kevin-wheatley-6551401a">Linkedin</a>
                 </p>
             </div>
+            <div class="col-md-4">
+                <h2>Katherine Crowson</h2>
+                </p>
+                <p>CIECAM02 improvements, technical support.</p>
+                <p>
+                    <a href="https://kath.io/">Website</a>
+                </p>
+            </div>
         </div>
     </div>
     <div class="row text-center">
