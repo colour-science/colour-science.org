@@ -32,7 +32,7 @@ are:
     -   Berger (1959)
     -   Taube (1960)
     -   Stensby (1968)
-    -   ASTM 313
+    -   ASTM E313
     -   Ganz and Griesser (1979)
     -   CIE 2004
 
