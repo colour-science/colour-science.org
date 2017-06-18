@@ -42,8 +42,8 @@ Documentation Building Dependencies
 Continuum Analytics Anaconda
 ----------------------------
 
-Since a few years, `Anaconda <https://www.continuum.io/downloads>`_ from
-*Continuum Analytics* is the Python distribution we use to develop **Colour**:
+`Anaconda <https://www.continuum.io/downloads>`_ from *Continuum Analytics*
+is the Python distribution we use to develop **Colour**:
 it ships all the scientific dependencies we require and is easily deployed
 cross-platform.
 
