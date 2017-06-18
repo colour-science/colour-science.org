@@ -53,6 +53,13 @@ Colour is available on *conda* and can be installed as follows:
 
     conda install -c conda-forge colour-science
 
+This *asciicast* demonstrates how to generate a pristine Python *conda*
+environment for Colour:
+
+.. raw:: html
+
+    <script type="text/javascript" src="https://asciinema.org/a/125160.js" id="asciicast-125160" async data-speed=3></script>
+
 Pypi
 ----
 
@@ -72,6 +79,13 @@ issuing this command in a shell:
 .. code:: shell
 
     pip install colour-science
+
+This *asciicast* demonstrates how to generate a pristine Python *VirtualEnv*
+environment for Colour:
+
+.. raw:: html
+
+    <script type="text/javascript" src="https://asciinema.org/a/125159.js" id="asciicast-125159" async data-speed=3></script>
 
 The optional features dependencies are installed as follows:
 
