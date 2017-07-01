@@ -30,7 +30,7 @@
                 <h2>Michael Mauderer</h2>
                 <p>
                     <em>HCI Researcher</em> @
-                    <a href="https://www.st-andrews.ac.uk/">University of Dundee</a>
+                    <a href="https://www.dundee.ac.uk/">University of Dundee</a>
                 </p>
                 <p>Colour appearance models, overall development.</p>
                 <p>
