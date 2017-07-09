@@ -366,9 +366,12 @@ Python Style Rules
     can use the **# noqa** pragma in those cases, although do it in last resort,
     we have already too much of them.
 -   Avoid **/** to wrap lines, prefer using the parenthesis **()**.
--   The code formatting is right now done with
-    `PyCharm <http://www.jetbrains.com/pycharm/>`_ reformat (although there are
-    still some rough corner with it), and we may run a pass from time to time.
+-   The code formatting is performed using `Yapf <https://github.com/google/yapf>`_. You can invoke it recursively on a directory as follows:
+
+.. code:: shell
+
+          find . -type f -name '*.py' -exec yapf -p -i {} \;
+
 -   Inline comments must have two spaces.
 -   Ensure that you have blank line at the end of the files.
 -   Ensure that trailing whitespaces are stripped.

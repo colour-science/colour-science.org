@@ -17,27 +17,33 @@ Primary Dependencies
 ^^^^^^^^^^^^^^^^^^^^
 
 -  `Python >= 2.7 <https://www.python.org/download/releases/>`_ or
-   `Python >= 3.5 <https://www.python.org/download/releases/>`_
+   `Python >= 3.6 <https://www.python.org/download/releases/>`_
 -  `NumPy >= 0.16 <http://www.numpy.org/>`_
--  `SciPy >= 1.8 <http://www.scipy.org/>`_
+-  `SciPy >= 0.16.0 <http://www.scipy.org/>`_
+-  `Six>= 1.10.0 <https://pypi.python.org/pypi/six>`_
 
 Optional Figures Plotting Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  `Matplotlib <http://matplotlib.org/>`_
 
-Testing Suite Dependencies
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Documentation Building Dependencies
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  `Sphinx <https://sphinx-doc.org>`_
+
+Unit Tests Dependencies
+^^^^^^^^^^^^^^^^^^^^^^^
 
 -  `Coverage <https://pypi.python.org/pypi/coverage>`_
 -  `Flake8 <https://pypi.python.org/pypi/flake8>`_
 -  `Mock <https://pypi.python.org/pypi/mock>`_
 -  `Nose <https://nose.readthedocs.io/en/latest>`_
 
-Documentation Building Dependencies
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Optional Dependencies
+^^^^^^^^^^^^^^^^^^^^^
 
--  `Sphinx <https://sphinx-doc.org>`_
+-  `Yapf <https://github.com/google/yapf>`_
 
 Continuum Analytics Anaconda
 ----------------------------

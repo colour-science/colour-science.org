@@ -23,7 +23,7 @@ you may not need to install all of them.
 Primary Dependencies
 
 Python &gt;= 2.7 or
-Python &gt;= 3.5
+Python &gt;= 3.6
 NumPy &gt;= 0.16
 Sci">
 <meta property="og:type" content="article">
@@ -220,10 +220,11 @@ you may not need to install all of them.</p>
 <ul class="simple">
 <li>
 <a class="reference external" href="https://www.python.org/download/releases/">Python &gt;= 2.7</a> or
-<a class="reference external" href="https://www.python.org/download/releases/">Python &gt;= 3.5</a>
+<a class="reference external" href="https://www.python.org/download/releases/">Python &gt;= 3.6</a>
 </li>
 <li><a class="reference external" href="http://www.numpy.org/">NumPy &gt;= 0.16</a></li>
-<li><a class="reference external" href="http://www.scipy.org/">SciPy &gt;= 1.8</a></li>
+<li><a class="reference external" href="http://www.scipy.org/">SciPy &gt;= 0.16.0</a></li>
+<li><a class="reference external" href="https://pypi.python.org/pypi/six">Six&gt;= 1.10.0</a></li>
 </ul>
 </div>
 <div class="section" id="optional-figures-plotting-dependencies">
@@ -232,8 +233,14 @@ you may not need to install all of them.</p>
 <li><a class="reference external" href="http://matplotlib.org/">Matplotlib</a></li>
 </ul>
 </div>
-<div class="section" id="testing-suite-dependencies">
-<h3>Testing Suite Dependencies</h3>
+<div class="section" id="documentation-building-dependencies">
+<h3>Documentation Building Dependencies</h3>
+<ul class="simple">
+<li><a class="reference external" href="https://sphinx-doc.org">Sphinx</a></li>
+</ul>
+</div>
+<div class="section" id="unit-tests-dependencies">
+<h3>Unit Tests Dependencies</h3>
 <ul class="simple">
 <li><a class="reference external" href="https://pypi.python.org/pypi/coverage">Coverage</a></li>
 <li><a class="reference external" href="https://pypi.python.org/pypi/flake8">Flake8</a></li>
@@ -241,10 +248,10 @@ you may not need to install all of them.</p>
 <li><a class="reference external" href="https://nose.readthedocs.io/en/latest">Nose</a></li>
 </ul>
 </div>
-<div class="section" id="documentation-building-dependencies">
-<h3>Documentation Building Dependencies</h3>
+<div class="section" id="optional-dependencies">
+<h3>Optional Dependencies</h3>
 <ul class="simple">
-<li><a class="reference external" href="https://sphinx-doc.org">Sphinx</a></li>
+<li><a class="reference external" href="https://github.com/google/yapf">Yapf</a></li>
 </ul>
 </div>
 </div>
@@ -255,7 +262,7 @@ is the Python distribution we use to develop <strong>Colour</strong>:
 it ships all the scientific dependencies we require and is easily deployed
 cross-platform.</p>
 <p>Colour is available on <em>conda</em> and can be installed as follows:</p>
-<pre class="code shell"><a name="rest_code_d0005c0387af4a399437374d34eaaef5-1"></a>conda install -c conda-forge colour-science
+<pre class="code shell"><a name="rest_code_1e96b08714fd4279a3d985e83b5d3e30-1"></a>conda install -c conda-forge colour-science
 </pre>
 <p>This <em>asciicast</em> demonstrates how to generate a pristine Python <em>conda</em>
 environment for Colour:</p>
@@ -275,30 +282,30 @@ dependencies, <a class="reference external" href="http://www.scipy.org/">SciPy</
 performed as follows: <cite>pip install numpy</cite>
 </div>
 </div>
-<pre class="code shell"><a name="rest_code_e752597e1ef64ff2bd8ae276570c9bf6-1"></a>pip install colour-science
+<pre class="code shell"><a name="rest_code_574a04054fbc44c4b28568c62e5fc555-1"></a>pip install colour-science
 </pre>
 <p>This <em>asciicast</em> demonstrates how to generate a pristine Python <em>VirtualEnv</em>
 environment for Colour:</p>
 <script type="text/javascript" src="https://asciinema.org/a/125159.js" id="asciicast-125159" async data-speed="3"></script><p>The optional features dependencies are installed as follows:</p>
-<pre class="code shell"><a name="rest_code_a9bd3cb97b41476bad3a3f409f9fc92d-1"></a>pip install <span class="s1">'colour-science[optional]'</span>
+<pre class="code shell"><a name="rest_code_8f0a5c075a604c7f8a088d02f33c5356-1"></a>pip install <span class="s1">'colour-science[optional]'</span>
 </pre>
 <p>The figures plotting dependencies are installed as follows:</p>
-<pre class="code shell"><a name="rest_code_d680476531274de7a81e69a429e05fdf-1"></a>pip install <span class="s1">'colour-science[plotting]'</span>
+<pre class="code shell"><a name="rest_code_2a0c7a26e0664ff1832b76d8c8c91ebf-1"></a>pip install <span class="s1">'colour-science[plotting]'</span>
 </pre>
 <p>The tests suite dependencies are installed as follows:</p>
-<pre class="code shell"><a name="rest_code_37b0510997ce475da5b01bc00d999ee8-1"></a>pip install <span class="s1">'colour-science[tests]'</span>
+<pre class="code shell"><a name="rest_code_4303ce5c558e4b8b8e095e434902840f-1"></a>pip install <span class="s1">'colour-science[tests]'</span>
 </pre>
 <p>The documentation building dependencies are installed as follows:</p>
-<pre class="code shell"><a name="rest_code_2af7aa8857af43de8994a23e7e9f1f28-1"></a>pip install <span class="s1">'colour-science[docs]'</span>
+<pre class="code shell"><a name="rest_code_7b519efe84d345bc87057f062fe075d8-1"></a>pip install <span class="s1">'colour-science[docs]'</span>
 </pre>
 </div>
 <div class="section" id="github">
 <h2>Github</h2>
 <p>Alternatively, you can also install directly from
 <a class="reference external" href="http://github.com/colour-science/colour">Github</a> source repository:</p>
-<pre class="code shell"><a name="rest_code_15a91528792a4b91a0b6d84d09fb19d9-1"></a>git clone git://github.com/colour-science/colour.git
-<a name="rest_code_15a91528792a4b91a0b6d84d09fb19d9-2"></a><span class="nb">cd</span> colour
-<a name="rest_code_15a91528792a4b91a0b6d84d09fb19d9-3"></a>pip install .
+<pre class="code shell"><a name="rest_code_a22814c0ea0f468fb086b9f9ac638e57-1"></a>git clone git://github.com/colour-science/colour.git
+<a name="rest_code_a22814c0ea0f468fb086b9f9ac638e57-2"></a><span class="nb">cd</span> colour
+<a name="rest_code_a22814c0ea0f468fb086b9f9ac638e57-3"></a>pip install .
 </pre>
 </div>
 <div class="section" id="vagrant">
