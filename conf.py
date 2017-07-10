@@ -159,7 +159,7 @@ NAVIGATION_LINKS = {
                 ('/contributing', 'Contributing'),
                 ('/contributors', 'Contributors'),
                 ('/bibliography', 'Bibliography'),
-                ('http://dx.doi.org/10.5281/zenodo.376790', 'Cite Us'),
+                ('http://dx.doi.org/10.5281/zenodo.821825', 'Cite Us'),
                 ('/cited-by', 'Cited By'),
                 ('http://opensource.org/licenses/BSD-3-Clause', 'License'),
                 ('/search', 'Search'),
