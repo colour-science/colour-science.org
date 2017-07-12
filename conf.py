@@ -130,7 +130,7 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         (
             (
-                ('https://github.com/colour-science/colour/archive/v0.3.9.zip', 'Latest (v0.3.9)'),
+                ('https://github.com/colour-science/colour/archive/v0.3.10.zip', 'Latest (v0.3.10)'),
                 ('https://github.com/colour-science/colour/releases', 'All Releases'),
                 ('https://pypi.python.org/pypi/colour-science/', 'Pypi'),
             ),

@@ -75,8 +75,8 @@
 
     <ul class="list-inline">
         <li>
-            <a href="http://dx.doi.org/10.5281/zenodo.376790">
-                <img src="https://zenodo.org/badge/doi/10.5281/zenodo.376790.png" alt="10.5281/zenodo.376790">
+            <a href="http://dx.doi.org/10.5281/zenodo.821825">
+                <img src="https://zenodo.org/badge/doi/10.5281/zenodo.821825.png" alt="10.5281/zenodo.821825">
             </a>
         </li>
     </ul>

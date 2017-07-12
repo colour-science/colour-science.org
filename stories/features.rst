@@ -16,6 +16,11 @@ Algebra
 Sprague Interpolation
 ^^^^^^^^^^^^^^^^^^^^^
 
+Biochemistry
+------------
+
+-   Michaelis–Menten kinetics
+
 Colorimetry
 -----------
 
@@ -36,13 +41,13 @@ Spectral Bandpass Correction
 RGB and XYZ Colour Matching Functions Spectral Dataset
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--   Wright & Guild 1931 2° RGB CMFs RGB colour matching functions
--   Stiles & Burch 1955 2° RGB CMFs RGB colour matching functions
--   Stiles & Burch 1959 10° RGB CMFs RGB colour matching functions
 -   CIE 1931 2° Standard Observer XYZ colour matching functions
 -   CIE 1964 10° Standard Observer XYZ colour matching functions
--   CIE 2012 2° Standard Observer XYZ colour matching functions
 -   CIE 2012 10° Standard Observer XYZ colour matching functions
+-   CIE 2012 2° Standard Observer XYZ colour matching functions
+-   Stiles & Burch 1955 2° RGB CMFs RGB colour matching functions
+-   Stiles & Burch 1959 10° RGB CMFs RGB colour matching functions
+-   Wright & Guild 1931 2° RGB CMFs RGB colour matching functions
 
 Cone Fundamentals Spectral Dataset
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -95,6 +100,9 @@ Illuminant Spectral Dataset
 -   D75
 -   E
 -   F1
+-   F10
+-   F11
+-   F12
 -   F2
 -   F3
 -   F4
@@ -103,10 +111,13 @@ Illuminant Spectral Dataset
 -   F7
 -   F8
 -   F9
--   F10
--   F11
--   F12
 -   FL3.1
+-   FL3.10
+-   FL3.11
+-   FL3.12
+-   FL3.13
+-   FL3.14
+-   FL3.15
 -   FL3.2
 -   FL3.3
 -   FL3.4
@@ -115,12 +126,6 @@ Illuminant Spectral Dataset
 -   FL3.7
 -   FL3.8
 -   FL3.9
--   FL3.10
--   FL3.11
--   FL3.12
--   FL3.13
--   FL3.14
--   FL3.15
 -   HP1
 -   HP2
 -   HP3
@@ -136,24 +141,6 @@ Hunter Lab Chromaticity Coordinates
 Light Source Dataset
 ^^^^^^^^^^^^^^^^^^^^
 
--   Natural
--   Philips TL-84
--   T8 Luxline Plus White
--   SA
--   SC
--   T8 Polylux 3000
--   T8 Polylux 4000
--   Thorn Kolor-rite
--   Cool White FL
--   Daylight FL
--   HPS
--   Incandescent
--   LPS
--   Mercury
--   Metal Halide
--   Neodimium Incandescent
--   Super HPS
--   Triphosphor FL
 -   3-LED-1 (457/540/605)
 -   3-LED-2 (473/545/616)
 -   3-LED-2 Yellow
@@ -163,15 +150,11 @@ Light Source Dataset
 -   4-LED Yellow
 -   4-LED-1 (461/526/576/624)
 -   4-LED-2 (447/512/573/627)
--   Luxeon WW 2880
--   PHOS-1
--   PHOS-2
--   PHOS-3
--   PHOS-4
--   Phosphor LED YAG
 -   60 A/W (Soft White)
 -   C100S54 (HPS)
 -   C100S54C (HPS)
+-   Cool White FL
+-   Daylight FL
 -   F32T8/TL830 (Triphosphor)
 -   F32T8/TL835 (Triphosphor)
 -   F32T8/TL841 (Triphosphor)
@@ -188,10 +171,32 @@ Light Source Dataset
 -   F40/N (Natural FL)
 -   H38HT-100 (Mercury)
 -   H38JA-100/DX (Mercury DX)
+-   HPS
+-   Incandescent
+-   Kinoton 75P
+-   LPS
+-   Luxeon WW 2880
 -   MHC100/U/MP /3K
 -   MHC100/U/MP /4K
+-   Mercury
+-   Metal Halide
+-   Natural
+-   Neodimium Incandescent
+-   PHOS-1
+-   PHOS-2
+-   PHOS-3
+-   PHOS-4
+-   Philips TL-84
+-   Phosphor LED YAG
+-   SA
+-   SC
 -   SDW-T 100W/LV (Super HPS)
--   Kinoton 75P
+-   Super HPS
+-   T8 Luxline Plus White
+-   T8 Polylux 3000
+-   T8 Polylux 4000
+-   Thorn Kolor-rite
+-   Triphosphor FL
 
 Light Source Chromaticity Coordinates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -199,26 +204,34 @@ Light Source Chromaticity Coordinates
 Lightness Computation
 ^^^^^^^^^^^^^^^^^^^^^
 
+-   CIE 1976
+-   Fairchild and Wyble (2010)
 -   Glasser, McKinney, Reilly and Schnelle (1958)
 -   Wyszecki (1963)
--   CIE 1976
 
 Luminance Computation
 ^^^^^^^^^^^^^^^^^^^^^
 
--   Newhall, Nickerson and Judd (1943)
--   CIE 1976
 -   ASTM D1535-08
+-   CIE 1976
+-   Fairchild and Wyble (2010)
+-   Newhall, Nickerson and Judd (1943)
 
 Whiteness Computation
 ^^^^^^^^^^^^^^^^^^^^^
 
--   Berger (1959)
--   Taube (1960)
--   Stensby (1968)
 -   ASTM E313
--   Ganz and Griesser (1979)
+-   Berger (1959)
 -   CIE 2004
+-   Ganz and Griesser (1979)
+-   Stensby (1968)
+-   Taube (1960)
+
+Yellowness Computation
+^^^^^^^^^^^^^^^^^^^^^^
+
+-   ASTM D1925
+-   ASTM E313
 
 Luminous Flux, Efficiency & Efficacy Computation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -229,13 +242,13 @@ Colour Temperature & Correlated Colour Temperature
 Correlated Colour Temperature Computation Methods
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--   Roberston (1968)
--   Ohno (2013)
--   McCamy (1992)
--   Hernández-Andrés, Lee and Romero (1999)
--   Krystek (1985)
--   Kang et al. (2002)
 -   CIE Illuminant D Series
+-   Hernández-Andrés, Lee and Romero (1999)
+-   Kang et al. (2002)
+-   Krystek (1985)
+-   McCamy (1992)
+-   Ohno (2013)
+-   Roberston (1968)
 
 Chromatic Adaptation
 --------------------
@@ -243,25 +256,25 @@ Chromatic Adaptation
 Chromatic Adaptation Models
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--   Von Kries
--   Fairchild (1990)
 -   CIE 1994
 -   CMCCAT2000
+-   Fairchild (1990)
+-   Von Kries
 
 Chromatic Adaptation Transforms
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--   XYZ Scaling
--   Von Kries
--   Bradford
--   Sharp
--   Fairchild
--   CMCCAT97
--   CMCCAT2000
--   CAT02
--   Brill and Süsstrunk (2008) corrected CAT02
 -   Bianco and Schettini (2010)
 -   Bianco and Schettini (2010) PC
+-   Bradford
+-   Brill and Süsstrunk (2008) corrected CAT02
+-   CAT02
+-   CMCCAT2000
+-   CMCCAT97
+-   Fairchild
+-   Sharp
+-   Von Kries
+-   XYZ Scaling
 
 Corresponding Chromaticities Computations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -282,57 +295,65 @@ Colour Models
 Colourspaces Transformations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--   CIE XYZ to CIE xyY
--   CIE xyY to CIE XYZ
--   CIE xy to CIE XYZ
--   CIE XYZ to CIE xy
--   CIE XYZ to RGB
--   RGB to CIE XYZ
--   RGB to RGB
--   CIE XYZ to sRGB
--   sRGB to CIE XYZ
--   CIE XYZ to CIE UCS
--   CIE UCS to CIE XYZ
--   CIE UCS to CIE UCS uv
--   CIE UCS uv to CIE xy
--   CIE XYZ to CIE UVW
--   CIE XYZ to CIE Luv
--   CIE Luv to CIE XYZ
--   CIE Luv to CIE Luv uv
--   CIE Luv uv to CIE xy
--   CIE Luv to CIE LCHuv
--   CIE LCHuv to CIE Luv
--   CIE XYZ to CIE Lab
--   CIE Lab to CIE XYZ
--   CIE Lab to CIE LCHab
--   CIE LCHab to CIE Lab
--   CIE XYZ to IPT
--   IPT to CIE XYZ
--   CIE XYZ to Hunter Lab
--   Hunter Lab to CIE XYZ
--   CIE XYZ to Hunter Rdab
--   RGB to YCbCr
--   YCbCr to RGB
--   RGB to YcCbcCrc
--   YcCbcCrc to RGB
--   RGB to ICTCP
--   ICTCP to RGB
--   JMh CIECAM02 to CAM02LCD
 -   CAM02LCD to JMh CIECAM02
--   JMh CIECAM02 to CAM02SCD
 -   CAM02SCD to JMh CIECAM02
--   JMh CIECAM02 to CAM02UCS
 -   CAM02UCS to JMh CIECAM02
-
+-   CIE LCHab to CIE Lab
+-   CIE LCHuv to CIE Luv
+-   CIE Lab to CIE LCHab
+-   CIE Lab to CIE XYZ
+-   CIE Luv to CIE LCHuv
+-   CIE Luv to CIE Luv uv
+-   CIE Luv to CIE XYZ
+-   CIE Luv uv to CIE xy
+-   CIE UCS to CIE UCS uv
+-   CIE UCS to CIE XYZ
+-   CIE UCS uv to CIE xy
+-   CIE XYZ to CIE Lab
+-   CIE XYZ to CIE Luv
+-   CIE XYZ to CIE UCS
+-   CIE XYZ to CIE UVW
+-   CIE XYZ to CIE xy
+-   CIE XYZ to CIE xyY
+-   CIE XYZ to Hunter Lab
+-   CIE XYZ to Hunter Rdab
+-   CIE XYZ to IPT
+-   CIE XYZ to RGB
+-   CIE XYZ to hdr-CIELab
+-   CIE XYZ to hdr-IPT
+-   CIE XYZ to sRGB
+-   CIE xy to CIE XYZ
+-   CIE xyY to CIE XYZ
+-   Hunter Lab to CIE XYZ
+-   ICTCP to RGB
+-   IPT to CIE XYZ
+-   JMh CIECAM02 to CAM02LCD
+-   JMh CIECAM02 to CAM02SCD
+-   JMh CIECAM02 to CAM02UCS
+-   Prismatic to RGB
+-   RGB to CIE XYZ
+-   RGB to ICTCP
+-   RGB to Prismatic
+-   RGB to RGB
+-   RGB to YCbCr
+-   RGB to YcCbcCrc
+-   YCbCr to RGB
+-   YcCbcCrc to RGB
+-   hdr-CIELab to CIE XYZ
+-   hdr-IPT to CIE XYZ
+-   sRGB to CIE XYZ
+    
 OETFs / EOTFs
 ^^^^^^^^^^^^^
 
+-   ARIB STD-B67 (Hybrid Log-Gamma)
 -   BT.1886
 -   BT.2020
 -   BT.709
 -   DCI-P3
--   sRGB
+-   DICOM - Grayscale Standard Display Function
 -   ST 2084:2014
+-   sRGB
 
 Log Encoding Curves
 ^^^^^^^^^^^^^^^^^^^
@@ -349,8 +370,9 @@ Log Encoding Curves
 -   ERIMM RGB
 -   Log3G10
 -   Log3G12
--   Panalog
 -   PLog
+-   Protune
+-   Panalog
 -   REDLog
 -   REDLogFilm
 -   S-Log
@@ -375,9 +397,9 @@ RGB Colourspaces
 -   ACEScc
 -   ACEScg
 -   ACESproxy
+-   ALEXA Wide Gamut RGB
 -   Adobe RGB 1998
 -   Adobe Wide Gamut RGB
--   ALEXA Wide Gamut RGB
 -   Apple RGB
 -   Best RGB
 -   Beta RGB
@@ -386,33 +408,34 @@ RGB Colourspaces
 -   ColorMatch RGB
 -   DCI-P3
 -   DCI-P3+
--   Don RGB 4
 -   DRAGONcolor
 -   DRAGONcolor2
+-   Don RGB 4
 -   ECI RGB v2
--   Ekta Space PS 5
 -   ERIMM RGB
+-   Ekta Space PS 5
 -   Max RGB
 -   NTSC RGB
 -   Pal/Secam RGB
 -   ProPhoto RGB
--   Rec. 2020
--   Rec. 709
+-   Protune Native
 -   REDcolor
 -   REDcolor2
 -   REDcolor3
 -   REDcolor4
--   RedWideGamut RGB
 -   RIMM RGB
 -   ROMM RGB
+-   Rec. 2020
+-   Rec. 709
+-   RedWideGamut RGB
 -   Russell RGB
 -   S-Gamut
 -   S-Gamut3
 -   S-Gamut3.Cine
 -   SMPTE-C RGB
--   sRGB
 -   V-Gamut
 -   Xtreme RGB
+-   sRGB
 
 Convenience Deprecated Colourspaces Transformations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -507,6 +530,7 @@ Reflectance Recovery
 --------------------
 
 -   Smits (1999)
+-   Meng, Simon and Hanika (2015)
 
 Volume
 ------

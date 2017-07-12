@@ -370,7 +370,7 @@ Python Style Rules
 
 .. code:: shell
 
-          find . -type f -name '*.py' -exec yapf -p -i {} \;
+          find . -type f -name '*.py' -exec yapf -i {} \;
 
 -   Inline comments must have two spaces.
 -   Ensure that you have blank line at the end of the files.
@@ -666,7 +666,10 @@ version of **Colour**:
     pip install numpy
     pip install -e .
     pip install matplotlib
-    ./utilities/run_examples.sh</pre>
+    pip install nose
+    pip install mock
+    ./utilities/run_examples.sh
+    nosetests</pre>
                         </li>
                     </ul>
                 </dd>
@@ -730,15 +733,6 @@ version of **Colour**:
                                                 <label class="strikethrough"><a
                                                         class="reference external"
                                                         href="https://github.com/colour-science/colour/blob/develop/README.rst">README.rst</a>
-                                                </label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="checkbox">
-                                                <input type="checkbox" value=""/>
-                                                <label class="strikethrough"><a
-                                                        class="reference external"
-                                                        href="https://github.com/colour-science/colour/blob/develop/docs/index.rst">index.rst</a>
                                                 </label>
                                             </div>
                                         </li>
@@ -812,7 +806,10 @@ version of **Colour**:
                                 <label class="strikethrough">Release Pypi
                                     package:</label>
                             </div>
-                            <pre class="code shell">twine upload dist/*.tar.gz
+                            <pre class="code shell">rm -rf dist/
+    python setup.py sdist
+    python setup.py bdist_wheel --universal
+    twine upload dist/*.tar.gz
     twine upload dist/*.whl</pre>
                         </li>
                     </ul>
