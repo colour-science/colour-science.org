@@ -1,7 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>colour-science</title><link>http://colour-science.org/</link><description>Colour: Colour Science for Python</description><atom:link href="http://colour-science.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 12 Jul 2017 10:23:58 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Colour 0.3.10 is available!</title><link>http://colour-science.org/posts/colour-0310-is-available/</link><dc:creator>Colour Developers</dc:creator><description>&lt;div&gt;&lt;p&gt;We are pleased to announce that &lt;a class="reference external" href="https://github.com/colour-science/colour/releases/tag/v0.3.10"&gt;Colour 0.3.10&lt;/a&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>colour-science</title><link>http://colour-science.org/</link><description>Colour: Colour Science for Python</description><atom:link href="http://colour-science.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 09 Aug 2017 23:56:08 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The Road to Stable</title><link>http://colour-science.org/posts/the-road-to-stable/</link><dc:creator>Colour Developers</dc:creator><description>&lt;div&gt;&lt;p&gt;Colour has been in public development for over 3 years. The package has grown in various directions since the initial release and offers a significant amount of &lt;a class="reference external" href="http://colour-science.org/features/"&gt;features&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It is used in research groups such as the &lt;a class="reference external" href="https://sachi.cs.st-andrews.ac.uk/"&gt;St Andrews HCI Research Group&lt;/a&gt; or companies like &lt;a class="reference external" href="https://www.google.com/"&gt;Google&lt;/a&gt;, &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Merck_Group"&gt;Merck KGaA&lt;/a&gt; or &lt;a class="reference external" href="http://www.moving-picture.com/"&gt;The Moving Picture Company&lt;/a&gt;. Even though it has reached a certain stability and maturity, it is still in alpha development status.&lt;/p&gt;
+&lt;p&gt;Two important features are missing for a first feature complete stable release:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;The first one is that our current dictionary based spectral implementation has reached its limits when building support for Machado et al. (2010): attempting to alter the domain or range of a &lt;cite&gt;SpectralPowerDistribution&lt;/cite&gt; is difficult. With that in mind, we have started to work on a new alternative implementation where data is exposed as a continuous function modeled using an interpolating function encapsulated within an extrapolating function: &lt;a class="reference external" href="https://github.com/colour-science/colour/issues/335"&gt;#335&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;The second is support for metadata inside the API. Most of the codebase adopts definitions/functions over classes to stay clean and lean, the aforementioned spectral implementation being a notable exception. As a consequence, it is hard to implement a non-intrusive classifying mechanism, provide usable hints on functions domain/range or create an auto-conversion layer. We have considered multiple ways of providing the necessary metadata, e.g. &lt;a class="reference external" href="https://github.com/colour-science/colour/branches/all"&gt;experimental/medatada* branches&lt;/a&gt;, and decided that the true elegant solution was through docstrings.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The following example showcases the current implementation, defining metadata for &lt;em&gt;parameters&lt;/em&gt;, &lt;em&gt;returns&lt;/em&gt; and the definition by using the &lt;em&gt;notes&lt;/em&gt; section:&lt;/p&gt;
+&lt;pre class="code python"&gt;&lt;a name="rest_code_392c870728224a3e980897bf64413acc-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;luminance_Newhall1943&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;V&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-2"&gt;&lt;/a&gt;    &lt;span class="sd"&gt;"""&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-3"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    Returns the *luminance* :math:`R_Y` of given *Munsell* value :math:`V`&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-4"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    using *Newhall et al. (1943)* method.&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-5"&gt;&lt;/a&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-6"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    Parameters&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-7"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    ----------&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-8"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    V : numeric or array_like&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-9"&gt;&lt;/a&gt;&lt;span class="sd"&gt;        metadata : {'type': 'Munsell Value', 'symbol': 'V', 'extent': (0, 10)}&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-10"&gt;&lt;/a&gt;&lt;span class="sd"&gt;        *Munsell* value :math:`V`.&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-11"&gt;&lt;/a&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-12"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    Returns&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-13"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    -------&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-14"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    numeric or array_like&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-15"&gt;&lt;/a&gt;&lt;span class="sd"&gt;        metadata : {'type': 'Luminance', 'symbol': 'R_Y', 'extent': (0, 100)}&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-16"&gt;&lt;/a&gt;&lt;span class="sd"&gt;        *luminance* :math:`R_Y`.&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-17"&gt;&lt;/a&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-18"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    Notes&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-19"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    -----&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-20"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    metadata : {'classifier': 'Luminance Conversion Function', 'method_name':&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-21"&gt;&lt;/a&gt;&lt;span class="sd"&gt;        'Newhall 1943', 'method_strict_name': 'Newhall et al. (1943)'}&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-22"&gt;&lt;/a&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-23"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    References&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-24"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    ----------&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-25"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    .. [1]  Newhall, S. M., Nickerson, D., &amp;amp; Judd, D. B. (1943). Final report&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-26"&gt;&lt;/a&gt;&lt;span class="sd"&gt;            of the OSA subcommittee on the spacing of the munsell colors. JOSA,&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-27"&gt;&lt;/a&gt;&lt;span class="sd"&gt;            33(7), 385. doi:10.1364/JOSA.33.000385&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-28"&gt;&lt;/a&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-29"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    Examples&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-30"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    --------&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-31"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    &amp;gt;&amp;gt;&amp;gt; luminance_Newhall1943(3.74629715382)  # doctest: +ELLIPSIS&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-32"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    10.4089874...&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-33"&gt;&lt;/a&gt;&lt;span class="sd"&gt;    """&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-34"&gt;&lt;/a&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-35"&gt;&lt;/a&gt;    &lt;span class="n"&gt;V&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;asarray&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;V&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-36"&gt;&lt;/a&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-37"&gt;&lt;/a&gt;    &lt;span class="n"&gt;R_Y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;1.2219&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;V&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mf"&gt;0.23111&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;V&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;V&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mf"&gt;0.23951&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;V&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mf"&gt;0.021009&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-38"&gt;&lt;/a&gt;          &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;V&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mf"&gt;0.0008404&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;V&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-39"&gt;&lt;/a&gt;
+&lt;a name="rest_code_392c870728224a3e980897bf64413acc-40"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;R_Y&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;There is one caveat though: running Python with &lt;cite&gt;-OO&lt;/cite&gt; argument will optimize the bytecode and trim the docstrings and as a result preventing metadata usage. This is an edge case we are aware of and it will be advertised.&lt;/p&gt;
+&lt;p&gt;These two features are consequential and taking a fair amount of time to implement and test. They will also introduce backward incompatible changes.&lt;/p&gt;
+&lt;p&gt;Stay tuned!&lt;/p&gt;&lt;/div&gt;</description><category>colour</category><guid>http://colour-science.org/posts/the-road-to-stable/</guid><pubDate>Wed, 09 Aug 2017 02:23:09 GMT</pubDate></item><item><title>Colour 0.3.10 is available!</title><link>http://colour-science.org/posts/colour-0310-is-available/</link><dc:creator>Colour Developers</dc:creator><description>&lt;div&gt;&lt;p&gt;We are pleased to announce that &lt;a class="reference external" href="https://github.com/colour-science/colour/releases/tag/v0.3.10"&gt;Colour 0.3.10&lt;/a&gt;
 is available!&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://colour-science.org/posts/colour-0310-is-available/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><guid>http://colour-science.org/posts/colour-0310-is-available/</guid><pubDate>Wed, 12 Jul 2017 09:47:36 GMT</pubDate></item><item><title>Colour 0.3.9, Colour - HDRI 0.1.2 and ACES!</title><link>http://colour-science.org/posts/colour-039-colour-hdri-012-aces/</link><dc:creator>Colour Developers</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="https://colour-science.org"&gt;colour-science.org&lt;/a&gt; has been quiet for a while
+&lt;p&gt;&lt;a href="http://colour-science.org/posts/colour-0310-is-available/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>colour</category><category>release</category><guid>http://colour-science.org/posts/colour-0310-is-available/</guid><pubDate>Wed, 12 Jul 2017 09:47:36 GMT</pubDate></item><item><title>Colour 0.3.9, Colour - HDRI 0.1.2 and ACES!</title><link>http://colour-science.org/posts/colour-039-colour-hdri-012-aces/</link><dc:creator>Colour Developers</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a class="reference external" href="https://colour-science.org"&gt;colour-science.org&lt;/a&gt; has been quiet for a while
 however, it does not mean nothing happened. &lt;a class="reference external" href="https://github.com/colour-science/colour/releases/tag/v0.3.9"&gt;Colour 0.3.9&lt;/a&gt;
 and &lt;a class="reference external" href="https://github.com/colour-science/colour-hdri/releases/tag/v0.1.2"&gt;Colour - HDRI 0.1.2&lt;/a&gt;
 were released today and last week, concluding a major collaborative effort, the ACES
@@ -28,30 +78,4 @@ is available!&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://colour-science.org/posts/colour-036-is-available/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>colour</category><category>release</category><guid>http://colour-science.org/posts/colour-036-is-available/</guid><pubDate>Mon, 10 Aug 2015 10:31:00 GMT</pubDate></item><item><title>Colour 0.3.5 is available!</title><link>http://colour-science.org/posts/colour-035-is-available/</link><dc:creator>Colour Developers</dc:creator><description>&lt;div&gt;&lt;p&gt;After months of work, we are pleased to announce that
 &lt;a class="reference external" href="https://github.com/colour-science/colour/releases/tag/v0.3.5"&gt;Colour 0.3.5&lt;/a&gt;
 is finally available. This release is a major milestone toward a stable API.&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://colour-science.org/posts/colour-035-is-available/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>colour</category><category>release</category><guid>http://colour-science.org/posts/colour-035-is-available/</guid><pubDate>Thu, 07 May 2015 13:01:00 GMT</pubDate></item><item><title>RED Colourspaces Derivation</title><link>http://colour-science.org/posts/red-colourspaces-derivation/</link><dc:creator>Colour Developers</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
-    &lt;div class="container" id="notebook-container"&gt;
-
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Introduction"&gt;Introduction&lt;a class="anchor-link" href="http://colour-science.org/posts/red-colourspaces-derivation/#Introduction"&gt;¶&lt;/a&gt;&lt;/h3&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;The purpose of this document is to illustrate the steps we followed to compute &lt;a href="http://www.red.com/"&gt;RED&lt;/a&gt; colourspaces primaries.&lt;/p&gt;
-&lt;p&gt;The most important attribute used to specify an &lt;a href="http://en.wikipedia.org/wiki/RGB_color_space"&gt;RGB colourspace&lt;/a&gt; is the set of 3 chromaticities or primaries encompassing the &lt;a href="http://en.wikipedia.org/wiki/Gamut"&gt;gamut&lt;/a&gt; of colours that the &lt;em&gt;RGB&lt;/em&gt; colourspace can represent.&lt;/p&gt;
-&lt;p&gt;A convenient way to view an &lt;em&gt;RGB&lt;/em&gt; colourspace gamut is to project it onto a &lt;a href="http://en.wikipedia.org/wiki/Chromaticity"&gt;chromaticity diagram&lt;/a&gt; such as the &lt;em&gt;CIE 1931 Chromaticity Diagram&lt;/em&gt; where the primaries define the triangle encompassing the gamut.&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="http://colour-science.org/posts/red-colourspaces-derivation/"&gt;Read more…&lt;/a&gt; (19 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>chromaticity diagram</category><category>RED</category><category>RGB colourspace</category><guid>http://colour-science.org/posts/red-colourspaces-derivation/</guid><pubDate>Wed, 29 Apr 2015 22:12:00 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="http://colour-science.org/posts/colour-035-is-available/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>colour</category><category>release</category><guid>http://colour-science.org/posts/colour-035-is-available/</guid><pubDate>Thu, 07 May 2015 13:01:00 GMT</pubDate></item></channel></rss>
