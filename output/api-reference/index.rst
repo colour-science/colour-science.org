@@ -7,38 +7,38 @@
 .. description:
 .. type: text
 
-`Latest <http://colour.readthedocs.io/en/latest/>`_
+`Latest <https://colour.readthedocs.io/en/latest/api.html>`_
 ----------------------------------------------------
 
-`0.3.10 <http://colour.readthedocs.io/en/v0.3.10/>`_
+`0.3.10 <https://colour.readthedocs.io/en/v0.3.10/api.html>`_
 ----------------------------------------------------
 
-`0.3.9 <http://colour.readthedocs.io/en/v0.3.9/>`_
+`0.3.9 <https://colour.readthedocs.io/en/v0.3.9/api.html>`_
 ---------------------------------------------------
 
-`0.3.8 <http://colour.readthedocs.io/en/v0.3.8/>`_
+`0.3.8 <https://colour.readthedocs.io/en/v0.3.8/api.html>`_
 ---------------------------------------------------
 
-`0.3.7 <http://colour.readthedocs.io/en/v0.3.7/>`_
+`0.3.7 <https://colour.readthedocs.io/en/v0.3.7/api.html>`_
 ---------------------------------------------------
 
-`0.3.6 <../api/0.3.6/html/index.html>`_
+`0.3.6 <../api/0.3.6/html/api.html>`_
 ---------------------------------------
 
-`0.3.5 <../api/0.3.5/html/index.html>`_
+`0.3.5 <../api/0.3.5/html/api.html>`_
 ---------------------------------------
 
-`0.3.4 <../api/0.3.4/html/index.html>`_
+`0.3.4 <../api/0.3.4/html/api.html>`_
 ---------------------------------------
 
-`0.3.3 <../api/0.3.3/html/index.html>`_
+`0.3.3 <../api/0.3.3/html/api.html>`_
 ---------------------------------------
 
-`0.3.2 <../api/0.3.2/html/index.html>`_
+`0.3.2 <../api/0.3.2/html/api.html>`_
 ---------------------------------------
 
-`0.3.1 <../api/0.3.1/html/index.html>`_
+`0.3.1 <../api/0.3.1/html/api.html>`_
 ---------------------------------------
 
-`0.3.0 <../api/0.3.0/html/index.html>`_
+`0.3.0 <../api/0.3.0/html/api.html>`_
 ---------------------------------------

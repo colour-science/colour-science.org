@@ -16,7 +16,7 @@ This release is a maintenance release with various fixes, improvements, new
 objects and *backward incompatible changes*. It provides support for
 `Colour - Demosaicing <https://github.com/colour-science/colour-demosaicing>`_ and `Colour - HDRI <https://github.com/colour-science/colour-hdri>`_.
 
-The API documentation is now hosted on `readthedocs.io <http://colour.readthedocs.io/en/latest/>`_
+The API documentation is now hosted on `readthedocs.io <https://colour.readthedocs.io/en/latest/api.html>`_
 
 Python 2.7 and 3.5 wheels are now available on `Pypi <https://pypi.python.org/pypi/colour-science/>`_.
 
