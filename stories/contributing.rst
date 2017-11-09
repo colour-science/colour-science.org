@@ -107,6 +107,11 @@ We currently use a large set of labels to categorise issues:
     Used for an issue ready to be addressed.
 -   `Task <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ATask>`_:
     Used for a task not directly related to pure programming.
+-   `Good First Issue <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3A"Good+First+Issue">`_:
+    Used for an issue appropriate for a first time contribution.
+-   `Help Wanted <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3A"Help+Wanted">`_:
+    Used for an issue appropriate for a first time contribution but likely harder than a
+    `Good First Issue <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3A"Good+First+Issue">`_ one.
 
 Defects
 ^^^^^^^
