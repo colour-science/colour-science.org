@@ -46,6 +46,13 @@
             </small>
         </p>
 
+        <p>
+            <small>
+                <strong><span class="text-primary">Colour</span></strong> is developed with
+                <a href="https://www.jetbrains.com/pycharm/"><img src="/images/PyCharm_Logo.svg" width="48" alt=""> JetBrains PyCharm</a>.
+            </small>
+        </p>
+
 .. raw:: html
 
     <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Overview</a></h1>
