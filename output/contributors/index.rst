@@ -187,6 +187,15 @@
                     <a href="http://www.nist.gov/pml/div685/grp03/ohno.cfm">Website</a>
                 </p>
             </div>
+            <div class="col-md-4">
+                <h2>Ofek Lev</h2>
+                <p>
+                    Documentation improvements.
+                </p>
+                <p>
+                    <a href="https://twitter.com/Ofekmeister">Twitter</a>
+                </p>
+            </div>
         </div>
     </div>
     <div class="row text-center">
@@ -201,14 +210,40 @@
                 <p>Infinite patience</p>
             </div>
             <div class="col-md-4">
-                <h2>Contributors</h2>
-                <ul class="list-unstyled">
+                <h2>Issues & Discussions</h2>
+                <ul class="list-unstyled col-md-6">
                     <li>
                         <a href="https://www.facebook.com/invisiblelightimages">Nick Spiker</a>
                     </li>
                     <li>
+                        <a href="https://github.com/Chandler">Chandler</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Kunkka1988">Kunkka1988</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Rob-Welch">Rob-Welch</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Ron024">Ron024</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/awehring">awehring</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/brandondube">brandondube</a>
+                    </li>
+                    <li>
                         <a href="https://github.com/fangjy88">fangjy88</a>
                     </li>
+                    <li>
+                        <a href="https://github.com/eyeforcolor">eyeforcolor</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/foutoucour">foutoucour</a>
+                    </li>
+                </ul>
+                <ul class="list-unstyled col-md-6">
                     <li>
                         <a href="https://github.com/henczati">henczati</a>
                     </li>
@@ -216,10 +251,25 @@
                         <a href="https://github.com/jaguarondi">jaguarondi</a>
                     </li>
                     <li>
-                        <a href="https://github.com/Ron024">Ron024</a>
+                        <a href="https://github.com/iCagarro">iCagarro</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/lensz">lensz</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/meshula">meshula</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/naavis">naavis</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/peteroupc">peteroupc</a>
                     </li>
                     <li>
                         <a href="https://github.com/sobotka">sobotka</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/stakemura">stakemura</a>
                     </li>
                     <li>
                         <a href="https://github.com/zachlewis">zachlewis</a>
