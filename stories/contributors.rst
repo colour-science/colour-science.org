@@ -213,7 +213,7 @@
                 <h2>Issues & Discussions</h2>
                 <ul class="list-unstyled col-md-6">
                     <li>
-                        <a href="https://www.facebook.com/invisiblelightimages">Nick Spiker</a>
+                        <a href="http://nickporcino.com/">Nick Porcino</a>
                     </li>
                     <li>
                         <a href="https://github.com/Chandler">Chandler</a>
@@ -245,7 +245,7 @@
                 </ul>
                 <ul class="list-unstyled col-md-6">
                     <li>
-                        <a href="http://nickporcino.com/">Nick Porcino</a>
+                        <a href="https://www.facebook.com/invisiblelightimages">Nick Spiker</a>
                     </li>
                     <li>
                         <a href="https://github.com/henczati">henczati</a>
