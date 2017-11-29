@@ -245,6 +245,9 @@
                 </ul>
                 <ul class="list-unstyled col-md-6">
                     <li>
+                        <a href="http://nickporcino.com/">Nick Porcino</a>
+                    </li>
+                    <li>
                         <a href="https://github.com/henczati">henczati</a>
                     </li>
                     <li>
@@ -255,9 +258,6 @@
                     </li>
                     <li>
                         <a href="https://github.com/lensz">lensz</a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/meshula">meshula</a>
                     </li>
                     <li>
                         <a href="https://github.com/naavis">naavis</a>
