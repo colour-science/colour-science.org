@@ -110,6 +110,17 @@
                 </p>
             </div>
             <div class="col-md-4">
+                <h2>Tim Borer</h2>
+                <p>
+                    <em>Lead Engineer</em> @
+                    <a href="http://www.bbc.co.uk/rd">BBC Research & Development</a>
+                </p>
+                <p><em>ITU-R BT.2100</em> technical support.</p>
+                <p>
+                    <a href="http://www.bbc.co.uk/rd/people/t-borer">BB R&D Profile</a>
+                </p>
+            </div>
+            <div class="col-md-4">
                 <h2>Paul Centore</h2>
                 <p>
                     <em>Mathematician &amp; Colour Scientist</em>
@@ -121,6 +132,8 @@
                     <a href="http://99main.com/%5Ecentore/">Website</a>
                 </p>
             </div>
+        </div>
+        <div class="row">
             <div class="col-md-4">
                 <h2>Scott Dyer</h2>
                 <p>
@@ -134,8 +147,6 @@
                     <a href="mailto:AcademyACES@googlegroups.com">Mailing List</a>
                 </p>
             </div>
-        </div>
-        <div class="row">
             <div class="col-md-4">
                 <h2>Mark D. Fairchild</h2>
                 <p>
@@ -163,18 +174,17 @@
                     <a href="mailto:AcademyACES@googlegroups.com">Mailing List</a>
                 </p>
             </div>
-            <div class="col-md-4">
-                <h2>Charles Poynton</h2>
-                <p>
-                    <em>Mathematician &amp; Colour Scientist</em>
-                </p>
-                <p>Technical support.</p>
-                <p>
-                    <a href="http://www.poynton.com/">Website</a>
-                </p>
-            </div>
         </div>
         <div class="row">
+            <div class="col-md-4">
+                <h2>Ofek Lev</h2>
+                <p>
+                    Documentation improvements.
+                </p>
+                <p>
+                    <a href="https://twitter.com/Ofekmeister">Twitter</a>
+                </p>
+            </div>
             <div class="col-md-4">
                 <h2>Yoshi Ohno</h2>
                 <p>
@@ -188,12 +198,13 @@
                 </p>
             </div>
             <div class="col-md-4">
-                <h2>Ofek Lev</h2>
+                <h2>Charles Poynton</h2>
                 <p>
-                    Documentation improvements.
+                    <em>Mathematician &amp; Colour Scientist</em>
                 </p>
+                <p>Technical support.</p>
                 <p>
-                    <a href="https://twitter.com/Ofekmeister">Twitter</a>
+                    <a href="http://www.poynton.com/">Website</a>
                 </p>
             </div>
         </div>
