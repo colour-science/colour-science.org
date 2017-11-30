@@ -117,7 +117,7 @@
                 </p>
                 <p><em>ITU-R BT.2100</em> technical support.</p>
                 <p>
-                    <a href="http://www.bbc.co.uk/rd/people/t-borer">BB R&D Profile</a>
+                    <a href="http://www.bbc.co.uk/rd/people/t-borer">BBC R&D Profile</a>
                 </p>
             </div>
             <div class="col-md-4">
