@@ -553,8 +553,8 @@ Light Quality
 -   Colour Rendering Index computation
 -   Colour Quality Scale computation
 
-Optical Phenomenons
--------------------
+Optical Phenomena
+-----------------
 
 -   Rayleigh Optical Depth
 
