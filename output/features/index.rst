@@ -84,8 +84,8 @@ Blackbody Spectral Radiance Computation
 Dominant, Complementary Wavelength & Colour Purity Computation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Illuminant Spectral Power Distribution Computations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Illuminant Spectral Power Distribution Computation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - CIE Standard Illuminant A
 - CIE Standard Illuminant D Series
@@ -236,8 +236,8 @@ Yellowness Computation
 -   ASTM D1925
 -   ASTM E313
 
-Corresponding Chromaticities Computations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Corresponding Chromaticities Computation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Luminous Flux, Efficiency & Efficacy Computation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -484,16 +484,16 @@ Colour Appearance Models
 Colour Difference
 -----------------
 
-:math:`\Delta E` Computation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Delta E Computation
+^^^^^^^^^^^^^^^^^^^
 
--   :math:`\Delta E` CIE 1976
--   :math:`\Delta E` CIE 1994
--   :math:`\Delta E` CIE 2000
--   :math:`\Delta E` CMC
--   :math:`\Delta E` CAM02LCD
--   :math:`\Delta E` CAM02SCD
--   :math:`\Delta E` CAM02UCS
+-   CIE 1976
+-   CIE 1994
+-   CIE 2000
+-   CMC
+-   CAM02LCD
+-   CAM02SCD
+-   CAM02UCS
 
 Colour Notation Systems
 -----------------------
