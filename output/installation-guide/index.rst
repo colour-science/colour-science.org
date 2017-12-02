@@ -43,6 +43,7 @@ Unit Tests Dependencies
 Optional Dependencies
 ^^^^^^^^^^^^^^^^^^^^^
 
+-  `OpenImageIO <https://github.com/OpenImageIO/oiio>`_
 -  `Yapf <https://github.com/google/yapf>`_
 
 Continuum Analytics Anaconda

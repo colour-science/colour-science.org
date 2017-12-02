@@ -13,6 +13,9 @@ some highlights:
 Algebra
 -------
 
+Kernel Interpolation
+^^^^^^^^^^^^^^^^^^^^
+
 Sprague Interpolation
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -233,6 +236,9 @@ Yellowness Computation
 -   ASTM D1925
 -   ASTM E313
 
+Corresponding Chromaticities Computations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Luminous Flux, Efficiency & Efficacy Computation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -249,45 +255,6 @@ Correlated Colour Temperature Computation Methods
 -   McCamy (1992)
 -   Ohno (2013)
 -   Roberston (1968)
-
-Chromatic Adaptation
---------------------
-
-Chromatic Adaptation Models
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
--   CIE 1994
--   CMCCAT2000
--   Fairchild (1990)
--   Von Kries
-
-Chromatic Adaptation Transforms
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
--   Bianco and Schettini (2010)
--   Bianco and Schettini (2010) PC
--   Bradford
--   Brill and Süsstrunk (2008) corrected CAT02
--   CAT02
--   CMCCAT2000
--   CMCCAT97
--   Fairchild
--   Sharp
--   Von Kries
--   XYZ Scaling
-
-Corresponding Chromaticities Computations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Colour Appearance Models
-------------------------
-
--   ATD95
--   CIECAM02
--   Hunt
--   LLAB
--   Nayatani95
--   RLAB
 
 Colour Models
 -------------
@@ -342,21 +309,47 @@ Colourspaces Transformations
 -   hdr-CIELab to CIE XYZ
 -   hdr-IPT to CIE XYZ
 -   sRGB to CIE XYZ
-    
-OETFs / EOTFs
-^^^^^^^^^^^^^
 
--   ARIB STD-B67 (Hybrid Log-Gamma)
--   BT.1886
--   BT.2020
--   BT.709
+OETFs
+^^^^^
+
+-   ARIB STD-B67
 -   DCI-P3
--   DICOM - Grayscale Standard Display Function
--   ST 2084:2014
+-   DICOM GSDF
+-   ITU-R BT.2020
+-   ITU-R BT.2100 HLG
+-   ITU-R BT.2100 PQ
+-   ITU-R BT.601
+-   ITU-R BT.709
+-   ProPhoto RGB
+-   RIMM RGB
+-   ROMM RGB
+-   SMPTE 240M
+-   ST 2084
 -   sRGB
 
-Log Encoding Curves
-^^^^^^^^^^^^^^^^^^^
+EOTFs
+^^^^^
+
+-   DCI-P3
+-   DICOM GSDF
+-   ITU-R BT.1886
+-   ITU-R BT.2020
+-   ITU-R BT.2100 HLG
+-   ITU-R BT.2100 PQ
+-   ProPhoto RGB
+-   RIMM RGB
+-   ROMM RGB
+-   SMPTE 240M
+-   ST 2084
+
+OOTFs
+^^^^^
+-   ITU-R BT.2100 HLG
+-   ITU-R BT.2100 PQ
+
+Log Encoding / Decoding Curves
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -   ACEScc
 -   ACEScct
@@ -366,13 +359,12 @@ Log Encoding Curves
 -   Canon Log 2
 -   Canon Log 3
 -   Cineon
--   DCI-P3
 -   ERIMM RGB
 -   Log3G10
 -   Log3G12
 -   PLog
--   Protune
 -   Panalog
+-   Protune
 -   REDLog
 -   REDLogFilm
 -   S-Log
@@ -395,10 +387,11 @@ RGB Colourspaces
 
 -   ACES2065-1
 -   ACEScc
+-   ACEScct
 -   ACEScg
 -   ACESproxy
--   ALEXA Wide Gamut RGB
--   Adobe RGB 1998
+-   ALEXA Wide Gamut
+-   Adobe RGB (1998)
 -   Adobe Wide Gamut RGB
 -   Apple RGB
 -   Best RGB
@@ -414,25 +407,27 @@ RGB Colourspaces
 -   ECI RGB v2
 -   ERIMM RGB
 -   Ekta Space PS 5
+-   ITU-R BT.2020
+-   ITU-R BT.470 - 525
+-   ITU-R BT.470 - 625
+-   ITU-R BT.709
 -   Max RGB
--   NTSC RGB
--   Pal/Secam RGB
+-   NTSC
+-   Pal/Secam
 -   ProPhoto RGB
 -   Protune Native
+-   REDWideGamutRGB
 -   REDcolor
 -   REDcolor2
 -   REDcolor3
 -   REDcolor4
 -   RIMM RGB
 -   ROMM RGB
--   Rec. 2020
--   Rec. 709
--   RedWideGamut RGB
 -   Russell RGB
 -   S-Gamut
 -   S-Gamut3
 -   S-Gamut3.Cine
--   SMPTE-C RGB
+-   SMPTE 240M
 -   V-Gamut
 -   Xtreme RGB
 -   sRGB
@@ -448,6 +443,43 @@ Convenience Deprecated Colourspaces Transformations
 -   CMY to RGB
 -   CMY to CMYK
 -   CMYK to CMY
+
+Chromatic Adaptation
+--------------------
+
+Chromatic Adaptation Models
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-   CIE 1994
+-   CMCCAT2000
+-   Fairchild (1990)
+-   Von Kries
+
+Chromatic Adaptation Transforms
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-   Bianco and Schettini (2010)
+-   Bianco and Schettini (2010) PC
+-   Bradford
+-   Brill and Süsstrunk (2008) corrected CAT02
+-   CAT02
+-   CMCCAT2000
+-   CMCCAT97
+-   Fairchild
+-   Sharp
+-   Von Kries
+-   XYZ Scaling
+
+
+Colour Appearance Models
+------------------------
+
+-   ATD95
+-   CIECAM02
+-   Hunt
+-   LLAB
+-   Nayatani95
+-   RLAB
 
 Colour Difference
 -----------------
