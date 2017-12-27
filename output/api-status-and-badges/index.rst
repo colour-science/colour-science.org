@@ -52,13 +52,8 @@
             </a>
         </li>
         <li style="margin-right: -20px;">
-            <a href="https://scrutinizer-ci.com/g/colour-science/colour/">
-                <img src="https://img.shields.io/scrutinizer/g/colour-science/colour/develop.svg" alt="scrutinizer-ci.com - Code Health">
-            </a>
-        </li>
-        <li style="margin-right: -20px;">
-            <a href="https://landscape.io/github/colour-science/colour">
-                <img src="https://landscape.io/github/colour-science/colour/master/landscape.svg" alt="landscape.io - Code Health">
+            <a href="https://www.codacy.com/app/colour-science/colour">
+                <img src="https://img.shields.io/codacy/grade/7d0d61f8e7294533b27ae00ee6f50fb2/develop.svg" alt="codacy.com - Code Grade">
             </a>
         </li>
         <li style="margin-right: -20px;">
