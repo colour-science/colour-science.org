@@ -286,6 +286,9 @@
                         <a href="https://github.com/stakemura">stakemura</a>
                     </li>
                     <li>
+                        <a href="https://github.com/tingeman">tingeman</a>
+                    </li>
+                    <li>
                         <a href="https://github.com/zachlewis">zachlewis</a>
                     </li>
                 </ul>
