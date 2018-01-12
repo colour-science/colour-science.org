@@ -230,6 +230,12 @@
                         <a href="http://nickporcino.com/">Nick Porcino</a>
                     </li>
                     <li>
+                        <a href="https://www.facebook.com/invisiblelightimages">Nick Spiker</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Ampersandme">Ampersandme</a>
+                    </li>
+                    <li>
                         <a href="https://github.com/Chandler">Chandler</a>
                     </li>
                     <li>
@@ -253,13 +259,10 @@
                     <li>
                         <a href="https://github.com/eyeforcolor">eyeforcolor</a>
                     </li>
-                    <li>
-                        <a href="https://github.com/foutoucour">foutoucour</a>
-                    </li>
                 </ul>
                 <ul class="list-unstyled col-md-6">
                     <li>
-                        <a href="https://www.facebook.com/invisiblelightimages">Nick Spiker</a>
+                        <a href="https://github.com/foutoucour">foutoucour</a>
                     </li>
                     <li>
                         <a href="https://github.com/henczati">henczati</a>
