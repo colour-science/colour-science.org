@@ -224,6 +224,9 @@
                 <h2>Issues & Discussions</h2>
                 <ul class="list-unstyled col-md-6">
                     <li>
+                        <a href="https://github.com/JGoldstone">Joseph Goldstone</a>
+                    </li>
+                    <li>
                         <a href="http://nickporcino.com/">Nick Porcino</a>
                     </li>
                     <li>
