@@ -236,10 +236,8 @@ N">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">colour</span>
-<span class="kn">from</span> <span class="nn">colour.plotting</span> <span class="kn">import</span> <span class="o">*</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">colour.plotting</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">colour</span><span class="o">.</span><span class="n">filter_warnings</span><span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
 <span class="n">colour_plotting_defaults</span><span class="p">()</span>
 
 <span class="n">visible_spectrum_plot</span><span class="p">()</span>
@@ -316,7 +314,7 @@ N">
 <li>
 <strong>notation</strong>: Colour notation systems.</li>
 <li>
-<strong>phenomenons</strong>: Computation of various optical phenomenons.</li>
+<strong>phenomena</strong>: Computation of various optical phenomena.</li>
 <li>
 <strong>plotting</strong>: Diagrams, figures, etc...</li>
 <li>
@@ -340,7 +338,11 @@ N">
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">colour</span><span class="o">.</span><span class="n">__all__</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">'...'</span><span class="p">])</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="kn">import</span> <span class="nn">colour</span>
+
+<span class="n">pprint</span><span class="p">(</span><span class="n">colour</span><span class="o">.</span><span class="n">__all__</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">'...'</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -357,7 +359,12 @@ N">
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>['handle_numpy_errors', 'ignore_numpy_errors', 'raise_numpy_errors', 'print_numpy_errors', 'warn_numpy_errors', '...']
+<pre>['CHROMATIC_ADAPTATION_METHODS',
+ 'CHROMATIC_ADAPTATION_TRANSFORMS',
+ 'CMCCAT2000_VIEWING_CONDITIONS',
+ 'chromatic_adaptation',
+ 'CubicSplineInterpolator',
+ '...']
 </pre>
 </div>
 </div>
@@ -381,14 +388,12 @@ N">
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-
-<span class="kn">import</span> <span class="nn">colour.plotting</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">colour.plotting</span>
 
 <span class="k">for</span> <span class="n">sub_package</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">'adaptation'</span><span class="p">,</span> <span class="s1">'algebra'</span><span class="p">,</span> <span class="s1">'appearance'</span><span class="p">,</span> <span class="s1">'biochemistry'</span><span class="p">,</span>
-                    <span class="s1">'characterisation'</span><span class="p">,</span> <span class="s1">'colorimetry'</span><span class="p">,</span> <span class="s1">'continuous'</span><span class="p">,</span>
-                    <span class="s1">'constants'</span><span class="p">,</span> <span class="s1">'corresponding'</span><span class="p">,</span> <span class="s1">'difference'</span><span class="p">,</span> <span class="s1">'io'</span><span class="p">,</span> <span class="s1">'models'</span><span class="p">,</span>
-                    <span class="s1">'notation'</span><span class="p">,</span> <span class="s1">'phenomenons'</span><span class="p">,</span> <span class="s1">'plotting'</span><span class="p">,</span> <span class="s1">'quality'</span><span class="p">,</span>
+                    <span class="s1">'characterisation'</span><span class="p">,</span> <span class="s1">'colorimetry'</span><span class="p">,</span> <span class="s1">'constants'</span><span class="p">,</span>
+                    <span class="s1">'continuous'</span><span class="p">,</span> <span class="s1">'corresponding'</span><span class="p">,</span> <span class="s1">'difference'</span><span class="p">,</span> <span class="s1">'io'</span><span class="p">,</span>
+                    <span class="s1">'models'</span><span class="p">,</span> <span class="s1">'notation'</span><span class="p">,</span> <span class="s1">'phenomena'</span><span class="p">,</span> <span class="s1">'plotting'</span><span class="p">,</span> <span class="s1">'quality'</span><span class="p">,</span>
                     <span class="s1">'recovery'</span><span class="p">,</span> <span class="s1">'temperature'</span><span class="p">,</span> <span class="s1">'utilities'</span><span class="p">,</span> <span class="s1">'volume'</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="n">sub_package</span><span class="o">.</span><span class="n">title</span><span class="p">())</span>
     <span class="n">pprint</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">colour</span><span class="p">,</span> <span class="n">sub_package</span><span class="p">)</span><span class="o">.</span><span class="n">__all__</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">'...'</span><span class="p">])</span>
@@ -460,12 +465,12 @@ Colorimetry
  '...']
 
 
-Continuous
-['AbstractContinuousFunction', 'Signal', 'MultiSignal', '...']
-
-
 Constants
 ['CIE_E', 'CIE_K', 'K_M', 'KP_M', 'AVOGADRO_CONSTANT', '...']
+
+
+Continuous
+['AbstractContinuousFunction', 'Signal', 'MultiSignal', '...']
 
 
 Corresponding
@@ -478,11 +483,11 @@ Corresponding
 
 
 Difference
-['DELTA_E_METHODS',
- 'delta_E',
- 'delta_E_CIE1976',
+['delta_E_CIE1976',
  'delta_E_CIE1994',
  'delta_E_CIE2000',
+ 'delta_E_CMC',
+ 'delta_E_CAM02LCD',
  '...']
 
 
@@ -496,7 +501,12 @@ Io
 
 
 Models
-['XYZ_to_xyY', 'xyY_to_XYZ', 'xy_to_xyY', 'xyY_to_xy', 'xy_to_XYZ', '...']
+['JMh_CIECAM02_to_CAM02LCD',
+ 'CAM02LCD_to_JMh_CIECAM02',
+ 'JMh_CIECAM02_to_CAM02SCD',
+ 'CAM02SCD_to_JMh_CIECAM02',
+ 'JMh_CIECAM02_to_CAM02UCS',
+ '...']
 
 
 Notation
@@ -508,7 +518,7 @@ Notation
  '...']
 
 
-Phenomenons
+Phenomena
 ['scattering_cross_section',
  'rayleigh_optical_depth',
  'rayleigh_scattering',
@@ -631,8 +641,7 @@ Volume
 
     References
     ----------
-    .. [4]  Ohno, Y. (2014). Practical Use and Calculation of CCT and Duv.
-            LEUKOS, 10(1), 47–55. doi:10.1080/15502724.2014.839020
+    -   :cite:`Ohno2014a`
 
     Examples
     --------
@@ -834,18 +843,8 @@ Volume
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Spectral-Computations">Spectral Computations<a class="anchor-link" href="#Spectral-Computations">¶</a>
+<h3 id="From-Spectral-Power-Distribution">From Spectral Power Distribution<a class="anchor-link" href="#From-Spectral-Power-Distribution">¶</a>
 </h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="From-Spectral-Power-Distribution">From Spectral Power Distribution<a class="anchor-link" href="#From-Spectral-Power-Distribution">¶</a>
-</h4>
 </div>
 </div>
 </div>
@@ -1538,7 +1537,10 @@ Volume
 <div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Copying the sample spectral power distribution.</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># "Colour" can emit a substantial amount of warnings, we filter them.</span>
+<span class="n">colour</span><span class="o">.</span><span class="n">filter_warnings</span><span class="p">()</span>
+    
+<span class="c1"># Copying the sample spectral power distribution.</span>
 <span class="n">spd_copy</span> <span class="o">=</span> <span class="n">spd</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
 <span class="c1"># Interpolating the copied sample spectral power distribution.</span>
@@ -1553,6 +1555,18 @@ Volume
 <div class="output_wrapper">
 <div class="output">
 
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/Users/kelsolaar/Documents/Development/colour-science/colour/colour/utilities/verbose.py:141: ColourWarning: "colour.filter_warnings" object access is deprecated and will change to "colour.utilities.filter_warnings" in a future release.
+  warn(*args, **kwargs)
+</pre>
+</div>
+</div>
 
 <div class="output_area">
 
@@ -2049,9 +2063,9 @@ Volume
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([ 55.91309735,  65.4172615 ,  65.54495059,  88.17819416,
-        61.88860248,  10.53878826,  55.25130534,  46.14659783,
-        86.41406136,  84.59897703])</pre>
+<pre>array([ 97.64887381,  72.27944801,  22.92231199,  58.81872019,
+        51.57632007,  12.97050861,  23.54486112,  46.45931575,
+        34.48397449,  37.80565722])</pre>
 </div>
 
 </div>
@@ -2065,8 +2079,8 @@ Volume
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="To-Tristimulus-Values">To Tristimulus Values<a class="anchor-link" href="#To-Tristimulus-Values">¶</a>
-</h4>
+<h3 id="Convert-to-Tristimulus-Values">Convert to Tristimulus Values<a class="anchor-link" href="#Convert-to-Tristimulus-Values">¶</a>
+</h3>
 </div>
 </div>
 </div>
@@ -2122,20 +2136,8 @@ Volume
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote>
-<p>Note: <em>Colour</em> can emit a substantial amount of warnings, those can be filtered by calling the <code>colour.filter_warnings</code> definition.</p>
-</blockquote>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="From-CIE-XYZ-Colourspace">From <em>CIE XYZ</em> Colourspace<a class="anchor-link" href="#From-CIE-XYZ-Colourspace">¶</a>
-</h4>
+<h3 id="From-CIE-XYZ-Colourspace">From <em>CIE XYZ</em> Colourspace<a class="anchor-link" href="#From-CIE-XYZ-Colourspace">¶</a>
+</h3>
 </div>
 </div>
 </div>
@@ -2172,29 +2174,27 @@ Volume
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>['XYZ_to_Hunt',
- 'XYZ_to_ATD95',
+<pre>['XYZ_to_ATD95',
+ 'XYZ_to_CAM16',
  'XYZ_to_CIECAM02',
+ 'XYZ_to_Hunt',
  'XYZ_to_LLAB',
  'XYZ_to_Nayatani95',
  'XYZ_to_RLAB',
- 'XYZ_to_xyY',
- 'XYZ_to_xy',
+ 'XYZ_to_Hunter_Lab',
+ 'XYZ_to_Hunter_Rdab',
+ 'XYZ_to_IPT',
+ 'XYZ_to_K_ab_HunterLab1966',
  'XYZ_to_Lab',
  'XYZ_to_Luv',
+ 'XYZ_to_RGB',
  'XYZ_to_UCS',
  'XYZ_to_UVW',
  'XYZ_to_hdr_CIELab',
- 'XYZ_to_K_ab_HunterLab1966',
- 'XYZ_to_Hunter_Lab',
- 'XYZ_to_Hunter_Rdab',
- 'XYZ_to_Hunter_Rdab',
- 'XYZ_to_IPT',
  'XYZ_to_hdr_IPT',
- 'XYZ_to_colourspace_model',
- 'XYZ_to_RGB',
  'XYZ_to_sRGB',
- 'XYZ_to_spectral_Meng2015',
+ 'XYZ_to_xy',
+ 'XYZ_to_xyY',
  'XYZ_to_spectral']
 </pre>
 </div>
@@ -2209,8 +2209,8 @@ Volume
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="To-Screen-Colours">To Screen Colours<a class="anchor-link" href="#To-Screen-Colours">¶</a>
-</h4>
+<h3 id="Convert-to-Screen-Colours">Convert to Screen Colours<a class="anchor-link" href="#Convert-to-Screen-Colours">¶</a>
+</h3>
 </div>
 </div>
 </div>
@@ -2281,6 +2281,18 @@ Volume
 <div class="prompt"></div>
 
 
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/usr/local/anaconda3/envs/colour-2.7/lib/python2.7/site-packages/matplotlib/cbook/deprecation.py:106: MatplotlibDeprecationWarning: Adding an axes using the same arguments as a previous axes currently reuses the earlier instance.  In a future version, a new instance will always be created and returned.  Meanwhile, this warning can be suppressed, and the future behavior ensured, by passing a unique label to each axes instance.
+  warnings.warn(message, mplDeprecation, stacklevel=1)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -2298,8 +2310,8 @@ Volume
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="To-Colour-Rendition-Charts">To Colour Rendition Charts<a class="anchor-link" href="#To-Colour-Rendition-Charts">¶</a>
-</h4>
+<h3 id="Generate-Colour-Rendition-Charts">Generate Colour Rendition Charts<a class="anchor-link" href="#Generate-Colour-Rendition-Charts">¶</a>
+</h3>
 </div>
 </div>
 </div>
@@ -2435,6 +2447,18 @@ Volume
 <div class="prompt"></div>
 
 
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/Users/kelsolaar/Documents/Development/colour-science/colour/colour/models/rgb/transfer_functions/srgb.py:79: RuntimeWarning: invalid value encountered in power
+  np.where(L &lt;= 0.0031308, L * 12.92, 1.055 * (L ** (1 / 2.4)) - 0.055))
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -2452,8 +2476,8 @@ Volume
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="To-Chromaticity-Coordinates">To Chromaticity Coordinates<a class="anchor-link" href="#To-Chromaticity-Coordinates">¶</a>
-</h4>
+<h3 id="Convert-to-Chromaticity-Coordinates">Convert to Chromaticity Coordinates<a class="anchor-link" href="#Convert-to-Chromaticity-Coordinates">¶</a>
+</h3>
 </div>
 </div>
 </div>
