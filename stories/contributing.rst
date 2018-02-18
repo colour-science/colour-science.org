@@ -35,11 +35,15 @@ There are many ways to help:
     `Jupyter Notebooks <http://nbviewer.jupyter.org/github/colour-science/colour-notebooks/blob/master/notebooks/colour.ipynb>`_,
     we aim to provide a good scientific support to the API and there is still a
     lot to do.
--   Improving related packages like `Colour - Maya </colour-maya/>`_,
-    `Colour - Nuke </colour-nuke/>`_ or `Colour -
-    Spectroscope </colour-spectroscope/>`_
--   Participating in discussions on the `Mailing
-    List <colour-science@googlegroups.com>`_.
+-   Improving siblings packages:
+
+    -   `Colour - Demosaicing </colour-demosaicing/>`_
+    -   `Colour - HDRI </colour-hdri/>`_
+    -   `Colour - Maya </colour-maya/>`_
+    -   `Colour - Nuke </colour-nuke/>`_
+    -   `Colour - Spectroscope </colour-spectroscope/>`_
+
+-   Participating in discussions on the `Mailing List <colour-science@googlegroups.com>`_.
 
 Reporting Issues
 ----------------
@@ -456,11 +460,53 @@ Releasing Colour
 ----------------
 
 The following stages help maintainers navigate through the release of a new
-version of **Colour**:
+version of **Colour**, some automation is provided by `Invoke <http://www.pyinvoke.org/>`_:
 
 .. raw:: html
 
     <ul>
+        <li>
+            <dl>
+                <dt>Github</dt>
+                <dd>
+                    <ul style="list-style-type: none;" style="list-style-type: none;">
+                        <li>
+                            <div class="checkbox">
+                                <input type="checkbox" value="" />
+                                <label class="strikethrough">Review the
+                                    <a class="reference external" href="https://github.com/colour-science/colour/releases">releases</a>
+                                    page</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="checkbox">
+                                <input type="checkbox" value="" />
+                                <label class="strikethrough">Check open issues on current
+                                    <a class="reference external" href="https://github.com/colour-science/colour/milestones">milestone</a>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>Colour - Notebooks</dt>
+                <dd>
+                    <ul style="list-style-type: none;">
+                        <li>
+                            <div class="checkbox">
+                                <input type="checkbox" value="" />
+                                <label class="strikethrough">Run the Jupyter notebooks in
+                                    <a class="reference external" href="https://github.com/colour-science/colour-notebooks">colour-notebooks</a>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </dd>
+            </dl>
+        </li>
         <li>
             <dl>
                 <dt>Zenodo - Stage 1</dt>
@@ -468,11 +514,10 @@ version of **Colour**:
                     <ul style="list-style-type: none;">
                         <li>
                             <div class="checkbox">
-                                <input type="checkbox" value=""/>
+                                <input type="checkbox" value="" />
                                 <label class="strikethrough">Reserve
-                                    <a class="reference external"
-                                       href="https://zenodo.org/record/376790">Zenodo
-                                        DOI</a>
+                                    <a class="reference external" href="https://zenodo.org/record/376790">Zenodo DOI
+                                    </a>
                                 </label>
                             </div>
                         </li>
@@ -487,149 +532,49 @@ version of **Colour**:
                     <ul style="list-style-type: none;">
                         <li>
                             <div class="checkbox">
-                                <input type="checkbox" value=""/>
-                                <label class="strikethrough">Run units
-                                    tests</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value=""/>
-                                <label class="strikethrough">Run Flake8</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value=""/>
-                                <label class="strikethrough">Run PyCharm's code
-                                    inspection
-                                </label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value=""/>
+                                <input type="checkbox" value="" />
                                 <label class="strikethrough">Check
-                                    <a class="reference external"
-                                       href="https://coveralls.io/github/colour-science/colour/">coveralls.io</a>
+                                    <a class="reference external" href="https://app.codacy.com/app/colour-science/colour/dashboard">codacy</a>
                                 </label>
                             </div>
                         </li>
                         <li>
                             <div class="checkbox">
-                                <input type="checkbox" value=""/>
-                                <label class="strikethrough">Check
-                                    <a class="reference external"
-                                       href="https://scrutinizer-ci.com/g/colour-science/colour/">scrutinizer-ci</a>
+                                <input type="checkbox" value="" />
+                                <label class="strikethrough">Run the
+                                    <em>formatting</em> task with
+                                    <a class="reference external" href="https://github.com/google/yapf">Yapf</a>, it is very slow on
+                                    <em>Colour</em> and is currently not run by default.
+
                                 </label>
                             </div>
+                            <pre class="code shell">$ invoke formatting --yapf</pre>
                         </li>
                         <li>
                             <div class="checkbox">
-                                <input type="checkbox" value=""/>
-                                <label class="strikethrough">Check
-                                    <a class="reference external"
-                                       href="https://landscape.io/github/colour-science/colour/">landscape.io</a>
+                                <input type="checkbox" value="" />
+                                <label class="strikethrough">Run the
+                                    <em>examples</em> task with
+                                    <em>figures</em>: They currently need to be visually assessed for correctness.
                                 </label>
                             </div>
+                            <pre class="code shell">$ invoke examples --plots</pre>
                         </li>
                         <li>
                             <div class="checkbox">
-                                <input type="checkbox" value=""/>
-                                <label class="strikethrough">Run
-                                    <a class="reference external"
-                                       href="https://github.com/colour-science/colour/blob/develop/utilities/run_examples.sh">run_examples.sh</a>
-                                    utility
+                                <input type="checkbox" value="" />
+                                <label class="strikethrough">Run the
+                                    <em>preflight</em> task: It runs various unit tests, code formatting, code quality tasks and
+                                    also run the examples.
                                 </label>
                             </div>
-                            <pre class="code shell">./run_examples.sh</pre>
-                        </li>
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value=""/>
-                                <label class="strikethrough">Export PyCharm's TODO
-                                    to
-                                    <a class="reference external"
-                                       href="https://github.com/colour-science/colour/blob/develop/TODO.rst">TODO.rst</a>
-                                    file
-                                </label>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <dl>
-                                <dt>Export Bibliography</dt>
-                                <dd>
-                                    <ul style="list-style-type: none;">
-                                        <li>
-                                            <div class="checkbox">
-                                                <input type="checkbox" value=""/>
-                                                <label class="strikethrough">Export
-                                                    bibliography to
-                                                    <a class="reference external"
-                                                       href="https://github.com/colour-science/colour/blob/develop/BIBLIOGRAPHY.rst">BIBLIOGRAPHY.rst</a>
-                                                    file using the <a
-                                                            class="reference external"
-                                                            href="https://github.com/colour-science/colour/blob/develop/utilities/citations_scraping.py">citations_scraping.py</a>
-                                                    module
-                                                </label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="checkbox">
-                                                <input type="checkbox" value=""/>
-                                                <label class="strikethrough">Export
-                                                    bibliography to
-                                                    <a class="reference external"
-                                                       href="https://github.com/colour-science/colour/blob/develop/BIBLIOGRAPHY.bib">BIBLIOGRAPHY.bib</a>
-                                                    file using the <a
-                                                            class="reference external"
-                                                            href="http://www.mendeley.com/">Mendeley</a>
-                                                </label>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </dd>
-                            </dl>
-                        </li>
-                    </ul>
-                    <ul style="list-style-type: none;">
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value=""/>
-                                <label class="strikethrough">Build documentation
-                                    files with
-                                    <a class="reference external"
-                                       href="https://github.com/colour-science/colour/blob/develop/utilities/build_sphinx_documentation.sh">build_sphinx_documentation.sh</a>
-                                    utility:
-                                </label>
-                            </div>
-                            <pre class="code shell">./build_sphinx_documentation.sh -ram</pre>
+                            <pre class="code shell">$ invoke preflight</pre>
                         </li>
                     </ul>
                 </dd>
             </dl>
         </li>
-        <li>
-            <dl>
-                <dt>Colour - Notebooks</dt>
-                <dd>
-                    <ul style="list-style-type: none;">
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value=""/>
-                                <label class="strikethrough">Run the Jupyter
-                                    notebooks in
-                                    <a class="reference external"
-                                       href="https://github.com/colour-science/colour-notebooks">colour-notebooks</a>
-                                </label>
-                            </div>
-                        </li>
-                    </ul>
-                </dd>
-            </dl>
-        </li>
+
         <li>
             <dl>
                 <dt>Pypi - Stage 1</dt>
@@ -637,44 +582,13 @@ version of **Colour**:
                     <ul style="list-style-type: none;">
                         <li>
                             <div class="checkbox">
-                                <input type="checkbox" value=""/>
-                                <label class="strikethrough">Lint <a
-                                        class="reference external"
-                                        href="https://github.com/colour-science/colour/blob/develop/README.rst">README.rst</a>
-                                    with <a
-                                            class="reference external"
-                                            href="https://pypi.python.org/pypi/restructuredtext_lint">rst-lint</a>:
+                                <input type="checkbox" value="" />
+                                <label class="strikethrough">Run the
+                                    <em>virtualise</em> task: It builds the project, deploy it to a virtual environment and run the
+                                    unit tests.
                                 </label>
                             </div>
-                            <pre class="code shell">rst-lint README.rst</pre>
-                        </li>
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value=""/>
-                                <label class="strikethrough">Build Pypi
-                                    package:</label>
-                            </div>
-                            <pre class="code shell">python setup.py sdist
-    python setup.py bdist_wheel --universal</pre>
-                        </li>
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value=""/>
-                                <label class="strikethrough">Test Pypi
-                                    package:</label>
-                            </div>
-                            <pre class="code shell">cd dist/
-    tar -xvf colour-science-*.tar.gz
-    virtualenv colour-deploy
-    source colour-deploy/bin/activate
-    cd colour-science-*
-    pip install numpy
-    pip install -e .
-    pip install matplotlib
-    pip install nose
-    pip install mock
-    ./utilities/run_examples.sh
-    nosetests</pre>
+                            <pre class="code shell">$ invoke virtualise</pre>
                         </li>
                     </ul>
                 </dd>
@@ -692,35 +606,14 @@ version of **Colour**:
                                     <ul style="list-style-type: none;">
                                         <li>
                                             <div class="checkbox">
-                                                <input type="checkbox" value=""/>
-                                                <label class="strikethrough"><a
-                                                        class="reference external"
-                                                        href="https://github.com/colour-science/colour/blob/develop/colour/__init__.py">__init__.py</a>
-                                                </label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="checkbox">
-                                                <input type="checkbox" value=""/>
-                                                <label class="strikethrough"><a
-                                                        class="reference external"
-                                                        href="https://github.com/colour-science/colour/blob/develop/setup.py">setup.py</a>
-                                                </label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                        <li>
-                                            <div class="checkbox">
-                                                <input type="checkbox" value=""/>
-                                                <label class="strikethrough"><a
-                                                        class="reference external"
-                                                        href="https://github.com/colour-science/colour/blob/develop/docs/conf.py">conf.py</a>
+                                                <input type="checkbox" value="" />
+                                                <label class="strikethrough">
+                                                    <a class="reference external" href="https://github.com/colour-science/colour/blob/develop/colour/__init__.py">__init__.py</a>
                                                 </label>
                                             </div>
                                         </li>
                                     </ul>
-                                    <p>A typical commit message for version raise
-                                        is as follows:</p>
+                                    <p>A typical commit message for version raise is as follows:</p>
                                     <pre class="literal-block">Raise package version to 0.3.9.</pre>
                                 </dd>
                             </dl>
@@ -734,10 +627,9 @@ version of **Colour**:
                                     <ul style="list-style-type: none;">
                                         <li>
                                             <div class="checkbox">
-                                                <input type="checkbox" value=""/>
-                                                <label class="strikethrough"><a
-                                                        class="reference external"
-                                                        href="https://github.com/colour-science/colour/blob/develop/README.rst">README.rst</a>
+                                                <input type="checkbox" value="" />
+                                                <label class="strikethrough">
+                                                    <a class="reference external" href="https://github.com/colour-science/colour/blob/develop/README.rst">README.rst</a>
                                                 </label>
                                             </div>
                                         </li>
@@ -756,45 +648,15 @@ version of **Colour**:
                     <ul style="list-style-type: none;">
                         <li>
                             <div class="checkbox">
-                                <input type="checkbox" value=""/>
-                                <label class="strikethrough">Tag/update Git
-                                    <em>master</em> branch accordingly to <a
-                                            class="reference external"
-                                            href="https://danielkummer.github.io/git-flow-cheatsheet/">git-flow</a>
+                                <input type="checkbox" value="" />
+                                <label class="strikethrough">Run the
+                                    <em>tag</em> task: It will prompt for tagging the repository accordingly to defined version using
+                                    <a class="reference external" href="https://danielkummer.github.io/git-flow-cheatsheet/">git-flow</a>.
                                 </label>
                             </div>
-                            <p>A typical tag message for a <em>Colour</em> version
-                                is as follows:</p>
-                            <pre class="literal-block">Create Colour v0.3.9 version.</pre>
-                        </li>
-                    </ul>
-                </dd>
-            </dl>
-        </li>
-        <li>
-            <dl>
-                <dt>Github</dt>
-                <dd>
-                    <ul style="list-style-type: none;"
-                        style="list-style-type: none;">
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value=""/>
-                                <label class="strikethrough">Update <a
-                                        class="reference external"
-                                        href="https://github.com/colour-science/colour/releases">releases</a>
-                                    page.</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value=""/>
-                                <label class="strikethrough">Check open issues on
-                                    current <a
-                                            class="reference external"
-                                            href="https://github.com/colour-science/colour/milestones">milestone</a>
-                                </label>
-                            </div>
+                            <pre class="code shell">$ invoke tag</pre>
+                            <p>A typical tag message for a <em>Colour</em> version is as follows:</p>
+                            <pre class="literal-block">Create Colour v0.3.11 version.</pre>
                         </li>
                     </ul>
                 </dd>
@@ -807,15 +669,15 @@ version of **Colour**:
                     <ul style="list-style-type: none;">
                         <li>
                             <div class="checkbox">
-                                <input type="checkbox" value=""/>
-                                <label class="strikethrough">Release Pypi
-                                    package:</label>
+                                <input type="checkbox" value="" />
+                                <label class="strikethrough">Run the
+                                    <em>release</em>
+                                    task: It releases the project to
+                                    <a class="reference external" href="https://pypi.python.org/pypi/colour-science">Pypi</a> with
+                                    <a class="reference external" href="https://pypi.python.org/pypi/twine">Twine</a>.
+                                </label>
                             </div>
-                            <pre class="code shell">rm -rf dist/
-    python setup.py sdist
-    python setup.py bdist_wheel --universal
-    twine upload dist/*.tar.gz
-    twine upload dist/*.whl</pre>
+                            <pre class="code shell">$ invoke release</pre>
                         </li>
                     </ul>
                 </dd>
@@ -828,11 +690,9 @@ version of **Colour**:
                     <ul style="list-style-type: none;">
                         <li>
                             <div class="checkbox">
-                                <input type="checkbox" value=""/>
-                                <label class="strikethrough">Upload Pypi package
-                                    and create new version in
-                                    <a class="reference external"
-                                       href="https://zenodo.org/record/376790">Zenodo</a>
+                                <input type="checkbox" value="" />
+                                <label class="strikethrough">Upload Pypi package and create new version in
+                                    <a class="reference external" href="https://zenodo.org/record/376790">Zenodo</a>
                                 </label>
                             </div>
                         </li>
@@ -847,16 +707,16 @@ version of **Colour**:
                     <ul style="list-style-type: none;">
                         <li>
                             <div class="checkbox">
-                                <input type="checkbox" value=""/>
+                                <input type="checkbox" value="" />
                                 <label class="strikethrough">Create new
-                                    <a class="reference external"
-                                       href="https://github.com/conda-forge/colour-science-feedstock/blob/master/recipe/meta.yaml#L2">conda-forge</a>
-                                    version. The <a class="reference external"
-                                                    href="https://github.com/conda-forge/colour-science-feedstock/blob/master/recipe/meta.yaml#L3">sha256</a>
-                                    attribute must be updated:
+                                    <a class="reference external" href="https://github.com/conda-forge/colour-science-feedstock/blob/master/recipe/meta.yaml#L2">conda-forge</a>
+                                    version. The
+                                    <a class="reference external" href="https://github.com/conda-forge/colour-science-feedstock/blob/master/recipe/meta.yaml#L3">sha256</a>
+                                    attribute must be updated and can be computed with the
+                                    <em>sha256</em> task:
                                 </label>
                             </div>
-                            <pre class="code shell">openssl sha256 colour-science-*.tar.gz</pre>
+                            <pre class="code shell">$ invoke sha256</pre>
                         </li>
                     </ul>
                 </dd>
@@ -873,19 +733,17 @@ version of **Colour**:
                                 <ul style="list-style-type: none;">
                                     <li>
                                         <div class="checkbox">
-                                            <input type="checkbox" value=""/>
-                                            <label class="strikethrough"><a
-                                                    class="reference external"
-                                                    href="https://github.com/colour-science/colour-science.org/blob/master/conf.py">conf.py</a>
+                                            <input type="checkbox" value="" />
+                                            <label class="strikethrough">
+                                                <a class="reference external" href="https://github.com/colour-science/colour-science.org/blob/master/conf.py">conf.py</a>
                                             </label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="checkbox">
-                                            <input type="checkbox" value=""/>
-                                            <label class="strikethrough"><a
-                                                    class="reference external"
-                                                    href="https://github.com/colour-science/colour-science.org/blob/master/stories/index.rst">index.rst</a>
+                                            <input type="checkbox" value="" />
+                                            <label class="strikethrough">
+                                                <a class="reference external" href="https://github.com/colour-science/colour-science.org/blob/master/stories/index.rst">index.rst</a>
                                             </label>
                                         </div>
                                     </li>
@@ -900,10 +758,9 @@ version of **Colour**:
                                 <ul style="list-style-type: none;">
                                     <li>
                                         <div class="checkbox">
-                                            <input type="checkbox" value=""/>
-                                            <label class="strikethrough"><a
-                                                    class="reference external"
-                                                    href="https://github.com/colour-science/colour-science.org/blob/master/stories/api-reference.rst">api-reference.rst</a>
+                                            <input type="checkbox" value="" />
+                                            <label class="strikethrough">
+                                                <a class="reference external" href="https://github.com/colour-science/colour-science.org/blob/master/stories/api-reference.rst">api-reference.rst</a>
                                             </label>
                                         </div>
                                     </li>
@@ -918,19 +775,17 @@ version of **Colour**:
                                 <ul style="list-style-type: none;">
                                     <li>
                                         <div class="checkbox">
-                                            <input type="checkbox" value=""/>
-                                            <label class="strikethrough"><a
-                                                    class="reference external"
-                                                    href="https://github.com/colour-science/colour-science.org/blob/master/conf.py">conf.py</a>
+                                            <input type="checkbox" value="" />
+                                            <label class="strikethrough">
+                                                <a class="reference external" href="https://github.com/colour-science/colour-science.org/blob/master/conf.py">conf.py</a>
                                             </label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="checkbox">
-                                            <input type="checkbox" value=""/>
-                                            <label class="strikethrough"><a
-                                                    class="reference external"
-                                                    href="https://github.com/colour-science/colour-science.org/blob/master/stories/api-status-and-badges.rst">api-status-and-badges.rst</a>
+                                            <input type="checkbox" value="" />
+                                            <label class="strikethrough">
+                                                <a class="reference external" href="https://github.com/colour-science/colour-science.org/blob/master/stories/api-status-and-badges.rst">api-status-and-badges.rst</a>
                                             </label>
                                         </div>
                                     </li>
@@ -941,30 +796,18 @@ version of **Colour**:
                     <ul style="list-style-type: none;">
                         <li>
                             <div class="checkbox">
-                                <input type="checkbox" value=""/>
-                                <label class="strikethrough">Run <a
-                                        class="reference external"
-                                        href="https://github.com/colour-science/colour-science.org/blob/master/stories/tutorial.ipynb">tutorial.ipynb</a>
+                                <input type="checkbox" value="" />
+                                <label class="strikethrough">Run
+                                    <a class="reference external" href="https://github.com/colour-science/colour-science.org/blob/master/stories/tutorial.ipynb">tutorial.ipynb</a>
                                     Jupyter notebook
                                 </label>
                             </div>
                         </li>
                         <li>
                             <div class="checkbox">
-                                <input type="checkbox" value=""/>
-                                <label class="strikethrough">Update <a
-                                        class="reference external"
-                                        href="https://github.com/colour-science/colour-science.org/blob/master/stories/features.rst">features.rst</a>
-                                    page
-                                </label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value=""/>
-                                <label class="strikethrough">Update <a
-                                        class="reference external"
-                                        href="https://github.com/colour-science/colour-science.org/blob/master/stories/bibliography.rst">bibliography.rst</a>
+                                <input type="checkbox" value="" />
+                                <label class="strikethrough">Update
+                                    <a class="reference external" href="https://github.com/colour-science/colour-science.org/blob/master/stories/features.rst">features.rst</a>
                                     page
                                 </label>
                             </div>
@@ -980,46 +823,41 @@ version of **Colour**:
                     <ul style="list-style-type: none;">
                         <li>
                             <div class="checkbox">
-                                <input type="checkbox" value=""/>
-                                <label class="strikethrough"><a
-                                        class="reference external"
-                                        href="https://groups.google.com/forum/#!forum/colour-science/">colour-science
-                                    - Google Groups</a>
+                                <input type="checkbox" value="" />
+                                <label class="strikethrough">
+                                    <a class="reference external" href="https://groups.google.com/forum/#!forum/colour-science/">colour-science - Google Groups</a>
                                 </label>
                             </div>
                         </li>
                         <li>
                             <div class="checkbox">
-                                <input type="checkbox" value=""/>
+                                <input type="checkbox" value="" />
                                 <label class="strikethrough">3D-Pro</label>
                             </div>
                         </li>
                         <li>
                             <div class="checkbox">
-                                <input type="checkbox" value=""/>
-                                <label class="strikethrough"><a
-                                        class="reference external"
-                                        href="https://buffer.com/">Buffer
-                                    (Facebook/Linkedin/Twitter)</a>
+                                <input type="checkbox" value="" />
+                                <label class="strikethrough">
+                                    <a class="reference external" href="https://buffer.com/">Buffer (Facebook/Linkedin/Twitter)
+                                    </a>
                                 </label>
                             </div>
                         </li>
                         <li>
                             <div class="checkbox">
-                                <input type="checkbox" value=""/>
-                                <label class="strikethrough"><a
-                                        class="reference external"
-                                        href="https://news.ycombinator.com/">Hacker
-                                    News</a>
+                                <input type="checkbox" value="" />
+                                <label class="strikethrough">
+                                    <a class="reference external" href="https://news.ycombinator.com/">Hacker News
+                                    </a>
                                 </label>
                             </div>
                         </li>
                         <li>
                             <div class="checkbox">
-                                <input type="checkbox" value=""/>
-                                <label class="strikethrough"><a
-                                        class="reference external"
-                                        href="https://www.reddit.com/r/Python/">Reddit</a>
+                                <input type="checkbox" value="" />
+                                <label class="strikethrough">
+                                    <a class="reference external" href="https://www.reddit.com/r/Python/">Reddit</a>
                                 </label>
                             </div>
                         </li>

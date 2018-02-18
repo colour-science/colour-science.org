@@ -56,7 +56,7 @@ Sci">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Downloads <b class="caret"></b></a>
             <ul class="dropdown-menu">
 <li>
-<a href="https://github.com/colour-science/colour/archive/v0.3.10.zip">Latest (v0.3.10)</a>
+<a href="https://github.com/colour-science/colour/archive/v0.3.11.zip">Latest (v0.3.11)</a>
                     </li>
 <li>
 <a href="https://github.com/colour-science/colour/releases">All Releases</a>
@@ -120,10 +120,10 @@ Sci">
 <a href="../contributors">Contributors</a>
                     </li>
 <li>
-<a href="../bibliography">Bibliography</a>
+<a href="http://colour.readthedocs.io/en/develop/bibliography.html">Bibliography</a>
                     </li>
 <li>
-<a href="http://dx.doi.org/10.5281/zenodo.821825">Cite Us</a>
+<a href="http://dx.doi.org/10.5281/zenodo.1175177">Cite Us</a>
                     </li>
 <li>
 <a href="../cited-by">Cited By</a>
@@ -227,6 +227,13 @@ you may not need to install all of them.</p>
 <li><a class="reference external" href="https://pypi.python.org/pypi/six">Six&gt;= 1.10.0</a></li>
 </ul>
 </div>
+<div class="section" id="optional-dependencies">
+<h3>Optional Dependencies</h3>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/OpenImageIO/oiio">OpenImageIO</a></li>
+<li><a class="reference external" href="https://pandas.pydata.org/">Pandas</a></li>
+</ul>
+</div>
 <div class="section" id="optional-figures-plotting-dependencies">
 <h3>Optional Figures Plotting Dependencies</h3>
 <ul class="simple">
@@ -237,6 +244,8 @@ you may not need to install all of them.</p>
 <h3>Documentation Building Dependencies</h3>
 <ul class="simple">
 <li><a class="reference external" href="https://sphinx-doc.org">Sphinx</a></li>
+<li><a class="reference external" href="https://sphinxcontrib-bibtex.readthedocs.io/">sphinxcontrib-bibtex</a></li>
+<li><a class="reference external" href="https://github.com/rtfd/sphinx_rtd_theme/">sphinx_rtd_theme</a></li>
 </ul>
 </div>
 <div class="section" id="unit-tests-dependencies">
@@ -248,10 +257,12 @@ you may not need to install all of them.</p>
 <li><a class="reference external" href="https://nose.readthedocs.io/en/latest">Nose</a></li>
 </ul>
 </div>
-<div class="section" id="optional-dependencies">
-<h3>Optional Dependencies</h3>
+<div class="section" id="development-dependencies">
+<h3>Development Dependencies</h3>
 <ul class="simple">
-<li><a class="reference external" href="https://github.com/OpenImageIO/oiio">OpenImageIO</a></li>
+<li><a class="reference external" href="http://www.pyinvoke.org/">Invoke</a></li>
+<li><a class="reference external" href="https://github.com/twolfson/restructuredtext-lint">restructuredtext-lint</a></li>
+<li><a class="reference external" href="https://pypi.python.org/pypi/twine">Twine</a></li>
 <li><a class="reference external" href="https://github.com/google/yapf">Yapf</a></li>
 </ul>
 </div>
@@ -263,7 +274,7 @@ is the Python distribution we use to develop <strong>Colour</strong>:
 it ships all the scientific dependencies we require and is easily deployed
 cross-platform.</p>
 <p>Colour is available on <em>conda</em> and can be installed as follows:</p>
-<pre class="code shell"><a name="rest_code_61a7a4bf2578496c9e1c0c8679e3362e-1"></a>conda install -c conda-forge colour-science
+<pre class="code shell"><a name="rest_code_5ee5f4237e3745029ce0465fcda7bd42-1"></a>conda install -c conda-forge colour-science
 </pre>
 <p>This <em>asciicast</em> demonstrates how to generate a pristine Python <em>conda</em>
 environment for Colour:</p>
@@ -283,30 +294,30 @@ dependencies, <a class="reference external" href="http://www.scipy.org/">SciPy</
 performed as follows: <cite>pip install numpy</cite>
 </div>
 </div>
-<pre class="code shell"><a name="rest_code_484fe3b3caaf467a9d31d72a5cc3cc99-1"></a>pip install colour-science
+<pre class="code shell"><a name="rest_code_86add11f8caf47ad8b4027c4e824dfe5-1"></a>pip install colour-science
 </pre>
 <p>This <em>asciicast</em> demonstrates how to generate a pristine Python <em>VirtualEnv</em>
 environment for Colour:</p>
 <script type="text/javascript" src="https://asciinema.org/a/125159.js" id="asciicast-125159" async data-speed="3"></script><p>The optional features dependencies are installed as follows:</p>
-<pre class="code shell"><a name="rest_code_38267f263acf41c38f9517c4d417354f-1"></a>pip install <span class="s1">'colour-science[optional]'</span>
+<pre class="code shell"><a name="rest_code_ec32a7c7bd0d4985aa52d16de08a302b-1"></a>pip install <span class="s1">'colour-science[optional]'</span>
 </pre>
 <p>The figures plotting dependencies are installed as follows:</p>
-<pre class="code shell"><a name="rest_code_8107c0bf9ada44108846c1ab56f3906c-1"></a>pip install <span class="s1">'colour-science[plotting]'</span>
+<pre class="code shell"><a name="rest_code_d39273e5da0347788d6b80c26a20ccc4-1"></a>pip install <span class="s1">'colour-science[plotting]'</span>
 </pre>
 <p>The tests suite dependencies are installed as follows:</p>
-<pre class="code shell"><a name="rest_code_3b80ebdcfac34959b5743f1220808c14-1"></a>pip install <span class="s1">'colour-science[tests]'</span>
+<pre class="code shell"><a name="rest_code_a5725fb57b1c4ea68adfe21a8942e69e-1"></a>pip install <span class="s1">'colour-science[tests]'</span>
 </pre>
 <p>The documentation building dependencies are installed as follows:</p>
-<pre class="code shell"><a name="rest_code_d9b599ea704d47b6afcd0ef2e481bd6b-1"></a>pip install <span class="s1">'colour-science[docs]'</span>
+<pre class="code shell"><a name="rest_code_94b6459d9ad2495ab423efae7e36241b-1"></a>pip install <span class="s1">'colour-science[docs]'</span>
 </pre>
 </div>
 <div class="section" id="github">
 <h2>Github</h2>
 <p>Alternatively, you can also install directly from
 <a class="reference external" href="http://github.com/colour-science/colour">Github</a> source repository:</p>
-<pre class="code shell"><a name="rest_code_bb211633f3904d00a690a4ba524679e6-1"></a>git clone git://github.com/colour-science/colour.git
-<a name="rest_code_bb211633f3904d00a690a4ba524679e6-2"></a><span class="nb">cd</span> colour
-<a name="rest_code_bb211633f3904d00a690a4ba524679e6-3"></a>pip install .
+<pre class="code shell"><a name="rest_code_3886396afb20479e8ee0645f46ba772e-1"></a>git clone git://github.com/colour-science/colour.git
+<a name="rest_code_3886396afb20479e8ee0645f46ba772e-2"></a><span class="nb">cd</span> colour
+<a name="rest_code_3886396afb20479e8ee0645f46ba772e-3"></a>pip install .
 </pre>
 </div>
 <div class="section" id="vagrant">
@@ -362,7 +373,7 @@ environment for <a class="reference external" href="https://www.vagrantup.com/">
         </a>
     </li>
 </ul>
-Copyright © 2013-2017 – Colour Developers – <a href="mailto:colour-science@googlegroups.com">colour-science@googlegroups.com</a>
+Copyright © 2013-2018 – Colour Developers – <a href="mailto:colour-science@googlegroups.com">colour-science@googlegroups.com</a>
 
             
         </footer>

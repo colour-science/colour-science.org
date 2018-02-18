@@ -265,6 +265,9 @@ Colourspaces Transformations
 -   CAM02LCD to JMh CIECAM02
 -   CAM02SCD to JMh CIECAM02
 -   CAM02UCS to JMh CIECAM02
+-   CAM16LCD to JMh CAM16
+-   CAM16SCD to JMh CAM16
+-   CAM16UCS to JMh CAM16
 -   CIE LCHab to CIE Lab
 -   CIE LCHuv to CIE Luv
 -   CIE Lab to CIE LCHab
@@ -297,6 +300,9 @@ Colourspaces Transformations
 -   JMh CIECAM02 to CAM02LCD
 -   JMh CIECAM02 to CAM02SCD
 -   JMh CIECAM02 to CAM02UCS
+-   JMh CAM16 to CAM16LCD
+-   JMh CAM16 to CAM16SCD
+-   JMh CAM16 to CAM16UCS
 -   Prismatic to RGB
 -   RGB to CIE XYZ
 -   RGB to ICTCP
@@ -476,6 +482,7 @@ Colour Appearance Models
 
 -   ATD95
 -   CIECAM02
+-   CAM16
 -   Hunt
 -   LLAB
 -   Nayatani95
@@ -494,6 +501,9 @@ Delta E Computation
 -   CAM02LCD
 -   CAM02SCD
 -   CAM02UCS
+-   CAM16LCD
+-   CAM16SCD
+-   CAM16UCS
 
 Colour Notation Systems
 -----------------------

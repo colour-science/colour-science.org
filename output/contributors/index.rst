@@ -259,11 +259,11 @@
                     <li>
                         <a href="https://github.com/fangjy88">fangjy88</a>
                     </li>
+                </ul>
+                <ul class="list-unstyled col-md-6">
                     <li>
                         <a href="https://github.com/foutoucour">foutoucour</a>
                     </li>
-                </ul>
-                <ul class="list-unstyled col-md-6">
                     <li>
                         <a href="https://github.com/henczati">henczati</a>
                     </li>

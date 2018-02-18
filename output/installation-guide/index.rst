@@ -22,6 +22,12 @@ Primary Dependencies
 -  `SciPy >= 0.16.0 <http://www.scipy.org/>`_
 -  `Six>= 1.10.0 <https://pypi.python.org/pypi/six>`_
 
+Optional Dependencies
+^^^^^^^^^^^^^^^^^^^^^
+
+-  `OpenImageIO <https://github.com/OpenImageIO/oiio>`_
+-  `Pandas <https://pandas.pydata.org/>`_
+
 Optional Figures Plotting Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -31,6 +37,8 @@ Documentation Building Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  `Sphinx <https://sphinx-doc.org>`_
+-  `sphinxcontrib-bibtex <https://sphinxcontrib-bibtex.readthedocs.io/>`_
+-  `sphinx_rtd_theme <https://github.com/rtfd/sphinx_rtd_theme/>`_
 
 Unit Tests Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -40,10 +48,12 @@ Unit Tests Dependencies
 -  `Mock <https://pypi.python.org/pypi/mock>`_
 -  `Nose <https://nose.readthedocs.io/en/latest>`_
 
-Optional Dependencies
-^^^^^^^^^^^^^^^^^^^^^
+Development Dependencies
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  `OpenImageIO <https://github.com/OpenImageIO/oiio>`_
+-  `Invoke <http://www.pyinvoke.org/>`_
+-  `restructuredtext-lint <https://github.com/twolfson/restructuredtext-lint>`_
+-  `Twine <https://pypi.python.org/pypi/twine>`_
 -  `Yapf <https://github.com/google/yapf>`_
 
 Continuum Analytics Anaconda

@@ -70,8 +70,8 @@
 
     <ul class="list-inline">
         <li style="margin-right: -20px;">
-            <a href="http://dx.doi.org/10.5281/zenodo.821825">
-                <img src="https://zenodo.org/badge/doi/10.5281/zenodo.821825.svg" alt="10.5281/zenodo.821825">
+            <a href="http://dx.doi.org/10.5281/zenodo.1175177">
+                <img src="https://zenodo.org/badge/doi/10.5281/zenodo.1175177.svg" alt="10.5281/zenodo.1175177">
             </a>
         </li>
     </ul>
