@@ -254,6 +254,9 @@
                         <a href="https://github.com/brandondube">brandondube</a>
                     </li>
                     <li>
+                        <a href="https://github.com/cclauss">cclauss</a>
+                    </li>
+                    <li>
                         <a href="https://github.com/eyeforcolor">eyeforcolor</a>
                     </li>
                     <li>
