@@ -128,6 +128,12 @@ The documentation building dependencies are installed as follows:
 
     pip install 'colour-science[docs]'
 
+The overall development dependencies are installed as follows:
+
+.. code:: shell
+
+    pip install 'colour-science[development]'
+
 Github
 ------
 
