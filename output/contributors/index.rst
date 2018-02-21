@@ -239,6 +239,9 @@
                         <a href="https://github.com/Chandler">Chandler</a>
                     </li>
                     <li>
+                        <a href="https://github.com/Edwardlin-zlt">Edwardlin-zlt</a>
+                    </li>
+                    <li>
                         <a href="https://github.com/Kunkka1988">Kunkka1988</a>
                     </li>
                     <li>
@@ -259,11 +262,11 @@
                     <li>
                         <a href="https://github.com/eyeforcolor">eyeforcolor</a>
                     </li>
+                </ul>
+                <ul class="list-unstyled col-md-6">
                     <li>
                         <a href="https://github.com/fangjy88">fangjy88</a>
                     </li>
-                </ul>
-                <ul class="list-unstyled col-md-6">
                     <li>
                         <a href="https://github.com/foutoucour">foutoucour</a>
                     </li>
