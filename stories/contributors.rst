@@ -262,11 +262,11 @@
                     <li>
                         <a href="https://github.com/eyeforcolor">eyeforcolor</a>
                     </li>
-                </ul>
-                <ul class="list-unstyled col-md-6">
                     <li>
                         <a href="https://github.com/fangjy88">fangjy88</a>
                     </li>
+                </ul>
+                <ul class="list-unstyled col-md-6">
                     <li>
                         <a href="https://github.com/foutoucour">foutoucour</a>
                     </li>
@@ -280,6 +280,9 @@
                         <a href="https://github.com/iCagarro">iCagarro</a>
                     </li>
                     <li>
+                        <a href="https://github.com/iinnovations">iinnovations</a>
+                    </li>
+                    <li>
                         <a href="https://github.com/lensz">lensz</a>
                     </li>
                     <li>
@@ -290,6 +293,9 @@
                     </li>
                     <li>
                         <a href="https://github.com/peteroupc">peteroupc</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/shanest">shanest</a>
                     </li>
                     <li>
                         <a href="https://github.com/sobotka">sobotka</a>
