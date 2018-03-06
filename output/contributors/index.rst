@@ -251,6 +251,9 @@
                         <a href="https://github.com/Ron024">Ron024</a>
                     </li>
                     <li>
+                        <a href="https://github.com/Willingo">Willingo</a>
+                    </li>
+                    <li>
                         <a href="https://github.com/awehring">awehring</a>
                     </li>
                     <li>
@@ -302,6 +305,9 @@
                     </li>
                     <li>
                         <a href="https://github.com/stakemura">stakemura</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/tashdor">tashdor</a>
                     </li>
                     <li>
                         <a href="https://github.com/tingeman">tingeman</a>
