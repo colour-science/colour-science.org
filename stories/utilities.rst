@@ -7,6 +7,11 @@
 .. description:
 .. type: text
 
+`Colour Playground <https://mybinder.org/v2/gh/colour-science/colour-playground/master?filepath=playground%2Fcolour.ipynb>`_
+----------------------------------------------------------------------------------------------------------------------------
+
+A repository leveraging `Binder <https://mybinder.org/>`_ to play with `Colour <https://github.com/colour-science/colour>`_.
+
 `RGB Colourspace Models Transformations Matrices <../cgi-bin/rgb_colourspace_models_transformation_matrices.cgi>`_
 ------------------------------------------------------------------------------------------------------------------
 
