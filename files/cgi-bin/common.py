@@ -25,7 +25,7 @@ ANALYTICS_TRACKING = """
 <!-- <<< Google Analytics -->"""
 
 
-def html_format_matrix(M, precision=np.finfo(np.float_).precision):
+def html_format_matrix(M, precision=10):
     # Handling whitepoint tuples.
     if isinstance(M, tuple):
         M = np.array(M).reshape(1, 2)
