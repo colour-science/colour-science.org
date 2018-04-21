@@ -266,6 +266,9 @@
                         <a href="https://github.com/cclauss">cclauss</a>
                     </li>
                     <li>
+                        <a href="https://github.com/codycuellar">codycuellar</a>
+                    </li>
+                    <li>
                         <a href="https://github.com/eyeforcolor">eyeforcolor</a>
                     </li>
                 </ul>
