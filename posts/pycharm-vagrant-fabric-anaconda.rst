@@ -22,7 +22,6 @@ deploying:
 -   `Sphinx <https://sphinx-doc.org>`_
 -   `Nikola <https://getnikola.com/>`_
 -   `Apache 2.2 <http://httpd.apache.org>`_
--   `Php 5.5 <http://php.net>`_
 -   `OpenImageIO <http://openimageio.org>`_
 -   ... and too many things I just don't remember!
 
@@ -34,7 +33,7 @@ That's where `Vagrant <https://www.vagrantup.com/>`_ kicks in along
 `Anaconda <https://store.continuum.io/cshop/anaconda/>`_!
 
 The following guide assume that you have that you have *PyCharm* installed and
-are using *Mac Os X*, although it should pretty much be platform agnostic.
+are using *macOs*, although it should pretty much be platform agnostic.
 
 .. TEASER_END
 
@@ -71,19 +70,26 @@ We will loosely follow
 -   Install `Vagrant <https://www.vagrantup.com/>`_.
 -   Install `Fabric <http://www.fabfile.org/>`_, this is the provider needed for
     the `colour-vagrant <https://github.com/colour-science/colour-vagrant>`_
-    environment:
+    environment. Initially, I was provisioning with `Puppet <http://puppetlabs.com/>`_.
+    It was cumbersome to use, so I decided to go for `Fabric <http://www.fabfile.org/>`_
+    and the `vagrant-fabric <https://github.com/wutali/vagrant-fabric>`_
+    plugin:
 
     .. code:: shell
 
         pip install fabric
 
-    Initially, I was provisioning with `Puppet <http://puppetlabs.com/>`_.
-    It was cumbersome to use, so I decided to go for `Fabric <http://www.fabfile.org/>`_
-    and the `fabric-vagrant <https://github.com/hlassiege/fabric-vagrant>`_
-    plugin.
+.. class:: alert alert-dismissible alert-warning
+
+    | **Note**
+    |
+    | `Fabric <http://www.fabfile.org/>`_ does
+        `not support Python 3 yet <https://github.com/fabric/fabric/issues/1424>`_
+        thus if you want to use Python 3 you will need to
+        `switch to the fork <https://pypi.org/project/Fabric3/>`_.
 
 -   Install `XQuartz <http://xquartz.macosforge.org/>`_: This is the X11 display
-    server for *Mac Os X*. The virtual machine will export the display to it
+    server for *macOs*. The virtual machine will export the display to it
     so that you can see the figures from `Matplotlib <http://matplotlib.org/>`_.
 
 -   *VirtualBox* directories syncing performance degrades quickly with large
@@ -91,13 +97,13 @@ We will loosely follow
 
     As a result the directories syncing is done with *NFS*.
 
-    You will however be asked for your *Mac Os X* password at each virtual
+    You will however be asked for your *macOs* password at each virtual
     machine spin up because *Vagrant* needs to modify configuration files on
-    the *Mac Os X* host.
+    the *macOs* host.
 
     In order to avoid that and following the
     `Vagrant Documentation <https://docs.vagrantup.com/v2/synced-folders/nfs.html>`_,
-    you can edit your *Mac Os X* :code:`/etc/sudoers` file and append the
+    you can edit your *macOs* :code:`/etc/sudoers` file and append the
     following content:
 
     ::
@@ -114,15 +120,20 @@ The canonical way is to use *Vagrant* from the command line as described in
 `Vagrant Documentation <https://docs.vagrantup.com/v2/getting-started/>`__, but
 here we will leverage the *PyCharm* integration.
 
+-   Set the :code:`Vagrant Executable` field to your *Vagrant* executable, e.g.
+    :code:`/usr/local/bin/vagrant`. This should not be needed as
+    :code:`vagrant` should be enough, but
+    `I encountered issues lately <https://youtrack.jetbrains.com/issue/PY-29806#comment=27-2846352>`_.
+
 -   Set the :code:`Instance Folder` field to your :code:`colour-vagrant`
     directory.
 
 -   Add a new `Vagrant <https://www.vagrantup.com/>`_ box to
     `PyCharm <http://www.jetbrains.com/pycharm/>`_ in the :code:`Boxes` tab
     and use the following image:
-    `http://files.vagrantup.com/precise64.box <http://files.vagrantup.com/precise64.box>`_
+    `bento/ubuntu-16.04 <https://vagrantcloud.com/bento/ubuntu-16.04>`_
 
--   Add the `fabric-vagrant <https://github.com/hlassiege/fabric-vagrant>`_
+-   Add the `vagrant-fabric <https://github.com/wutali/vagrant-fabric>`_
     plugin to `PyCharm <http://www.jetbrains.com/pycharm/>`_ in the
     :code:`Plugins` tab.
 
@@ -152,14 +163,13 @@ elements available:
 
 .. code:: shell
 
-       vagrant@precise64:~$ cd /home/vagrant/anaconda/envs/
-       vagrant@precise64:~/anaconda/envs$ ll
-       total 20
-       drwxrwxr-x  5 vagrant vagrant 4096 Sep  5 10:00 ./
-       drwxrwxr-x 14 vagrant vagrant 4096 Sep  5 10:00 ../
-       drwxrwxr-x 12 vagrant vagrant 4096 Sep  5 10:00 python2.7/
-       drwxrwxr-x 11 vagrant vagrant 4096 Sep  5 09:58 python3.5/
-
+    vagrant@vagrant:~$ cd /home/vagrant/miniconda/envs/
+    vagrant@vagrant:~/miniconda/envs$ ll
+    total 16
+    drwxrwxr-x  4 vagrant vagrant 4096 Apr 29 03:12 ./
+    drwxrwxr-x 13 vagrant vagrant 4096 Apr 29 03:02 ../
+    drwxrwxr-x 20 vagrant vagrant 4096 Apr 29 03:09 python2.7/
+    drwxrwxr-x 20 vagrant vagrant 4096 Apr 29 03:30 python3.5/
 
 -  The **colour-science.org** website served from the virtual machine at
    the following address: `http://localhost:8080/ <http://localhost:8080/>`_
@@ -174,10 +184,10 @@ PyCharm Environment Configuration
 
    The remote Python interpreters paths are as follows:
 
-   -  /home/vagrant/anaconda/envs/python2.7/bin/python
-   -  /home/vagrant/anaconda/envs/python3.5/bin/python
+   -  /home/vagrant/miniconda/envs/python2.7/bin/python
+   -  /home/vagrant/miniconda/envs/python3.5/bin/python
 
--  Add the paths mappings from the *Mac Os X* host to the virtual
+-  Add the paths mappings from the *macOs* host to the virtual
    machine in the :code:`Defaults` configurations, in my case the mappings
    are as follows:
 
@@ -202,12 +212,12 @@ will have to manually :code:`ssh` into the virtual machine:
 
 .. code:: shell
 
-    ssh -Y vagrant@192.168.32.64
+    ssh -X vagrant@192.168.32.64
 
 Password is :code:`vagrant`.
 
 You will also need to add the virtual machine to the X11 hosts by issuing the
-following command on the *Mac Os X* host:
+following command on the *macOs* host:
 
 .. code:: shell
 
@@ -224,7 +234,7 @@ as follows:
     cd /colour-science/colour-notebooks/notebooks
     ipython notebook --pylab=inline --ip=0.0.0.0
 
-Then you can access it on the *Mac Os X* host at the following url:
+Then you can access it on the *macOs* host at the following url:
 `http://localhost:8888/ <http://localhost:8888/>`_
 
 Remote Python Environments & Interpreters
