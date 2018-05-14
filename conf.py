@@ -159,7 +159,7 @@ NAVIGATION_LINKS = {
                 ('/contributing', 'Contributing'),
                 ('/contributors', 'Contributors'),
                 ('http://colour.readthedocs.io/en/develop/bibliography.html', 'Bibliography'),
-                ('http://dx.doi.org/10.5281/zenodo.1175177', 'Cite Us'),
+                ('https://doi.org/10.5281/zenodo.1175177', 'Cite Us'),
                 ('/cited-by', 'Cited By'),
                 ('http://opensource.org/licenses/BSD-3-Clause', 'License'),
                 ('/search', 'Search'),
