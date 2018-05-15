@@ -104,5 +104,5 @@ Reviewers
 -   **Jasmin Patry**, *Sucker Punch*
 -   **Troy James Sobotka**, *Freelancer*
 
-The document can be found at this URL: http://dx.doi.org/10.5281/zenodo.345624
+The document can be found at this URL: https://doi.org/10.5281/zenodo.345624
 and the LaTex code is hosted on `Github <https://github.com/colour-science/aces-retrospective-and-enhancements>`_.
