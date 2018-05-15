@@ -127,7 +127,7 @@ It has pretty much always been assumed by a lot of people, including myself, tha
 <a href="http://colour.readthedocs.io/en/develop/bibliography.html">Bibliography</a>
                     </li>
 <li>
-<a href="http://dx.doi.org/10.5281/zenodo.1175177">Cite Us</a>
+<a href="https://doi.org/10.5281/zenodo.1175177">Cite Us</a>
                     </li>
 <li>
 <a href="../../cited-by">Cited By</a>
@@ -533,15 +533,16 @@ Thus there should be no surprise that component-wise multiply does not yield a p
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We multiply <em>dark skin</em> colour by <em>green</em> $n$ times and scale the result to obtain displayable values:</p>
-$$
+<p>$$
 \begin{equation}
 \begin{aligned}
 sRGB_m&amp;= sRGB_{r1}\cdot sRGB_{r2}\cdot sRGB_{r2}\cdot sRGB_{r2}\cdot sRGB_k\\
 adobe98_m&amp;= adobe98_{r1}\cdot adobe98_{r2}\cdot adobe98_{r2}\cdot adobe98_{r2}\cdot adobe98_k
 \end{aligned}
 \end{equation}
-$$<p>Where</p>
-$$
+$$</p>
+<p>Where</p>
+<p>$$
 \begin{equation}
 \begin{aligned}
 sRGB_{r1}&amp;=\ 'dark\ skin'\\
@@ -550,7 +551,8 @@ adobe98_{r1}&amp;=\ 'dark\ skin'\\
 adobe98_{r2}&amp;=\ 'green'
 \end{aligned}
 \end{equation}
-$$<p>With $sRGB_k$ and $adobe98_k$ being equivalent arbitrary scaling factors for each colourspace.</p>
+$$</p>
+<p>With $sRGB_k$ and $adobe98_k$ being equivalent arbitrary scaling factors for each colourspace.</p>
 <p>We then convert everything back to <em>CIE XYZ</em> colourspace:</p>
 
 </div>
@@ -1357,7 +1359,7 @@ $$<p>With $sRGB_k$ and $adobe98_k$ being equivalent arbitrary scaling factors fo
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Converting from a colourspace $RGB_1$ to another colourspace $RGB_2$ is done by applying a series of linear transformations (matrices) as follows:</p>
-$$
+<p>$$
 \begin{equation}
 \begin{vmatrix}
 R_2\\
@@ -1371,12 +1373,13 @@ G_1\\
 B_1
 \end{vmatrix}
 \end{equation}
-$$<p>where $\textbf{M}_{RGB_2}$ is the $3x3$ matrix transforming from <em>CIE XYZ</em> colourspace to $RGB_2$ colourspace and $\textbf{M}_{XYZ_1}$ is the $3x3$ matrix transforming from $RGB_1$ colourspace to <em>CIE XYZ</em> colourspace.</p>
+$$</p>
+<p>where $\textbf{M}_{RGB_2}$ is the $3x3$ matrix transforming from <em>CIE XYZ</em> colourspace to $RGB_2$ colourspace and $\textbf{M}_{XYZ_1}$ is the $3x3$ matrix transforming from $RGB_1$ colourspace to <em>CIE XYZ</em> colourspace.</p>
 <blockquote>
 <p>Note: We have discounted chromatic adaptation to makes things easier.</p>
 </blockquote>
 <p>Here are such $\textbf{M}_{XYZ_1}$ matrices for respectively <em>sRGB</em> and <em>ACES RGB</em> colourspaces:</p>
-$$
+<p>$$
 \begin{equation}
 \textbf{M}_{XYZ_{sRGB}}=
 \begin{vmatrix}
@@ -1391,8 +1394,9 @@ $$
 0&amp;0&amp;1.00882518\\
 \end{vmatrix}\\
 \end{equation}
-$$<p>Matrices are really just a system of multiple linear equations, thus we can express $\textbf{M}_{XYZ_{sRGB}}$ as follows:</p>
-$$
+$$</p>
+<p>Matrices are really just a system of multiple linear equations, thus we can express $\textbf{M}_{XYZ_{sRGB}}$ as follows:</p>
+<p>$$
 \begin{equation}
 \begin{aligned}
 X&amp;=\ 0.41238656R+0.35759149G+0.18045049B\\
@@ -1400,15 +1404,17 @@ Y&amp;=\ 0.21263682R+0.71518298G+0.0721802B\\
 Z&amp;=\ 0.01933062R+0.11919716G+0.95037259B\\
 \end{aligned}
 \end{equation}
-$$<p>We will simplify the problem again by just considering the first equation of each system, the first row of each matrix:</p>
-$$
+$$</p>
+<p>We will simplify the problem again by just considering the first equation of each system, the first row of each matrix:</p>
+<p>$$
 \begin{equation}
 \begin{aligned}
 X_{sRGB}&amp;=\ 0.41238656R+0.35759149G+0.18045049B\\
 X_{ACES}&amp;=\ 0.9525524R+0.0G+0.00009368B\\
 \end{aligned}
 \end{equation}
-$$<p>We plot the functions by using a uniformly spaced incrementing $k$ variable in place of $RGB$:</p>
+$$</p>
+<p>We plot the functions by using a uniformly spaced incrementing $k$ variable in place of $RGB$:</p>
 
 </div>
 </div>
