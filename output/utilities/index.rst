@@ -17,8 +17,8 @@ A `Google Colab <https://colab.research.google.com/>`_ Notebook to play with `Co
 
 A repository leveraging `Binder <https://mybinder.org/>`_ to play with `Colour <https://github.com/colour-science/colour>`_.
 
-`RGB Colourspace Models Transformations Matrices <../cgi-bin/rgb_colourspace_models_transformation_matrices.cgi>`_
-------------------------------------------------------------------------------------------------------------------
+`RGB Colourspace Models Transformation Matrix <../cgi-bin/rgb_colourspace_models_transformation_matrix.cgi>`_
+-------------------------------------------------------------------------------------------------------------
 
 Computes the colour transformation matrix between the given
 *RGB Colourspace Models* using the given *Chromatic Adaptation Transform*.
