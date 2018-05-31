@@ -67,7 +67,7 @@ try:
         </html>"""
 
     form = """
-        <form id="form" class="form" style="height: 512px;width: 416px" action="/cgi-bin/rgb_colourspace_models_transformation_matrices.cgi" method="post">
+        <form id="form" class="form" style="height: 512px;width: 416px" action="/cgi-bin/rgb_colourspace_models_transformation_matrix.cgi" method="post">
             <h1>RGB Colourspace Models Transformation Matrix</h1>
             <p>
                 <a href="http://colour-science.org/">colour-science.org</a>
