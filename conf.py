@@ -6,7 +6,6 @@ import time
 # !! This is the configuration of Nikola. !! #
 # !!  You should edit it to your liking.  !! #
 
-
 # ! Some settings can be different in different languages.
 # ! A comment stating (translatable) is used to denote those.
 # ! There are two ways to specify a translatable setting:
@@ -14,7 +13,6 @@ import time
 # ! (b) BLOG_TITLE = {"en": "My Blog", "es": "Mi Blog"}
 # ! Option (a) is used when you don't want that setting translated.
 # ! Option (b) is used for settings that are different in different languages.
-
 
 # Data about this site
 BLOG_AUTHOR = "Colour Developers"  # (translatable)
@@ -128,71 +126,62 @@ TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        (
-            (
-                ('https://github.com/colour-science/colour/archive/v0.3.11.zip', 'Latest (v0.3.11)'),
-                ('https://github.com/colour-science/colour/releases', 'All Releases'),
-                ('https://pypi.python.org/pypi/colour-science/', 'Pypi'),
-            ),
-            'Downloads'
-        ),
-        (
-            (
-                ('/utilities', 'Utilities'),
-                ('/experiments', 'Experiments'),
-                ('/colour-demosaicing', 'Colour - Demosaicing'),
-                ('/colour-hdri', 'Colour - HDRI'),
-                ('/colour-maya', 'Colour - Maya'),
-                ('/colour-nuke', 'Colour - Nuke'),
-                ('/colour-spectroscope', 'Colour - Spectroscope'),
-            ),
-            'Projects'
-        ),
-        (
-            (
-                ('/installation-guide', 'Installation Guide'),
-                ('/tutorial', 'Tutorial'),
-                ('/api-reference', 'API Reference'),
-                ('http://nbviewer.jupyter.org/github/colour-science/colour-notebooks/blob/master/notebooks/colour.ipynb', 'Jupyter Notebooks'),
-                ('/features', 'Features'),
-                ('/history', 'History'),
-                ('/contributing', 'Contributing'),
-                ('/contributors', 'Contributors'),
-                ('http://colour.readthedocs.io/en/develop/bibliography.html', 'Bibliography'),
-                ('https://doi.org/10.5281/zenodo.1175177', 'Cite Us'),
-                ('/cited-by', 'Cited By'),
-                ('http://opensource.org/licenses/BSD-3-Clause', 'License'),
-                ('/search', 'Search'),
-            ),
-            'Documentation'
-        ),
-        (
-            (
-                ('https://github.com/colour-science/colour', 'Source Code'),
-                ('/api-status-and-badges', 'API Status and Badges'),
-            ),
-            'Development'
-        ),
-        (
-            (
-                ('/blog', 'Posts'),
-                ("/archive.html", "Archive"),
-                ("/categories/", "Tags"),
-            ),
-            'Blog'
-        ),
-        (
-            (
-                ('mailto:colour-science@googlegroups.com', 'Contact Us'),
-                ('https://gitter.im/colour-science/colour', 'Gitter'),
-                ('https://groups.google.com/forum/#!forum/colour-science', 'Mailing List'),
-                ('https://twitter.com/colour_science', 'Twitter'),
-                ('https://www.facebook.com/python.colour.science', 'Facebook'),
-                ('https://plus.google.com/u/0/b/101380914519940603334/', 'Google Plus'),
-                ('/rss.xml', 'RSS Feed'),
-            ),
-            'Social'
-        ),
+        ((
+            ('https://github.com/colour-science/colour/archive/v0.3.11.zip',
+             'Latest (v0.3.11)'),
+            ('https://github.com/colour-science/colour/releases',
+             'All Releases'),
+            ('https://pypi.python.org/pypi/colour-science/', 'Pypi'),
+        ), 'Downloads'),
+        ((
+            ('/apps', 'Apps'),
+            ('http://awesome-colour.org/', 'Awesome Colour'),
+            ('/colour-demosaicing', 'Colour - Demosaicing'),
+            ('/colour-hdri', 'Colour - HDRI'),
+            ('/colour-maya', 'Colour - Maya'),
+            ('/colour-nuke', 'Colour - Nuke'),
+            ('/colour-playground', 'Colour - Playground'),
+            ('/colour-spectroscope', 'Colour - Spectroscope'),
+            ('/experiments', 'Experiments'),
+            ('https://colab.research.google.com/drive/1Im9J7or9qyClQCv5sPHmKdyiQbG4898K', 'Google Colab Notebook'),
+        ), 'Projects'),
+        ((
+            ('/installation-guide', 'Installation Guide'),
+            ('/tutorial', 'Tutorial'),
+            ('/api-reference', 'API Reference'),
+            ('http://nbviewer.jupyter.org/github/colour-science/colour-notebooks/blob/master/notebooks/colour.ipynb',
+             'Jupyter Notebooks'),
+            ('/features', 'Features'),
+            ('/history', 'History'),
+            ('/contributing', 'Contributing'),
+            ('/contributors', 'Contributors'),
+            ('http://colour.readthedocs.io/en/develop/bibliography.html',
+             'Bibliography'),
+            ('https://doi.org/10.5281/zenodo.1175177', 'Cite Us'),
+            ('/cited-by', 'Cited By'),
+            ('http://opensource.org/licenses/BSD-3-Clause', 'License'),
+            ('/search', 'Search'),
+        ), 'Documentation'),
+        ((
+            ('https://github.com/colour-science/colour', 'Source Code'),
+            ('/api-status-and-badges', 'API Status and Badges'),
+        ), 'Development'),
+        ((
+            ('/blog', 'Posts'),
+            ("/archive.html", "Archive"),
+            ("/categories/", "Tags"),
+        ), 'Blog'),
+        ((
+            ('mailto:colour-science@googlegroups.com', 'Contact Us'),
+            ('https://gitter.im/colour-science/colour', 'Gitter'),
+            ('https://groups.google.com/forum/#!forum/colour-science',
+             'Mailing List'),
+            ('https://twitter.com/colour_science', 'Twitter'),
+            ('https://www.facebook.com/python.colour.science', 'Facebook'),
+            ('https://plus.google.com/u/0/b/101380914519940603334/',
+             'Google Plus'),
+            ('/rss.xml', 'RSS Feed'),
+        ), 'Social'),
     ),
 }
 
@@ -238,7 +227,6 @@ PAGES = (
     ("stories/*.txt", "", "story.tmpl"),
     ("stories/*.ipynb", "", "story.tmpl"),
 )
-
 
 # Below this point, everything is optional
 
@@ -306,16 +294,16 @@ TIMEZONE = "Europe/London"
 COMPILERS = {
     "rest": ('.rst', '.txt'),
     "markdown": ('.md', '.mdown', '.markdown'),
-    "textile": ('.textile',),
-    "txt2tags": ('.t2t',),
-    "bbcode": ('.bb',),
-    "wiki": ('.wiki',),
-    "ipynb": ('.ipynb',),
+    "textile": ('.textile', ),
+    "txt2tags": ('.t2t', ),
+    "bbcode": ('.bb', ),
+    "wiki": ('.wiki', ),
+    "ipynb": ('.ipynb', ),
     "html": ('.html', '.htm'),
     # PHP files are rendered the usual way (i.e. with the full templates).
     # The resulting files have .php extensions, making it possible to run
     # them without reconfiguring your server to recognize them.
-    "php": ('.php',),
+    "php": ('.php', ),
     # Pandoc detects the input from the source filename
     # but is disabled by default as it would conflict
     # with many of the others.
@@ -404,12 +392,12 @@ POSTS_SECTIONS = True
 # output / TRANSLATION[lang] / TAG_PATH / index.html (list of tags)
 # output / TRANSLATION[lang] / TAG_PATH / tag.html (list of posts for a tag)
 # output / TRANSLATION[lang] / TAG_PATH / tag.xml (RSS feed for a tag)
- # (translatable)
+# (translatable)
 # TAG_PATH = "categories"
 
 # See TAG_PATH's "list of tags" for the default setting value. Can be overwritten
 # here any path relative to the output directory.
- # (translatable)
+# (translatable)
 # TAGS_INDEX_PATH = "tags.html"
 
 # If TAG_PAGES_ARE_INDEXES is set to True, each tag's page will contain
@@ -513,7 +501,6 @@ HIDDEN_CATEGORIES = []
 #        "Roberto Alsina": "Nikola father."
 #    },
 # }
-
 
 # If you do not want to display an author publicly, you can mark it as hidden.
 # The author will not be displayed on the author list page and posts.
@@ -891,15 +878,12 @@ Copyright © 2013-{date} – {author} – <a href="mailto:{email}">{email}</a>
 #          do not need formatting)
 # (translatable)
 CONTENT_FOOTER_FORMATS = {
-    DEFAULT_LANG: (
-        (),
-        {
-            "email": BLOG_EMAIL,
-            "author": BLOG_AUTHOR,
-            "date": time.gmtime().tm_year,
-            "license": LICENSE
-        }
-    )
+    DEFAULT_LANG: ((), {
+        "email": BLOG_EMAIL,
+        "author": BLOG_AUTHOR,
+        "date": time.gmtime().tm_year,
+        "license": LICENSE
+    })
 }
 
 # To use comments, you can choose between different third party comment
