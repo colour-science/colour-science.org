@@ -134,7 +134,7 @@ NAVIGATION_LINKS = {
             ('https://pypi.python.org/pypi/colour-science/', 'Pypi'),
         ), 'Downloads'),
         ((
-            ('/apps', 'Apps'),
+            ('/apps', 'Apps (Colour - Dash)'),
             ('http://awesome-colour.org/', 'Awesome Colour'),
             ('/colour-demosaicing', 'Colour - Demosaicing'),
             ('/colour-hdri', 'Colour - HDRI'),
