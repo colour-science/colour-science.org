@@ -16,11 +16,11 @@ you may not need to install all of them.
 Primary Dependencies
 ^^^^^^^^^^^^^^^^^^^^
 
--  `Python >= 2.7 <https://www.python.org/download/releases/>`_ or
-   `Python >= 3.6 <https://www.python.org/download/releases/>`_
--  `NumPy >= 0.16 <http://www.numpy.org/>`_
--  `SciPy >= 0.16.0 <http://www.scipy.org/>`_
--  `Six>= 1.10.0 <https://pypi.python.org/pypi/six>`_
+-  `Python>=2.7 <https://www.python.org/download/releases/>`_ or
+   `Python>=3.6 <https://www.python.org/download/releases/>`_
+-  `NumPy>=1.8.1 <http://www.numpy.org/>`_
+-  `SciPy>=0.16.0 <http://www.scipy.org/>`_
+-  `Six>=1.10.0 <https://pypi.python.org/pypi/six>`_
 
 Optional Dependencies
 ^^^^^^^^^^^^^^^^^^^^^
@@ -31,21 +31,21 @@ Optional Dependencies
 Optional Figures Plotting Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  `Matplotlib <http://matplotlib.org/>`_
+-  `Matplotlib>=2.2.0 <http://matplotlib.org/>`_
 
 Documentation Building Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  `Sphinx <https://sphinx-doc.org>`_
+-  `Sphinx>=1.6.6 <https://sphinx-doc.org>`_
 -  `sphinxcontrib-bibtex <https://sphinxcontrib-bibtex.readthedocs.io/>`_
 -  `sphinx_rtd_theme <https://github.com/rtfd/sphinx_rtd_theme/>`_
 
 Unit Tests Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^
 
--  `Coverage <https://pypi.python.org/pypi/coverage>`_
--  `Flake8 <https://pypi.python.org/pypi/flake8>`_
--  `Mock <https://pypi.python.org/pypi/mock>`_
+-  `Coverage>=3.7.1 <https://pypi.python.org/pypi/coverage>`_
+-  `Flake8>=2.1.0 <https://pypi.python.org/pypi/flake8>`_
+-  `Mock>=1.3.4 <https://pypi.python.org/pypi/mock>`_
 -  `Nose <https://nose.readthedocs.io/en/latest>`_
 
 Development Dependencies
