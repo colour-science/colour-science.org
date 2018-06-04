@@ -59,9 +59,9 @@ Tom confirms that intuition a few paragraph later:
 What is sRGB?
 -------------
 
-Terminology in a given scientific domain is a key to its understanding, this is
-especially true in colour science. For example, everybody knows what is colour
-but yet only a few can define it properly, in that regard, we often cite
+Terminology in a given scientific domain is key to its understanding, this is
+especially true in colour science. Everybody knows what is colour but yet only
+a few can define it properly, in that regard, we often cite
 `Mark D. Fairchild <https://twitter.com/MDFairchild>`_:
 
     *Why should it be particularly difficult to agree upon consistent
