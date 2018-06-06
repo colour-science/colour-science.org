@@ -1149,14 +1149,7 @@ BODY_END = """
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 <!-- <<< Gitter -->
 <!-- >>> Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-53791280-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-53791280-1');
-</script>
+<script async src="http://colour-science.org/assets/js/analytics.js"></script>
 <!-- <<< Google Analytics -->
 """
 
