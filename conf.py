@@ -143,7 +143,8 @@ NAVIGATION_LINKS = {
             ('/colour-playground', 'Colour - Playground'),
             ('/colour-spectroscope', 'Colour - Spectroscope'),
             ('/experiments', 'Experiments'),
-            ('https://colab.research.google.com/drive/1Im9J7or9qyClQCv5sPHmKdyiQbG4898K', 'Google Colab Notebook'),
+            ('https://colab.research.google.com/drive/1Im9J7or9qyClQCv5sPHmKdyiQbG4898K',
+             'Google Colab Notebook'),
         ), 'Projects'),
         ((
             ('/installation-guide', 'Installation Guide'),
@@ -1148,22 +1149,13 @@ BODY_END = """
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 <!-- <<< Gitter -->
 <!-- >>> Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-53791280-1"></script>
 <script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    ga('create', 'UA-53791280-1', 'auto');
-    ga('send', 'pageview');
-
+  gtag('config', 'UA-53791280-1');
 </script>
 <!-- <<< Google Analytics -->
 """
