@@ -7,7 +7,11 @@ colour-science.org
 -   **Thomas Mansencal**, *Visual Effects Artist @ Weta Digital*
 
     Project coordination, website.
-    
+
+-   **Katrin Leinweber**
+
+    Documentation improvements.
+
 About
 -----
 

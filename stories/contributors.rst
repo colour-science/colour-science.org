@@ -103,6 +103,19 @@
                 </p>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <h2>Katrin Leinweber</h2>
+                <p>
+                    Documentation improvements.
+                </p>
+                <p>
+                    <a href="https://github.com/katrinleinweber">Github</a>
+                </p>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
     </div>
     <div class="row text-center">
         <h1>Acknowledgements</h1>
