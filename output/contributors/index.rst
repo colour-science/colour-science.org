@@ -104,6 +104,7 @@
             </div>
         </div>
         <div class="row">
+            <div class="col-md-4"></div>
             <div class="col-md-4">
                 <h2>Katrin Leinweber</h2>
                 <p>
@@ -113,10 +114,7 @@
                     <a href="https://github.com/katrinleinweber">Github</a>
                 </p>
             </div>
-            <div class="col-md-4">
-            </div>
-            <div class="col-md-4">
-            </div>
+            <div class="col-md-4"></div>
         </div>
     </div>
     <div class="row text-center">
@@ -230,14 +228,14 @@
             <div class="col-md-4">
                 <h2>Aurélia Sellier</h2>
                 <p>
-                    <em>Line Producer</em> @
-                    <a href="http://www.cube-creative.fr/">Cube Creative</a>
+                    <em>FX Production Coordinator</em> @
+                    <a href="http://wetafx.co.nz">Weta Digital</a>
                 </p>
                 <p>Infinite patience</p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-8">
                 <h2>Issues & Discussions</h2>
-                <ul class="list-unstyled col-md-6">
+                <ul class="list-unstyled col-md-4">
                     <li>
                         <a href="https://github.com/JGoldstone">Joseph Goldstone</a>
                     </li>
@@ -257,7 +255,13 @@
                         <a href="https://github.com/Edwardlin-zlt">Edwardlin-zlt</a>
                     </li>
                     <li>
+                        <a href="https://github.com/Floschoe">Floschoe</a>
+                    </li>
+                    <li>
                         <a href="https://github.com/Kunkka1988">Kunkka1988</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Legendin">Legendin</a>
                     </li>
                     <li>
                         <a href="https://github.com/Rob-Welch">Rob-Welch</a>
@@ -268,6 +272,8 @@
                     <li>
                         <a href="https://github.com/TFiFiE">TFiFiE</a>
                     </li>
+                </ul>
+                <ul class="list-unstyled col-md-4">
                     <li>
                         <a href="https://github.com/Willingo">Willingo</a>
                     </li>
@@ -286,13 +292,14 @@
                     <li>
                         <a href="https://github.com/eyeforcolor">eyeforcolor</a>
                     </li>
-                </ul>
-                <ul class="list-unstyled col-md-6">
                     <li>
                         <a href="https://github.com/fangjy88">fangjy88</a>
                     </li>
                     <li>
                         <a href="https://github.com/foutoucour">foutoucour</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/habemus-papadum">habemus-papadum</a>
                     </li>
                     <li>
                         <a href="https://github.com/henczati">henczati</a>
@@ -303,6 +310,8 @@
                     <li>
                         <a href="https://github.com/iCagarro">iCagarro</a>
                     </li>
+                </ul>
+                <ul class="list-unstyled col-md-4">
                     <li>
                         <a href="https://github.com/iinnovations">iinnovations</a>
                     </li>
@@ -338,6 +347,5 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-md-4"></div>
         </div>
     </div>
