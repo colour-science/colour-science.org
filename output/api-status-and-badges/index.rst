@@ -57,11 +57,6 @@
             </a>
         </li>
         <li style="margin-right: -20px;">
-            <a href="https://gemnasium.com/colour-science/colour">
-                <img src="https://img.shields.io/gemnasium/colour-science/colour.svg" alt="Dependency Status">
-            </a>
-        </li>
-        <li style="margin-right: -20px;">
             <a href="https://pypi.python.org/pypi/colour-science">
                 <img src="https://badge.fury.io/py/colour-science.svg" alt="PyPI version" height="18">
             </a>
