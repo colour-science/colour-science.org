@@ -18,19 +18,19 @@
     </ul>
 
     <ul class="list-inline">
-        <li style="margin-right: -20px;">
+        <li style="margin-right: -17px;">
             <a href="https://github.com/colour-science/colour/">
-                <img src="https://img.shields.io/github/watchers/colour-science/colour.svg?style=social&label=Watch&style=flat-square" alt="Watch">
+                <img src="https://img.shields.io/github/watchers/colour-science/colour.svg?label=Watch&style=flat-square" alt="Watch">
             </a>
         </li>
-        <li style="margin-right: -20px;">
+        <li style="margin-right: -17px;">
             <a href="https://github.com/colour-science/colour/">
-                <img src="https://img.shields.io/github/stars/colour-science/colour.svg?style=social&label=Star&style=flat-square" alt="Star">
+                <img src="https://img.shields.io/github/stars/colour-science/colour.svg?label=Star&style=flat-square" alt="Star">
             </a>
         </li>
-        <li style="margin-right: -20px;">
+        <li style="margin-right: -17px;">
             <a href="https://github.com/colour-science/colour/">
-                <img src="https://img.shields.io/github/forks/colour-science/colour.svg?style=social&label=Fork&style=flat-square" alt="Fork">
+                <img src="https://img.shields.io/github/forks/colour-science/colour.svg?label=Fork&style=flat-square" alt="Fork">
             </a>
         </li>
     </ul>
