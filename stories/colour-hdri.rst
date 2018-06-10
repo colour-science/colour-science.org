@@ -1,7 +1,7 @@
 .. title: Colour - HDRI
 .. slug: colour-hdri
 .. date: 2015-12-18 06:01:00 UTC
-.. tags: 
+.. tags: colour, colour science, colour - hdri, hdri, python
 .. category: 
 .. link: 
 .. description: 

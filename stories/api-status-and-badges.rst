@@ -1,7 +1,7 @@
 .. title: API Status and Badges
 .. slug: api-status-and-badges
 .. date: 2015-12-02 07:16:27 UTC
-.. tags: 
+.. tags: api, status
 .. category: 
 .. link: 
 .. description: 

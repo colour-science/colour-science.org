@@ -1,7 +1,7 @@
 .. title: Colour Science for Python
 .. slug: index
 .. date: 2015-12-01 09:37:13 UTC
-.. tags: 
+.. tags: colour, colour science, python
 .. category: 
 .. link: 
 .. description: 

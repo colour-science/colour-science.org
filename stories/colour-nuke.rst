@@ -1,7 +1,7 @@
 .. title: Colour - Nuke
 .. slug: colour-nuke
 .. date: 2015-11-25 09:01:32 UTC
-.. tags:
+.. tags: colour, colour science, colour - nuke, nuke, python
 .. category:
 .. link:
 .. description:

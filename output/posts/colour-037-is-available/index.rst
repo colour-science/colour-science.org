@@ -1,7 +1,7 @@
 .. title: Colour 0.3.7 is available!
 .. slug: colour-037-is-available
 .. date: 2015-12-13 06:14:07 UTC
-.. tags: release, colour
+.. tags: colour, colour science, release
 .. category: 
 .. link: 
 .. description: 

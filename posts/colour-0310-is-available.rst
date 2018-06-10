@@ -1,7 +1,7 @@
 .. title: Colour 0.3.10 is available!
 .. slug: colour-0310-is-available
 .. date: 2017-07-12 10:47:36 UTC+01:00
-.. tags: release, colour
+.. tags: colour, colour science, release
 .. category: 
 .. link: 
 .. description: 

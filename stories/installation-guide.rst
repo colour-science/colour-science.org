@@ -1,7 +1,7 @@
 .. title: Installation Guide
 .. slug: installation-guide
 .. date: 2015-11-24 09:38:23 UTC
-.. tags:
+.. tags: installation
 .. category:
 .. link:
 .. description:

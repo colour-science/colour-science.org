@@ -1,7 +1,7 @@
 .. title: Bibliography
 .. slug: bibliography
 .. date: 2015-11-25 09:37:37 UTC
-.. tags:
+.. tags: bibliography, references
 .. category:
 .. link:
 .. description:

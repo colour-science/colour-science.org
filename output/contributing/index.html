@@ -23,6 +23,7 @@ There are many ways to help:
 Reporting a defect, proposing a new feature or enha">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2015-11-25T05:35:44Z">
+<meta property="article:tag" content="contributing">
 </head>
 <body>
 <div id="logo-banner"></div>
@@ -398,43 +399,43 @@ follow the guidelines.</p>
 tests suite is run when you push your changes.</li>
 <li>Clone the repository locally to your workspace:</li>
 </ol>
-<pre class="code shell"><a name="rest_code_9d97d95e18b74ab981cb8c202bbc646e-1"></a>git clone git@github.com:<span class="nv">$USER</span>/colour.git
+<pre class="code shell"><a name="rest_code_36e1c1317bb74242bd31b7133c3933f6-1"></a>git clone git@github.com:<span class="nv">$USER</span>/colour.git
 </pre>
 <ol class="arabic simple" start="4">
 <li>Connect your clone to the original <em>upstream</em> repository by adding it as a
 remote:</li>
 </ol>
-<pre class="code shell"><a name="rest_code_9a04c5ae53c64c3985807421cdf1ec8c-1"></a>git remote add upstream git@github.com:colour-science/colour
+<pre class="code shell"><a name="rest_code_1f585de3db5e4b0f9386675fb5fd7aa9-1"></a>git remote add upstream git@github.com:colour-science/colour
 </pre>
 <ol class="arabic simple" start="5">
 <li>You should now have two remotes:</li>
 </ol>
-<pre class="code shell"><a name="rest_code_94f798c54148446ea1247fab8155d9cc-1"></a>git remote -v
-<a name="rest_code_94f798c54148446ea1247fab8155d9cc-2"></a>origin  https://github.com/<span class="nv">$USER</span>/colour <span class="o">(</span>fetch<span class="o">)</span>
-<a name="rest_code_94f798c54148446ea1247fab8155d9cc-3"></a>origin  https://github.com/<span class="nv">$USER</span>/colour <span class="o">(</span>push<span class="o">)</span>
-<a name="rest_code_94f798c54148446ea1247fab8155d9cc-4"></a>upstream  https://github.com/colour-science/colour <span class="o">(</span>fetch<span class="o">)</span>
-<a name="rest_code_94f798c54148446ea1247fab8155d9cc-5"></a>upstream  https://github.com/colour-science/colour <span class="o">(</span>push<span class="o">)</span>
+<pre class="code shell"><a name="rest_code_8839616b7ed34f57a72bd5cfbe9b362a-1"></a>git remote -v
+<a name="rest_code_8839616b7ed34f57a72bd5cfbe9b362a-2"></a>origin  https://github.com/<span class="nv">$USER</span>/colour <span class="o">(</span>fetch<span class="o">)</span>
+<a name="rest_code_8839616b7ed34f57a72bd5cfbe9b362a-3"></a>origin  https://github.com/<span class="nv">$USER</span>/colour <span class="o">(</span>push<span class="o">)</span>
+<a name="rest_code_8839616b7ed34f57a72bd5cfbe9b362a-4"></a>upstream  https://github.com/colour-science/colour <span class="o">(</span>fetch<span class="o">)</span>
+<a name="rest_code_8839616b7ed34f57a72bd5cfbe9b362a-5"></a>upstream  https://github.com/colour-science/colour <span class="o">(</span>push<span class="o">)</span>
 </pre>
 <ol class="arabic simple" start="6">
 <li>Pull the latest changes from <em>upstream</em>:</li>
 </ol>
-<pre class="code shell"><a name="rest_code_2de362b3c710432ab5ec29c1d3955368-1"></a>git checkout master
-<a name="rest_code_2de362b3c710432ab5ec29c1d3955368-2"></a>git pull upstream master
+<pre class="code shell"><a name="rest_code_a2052887b9604658b021e10b0aa7f772-1"></a>git checkout master
+<a name="rest_code_a2052887b9604658b021e10b0aa7f772-2"></a>git pull upstream master
 </pre>
 <ol class="arabic simple" start="7">
 <li>Create a branch for your contribution:</li>
 </ol>
-<pre class="code shell"><a name="rest_code_a47fd6c2af6d4d3d90feb2ef9627da7a-1"></a>git checkout -b feature/mie_scattering
-<a name="rest_code_a47fd6c2af6d4d3d90feb2ef9627da7a-2"></a>
-<a name="rest_code_a47fd6c2af6d4d3d90feb2ef9627da7a-3"></a>The core developers are using the
-<a name="rest_code_a47fd6c2af6d4d3d90feb2ef9627da7a-4"></a><span class="sb">`</span>git flow branching model &lt;http://nvie.com/posts/a-successful-git-branching-model/&gt;<span class="sb">`</span>_
-<a name="rest_code_a47fd6c2af6d4d3d90feb2ef9627da7a-5"></a><span class="k">for</span> most of the development tasks and since the branch name appears in the
-<a name="rest_code_a47fd6c2af6d4d3d90feb2ef9627da7a-6"></a>commit message and <span class="k">for</span> consistency, please use the following branch
-<a name="rest_code_a47fd6c2af6d4d3d90feb2ef9627da7a-7"></a>prefixes:
-<a name="rest_code_a47fd6c2af6d4d3d90feb2ef9627da7a-8"></a>
-<a name="rest_code_a47fd6c2af6d4d3d90feb2ef9627da7a-9"></a>-   Feature branch prefix: **feature/**
-<a name="rest_code_a47fd6c2af6d4d3d90feb2ef9627da7a-10"></a>-   Release branch prefix: **release/**
-<a name="rest_code_a47fd6c2af6d4d3d90feb2ef9627da7a-11"></a>-   Hotfix branch prefix: **hotfix/**
+<pre class="code shell"><a name="rest_code_11e86d7e1dec41e2905176f73f55d1a2-1"></a>git checkout -b feature/mie_scattering
+<a name="rest_code_11e86d7e1dec41e2905176f73f55d1a2-2"></a>
+<a name="rest_code_11e86d7e1dec41e2905176f73f55d1a2-3"></a>The core developers are using the
+<a name="rest_code_11e86d7e1dec41e2905176f73f55d1a2-4"></a><span class="sb">`</span>git flow branching model &lt;http://nvie.com/posts/a-successful-git-branching-model/&gt;<span class="sb">`</span>_
+<a name="rest_code_11e86d7e1dec41e2905176f73f55d1a2-5"></a><span class="k">for</span> most of the development tasks and since the branch name appears in the
+<a name="rest_code_11e86d7e1dec41e2905176f73f55d1a2-6"></a>commit message and <span class="k">for</span> consistency, please use the following branch
+<a name="rest_code_11e86d7e1dec41e2905176f73f55d1a2-7"></a>prefixes:
+<a name="rest_code_11e86d7e1dec41e2905176f73f55d1a2-8"></a>
+<a name="rest_code_11e86d7e1dec41e2905176f73f55d1a2-9"></a>-   Feature branch prefix: **feature/**
+<a name="rest_code_11e86d7e1dec41e2905176f73f55d1a2-10"></a>-   Release branch prefix: **release/**
+<a name="rest_code_11e86d7e1dec41e2905176f73f55d1a2-11"></a>-   Hotfix branch prefix: **hotfix/**
 </pre>
 <ol class="arabic simple" start="8">
 <li>Check if the unit tests and doctests are running properly.</li>
@@ -444,13 +445,13 @@ anything incorrect is found, thus we advice that you run it before
 committing and pushing your code to <em>origin</em>, your own fork.</li>
 <li>Commit your changes:</li>
 </ol>
-<pre class="code shell"><a name="rest_code_3f65f61b553348d297a308a42a1c5fe8-1"></a>git add mie_scattering.py
-<a name="rest_code_3f65f61b553348d297a308a42a1c5fe8-2"></a>git commit -m <span class="s1">'Implement "Mie Scattering" support.'</span>
+<pre class="code shell"><a name="rest_code_1236a6233a144fefba1e55ee860bedd4-1"></a>git add mie_scattering.py
+<a name="rest_code_1236a6233a144fefba1e55ee860bedd4-2"></a>git commit -m <span class="s1">'Implement "Mie Scattering" support.'</span>
 </pre>
 <ol class="arabic simple" start="11">
 <li>Push your changes back to <em>origin</em>, your own fork:</li>
 </ol>
-<pre class="code shell"><a name="rest_code_e8e799b6744841eba19a620707e536de-1"></a>git push origin feature/mie_scattering
+<pre class="code shell"><a name="rest_code_5fc1fa52f9bf427cb367aecb93e8135e-1"></a>git push origin feature/mie_scattering
 </pre>
 <ol class="arabic simple" start="12">
 <li>Ensure that the test suite is all right on <a class="reference external" href="http://travis-ci.org/">Travis-CI</a>.</li>
@@ -488,10 +489,10 @@ Colour Science litterature:</p>
 notation. It can be converted to chromaticity coordinates <strong>xy</strong> with lower
 case notation. If we were to follow the <a class="reference external" href="http://legacy.python.org/dev/peps/pep-0008/">PEP 8</a>
 recommendations, we would have written a conversion definition as follows:</p>
-<pre class="code python"><a name="rest_code_89f3156ce7ed4e81b592bb60d07615cf-1"></a><span class="k">def</span> <span class="nf">xyz_to_xy</span><span class="p">(</span><span class="n">xyz</span><span class="p">):</span>
-<a name="rest_code_89f3156ce7ed4e81b592bb60d07615cf-2"></a>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">xyz</span><span class="p">)</span>
-<a name="rest_code_89f3156ce7ed4e81b592bb60d07615cf-3"></a>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span><span class="p">),</span> <span class="n">y</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span>
-<a name="rest_code_89f3156ce7ed4e81b592bb60d07615cf-4"></a>    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+<pre class="code python"><a name="rest_code_62bba87c18014aef9c4946580959320d-1"></a><span class="k">def</span> <span class="nf">xyz_to_xy</span><span class="p">(</span><span class="n">xyz</span><span class="p">):</span>
+<a name="rest_code_62bba87c18014aef9c4946580959320d-2"></a>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">xyz</span><span class="p">)</span>
+<a name="rest_code_62bba87c18014aef9c4946580959320d-3"></a>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span><span class="p">),</span> <span class="n">y</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span>
+<a name="rest_code_62bba87c18014aef9c4946580959320d-4"></a>    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
 </pre>
 <p>Abstracting the fact the above definition is totally undocumented, it can be
 confusing to understand when we are referencing big <strong>X</strong> tristimulus value or
@@ -499,10 +500,10 @@ little <strong>x</strong> chromaticity coordinate.</p>
 <p>For those cases, and there are legions of them in Colour Science, we have
 decided to go for clarity and consistency with the literature for the object
 names:</p>
-<pre class="code python"><a name="rest_code_dcfe4492286e4e72b713cb00d6fb3e6a-1"></a><span class="k">def</span> <span class="nf">XYZ_to_xy</span><span class="p">(</span><span class="n">XYZ</span><span class="p">):</span>
-<a name="rest_code_dcfe4492286e4e72b713cb00d6fb3e6a-2"></a>    <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>
-<a name="rest_code_dcfe4492286e4e72b713cb00d6fb3e6a-3"></a>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">X</span> <span class="o">/</span> <span class="p">(</span><span class="n">X</span> <span class="o">+</span> <span class="n">Y</span> <span class="o">+</span> <span class="n">Z</span><span class="p">),</span> <span class="n">Y</span> <span class="o">/</span> <span class="p">(</span><span class="n">X</span> <span class="o">+</span> <span class="n">Y</span> <span class="o">+</span> <span class="n">Z</span><span class="p">)</span>
-<a name="rest_code_dcfe4492286e4e72b713cb00d6fb3e6a-4"></a>    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+<pre class="code python"><a name="rest_code_aa652154af0f468c8aa1a84931dc1fd4-1"></a><span class="k">def</span> <span class="nf">XYZ_to_xy</span><span class="p">(</span><span class="n">XYZ</span><span class="p">):</span>
+<a name="rest_code_aa652154af0f468c8aa1a84931dc1fd4-2"></a>    <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>
+<a name="rest_code_aa652154af0f468c8aa1a84931dc1fd4-3"></a>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">X</span> <span class="o">/</span> <span class="p">(</span><span class="n">X</span> <span class="o">+</span> <span class="n">Y</span> <span class="o">+</span> <span class="n">Z</span><span class="p">),</span> <span class="n">Y</span> <span class="o">/</span> <span class="p">(</span><span class="n">X</span> <span class="o">+</span> <span class="n">Y</span> <span class="o">+</span> <span class="n">Z</span><span class="p">)</span>
+<a name="rest_code_aa652154af0f468c8aa1a84931dc1fd4-4"></a>    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
 </pre>
 <p>When the reference is using upper case named variables, we try to follow
 the same convention, it is unfortunately not <a class="reference external" href="http://legacy.python.org/dev/peps/pep-0008/">PEP 8</a>
@@ -547,7 +548,7 @@ as <em>D_uv</em> in the code, \(L^*\) as <em>Lstar</em> and \(X_{ab}^{\prime}\) 
 <p class="first">Try using uppercase for author names in definitions:</p>
 </li>
 </ul>
-<pre class="code python"><a name="rest_code_646676c4d5db4325a98842b7318218a6-1"></a><span class="k">def</span> <span class="nf">CCT_to_xy_Kang2002</span><span class="p">(</span><span class="n">CCT</span><span class="p">):</span>
+<pre class="code python"><a name="rest_code_6ad57a37310d4fcfb731e3e1f7bc51c4-1"></a><span class="k">def</span> <span class="nf">CCT_to_xy_Kang2002</span><span class="p">(</span><span class="n">CCT</span><span class="p">):</span>
 </pre>
 <ul class="simple">
 <li>Please use <em>British English</em> words instead of <em>American English</em> ones as
@@ -556,15 +557,15 @@ the <strong>CIE</strong> does, the most important of all being <strong>colour</s
 any doubts.</li>
 <li>Import <a class="reference external" href="http://www.numpy.org/">NumPy</a> as follows:</li>
 </ul>
-<pre class="code python"><a name="rest_code_f47848e335304934a54c5c2e3304eb0a-1"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<pre class="code python"><a name="rest_code_c65e9444ed21433aaa0500cea42bc78e-1"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 </pre>
 <ul class="simple">
 <li>Doctests may need <strong>ellipsis</strong>, don't rely on global <strong>nose</strong> settings and
 specify it using the dedicated pragma as follows:</li>
 </ul>
-<pre class="code python"><a name="rest_code_e595e947ad57417cb3782b0a4ae283fa-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">Lab</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">100.00000000</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.41787844</span><span class="p">,</span> <span class="o">-</span><span class="mf">15.85742105</span><span class="p">])</span>
-<a name="rest_code_e595e947ad57417cb3782b0a4ae283fa-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">Lab_to_LCHab</span><span class="p">(</span><span class="n">Lab</span><span class="p">)</span>  <span class="c1"># doctest: +ELLIPSIS</span>
-<a name="rest_code_e595e947ad57417cb3782b0a4ae283fa-3"></a><span class="n">array</span><span class="p">([</span> <span class="mf">100.</span>        <span class="p">,</span>   <span class="mf">17.5066479</span><span class="o">...</span><span class="p">,</span>  <span class="mf">244.9304684</span><span class="o">...</span><span class="p">])</span>
+<pre class="code python"><a name="rest_code_569b23a9349748369fdf34020c221b44-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">Lab</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">100.00000000</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.41787844</span><span class="p">,</span> <span class="o">-</span><span class="mf">15.85742105</span><span class="p">])</span>
+<a name="rest_code_569b23a9349748369fdf34020c221b44-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">Lab_to_LCHab</span><span class="p">(</span><span class="n">Lab</span><span class="p">)</span>  <span class="c1"># doctest: +ELLIPSIS</span>
+<a name="rest_code_569b23a9349748369fdf34020c221b44-3"></a><span class="n">array</span><span class="p">([</span> <span class="mf">100.</span>        <span class="p">,</span>   <span class="mf">17.5066479</span><span class="o">...</span><span class="p">,</span>  <span class="mf">244.9304684</span><span class="o">...</span><span class="p">])</span>
 </pre>
 <ul class="simple">
 <li>Numbers in the API are usually rounded as follows:<ul>
@@ -590,7 +591,7 @@ we have already too much of them.</li>
 <li>Avoid <strong>/</strong> to wrap lines, prefer using the parenthesis <strong>()</strong>.</li>
 <li>The code formatting is performed using <a class="reference external" href="https://github.com/google/yapf">Yapf</a>. You can invoke it recursively on a directory as follows:</li>
 </ul>
-<pre class="code shell"><a name="rest_code_70dde2773db84c39990ac14ec28a8c5f-1"></a>find . -type f -name <span class="s1">'*.py'</span> -exec yapf -i <span class="o">{}</span> <span class="se">\;</span>
+<pre class="code shell"><a name="rest_code_d45cc05a1130403391779223473a45cb-1"></a>find . -type f -name <span class="s1">'*.py'</span> -exec yapf -i <span class="o">{}</span> <span class="se">\;</span>
 </pre>
 <ul class="simple">
 <li>Inline comments must have two spaces.</li>
@@ -598,7 +599,7 @@ we have already too much of them.</li>
 <li>Ensure that trailing whitespaces are stripped.</li>
 <li>Prefix unused variable with an underscore:</li>
 </ul>
-<pre class="code python"><a name="rest_code_77b723eb7beb410c933185b62a84e232-1"></a><span class="n">_L</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">Lab</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_2b68446045864d7a921721ea9b147eeb-1"></a><span class="n">_L</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">Lab</span><span class="p">)</span>
 </pre>
 </div>
 <div class="section" id="citations">

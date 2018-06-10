@@ -1,7 +1,7 @@
 .. title: Colour 0.3.9, Colour - HDRI 0.1.2 and ACES!
 .. slug: colour-039-colour-hdri-012-aces
 .. date: 2017-03-12 05:29:15 UTC
-.. tags: release, colour, colour-hdri, aces
+.. tags: aces, colour, colour science, colour - hdri, release
 .. category: 
 .. link: 
 .. description: 

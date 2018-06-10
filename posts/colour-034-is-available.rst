@@ -1,7 +1,7 @@
 .. title: Colour 0.3.4 is available!
 .. slug: colour-034-is-available
 .. date: 2015-01-28 02:50:00 AM GMT+13
-.. tags: release, colour
+.. tags: colour, colour science, release
 .. category:
 .. link:
 .. description:

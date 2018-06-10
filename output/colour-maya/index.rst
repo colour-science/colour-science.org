@@ -1,7 +1,7 @@
 .. title: Colour - Maya
 .. slug: colour-maya
 .. date: 2015-11-25 08:57:41 UTC
-.. tags:
+.. tags: colour, colour science, colour - maya, maya, python
 .. category:
 .. link:
 .. description:

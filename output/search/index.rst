@@ -1,7 +1,7 @@
 .. title: Search
 .. slug: search
 .. date: 2015-11-25 07:05:36 UTC
-.. tags:
+.. tags: search
 .. category:
 .. link:
 .. description:

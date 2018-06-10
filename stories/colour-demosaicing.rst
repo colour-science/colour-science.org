@@ -1,7 +1,7 @@
 .. title: Colour - Demosaicing
 .. slug: colour-demosaicing
 .. date: 2015-12-18 06:00:51 UTC
-.. tags: 
+.. tags: colour, colour science, colour - demosaicing, demosaicing
 .. category: 
 .. link: 
 .. description: 

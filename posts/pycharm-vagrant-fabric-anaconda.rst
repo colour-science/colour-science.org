@@ -1,7 +1,7 @@
 .. title: PyCharm, Vagrant, Fabric & Anaconda
 .. slug: pycharm-vagrant-fabric-anaconda
 .. date: 2014-09-06 02:45:00 AM GMT+12
-.. tags: pycharm, vagrant, fabric, anaconda
+.. tags: anaconda, fabric, pycharm, vagrant
 .. category:
 .. link:
 .. description:

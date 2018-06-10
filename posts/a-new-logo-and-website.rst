@@ -1,7 +1,7 @@
 .. title: A New Logo and Website!
 .. slug: a-new-logo-and-website
 .. date: 2015-12-04 08:25:28 UTC
-.. tags: release, colour-science.org
+.. tags: colour, colour science, release, colour-science.org
 .. category: 
 .. link: 
 .. description: 

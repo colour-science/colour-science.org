@@ -1,7 +1,7 @@
     .. title: Features
 .. slug: features
 .. date: 2015-11-25 09:47:50 UTC
-.. tags:
+.. tags: colour, colour science, features
 .. category:
 .. link:
 .. description:

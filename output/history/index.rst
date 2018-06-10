@@ -1,7 +1,7 @@
 .. title: History
 .. slug: history
 .. date: 2015-11-24 09:26:30 UTC
-.. tags:
+.. tags: colour, colour science, history
 .. category:
 .. link:
 .. description:

@@ -1,7 +1,7 @@
 .. title: API Reference
 .. slug: api-reference
 .. date: 2015-11-25 10:17:50 UTC
-.. tags:
+.. tags: api, documentation
 .. category:
 .. link:
 .. description:

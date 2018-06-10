@@ -1,7 +1,7 @@
 .. title: The Road to Stable
 .. slug: the-road-to-stable
 .. date: 2017-08-09 03:23:09 UTC+01:00
-.. tags: colour
+.. tags: colour, colour science
 .. category: 
 .. link: 
 .. description: 

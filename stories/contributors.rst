@@ -1,7 +1,7 @@
 .. title: Contributors
 .. slug: contributors
 .. date: 2015-11-24 06:51:53 UTC
-.. tags:
+.. tags: contributing
 .. category:
 .. link:
 .. description:

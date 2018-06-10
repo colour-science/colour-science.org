@@ -1,7 +1,7 @@
 .. title: Apps (Colour - Dash)
 .. slug: apps
 .. date: 2018-06-02 06:20:14 UTC+01:00
-.. tags: 
+.. tags: apps
 .. category: 
 .. link: 
 .. description: 

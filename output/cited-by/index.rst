@@ -1,7 +1,7 @@
 .. title: Cited By
 .. slug: cited-by
 .. date: 2015-11-25 09:40:30 UTC
-.. tags:
+.. tags: bibliography, references
 .. category:
 .. link:
 .. description:

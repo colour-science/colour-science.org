@@ -1,7 +1,7 @@
 .. title: Demosaicing and High Dynamic Range Imaging with Python
 .. slug: demosaicing-and-hdri-with-python
 .. date: 2015-12-18 06:15:31 UTC
-.. tags: release, colour-demosaicing, colour-hdri
+.. tags: colour, colour science, colour - demosaicing, colour - hdri, release
 .. category: 
 .. link: 
 .. description: 

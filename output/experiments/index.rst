@@ -1,7 +1,7 @@
 .. title: Experiments
 .. slug: experiments
 .. date: 2015-11-25 08:29:13 UTC
-.. tags:
+.. tags: colour, colour science, experiments
 .. category:
 .. link:
 .. description:

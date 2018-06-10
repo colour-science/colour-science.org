@@ -1,7 +1,7 @@
 .. title: The first public release of Colour is available!
 .. slug: the-first-public-release-of-colour-is-available
 .. date: 2014-09-02 04:27:00 AM GMT+12
-.. tags: release, colour
+.. tags: colour, colour science, release
 .. category:
 .. link:
 .. description:

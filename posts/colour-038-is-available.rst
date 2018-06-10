@@ -1,7 +1,7 @@
 .. title: Colour 0.3.8 is available!
 .. slug: colour-038-is-available
 .. date: 2016-07-09 11:33:29 UTC+01:00
-.. tags: 
+.. tags: colour, colour science, release
 .. category: 
 .. link: 
 .. description: 

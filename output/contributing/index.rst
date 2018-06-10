@@ -1,7 +1,7 @@
 .. title: Contributing
 .. slug: contributing
 .. date: 2015-11-25 05:35:44 UTC
-.. tags:
+.. tags: contributing
 .. category:
 .. link:
 .. description:

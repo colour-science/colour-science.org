@@ -1,7 +1,7 @@
 .. title: Colour - Spectroscope
 .. slug: colour-spectroscope
 .. date: 2015-11-25 09:11:15 UTC
-.. tags:
+.. tags: colour, colour science, colour - spectroscope, spectroscope, python
 .. category:
 .. link:
 .. description:

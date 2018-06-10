@@ -1,7 +1,7 @@
 .. title: Colour 0.3.11 is available!
 .. slug: colour-0311-is-available
 .. date: 2018-02-18 10:28:42 UTC
-.. tags: release, colour
+.. tags: colour, colour science, release
 .. category: 
 .. link: 
 .. description: 
