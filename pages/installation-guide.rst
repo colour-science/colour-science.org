@@ -75,7 +75,10 @@ environment for Colour:
 
 .. raw:: html
 
-    <script type="text/javascript" src="https://asciinema.org/a/125160.js" id="asciicast-125160" async data-speed=3></script>
+    <script type="text/javascript"
+        src="https://asciinema.org/a/125160.js"
+        id="asciicast-125160" async data-speed=3>
+    </script>
 
 Pypi
 ----
@@ -102,7 +105,10 @@ environment for Colour:
 
 .. raw:: html
 
-    <script type="text/javascript" src="https://asciinema.org/a/125159.js" id="asciicast-125159" async data-speed=3></script>
+    <script type="text/javascript"
+        src="https://asciinema.org/a/125159.js"
+        id="asciicast-125159" async data-speed=3>
+    </script>
 
 The optional features dependencies are installed as follows:
 

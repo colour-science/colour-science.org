@@ -469,7 +469,7 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
             <dl>
                 <dt>Github</dt>
                 <dd>
-                    <ul style="list-style-type: none;" style="list-style-type: none;">
+                    <ul style="list-style-type: none;">
                         <li>
                             <div class="checkbox">
                                 <input type="checkbox" value="" />
@@ -743,7 +743,7 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                                         <div class="checkbox">
                                             <input type="checkbox" value="" />
                                             <label class="strikethrough">
-                                                <a class="reference external" href="https://github.com/colour-science/colour-science.org/blob/master/stories/index.rst">index.rst</a>
+                                                <a class="reference external" href="https://github.com/colour-science/colour-science.org/blob/master/pages/index.rst">index.rst</a>
                                             </label>
                                         </div>
                                     </li>
@@ -760,7 +760,7 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                                         <div class="checkbox">
                                             <input type="checkbox" value="" />
                                             <label class="strikethrough">
-                                                <a class="reference external" href="https://github.com/colour-science/colour-science.org/blob/master/stories/api-reference.rst">api-reference.rst</a>
+                                                <a class="reference external" href="https://github.com/colour-science/colour-science.org/blob/master/pages/api-reference.rst">api-reference.rst</a>
                                             </label>
                                         </div>
                                     </li>
@@ -785,7 +785,7 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                                         <div class="checkbox">
                                             <input type="checkbox" value="" />
                                             <label class="strikethrough">
-                                                <a class="reference external" href="https://github.com/colour-science/colour-science.org/blob/master/stories/api-status-and-badges.rst">api-status-and-badges.rst</a>
+                                                <a class="reference external" href="https://github.com/colour-science/colour-science.org/blob/master/pages/api-status-and-badges.rst">api-status-and-badges.rst</a>
                                             </label>
                                         </div>
                                     </li>
@@ -798,7 +798,7 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                             <div class="checkbox">
                                 <input type="checkbox" value="" />
                                 <label class="strikethrough">Run
-                                    <a class="reference external" href="https://github.com/colour-science/colour-science.org/blob/master/stories/tutorial.ipynb">tutorial.ipynb</a>
+                                    <a class="reference external" href="https://github.com/colour-science/colour-science.org/blob/master/pages/tutorial.ipynb">tutorial.ipynb</a>
                                     Jupyter notebook
                                 </label>
                             </div>
@@ -807,7 +807,7 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                             <div class="checkbox">
                                 <input type="checkbox" value="" />
                                 <label class="strikethrough">Update
-                                    <a class="reference external" href="https://github.com/colour-science/colour-science.org/blob/master/stories/features.rst">features.rst</a>
+                                    <a class="reference external" href="https://github.com/colour-science/colour-science.org/blob/master/pages/features.rst">features.rst</a>
                                     page
                                 </label>
                             </div>
