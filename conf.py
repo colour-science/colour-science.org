@@ -22,7 +22,7 @@ BLOG_TITLE = "Colour Science"  # (translatable)
 SITE_URL = "http://colour-science.org/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
-# BASE_URL = "http://colour-science.org/"
+BASE_URL = "http://colour-science.org/"
 BLOG_EMAIL = "colour-science@googlegroups.com"
 BLOG_DESCRIPTION = "Colour: Colour Science for Python"  # (translatable)
 

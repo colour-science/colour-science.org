@@ -6,6 +6,7 @@
 .. link: 
 .. description: 
 .. type: text
+.. url_type: full_path
 
 Oops! We are really sorry, but the page you requested cannot be found!
 ======================================================================
