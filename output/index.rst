@@ -21,24 +21,23 @@
             package implementing a comprehensive number of colour theory
             transformations and algorithms.
         </p>
-
-        <ul class="list-inline">
-            <li class="list-inline-item">
-                <a class="btn btn-primary btn-lg"
+        <div class="row">
+            <div class="col">
+                <a class="btn btn-primary btn-lg btn-block"
                     href="/installation-guide/"
                     role="button">
-                    Getting started with Colour
+                    Get Started
                 </a>
-            </li>
-            <li class="list-inline-item">
-                <a class="btn btn-secondary btn-lg"
+            </div>
+            <div class="col">
+                <a class="btn btn-secondary btn-lg btn-block"
                     href="https://github.com/colour-science/colour/archive/v0.3.11.zip"
                     role="button">
                     <span class="fa fa-download">&nbsp;</span>
                     Colour 0.3.11 Alpha
                 </a>
-            </li>
-        </ul>
+            </div>
+        </div>
 
         <p class="lead">
             It is open source and freely available under the
