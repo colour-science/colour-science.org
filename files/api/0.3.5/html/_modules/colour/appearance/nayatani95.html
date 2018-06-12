@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.appearance.nayatani95 &mdash; Colour 0.3.5 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.5 documentation" href="../../../index.html" />
+    <link rel="up" title="colour.appearance" href="../appearance.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for colour.appearance.nayatani95</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Nayatani (1995) Colour Appearance Model</span>
+<span class="sd">=======================================</span>
+
+<span class="sd">Defines Nayatani (1995) colour appearance model objects:</span>
+
+<span class="sd">-   :class:`Nayatani95_Specification`</span>
+<span class="sd">-   :func:`XYZ_to_Nayatani95`</span>
+
+<span class="sd">See Also</span>
+<span class="sd">--------</span>
+<span class="sd">`Nayatani (1995) Colour Appearance Model IPython Notebook</span>
+<span class="sd">&lt;http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/appearance/nayatani95.ipynb&gt;`_  # noqa</span>
+
+<span class="sd">References</span>
+<span class="sd">----------</span>
+<span class="sd">.. [1]  Fairchild, M. D. (2013). The Nayatani et al. Model. In Color</span>
+<span class="sd">        Appearance Models (3rd ed., pp. 4810–5085). Wiley. ASIN:B00DAYO8E2</span>
+<span class="sd">.. [2]  Nayatani, Y., Sobagaki, H., &amp; Yano, K. H. T. (1995). Lightness</span>
+<span class="sd">        dependency of chroma scales of a nonlinear color-appearance model and</span>
+<span class="sd">        its latest formulation. Color Research &amp; Application, 20(3), 156–167.</span>
+<span class="sd">        doi:10.1002/col.5080200305</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+
+<span class="kn">from</span> <span class="nn">colour.adaptation.cie1994</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">CIE1994_XYZ_TO_RGB_MATRIX</span><span class="p">,</span>
+    <span class="n">beta_1</span><span class="p">,</span>
+    <span class="n">exponential_factors</span><span class="p">,</span>
+    <span class="n">intermediate_values</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">colour.models</span> <span class="kn">import</span> <span class="n">XYZ_to_xy</span>
+<span class="kn">from</span> <span class="nn">colour.utilities</span> <span class="kn">import</span> <span class="n">dot_vector</span><span class="p">,</span> <span class="n">tsplit</span><span class="p">,</span> <span class="n">tstack</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s">&#39;Copyright (C) 2013 - 2015 - Colour Developers&#39;</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s">&#39;GPL V3.0 - http://www.gnu.org/licenses/&#39;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s">&#39;colour-science@googlegroups.com&#39;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s">&#39;Production&#39;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;NAYATANI95_XYZ_TO_RGB_MATRIX&#39;</span><span class="p">,</span>
+           <span class="s">&#39;Nayatani95_ReferenceSpecification&#39;</span><span class="p">,</span>
+           <span class="s">&#39;Nayatani95_Specification&#39;</span><span class="p">,</span>
+           <span class="s">&#39;XYZ_to_Nayatani95&#39;</span><span class="p">,</span>
+           <span class="s">&#39;illuminance_to_luminance&#39;</span><span class="p">,</span>
+           <span class="s">&#39;XYZ_to_RGB_Nayatani95&#39;</span><span class="p">,</span>
+           <span class="s">&#39;scaling_coefficient&#39;</span><span class="p">,</span>
+           <span class="s">&#39;achromatic_response&#39;</span><span class="p">,</span>
+           <span class="s">&#39;tritanopic_response&#39;</span><span class="p">,</span>
+           <span class="s">&#39;protanopic_response&#39;</span><span class="p">,</span>
+           <span class="s">&#39;brightness_correlate&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ideal_white_brightness_correlate&#39;</span><span class="p">,</span>
+           <span class="s">&#39;achromatic_lightness_correlate&#39;</span><span class="p">,</span>
+           <span class="s">&#39;normalised_achromatic_lightness_correlate&#39;</span><span class="p">,</span>
+           <span class="s">&#39;hue_angle&#39;</span><span class="p">,</span>
+           <span class="s">&#39;saturation_components&#39;</span><span class="p">,</span>
+           <span class="s">&#39;saturation_correlate&#39;</span><span class="p">,</span>
+           <span class="s">&#39;chroma_components&#39;</span><span class="p">,</span>
+           <span class="s">&#39;chroma_correlate&#39;</span><span class="p">,</span>
+           <span class="s">&#39;colourfulness_components&#39;</span><span class="p">,</span>
+           <span class="s">&#39;colourfulness_correlate&#39;</span><span class="p">,</span>
+           <span class="s">&#39;chromatic_strength_function&#39;</span><span class="p">]</span>
+
+<span class="n">NAYATANI95_XYZ_TO_RGB_MATRIX</span> <span class="o">=</span> <span class="n">CIE1994_XYZ_TO_RGB_MATRIX</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Nayatani (1995) colour appearance model *CIE XYZ* tristimulus values to cone</span>
+<span class="sd">responses matrix.</span>
+
+<span class="sd">NAYATANI95_XYZ_TO_RGB_MATRIX : array_like, (3, 3)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="Nayatani95_ReferenceSpecification"><a class="viewcode-back" href="../../../colour.appearance.nayatani95.html#colour.appearance.nayatani95.Nayatani95_ReferenceSpecification">[docs]</a><span class="k">class</span> <span class="nc">Nayatani95_ReferenceSpecification</span><span class="p">(</span>
+    <span class="n">namedtuple</span><span class="p">(</span>
+        <span class="s">&#39;Nayatani95_ReferenceSpecification&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="s">&#39;Lstar_P&#39;</span><span class="p">,</span> <span class="s">&#39;C&#39;</span><span class="p">,</span> <span class="s">&#39;theta&#39;</span><span class="p">,</span> <span class="s">&#39;S&#39;</span><span class="p">,</span> <span class="s">&#39;B_r&#39;</span><span class="p">,</span> <span class="s">&#39;M&#39;</span><span class="p">,</span> <span class="s">&#39;H&#39;</span><span class="p">,</span> <span class="s">&#39;H_C&#39;</span><span class="p">,</span> <span class="s">&#39;Lstar_N&#39;</span><span class="p">))):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Defines the Nayatani (1995) colour appearance model reference</span>
+<span class="sd">    specification.</span>
+
+<span class="sd">    This specification has field names consistent with Fairchild (2013)</span>
+<span class="sd">    reference.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    Lstar_P : numeric or array_like</span>
+<span class="sd">        Correlate of *achromatic Lightness* :math:`L_p^\star`.</span>
+<span class="sd">    C : numeric or array_like</span>
+<span class="sd">        Correlate of *chroma* :math:`C`.</span>
+<span class="sd">    theta : numeric or array_like</span>
+<span class="sd">        *Hue* angle :math:`\\theta` in degrees.</span>
+<span class="sd">    S : numeric or array_like</span>
+<span class="sd">        Correlate of *saturation* :math:`S`.</span>
+<span class="sd">    B_r : numeric or array_like</span>
+<span class="sd">        Correlate of *brightness* :math:`B_r`.</span>
+<span class="sd">    M : numeric or array_like</span>
+<span class="sd">        Correlate of *colourfulness* :math:`M`.</span>
+<span class="sd">    H : numeric or array_like</span>
+<span class="sd">        *Hue* :math:`h` quadrature :math:`H`.</span>
+<span class="sd">    H_C : numeric or array_like</span>
+<span class="sd">        *Hue* :math:`h` composition :math:`H_C`.</span>
+<span class="sd">    Lstar_N : numeric or array_like</span>
+<span class="sd">        Correlate of *normalised achromatic Lightness* :math:`L_n^\star`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+</div>
+<div class="viewcode-block" id="Nayatani95_Specification"><a class="viewcode-back" href="../../../colour.appearance.nayatani95.html#colour.appearance.nayatani95.Nayatani95_Specification">[docs]</a><span class="k">class</span> <span class="nc">Nayatani95_Specification</span><span class="p">(</span>
+    <span class="n">namedtuple</span><span class="p">(</span><span class="s">&#39;Nayatani95_Specification&#39;</span><span class="p">,</span>
+               <span class="p">(</span><span class="s">&#39;Lstar_P&#39;</span><span class="p">,</span> <span class="s">&#39;C&#39;</span><span class="p">,</span> <span class="s">&#39;h&#39;</span><span class="p">,</span> <span class="s">&#39;s&#39;</span><span class="p">,</span> <span class="s">&#39;Q&#39;</span><span class="p">,</span> <span class="s">&#39;M&#39;</span><span class="p">,</span> <span class="s">&#39;H&#39;</span><span class="p">,</span> <span class="s">&#39;HC&#39;</span><span class="p">,</span> <span class="s">&#39;Lstar_N&#39;</span><span class="p">))):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Defines the Nayatani (1995) colour appearance model specification.</span>
+
+<span class="sd">    This specification has field names consistent with the remaining colour</span>
+<span class="sd">    appearance models in :mod:`colour.appearance` but diverge from Fairchild</span>
+<span class="sd">    (2013) reference.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    Lstar_P : numeric or array_like</span>
+<span class="sd">        Correlate of *achromatic Lightness* :math:`L_p^\star`.</span>
+<span class="sd">    C : numeric or array_like</span>
+<span class="sd">        Correlate of *chroma* :math:`C`.</span>
+<span class="sd">    h : numeric or array_like</span>
+<span class="sd">        *Hue* angle :math:`\\theta` in degrees.</span>
+<span class="sd">    s : numeric or array_like</span>
+<span class="sd">        Correlate of *saturation* :math:`S`.</span>
+<span class="sd">    Q : numeric or array_like</span>
+<span class="sd">        Correlate of *brightness* :math:`B_r`.</span>
+<span class="sd">    M : numeric or array_like</span>
+<span class="sd">        Correlate of *colourfulness* :math:`M`.</span>
+<span class="sd">    H : numeric or array_like</span>
+<span class="sd">        *Hue* :math:`h` quadrature :math:`H`.</span>
+<span class="sd">    HC : numeric or array_like</span>
+<span class="sd">        *Hue* :math:`h` composition :math:`H_C`.</span>
+<span class="sd">    Lstar_N : numeric or array_like</span>
+<span class="sd">        Correlate of *normalised achromatic Lightness* :math:`L_n^\star`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+</div>
+<div class="viewcode-block" id="XYZ_to_Nayatani95"><a class="viewcode-back" href="../../../colour.appearance.nayatani95.html#colour.appearance.nayatani95.XYZ_to_Nayatani95">[docs]</a><span class="k">def</span> <span class="nf">XYZ_to_Nayatani95</span><span class="p">(</span><span class="n">XYZ</span><span class="p">,</span>
+                      <span class="n">XYZ_n</span><span class="p">,</span>
+                      <span class="n">Y_o</span><span class="p">,</span>
+                      <span class="n">E_o</span><span class="p">,</span>
+                      <span class="n">E_or</span><span class="p">,</span>
+                      <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Computes the Nayatani (1995) colour appearance model correlates.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    XYZ : array_like</span>
+<span class="sd">        *CIE XYZ* tristimulus values of test sample / stimulus in domain</span>
+<span class="sd">        [0, 100].</span>
+<span class="sd">    XYZ_n : array_like</span>
+<span class="sd">        *CIE XYZ* tristimulus values of reference white in domain [0, 100].</span>
+<span class="sd">    Y_o : numeric or array_like</span>
+<span class="sd">        Luminance factor :math:`Y_o` of achromatic background as percentage in</span>
+<span class="sd">        domain [0.18, 1.0]</span>
+<span class="sd">    E_o : numeric or array_like</span>
+<span class="sd">        Illuminance :math:`E_o` of the viewing field in lux.</span>
+<span class="sd">    E_or : numeric or array_like</span>
+<span class="sd">        Normalising illuminance :math:`E_{or}` in lux usually in domain</span>
+<span class="sd">        [1000, 3000]</span>
+<span class="sd">    n : numeric or array_like, optional</span>
+<span class="sd">        Noise term used in the non linear chromatic adaptation model.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Nayatani95_Specification</span>
+<span class="sd">        Nayatani (1995) colour appearance model specification.</span>
+
+<span class="sd">    Warning</span>
+<span class="sd">    -------</span>
+<span class="sd">    The input domain of that definition is non standard!</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   Input *CIE XYZ* tristimulus values are in domain [0, 100].</span>
+<span class="sd">    -   Input *CIE XYZ_n* tristimulus values are in domain [0, 100].</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; XYZ = np.array([19.01, 20.00, 21.78])</span>
+<span class="sd">    &gt;&gt;&gt; XYZ_n = np.array([95.05, 100.00, 108.88])</span>
+<span class="sd">    &gt;&gt;&gt; Y_o = 20.0</span>
+<span class="sd">    &gt;&gt;&gt; E_o = 5000.0</span>
+<span class="sd">    &gt;&gt;&gt; E_or = 1000.0</span>
+<span class="sd">    &gt;&gt;&gt; XYZ_to_Nayatani95(XYZ, XYZ_n, Y_o, E_o, E_or)  # doctest: +ELLIPSIS</span>
+<span class="sd">    Nayatani95_Specification(Lstar_P=49.9998829..., C=0.0133550..., h=257.5232268..., s=0.0133550..., Q=62.6266734..., M=0.0167262..., H=None, HC=None, Lstar_N=50.0039154...)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">Y_o</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Y_o</span><span class="p">)</span>
+    <span class="n">E_o</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">E_o</span><span class="p">)</span>
+    <span class="n">E_or</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">E_or</span><span class="p">)</span>
+
+    <span class="c"># Computing adapting luminance :math:`L_o` and normalising luminance</span>
+    <span class="c"># :math:`L_{or}` in in :math:`cd/m^2`.</span>
+    <span class="c"># L_o = illuminance_to_luminance(E_o, Y_o)</span>
+    <span class="n">L_or</span> <span class="o">=</span> <span class="n">illuminance_to_luminance</span><span class="p">(</span><span class="n">E_or</span><span class="p">,</span> <span class="n">Y_o</span><span class="p">)</span>
+
+    <span class="c"># Computing :math:`\xi`, :math:`\eta`, :math:`\zeta` values.</span>
+    <span class="n">xez</span> <span class="o">=</span> <span class="n">intermediate_values</span><span class="p">(</span><span class="n">XYZ_to_xy</span><span class="p">(</span><span class="n">XYZ_n</span><span class="p">))</span>
+    <span class="n">xi</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">zeta</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">xez</span><span class="p">)</span>
+
+    <span class="c"># Computing adapting field cone responses.</span>
+    <span class="n">RGB_o</span> <span class="o">=</span> <span class="p">(((</span><span class="n">Y_o</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">*</span> <span class="n">E_o</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">])</span> <span class="o">/</span>
+              <span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span> <span class="o">*</span> <span class="n">xez</span><span class="p">)</span>
+
+    <span class="c"># Computing stimulus cone responses.</span>
+    <span class="n">RGB</span> <span class="o">=</span> <span class="n">XYZ_to_RGB_Nayatani95</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>
+    <span class="n">R</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">B</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
+
+    <span class="c"># Computing exponential factors of the chromatic adaptation.</span>
+    <span class="n">bRGB_o</span> <span class="o">=</span> <span class="n">exponential_factors</span><span class="p">(</span><span class="n">RGB_o</span><span class="p">)</span>
+    <span class="n">bL_or</span> <span class="o">=</span> <span class="n">beta_1</span><span class="p">(</span><span class="n">L_or</span><span class="p">)</span>
+
+    <span class="c"># Computing scaling coefficients :math:`e(R)` and :math:`e(G)`</span>
+    <span class="n">eR</span> <span class="o">=</span> <span class="n">scaling_coefficient</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">xi</span><span class="p">)</span>
+    <span class="n">eG</span> <span class="o">=</span> <span class="n">scaling_coefficient</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">eta</span><span class="p">)</span>
+
+    <span class="c"># Computing opponent colour dimensions.</span>
+    <span class="c"># Computing achromatic response :math:`Q`:</span>
+    <span class="n">Q_response</span> <span class="o">=</span> <span class="n">achromatic_response</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span> <span class="n">bRGB_o</span><span class="p">,</span> <span class="n">xez</span><span class="p">,</span> <span class="n">bL_or</span><span class="p">,</span> <span class="n">eR</span><span class="p">,</span> <span class="n">eG</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+    <span class="c"># Computing tritanopic response :math:`t`:</span>
+    <span class="n">t_response</span> <span class="o">=</span> <span class="n">tritanopic_response</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span> <span class="n">bRGB_o</span><span class="p">,</span> <span class="n">xez</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+    <span class="c"># Computing protanopic response :math:`p`:</span>
+    <span class="n">p_response</span> <span class="o">=</span> <span class="n">protanopic_response</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span> <span class="n">bRGB_o</span><span class="p">,</span> <span class="n">xez</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="c"># Computing the correlate of *brightness* :math:`B_r`.</span>
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="n">B_r</span> <span class="o">=</span> <span class="n">brightness_correlate</span><span class="p">(</span><span class="n">bRGB_o</span><span class="p">,</span> <span class="n">bL_or</span><span class="p">,</span> <span class="n">Q_response</span><span class="p">)</span>
+
+    <span class="c"># Computing *brightness* :math:`B_{rw}` of ideal white.</span>
+    <span class="n">brightness_ideal_white</span> <span class="o">=</span> <span class="n">ideal_white_brightness_correlate</span><span class="p">(</span>
+        <span class="n">bRGB_o</span><span class="p">,</span> <span class="n">xez</span><span class="p">,</span> <span class="n">bL_or</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="c"># Computing the correlate of achromatic *Lightness* :math:`L_p^\star`.</span>
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="n">Lstar_P</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">achromatic_lightness_correlate</span><span class="p">(</span><span class="n">Q_response</span><span class="p">))</span>
+
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="c"># Computing the correlate of normalised achromatic *Lightness*</span>
+    <span class="c"># :math:`L_n^\star`.</span>
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="n">Lstar_N</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">normalised_achromatic_lightness_correlate</span><span class="p">(</span><span class="n">B_r</span><span class="p">,</span> <span class="n">brightness_ideal_white</span><span class="p">))</span>
+
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="c"># Computing the *hue* angle :math:`\\theta`.</span>
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">hue_angle</span><span class="p">(</span><span class="n">p_response</span><span class="p">,</span> <span class="n">t_response</span><span class="p">)</span>
+    <span class="c"># TODO: Implement hue quadrature &amp; composition computation.</span>
+
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="c"># Computing the correlate of *saturation* :math:`S`.</span>
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="n">S_RG</span><span class="p">,</span> <span class="n">S_YB</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">saturation_components</span><span class="p">(</span>
+        <span class="n">theta</span><span class="p">,</span> <span class="n">bL_or</span><span class="p">,</span> <span class="n">t_response</span><span class="p">,</span> <span class="n">p_response</span><span class="p">))</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="n">saturation_correlate</span><span class="p">(</span><span class="n">S_RG</span><span class="p">,</span> <span class="n">S_YB</span><span class="p">)</span>
+
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="c"># Computing the correlate of *chroma* :math:`C`.</span>
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="c"># C_RG, C_YB = tsplit(chroma_components(Lstar_P, S_RG, S_YB))</span>
+    <span class="n">C</span> <span class="o">=</span> <span class="n">chroma_correlate</span><span class="p">(</span><span class="n">Lstar_P</span><span class="p">,</span> <span class="n">S</span><span class="p">)</span>
+
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="c"># Computing the correlate of *colourfulness* :math:`M`.</span>
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="c"># TODO: Investigate components usage.</span>
+    <span class="c"># M_RG, M_YB = tsplit(colourfulness_components(C_RG, C_YB,</span>
+    <span class="c"># brightness_ideal_white))</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="n">colourfulness_correlate</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">brightness_ideal_white</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">Nayatani95_Specification</span><span class="p">(</span><span class="n">Lstar_P</span><span class="p">,</span>
+                                    <span class="n">C</span><span class="p">,</span>
+                                    <span class="n">theta</span><span class="p">,</span>
+                                    <span class="n">S</span><span class="p">,</span>
+                                    <span class="n">B_r</span><span class="p">,</span>
+                                    <span class="n">M</span><span class="p">,</span>
+                                    <span class="bp">None</span><span class="p">,</span>
+                                    <span class="bp">None</span><span class="p">,</span>
+                                    <span class="n">Lstar_N</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="illuminance_to_luminance"><a class="viewcode-back" href="../../../colour.appearance.nayatani95.html#colour.appearance.nayatani95.illuminance_to_luminance">[docs]</a><span class="k">def</span> <span class="nf">illuminance_to_luminance</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">Y_f</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Converts given *illuminance* :math:`E` value in lux to *luminance* in</span>
+<span class="sd">    :math:`cd/m^2`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    E : numeric or array_like</span>
+<span class="sd">        *Illuminance* :math:`E` in lux.</span>
+<span class="sd">    Y_f : numeric or array_like</span>
+<span class="sd">        *Luminance* factor :math:`Y_f` in :math:`cd/m^2`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        *Luminance* :math:`Y` in :math:`cd/m^2`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; illuminance_to_luminance(5000.0, 20.0)  # doctest: +ELLIPSIS</span>
+<span class="sd">    318.3098861...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">E</span><span class="p">)</span>
+    <span class="n">Y_f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Y_f</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">Y_f</span> <span class="o">*</span> <span class="n">E</span> <span class="o">/</span> <span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="XYZ_to_RGB_Nayatani95"><a class="viewcode-back" href="../../../colour.appearance.nayatani95.html#colour.appearance.nayatani95.XYZ_to_RGB_Nayatani95">[docs]</a><span class="k">def</span> <span class="nf">XYZ_to_RGB_Nayatani95</span><span class="p">(</span><span class="n">XYZ</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Converts from *CIE XYZ* tristimulus values to cone responses.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    XYZ : array_like</span>
+<span class="sd">        *CIE XYZ* tristimulus values.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray</span>
+<span class="sd">        Cone responses.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; XYZ = np.array([19.01, 20.00, 21.78])</span>
+<span class="sd">    &gt;&gt;&gt; XYZ_to_RGB_Nayatani95(XYZ)  # doctest: +ELLIPSIS</span>
+<span class="sd">    array([ 20.000520...,  19.999783...,  19.998831...])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">dot_vector</span><span class="p">(</span><span class="n">NAYATANI95_XYZ_TO_RGB_MATRIX</span><span class="p">,</span> <span class="n">XYZ</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="scaling_coefficient"><a class="viewcode-back" href="../../../colour.appearance.nayatani95.html#colour.appearance.nayatani95.scaling_coefficient">[docs]</a><span class="k">def</span> <span class="nf">scaling_coefficient</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the scaling coefficient :math:`e(R)` or :math:`e(G)`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x: numeric or array_like</span>
+<span class="sd">        Cone response.</span>
+<span class="sd">    y: numeric or array_like</span>
+<span class="sd">        Intermediate value.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Scaling coefficient :math:`e(R)` or :math:`e(G)`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; x = 20.000520600000002</span>
+<span class="sd">    &gt;&gt;&gt; y = 1.000042192</span>
+<span class="sd">    &gt;&gt;&gt; scaling_coefficient(x, y)</span>
+<span class="sd">    array(1.0)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">y</span><span class="p">),</span> <span class="mf">1.758</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="achromatic_response"><a class="viewcode-back" href="../../../colour.appearance.nayatani95.html#colour.appearance.nayatani95.achromatic_response">[docs]</a><span class="k">def</span> <span class="nf">achromatic_response</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span> <span class="n">bRGB_o</span><span class="p">,</span> <span class="n">xez</span><span class="p">,</span> <span class="n">bL_or</span><span class="p">,</span> <span class="n">eR</span><span class="p">,</span> <span class="n">eG</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the achromatic response :math:`Q` from given stimulus cone</span>
+<span class="sd">    responses.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    RGB: ndarray</span>
+<span class="sd">         Stimulus cone responses.</span>
+<span class="sd">    bRGB_o: ndarray</span>
+<span class="sd">         Chromatic adaptation exponential factors :math:`\\beta_1(R_o)`,</span>
+<span class="sd">         :math:`\\beta_1(G_o)` and :math:`\\beta_2(B_o)`.</span>
+<span class="sd">    xez: ndarray</span>
+<span class="sd">        Intermediate values :math:`\\xi`, :math:`\eta`, :math:`\zeta`.</span>
+<span class="sd">    bL_or: numeric or array_like</span>
+<span class="sd">         Normalising chromatic adaptation exponential factor</span>
+<span class="sd">         :math:`\\beta_1(B_or)`.</span>
+<span class="sd">    eR: numeric or array_like</span>
+<span class="sd">         Scaling coefficient :math:`e(R)`.</span>
+<span class="sd">    eG: numeric or array_like</span>
+<span class="sd">         Scaling coefficient :math:`e(G)`.</span>
+<span class="sd">    n : numeric or array_like, optional</span>
+<span class="sd">        Noise term used in the non linear chromatic adaptation model.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Achromatic response :math:`Q`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; RGB = np.array([20.00052060, 19.99978300, 19.99883160])</span>
+<span class="sd">    &gt;&gt;&gt; bRGB_o = np.array([4.61062223, 4.61058926, 4.65206986])</span>
+<span class="sd">    &gt;&gt;&gt; xez = np.array([1.00004219, 0.99998001, 0.99975794])</span>
+<span class="sd">    &gt;&gt;&gt; bL_or = 3.6810214956040888</span>
+<span class="sd">    &gt;&gt;&gt; eR = 1.0</span>
+<span class="sd">    &gt;&gt;&gt; eG = 1.758</span>
+<span class="sd">    &gt;&gt;&gt; n = 1.0</span>
+<span class="sd">    &gt;&gt;&gt; achromatic_response(RGB, bRGB_o, xez, bL_or, eR, eG, n)  # noqa  # doctest: +ELLIPSIS</span>
+<span class="sd">    -0.0001169...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">R</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">B</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
+    <span class="n">bR_o</span><span class="p">,</span> <span class="n">bG_o</span><span class="p">,</span> <span class="n">bB_o</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">bRGB_o</span><span class="p">)</span>
+    <span class="n">xi</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">zeta</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">xez</span><span class="p">)</span>
+    <span class="n">bL_or</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">bL_or</span><span class="p">)</span>
+    <span class="n">eR</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">eR</span><span class="p">)</span>
+    <span class="n">eG</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">eG</span><span class="p">)</span>
+
+    <span class="n">Q</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">bR_o</span> <span class="o">*</span> <span class="n">eR</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">((</span><span class="n">R</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">xi</span> <span class="o">+</span> <span class="n">n</span><span class="p">))</span>
+    <span class="n">Q</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">bG_o</span> <span class="o">*</span> <span class="n">eG</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">((</span><span class="n">G</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">eta</span> <span class="o">+</span> <span class="n">n</span><span class="p">))</span>
+    <span class="n">Q</span> <span class="o">*=</span> <span class="mf">41.69</span> <span class="o">/</span> <span class="n">bL_or</span>
+
+    <span class="k">return</span> <span class="n">Q</span>
+
+</div>
+<div class="viewcode-block" id="tritanopic_response"><a class="viewcode-back" href="../../../colour.appearance.nayatani95.html#colour.appearance.nayatani95.tritanopic_response">[docs]</a><span class="k">def</span> <span class="nf">tritanopic_response</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span> <span class="n">bRGB_o</span><span class="p">,</span> <span class="n">xez</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the tritanopic response :math:`t` from given stimulus cone</span>
+<span class="sd">    responses.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    RGB: ndarray</span>
+<span class="sd">         Stimulus cone responses.</span>
+<span class="sd">    bRGB_o: ndarray</span>
+<span class="sd">         Chromatic adaptation exponential factors :math:`\\beta_1(R_o)`,</span>
+<span class="sd">         :math:`\\beta_1(G_o)` and :math:`\\beta_2(B_o)`.</span>
+<span class="sd">    xez: ndarray</span>
+<span class="sd">        Intermediate values :math:`\\xi`, :math:`\eta`, :math:`\zeta`.</span>
+<span class="sd">    n : numeric or array_like, optional</span>
+<span class="sd">        Noise term used in the non linear chromatic adaptation model.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Tritanopic response :math:`t`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; RGB = np.array([20.00052060, 19.99978300, 19.99883160])</span>
+<span class="sd">    &gt;&gt;&gt; bRGB_o = np.array([4.61062223, 4.61058926, 4.65206986])</span>
+<span class="sd">    &gt;&gt;&gt; xez = np.array([1.00004219, 0.99998001, 0.99975794])</span>
+<span class="sd">    &gt;&gt;&gt; n = 1.0</span>
+<span class="sd">    &gt;&gt;&gt; tritanopic_response(RGB, bRGB_o, xez, n)  # doctest: +ELLIPSIS</span>
+<span class="sd">    -1.7703650...e-05</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">R</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">B</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
+    <span class="n">bR_o</span><span class="p">,</span> <span class="n">bG_o</span><span class="p">,</span> <span class="n">bB_o</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">bRGB_o</span><span class="p">)</span>
+    <span class="n">xi</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">zeta</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">xez</span><span class="p">)</span>
+
+    <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">bR_o</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">((</span><span class="n">R</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">xi</span> <span class="o">+</span> <span class="n">n</span><span class="p">))</span>
+    <span class="n">t</span> <span class="o">+=</span> <span class="o">-</span> <span class="p">(</span><span class="mi">12</span> <span class="o">/</span> <span class="mi">11</span><span class="p">)</span> <span class="o">*</span> <span class="n">bG_o</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">((</span><span class="n">G</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">eta</span> <span class="o">+</span> <span class="n">n</span><span class="p">))</span>
+    <span class="n">t</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">11</span><span class="p">)</span> <span class="o">*</span> <span class="n">bB_o</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">((</span><span class="n">B</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">zeta</span> <span class="o">+</span> <span class="n">n</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">t</span>
+
+</div>
+<div class="viewcode-block" id="protanopic_response"><a class="viewcode-back" href="../../../colour.appearance.nayatani95.html#colour.appearance.nayatani95.protanopic_response">[docs]</a><span class="k">def</span> <span class="nf">protanopic_response</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span> <span class="n">bRGB_o</span><span class="p">,</span> <span class="n">xez</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the protanopic response :math:`p` from given stimulus cone</span>
+<span class="sd">    responses.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    RGB: ndarray</span>
+<span class="sd">         Stimulus cone responses.</span>
+<span class="sd">    bRGB_o: ndarray</span>
+<span class="sd">         Chromatic adaptation exponential factors :math:`\\beta_1(R_o)`,</span>
+<span class="sd">         :math:`\\beta_1(G_o)` and :math:`\\beta_2(B_o)`.</span>
+<span class="sd">    xez: ndarray</span>
+<span class="sd">        Intermediate values :math:`\\xi`, :math:`\eta`, :math:`\zeta`.</span>
+<span class="sd">    n : numeric or array_like, optional</span>
+<span class="sd">        Noise term used in the non linear chromatic adaptation model.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Protanopic response :math:`p`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; RGB = np.array([20.00052060, 19.99978300, 19.99883160])</span>
+<span class="sd">    &gt;&gt;&gt; bRGB_o = np.array([4.61062223, 4.61058926, 4.65206986])</span>
+<span class="sd">    &gt;&gt;&gt; xez = np.array([1.00004219, 0.99998001, 0.99975794])</span>
+<span class="sd">    &gt;&gt;&gt; n = 1.0</span>
+<span class="sd">    &gt;&gt;&gt; protanopic_response(RGB, bRGB_o, xez, n)  # doctest: +ELLIPSIS</span>
+<span class="sd">    -8.0021426...e-05</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">R</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">B</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
+    <span class="n">bR_o</span><span class="p">,</span> <span class="n">bG_o</span><span class="p">,</span> <span class="n">bB_o</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">bRGB_o</span><span class="p">)</span>
+    <span class="n">xi</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">zeta</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">xez</span><span class="p">)</span>
+
+    <span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">9</span><span class="p">)</span> <span class="o">*</span> <span class="n">bR_o</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">((</span><span class="n">R</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">xi</span> <span class="o">+</span> <span class="n">n</span><span class="p">))</span>
+    <span class="n">p</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">9</span><span class="p">)</span> <span class="o">*</span> <span class="n">bG_o</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">((</span><span class="n">G</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">eta</span> <span class="o">+</span> <span class="n">n</span><span class="p">))</span>
+    <span class="n">p</span> <span class="o">+=</span> <span class="o">-</span> <span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">9</span><span class="p">)</span> <span class="o">*</span> <span class="n">bB_o</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">((</span><span class="n">B</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">zeta</span> <span class="o">+</span> <span class="n">n</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">p</span>
+
+</div>
+<div class="viewcode-block" id="brightness_correlate"><a class="viewcode-back" href="../../../colour.appearance.nayatani95.html#colour.appearance.nayatani95.brightness_correlate">[docs]</a><span class="k">def</span> <span class="nf">brightness_correlate</span><span class="p">(</span><span class="n">bRGB_o</span><span class="p">,</span> <span class="n">bL_or</span><span class="p">,</span> <span class="n">Q</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *brightness* correlate :math:`B_r`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    bRGB_o: ndarray</span>
+<span class="sd">         Chromatic adaptation exponential factors :math:`\\beta_1(R_o)`,</span>
+<span class="sd">         :math:`\\beta_1(G_o)` and :math:`\\beta_2(B_o)`.</span>
+<span class="sd">    bL_or: numeric or array_like</span>
+<span class="sd">         Normalising chromatic adaptation exponential factor</span>
+<span class="sd">         :math:`\\beta_1(B_or)`.</span>
+<span class="sd">    Q : numeric or array_like</span>
+<span class="sd">        Achromatic response :math:`Q`.</span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        *Brightness* correlate :math:`B_r`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; bRGB_o = np.array([4.61062223, 4.61058926, 4.65206986])</span>
+<span class="sd">    &gt;&gt;&gt; bL_or = 3.6810214956040888</span>
+<span class="sd">    &gt;&gt;&gt; Q = -0.000117024294955</span>
+<span class="sd">    &gt;&gt;&gt; brightness_correlate(bRGB_o, bL_or, Q)  # doctest: +ELLIPSIS</span>
+<span class="sd">    62.6266734...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">bR_o</span><span class="p">,</span> <span class="n">bG_o</span><span class="p">,</span> <span class="n">bB_o</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">bRGB_o</span><span class="p">)</span>
+    <span class="n">bL_or</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">bL_or</span><span class="p">)</span>
+    <span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span>
+
+    <span class="n">B_r</span> <span class="o">=</span> <span class="p">(</span><span class="mi">50</span> <span class="o">/</span> <span class="n">bL_or</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">bR_o</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">bG_o</span><span class="p">)</span> <span class="o">+</span> <span class="n">Q</span>
+
+    <span class="k">return</span> <span class="n">B_r</span>
+
+</div>
+<div class="viewcode-block" id="ideal_white_brightness_correlate"><a class="viewcode-back" href="../../../colour.appearance.nayatani95.html#colour.appearance.nayatani95.ideal_white_brightness_correlate">[docs]</a><span class="k">def</span> <span class="nf">ideal_white_brightness_correlate</span><span class="p">(</span><span class="n">bRGB_o</span><span class="p">,</span> <span class="n">xez</span><span class="p">,</span> <span class="n">bL_or</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the ideal white *brightness* correlate :math:`B_{rw}`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    bRGB_o: ndarray</span>
+<span class="sd">         Chromatic adaptation exponential factors :math:`\\beta_1(R_o)`,</span>
+<span class="sd">         :math:`\\beta_1(G_o)` and :math:`\\beta_2(B_o)`.</span>
+<span class="sd">    xez: ndarray</span>
+<span class="sd">        Intermediate values :math:`\\xi`, :math:`\eta`, :math:`\zeta`.</span>
+<span class="sd">    bL_or: numeric or array_like</span>
+<span class="sd">         Normalising chromatic adaptation exponential factor</span>
+<span class="sd">         :math:`\\beta_1(B_or)`.</span>
+<span class="sd">    n : numeric or array_like, optional</span>
+<span class="sd">        Noise term used in the non linear chromatic adaptation model.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Ideal white *brightness* correlate :math:`B_{rw}`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; bRGB_o = np.array([4.61062223, 4.61058926, 4.65206986])</span>
+<span class="sd">    &gt;&gt;&gt; xez = np.array([1.00004219, 0.99998001, 0.99975794])</span>
+<span class="sd">    &gt;&gt;&gt; bL_or = 3.6810214956040888</span>
+<span class="sd">    &gt;&gt;&gt; n = 1.0</span>
+<span class="sd">    &gt;&gt;&gt; ideal_white_brightness_correlate(bRGB_o, xez, bL_or, n)  # noqa  # doctest: +ELLIPSIS</span>
+<span class="sd">    125.2435392...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">bR_o</span><span class="p">,</span> <span class="n">bG_o</span><span class="p">,</span> <span class="n">bB_o</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">bRGB_o</span><span class="p">)</span>
+    <span class="n">xi</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">zeta</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">xez</span><span class="p">)</span>
+    <span class="n">bL_or</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">bL_or</span><span class="p">)</span>
+
+    <span class="n">B_rw</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">bR_o</span> <span class="o">*</span> <span class="mf">1.758</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">((</span><span class="mi">100</span> <span class="o">*</span> <span class="n">xi</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">xi</span> <span class="o">+</span> <span class="n">n</span><span class="p">))</span>
+    <span class="n">B_rw</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">bG_o</span> <span class="o">*</span> <span class="mf">1.758</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">((</span><span class="mi">100</span> <span class="o">*</span> <span class="n">eta</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">20</span> <span class="o">*</span> <span class="n">eta</span> <span class="o">+</span> <span class="n">n</span><span class="p">))</span>
+    <span class="n">B_rw</span> <span class="o">*=</span> <span class="mf">41.69</span> <span class="o">/</span> <span class="n">bL_or</span>
+    <span class="n">B_rw</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">50</span> <span class="o">/</span> <span class="n">bL_or</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">bR_o</span>
+    <span class="n">B_rw</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">50</span> <span class="o">/</span> <span class="n">bL_or</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">bG_o</span>
+
+    <span class="k">return</span> <span class="n">B_rw</span>
+
+</div>
+<div class="viewcode-block" id="achromatic_lightness_correlate"><a class="viewcode-back" href="../../../colour.appearance.nayatani95.html#colour.appearance.nayatani95.achromatic_lightness_correlate">[docs]</a><span class="k">def</span> <span class="nf">achromatic_lightness_correlate</span><span class="p">(</span><span class="n">Q</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *achromatic Lightness* correlate :math:`L_p^\star`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    Q : numeric or array_like</span>
+<span class="sd">        Achromatic response :math:`Q`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        *Achromatic Lightness* correlate :math:`L_p^\star`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; Q = -0.000117024294955</span>
+<span class="sd">    &gt;&gt;&gt; achromatic_lightness_correlate(Q)  # doctest: +ELLIPSIS</span>
+<span class="sd">    49.9998829...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">Q</span> <span class="o">+</span> <span class="mi">50</span>
+
+</div>
+<div class="viewcode-block" id="normalised_achromatic_lightness_correlate"><a class="viewcode-back" href="../../../colour.appearance.nayatani95.html#colour.appearance.nayatani95.normalised_achromatic_lightness_correlate">[docs]</a><span class="k">def</span> <span class="nf">normalised_achromatic_lightness_correlate</span><span class="p">(</span><span class="n">B_r</span><span class="p">,</span> <span class="n">B_rw</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *normalised achromatic Lightness* correlate :math:`L_n^\star`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    B_r : numeric or array_like</span>
+<span class="sd">        *Brightness* correlate :math:`B_r`.</span>
+<span class="sd">    B_rw : numeric or array_like</span>
+<span class="sd">        Ideal white *brightness* correlate :math:`B_{rw}`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        *Normalised achromatic Lightness* correlate :math:`L_n^\star`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; B_r = 62.626673467230766</span>
+<span class="sd">    &gt;&gt;&gt; B_rw = 125.24353925846037</span>
+<span class="sd">    &gt;&gt;&gt; normalised_achromatic_lightness_correlate(B_r, B_rw)  # noqa  # doctest: +ELLIPSIS</span>
+<span class="sd">    50.0039154...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">B_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">B_r</span><span class="p">)</span>
+    <span class="n">B_rw</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">B_rw</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="n">B_r</span> <span class="o">/</span> <span class="n">B_rw</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="hue_angle"><a class="viewcode-back" href="../../../colour.appearance.nayatani95.html#colour.appearance.nayatani95.hue_angle">[docs]</a><span class="k">def</span> <span class="nf">hue_angle</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *hue* angle :math:`h` in degrees.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    p : numeric or array_like</span>
+<span class="sd">        Protanopic response :math:`p`.</span>
+<span class="sd">    t : numeric or array_like</span>
+<span class="sd">        Tritanopic response :math:`t`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        *Hue* angle :math:`h` in degrees.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; p = -8.002142682085493e-05</span>
+<span class="sd">    &gt;&gt;&gt; t = -1.7703650668990973e-05</span>
+<span class="sd">    &gt;&gt;&gt; hue_angle(p, t)  # doctest: +ELLIPSIS</span>
+<span class="sd">    257.5250300...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+    <span class="n">h_L</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">t</span><span class="p">))</span> <span class="o">%</span> <span class="mi">360</span>
+
+    <span class="k">return</span> <span class="n">h_L</span>
+
+</div>
+<div class="viewcode-block" id="chromatic_strength_function"><a class="viewcode-back" href="../../../colour.appearance.nayatani95.html#colour.appearance.nayatani95.chromatic_strength_function">[docs]</a><span class="k">def</span> <span class="nf">chromatic_strength_function</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Defines the chromatic strength function :math:`E_s(\\theta)` used to</span>
+<span class="sd">    correct saturation scale as function of hue angle :math:`\\theta`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    theta : numeric or array_like</span>
+<span class="sd">        Hue angle :math:`\\theta`</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Corrected saturation scale.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; chromatic_strength_function(4.49462820973)  # doctest: +ELLIPSIS</span>
+<span class="sd">    1.2267869...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+
+    <span class="n">E_s</span> <span class="o">=</span> <span class="mf">0.9394</span>
+    <span class="n">E_s</span> <span class="o">+=</span> <span class="o">-</span><span class="mf">0.2478</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">theta</span><span class="p">)</span>
+    <span class="n">E_s</span> <span class="o">+=</span> <span class="o">-</span><span class="mf">0.0743</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">theta</span><span class="p">)</span>
+    <span class="n">E_s</span> <span class="o">+=</span> <span class="o">+</span><span class="mf">0.0666</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">theta</span><span class="p">)</span>
+    <span class="n">E_s</span> <span class="o">+=</span> <span class="o">-</span><span class="mf">0.0186</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">theta</span><span class="p">)</span>
+    <span class="n">E_s</span> <span class="o">+=</span> <span class="o">-</span><span class="mf">0.0055</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">theta</span><span class="p">)</span>
+    <span class="n">E_s</span> <span class="o">+=</span> <span class="o">-</span><span class="mf">0.0521</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">theta</span><span class="p">)</span>
+    <span class="n">E_s</span> <span class="o">+=</span> <span class="o">-</span><span class="mf">0.0573</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">theta</span><span class="p">)</span>
+    <span class="n">E_s</span> <span class="o">+=</span> <span class="o">-</span><span class="mf">0.0061</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">theta</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">E_s</span>
+
+</div>
+<div class="viewcode-block" id="saturation_components"><a class="viewcode-back" href="../../../colour.appearance.nayatani95.html#colour.appearance.nayatani95.saturation_components">[docs]</a><span class="k">def</span> <span class="nf">saturation_components</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">bL_or</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *saturation* components :math:`S_{RG}` and :math:`S_{YB}`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    h: numeric or array_like</span>
+<span class="sd">        Correlate of *hue* :math:`h` in degrees.</span>
+<span class="sd">    bL_or: numeric or array_like</span>
+<span class="sd">         Normalising chromatic adaptation exponential factor</span>
+<span class="sd">         :math:`\\beta_1(B_or)`.</span>
+<span class="sd">    t : numeric or array_like</span>
+<span class="sd">        Tritanopic response :math:`t`.</span>
+<span class="sd">    p : numeric or array_like</span>
+<span class="sd">        Protanopic response :math:`p`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        *Saturation* components :math:`S_{RG}` and :math:`S_{YB}`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; h = 257.52322689806243</span>
+<span class="sd">    &gt;&gt;&gt; bL_or = 3.6810214956040888</span>
+<span class="sd">    &gt;&gt;&gt; t = -1.7706764677181658e-05</span>
+<span class="sd">    &gt;&gt;&gt; p = -8.0023561356363753e-05</span>
+<span class="sd">    &gt;&gt;&gt; saturation_components(h, bL_or, t, p)  # doctest: +ELLIPSIS</span>
+<span class="sd">    array([-0.0028852..., -0.0130396...])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">h</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+    <span class="n">bL_or</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">bL_or</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+
+    <span class="n">E_s</span> <span class="o">=</span> <span class="n">chromatic_strength_function</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">h</span><span class="p">))</span>
+    <span class="n">S_RG</span> <span class="o">=</span> <span class="p">(</span><span class="mf">488.93</span> <span class="o">/</span> <span class="n">bL_or</span><span class="p">)</span> <span class="o">*</span> <span class="n">E_s</span> <span class="o">*</span> <span class="n">t</span>
+    <span class="n">S_YB</span> <span class="o">=</span> <span class="p">(</span><span class="mf">488.93</span> <span class="o">/</span> <span class="n">bL_or</span><span class="p">)</span> <span class="o">*</span> <span class="n">E_s</span> <span class="o">*</span> <span class="n">p</span>
+
+    <span class="k">return</span> <span class="n">tstack</span><span class="p">((</span><span class="n">S_RG</span><span class="p">,</span> <span class="n">S_YB</span><span class="p">))</span>
+
+</div>
+<div class="viewcode-block" id="saturation_correlate"><a class="viewcode-back" href="../../../colour.appearance.nayatani95.html#colour.appearance.nayatani95.saturation_correlate">[docs]</a><span class="k">def</span> <span class="nf">saturation_correlate</span><span class="p">(</span><span class="n">S_RG</span><span class="p">,</span> <span class="n">S_YB</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the correlate of *saturation* :math:`S`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    S_RG : numeric or array_like</span>
+<span class="sd">        *Saturation* component :math:`S_{RG}`.</span>
+<span class="sd">    S_YB : numeric or array_like</span>
+<span class="sd">        *Saturation* component :math:`S_{YB}`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Correlate of *saturation* :math:`S`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; S_RG = -0.0028852716381965863</span>
+<span class="sd">    &gt;&gt;&gt; S_YB = -0.013039632941332499</span>
+<span class="sd">    &gt;&gt;&gt; saturation_correlate(S_RG, S_YB)  # doctest: +ELLIPSIS</span>
+<span class="sd">    0.0133550...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">S_RG</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">S_RG</span><span class="p">)</span>
+    <span class="n">S_YB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">S_YB</span><span class="p">)</span>
+
+    <span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">S_RG</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">S_YB</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">S</span>
+
+</div>
+<div class="viewcode-block" id="chroma_components"><a class="viewcode-back" href="../../../colour.appearance.nayatani95.html#colour.appearance.nayatani95.chroma_components">[docs]</a><span class="k">def</span> <span class="nf">chroma_components</span><span class="p">(</span><span class="n">Lstar_P</span><span class="p">,</span> <span class="n">S_RG</span><span class="p">,</span> <span class="n">S_YB</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *chroma* components :math:`C_{RG}` and :math:`C_{YB}`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    Lstar_P : numeric or array_like</span>
+<span class="sd">        *Achromatic Lightness* correlate :math:`L_p^\star`.</span>
+<span class="sd">    S_RG : numeric or array_like</span>
+<span class="sd">        *Saturation* component :math:`S_{RG}`.</span>
+<span class="sd">    S_YB : numeric or array_like</span>
+<span class="sd">        *Saturation* component :math:`S_{YB}`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray</span>
+<span class="sd">        *Chroma* components :math:`C_{RG}` and :math:`C_{YB}`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; Lstar_P = 49.99988297570504</span>
+<span class="sd">    &gt;&gt;&gt; S_RG = -0.0028852716381965863</span>
+<span class="sd">    &gt;&gt;&gt; S_YB = -0.013039632941332499</span>
+<span class="sd">    &gt;&gt;&gt; chroma_components(Lstar_P, S_RG, S_YB)  # doctest: +ELLIPSIS</span>
+<span class="sd">    array([-0.00288527, -0.01303961])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">Lstar_P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Lstar_P</span><span class="p">)</span>
+    <span class="n">S_RG</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">S_RG</span><span class="p">)</span>
+    <span class="n">S_YB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">S_YB</span><span class="p">)</span>
+
+    <span class="n">C_RG</span> <span class="o">=</span> <span class="p">((</span><span class="n">Lstar_P</span> <span class="o">/</span> <span class="mi">50</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.7</span><span class="p">)</span> <span class="o">*</span> <span class="n">S_RG</span>
+    <span class="n">C_YB</span> <span class="o">=</span> <span class="p">((</span><span class="n">Lstar_P</span> <span class="o">/</span> <span class="mi">50</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.7</span><span class="p">)</span> <span class="o">*</span> <span class="n">S_YB</span>
+
+    <span class="k">return</span> <span class="n">tstack</span><span class="p">((</span><span class="n">C_RG</span><span class="p">,</span> <span class="n">C_YB</span><span class="p">))</span>
+
+</div>
+<div class="viewcode-block" id="chroma_correlate"><a class="viewcode-back" href="../../../colour.appearance.nayatani95.html#colour.appearance.nayatani95.chroma_correlate">[docs]</a><span class="k">def</span> <span class="nf">chroma_correlate</span><span class="p">(</span><span class="n">Lstar_P</span><span class="p">,</span> <span class="n">S</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the correlate of *chroma* :math:`C`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    Lstar_P : numeric or array_like</span>
+<span class="sd">        *Achromatic Lightness* correlate :math:`L_p^\star`.</span>
+<span class="sd">    S : numeric or array_like</span>
+<span class="sd">        Correlate of *saturation* :math:`S`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Correlate of *chroma* :math:`C`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; Lstar_P = 49.99988297570504</span>
+<span class="sd">    &gt;&gt;&gt; S = 0.013355029751777615</span>
+<span class="sd">    &gt;&gt;&gt; chroma_correlate(Lstar_P, S)  # doctest: +ELLIPSIS</span>
+<span class="sd">    0.0133550...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">Lstar_P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Lstar_P</span><span class="p">)</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+
+    <span class="n">C</span> <span class="o">=</span> <span class="p">((</span><span class="n">Lstar_P</span> <span class="o">/</span> <span class="mi">50</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.7</span><span class="p">)</span> <span class="o">*</span> <span class="n">S</span>
+
+    <span class="k">return</span> <span class="n">C</span>
+
+</div>
+<div class="viewcode-block" id="colourfulness_components"><a class="viewcode-back" href="../../../colour.appearance.nayatani95.html#colour.appearance.nayatani95.colourfulness_components">[docs]</a><span class="k">def</span> <span class="nf">colourfulness_components</span><span class="p">(</span><span class="n">C_RG</span><span class="p">,</span> <span class="n">C_YB</span><span class="p">,</span> <span class="n">B_rw</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *colourfulness* components :math:`M_{RG}` and :math:`M_{YB}`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    C_RG : numeric or array_like</span>
+<span class="sd">        *Chroma* component :math:`C_{RG}`.</span>
+<span class="sd">    C_YB : numeric or array_like</span>
+<span class="sd">        *Chroma* component :math:`C_{YB}`.</span>
+<span class="sd">    B_rw : numeric or array_like</span>
+<span class="sd">        Ideal white *brightness* correlate :math:`B_{rw}`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        *Colourfulness* components :math:`M_{RG}` and :math:`M_{YB}`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; C_RG = -0.0028852716381965863</span>
+<span class="sd">    &gt;&gt;&gt; C_YB = -0.013039632941332499</span>
+<span class="sd">    &gt;&gt;&gt; B_rw = 125.24353925846037</span>
+<span class="sd">    &gt;&gt;&gt; colourfulness_components(C_RG, C_YB, B_rw)  # doctest: +ELLIPSIS</span>
+<span class="sd">    (-0.0036136..., -0.0163312...)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">C_RG</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">C_RG</span><span class="p">)</span>
+    <span class="n">C_YB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">C_YB</span><span class="p">)</span>
+    <span class="n">B_rw</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">B_rw</span><span class="p">)</span>
+
+    <span class="n">M_RG</span> <span class="o">=</span> <span class="n">C_RG</span> <span class="o">*</span> <span class="n">B_rw</span> <span class="o">/</span> <span class="mi">100</span>
+    <span class="n">M_YB</span> <span class="o">=</span> <span class="n">C_YB</span> <span class="o">*</span> <span class="n">B_rw</span> <span class="o">/</span> <span class="mi">100</span>
+
+    <span class="k">return</span> <span class="n">M_RG</span><span class="p">,</span> <span class="n">M_YB</span>
+
+</div>
+<div class="viewcode-block" id="colourfulness_correlate"><a class="viewcode-back" href="../../../colour.appearance.nayatani95.html#colour.appearance.nayatani95.colourfulness_correlate">[docs]</a><span class="k">def</span> <span class="nf">colourfulness_correlate</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">B_rw</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the correlate of *colourfulness* :math:`M`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    C : numeric or array_like</span>
+<span class="sd">        Correlate of *chroma* :math:`C`.</span>
+<span class="sd">    B_rw : numeric or array_like</span>
+<span class="sd">        Ideal white *brightness* correlate :math:`B_{rw}`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Correlate of *colourfulness* :math:`M`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; C = 0.013355007871688761</span>
+<span class="sd">    &gt;&gt;&gt; B_rw = 125.24353925846037</span>
+<span class="sd">    &gt;&gt;&gt; colourfulness_correlate(C, B_rw)  # doctest: +ELLIPSIS</span>
+<span class="sd">    0.0167262...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+    <span class="n">B_rw</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">B_rw</span><span class="p">)</span>
+
+    <span class="n">M</span> <span class="o">=</span> <span class="n">C</span> <span class="o">*</span> <span class="n">B_rw</span> <span class="o">/</span> <span class="mi">100</span>
+
+    <span class="k">return</span> <span class="n">M</span></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2015, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

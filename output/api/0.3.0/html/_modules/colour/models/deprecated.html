@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.models.deprecated &mdash; Colour 0.3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.0 documentation" href="../../../index.html" />
+    <link rel="up" title="colour.models" href="../models.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for colour.models.deprecated</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Deprecated Colour Models Transformations</span>
+<span class="sd">========================================</span>
+
+<span class="sd">Defines various deprecated colour models transformations:</span>
+
+<span class="sd">-   :func:`RGB_to_HSV`</span>
+<span class="sd">-   :func:`HSV_to_RGB`</span>
+<span class="sd">-   :func:`RGB_to_HSL`</span>
+<span class="sd">-   :func:`HSL_to_RGB`</span>
+<span class="sd">-   :func:`RGB_to_CMY`</span>
+<span class="sd">-   :func:`CMY_to_RGB`</span>
+<span class="sd">-   :func:`CMY_to_CMYK`</span>
+<span class="sd">-   :func:`CMYK_to_CMY`</span>
+<span class="sd">-   :func:`RGB_to_HEX`</span>
+<span class="sd">-   :func:`HEX_to_RGB`</span>
+
+<span class="sd">These colour models are stated as deprecated because they trade off perceptual</span>
+<span class="sd">relevance for computation speed. They should not be used in the colour science</span>
+<span class="sd">domain although they are useful for image analysis and provide end user</span>
+<span class="sd">software colour selection tools.</span>
+
+<span class="sd">They are provided for convenience and completeness.</span>
+
+<span class="sd">Warning</span>
+<span class="sd">-------</span>
+<span class="sd">Don&#39;t use that! Seriously...</span>
+
+<span class="sd">References</span>
+<span class="sd">----------</span>
+<span class="sd">.. [1]  http://en.wikipedia.org/wiki/HSL_and_HSV</span>
+<span class="sd">        (Last accessed 10 August 2014)</span>
+<span class="sd">.. [2]  http://alvyray.com/Papers/CG/color78.pdf</span>
+<span class="sd">        (Last accessed 10 August 2014)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s">&#39;Copyright (C) 2013 - 2014 - Colour Developers&#39;</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s">&#39;New BSD License - http://opensource.org/licenses/BSD-3-Clause&#39;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s">&#39;colour-science@googlegroups.com&#39;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s">&#39;Production&#39;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;RGB_to_HSV&#39;</span><span class="p">,</span>
+           <span class="s">&#39;HSV_to_RGB&#39;</span><span class="p">,</span>
+           <span class="s">&#39;RGB_to_HSL&#39;</span><span class="p">,</span>
+           <span class="s">&#39;HSL_to_RGB&#39;</span><span class="p">,</span>
+           <span class="s">&#39;RGB_to_CMY&#39;</span><span class="p">,</span>
+           <span class="s">&#39;CMY_to_RGB&#39;</span><span class="p">,</span>
+           <span class="s">&#39;CMY_to_CMYK&#39;</span><span class="p">,</span>
+           <span class="s">&#39;CMYK_to_CMY&#39;</span><span class="p">,</span>
+           <span class="s">&#39;RGB_to_HEX&#39;</span><span class="p">,</span>
+           <span class="s">&#39;HEX_to_RGB&#39;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="RGB_to_HSV"><a class="viewcode-back" href="../../../colour.models.deprecated.html#colour.models.deprecated.RGB_to_HSV">[docs]</a><span class="k">def</span> <span class="nf">RGB_to_HSV</span><span class="p">(</span><span class="n">RGB</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Converts from *RGB* colourspace to *HSV* colourspace.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    RGB : array_like, (3,)</span>
+<span class="sd">        *RGB* colourspace matrix.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray, (3,)</span>
+<span class="sd">        *HSV* matrix.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   Input *RGB* colourspace matrix is in domain [0, 1].</span>
+<span class="sd">    -   Output *HSV* colourspace matrix is in domain [0, 1].</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [3]  http://www.easyrgb.com/index.php?X=MATH&amp;H=20#text20</span>
+<span class="sd">            (Last accessed 18 May 2014)</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; RGB = np.array([0.49019608, 0.98039216, 0.25098039])</span>
+<span class="sd">    &gt;&gt;&gt; RGB_to_HSV(RGB)  # doctest: +ELLIPSIS</span>
+<span class="sd">    array([ 0.2786738...,  0.744     ,  0.98039216])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">R</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
+
+    <span class="n">minimum</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+    <span class="n">maximum</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+    <span class="n">delta</span> <span class="o">=</span> <span class="n">maximum</span> <span class="o">-</span> <span class="n">minimum</span>
+
+    <span class="n">V</span> <span class="o">=</span> <span class="n">maximum</span>
+
+    <span class="k">if</span> <span class="n">delta</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">H</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">S</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+
+        <span class="n">S</span> <span class="o">=</span> <span class="n">delta</span> <span class="o">/</span> <span class="n">maximum</span>
+
+        <span class="n">delta_R</span> <span class="o">=</span> <span class="p">(((</span><span class="n">maximum</span> <span class="o">-</span> <span class="n">R</span><span class="p">)</span> <span class="o">/</span> <span class="mi">6</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">delta</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span> <span class="o">/</span> <span class="n">delta</span>
+        <span class="n">delta_G</span> <span class="o">=</span> <span class="p">(((</span><span class="n">maximum</span> <span class="o">-</span> <span class="n">G</span><span class="p">)</span> <span class="o">/</span> <span class="mi">6</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">delta</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span> <span class="o">/</span> <span class="n">delta</span>
+        <span class="n">delta_B</span> <span class="o">=</span> <span class="p">(((</span><span class="n">maximum</span> <span class="o">-</span> <span class="n">B</span><span class="p">)</span> <span class="o">/</span> <span class="mi">6</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">delta</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span> <span class="o">/</span> <span class="n">delta</span>
+
+        <span class="k">if</span> <span class="n">R</span> <span class="o">==</span> <span class="n">maximum</span><span class="p">:</span>
+            <span class="n">H</span> <span class="o">=</span> <span class="n">delta_B</span> <span class="o">-</span> <span class="n">delta_G</span>
+        <span class="k">elif</span> <span class="n">G</span> <span class="o">==</span> <span class="n">maximum</span><span class="p">:</span>
+            <span class="n">H</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">delta_R</span> <span class="o">-</span> <span class="n">delta_B</span>
+        <span class="k">elif</span> <span class="n">B</span> <span class="o">==</span> <span class="n">maximum</span><span class="p">:</span>
+            <span class="n">H</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">delta_G</span> <span class="o">-</span> <span class="n">delta_R</span>
+
+        <span class="k">if</span> <span class="n">H</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">H</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">H</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">H</span> <span class="o">-=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">H</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">V</span><span class="p">])</span>
+
+</div>
+<div class="viewcode-block" id="HSV_to_RGB"><a class="viewcode-back" href="../../../colour.models.deprecated.html#colour.models.deprecated.HSV_to_RGB">[docs]</a><span class="k">def</span> <span class="nf">HSV_to_RGB</span><span class="p">(</span><span class="n">HSV</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Converts from *HSV* colourspace to *RGB* colourspace.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    HSV : array_like, (3,)</span>
+<span class="sd">        *HSV* colourspace matrix.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray, (3,)</span>
+<span class="sd">        *RGB* colourspace matrix.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   Input *HSV* colourspace matrix is in domain [0, 1].</span>
+<span class="sd">    -   Output *RGB* colourspace matrix is in domain [0, 1].</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [4]  http://www.easyrgb.com/index.php?X=MATH&amp;H=21#text21</span>
+<span class="sd">            (Last accessed 18 May 2014)</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; HSV = np.array([0.27867384, 0.744, 0.98039216])</span>
+<span class="sd">    &gt;&gt;&gt; HSV_to_RGB(HSV)  # doctest: +ELLIPSIS</span>
+<span class="sd">    array([ 0.4901960...,  0.9803921...,  0.2509803...])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">H</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">HSV</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">S</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">R</span> <span class="o">=</span> <span class="n">V</span>
+        <span class="n">G</span> <span class="o">=</span> <span class="n">V</span>
+        <span class="n">B</span> <span class="o">=</span> <span class="n">V</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">H</span> <span class="o">*</span> <span class="mi">6</span>
+        <span class="k">if</span> <span class="n">h</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+            <span class="n">h</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">i</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">V</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">S</span><span class="p">)</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">V</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">S</span> <span class="o">*</span> <span class="p">(</span><span class="n">h</span> <span class="o">-</span> <span class="n">i</span><span class="p">))</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="n">V</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">S</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">h</span> <span class="o">-</span> <span class="n">i</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">R</span> <span class="o">=</span> <span class="n">V</span>
+            <span class="n">G</span> <span class="o">=</span> <span class="n">l</span>
+            <span class="n">B</span> <span class="o">=</span> <span class="n">j</span>
+        <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">R</span> <span class="o">=</span> <span class="n">k</span>
+            <span class="n">G</span> <span class="o">=</span> <span class="n">V</span>
+            <span class="n">B</span> <span class="o">=</span> <span class="n">j</span>
+        <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">R</span> <span class="o">=</span> <span class="n">j</span>
+            <span class="n">G</span> <span class="o">=</span> <span class="n">V</span>
+            <span class="n">B</span> <span class="o">=</span> <span class="n">l</span>
+        <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">R</span> <span class="o">=</span> <span class="n">j</span>
+            <span class="n">G</span> <span class="o">=</span> <span class="n">k</span>
+            <span class="n">B</span> <span class="o">=</span> <span class="n">V</span>
+        <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+            <span class="n">R</span> <span class="o">=</span> <span class="n">l</span>
+            <span class="n">G</span> <span class="o">=</span> <span class="n">j</span>
+            <span class="n">B</span> <span class="o">=</span> <span class="n">V</span>
+        <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+            <span class="n">R</span> <span class="o">=</span> <span class="n">V</span>
+            <span class="n">G</span> <span class="o">=</span> <span class="n">j</span>
+            <span class="n">B</span> <span class="o">=</span> <span class="n">k</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">R</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">B</span><span class="p">])</span>
+
+</div>
+<div class="viewcode-block" id="RGB_to_HSL"><a class="viewcode-back" href="../../../colour.models.deprecated.html#colour.models.deprecated.RGB_to_HSL">[docs]</a><span class="k">def</span> <span class="nf">RGB_to_HSL</span><span class="p">(</span><span class="n">RGB</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Converts from *RGB* colourspace to *HSL* colourspace.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    RGB : array_like, (3,)</span>
+<span class="sd">        *RGB* colourspace matrix.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray, (3,)</span>
+<span class="sd">        *HSL* matrix.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   Input *RGB* colourspace matrix is in domain [0, 1].</span>
+<span class="sd">    -   Output *HSL* colourspace matrix is in domain [0, 1].</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [5]  http://www.easyrgb.com/index.php?X=MATH&amp;H=18#text18</span>
+<span class="sd">            (Last accessed 18 May 2014)</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; RGB = np.array([0.49019608, 0.98039216, 0.25098039])</span>
+<span class="sd">    &gt;&gt;&gt; RGB_to_HSL(RGB)  # doctest: +ELLIPSIS</span>
+<span class="sd">    array([ 0.2786738...,  0.9489796...,  0.6156862...])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">R</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
+
+    <span class="n">minimum</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+    <span class="n">maximum</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+    <span class="n">delta</span> <span class="o">=</span> <span class="n">maximum</span> <span class="o">-</span> <span class="n">minimum</span>
+
+    <span class="n">L</span> <span class="o">=</span> <span class="p">(</span><span class="n">maximum</span> <span class="o">+</span> <span class="n">minimum</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+
+    <span class="k">if</span> <span class="n">delta</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">H</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">S</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+
+        <span class="n">S</span> <span class="o">=</span> <span class="n">delta</span> <span class="o">/</span> <span class="p">(</span><span class="n">maximum</span> <span class="o">+</span> <span class="n">minimum</span><span class="p">)</span> <span class="k">if</span> <span class="n">L</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="k">else</span> <span class="n">delta</span> <span class="o">/</span> <span class="p">(</span>
+            <span class="mi">2</span> <span class="o">-</span> <span class="n">maximum</span> <span class="o">-</span> <span class="n">minimum</span><span class="p">)</span>
+
+        <span class="n">delta_R</span> <span class="o">=</span> <span class="p">(((</span><span class="n">maximum</span> <span class="o">-</span> <span class="n">R</span><span class="p">)</span> <span class="o">/</span> <span class="mi">6</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">delta</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span> <span class="o">/</span> <span class="n">delta</span>
+        <span class="n">delta_G</span> <span class="o">=</span> <span class="p">(((</span><span class="n">maximum</span> <span class="o">-</span> <span class="n">G</span><span class="p">)</span> <span class="o">/</span> <span class="mi">6</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">delta</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span> <span class="o">/</span> <span class="n">delta</span>
+        <span class="n">delta_B</span> <span class="o">=</span> <span class="p">(((</span><span class="n">maximum</span> <span class="o">-</span> <span class="n">B</span><span class="p">)</span> <span class="o">/</span> <span class="mi">6</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">delta</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span> <span class="o">/</span> <span class="n">delta</span>
+
+        <span class="k">if</span> <span class="n">R</span> <span class="o">==</span> <span class="n">maximum</span><span class="p">:</span>
+            <span class="n">H</span> <span class="o">=</span> <span class="n">delta_B</span> <span class="o">-</span> <span class="n">delta_G</span>
+        <span class="k">elif</span> <span class="n">G</span> <span class="o">==</span> <span class="n">maximum</span><span class="p">:</span>
+            <span class="n">H</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">delta_R</span> <span class="o">-</span> <span class="n">delta_B</span>
+        <span class="k">elif</span> <span class="n">B</span> <span class="o">==</span> <span class="n">maximum</span><span class="p">:</span>
+            <span class="n">H</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">delta_G</span> <span class="o">-</span> <span class="n">delta_R</span>
+
+        <span class="k">if</span> <span class="n">H</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">H</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">H</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">H</span> <span class="o">-=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">H</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">L</span><span class="p">])</span>
+
+</div>
+<div class="viewcode-block" id="HSL_to_RGB"><a class="viewcode-back" href="../../../colour.models.deprecated.html#colour.models.deprecated.HSL_to_RGB">[docs]</a><span class="k">def</span> <span class="nf">HSL_to_RGB</span><span class="p">(</span><span class="n">HSL</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Converts from *HSL* colourspace to *RGB* colourspace.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    HSL : array_like, (3,)</span>
+<span class="sd">        *HSL* colourspace matrix.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray, (3,)</span>
+<span class="sd">        *RGB* colourspace matrix.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   Input *HSL* colourspace matrix is in domain [0, 1].</span>
+<span class="sd">    -   Output *RGB* colourspace matrix is in domain [0, 1].</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [6]  http://www.easyrgb.com/index.php?X=MATH&amp;H=19#text19</span>
+<span class="sd">            (Last accessed 18 May 2014)</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; HSL = np.array([0.27867384, 0.94897959, 0.61568627])</span>
+<span class="sd">    &gt;&gt;&gt; HSL_to_RGB(HSL)  # doctest: +ELLIPSIS</span>
+<span class="sd">    array([ 0.4901960...,  0.9803921...,  0.2509803...])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">H</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">L</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">HSL</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">S</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">R</span> <span class="o">=</span> <span class="n">L</span>
+        <span class="n">G</span> <span class="o">=</span> <span class="n">L</span>
+        <span class="n">B</span> <span class="o">=</span> <span class="n">L</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">def</span> <span class="nf">H_to_RGB</span><span class="p">(</span><span class="n">vi</span><span class="p">,</span> <span class="n">vj</span><span class="p">,</span> <span class="n">vH</span><span class="p">):</span>
+            <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Converts *hue* value to *RGB* colourspace.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+
+            <span class="k">if</span> <span class="n">vH</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">vH</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">vH</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">vH</span> <span class="o">-=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="mi">6</span> <span class="o">*</span> <span class="n">vH</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">vi</span> <span class="o">+</span> <span class="p">(</span><span class="n">vj</span> <span class="o">-</span> <span class="n">vi</span><span class="p">)</span> <span class="o">*</span> <span class="mi">6</span> <span class="o">*</span> <span class="n">vH</span>
+            <span class="k">if</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">vH</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">vj</span>
+            <span class="k">if</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">vH</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">vi</span> <span class="o">+</span> <span class="p">(</span><span class="n">vj</span> <span class="o">-</span> <span class="n">vi</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="n">vH</span><span class="p">)</span> <span class="o">*</span> <span class="mi">6</span>
+            <span class="k">return</span> <span class="n">vi</span>
+
+        <span class="n">j</span> <span class="o">=</span> <span class="n">L</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">S</span><span class="p">)</span> <span class="k">if</span> <span class="n">L</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="k">else</span> <span class="p">(</span><span class="n">L</span> <span class="o">+</span> <span class="n">S</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">S</span> <span class="o">*</span> <span class="n">L</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">L</span> <span class="o">-</span> <span class="n">j</span>
+
+        <span class="n">R</span> <span class="o">=</span> <span class="n">H_to_RGB</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">H</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">))</span>
+        <span class="n">G</span> <span class="o">=</span> <span class="n">H_to_RGB</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">H</span><span class="p">)</span>
+        <span class="n">B</span> <span class="o">=</span> <span class="n">H_to_RGB</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">H</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">R</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">B</span><span class="p">])</span>
+
+</div>
+<div class="viewcode-block" id="RGB_to_CMY"><a class="viewcode-back" href="../../../colour.models.deprecated.html#colour.models.deprecated.RGB_to_CMY">[docs]</a><span class="k">def</span> <span class="nf">RGB_to_CMY</span><span class="p">(</span><span class="n">RGB</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Converts from *RGB* colourspace to *CMY* colourspace.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    RGB : array_like, (3,)</span>
+<span class="sd">        *RGB* colourspace matrix.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray, (3,)</span>
+<span class="sd">        *CMY* matrix.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   Input *RGB* colourspace matrix is in domain [0, 1].</span>
+<span class="sd">    -   Output *CMY* colourspace matrix is in domain [0, 1].</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [7]  http://www.easyrgb.com/index.php?X=MATH&amp;H=11#text11</span>
+<span class="sd">            (Last accessed 18 May 2014)</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; RGB = np.array([0.49019608, 0.98039216, 0.25098039])</span>
+<span class="sd">    &gt;&gt;&gt; RGB_to_CMY(RGB)  # doctest: +ELLIPSIS</span>
+<span class="sd">    array([ 0.5098039...,  0.0196078...,  0.7490196...])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">R</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span> <span class="o">-</span> <span class="n">R</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">G</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">B</span><span class="p">])</span>
+
+</div>
+<div class="viewcode-block" id="CMY_to_RGB"><a class="viewcode-back" href="../../../colour.models.deprecated.html#colour.models.deprecated.CMY_to_RGB">[docs]</a><span class="k">def</span> <span class="nf">CMY_to_RGB</span><span class="p">(</span><span class="n">CMY</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Converts from *CMY* colourspace to *CMY* colourspace.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    CMY : array_like, (3,)</span>
+<span class="sd">        *CMY* colourspace matrix.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray, (3,)</span>
+<span class="sd">        *RGB* colourspace matrix.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   Input *CMY* colourspace matrix is in domain [0, 1].</span>
+<span class="sd">    -   Output *RGB* colourspace matrix is in domain [0, 1].</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [8]  http://www.easyrgb.com/index.php?X=MATH&amp;H=12#text12</span>
+<span class="sd">            (Last accessed 18 May 2014)</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; CMY = np.array([0.50980392, 0.01960784, 0.74901961])</span>
+<span class="sd">    &gt;&gt;&gt; CMY_to_RGB(CMY)  # doctest: +ELLIPSIS</span>
+<span class="sd">    array([ 0.4901960...,  0.9803921...,  0.2509803...])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">C</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">CMY</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span> <span class="o">-</span> <span class="n">C</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">M</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">Y</span><span class="p">])</span>
+
+</div>
+<div class="viewcode-block" id="CMY_to_CMYK"><a class="viewcode-back" href="../../../colour.models.deprecated.html#colour.models.deprecated.CMY_to_CMYK">[docs]</a><span class="k">def</span> <span class="nf">CMY_to_CMYK</span><span class="p">(</span><span class="n">CMY</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Converts from *CMY* colourspace to *CMYK* colourspace.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    CMY : array_like, (3,)</span>
+<span class="sd">        *CMY* colourspace matrix.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray, (4,)</span>
+<span class="sd">        *CMYK* matrix.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   Input *CMY* colourspace matrix is in domain [0, 1].</span>
+<span class="sd">    -   Output*CMYK* colourspace matrix is in domain [0, 1].</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [9]  http://www.easyrgb.com/index.php?X=MATH&amp;H=13#text13</span>
+<span class="sd">            (Last accessed 18 May 2014)</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; CMY = np.array([0.50980392, 0.01960784, 0.74901961])</span>
+<span class="sd">    &gt;&gt;&gt; CMY_to_CMYK(CMY)  # doctest: +ELLIPSIS</span>
+<span class="sd">    array([ 0.5       ,  0.        ,  0.744     ,  0.0196078...])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">C</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">CMY</span><span class="p">)</span>
+
+    <span class="n">K</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">C</span> <span class="o">&lt;</span> <span class="n">K</span><span class="p">:</span>
+        <span class="n">K</span> <span class="o">=</span> <span class="n">C</span>
+    <span class="k">if</span> <span class="n">M</span> <span class="o">&lt;</span> <span class="n">K</span><span class="p">:</span>
+        <span class="n">K</span> <span class="o">=</span> <span class="n">M</span>
+    <span class="k">if</span> <span class="n">Y</span> <span class="o">&lt;</span> <span class="n">K</span><span class="p">:</span>
+        <span class="n">K</span> <span class="o">=</span> <span class="n">Y</span>
+    <span class="k">if</span> <span class="n">K</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">C</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">M</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">Y</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">C</span> <span class="o">=</span> <span class="p">(</span><span class="n">C</span> <span class="o">-</span> <span class="n">K</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">K</span><span class="p">)</span>
+        <span class="n">M</span> <span class="o">=</span> <span class="p">(</span><span class="n">M</span> <span class="o">-</span> <span class="n">K</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">K</span><span class="p">)</span>
+        <span class="n">Y</span> <span class="o">=</span> <span class="p">(</span><span class="n">Y</span> <span class="o">-</span> <span class="n">K</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">K</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">C</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">K</span><span class="p">])</span>
+
+</div>
+<div class="viewcode-block" id="CMYK_to_CMY"><a class="viewcode-back" href="../../../colour.models.deprecated.html#colour.models.deprecated.CMYK_to_CMY">[docs]</a><span class="k">def</span> <span class="nf">CMYK_to_CMY</span><span class="p">(</span><span class="n">CMYK</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Converts from *CMYK* colourspace to *CMY* colourspace.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    CMYK : array_like, (4,)</span>
+<span class="sd">        *CMYK* colourspace matrix.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray, (3,)</span>
+<span class="sd">        *CMY* matrix.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   Input *CMYK* colourspace matrix is in domain [0, 1].</span>
+<span class="sd">    -   Output *CMY* colourspace matrix is in domain [0, 1].</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [10]  http://www.easyrgb.com/index.php?X=MATH&amp;H=14#text14</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; CMYK = np.array([0.5, 0, 0.744, 0.01960784])</span>
+<span class="sd">    &gt;&gt;&gt; CMYK_to_CMY(CMYK)  # doctest: +ELLIPSIS</span>
+<span class="sd">    array([ 0.5098039...,  0.0196078...,  0.7490196...])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">C</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">K</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">CMYK</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">C</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">K</span><span class="p">)</span> <span class="o">+</span> <span class="n">K</span><span class="p">,</span> <span class="n">M</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">K</span><span class="p">)</span> <span class="o">+</span> <span class="n">K</span><span class="p">,</span> <span class="n">Y</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">K</span><span class="p">)</span> <span class="o">+</span> <span class="n">K</span><span class="p">])</span>
+
+</div>
+<div class="viewcode-block" id="RGB_to_HEX"><a class="viewcode-back" href="../../../colour.models.deprecated.html#colour.models.deprecated.RGB_to_HEX">[docs]</a><span class="k">def</span> <span class="nf">RGB_to_HEX</span><span class="p">(</span><span class="n">RGB</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Converts from *RGB* colourspace to hex triplet representation.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    RGB : array_like, (3,)</span>
+<span class="sd">        *RGB* colourspace matrix.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    unicode</span>
+<span class="sd">        Hex triplet representation.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   Input *RGB* colourspace matrix is in domain [0, 1].</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; RGB = np.array([0.66666667, 0.86666667, 1])</span>
+<span class="sd">    &gt;&gt;&gt; # Doctests skip for Python 2.x compatibility.</span>
+<span class="sd">    &gt;&gt;&gt; RGB_to_HEX(RGB)  # doctest: +SKIP</span>
+<span class="sd">    &#39;#aaddff&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">RGB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
+    <span class="n">R</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">B</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">RGB</span> <span class="o">*</span> <span class="mi">255</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s">&#39;#{0:02x}{1:02x}{2:02x}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="HEX_to_RGB"><a class="viewcode-back" href="../../../colour.models.deprecated.html#colour.models.deprecated.HEX_to_RGB">[docs]</a><span class="k">def</span> <span class="nf">HEX_to_RGB</span><span class="p">(</span><span class="n">HEX</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Converts from hex triplet representation to *RGB* colourspace.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    HEX : unicode</span>
+<span class="sd">        Hex triplet representation.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray, (3,)</span>
+<span class="sd">        *RGB* colourspace matrix.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   Output *RGB* colourspace matrix is in domain [0, 1].</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; HEX = &#39;#aaddff&#39;</span>
+<span class="sd">    &gt;&gt;&gt; HEX_to_RGB(HEX)  # doctest: +ELLIPSIS</span>
+<span class="sd">    array([ 0.6666666...,  0.8666666...,  1.        ])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">HEX</span> <span class="o">=</span> <span class="n">HEX</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s">&#39;#&#39;</span><span class="p">)</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">HEX</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">HEX</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="n">length</span> <span class="o">//</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">16</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span>
+                     <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">length</span> <span class="o">//</span> <span class="mi">3</span><span class="p">)])</span> <span class="o">/</span> <span class="mi">255</span></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2014, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

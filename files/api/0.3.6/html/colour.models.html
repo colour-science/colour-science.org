@@ -1,0 +1,2676 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.models Package &mdash; Colour 0.3.6 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.3.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.6 documentation" href="index.html" />
+    <link rel="up" title="colour Package" href="colour.html" />
+    <link rel="next" title="colour.models.dataset Package" href="colour.models.dataset.html" />
+    <link rel="prev" title="colour.io.xrite Module" href="colour.io.xrite.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+  <li>
+    <a href="colour.io.xrite.html" title="Previous Chapter: colour.io.xrite Module"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; colour.io.xrite ...</span>
+    </a>
+  </li>
+  <li>
+    <a href="colour.models.dataset.html" title="Next Chapter: colour.models.dataset Package"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">colour.models.da... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="colour-models-package">
+<h1>colour.models Package<a class="headerlink" href="#colour-models-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sub-packages">
+<h2>Sub-Packages<a class="headerlink" href="#sub-packages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="colour.models.dataset.html">colour.models.dataset Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="colour.models.dataset.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.dataset.aces.html">colour.models.dataset.aces Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.dataset.aces.html#academy-color-encoding-system">Academy Color Encoding System</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.dataset.aces_it.html">colour.models.dataset.aces_it Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.dataset.aces_it.html#academy-color-encoding-system-input-transform-dataset">Academy Color Encoding System - Input Transform Dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.dataset.adobe_rgb_1998.html">colour.models.dataset.adobe_rgb_1998 Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.dataset.adobe_rgb_1998.html#adobe-rgb-1998-colourspace">Adobe RGB 1998 Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.dataset.adobe_wide_gamut_rgb.html">colour.models.dataset.adobe_wide_gamut_rgb Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.dataset.adobe_wide_gamut_rgb.html#adobe-wide-gamut-rgb-colourspace">Adobe Wide Gamut RGB Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.dataset.alexa_wide_gamut_rgb.html">colour.models.dataset.alexa_wide_gamut_rgb Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.dataset.alexa_wide_gamut_rgb.html#alexa-wide-gamut-rgb-colourspace">ALEXA Wide Gamut RGB Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.dataset.apple_rgb.html">colour.models.dataset.apple_rgb Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.dataset.apple_rgb.html#apple-rgb-colourspace">Apple RGB Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.dataset.best_rgb.html">colour.models.dataset.best_rgb Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.dataset.best_rgb.html#best-rgb-colourspace">Best RGB Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.dataset.beta_rgb.html">colour.models.dataset.beta_rgb Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.dataset.beta_rgb.html#beta-rgb-colourspace">Beta RGB Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.dataset.cie_rgb.html">colour.models.dataset.cie_rgb Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.dataset.cie_rgb.html#cie-rgb-colourspace">CIE RGB Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.dataset.cinema_gamut.html">colour.models.dataset.cinema_gamut Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.dataset.cinema_gamut.html#cinema-gamut-colourspace">Cinema Gamut Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.dataset.color_match_rgb.html">colour.models.dataset.color_match_rgb Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.dataset.color_match_rgb.html#colormatch-rgb-colourspace">ColorMatch RGB Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.dataset.dci_p3.html">colour.models.dataset.dci_p3 Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.dataset.dci_p3.html#dci-p3-dci-p3-colourspaces">DCI-P3 &amp; DCI-P3+ Colourspaces</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.dataset.don_rgb_4.html">colour.models.dataset.don_rgb_4 Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.dataset.don_rgb_4.html#don-rgb-4-colourspace">Don RGB 4 Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.dataset.eci_rgb_v2.html">colour.models.dataset.eci_rgb_v2 Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.dataset.eci_rgb_v2.html#eci-rgb-v2-colourspace">ECI RGB v2 Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.dataset.ekta_space_ps5.html">colour.models.dataset.ekta_space_ps5 Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.dataset.ekta_space_ps5.html#ekta-space-ps-5-colourspace">Ekta Space PS 5 Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.dataset.max_rgb.html">colour.models.dataset.max_rgb Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.dataset.max_rgb.html#max-rgb-colourspace">Max RGB Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.dataset.ntsc_rgb.html">colour.models.dataset.ntsc_rgb Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.dataset.ntsc_rgb.html#ntsc-rgb-colourspace">NTSC RGB Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.dataset.pal_secam_rgb.html">colour.models.dataset.pal_secam_rgb Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.dataset.pal_secam_rgb.html#pal-secam-rgb-colourspace">Pal/Secam RGB Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.dataset.pointer_gamut.html">colour.models.dataset.pointer_gamut Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.dataset.pointer_gamut.html#pointer-s-gamut">Pointer&#8217;s Gamut</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.dataset.prophoto_rgb.html">colour.models.dataset.prophoto_rgb Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.dataset.prophoto_rgb.html#prophoto-rgb-colourspace">ProPhoto RGB Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.dataset.rec_2020.html">colour.models.dataset.rec_2020 Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.dataset.rec_2020.html#rec-2020-colourspace">Rec. 2020 Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.dataset.rec_709.html">colour.models.dataset.rec_709 Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.dataset.rec_709.html#rec-709-colourspace">Rec. 709 Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.dataset.red.html">colour.models.dataset.red Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.dataset.red.html#red-colourspaces">RED Colourspaces</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.dataset.russell_rgb.html">colour.models.dataset.russell_rgb Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.dataset.russell_rgb.html#russell-rgb-colourspace">Russell RGB Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.dataset.smptec_rgb.html">colour.models.dataset.smptec_rgb Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.dataset.smptec_rgb.html#smpte-c-rgb-colourspace">SMPTE-C RGB Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.dataset.sony.html">colour.models.dataset.sony Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.dataset.sony.html#sony-colourspaces">Sony Colourspaces</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.dataset.srgb.html">colour.models.dataset.srgb Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.dataset.srgb.html#srgb-colourspace">sRGB Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.dataset.v_gamut.html">colour.models.dataset.v_gamut Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.dataset.v_gamut.html#v-gamut-colourspace">V-Gamut Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.dataset.xtreme_rgb.html">colour.models.dataset.xtreme_rgb Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.dataset.xtreme_rgb.html#xtreme-rgb-colourspace">Xtreme RGB Colourspace</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="colour.models.dataset.html#module-colour.models.dataset">Module Contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="sub-modules">
+<h2>Sub-Modules<a class="headerlink" href="#sub-modules" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="colour.models.aces_it.html">colour.models.aces_it Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="colour.models.aces_it.html#academy-color-encoding-system-input-transform">Academy Color Encoding System - Input Transform</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="colour.models.cie_lab.html">colour.models.cie_lab Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="colour.models.cie_lab.html#cie-lab-colourspace">CIE Lab Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="colour.models.cie_luv.html">colour.models.cie_luv Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="colour.models.cie_luv.html#cie-luv-colourspace">CIE Luv Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="colour.models.cie_ucs.html">colour.models.cie_ucs Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="colour.models.cie_ucs.html#cie-ucs-colourspace">CIE UCS Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="colour.models.cie_uvw.html">colour.models.cie_uvw Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="colour.models.cie_uvw.html#cie-uvw-colourspace">CIE UVW Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="colour.models.cie_xyy.html">colour.models.cie_xyy Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="colour.models.cie_xyy.html#cie-xyy-colourspace">CIE xyY Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="colour.models.common.html">colour.models.common Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="colour.models.common.html#common-colour-models-utilities">Common Colour Models Utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="colour.models.deprecated.html">colour.models.deprecated Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="colour.models.deprecated.html#deprecated-colour-models-transformations">Deprecated Colour Models Transformations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="colour.models.derivation.html">colour.models.derivation Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="colour.models.derivation.html#rgb-colourspace-derivation">RGB Colourspace Derivation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="colour.models.ipt.html">colour.models.ipt Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="colour.models.ipt.html#ipt-colourspace">IPT Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="colour.models.log.html">colour.models.log Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="colour.models.log.html#log-conversion">Log Conversion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="colour.models.rgb.html">colour.models.rgb Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="colour.models.rgb.html#rgb-colourspace-transformations">RGB Colourspace &amp; Transformations</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="module-colour.models">
+<span id="module-contents"></span><h2>Module Contents<a class="headerlink" href="#module-colour.models" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="colour.models.XYZ_to_xyY">
+<tt class="descclassname">colour.models.</tt><tt class="descname">XYZ_to_xyY</tt><big>(</big><em>XYZ</em>, <em>illuminant=(0.34567</em>, <em>0.3585)</em><big>)</big><a class="headerlink" href="#colour.models.XYZ_to_xyY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from <em>CIE XYZ</em> tristimulus values to <em>CIE xyY</em> colourspace and
+reference <em>illuminant</em>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>XYZ</strong> (<em>array_like</em>) &#8211; <em>CIE XYZ</em> tristimulus values.</li>
+<li><strong>illuminant</strong> (<em>array_like, optional</em>) &#8211; Reference <em>illuminant</em> chromaticity coordinates.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>CIE xyY</em> colourspace array.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <em>CIE XYZ</em> tristimulus values are in domain [0, 1].</li>
+<li>Output <em>CIE xyY</em> colourspace array is in domain [0, 1].</li>
+</ul>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[2]</td><td>Lindbloom, B. (2003). XYZ to xyY. Retrieved February 24, 2014,
+from <a class="reference external" href="http://www.brucelindbloom.com/Eqn_XYZ_to_xyY.html">http://www.brucelindbloom.com/Eqn_XYZ_to_xyY.html</a></td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.07049534</span><span class="p">,</span> <span class="mf">0.10080000</span><span class="p">,</span> <span class="mf">0.09558313</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_to_xyY</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>  
+<span class="go">array([ 0.2641477...,  0.3777000...,  0.1008    ])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.xyY_to_XYZ">
+<tt class="descclassname">colour.models.</tt><tt class="descname">xyY_to_XYZ</tt><big>(</big><em>xyY</em><big>)</big><a class="headerlink" href="#colour.models.xyY_to_XYZ" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from <em>CIE xyY</em> colourspace to <em>CIE XYZ</em> tristimulus values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>xyY</strong> (<em>array_like</em>) &#8211; <em>CIE xyY</em> colourspace array.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>CIE XYZ</em> tristimulus values.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">ndarray</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <em>CIE xyY</em> colourspace array is in domain [0, 1].</li>
+<li>Output <em>CIE XYZ</em> tristimulus values are in domain [0, 1].</li>
+</ul>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[3]</td><td>Lindbloom, B. (2009). xyY to XYZ. Retrieved February 24, 2014,
+from <a class="reference external" href="http://www.brucelindbloom.com/Eqn_xyY_to_XYZ.html">http://www.brucelindbloom.com/Eqn_xyY_to_XYZ.html</a></td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">xyY</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.26414772</span><span class="p">,</span> <span class="mf">0.37770001</span><span class="p">,</span> <span class="mf">0.10080000</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xyY_to_XYZ</span><span class="p">(</span><span class="n">xyY</span><span class="p">)</span>  
+<span class="go">array([ 0.0704953...,  0.1008    ,  0.0955831...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.xy_to_xyY">
+<tt class="descclassname">colour.models.</tt><tt class="descname">xy_to_xyY</tt><big>(</big><em>xy</em>, <em>Y=1</em><big>)</big><a class="headerlink" href="#colour.models.xy_to_xyY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from <em>xy</em> chromaticity coordinates to <em>CIE xyY</em> colourspace by
+extending the array last dimension with <span class="math">\(Y\)</span> Luminance.</p>
+<p><cite>xy</cite> argument with last dimension being equal to 3 will be assumed to be a
+<em>CIE xyY</em> colourspace array argument and will be returned directly by the
+definition.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>xy</strong> (<em>array_like</em>) &#8211; <em>xy</em> chromaticity coordinates or <em>CIE xyY</em> colourspace array.</li>
+<li><strong>Y</strong> (<em>numeric, optional</em>) &#8211; Optional <span class="math">\(Y\)</span> Luminance value used to construct the <em>CIE xyY</em>
+colourspace array, otherwise the <span class="math">\(Y\)</span> Luminance will be set to 1.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>CIE xyY</em> colourspace array.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="#colour.models.xyY_to_xy" title="colour.models.xyY_to_xy"><tt class="xref py py-func docutils literal"><span class="pre">xyY_to_xy()</span></tt></a></p>
+</div>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>This definition is a convenient object provided to implement support of
+illuminant argument <em>luminance</em> value in various <a class="reference internal" href="#module-colour.models" title="colour.models"><tt class="xref py py-mod docutils literal"><span class="pre">colour.models</span></tt></a>
+package objects such as <a class="reference internal" href="#colour.models.Lab_to_XYZ" title="colour.models.Lab_to_XYZ"><tt class="xref py py-func docutils literal"><span class="pre">colour.models.Lab_to_XYZ()</span></tt></a> or
+<a class="reference internal" href="#colour.models.Luv_to_XYZ" title="colour.models.Luv_to_XYZ"><tt class="xref py py-func docutils literal"><span class="pre">colour.models.Luv_to_XYZ()</span></tt></a>.</li>
+<li>Input <em>xy</em> chromaticity coordinates are in domain [0, 1].</li>
+<li>Output <em>CIE xyY</em> colourspace array is in domain [0, 1].</li>
+</ul>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.26414772</span><span class="p">,</span> <span class="mf">0.37770001</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xy_to_xyY</span><span class="p">(</span><span class="n">xy</span><span class="p">)</span>  
+<span class="go">array([ 0.2641477...,  0.3777000...,  1.        ])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.26414772</span><span class="p">,</span> <span class="mf">0.37770001</span><span class="p">,</span> <span class="mf">0.10080000</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xy_to_xyY</span><span class="p">(</span><span class="n">xy</span><span class="p">)</span>  
+<span class="go">array([ 0.2641477...,  0.3777000...,  0.1008...])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.26414772</span><span class="p">,</span> <span class="mf">0.37770001</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xy_to_xyY</span><span class="p">(</span><span class="n">xy</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>  
+<span class="go">array([   0.2641477...,    0.3777000...,  100.        ])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.xyY_to_xy">
+<tt class="descclassname">colour.models.</tt><tt class="descname">xyY_to_xy</tt><big>(</big><em>xyY</em><big>)</big><a class="headerlink" href="#colour.models.xyY_to_xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from <em>CIE xyY</em> colourspace to <em>xy</em> chromaticity coordinates.</p>
+<p><cite>xyY</cite> argument with last dimension being equal to 2 will be assumed to be a
+<em>xy</em> chromaticity coordinates argument and will be returned directly by the
+definition.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>xyY</strong> (<em>array_like</em>) &#8211; <em>CIE xyY</em> colourspace array or <em>xy</em> chromaticity coordinates.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>xy</em> chromaticity coordinates.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">ndarray</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="#colour.models.xy_to_xyY" title="colour.models.xy_to_xyY"><tt class="xref py py-func docutils literal"><span class="pre">xy_to_xyY()</span></tt></a></p>
+</div>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <em>CIE xyY</em> colourspace array is in domain [0, 1].</li>
+<li>Output <em>xy</em> chromaticity coordinates are in domain [0, 1].</li>
+</ul>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">xyY</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.26414772</span><span class="p">,</span> <span class="mf">0.37770001</span><span class="p">,</span> <span class="mf">0.10080000</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xyY_to_xy</span><span class="p">(</span><span class="n">xyY</span><span class="p">)</span>  
+<span class="go">array([ 0.2641477...,  0.3777000...])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.26414772</span><span class="p">,</span> <span class="mf">0.37770001</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xyY_to_xy</span><span class="p">(</span><span class="n">xy</span><span class="p">)</span>  
+<span class="go">array([ 0.2641477...,  0.3777000...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.xy_to_XYZ">
+<tt class="descclassname">colour.models.</tt><tt class="descname">xy_to_XYZ</tt><big>(</big><em>xy</em><big>)</big><a class="headerlink" href="#colour.models.xy_to_XYZ" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <em>CIE XYZ</em> tristimulus values from given <em>xy</em> chromaticity
+coordinates.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>xy</strong> (<em>array_like</em>) &#8211; <em>xy</em> chromaticity coordinates.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>CIE XYZ</em> tristimulus values.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">ndarray</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <em>xy</em> chromaticity coordinates are in domain [0, 1].</li>
+<li>Output <em>CIE XYZ</em> tristimulus values are in domain [0, 1].</li>
+</ul>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.26414772236966133</span><span class="p">,</span> <span class="mf">0.37770000704815188</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xy_to_XYZ</span><span class="p">(</span><span class="n">xy</span><span class="p">)</span>  
+<span class="go">array([ 0.6993585...,  1.        ,  0.9482453...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.XYZ_to_xy">
+<tt class="descclassname">colour.models.</tt><tt class="descname">XYZ_to_xy</tt><big>(</big><em>XYZ</em>, <em>illuminant=(0.34567</em>, <em>0.3585)</em><big>)</big><a class="headerlink" href="#colour.models.XYZ_to_xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <em>xy</em> chromaticity coordinates from given <em>CIE XYZ</em> tristimulus
+values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>XYZ</strong> (<em>array_like</em>) &#8211; <em>CIE XYZ</em> tristimulus values.</li>
+<li><strong>illuminant</strong> (<em>array_like, optional</em>) &#8211; Reference <em>illuminant</em> chromaticity coordinates.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>xy</em> chromaticity coordinates.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <em>CIE XYZ</em> tristimulus values are in domain [0, 1].</li>
+<li>Output <em>xy</em> chromaticity coordinates are in domain [0, 1].</li>
+</ul>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.07049534</span><span class="p">,</span> <span class="mf">0.10080000</span><span class="p">,</span> <span class="mf">0.09558313</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_to_xy</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>  
+<span class="go">array([ 0.2641477...,  0.3777000...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="colour.models.RGB_Colourspace">
+<em class="property">class </em><tt class="descclassname">colour.models.</tt><tt class="descname">RGB_Colourspace</tt><big>(</big><em>name</em>, <em>primaries</em>, <em>whitepoint</em>, <em>illuminant=None</em>, <em>RGB_to_XYZ_matrix=None</em>, <em>XYZ_to_RGB_matrix=None</em>, <em>transfer_function=None</em>, <em>inverse_transfer_function=None</em><big>)</big><a class="headerlink" href="#colour.models.RGB_Colourspace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Implements support for the <em>RGB</em> colourspaces dataset from
+<tt class="xref py py-mod docutils literal"><span class="pre">colour.models.dataset.aces_rgb</span></tt>, etc....</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>unicode</em>) &#8211; <em>RGB</em> colourspace name.</li>
+<li><strong>primaries</strong> (<em>array_like</em>) &#8211; <em>RGB</em> colourspace primaries.</li>
+<li><strong>whitepoint</strong> (<em>array_like</em>) &#8211; <em>RGB</em> colourspace whitepoint.</li>
+<li><strong>illuminant</strong> (<em>unicode, optional</em>) &#8211; <em>RGB</em> colourspace whitepoint name as illuminant.</li>
+<li><strong>RGB_to_XYZ_matrix</strong> (<em>array_like, optional</em>) &#8211; Transformation matrix from colourspace to <em>CIE XYZ</em> tristimulus values.</li>
+<li><strong>XYZ_to_RGB_matrix</strong> (<em>array_like, optional</em>) &#8211; Transformation matrix from <em>CIE XYZ</em> tristimulus values to colourspace.</li>
+<li><strong>transfer_function</strong> (<em>object, optional</em>) &#8211; <em>RGB</em> colourspace opto-electronic conversion function from linear to
+colourspace.</li>
+<li><strong>inverse_transfer_function</strong> (<em>object, optional</em>) &#8211; <em>RGB</em> colourspace inverse opto-electronic conversion function from
+colourspace to linear.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="colour.models.RGB_Colourspace.RGB_to_XYZ_matrix">
+<tt class="descname">RGB_to_XYZ_matrix</tt><a class="headerlink" href="#colour.models.RGB_Colourspace.RGB_to_XYZ_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property for <strong>self.__to_XYZ</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__to_XYZ.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">array_like, (3, 3)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="colour.models.RGB_Colourspace.XYZ_to_RGB_matrix">
+<tt class="descname">XYZ_to_RGB_matrix</tt><a class="headerlink" href="#colour.models.RGB_Colourspace.XYZ_to_RGB_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property for <strong>self.__to_RGB</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__to_RGB.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">array_like, (3, 3)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="colour.models.RGB_Colourspace.illuminant">
+<tt class="descname">illuminant</tt><a class="headerlink" href="#colour.models.RGB_Colourspace.illuminant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property for <strong>self.__illuminant</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__illuminant.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">unicode</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="colour.models.RGB_Colourspace.inverse_transfer_function">
+<tt class="descname">inverse_transfer_function</tt><a class="headerlink" href="#colour.models.RGB_Colourspace.inverse_transfer_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property for <strong>self.__inverse_transfer_function</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__inverse_transfer_function.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="colour.models.RGB_Colourspace.name">
+<tt class="descname">name</tt><a class="headerlink" href="#colour.models.RGB_Colourspace.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property for <strong>self.__name</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__name.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">unicode</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="colour.models.RGB_Colourspace.primaries">
+<tt class="descname">primaries</tt><a class="headerlink" href="#colour.models.RGB_Colourspace.primaries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property for <strong>self.__primaries</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__primaries.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">array_like, (3, 2)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="colour.models.RGB_Colourspace.transfer_function">
+<tt class="descname">transfer_function</tt><a class="headerlink" href="#colour.models.RGB_Colourspace.transfer_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property for <strong>self.__transfer_function</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__transfer_function.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="colour.models.RGB_Colourspace.whitepoint">
+<tt class="descname">whitepoint</tt><a class="headerlink" href="#colour.models.RGB_Colourspace.whitepoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property for <strong>self.__whitepoint</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__whitepoint.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">array_like</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.normalised_primary_matrix">
+<tt class="descclassname">colour.models.</tt><tt class="descname">normalised_primary_matrix</tt><big>(</big><em>primaries</em>, <em>whitepoint</em><big>)</big><a class="headerlink" href="#colour.models.normalised_primary_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <em>normalised primary matrix</em> using given <em>primaries</em> and
+<em>whitepoint</em>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>primaries</strong> (<em>array_like, (3, 2)</em>) &#8211; Primaries chromaticity coordinates.</li>
+<li><strong>whitepoint</strong> (<em>array_like</em>) &#8211; Illuminant / whitepoint chromaticity coordinates.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>Normalised primary matrix</em>.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray, (3, 3)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">pms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.73470</span><span class="p">,</span> <span class="mf">0.26530</span><span class="p">,</span> <span class="mf">0.00000</span><span class="p">,</span> <span class="mf">1.00000</span><span class="p">,</span> <span class="mf">0.00010</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.07700</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">whitepoint</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.32168</span><span class="p">,</span> <span class="mf">0.33767</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">normalised_primary_matrix</span><span class="p">(</span><span class="n">pms</span><span class="p">,</span> <span class="n">whitepoint</span><span class="p">)</span>  
+<span class="go">array([[  9.5255239...e-01,   0.0000000...e+00,   9.3678631...e-05],</span>
+<span class="go">       [  3.4396645...e-01,   7.2816609...e-01,  -7.2132546...e-02],</span>
+<span class="go">       [  0.0000000...e+00,   0.0000000...e+00,   1.0088251...e+00]])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.primaries_whitepoint">
+<tt class="descclassname">colour.models.</tt><tt class="descname">primaries_whitepoint</tt><big>(</big><em>npm</em><big>)</big><a class="headerlink" href="#colour.models.primaries_whitepoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns <em>primaries</em> and <em>whitepoint</em> using given <em>normalised primary
+matrix</em>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>npm</strong> (<em>array_like, (3, 3)</em>) &#8211; <em>Normalised primary matrix</em>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>Primaries</em> and <em>whitepoint</em>.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">tuple</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[2]</td><td>Trieu, T. (2015). Private Discussion with Mansencal, T.</td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">npm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">9.52552396e-01</span><span class="p">,</span> <span class="mf">0.00000000e+00</span><span class="p">,</span> <span class="mf">9.36786317e-05</span><span class="p">],</span>
+<span class="gp">... </span>                <span class="p">[</span><span class="mf">3.43966450e-01</span><span class="p">,</span> <span class="mf">7.28166097e-01</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.21325464e-02</span><span class="p">],</span>
+<span class="gp">... </span>                <span class="p">[</span><span class="mf">0.00000000e+00</span><span class="p">,</span> <span class="mf">0.00000000e+00</span><span class="p">,</span> <span class="mf">1.00882518e+00</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">primaries_whitepoint</span><span class="p">(</span><span class="n">npm</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span>  
+<span class="go">array([[  7.3470000...e-01,   2.6530000...e-01],</span>
+<span class="go">       [  0.0000000...e+00,   1.0000000...e+00],</span>
+<span class="go">       [  1.0000000...e-04,  -7.7000000...e-02]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> 
+<span class="go">array([ 0.32168,  0.33767])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.RGB_luminance_equation">
+<tt class="descclassname">colour.models.</tt><tt class="descname">RGB_luminance_equation</tt><big>(</big><em>primaries</em>, <em>whitepoint</em><big>)</big><a class="headerlink" href="#colour.models.RGB_luminance_equation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <em>luminance equation</em> from given <em>primaries</em> and <em>whitepoint</em>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>primaries</strong> (<em>array_like, (3, 2)</em>) &#8211; Primaries chromaticity coordinates.</li>
+<li><strong>whitepoint</strong> (<em>array_like</em>) &#8211; Illuminant / whitepoint chromaticity coordinates.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>Luminance</em> equation.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">unicode</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">pms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.73470</span><span class="p">,</span> <span class="mf">0.26530</span><span class="p">,</span> <span class="mf">0.00000</span><span class="p">,</span> <span class="mf">1.00000</span><span class="p">,</span> <span class="mf">0.00010</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.07700</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">whitepoint</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.32168</span><span class="p">,</span> <span class="mf">0.33767</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># Doctests skip for Python 2.x compatibility.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">RGB_luminance_equation</span><span class="p">(</span><span class="n">pms</span><span class="p">,</span> <span class="n">whitepoint</span><span class="p">)</span>  
+<span class="go">&#39;Y = 0.3439664...(R) + 0.7281660...(G) + -0.0721325...(B)&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.RGB_luminance">
+<tt class="descclassname">colour.models.</tt><tt class="descname">RGB_luminance</tt><big>(</big><em>RGB</em>, <em>primaries</em>, <em>whitepoint</em><big>)</big><a class="headerlink" href="#colour.models.RGB_luminance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <em>luminance</em> <span class="math">\(Y\)</span> of given <em>RGB</em> components from given
+<em>primaries</em> and <em>whitepoint</em>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>RGB</strong> (<em>array_like</em>) &#8211; <em>RGB</em> chromaticity coordinate matrix.</li>
+<li><strong>primaries</strong> (<em>array_like, (3, 2)</em>) &#8211; Primaries chromaticity coordinate matrix.</li>
+<li><strong>whitepoint</strong> (<em>array_like</em>) &#8211; Illuminant / whitepoint chromaticity coordinates.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>Luminance</em> <span class="math">\(Y\)</span>.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">RGB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">40.6</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">,</span> <span class="mf">67.4</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.73470</span><span class="p">,</span> <span class="mf">0.26530</span><span class="p">,</span> <span class="mf">0.00000</span><span class="p">,</span> <span class="mf">1.00000</span><span class="p">,</span> <span class="mf">0.00010</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.07700</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">whitepoint</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.32168</span><span class="p">,</span> <span class="mf">0.33767</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">RGB_luminance</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span> <span class="n">pms</span><span class="p">,</span> <span class="n">whitepoint</span><span class="p">)</span>  
+<span class="go">12.1616018...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.XYZ_to_Lab">
+<tt class="descclassname">colour.models.</tt><tt class="descname">XYZ_to_Lab</tt><big>(</big><em>XYZ</em>, <em>illuminant=(0.34567</em>, <em>0.3585)</em><big>)</big><a class="headerlink" href="#colour.models.XYZ_to_Lab" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from <em>CIE XYZ</em> tristimulus values to <em>CIE Lab</em> colourspace.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>XYZ</strong> (<em>array_like</em>) &#8211; <em>CIE XYZ</em> tristimulus values.</li>
+<li><strong>illuminant</strong> (<em>array_like, optional</em>) &#8211; Reference <em>illuminant</em> <em>xy</em> chromaticity coordinates or <em>CIE xyY</em>
+colourspace array.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>CIE Lab</em> colourspace array.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <em>CIE XYZ</em> tristimulus values are in domain [0, 1].</li>
+<li>Input <em>illuminant</em> <em>xy</em> chromaticity coordinates or <em>CIE xyY</em>
+colourspace array are in domain [0, <span class="math">\(\infty\)</span>].</li>
+<li>Output <em>Lightness</em> <span class="math">\(L^*\)</span> is in domain [0, 100].</li>
+</ul>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[2]</td><td>Lindbloom, B. (2003). XYZ to Lab. Retrieved February 24, 2014,
+from <a class="reference external" href="http://www.brucelindbloom.com/Eqn_XYZ_to_Lab.html">http://www.brucelindbloom.com/Eqn_XYZ_to_Lab.html</a></td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.07049534</span><span class="p">,</span> <span class="mf">0.10080000</span><span class="p">,</span> <span class="mf">0.09558313</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_to_Lab</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>  
+<span class="go">array([ 37.9856291..., -23.6230288...,  -4.4141703...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.Lab_to_XYZ">
+<tt class="descclassname">colour.models.</tt><tt class="descname">Lab_to_XYZ</tt><big>(</big><em>Lab</em>, <em>illuminant=(0.34567</em>, <em>0.3585)</em><big>)</big><a class="headerlink" href="#colour.models.Lab_to_XYZ" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from <em>CIE Lab</em> colourspace to <em>CIE XYZ</em> tristimulus values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>Lab</strong> (<em>array_like</em>) &#8211; <em>CIE Lab</em> colourspace array.</li>
+<li><strong>illuminant</strong> (<em>array_like, optional</em>) &#8211; Reference <em>illuminant</em> <em>xy</em> chromaticity coordinates or <em>CIE xyY</em>
+colourspace array.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>CIE XYZ</em> tristimulus values.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <em>Lightness</em> <span class="math">\(L^*\)</span> is in domain [0, 100].</li>
+<li>Input <em>illuminant</em> <em>xy</em> chromaticity coordinates or <em>CIE xyY</em>
+colourspace array are in domain [0, <span class="math">\(\infty\)</span>].</li>
+<li>Output <em>CIE XYZ</em> tristimulus values are in domain [0, 1].</li>
+</ul>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id5" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[3]</td><td>Lindbloom, B. (2008). Lab to XYZ. Retrieved February 24, 2014,
+from <a class="reference external" href="http://www.brucelindbloom.com/Eqn_Lab_to_XYZ.html">http://www.brucelindbloom.com/Eqn_Lab_to_XYZ.html</a></td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Lab</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">37.98562910</span><span class="p">,</span> <span class="o">-</span><span class="mf">23.62302887</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.41417036</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Lab_to_XYZ</span><span class="p">(</span><span class="n">Lab</span><span class="p">)</span>  
+<span class="go">array([ 0.0704953...,  0.1008    ,  0.0955831...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.Lab_to_LCHab">
+<tt class="descclassname">colour.models.</tt><tt class="descname">Lab_to_LCHab</tt><big>(</big><em>Lab</em><big>)</big><a class="headerlink" href="#colour.models.Lab_to_LCHab" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from <em>CIE Lab</em> colourspace to <em>CIE LCHab</em> colourspace.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>Lab</strong> (<em>array_like</em>) &#8211; <em>CIE Lab</em> colourspace array.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>CIE LCHab</em> colourspace array.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">ndarray</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><em>Lightness</em> <span class="math">\(L^*\)</span> is in domain [0, 100].</li>
+</ul>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id6" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[4]</td><td>Lindbloom, B. (2007). Lab to LCH(ab). Retrieved February 24, 2014,
+from <a class="reference external" href="http://www.brucelindbloom.com/Eqn_Lab_to_LCH.html">http://www.brucelindbloom.com/Eqn_Lab_to_LCH.html</a></td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Lab</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">37.98562910</span><span class="p">,</span> <span class="o">-</span><span class="mf">23.62302887</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.41417036</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Lab_to_LCHab</span><span class="p">(</span><span class="n">Lab</span><span class="p">)</span>  
+<span class="go">array([  37.9856291...,   24.0319036...,  190.5841597...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.LCHab_to_Lab">
+<tt class="descclassname">colour.models.</tt><tt class="descname">LCHab_to_Lab</tt><big>(</big><em>LCHab</em><big>)</big><a class="headerlink" href="#colour.models.LCHab_to_Lab" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from <em>CIE LCHab</em> colourspace to <em>CIE Lab</em> colourspace.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>LCHab</strong> (<em>array_like</em>) &#8211; <em>CIE LCHab</em> colourspace array.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>CIE Lab</em> colourspace array.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">ndarray</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><em>Lightness</em> <span class="math">\(L^*\)</span> is in domain [0, 100].</li>
+</ul>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id7" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[5]</td><td>Lindbloom, B. (2006). LCH(ab) to Lab. Retrieved February 24, 2014,
+from <a class="reference external" href="http://www.brucelindbloom.com/Eqn_LCH_to_Lab.html">http://www.brucelindbloom.com/Eqn_LCH_to_Lab.html</a></td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">LCHab</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">37.98562910</span><span class="p">,</span> <span class="mf">24.03190365</span><span class="p">,</span> <span class="mf">190.58415972</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">LCHab_to_Lab</span><span class="p">(</span><span class="n">LCHab</span><span class="p">)</span>  
+<span class="go">array([ 37.9856291..., -23.6230288...,  -4.4141703...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.XYZ_to_Luv">
+<tt class="descclassname">colour.models.</tt><tt class="descname">XYZ_to_Luv</tt><big>(</big><em>XYZ</em>, <em>illuminant=(0.34567</em>, <em>0.3585)</em><big>)</big><a class="headerlink" href="#colour.models.XYZ_to_Luv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from <em>CIE XYZ</em> tristimulus values to <em>CIE Luv</em> colourspace.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>XYZ</strong> (<em>array_like</em>) &#8211; <em>CIE XYZ</em> tristimulus values.</li>
+<li><strong>illuminant</strong> (<em>array_like, optional</em>) &#8211; Reference <em>illuminant</em> <em>xy</em> chromaticity coordinates or <em>CIE xyY</em>
+colourspace array.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>CIE Luv</em> colourspace array.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <em>CIE XYZ</em> tristimulus values are in domain [0, 1].</li>
+<li>Input <em>illuminant</em> <em>xy</em> chromaticity coordinates or <em>CIE xyY</em>
+colourspace array are in domain [0, <span class="math">\(\infty\)</span>].</li>
+<li>Output <span class="math">\(L^*\)</span> is in domain [0, 100].</li>
+</ul>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id8" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[2]</td><td>Lindbloom, B. (2003). XYZ to Luv. Retrieved February 24, 2014,
+from <a class="reference external" href="http://brucelindbloom.com/Eqn_XYZ_to_Luv.html">http://brucelindbloom.com/Eqn_XYZ_to_Luv.html</a></td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.07049534</span><span class="p">,</span> <span class="mf">0.10080000</span><span class="p">,</span> <span class="mf">0.09558313</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_to_Luv</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>  
+<span class="go">array([ 37.9856291..., -28.7922944...,  -1.3558195...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.Luv_to_XYZ">
+<tt class="descclassname">colour.models.</tt><tt class="descname">Luv_to_XYZ</tt><big>(</big><em>Luv</em>, <em>illuminant=(0.34567</em>, <em>0.3585)</em><big>)</big><a class="headerlink" href="#colour.models.Luv_to_XYZ" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from <em>CIE Luv</em> colourspace to <em>CIE XYZ</em> tristimulus values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>Luv</strong> (<em>array_like</em>) &#8211; <em>CIE Luv</em> colourspace array.</li>
+<li><strong>illuminant</strong> (<em>array_like, optional</em>) &#8211; Reference <em>illuminant</em> <em>xy</em> chromaticity coordinates or <em>CIE xyY</em>
+colourspace array.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>CIE XYZ</em> tristimulus values.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <span class="math">\(L^*\)</span> is in domain [0, 100].</li>
+<li>Input <em>illuminant</em> <em>xy</em> chromaticity coordinates or <em>CIE xyY</em>
+colourspace array are in domain [0, <span class="math">\(\infty\)</span>].</li>
+<li>Output <em>CIE XYZ</em> tristimulus values are in domain [0, 1].</li>
+</ul>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id9" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[3]</td><td>Lindbloom, B. (2003). Luv to XYZ. Retrieved February 24, 2014,
+from <a class="reference external" href="http://brucelindbloom.com/Eqn_Luv_to_XYZ.html">http://brucelindbloom.com/Eqn_Luv_to_XYZ.html</a></td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Luv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">37.98562910</span><span class="p">,</span> <span class="o">-</span><span class="mf">28.79229446</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.35581950</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Luv_to_XYZ</span><span class="p">(</span><span class="n">Luv</span><span class="p">)</span>  
+<span class="go">array([ 0.0704953...,  0.1008    ,  0.0955831...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.Luv_to_uv">
+<tt class="descclassname">colour.models.</tt><tt class="descname">Luv_to_uv</tt><big>(</big><em>Luv</em>, <em>illuminant=(0.34567</em>, <em>0.3585)</em><big>)</big><a class="headerlink" href="#colour.models.Luv_to_uv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <span class="math">\(uv^p\)</span> chromaticity coordinates from given <em>CIE Luv</em>
+colourspace array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>Luv</strong> (<em>array_like</em>) &#8211; <em>CIE Luv</em> colourspace array.</li>
+<li><strong>illuminant</strong> (<em>array_like, optional</em>) &#8211; Reference <em>illuminant</em> <em>xy</em> chromaticity coordinates or <em>CIE xyY</em>
+colourspace array.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><span class="math">\(uv^p\)</span> chromaticity coordinates.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <span class="math">\(L^*\)</span> is in domain [0, 100].</li>
+<li>Input <em>illuminant</em> <em>xy</em> chromaticity coordinates or <em>CIE xyY</em>
+colourspace array are in domain [0, <span class="math">\(\infty\)</span>].</li>
+<li>Output <span class="math">\(uv^p\)</span> chromaticity coordinates are in domain [0, 1].</li>
+</ul>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id10" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[4]</td><td>Wikipedia. (n.d.). The forward transformation. Retrieved February
+24, 2014, from
+<a class="reference external" href="http://en.wikipedia.org/wiki/CIELUV#The_forward_transformation">http://en.wikipedia.org/wiki/CIELUV#The_forward_transformation</a></td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Luv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">37.98562910</span><span class="p">,</span> <span class="o">-</span><span class="mf">28.79229446</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.35581950</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Luv_to_uv</span><span class="p">(</span><span class="n">Luv</span><span class="p">)</span>  
+<span class="go">array([ 0.1508531...,  0.4853297...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.Luv_uv_to_xy">
+<tt class="descclassname">colour.models.</tt><tt class="descname">Luv_uv_to_xy</tt><big>(</big><em>uv</em><big>)</big><a class="headerlink" href="#colour.models.Luv_uv_to_xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <em>xy</em> chromaticity coordinates from given <em>CIE Luv</em> colourspace
+<span class="math">\(uv^p\)</span> chromaticity coordinates.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>uv</strong> (<em>array_like</em>) &#8211; <em>CIE Luv u&#8221;v&#8221;</em> chromaticity coordinates.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>xy</em> chromaticity coordinates.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">ndarray</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <span class="math">\(uv^p\)</span> chromaticity coordinates are in domain [0, 1].</li>
+<li>Output <em>xy</em> is in domain [0, 1].</li>
+</ul>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id11" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[5]</td><td>Wikipedia. (n.d.). The reverse transformation. Retrieved from
+<a class="reference external" href="http://en.wikipedia.org/wiki/CIELUV#The_reverse_transformation">http://en.wikipedia.org/wiki/CIELUV#The_reverse_transformation</a></td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">uv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.15085309882985695</span><span class="p">,</span> <span class="mf">0.48532970854318019</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Luv_uv_to_xy</span><span class="p">(</span><span class="n">uv</span><span class="p">)</span>  
+<span class="go">array([ 0.2641477...,  0.3777000...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.Luv_to_LCHuv">
+<tt class="descclassname">colour.models.</tt><tt class="descname">Luv_to_LCHuv</tt><big>(</big><em>Luv</em><big>)</big><a class="headerlink" href="#colour.models.Luv_to_LCHuv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from <em>CIE Luv</em> colourspace to <em>CIE LCHuv</em> colourspace.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>Luv</strong> (<em>array_like</em>) &#8211; <em>CIE Luv</em> colourspace array.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>CIE LCHuv</em> colourspace array.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">ndarray</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><span class="math">\(L^*\)</span> is in domain [0, 100].</li>
+</ul>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id12" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[6]</td><td>Lindbloom, B. (2003). Luv to LCH(uv). Retrieved February 24, 2014,
+from <a class="reference external" href="http://www.brucelindbloom.com/Eqn_Luv_to_LCH.html">http://www.brucelindbloom.com/Eqn_Luv_to_LCH.html</a></td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Luv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">37.98562910</span><span class="p">,</span> <span class="o">-</span><span class="mf">28.79229446</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.35581950</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Luv_to_LCHuv</span><span class="p">(</span><span class="n">Luv</span><span class="p">)</span>  
+<span class="go">array([  37.9856291...,   28.8241993...,  182.6960474...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.LCHuv_to_Luv">
+<tt class="descclassname">colour.models.</tt><tt class="descname">LCHuv_to_Luv</tt><big>(</big><em>LCHuv</em><big>)</big><a class="headerlink" href="#colour.models.LCHuv_to_Luv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from <em>CIE LCHuv</em> colourspace to <em>CIE Luv</em> colourspace.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>LCHuv</strong> (<em>array_like</em>) &#8211; <em>CIE LCHuv</em> colourspace array.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>CIE Luv</em> colourspace array.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">ndarray</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><span class="math">\(L^*\)</span> is in domain [0, 100].</li>
+</ul>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id13" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[7]</td><td>Lindbloom, B. (2006). LCH(uv) to Luv. Retrieved February 24, 2014,
+from <a class="reference external" href="http://www.brucelindbloom.com/Eqn_LCH_to_Luv.html">http://www.brucelindbloom.com/Eqn_LCH_to_Luv.html</a></td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">LCHuv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">37.98562910</span><span class="p">,</span> <span class="mf">28.82419933</span><span class="p">,</span> <span class="mf">182.69604747</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">LCHuv_to_Luv</span><span class="p">(</span><span class="n">LCHuv</span><span class="p">)</span>  
+<span class="go">array([ 37.9856291..., -28.7922944...,  -1.3558195...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.XYZ_to_UCS">
+<tt class="descclassname">colour.models.</tt><tt class="descname">XYZ_to_UCS</tt><big>(</big><em>XYZ</em><big>)</big><a class="headerlink" href="#colour.models.XYZ_to_UCS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from <em>CIE XYZ</em> tristimulus values to <em>CIE UCS</em> colourspace.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>XYZ</strong> (<em>array_like</em>) &#8211; <em>CIE XYZ</em> tristimulus values.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>CIE UCS</em> colourspace array.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">ndarray</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <em>CIE XYZ</em> tristimulus values are in domain [0, 1].</li>
+<li>Output <em>CIE UCS</em> colourspace array is in domain [0, 1].</li>
+</ul>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.07049534</span><span class="p">,</span> <span class="mf">0.10080000</span><span class="p">,</span> <span class="mf">0.09558313</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_to_UCS</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>  
+<span class="go">array([ 0.0469968...,  0.1008    ,  0.1637439...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.UCS_to_XYZ">
+<tt class="descclassname">colour.models.</tt><tt class="descname">UCS_to_XYZ</tt><big>(</big><em>UVW</em><big>)</big><a class="headerlink" href="#colour.models.UCS_to_XYZ" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from <em>CIE UCS</em> colourspace to <em>CIE XYZ</em> tristimulus values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>UVW</strong> (<em>array_like</em>) &#8211; <em>CIE UCS</em> colourspace array.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>CIE XYZ</em> tristimulus values.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">ndarray</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <em>CIE UCS</em> colourspace array is in domain [0, 1].</li>
+<li>Output <em>CIE XYZ</em> tristimulus values are in domain [0, 1].</li>
+</ul>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">UVW</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.04699689</span><span class="p">,</span> <span class="mf">0.10080000</span><span class="p">,</span> <span class="mf">0.16374390</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">UCS_to_XYZ</span><span class="p">(</span><span class="n">UVW</span><span class="p">)</span>  
+<span class="go">array([ 0.0704953...,  0.1008    ,  0.0955831...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.UCS_to_uv">
+<tt class="descclassname">colour.models.</tt><tt class="descname">UCS_to_uv</tt><big>(</big><em>UVW</em><big>)</big><a class="headerlink" href="#colour.models.UCS_to_uv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <em>uv</em> chromaticity coordinates from given <em>CIE UCS</em> colourspace
+array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>UVW</strong> (<em>array_like</em>) &#8211; <em>CIE UCS</em> colourspace array.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>uv</em> chromaticity coordinates.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">ndarray</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <em>CIE UCS</em> colourspace array is in domain [0, 1].</li>
+<li>Output <em>uv</em> chromaticity coordinates are in domain [0, 1].</li>
+</ul>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">UCS</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.04699689</span><span class="p">,</span> <span class="mf">0.10080000</span><span class="p">,</span> <span class="mf">0.16374390</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">UCS_to_uv</span><span class="p">(</span><span class="n">UCS</span><span class="p">)</span>  
+<span class="go">array([ 0.1508530...,  0.3235531...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.UCS_uv_to_xy">
+<tt class="descclassname">colour.models.</tt><tt class="descname">UCS_uv_to_xy</tt><big>(</big><em>uv</em><big>)</big><a class="headerlink" href="#colour.models.UCS_uv_to_xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <em>xy</em> chromaticity coordinates from given <em>CIE UCS</em> colourspace
+<em>uv</em> chromaticity coordinates.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>uv</strong> (<em>array_like</em>) &#8211; <em>CIE UCS uv</em> chromaticity coordinates.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>xy</em> chromaticity coordinates.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">ndarray</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <em>uv</em> chromaticity coordinates are in domain [0, 1].</li>
+<li>Output <em>xy</em> chromaticity coordinates are in domain [0, 1].</li>
+</ul>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">uv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.15085308732766581</span><span class="p">,</span> <span class="mf">0.3235531372954405</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">UCS_uv_to_xy</span><span class="p">(</span><span class="n">uv</span><span class="p">)</span>  
+<span class="go">array([ 0.2641477...,  0.3777000...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.XYZ_to_UVW">
+<tt class="descclassname">colour.models.</tt><tt class="descname">XYZ_to_UVW</tt><big>(</big><em>XYZ</em>, <em>illuminant=(0.34567</em>, <em>0.3585)</em><big>)</big><a class="headerlink" href="#colour.models.XYZ_to_UVW" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from <em>CIE XYZ</em> tristimulus values to <em>CIE 1964 U*V*W*</em>
+colourspace.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>XYZ</strong> (<em>array_like</em>) &#8211; <em>CIE XYZ</em> tristimulus values.</li>
+<li><strong>illuminant</strong> (<em>array_like, optional</em>) &#8211; Reference <em>illuminant</em> <em>xy</em> chromaticity coordinates or <em>CIE xyY</em>
+colourspace array.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>CIE 1964 U*V*W*</em> colourspace array.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <em>CIE XYZ</em> tristimulus values are in domain [0, 100].</li>
+<li>Input <em>illuminant</em> <em>xy</em> chromaticity coordinates or <em>CIE xyY</em>
+colourspace array are in domain [0, <span class="math">\(\infty\)</span>].</li>
+<li>Output <em>CIE UVW</em> colourspace array is in domain [0, 100].</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The input / output domains of that definition are non standard!</p>
+</div>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.07049534</span><span class="p">,</span> <span class="mf">0.10080000</span><span class="p">,</span> <span class="mf">0.09558313</span><span class="p">])</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_to_UVW</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>  
+<span class="go">array([-28.0483277...,  -0.8805242...,  37.0041149...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.XYZ_to_IPT">
+<tt class="descclassname">colour.models.</tt><tt class="descname">XYZ_to_IPT</tt><big>(</big><em>XYZ</em><big>)</big><a class="headerlink" href="#colour.models.XYZ_to_IPT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from <em>CIE XYZ</em> tristimulus values to <em>IPT</em> colourspace.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>XYZ</strong> (<em>array_like</em>) &#8211; <em>CIE XYZ</em> tristimulus values.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>IPT</em> colourspace array.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">ndarray</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <em>CIE XYZ</em> tristimulus values needs to be adapted for
+<em>CIE Standard Illuminant D Series</em> <em>D65</em>.</li>
+</ul>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.96907232</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.12179215</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_to_IPT</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>  
+<span class="go">array([ 1.0030082...,  0.0190691..., -0.0136929...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.IPT_to_XYZ">
+<tt class="descclassname">colour.models.</tt><tt class="descname">IPT_to_XYZ</tt><big>(</big><em>IPT</em><big>)</big><a class="headerlink" href="#colour.models.IPT_to_XYZ" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from <em>IPT</em> colourspace to <em>CIE XYZ</em> tristimulus values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>IPT</strong> (<em>array_like</em>) &#8211; <em>IPT</em> colourspace array.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>CIE XYZ</em> tristimulus values.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">ndarray</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">IPT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.00300825</span><span class="p">,</span> <span class="mf">0.01906918</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.01369292</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">IPT_to_XYZ</span><span class="p">(</span><span class="n">IPT</span><span class="p">)</span>  
+<span class="go">array([ 0.9690723...,  1.        ,  1.1217921...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.IPT_hue_angle">
+<tt class="descclassname">colour.models.</tt><tt class="descname">IPT_hue_angle</tt><big>(</big><em>IPT</em><big>)</big><a class="headerlink" href="#colour.models.IPT_hue_angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the hue angle from <em>IPT</em> colourspace.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>IPT</strong> (<em>array_like</em>) &#8211; <em>IPT</em> colourspace array.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Hue angle.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">numeric or ndarray</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">IPT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.96907232</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.12179215</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">IPT_hue_angle</span><span class="p">(</span><span class="n">IPT</span><span class="p">)</span>  
+<span class="go">0.8427358...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.linear_to_log">
+<tt class="descclassname">colour.models.</tt><tt class="descname">linear_to_log</tt><big>(</big><em>value</em>, <em>method=u'Cineon'</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.models.linear_to_log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from <em>linear</em> to <em>log</em> using given method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>numeric or array_like</em>) &#8211; Value.</li>
+<li><strong>method</strong> (<em>unicode, optional</em>) &#8211; <strong>{&#8216;Cineon&#8217;, &#8216;Panalog&#8217;, &#8216;ViperLog&#8217;, &#8216;PLog&#8217;, &#8216;C-Log&#8217;, &#8216;ACEScc&#8217;,
+&#8216;ALEXA Log C&#8217;, &#8216;REDLogFilm&#8217;, &#8216;DCI-P3&#8217;, &#8216;S-Log&#8217;, &#8216;S-Log2&#8217;, &#8216;S-Log3&#8217;,
+&#8216;V-Log&#8217;}</strong>,
+Computation method.</li>
+<li><strong>**kwargs</strong> (<em>**</em>) &#8211; Keywords arguments.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>Log</em> value.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">linear_to_log</span><span class="p">(</span><span class="mf">0.18</span><span class="p">)</span>  
+<span class="go">0.4573196...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">linear_to_log</span><span class="p">(</span><span class="mf">0.18</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&#39;ACEScc&#39;</span><span class="p">)</span>  
+<span class="go">array(0.4135884...)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">linear_to_log</span><span class="p">(</span>  
+<span class="gp">... </span>    <span class="mf">0.18</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&#39;PLog&#39;</span><span class="p">,</span> <span class="n">log_reference</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+<span class="go">0.3910068...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">linear_to_log</span><span class="p">(</span><span class="mf">0.18</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&#39;S-Log&#39;</span><span class="p">)</span>  
+<span class="go">0.3599878...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.log_to_linear">
+<tt class="descclassname">colour.models.</tt><tt class="descname">log_to_linear</tt><big>(</big><em>value</em>, <em>method=u'Cineon'</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.models.log_to_linear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from <em>log</em> to <em>linear</em> using given method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>numeric or array_like</em>) &#8211; Value.</li>
+<li><strong>method</strong> (<em>unicode, optional</em>) &#8211; <strong>{&#8216;Cineon&#8217;, &#8216;Panalog&#8217;, &#8216;ViperLog&#8217;, &#8216;PLog&#8217;, &#8216;C-Log&#8217;, &#8216;ACEScc&#8217;,
+&#8216;ALEXA Log C&#8217;, &#8216;DCI-P3&#8217;, &#8216;REDLogFilm&#8217;, &#8216;S-Log&#8217;, &#8216;S-Log2&#8217;, &#8216;S-Log3&#8217;,
+&#8216;V-Log&#8217;}</strong>,
+Computation method.</li>
+<li><strong>**kwargs</strong> (<em>**</em>) &#8211; Keywords arguments.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>Log</em> value.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">log_to_linear</span><span class="p">(</span><span class="mf">0.45731961308541841</span><span class="p">)</span>  
+<span class="go">0.18...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">log_to_linear</span><span class="p">(</span><span class="mf">0.41358840249244228</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&#39;ACEScc&#39;</span><span class="p">)</span>   
+<span class="go">array(0.18...)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">log_to_linear</span><span class="p">(</span>  
+<span class="gp">... </span>    <span class="mf">0.39100684261974583</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&#39;PLog&#39;</span><span class="p">,</span> <span class="n">log_reference</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+<span class="go">0.1...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">log_to_linear</span><span class="p">(</span>  
+<span class="gp">... </span>    <span class="mf">0.35998784642215442</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&#39;S-Log&#39;</span><span class="p">)</span>
+<span class="go">0.1799999...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.linear_to_cineon">
+<tt class="descclassname">colour.models.</tt><tt class="descname">linear_to_cineon</tt><big>(</big><em>value</em>, <em>black_offset=0.0107977516232771</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.models.linear_to_cineon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the <em>linear</em> to <em>Cineon</em> conversion function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>numeric or array_like</em>) &#8211; <em>Linear</em> value.</li>
+<li><strong>black_offset</strong> (<em>numeric or array_like</em>) &#8211; Black offset.</li>
+<li><strong>**kwargs</strong> (<em>**, optional</em>) &#8211; Unused parameter provided for signature compatibility with other
+<em>linear</em> / <em>log</em> conversion objects.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>Cineon</em> value.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">linear_to_cineon</span><span class="p">(</span><span class="mf">0.18</span><span class="p">)</span>  
+<span class="go">0.4573196...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.cineon_to_linear">
+<tt class="descclassname">colour.models.</tt><tt class="descname">cineon_to_linear</tt><big>(</big><em>value</em>, <em>black_offset=0.0107977516232771</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.models.cineon_to_linear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the <em>Cineon</em> to <em>linear</em> conversion function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>numeric or array_like</em>) &#8211; <em>Cineon</em> value.</li>
+<li><strong>black_offset</strong> (<em>numeric or array_like</em>) &#8211; Black offset.</li>
+<li><strong>**kwargs</strong> (<em>**, optional</em>) &#8211; Unused parameter provided for signature compatibility with other
+<em>linear</em> / <em>log</em> conversion objects.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>Linear</em> value.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cineon_to_linear</span><span class="p">(</span><span class="mf">0.45731961308541841</span><span class="p">)</span>  
+<span class="go">0.18...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.linear_to_panalog">
+<tt class="descclassname">colour.models.</tt><tt class="descname">linear_to_panalog</tt><big>(</big><em>value</em>, <em>black_offset=0.04077184461038074</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.models.linear_to_panalog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the <em>linear</em> to <em>Panalog</em> conversion function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>numeric or array_like</em>) &#8211; <em>Linear</em> value.</li>
+<li><strong>black_offset</strong> (<em>numeric or array_like</em>) &#8211; Black offset.</li>
+<li><strong>**kwargs</strong> (<em>**, optional</em>) &#8211; Unused parameter provided for signature compatibility with other
+<em>linear</em> / <em>log</em> conversion objects.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>Panalog</em> value.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">linear_to_panalog</span><span class="p">(</span><span class="mf">0.18</span><span class="p">)</span>  
+<span class="go">0.3745767...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.panalog_to_linear">
+<tt class="descclassname">colour.models.</tt><tt class="descname">panalog_to_linear</tt><big>(</big><em>value</em>, <em>black_offset=0.04077184461038074</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.models.panalog_to_linear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the <em>Panalog</em> to <em>linear</em> conversion function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>numeric or array_like</em>) &#8211; <em>Panalog</em> value.</li>
+<li><strong>black_offset</strong> (<em>numeric or array_like</em>) &#8211; Black offset.</li>
+<li><strong>**kwargs</strong> (<em>**, optional</em>) &#8211; Unused parameter provided for signature compatibility with other
+<em>linear</em> / <em>log</em> conversion objects.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>Linear</em> value.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">panalog_to_linear</span><span class="p">(</span><span class="mf">0.37457679138229816</span><span class="p">)</span>  
+<span class="go">0.1...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.linear_to_red_log_film">
+<tt class="descclassname">colour.models.</tt><tt class="descname">linear_to_red_log_film</tt><big>(</big><em>value</em>, <em>black_offset=0.009955040995908344</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.models.linear_to_red_log_film" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the <em>linear</em> to <em>REDLogFilm</em> conversion function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>numeric or array_like</em>) &#8211; <em>Linear</em> value.</li>
+<li><strong>black_offset</strong> (<em>numeric or array_like</em>) &#8211; Black offset.</li>
+<li><strong>**kwargs</strong> (<em>**, optional</em>) &#8211; Unused parameter provided for signature compatibility with other
+<em>linear</em> / <em>log</em> conversion objects.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>REDLogFilm</em> value.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">linear_to_red_log_film</span><span class="p">(</span><span class="mf">0.18</span><span class="p">)</span>  
+<span class="go">0.6376218...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.red_log_film_to_linear">
+<tt class="descclassname">colour.models.</tt><tt class="descname">red_log_film_to_linear</tt><big>(</big><em>value</em>, <em>black_offset=0.009955040995908344</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.models.red_log_film_to_linear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the <em>REDLogFilm</em> to <em>linear</em> conversion function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>numeric or array_like</em>) &#8211; <em>REDLogFilm</em> value.</li>
+<li><strong>black_offset</strong> (<em>numeric or array_like</em>) &#8211; Black offset.</li>
+<li><strong>**kwargs</strong> (<em>**, optional</em>) &#8211; Unused parameter provided for signature compatibility with other
+<em>linear</em> / <em>log</em> conversion objects.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>Linear</em> value.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">red_log_film_to_linear</span><span class="p">(</span><span class="mf">0.63762184598817484</span><span class="p">)</span>  
+<span class="go">0.1...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.linear_to_viper_log">
+<tt class="descclassname">colour.models.</tt><tt class="descname">linear_to_viper_log</tt><big>(</big><em>value</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.models.linear_to_viper_log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the <em>linear</em> to <em>ViperLog</em> conversion function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>numeric or array_like</em>) &#8211; <em>Linear</em> value.</li>
+<li><strong>**kwargs</strong> (<em>**, optional</em>) &#8211; Unused parameter provided for signature compatibility with other
+<em>linear</em> / <em>log</em> conversion objects.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>ViperLog</em> value.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">linear_to_viper_log</span><span class="p">(</span><span class="mf">0.18</span><span class="p">)</span>  
+<span class="go">0.6360080...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.viper_log_to_linear">
+<tt class="descclassname">colour.models.</tt><tt class="descname">viper_log_to_linear</tt><big>(</big><em>value</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.models.viper_log_to_linear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the <em>ViperLog</em> to <em>linear</em> conversion function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>numeric or array_like</em>) &#8211; <em>ViperLog</em> value.</li>
+<li><strong>**kwargs</strong> (<em>**, optional</em>) &#8211; Unused parameter provided for signature compatibility with other
+<em>linear</em> / <em>log</em> conversion objects.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>Linear</em> value.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">viper_log_to_linear</span><span class="p">(</span><span class="mf">0.63600806701041346</span><span class="p">)</span>  
+<span class="go">0.1799999...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.linear_to_pivoted_log">
+<tt class="descclassname">colour.models.</tt><tt class="descname">linear_to_pivoted_log</tt><big>(</big><em>value</em>, <em>log_reference=445</em>, <em>linear_reference=0.18</em>, <em>negative_gamma=0.6</em>, <em>density_per_code_value=0.002</em><big>)</big><a class="headerlink" href="#colour.models.linear_to_pivoted_log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the <em>linear</em> to <em>Josh Pines</em> style pivoted log conversion function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>numeric or array_like</em>) &#8211; <em>Linear</em> value.</li>
+<li><strong>log_reference</strong> (<em>numeric or array_like</em>) &#8211; Log reference.</li>
+<li><strong>linear_reference</strong> (<em>numeric or array_like</em>) &#8211; Linear reference.</li>
+<li><strong>negative_gamma</strong> (<em>numeric or array_like</em>) &#8211; Negative gamma.</li>
+<li><strong>density_per_code_value</strong> (<em>numeric or array_like</em>) &#8211; Density per code value.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>Josh Pines</em> style pivoted log value.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">linear_to_pivoted_log</span><span class="p">(</span><span class="mf">0.18</span><span class="p">)</span>  
+<span class="go">0.4349951...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.pivoted_log_to_linear">
+<tt class="descclassname">colour.models.</tt><tt class="descname">pivoted_log_to_linear</tt><big>(</big><em>value</em>, <em>log_reference=445</em>, <em>linear_reference=0.18</em>, <em>negative_gamma=0.6</em>, <em>density_per_code_value=0.002</em><big>)</big><a class="headerlink" href="#colour.models.pivoted_log_to_linear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the <em>Josh Pines</em> style pivoted log to <em>linear</em> conversion function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>numeric or array_like</em>) &#8211; <em>Josh Pines</em> style pivoted log value.</li>
+<li><strong>log_reference</strong> (<em>numeric or array_like</em>) &#8211; Log reference.</li>
+<li><strong>linear_reference</strong> (<em>numeric or array_like</em>) &#8211; Linear reference.</li>
+<li><strong>negative_gamma</strong> (<em>numeric or array_like</em>) &#8211; Negative gamma.</li>
+<li><strong>density_per_code_value</strong> (<em>numeric or array_like</em>) &#8211; Density per code value.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>Linear</em> value.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">pivoted_log_to_linear</span><span class="p">(</span><span class="mf">0.43499511241446726</span><span class="p">)</span>  
+<span class="go">0.1...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.linear_to_c_log">
+<tt class="descclassname">colour.models.</tt><tt class="descname">linear_to_c_log</tt><big>(</big><em>value</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.models.linear_to_c_log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the <em>linear</em> to <em>Canon Log</em> conversion function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>numeric or array_like</em>) &#8211; <em>Linear</em> value.</li>
+<li><strong>**kwargs</strong> (<em>**, optional</em>) &#8211; Unused parameter provided for signature compatibility with other
+<em>linear</em> / <em>log</em> conversion objects.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>Canon Log</em> value.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id14" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[2]</td><td>Thorpe, L. (2012). CANON-LOG TRANSFER CHARACTERISTIC. Retrieved
+from <a class="reference external" href="http://downloads.canon.com/CDLC/Canon-Log_Transfer_Characteristic_6-20-2012.pdf">http://downloads.canon.com/CDLC/Canon-Log_Transfer_Characteristic_6-20-2012.pdf</a></td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">linear_to_c_log</span><span class="p">(</span><span class="mf">0.20</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>  
+<span class="go">32.7953896...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.c_log_to_linear">
+<tt class="descclassname">colour.models.</tt><tt class="descname">c_log_to_linear</tt><big>(</big><em>value</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.models.c_log_to_linear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the <em>Canon Log</em> to <em>linear</em> conversion function. <a href="#id16"><span class="problematic" id="id17"><span id="id15"></span>[2]_</span></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>numeric or array_like</em>) &#8211; <em>Canon Log</em> value.</li>
+<li><strong>**kwargs</strong> (<em>**, optional</em>) &#8211; Unused parameter provided for signature compatibility with other
+<em>linear</em> / <em>log</em> conversion objects.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>Linear</em> value.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c_log_to_linear</span><span class="p">(</span><span class="mf">32.795389693580908</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span>  
+<span class="go">0.19999999...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.linear_to_aces_cc">
+<tt class="descclassname">colour.models.</tt><tt class="descname">linear_to_aces_cc</tt><big>(</big><em>value</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.models.linear_to_aces_cc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the <em>linear</em> to <em>ACEScc</em> conversion function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>numeric or array_like</em>) &#8211; <em>Linear</em> value.</li>
+<li><strong>**kwargs</strong> (<em>**, optional</em>) &#8211; Unused parameter provided for signature compatibility with other
+<em>linear</em> / <em>log</em> conversion objects.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>ACEScc</em> value.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">linear_to_aces_cc</span><span class="p">(</span><span class="mf">0.18</span><span class="p">)</span>  
+<span class="go">array(0.4135884...)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.aces_cc_to_linear">
+<tt class="descclassname">colour.models.</tt><tt class="descname">aces_cc_to_linear</tt><big>(</big><em>value</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.models.aces_cc_to_linear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the <em>ACEScc</em> to <em>linear</em> conversion function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>numeric or array_like</em>) &#8211; <em>ACEScc</em> value.</li>
+<li><strong>**kwargs</strong> (<em>**, optional</em>) &#8211; Unused parameter provided for signature compatibility with other
+<em>linear</em> / <em>log</em> conversion objects.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>Linear</em> value.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">aces_cc_to_linear</span><span class="p">(</span><span class="mf">0.41358840249244228</span><span class="p">)</span>  
+<span class="go">array(0.1800000...)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.linear_to_alexa_log_c">
+<tt class="descclassname">colour.models.</tt><tt class="descname">linear_to_alexa_log_c</tt><big>(</big><em>value</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.models.linear_to_alexa_log_c" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the <em>linear</em> to <em>ALEXA Log C</em> conversion function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>numeric or array_like</em>) &#8211; <em>Linear</em> value.</li>
+<li><strong>**kwargs</strong> (<em>**, optional</em>) &#8211; Unused parameter provided for signature compatibility with other
+<em>linear</em> / <em>log</em> conversion objects.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>ALEXA Log C</em> value.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">linear_to_alexa_log_c</span><span class="p">(</span><span class="mf">0.18</span><span class="p">)</span>  
+<span class="go">array(0.3910068...)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.alexa_log_c_to_linear">
+<tt class="descclassname">colour.models.</tt><tt class="descname">alexa_log_c_to_linear</tt><big>(</big><em>value</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.models.alexa_log_c_to_linear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the <em>ALEXA Log C</em> to <em>linear</em> conversion function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>numeric or array_like</em>) &#8211; <em>ALEXA Log C</em> value.</li>
+<li><strong>**kwargs</strong> (<em>**, optional</em>) &#8211; Unused parameter provided for signature compatibility with other
+<em>linear</em> / <em>log</em> conversion objects.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>Linear</em> value.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">alexa_log_c_to_linear</span><span class="p">(</span><span class="mf">0.39100683203408376</span><span class="p">)</span>  
+<span class="go">array(0.1800000...)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.linear_to_s_log">
+<tt class="descclassname">colour.models.</tt><tt class="descname">linear_to_s_log</tt><big>(</big><em>value</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.models.linear_to_s_log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the <em>linear</em> to <em>S-Log</em> conversion function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>numeric or array_like</em>) &#8211; <em>Linear</em> value.</li>
+<li><strong>**kwargs</strong> (<em>**, optional</em>) &#8211; Unused parameter provided for signature compatibility with other
+<em>linear</em> / <em>log</em> conversion objects.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>S-Log</em> value.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">linear_to_s_log</span><span class="p">(</span><span class="mf">0.18</span><span class="p">)</span>  
+<span class="go">0.3599878...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.linear_to_dci_p3_log">
+<tt class="descclassname">colour.models.</tt><tt class="descname">linear_to_dci_p3_log</tt><big>(</big><em>value</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.models.linear_to_dci_p3_log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the <em>linear</em> to <em>DCI-P3</em> conversion function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>numeric or array_like</em>) &#8211; <em>Linear</em> value.</li>
+<li><strong>**kwargs</strong> (<em>**, optional</em>) &#8211; Unused parameter provided for signature compatibility with other
+<em>linear</em> / <em>log</em> conversion objects.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>DCI-P3</em> value.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">linear_to_dci_p3_log</span><span class="p">(</span><span class="mf">0.18</span><span class="p">)</span>  
+<span class="go">461.9922059...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.dci_p3_log_to_linear">
+<tt class="descclassname">colour.models.</tt><tt class="descname">dci_p3_log_to_linear</tt><big>(</big><em>value</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.models.dci_p3_log_to_linear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the <em>DCI-P3</em> to <em>linear</em> conversion function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>numeric or array_like</em>) &#8211; <em>DCI-P3</em> value.</li>
+<li><strong>**kwargs</strong> (<em>**, optional</em>) &#8211; Unused parameter provided for signature compatibility with other
+<em>linear</em> / <em>log</em> conversion objects.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>Linear</em> value.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">dci_p3_log_to_linear</span><span class="p">(</span><span class="mf">461.99220597484737</span><span class="p">)</span>  
+<span class="go">0.1800000...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.s_log_to_linear">
+<tt class="descclassname">colour.models.</tt><tt class="descname">s_log_to_linear</tt><big>(</big><em>value</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.models.s_log_to_linear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the <em>S-Log</em> to <em>linear</em> conversion function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>numeric or array_like</em>) &#8211; <em>S-Log</em> value.</li>
+<li><strong>**kwargs</strong> (<em>**, optional</em>) &#8211; Unused parameter provided for signature compatibility with other
+<em>linear</em> / <em>log</em> conversion objects.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>Linear</em> value.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">s_log_to_linear</span><span class="p">(</span><span class="mf">0.35998784642215442</span><span class="p">)</span>  
+<span class="go">0.1...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.linear_to_s_log2">
+<tt class="descclassname">colour.models.</tt><tt class="descname">linear_to_s_log2</tt><big>(</big><em>value</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.models.linear_to_s_log2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the <em>linear</em> to <em>S-Log2</em> conversion function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>numeric or array_like</em>) &#8211; <em>Linear</em> value.</li>
+<li><strong>**kwargs</strong> (<em>**, optional</em>) &#8211; Unused parameter provided for signature compatibility with other
+<em>linear</em> / <em>log</em> conversion objects.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>S-Log2</em> value.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">linear_to_s_log2</span><span class="p">(</span><span class="mf">0.18</span><span class="p">)</span>  
+<span class="go">0.3849708...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.s_log2_to_linear">
+<tt class="descclassname">colour.models.</tt><tt class="descname">s_log2_to_linear</tt><big>(</big><em>value</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.models.s_log2_to_linear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the <em>S-Log2</em> to <em>linear</em> conversion function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>numeric or array_like</em>) &#8211; <em>S-Log2</em> value.</li>
+<li><strong>**kwargs</strong> (<em>**, optional</em>) &#8211; Unused parameter provided for signature compatibility with other
+<em>linear</em> / <em>log</em> conversion objects.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>Linear</em> value.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">s_log2_to_linear</span><span class="p">(</span><span class="mf">0.38497081592867027</span><span class="p">)</span>  
+<span class="go">0.1...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.linear_to_s_log3">
+<tt class="descclassname">colour.models.</tt><tt class="descname">linear_to_s_log3</tt><big>(</big><em>value</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.models.linear_to_s_log3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the <em>linear</em> to <em>S-Log3</em> conversion function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>numeric or array_like</em>) &#8211; <em>Linear</em> value.</li>
+<li><strong>**kwargs</strong> (<em>**, optional</em>) &#8211; Unused parameter provided for signature compatibility with other
+<em>linear</em> / <em>log</em> conversion objects.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>S-Log3</em> value.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">linear_to_s_log3</span><span class="p">(</span><span class="mf">0.18</span><span class="p">)</span>  
+<span class="go">array(0.4105571...)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.s_log3_to_linear">
+<tt class="descclassname">colour.models.</tt><tt class="descname">s_log3_to_linear</tt><big>(</big><em>value</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.models.s_log3_to_linear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the <em>S-Log3</em> to <em>linear</em> conversion function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>numeric or array_like</em>) &#8211; <em>S-Log3</em> value.</li>
+<li><strong>**kwargs</strong> (<em>**, optional</em>) &#8211; Unused parameter provided for signature compatibility with other
+<em>linear</em> / <em>log</em> conversion objects.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>Linear</em> value.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">s_log3_to_linear</span><span class="p">(</span><span class="mf">0.41055718475073316</span><span class="p">)</span>  
+<span class="go">array(0.1...)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.linear_to_v_log">
+<tt class="descclassname">colour.models.</tt><tt class="descname">linear_to_v_log</tt><big>(</big><em>value</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.models.linear_to_v_log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the <em>linear</em> to <em>V-Log</em> conversion function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>numeric or array_like</em>) &#8211; <em>Linear</em> value.</li>
+<li><strong>**kwargs</strong> (<em>**, optional</em>) &#8211; Unused parameter provided for signature compatibility with other
+<em>linear</em> / <em>log</em> conversion objects.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>V-Log</em> value.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">linear_to_v_log</span><span class="p">(</span><span class="mf">0.18</span><span class="p">)</span>  
+<span class="go">array(0.4233114...)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.v_log_to_linear">
+<tt class="descclassname">colour.models.</tt><tt class="descname">v_log_to_linear</tt><big>(</big><em>value</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.models.v_log_to_linear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the <em>V-Log</em> to <em>linear</em> conversion function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> (<em>numeric or array_like</em>) &#8211; <em>V-Log</em> value.</li>
+<li><strong>**kwargs</strong> (<em>**, optional</em>) &#8211; Unused parameter provided for signature compatibility with other
+<em>linear</em> / <em>log</em> conversion objects.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>Linear</em> value.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">v_log_to_linear</span><span class="p">(</span><span class="mf">0.42331144876013616</span><span class="p">)</span>  
+<span class="go">array(0.1...)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.XYZ_to_RGB">
+<tt class="descclassname">colour.models.</tt><tt class="descname">XYZ_to_RGB</tt><big>(</big><em>XYZ</em>, <em>illuminant_XYZ</em>, <em>illuminant_RGB</em>, <em>XYZ_to_RGB_matrix</em>, <em>chromatic_adaptation_transform=u'CAT02'</em>, <em>transfer_function=None</em><big>)</big><a class="headerlink" href="#colour.models.XYZ_to_RGB" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from <em>CIE XYZ</em> tristimulus values to given <em>RGB</em> colourspace.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>XYZ</strong> (<em>array_like</em>) &#8211; <em>CIE XYZ</em> tristimulus values.</li>
+<li><strong>illuminant_XYZ</strong> (<em>array_like</em>) &#8211; <em>CIE XYZ</em> tristimulus values <em>illuminant</em> <em>xy</em> chromaticity coordinates
+or <em>CIE xyY</em> colourspace array.</li>
+<li><strong>illuminant_RGB</strong> (<em>array_like</em>) &#8211; <em>RGB</em> colourspace <em>illuminant</em> <em>xy</em> chromaticity coordinates or
+<em>CIE xyY</em> colourspace array.</li>
+<li><strong>XYZ_to_RGB_matrix</strong> (<em>array_like</em>) &#8211; <em>Normalised primary matrix</em>.</li>
+<li><strong>chromatic_adaptation_transform</strong> (<em>unicode, optional</em>) &#8211; <strong>{&#8216;CAT02&#8217;, &#8216;XYZ Scaling&#8217;, &#8216;Von Kries&#8217;, &#8216;Bradford&#8217;, &#8216;Sharp&#8217;,
+&#8216;Fairchild, &#8216;CMCCAT97&#8217;, &#8216;CMCCAT2000&#8217;, &#8216;CAT02_BRILL_CAT&#8217;, &#8216;Bianco&#8217;,
+&#8216;Bianco PC&#8217;}</strong>,
+<em>Chromatic adaptation</em> transform.</li>
+<li><strong>transfer_function</strong> (<em>object, optional</em>) &#8211; <em>Transfer function</em>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>RGB</em> colourspace array.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <em>CIE XYZ</em> tristimulus values are in domain [0, 1].</li>
+<li>Input <em>illuminant_XYZ</em> <em>xy</em> chromaticity coordinates or <em>CIE xyY</em>
+colourspace array are in domain [0, <span class="math">\(\infty\)</span>].</li>
+<li>Input <em>illuminant_RGB</em> <em>xy</em> chromaticity coordinates or <em>CIE xyY</em>
+colourspace array are in domain [0, <span class="math">\(\infty\)</span>].</li>
+<li>Output <em>RGB</em> colourspace array is in domain [0, 1].</li>
+</ul>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.07049534</span><span class="p">,</span> <span class="mf">0.10080000</span><span class="p">,</span> <span class="mf">0.09558313</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">illuminant_XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.34567</span><span class="p">,</span> <span class="mf">0.35850</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">illuminant_RGB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.31271</span><span class="p">,</span> <span class="mf">0.32902</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">chromatic_adaptation_transform</span> <span class="o">=</span> <span class="s">&#39;Bradford&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_to_RGB_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="mf">3.24100326</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.53739899</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.49861587</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="o">-</span><span class="mf">0.96922426</span><span class="p">,</span> <span class="mf">1.87592999</span><span class="p">,</span> <span class="mf">0.04155422</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="mf">0.05563942</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.20401120</span><span class="p">,</span> <span class="mf">1.05714897</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_to_RGB</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">XYZ</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">illuminant_XYZ</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">illuminant_RGB</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">XYZ_to_RGB_matrix</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">chromatic_adaptation_transform</span><span class="p">)</span>  
+<span class="go">array([ 0.0110360...,  0.1273446...,  0.1163103...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.RGB_to_XYZ">
+<tt class="descclassname">colour.models.</tt><tt class="descname">RGB_to_XYZ</tt><big>(</big><em>RGB</em>, <em>illuminant_RGB</em>, <em>illuminant_XYZ</em>, <em>RGB_to_XYZ_matrix</em>, <em>chromatic_adaptation_transform=u'CAT02'</em>, <em>inverse_transfer_function=None</em><big>)</big><a class="headerlink" href="#colour.models.RGB_to_XYZ" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from given <em>RGB</em> colourspace to <em>CIE XYZ</em> tristimulus values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>RGB</strong> (<em>array_like</em>) &#8211; <em>RGB</em> colourspace array.</li>
+<li><strong>illuminant_RGB</strong> (<em>array_like</em>) &#8211; <em>RGB</em> colourspace <em>illuminant</em> chromaticity coordinates or <em>CIE xyY</em>
+colourspace array.</li>
+<li><strong>illuminant_XYZ</strong> (<em>array_like</em>) &#8211; <em>CIE XYZ</em> tristimulus values <em>illuminant</em> chromaticity coordinates or
+<em>CIE xyY</em> colourspace array.</li>
+<li><strong>RGB_to_XYZ_matrix</strong> (<em>array_like</em>) &#8211; <em>Normalised primary matrix</em>.</li>
+<li><strong>chromatic_adaptation_transform</strong> (<em>unicode, optional</em>) &#8211; <strong>{&#8216;CAT02&#8217;, &#8216;XYZ Scaling&#8217;, &#8216;Von Kries&#8217;, &#8216;Bradford&#8217;, &#8216;Sharp&#8217;,
+&#8216;Fairchild, &#8216;CMCCAT97&#8217;, &#8216;CMCCAT2000&#8217;, &#8216;CAT02_BRILL_CAT&#8217;, &#8216;Bianco&#8217;,
+&#8216;Bianco PC&#8217;}</strong>,
+<em>Chromatic adaptation</em> transform.</li>
+<li><strong>inverse_transfer_function</strong> (<em>object, optional</em>) &#8211; <em>Inverse transfer function</em>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>CIE XYZ</em> tristimulus values.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <em>RGB</em> colourspace array is in domain [0, 1].</li>
+<li>Input <em>illuminant_RGB</em> <em>xy</em> chromaticity coordinates or <em>CIE xyY</em>
+colourspace array are in domain [0, <span class="math">\(\infty\)</span>].</li>
+<li>Input <em>illuminant_XYZ</em> <em>xy</em> chromaticity coordinates or <em>CIE xyY</em>
+colourspace array are in domain [0, <span class="math">\(\infty\)</span>].</li>
+<li>Output <em>CIE XYZ</em> tristimulus values are in domain [0, 1].</li>
+</ul>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">RGB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.01103604</span><span class="p">,</span> <span class="mf">0.12734466</span><span class="p">,</span> <span class="mf">0.11631037</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">illuminant_RGB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.31271</span><span class="p">,</span> <span class="mf">0.32902</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">illuminant_XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.34567</span><span class="p">,</span> <span class="mf">0.35850</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">chromatic_adaptation_transform</span> <span class="o">=</span> <span class="s">&#39;Bradford&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">RGB_to_XYZ_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="mf">0.41238656</span><span class="p">,</span> <span class="mf">0.35759149</span><span class="p">,</span> <span class="mf">0.18045049</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="mf">0.21263682</span><span class="p">,</span> <span class="mf">0.71518298</span><span class="p">,</span> <span class="mf">0.07218020</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="mf">0.01933062</span><span class="p">,</span> <span class="mf">0.11919716</span><span class="p">,</span> <span class="mf">0.95037259</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">RGB_to_XYZ</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">RGB</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">illuminant_RGB</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">illuminant_XYZ</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">RGB_to_XYZ_matrix</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">chromatic_adaptation_transform</span><span class="p">)</span>  
+<span class="go">array([ 0.0704953...,  0.1008    ,  0.0955831...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.RGB_to_RGB">
+<tt class="descclassname">colour.models.</tt><tt class="descname">RGB_to_RGB</tt><big>(</big><em>RGB</em>, <em>input_colourspace</em>, <em>output_colourspace</em>, <em>chromatic_adaptation_transform=u'CAT02'</em><big>)</big><a class="headerlink" href="#colour.models.RGB_to_RGB" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from given input <em>RGB</em> colourspace to output <em>RGB</em> colourspace
+using given <em>chromatic adaptation</em> method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>RGB</strong> (<em>array_like</em>) &#8211; <em>RGB</em> colourspace array.</li>
+<li><strong>input_colourspace</strong> (<em>RGB_Colourspace</em>) &#8211; <em>RGB</em> input colourspace.</li>
+<li><strong>output_colourspace</strong> (<em>RGB_Colourspace</em>) &#8211; <em>RGB</em> output colourspace.</li>
+<li><strong>chromatic_adaptation_transform</strong> (<em>unicode, optional</em>) &#8211; <strong>{&#8216;CAT02&#8217;, &#8216;XYZ Scaling&#8217;, &#8216;Von Kries&#8217;, &#8216;Bradford&#8217;, &#8216;Sharp&#8217;,
+&#8216;Fairchild, &#8216;CMCCAT97&#8217;, &#8216;CMCCAT2000&#8217;, &#8216;CAT02_BRILL_CAT&#8217;, &#8216;Bianco&#8217;,
+&#8216;Bianco PC&#8217;}</strong>,
+<em>Chromatic adaptation</em> transform.</li>
+<li><strong>ndarray</strong> &#8211; <em>RGB</em> colourspace array.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><em>RGB</em> colourspace arrays are in domain [0, 1].</li>
+</ul>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">colour</span> <span class="kn">import</span> <span class="n">sRGB_COLOURSPACE</span><span class="p">,</span> <span class="n">PROPHOTO_RGB_COLOURSPACE</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">RGB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.01103604</span><span class="p">,</span> <span class="mf">0.12734466</span><span class="p">,</span> <span class="mf">0.11631037</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">RGB_to_RGB</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">RGB</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">sRGB_COLOURSPACE</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">PROPHOTO_RGB_COLOURSPACE</span><span class="p">)</span>  
+<span class="go">array([ 0.0643338...,  0.1157362...,  0.1157614...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.XYZ_to_sRGB">
+<tt class="descclassname">colour.models.</tt><tt class="descname">XYZ_to_sRGB</tt><big>(</big><em>XYZ</em>, <em>illuminant=(0.31271</em>, <em>0.32902)</em>, <em>chromatic_adaptation_transform=u'CAT02'</em>, <em>transfer_function=True</em><big>)</big><a class="headerlink" href="#colour.models.XYZ_to_sRGB" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from <em>CIE XYZ</em> tristimulus values to <em>sRGB</em> colourspace.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>XYZ</strong> (<em>array_like</em>) &#8211; <em>CIE XYZ</em> tristimulus values.</li>
+<li><strong>illuminant</strong> (<em>array_like, optional</em>) &#8211; Source illuminant chromaticity coordinates.</li>
+<li><strong>chromatic_adaptation_transform</strong> (<em>unicode, optional</em>) &#8211; <strong>{&#8216;CAT02&#8217;, &#8216;XYZ Scaling&#8217;, &#8216;Von Kries&#8217;, &#8216;Bradford&#8217;, &#8216;Sharp&#8217;,
+&#8216;Fairchild, &#8216;CMCCAT97&#8217;, &#8216;CMCCAT2000&#8217;, &#8216;CAT02_BRILL_CAT&#8217;, &#8216;Bianco&#8217;,
+&#8216;Bianco PC&#8217;}</strong>,
+<em>Chromatic adaptation</em> transform.</li>
+<li><strong>transfer_function</strong> (<em>bool, optional</em>) &#8211; Apply <em>sRGB</em> <em>transfer function</em>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>sRGB</em> colour array.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <em>CIE XYZ</em> tristimulus values are in domain [0, 1].</li>
+</ul>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.07049534</span><span class="p">,</span> <span class="mf">0.10080000</span><span class="p">,</span> <span class="mf">0.09558313</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_to_sRGB</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>  
+<span class="go">array([ 0.1750135...,  0.3881879...,  0.3216195...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.sRGB_to_XYZ">
+<tt class="descclassname">colour.models.</tt><tt class="descname">sRGB_to_XYZ</tt><big>(</big><em>RGB</em>, <em>illuminant=(0.31271</em>, <em>0.32902)</em>, <em>chromatic_adaptation_method=u'CAT02'</em>, <em>inverse_transfer_function=True</em><big>)</big><a class="headerlink" href="#colour.models.sRGB_to_XYZ" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from <em>sRGB</em> colourspace to <em>CIE XYZ</em> tristimulus values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>RGB</strong> (<em>array_like</em>) &#8211; <em>sRGB</em> colourspace array.</li>
+<li><strong>illuminant</strong> (<em>array_like, optional</em>) &#8211; Source illuminant chromaticity coordinates.</li>
+<li><strong>chromatic_adaptation_method</strong> (<em>unicode, optional</em>) &#8211; <strong>{&#8216;CAT02&#8217;, &#8216;XYZ Scaling&#8217;, &#8216;Von Kries&#8217;, &#8216;Bradford&#8217;, &#8216;Sharp&#8217;,
+&#8216;Fairchild, &#8216;CMCCAT97&#8217;, &#8216;CMCCAT2000&#8217;, &#8216;CAT02_BRILL_CAT&#8217;, &#8216;Bianco&#8217;,
+&#8216;Bianco PC&#8217;}</strong>,
+<em>Chromatic adaptation</em> method.</li>
+<li><strong>inverse_transfer_function</strong> (<em>bool, optional</em>) &#8211; Apply <em>sRGB</em> <em>inverse transfer function</em>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>CIE XYZ</em> tristimulus values.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <em>RGB</em> colourspace array is in domain [0, 1].</li>
+</ul>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">RGB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.17501358</span><span class="p">,</span> <span class="mf">0.38818795</span><span class="p">,</span> <span class="mf">0.32161955</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sRGB_to_XYZ</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>  
+<span class="go">array([ 0.0704953...,  0.1008    ,  0.0955831...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.spectral_to_aces_relative_exposure_values">
+<tt class="descclassname">colour.models.</tt><tt class="descname">spectral_to_aces_relative_exposure_values</tt><big>(</big><em>spd</em>, <em>illuminant=&lt;colour.colorimetry.spectrum.SpectralPowerDistribution object at 0x2abef976db50&gt;</em><big>)</big><a class="headerlink" href="#colour.models.spectral_to_aces_relative_exposure_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts given spectral power distribution to <em>ACES2065-1</em> colourspace
+relative exposure values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>spd</strong> (<em>SpectralPowerDistribution</em>) &#8211; Spectral power distribution.</li>
+<li><strong>illuminant</strong> (<em>SpectralPowerDistribution, optional</em>) &#8211; <em>Illuminant</em> spectral power distribution.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>ACES2065-1</em> colourspace relative exposure values array.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray, (3,)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Output <em>ACES2065-1</em> colourspace relative exposure values array is in
+domain [0, 1].</li>
+</ul>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="colour.colorimetry.tristimulus.html#colour.colorimetry.tristimulus.spectral_to_XYZ" title="colour.colorimetry.tristimulus.spectral_to_XYZ"><tt class="xref py py-func docutils literal"><span class="pre">colour.colorimetry.tristimulus.spectral_to_XYZ()</span></tt></a></p>
+</div>
+<p class="rubric">References</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">colour</span> <span class="kn">import</span> <span class="n">COLOURCHECKERS_SPDS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spd</span> <span class="o">=</span> <span class="n">COLOURCHECKERS_SPDS</span><span class="p">[</span><span class="s">&#39;ColorChecker N Ohta&#39;</span><span class="p">][</span><span class="s">&#39;dark skin&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spectral_to_aces_relative_exposure_values</span><span class="p">(</span><span class="n">spd</span><span class="p">)</span>  
+<span class="go">array([ 0.1187697...,  0.0870866...,  0.0589442...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2015, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.colorimetry.correction Module &mdash; Colour 0.3.4 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.3.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.4 documentation" href="index.html" />
+    <link rel="up" title="colour.colorimetry Package" href="colour.colorimetry.html" />
+    <link rel="next" title="colour.colorimetry.illuminants Module" href="colour.colorimetry.illuminants.html" />
+    <link rel="prev" title="colour.colorimetry.cmfs Module" href="colour.colorimetry.cmfs.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+  <li>
+    <a href="colour.colorimetry.cmfs.html" title="Previous Chapter: colour.colorimetry.cmfs Module"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; colour.colorimet...</span>
+    </a>
+  </li>
+  <li>
+    <a href="colour.colorimetry.illuminants.html" title="Next Chapter: colour.colorimetry.illuminants Module"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">colour.colorimet... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="module-colour.colorimetry.correction">
+<span id="colour-colorimetry-correction-module"></span><h1>colour.colorimetry.correction Module<a class="headerlink" href="#module-colour.colorimetry.correction" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="spectral-bandpass-dependence-correction">
+<h2>Spectral Bandpass Dependence Correction<a class="headerlink" href="#spectral-bandpass-dependence-correction" title="Permalink to this headline">¶</a></h2>
+<p>Defines objects to perform spectral bandpass dependence correction.</p>
+<p>The following correction methods are available:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#colour.colorimetry.correction.bandpass_correction_Stearns1988" title="colour.colorimetry.correction.bandpass_correction_Stearns1988"><tt class="xref py py-func docutils literal"><span class="pre">bandpass_correction_Stearns1988()</span></tt></a>: Stearns and Stearns (1988)⁠⁠
+spectral bandpass dependence correction method.</li>
+</ul>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colorimetry/correction.ipynb">Spectral Bandpass Dependence Correction IPython Notebook</a></p>
+</div>
+<dl class="function">
+<dt id="colour.colorimetry.correction.bandpass_correction_Stearns1988">
+<tt class="descclassname">colour.colorimetry.correction.</tt><tt class="descname">bandpass_correction_Stearns1988</tt><big>(</big><em>spd</em><big>)</big><a class="reference internal" href="_modules/colour/colorimetry/correction.html#bandpass_correction_Stearns1988"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.colorimetry.correction.bandpass_correction_Stearns1988" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implements spectral bandpass dependence correction on given spectral power
+distribution using Stearns and Stearns (1988)⁠⁠ method.</p>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td>Westland, S., Ripamonti, C., &amp; Cheung, V. (2012). Correction for
+Spectral Bandpass. In Computational Colour Science Using MATLAB
+(2nd ed., p. 38). ISBN:978-0-470-66569-5</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[2]</td><td>Stearns, E. I., &amp; Stearns, R. E. (1988). An example of a method
+for correcting radiance data for Bandpass error. Color Research &amp;
+Application, 13(4), 257–259. doi:10.1002/col.5080130410</td></tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>spd</strong> (<em>SpectralPowerDistribution</em>) &#8211; Spectral power distribution.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Spectral bandpass dependence corrected spectral power distribution.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">SpectralPowerDistribution</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">colour</span> <span class="kn">import</span> <span class="n">SpectralPowerDistribution</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="mi">510</span><span class="p">:</span> <span class="mf">49.67</span><span class="p">,</span> <span class="mi">520</span><span class="p">:</span> <span class="mf">69.59</span><span class="p">,</span> <span class="mi">530</span><span class="p">:</span> <span class="mf">81.73</span><span class="p">,</span> <span class="mi">540</span><span class="p">:</span> <span class="mf">88.19</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spd</span> <span class="o">=</span> <span class="n">SpectralPowerDistribution</span><span class="p">(</span><span class="s">&#39;Spd&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">corrected_spd</span> <span class="o">=</span> <span class="n">bandpass_correction_Stearns1988</span><span class="p">(</span><span class="n">spd</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">corrected_spd</span><span class="o">.</span><span class="n">values</span>  
+<span class="go">array([ 48.01664   ,  70.3729688...,  82.0919506...,  88.72618   ])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.colorimetry.correction.BANDPASS_CORRECTION_METHODS">
+<tt class="descclassname">colour.colorimetry.correction.</tt><tt class="descname">BANDPASS_CORRECTION_METHODS</tt><em class="property"> = CaseInsensitiveMapping({u'Stearns 1988': &lt;function bandpass_correction_Stearns1988 at 0x2b436d3bc5f0&gt;})</em><a class="headerlink" href="#colour.colorimetry.correction.BANDPASS_CORRECTION_METHODS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Supported spectral bandpass dependence correction methods.</p>
+<dl class="docutils">
+<dt>BANDPASS_CORRECTION_METHODS <span class="classifier-delimiter">:</span> <span class="classifier">CaseInsensitiveMapping</span></dt>
+<dd>{&#8216;Stearns 1988&#8217;,}</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.colorimetry.correction.bandpass_correction">
+<tt class="descclassname">colour.colorimetry.correction.</tt><tt class="descname">bandpass_correction</tt><big>(</big><em>spd</em>, <em>method=u'Stearns 1988'</em><big>)</big><a class="reference internal" href="_modules/colour/colorimetry/correction.html#bandpass_correction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.colorimetry.correction.bandpass_correction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implements spectral bandpass dependence correction on given spectral power
+distribution using given method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>spd</strong> (<em>SpectralPowerDistribution</em>) &#8211; Spectral power distribution.</li>
+<li><strong>method</strong> (<em>unicode, optional</em>) &#8211; (&#8216;Stearns 1988&#8217;,)
+Correction method.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Spectral bandpass dependence corrected spectral power distribution.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">SpectralPowerDistribution</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2015, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

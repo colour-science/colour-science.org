@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.models.rgb &mdash; Colour 0.3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.0 documentation" href="../../../index.html" />
+    <link rel="up" title="colour.models" href="../models.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for colour.models.rgb</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">RGB Colourspace Transformations</span>
+<span class="sd">===============================</span>
+
+<span class="sd">Defines the *RGB* colourspace transformations:</span>
+
+<span class="sd">-   :func:`XYZ_to_RGB`</span>
+<span class="sd">-   :func:`RGB_to_XYZ`</span>
+<span class="sd">-   :func:`RGB_to_RGB`</span>
+
+<span class="sd">See Also</span>
+<span class="sd">--------</span>
+<span class="sd">`RGB Colourspaces IPython Notebook</span>
+<span class="sd">&lt;http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/models/rgb.ipynb&gt;`_  # noqa</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">colour.models</span> <span class="kn">import</span> <span class="n">xy_to_XYZ</span>
+<span class="kn">from</span> <span class="nn">colour.adaptation</span> <span class="kn">import</span> <span class="n">chromatic_adaptation_matrix</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s">&#39;Copyright (C) 2013 - 2014 - Colour Developers&#39;</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s">&#39;New BSD License - http://opensource.org/licenses/BSD-3-Clause&#39;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s">&#39;colour-science@googlegroups.com&#39;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s">&#39;Production&#39;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;XYZ_to_RGB&#39;</span><span class="p">,</span>
+           <span class="s">&#39;RGB_to_XYZ&#39;</span><span class="p">,</span>
+           <span class="s">&#39;RGB_to_RGB&#39;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="XYZ_to_RGB"><a class="viewcode-back" href="../../../colour.models.rgb.html#colour.models.rgb.XYZ_to_RGB">[docs]</a><span class="k">def</span> <span class="nf">XYZ_to_RGB</span><span class="p">(</span><span class="n">XYZ</span><span class="p">,</span>
+               <span class="n">illuminant_XYZ</span><span class="p">,</span>
+               <span class="n">illuminant_RGB</span><span class="p">,</span>
+               <span class="n">to_RGB</span><span class="p">,</span>
+               <span class="n">chromatic_adaptation_method</span><span class="o">=</span><span class="s">&#39;CAT02&#39;</span><span class="p">,</span>
+               <span class="n">transfer_function</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Converts from *CIE XYZ* colourspace to *RGB* colourspace using given</span>
+<span class="sd">    *CIE XYZ* colourspace matrix, *illuminants*, *chromatic adaptation* method,</span>
+<span class="sd">    *normalised primary matrix* and *transfer function*.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    XYZ : array_like, (3,)</span>
+<span class="sd">        *CIE XYZ* colourspace matrix.</span>
+<span class="sd">    illuminant_XYZ : array_like</span>
+<span class="sd">        *CIE XYZ* colourspace *illuminant* *xy* chromaticity coordinates.</span>
+<span class="sd">    illuminant_RGB : array_like</span>
+<span class="sd">        *RGB* colourspace *illuminant* *xy* chromaticity coordinates.</span>
+<span class="sd">    to_RGB : array_like, (3, 3)</span>
+<span class="sd">        *Normalised primary matrix*.</span>
+<span class="sd">    chromatic_adaptation_method : unicode, optional</span>
+<span class="sd">        (&#39;XYZ Scaling&#39;, &#39;Bradford&#39;, &#39;Von Kries&#39;, &#39;Fairchild&#39;, &#39;CAT02&#39;)</span>
+<span class="sd">        *Chromatic adaptation* method.</span>
+<span class="sd">    transfer_function : object, optional</span>
+<span class="sd">        *Transfer function*.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray, (3,)</span>
+<span class="sd">        *RGB* colourspace matrix.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   Input *CIE XYZ* colourspace matrix is in domain [0, 1].</span>
+<span class="sd">    -   Input *illuminant_XYZ* *xy* chromaticity coordinates are in domain</span>
+<span class="sd">        [0, 1].</span>
+<span class="sd">    -   Input *illuminant_RGB* *xy* chromaticity coordinates are in domain</span>
+<span class="sd">        [0, 1].</span>
+<span class="sd">    -   Output *RGB* colourspace matrix is in domain [0, 1].</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; XYZ = np.array([0.1151847498, 0.1008, 0.0508937252])</span>
+<span class="sd">    &gt;&gt;&gt; illuminant_XYZ = (0.34567, 0.35850)</span>
+<span class="sd">    &gt;&gt;&gt; illuminant_RGB = (0.31271, 0.32902)</span>
+<span class="sd">    &gt;&gt;&gt; chromatic_adaptation_method =  &#39;Bradford&#39;</span>
+<span class="sd">    &gt;&gt;&gt; to_RGB = np.array([</span>
+<span class="sd">    ...     [3.24100326, -1.53739899, -0.49861587],</span>
+<span class="sd">    ...     [-0.96922426, 1.87592999, 0.04155422],</span>
+<span class="sd">    ...     [0.05563942, -0.2040112, 1.05714897]])</span>
+<span class="sd">    &gt;&gt;&gt; XYZ_to_RGB(</span>
+<span class="sd">    ...     XYZ,</span>
+<span class="sd">    ...     illuminant_XYZ,</span>
+<span class="sd">    ...     illuminant_RGB,</span>
+<span class="sd">    ...     to_RGB,</span>
+<span class="sd">    ...     chromatic_adaptation_method)  # doctest: +ELLIPSIS</span>
+<span class="sd">    array([ 0.1730350...,  0.0821103...,  0.0567249...])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+        <span class="p">[</span><span class="mf">3.24100326</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.53739899</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.49861587</span><span class="p">],</span>
+        <span class="p">[</span><span class="o">-</span><span class="mf">0.96922426</span><span class="p">,</span> <span class="mf">1.87592999</span><span class="p">,</span> <span class="mf">0.04155422</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">0.05563942</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2040112</span><span class="p">,</span> <span class="mf">1.05714897</span><span class="p">]])</span>
+    <span class="n">cat</span> <span class="o">=</span> <span class="n">chromatic_adaptation_matrix</span><span class="p">(</span><span class="n">xy_to_XYZ</span><span class="p">(</span><span class="n">illuminant_XYZ</span><span class="p">),</span>
+                                      <span class="n">xy_to_XYZ</span><span class="p">(</span><span class="n">illuminant_RGB</span><span class="p">),</span>
+                                      <span class="n">method</span><span class="o">=</span><span class="n">chromatic_adaptation_method</span><span class="p">)</span>
+
+    <span class="n">adapted_XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">cat</span><span class="p">,</span> <span class="n">XYZ</span><span class="p">)</span>
+
+    <span class="n">RGB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">to_RGB</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span> <span class="n">adapted_XYZ</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span>
+
+    <span class="k">if</span> <span class="n">transfer_function</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">RGB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">transfer_function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">RGB</span><span class="p">)])</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="RGB_to_XYZ"><a class="viewcode-back" href="../../../colour.models.rgb.html#colour.models.rgb.RGB_to_XYZ">[docs]</a><span class="k">def</span> <span class="nf">RGB_to_XYZ</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span>
+               <span class="n">illuminant_RGB</span><span class="p">,</span>
+               <span class="n">illuminant_XYZ</span><span class="p">,</span>
+               <span class="n">to_XYZ</span><span class="p">,</span>
+               <span class="n">chromatic_adaptation_method</span><span class="o">=</span><span class="s">&#39;CAT02&#39;</span><span class="p">,</span>
+               <span class="n">inverse_transfer_function</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Converts from *RGB* colourspace to *CIE XYZ* colourspace using given</span>
+<span class="sd">    *RGB* colourspace matrix, *illuminants*, *chromatic adaptation* method,</span>
+<span class="sd">    *normalised primary matrix* and *transfer function*.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    RGB : array_like, (3,)</span>
+<span class="sd">        *RGB* colourspace matrix.</span>
+<span class="sd">    illuminant_RGB : array_like</span>
+<span class="sd">        *RGB* colourspace *illuminant* chromaticity coordinates.</span>
+<span class="sd">    illuminant_XYZ : array_like</span>
+<span class="sd">        *CIE XYZ* colourspace *illuminant* chromaticity coordinates.</span>
+<span class="sd">    to_XYZ : array_like, (3, 3)</span>
+<span class="sd">        *Normalised primary matrix*.</span>
+<span class="sd">    chromatic_adaptation_method : unicode, optional</span>
+<span class="sd">        (&#39;XYZ Scaling&#39;, &#39;Bradford&#39;, &#39;Von Kries&#39;, &#39;Fairchild&#39;, &#39;CAT02&#39;)</span>
+<span class="sd">        *Chromatic adaptation* method.</span>
+<span class="sd">    inverse_transfer_function : object, optional</span>
+<span class="sd">        *Inverse transfer function*.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray, (3,)</span>
+<span class="sd">        *CIE XYZ* colourspace matrix.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   Input *RGB* colourspace matrix is in domain [0, 1].</span>
+<span class="sd">    -   Input *illuminant_RGB* *xy* chromaticity coordinates are in domain</span>
+<span class="sd">        [0, 1].</span>
+<span class="sd">    -   Input *illuminant_XYZ* *xy* chromaticity coordinates are in domain</span>
+<span class="sd">        [0, 1].</span>
+<span class="sd">    -   Output *CIE XYZ* colourspace matrix is in domain [0, 1].</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; RGB = np.array([0.17303501, 0.08211033, 0.05672498])</span>
+<span class="sd">    &gt;&gt;&gt; illuminant_RGB = (0.31271, 0.32902)</span>
+<span class="sd">    &gt;&gt;&gt; illuminant_XYZ = (0.34567, 0.35850)</span>
+<span class="sd">    &gt;&gt;&gt; chromatic_adaptation_method = &#39;Bradford&#39;</span>
+<span class="sd">    &gt;&gt;&gt; to_XYZ = np.array([</span>
+<span class="sd">    ...     [0.41238656, 0.35759149, 0.18045049],</span>
+<span class="sd">    ...     [0.21263682, 0.71518298, 0.0721802],</span>
+<span class="sd">    ...     [0.01933062, 0.11919716, 0.95037259]])</span>
+<span class="sd">    &gt;&gt;&gt; RGB_to_XYZ(</span>
+<span class="sd">    ...     RGB,</span>
+<span class="sd">    ...     illuminant_RGB,</span>
+<span class="sd">    ...     illuminant_XYZ,</span>
+<span class="sd">    ...     to_XYZ,</span>
+<span class="sd">    ...     chromatic_adaptation_method)  # doctest: +ELLIPSIS</span>
+<span class="sd">    array([ 0.1151847...,  0.1008    ,  0.0508937...])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">inverse_transfer_function</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">RGB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">inverse_transfer_function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+                        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">RGB</span><span class="p">)])</span>
+
+    <span class="n">XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">to_XYZ</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span> <span class="n">RGB</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span>
+
+    <span class="n">cat</span> <span class="o">=</span> <span class="n">chromatic_adaptation_matrix</span><span class="p">(</span>
+        <span class="n">xy_to_XYZ</span><span class="p">(</span><span class="n">illuminant_RGB</span><span class="p">),</span>
+        <span class="n">xy_to_XYZ</span><span class="p">(</span><span class="n">illuminant_XYZ</span><span class="p">),</span>
+        <span class="n">method</span><span class="o">=</span><span class="n">chromatic_adaptation_method</span><span class="p">)</span>
+
+    <span class="n">adapted_XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">cat</span><span class="p">,</span> <span class="n">XYZ</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">adapted_XYZ</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="RGB_to_RGB"><a class="viewcode-back" href="../../../colour.models.rgb.html#colour.models.rgb.RGB_to_RGB">[docs]</a><span class="k">def</span> <span class="nf">RGB_to_RGB</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span>
+               <span class="n">input_colourspace</span><span class="p">,</span>
+               <span class="n">output_colourspace</span><span class="p">,</span>
+               <span class="n">chromatic_adaptation_method</span><span class="o">=</span><span class="s">&#39;CAT02&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Converts from given input *RGB* colourspace to output *RGB* colourspace</span>
+<span class="sd">    using given *chromatic adaptation* method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    RGB : array_like, (3,)</span>
+<span class="sd">        *RGB* colourspace matrix.</span>
+<span class="sd">    input_colourspace : RGB_Colourspace</span>
+<span class="sd">        *RGB* input colourspace.</span>
+<span class="sd">    output_colourspace : RGB_Colourspace</span>
+<span class="sd">        *RGB* output colourspace.</span>
+<span class="sd">    chromatic_adaptation_method : unicode, optional</span>
+<span class="sd">        (&#39;XYZ Scaling&#39;, &#39;Bradford&#39;, &#39;Von Kries&#39;, &#39;Fairchild&#39;, &#39;CAT02&#39;)</span>
+<span class="sd">        *Chromatic adaptation* method.</span>
+
+<span class="sd">    ndarray, (3,)</span>
+<span class="sd">        *RGB* colourspace matrix.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   *RGB* colourspace matrices are in domain [0, 1].</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from colour import sRGB_COLOURSPACE, PROPHOTO_RGB_COLOURSPACE</span>
+<span class="sd">    &gt;&gt;&gt; RGB = np.array([0.35521588, 0.41, 0.24177934])</span>
+<span class="sd">    &gt;&gt;&gt; RGB_to_RGB(</span>
+<span class="sd">    ...     RGB,</span>
+<span class="sd">    ...     sRGB_COLOURSPACE,</span>
+<span class="sd">    ...     PROPHOTO_RGB_COLOURSPACE)  # doctest: +ELLIPSIS</span>
+<span class="sd">    array([ 0.3579334...,  0.4007138...,  0.2615704...])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">cat</span> <span class="o">=</span> <span class="n">chromatic_adaptation_matrix</span><span class="p">(</span>
+        <span class="n">xy_to_XYZ</span><span class="p">(</span><span class="n">input_colourspace</span><span class="o">.</span><span class="n">whitepoint</span><span class="p">),</span>
+        <span class="n">xy_to_XYZ</span><span class="p">(</span><span class="n">output_colourspace</span><span class="o">.</span><span class="n">whitepoint</span><span class="p">),</span>
+        <span class="n">chromatic_adaptation_method</span><span class="p">)</span>
+
+    <span class="n">trs_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">output_colourspace</span><span class="o">.</span><span class="n">to_RGB</span><span class="p">,</span>
+                        <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">cat</span><span class="p">,</span> <span class="n">input_colourspace</span><span class="o">.</span><span class="n">to_XYZ</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">trs_matrix</span><span class="p">,</span> <span class="n">RGB</span><span class="p">)</span></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2014, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

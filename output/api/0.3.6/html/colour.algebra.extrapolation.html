@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.algebra.extrapolation Module &mdash; Colour 0.3.6 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.3.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.6 documentation" href="index.html" />
+    <link rel="up" title="colour.algebra Package" href="colour.algebra.html" />
+    <link rel="next" title="colour.algebra.interpolation Module" href="colour.algebra.interpolation.html" />
+    <link rel="prev" title="colour.algebra.coordinates.transformations Module" href="colour.algebra.coordinates.transformations.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+  <li>
+    <a href="colour.algebra.coordinates.transformations.html" title="Previous Chapter: colour.algebra.coordinates.transformations Module"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; colour.algebra.c...</span>
+    </a>
+  </li>
+  <li>
+    <a href="colour.algebra.interpolation.html" title="Next Chapter: colour.algebra.interpolation Module"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">colour.algebra.i... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="module-colour.algebra.extrapolation">
+<span id="colour-algebra-extrapolation-module"></span><h1>colour.algebra.extrapolation Module<a class="headerlink" href="#module-colour.algebra.extrapolation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="extrapolation">
+<h2>Extrapolation<a class="headerlink" href="#extrapolation" title="Permalink to this headline">¶</a></h2>
+<p>Defines classes for extrapolating variables:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#colour.algebra.extrapolation.Extrapolator1d" title="colour.algebra.extrapolation.Extrapolator1d"><tt class="xref py py-class docutils literal"><span class="pre">Extrapolator1d</span></tt></a>: 1-D function extrapolation.</li>
+</ul>
+<dl class="class">
+<dt id="colour.algebra.extrapolation.Extrapolator1d">
+<em class="property">class </em><tt class="descclassname">colour.algebra.extrapolation.</tt><tt class="descname">Extrapolator1d</tt><big>(</big><em>interpolator=None</em>, <em>method=u'Linear'</em>, <em>left=None</em>, <em>right=None</em><big>)</big><a class="reference internal" href="_modules/colour/algebra/extrapolation.html#Extrapolator1d"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.algebra.extrapolation.Extrapolator1d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Extrapolates the 1-D function of given interpolator.</p>
+<p>The Extrapolator1d acts as a wrapper around a given <em>Colour</em> or <em>scipy</em>
+interpolator class instance with compatible signature. Two extrapolation
+methods are available:</p>
+<ul class="simple">
+<li><em>Linear</em>: Linearly extrapolates given points using the slope defined by
+the interpolator boundaries (xi[0], xi[1]) if x &lt; xi[0] and
+(xi[-1], xi[-2]) if x &gt; xi[-1].</li>
+<li><em>Constant</em>: Extrapolates given points by assigning the interpolator
+boundaries values xi[0] if x &lt; xi[0] and xi[-1] if x &gt; xi[-1].</li>
+</ul>
+<p>Specifying the <em>left</em> and <em>right</em> arguments takes precedence on the chosen
+extrapolation method and will assign the respective <em>left</em> and <em>right</em>
+values to the given points.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>interpolator</strong> (<em>object</em>) &#8211; Interpolator object.</li>
+<li><strong>method</strong> (<em>unicode, optional</em>) &#8211; <strong>{&#8216;Linear&#8217;, &#8216;Constant&#8217;}</strong>,
+Extrapolation method.</li>
+<li><strong>left</strong> (<em>numeric, optional</em>) &#8211; Value to return for x &lt; xi[0].</li>
+<li><strong>right</strong> (<em>numeric, optional</em>) &#8211; Value to return for x &gt; xi[-1].</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="colour.algebra.extrapolation.Extrapolator1d.__class__">
+<tt class="descname">__class__</tt><big>(</big><big>)</big><a class="headerlink" href="#colour.algebra.extrapolation.Extrapolator1d.__class__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Notes</p>
+<p>The interpolator must define <em>x</em> and <em>y</em> attributes.</p>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td>sastanin. (n.d.). How to make scipy.interpolate give an
+extrapolated result beyond the input range? Retrieved August 08,
+2014, from <a class="reference external" href="http://stackoverflow.com/a/2745496/931625">http://stackoverflow.com/a/2745496/931625</a></td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<p>Extrapolating a single numeric variable:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">colour.algebra</span> <span class="kn">import</span> <span class="n">LinearInterpolator</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interpolator</span> <span class="o">=</span> <span class="n">LinearInterpolator</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">extrapolator</span> <span class="o">=</span> <span class="n">Extrapolator1d</span><span class="p">(</span><span class="n">interpolator</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">extrapolator</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">-1.0</span>
+</pre></div>
+</div>
+<p>Extrapolating an <em>array_like</em> variable:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">extrapolator</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span> <span class="p">,</span> <span class="mi">8</span><span class="p">]))</span>
+<span class="go">array([ 4.,  5.,  6.])</span>
+</pre></div>
+</div>
+<p>Using the <em>Constant</em> extrapolation method:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interpolator</span> <span class="o">=</span> <span class="n">LinearInterpolator</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">extrapolator</span> <span class="o">=</span> <span class="n">Extrapolator1d</span><span class="p">(</span><span class="n">interpolator</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&#39;Constant&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">extrapolator</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]))</span>
+<span class="go">array([ 1.,  1.,  3.,  3.])</span>
+</pre></div>
+</div>
+<p>Using defined <em>left</em> boundary and <em>Constant</em> extrapolation method:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interpolator</span> <span class="o">=</span> <span class="n">LinearInterpolator</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">extrapolator</span> <span class="o">=</span> <span class="n">Extrapolator1d</span><span class="p">(</span><span class="n">interpolator</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&#39;Constant&#39;</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">extrapolator</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]))</span>
+<span class="go">array([ 0.,  0.,  3.,  3.])</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="colour.algebra.extrapolation.Extrapolator1d.__call__">
+<tt class="descname">__call__</tt><big>(</big><em>x</em><big>)</big><a class="reference internal" href="_modules/colour/algebra/extrapolation.html#Extrapolator1d.__call__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.algebra.extrapolation.Extrapolator1d.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluates the Extrapolator1d at given point(s).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x</strong> (<em>numeric or array_like</em>) &#8211; Point(s) to evaluate the Extrapolator1d at.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Extrapolated points value(s).</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float or ndarray</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="colour.algebra.extrapolation.Extrapolator1d.interpolator">
+<tt class="descname">interpolator</tt><a class="reference internal" href="_modules/colour/algebra/extrapolation.html#Extrapolator1d.interpolator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.algebra.extrapolation.Extrapolator1d.interpolator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property for <strong>self.__interpolator</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__interpolator</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="colour.algebra.extrapolation.Extrapolator1d.left">
+<tt class="descname">left</tt><a class="reference internal" href="_modules/colour/algebra/extrapolation.html#Extrapolator1d.left"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.algebra.extrapolation.Extrapolator1d.left" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property for <strong>self.__left</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__left</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">numeric</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="colour.algebra.extrapolation.Extrapolator1d.method">
+<tt class="descname">method</tt><a class="reference internal" href="_modules/colour/algebra/extrapolation.html#Extrapolator1d.method"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.algebra.extrapolation.Extrapolator1d.method" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property for <strong>self.__method</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__method</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">unicode</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="colour.algebra.extrapolation.Extrapolator1d.right">
+<tt class="descname">right</tt><a class="reference internal" href="_modules/colour/algebra/extrapolation.html#Extrapolator1d.right"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.algebra.extrapolation.Extrapolator1d.right" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property for <strong>self.__right</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__right</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">numeric</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2015, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

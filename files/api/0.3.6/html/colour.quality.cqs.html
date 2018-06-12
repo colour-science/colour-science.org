@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.quality.cqs Module &mdash; Colour 0.3.6 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.3.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.6 documentation" href="index.html" />
+    <link rel="up" title="colour.quality Package" href="colour.quality.html" />
+    <link rel="next" title="colour.quality.cri Module" href="colour.quality.cri.html" />
+    <link rel="prev" title="colour.quality.dataset.vs Module" href="colour.quality.dataset.vs.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+  <li>
+    <a href="colour.quality.dataset.vs.html" title="Previous Chapter: colour.quality.dataset.vs Module"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; colour.quality.d...</span>
+    </a>
+  </li>
+  <li>
+    <a href="colour.quality.cri.html" title="Next Chapter: colour.quality.cri Module"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">colour.quality.c... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="module-colour.quality.cqs">
+<span id="colour-quality-cqs-module"></span><h1>colour.quality.cqs Module<a class="headerlink" href="#module-colour.quality.cqs" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="colour-quality-scale">
+<h2>Colour Quality Scale<a class="headerlink" href="#colour-quality-scale" title="Permalink to this headline">¶</a></h2>
+<p>Defines <em>colour quality scale</em> computation objects:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#colour.quality.cqs.CQS_Specification" title="colour.quality.cqs.CQS_Specification"><tt class="xref py py-class docutils literal"><span class="pre">CQS_Specification</span></tt></a></li>
+<li><a class="reference internal" href="#colour.quality.cqs.colour_quality_scale" title="colour.quality.cqs.colour_quality_scale"><tt class="xref py py-func docutils literal"><span class="pre">colour_quality_scale()</span></tt></a></li>
+</ul>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/quality/cqs.ipynb">Colour Quality Scale IPython Notebook</a></p>
+</div>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td>Davis, W., &amp; Ohno, Y. (2010). Color quality scale. Optical
+Engineering, 49(3), 33602–33616. doi:10.1117/1.3360335</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[2]</td><td>Ohno, Y., &amp; Davis, W. (2008). NIST CQS simulation 7.4. Retrieved from
+<a class="reference external" href="http://cie2.nist.gov/TC1-69/NIST">http://cie2.nist.gov/TC1-69/NIST</a> CQS simulation 7.4.xls</td></tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="colour.quality.cqs.VS_ColorimetryData">
+<em class="property">class </em><tt class="descclassname">colour.quality.cqs.</tt><tt class="descname">VS_ColorimetryData</tt><a class="reference internal" href="_modules/colour/quality/cqs.html#VS_ColorimetryData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.quality.cqs.VS_ColorimetryData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#colour.quality.cqs.VS_ColorimetryData" title="colour.quality.cqs.VS_ColorimetryData"><tt class="xref py py-class docutils literal"><span class="pre">colour.quality.cqs.VS_ColorimetryData</span></tt></a></p>
+<p>Defines the the class holding <em>VS test colour samples</em> colorimetry data.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="colour.quality.cqs.VS_ColourQualityScaleData">
+<em class="property">class </em><tt class="descclassname">colour.quality.cqs.</tt><tt class="descname">VS_ColourQualityScaleData</tt><a class="reference internal" href="_modules/colour/quality/cqs.html#VS_ColourQualityScaleData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.quality.cqs.VS_ColourQualityScaleData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#colour.quality.cqs.VS_ColourQualityScaleData" title="colour.quality.cqs.VS_ColourQualityScaleData"><tt class="xref py py-class docutils literal"><span class="pre">colour.quality.cqs.VS_ColourQualityScaleData</span></tt></a></p>
+<p>Defines the the class holding <em>VS test colour samples</em> colour quality
+scale data.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="colour.quality.cqs.CQS_Specification">
+<em class="property">class </em><tt class="descclassname">colour.quality.cqs.</tt><tt class="descname">CQS_Specification</tt><a class="reference internal" href="_modules/colour/quality/cqs.html#CQS_Specification"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.quality.cqs.CQS_Specification" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#colour.quality.cqs.CQS_Specification" title="colour.quality.cqs.CQS_Specification"><tt class="xref py py-class docutils literal"><span class="pre">colour.quality.cqs.CQS_Specification</span></tt></a></p>
+<p>Defines the <em>CQS</em> colour quality specification.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>unicode</em>) &#8211; Name of the test spectral power distribution.</li>
+<li><strong>Q_a</strong> (<em>numeric</em>) &#8211; Colour quality scale <span class="math">\(Q_a\)</span>.</li>
+<li><strong>Q_f</strong> (<em>numeric</em>) &#8211; Colour fidelity scale <span class="math">\(Q_f\)</span> intended to evaluate the fidelity
+of object colour appearances (compared to the reference illuminant of
+the same correlated colour temperature and illuminance).</li>
+<li><strong>Q_p</strong> (<em>numeric</em>) &#8211; Colour preference scale <span class="math">\(Q_p\)</span> similar to colour quality scale
+<span class="math">\(Q_a\)</span> but placing additional weight on preference of object
+colour appearance. This metric is based on the notion that increases
+in chroma are generally preferred and should be rewarded.</li>
+<li><strong>Q_g</strong> (<em>numeric</em>) &#8211; Gamut area scale <span class="math">\(Q_g\)</span> representing the relative gamut formed
+by the (<span class="math">\(a^*\)</span>, <span class="math">\(b^*\)</span>) coordinates of the 15 samples
+illuminated by the test light source in the <em>CIE LAB</em> object
+colourspace.</li>
+<li><strong>Q_d</strong> (<em>numeric</em>) &#8211; Relative gamut area scale <span class="math">\(Q_d\)</span>.</li>
+<li><strong>Q_as</strong> (<em>dict</em>) &#8211; Individual <em>CQS</em> data for each sample.</li>
+<li><strong>colorimetry_data</strong> (<em>tuple</em>) &#8211; Colorimetry data for the test and reference computations.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.quality.cqs.colour_quality_scale">
+<tt class="descclassname">colour.quality.cqs.</tt><tt class="descname">colour_quality_scale</tt><big>(</big><em>spd_test</em>, <em>additional_data=False</em><big>)</big><a class="reference internal" href="_modules/colour/quality/cqs.html#colour_quality_scale"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.quality.cqs.colour_quality_scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <em>colour quality scale</em> of given spectral power distribution.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>spd_test</strong> (<em>SpectralPowerDistribution</em>) &#8211; Test spectral power distribution.</li>
+<li><strong>additional_data</strong> (<em>bool, optional</em>) &#8211; Output additional data.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Color quality scale.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or CQS_Specification</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">colour</span> <span class="kn">import</span> <span class="n">ILLUMINANTS_RELATIVE_SPDS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spd</span> <span class="o">=</span> <span class="n">ILLUMINANTS_RELATIVE_SPDS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;F2&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">colour_quality_scale</span><span class="p">(</span><span class="n">spd</span><span class="p">)</span>  
+<span class="go">64.6860580...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.quality.cqs.gamut_area">
+<tt class="descclassname">colour.quality.cqs.</tt><tt class="descname">gamut_area</tt><big>(</big><em>Lab</em><big>)</big><a class="reference internal" href="_modules/colour/quality/cqs.html#gamut_area"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.quality.cqs.gamut_area" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the gamut area <span class="math">\(G\)</span> covered by given <em>CIE Lab</em> matrices.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>Lab</strong> (<em>array_like</em>) &#8211; <em>CIE Lab</em> colourspace matrices.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Gamut area <span class="math">\(G\)</span>.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">numeric</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Lab</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">39.94996006</span><span class="p">,</span> <span class="mf">34.59018231</span><span class="p">,</span> <span class="o">-</span><span class="mf">19.86046321</span><span class="p">]),</span>
+<span class="gp">... </span>    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">38.88395498</span><span class="p">,</span> <span class="mf">21.44348519</span><span class="p">,</span> <span class="o">-</span><span class="mf">34.87805301</span><span class="p">]),</span>
+<span class="gp">... </span>    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">36.60576301</span><span class="p">,</span> <span class="mf">7.06742454</span><span class="p">,</span> <span class="o">-</span><span class="mf">43.21461177</span><span class="p">]),</span>
+<span class="gp">... </span>    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">46.60142558</span><span class="p">,</span> <span class="o">-</span><span class="mf">15.90481586</span><span class="p">,</span> <span class="o">-</span><span class="mf">34.64616865</span><span class="p">]),</span>
+<span class="gp">... </span>    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">56.50196523</span><span class="p">,</span> <span class="o">-</span><span class="mf">29.54655550</span><span class="p">,</span> <span class="o">-</span><span class="mf">20.50177194</span><span class="p">]),</span>
+<span class="gp">... </span>    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">55.73912101</span><span class="p">,</span> <span class="o">-</span><span class="mf">43.39520959</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.08956953</span><span class="p">]),</span>
+<span class="gp">... </span>    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">56.20776870</span><span class="p">,</span> <span class="o">-</span><span class="mf">53.68997662</span><span class="p">,</span> <span class="mf">20.21134410</span><span class="p">]),</span>
+<span class="gp">... </span>    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">66.16683122</span><span class="p">,</span> <span class="o">-</span><span class="mf">38.64600327</span><span class="p">,</span> <span class="mf">42.77396631</span><span class="p">]),</span>
+<span class="gp">... </span>    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">76.72952110</span><span class="p">,</span> <span class="o">-</span><span class="mf">23.92148210</span><span class="p">,</span> <span class="mf">61.04740432</span><span class="p">]),</span>
+<span class="gp">... </span>    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">82.85370708</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.98679065</span><span class="p">,</span> <span class="mf">75.43320144</span><span class="p">]),</span>
+<span class="gp">... </span>    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">69.26458861</span><span class="p">,</span> <span class="mf">13.11066359</span><span class="p">,</span> <span class="mf">68.83858372</span><span class="p">]),</span>
+<span class="gp">... </span>    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">69.63154351</span><span class="p">,</span> <span class="mf">28.24532497</span><span class="p">,</span> <span class="mf">59.45609803</span><span class="p">]),</span>
+<span class="gp">... </span>    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">61.26281449</span><span class="p">,</span> <span class="mf">40.87950839</span><span class="p">,</span> <span class="mf">44.97606172</span><span class="p">]),</span>
+<span class="gp">... </span>    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">41.62567821</span><span class="p">,</span> <span class="mf">57.34129516</span><span class="p">,</span> <span class="mf">27.46718170</span><span class="p">]),</span>
+<span class="gp">... </span>    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">40.52565174</span><span class="p">,</span> <span class="mf">48.87449192</span><span class="p">,</span> <span class="mf">3.45121680</span><span class="p">])]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gamut_area</span><span class="p">(</span><span class="n">Lab</span><span class="p">)</span>  
+<span class="go">8335.9482018...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.quality.cqs.vs_colorimetry_data">
+<tt class="descclassname">colour.quality.cqs.</tt><tt class="descname">vs_colorimetry_data</tt><big>(</big><em>spd_test</em>, <em>spd_reference</em>, <em>spds_vs</em>, <em>cmfs</em>, <em>chromatic_adaptation=False</em><big>)</big><a class="reference internal" href="_modules/colour/quality/cqs.html#vs_colorimetry_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.quality.cqs.vs_colorimetry_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <em>VS test colour samples</em> colorimetry data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>spd_test</strong> (<em>SpectralPowerDistribution</em>) &#8211; Test spectral power distribution.</li>
+<li><strong>spd_reference</strong> (<em>SpectralPowerDistribution</em>) &#8211; Reference spectral power distribution.</li>
+<li><strong>spds_vs</strong> (<em>dict</em>) &#8211; <em>VS test colour samples</em> spectral power distributions.</li>
+<li><strong>cmfs</strong> (<em>XYZ_ColourMatchingFunctions</em>) &#8211; Standard observer colour matching functions.</li>
+<li><strong>chromatic_adaptation</strong> (<em>bool, optional</em>) &#8211; Perform chromatic adaptation.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>VS test colour samples</em> colorimetry data.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.quality.cqs.CCT_factor">
+<tt class="descclassname">colour.quality.cqs.</tt><tt class="descname">CCT_factor</tt><big>(</big><em>reference_data</em>, <em>XYZ_r</em><big>)</big><a class="reference internal" href="_modules/colour/quality/cqs.html#CCT_factor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.quality.cqs.CCT_factor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the correlated colour temperature factor penalizing lamps with
+extremely low correlated colour temperatures.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>reference_data</strong> (<em>VS_ColorimetryData</em>) &#8211; Reference colorimetry data.</li>
+<li><strong>XYZ_r</strong> (<em>array_like</em>) &#8211; <em>CIE XYZ</em> tristimulus values for reference.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Correlated colour temperature factor.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.quality.cqs.scale_conversion">
+<tt class="descclassname">colour.quality.cqs.</tt><tt class="descname">scale_conversion</tt><big>(</big><em>D_E_ab</em>, <em>CCT_factor</em>, <em>scaling_factor=3.104</em><big>)</big><a class="reference internal" href="_modules/colour/quality/cqs.html#scale_conversion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.quality.cqs.scale_conversion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the correlated colour temperature factor penalizing lamps with
+extremely low correlated colour temperatures.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>reference_data</strong> (<em>VS_ColorimetryData</em>) &#8211; Reference colorimetry data.</li>
+<li><strong>spd_reference</strong> (<em>SpectralPowerDistribution</em>) &#8211; Reference spectral power distribution.</li>
+<li><strong>cmfs</strong> (<em>XYZ_ColourMatchingFunctions</em>) &#8211; Standard observer colour matching functions.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Correlated colour temperature factor.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.quality.cqs.delta_E_RMS">
+<tt class="descclassname">colour.quality.cqs.</tt><tt class="descname">delta_E_RMS</tt><big>(</big><em>cqs_data</em>, <em>attribute</em><big>)</big><a class="reference internal" href="_modules/colour/quality/cqs.html#delta_E_RMS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.quality.cqs.delta_E_RMS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the root-mean-square average for given <em>CQS</em> data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>cqs_data</strong> (<em>VS_ColourQualityScaleData</em>) &#8211; <em>CQS</em> data.</li>
+<li><strong>attribute</strong> (<em>unicode</em>) &#8211; Colorimetry data attribute to use to compute the root-mean-square
+average.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Root-mean-square average.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.quality.cqs.colour_quality_scales">
+<tt class="descclassname">colour.quality.cqs.</tt><tt class="descname">colour_quality_scales</tt><big>(</big><em>test_data</em>, <em>reference_data</em>, <em>CCT_factor</em><big>)</big><a class="reference internal" href="_modules/colour/quality/cqs.html#colour_quality_scales"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.quality.cqs.colour_quality_scales" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <em>VS test colour samples</em> rendering scales.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>test_data</strong> (<em>list</em>) &#8211; Test data.</li>
+<li><strong>reference_data</strong> (<em>list</em>) &#8211; Reference data.</li>
+<li><strong>CCT_factor</strong> (<em>numeric</em>) &#8211; Factor penalizing lamps with extremely low correlated colour
+temperatures.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>VS Test colour samples</em> colour rendering scales.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2015, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

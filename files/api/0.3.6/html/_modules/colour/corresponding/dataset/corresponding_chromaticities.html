@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.corresponding.dataset.corresponding_chromaticities &mdash; Colour 0.3.6 documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '0.3.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.6 documentation" href="../../../../index.html" />
+    <link rel="up" title="colour.corresponding" href="../../corresponding.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../../index.html"><img src="../../../../_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for colour.corresponding.dataset.corresponding_chromaticities</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Breneman Corresponding Chromaticities Dataset</span>
+<span class="sd">=============================================</span>
+
+<span class="sd">Defines Breneman (1987) results for corresponding chromaticities experiments.</span>
+
+<span class="sd">See Also</span>
+<span class="sd">--------</span>
+<span class="sd">`Corresponding Chromaticities Prediction IPython Notebook</span>
+<span class="sd">&lt;http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/corresponding/prediction.ipynb&gt;`_  # noqa</span>
+
+<span class="sd">References</span>
+<span class="sd">----------</span>
+<span class="sd">.. [1]  Breneman, E. J. (1987). Corresponding chromaticities for different</span>
+<span class="sd">        states of adaptation to complex visual fields. JOSA A, 4(6). Retrieved</span>
+<span class="sd">        from http://www.opticsinfobase.org/josaa/fulltext.cfm?uri=josaa-4-6-1115&amp;id=2783  # noqa</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">unicode_literals</span>
+
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s">&#39;Copyright (C) 2013 - 2015 - Colour Developers&#39;</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s">&#39;New BSD License - http://opensource.org/licenses/BSD-3-Clause&#39;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s">&#39;colour-science@googlegroups.com&#39;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s">&#39;Production&#39;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;BrenemanExperimentResult&#39;</span><span class="p">,</span>
+           <span class="s">&#39;PrimariesChromaticityCoordinates&#39;</span><span class="p">,</span>
+           <span class="s">&#39;BRENEMAN_EXPERIMENT_1_RESULTS&#39;</span><span class="p">,</span>
+           <span class="s">&#39;BRENEMAN_EXPERIMENT_2_RESULTS&#39;</span><span class="p">,</span>
+           <span class="s">&#39;BRENEMAN_EXPERIMENT_3_RESULTS&#39;</span><span class="p">,</span>
+           <span class="s">&#39;BRENEMAN_EXPERIMENT_4_RESULTS&#39;</span><span class="p">,</span>
+           <span class="s">&#39;BRENEMAN_EXPERIMENT_5_RESULTS&#39;</span><span class="p">,</span>
+           <span class="s">&#39;BRENEMAN_EXPERIMENT_6_RESULTS&#39;</span><span class="p">,</span>
+           <span class="s">&#39;BRENEMAN_EXPERIMENT_7_RESULTS&#39;</span><span class="p">,</span>
+           <span class="s">&#39;BRENEMAN_EXPERIMENT_10_RESULTS&#39;</span><span class="p">,</span>
+           <span class="s">&#39;BRENEMAN_EXPERIMENT_8_RESULTS&#39;</span><span class="p">,</span>
+           <span class="s">&#39;BRENEMAN_EXPERIMENT_9_RESULTS&#39;</span><span class="p">,</span>
+           <span class="s">&#39;BRENEMAN_EXPERIMENT_11_RESULTS&#39;</span><span class="p">,</span>
+           <span class="s">&#39;BRENEMAN_EXPERIMENT_12_RESULTS&#39;</span><span class="p">,</span>
+           <span class="s">&#39;BRENEMAN_EXPERIMENTS_PRIMARIES_CHROMATICITIES&#39;</span><span class="p">,</span>
+           <span class="s">&#39;BRENEMAN_EXPERIMENTS&#39;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="BrenemanExperimentResult"><a class="viewcode-back" href="../../../../colour.corresponding.dataset.corresponding_chromaticities.html#colour.corresponding.dataset.corresponding_chromaticities.BrenemanExperimentResult">[docs]</a><span class="k">class</span> <span class="nc">BrenemanExperimentResult</span><span class="p">(</span>
+    <span class="n">namedtuple</span><span class="p">(</span><span class="s">&#39;BrenemanExperimentResult&#39;</span><span class="p">,</span>
+               <span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;uvp_t&#39;</span><span class="p">,</span> <span class="s">&#39;uvp_m&#39;</span><span class="p">,</span> <span class="s">&#39;s_uvp&#39;</span><span class="p">,</span> <span class="s">&#39;d_uvp_i&#39;</span><span class="p">,</span> <span class="s">&#39;d_uvp_g&#39;</span><span class="p">))):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Experiment result.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    name : unicode</span>
+<span class="sd">        Test colour name.</span>
+<span class="sd">    uvp_t : numeric</span>
+<span class="sd">        Chromaticity coordinates :math:`uv_t^p` of test colour.</span>
+<span class="sd">    uvp_m : array_like, (2,)</span>
+<span class="sd">        Chromaticity coordinates :math:`uv_m^p` of matching colour.</span>
+<span class="sd">    s_uvp : array_like, (2,), optional</span>
+<span class="sd">        Interobserver variation (:math:`x10^3`) :math:`\sigma_uv^p`.</span>
+<span class="sd">    d_uvp_i : array_like, (2,), optional</span>
+<span class="sd">        Deviation of individual linear transformation (:math:`x10^3`)</span>
+<span class="sd">        :math:`\delta_uv_i^p`.</span>
+<span class="sd">    d_uvp_g : array_like, (2,), optional</span>
+<span class="sd">        Deviation of individual linear transformation (:math:`x10^3`)</span>
+<span class="sd">        :math:`\delta_uv_g^p`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__new__</span><span class="p">(</span>
+            <span class="n">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">uvp_t</span><span class="p">,</span> <span class="n">uvp_m</span><span class="p">,</span> <span class="n">s_uvp</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">d_uvp_i</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">d_uvp_g</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns a new instance of the :class:`BrenemanExperimentResult` class.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">BrenemanExperimentResult</span><span class="p">,</span> <span class="n">cls</span><span class="p">)</span><span class="o">.</span><span class="n">__new__</span><span class="p">(</span>
+            <span class="n">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">uvp_t</span><span class="p">,</span> <span class="n">uvp_m</span><span class="p">,</span> <span class="n">s_uvp</span><span class="p">,</span> <span class="n">d_uvp_i</span><span class="p">,</span> <span class="n">d_uvp_g</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="PrimariesChromaticityCoordinates"><a class="viewcode-back" href="../../../../colour.corresponding.dataset.corresponding_chromaticities.html#colour.corresponding.dataset.corresponding_chromaticities.PrimariesChromaticityCoordinates">[docs]</a><span class="k">class</span> <span class="nc">PrimariesChromaticityCoordinates</span><span class="p">(</span>
+    <span class="n">namedtuple</span><span class="p">(</span><span class="s">&#39;PrimariesChromaticityCoordinates&#39;</span><span class="p">,</span>
+               <span class="p">(</span><span class="s">&#39;experiment&#39;</span><span class="p">,</span> <span class="s">&#39;illuminants&#39;</span><span class="p">,</span> <span class="s">&#39;Y&#39;</span><span class="p">,</span> <span class="s">&#39;P_uvp&#39;</span><span class="p">,</span> <span class="s">&#39;D_uvp&#39;</span><span class="p">,</span> <span class="s">&#39;T_uvp&#39;</span><span class="p">))):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Chromaticity coordinates of primaries.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    experiment : integer</span>
+<span class="sd">        Experiment.</span>
+<span class="sd">    illuminants : array_like, (2,)</span>
+<span class="sd">        Chromaticity coordinates :math:`uv_t^p` of test colour.</span>
+<span class="sd">    Y : numeric</span>
+<span class="sd">        White luminance :math:`Y` in :math:`cd/m^2`.</span>
+<span class="sd">    P_uvp : numeric</span>
+<span class="sd">        Chromaticity coordinates :math:`uv^p` of primary :math:`P`.</span>
+<span class="sd">    D_uvp : numeric</span>
+<span class="sd">        Chromaticity coordinates :math:`uv^p` of primary :math:`D`.</span>
+<span class="sd">    T_uvp : numeric</span>
+<span class="sd">        Chromaticity coordinates :math:`uv^p` of primary :math:`T`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__new__</span><span class="p">(</span>
+            <span class="n">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">uvp_t</span><span class="p">,</span> <span class="n">uvp_m</span><span class="p">,</span> <span class="n">s_uvp</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">d_uvp_i</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">d_uvp_g</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns a new instance of the :class:`BrenemanExperimentResult` class.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">PrimariesChromaticityCoordinates</span><span class="p">,</span> <span class="n">cls</span><span class="p">)</span><span class="o">.</span><span class="n">__new__</span><span class="p">(</span>
+            <span class="n">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">uvp_t</span><span class="p">,</span> <span class="n">uvp_m</span><span class="p">,</span> <span class="n">s_uvp</span><span class="p">,</span> <span class="n">d_uvp_i</span><span class="p">,</span> <span class="n">d_uvp_g</span><span class="p">)</span>
+
+</div>
+<span class="n">BRENEMAN_EXPERIMENT_1_RESULTS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Illuminant&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.259</span><span class="p">,</span> <span class="mf">0.526</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.200</span><span class="p">,</span> <span class="mf">0.475</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Gray&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.259</span><span class="p">,</span> <span class="mf">0.524</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.199</span><span class="p">,</span> <span class="mf">0.487</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Red&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.459</span><span class="p">,</span> <span class="mf">0.522</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.420</span><span class="p">,</span> <span class="mf">0.509</span><span class="p">),</span> <span class="p">(</span><span class="mi">19</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">19</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Skin&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.307</span><span class="p">,</span> <span class="mf">0.526</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.249</span><span class="p">,</span> <span class="mf">0.497</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Orange&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.360</span><span class="p">,</span> <span class="mf">0.544</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.302</span><span class="p">,</span> <span class="mf">0.548</span><span class="p">),</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Brown&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.350</span><span class="p">,</span> <span class="mf">0.541</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.290</span><span class="p">,</span> <span class="mf">0.537</span><span class="p">),</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Yellow&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.318</span><span class="p">,</span> <span class="mf">0.550</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.257</span><span class="p">,</span> <span class="mf">0.554</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Foliage&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.258</span><span class="p">,</span> <span class="mf">0.542</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.192</span><span class="p">,</span> <span class="mf">0.529</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Green&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.193</span><span class="p">,</span> <span class="mf">0.542</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.129</span><span class="p">,</span> <span class="mf">0.521</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Blue-green&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.180</span><span class="p">,</span> <span class="mf">0.516</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.133</span><span class="p">,</span> <span class="mf">0.469</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Blue&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.186</span><span class="p">,</span> <span class="mf">0.445</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.158</span><span class="p">,</span> <span class="mf">0.340</span><span class="p">),</span> <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">33</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Sky&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.226</span><span class="p">,</span> <span class="mf">0.491</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.178</span><span class="p">,</span> <span class="mf">0.426</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">14</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Purple&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.278</span><span class="p">,</span> <span class="mf">0.456</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.231</span><span class="p">,</span> <span class="mf">0.365</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)))</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Breneman (1987) experiment 1 results.</span>
+
+<span class="sd">BRENEMAN_EXPERIMENT_1_RESULTS : tuple</span>
+
+<span class="sd">Notes</span>
+<span class="sd">-----</span>
+<span class="sd">-   Illuminants : *A*, *D65*</span>
+<span class="sd">-   White Luminance : 1500 :math:`cd/m^2`</span>
+<span class="sd">-   Observers Count : 7</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">BRENEMAN_EXPERIMENT_2_RESULTS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Illuminant&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.222</span><span class="p">,</span> <span class="mf">0.521</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.204</span><span class="p">,</span> <span class="mf">0.479</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Gray&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.227</span><span class="p">,</span> <span class="mf">0.517</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.207</span><span class="p">,</span> <span class="mf">0.486</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Red&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.464</span><span class="p">,</span> <span class="mf">0.520</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.449</span><span class="p">,</span> <span class="mf">0.511</span><span class="p">),</span> <span class="p">(</span><span class="mi">22</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Skin&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.286</span><span class="p">,</span> <span class="mf">0.526</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.263</span><span class="p">,</span> <span class="mf">0.505</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Orange&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.348</span><span class="p">,</span> <span class="mf">0.546</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.322</span><span class="p">,</span> <span class="mf">0.545</span><span class="p">),</span> <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Brown&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.340</span><span class="p">,</span> <span class="mf">0.543</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.316</span><span class="p">,</span> <span class="mf">0.537</span><span class="p">),</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Yellow&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.288</span><span class="p">,</span> <span class="mf">0.554</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.265</span><span class="p">,</span> <span class="mf">0.553</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Foliage&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.244</span><span class="p">,</span> <span class="mf">0.547</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.221</span><span class="p">,</span> <span class="mf">0.538</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Green&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.156</span><span class="p">,</span> <span class="mf">0.548</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.135</span><span class="p">,</span> <span class="mf">0.532</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Blue-green&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.159</span><span class="p">,</span> <span class="mf">0.511</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.145</span><span class="p">,</span> <span class="mf">0.472</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Blue&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.160</span><span class="p">,</span> <span class="mf">0.406</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.163</span><span class="p">,</span> <span class="mf">0.331</span><span class="p">),</span> <span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="mi">31</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Sky&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.190</span><span class="p">,</span> <span class="mf">0.481</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.176</span><span class="p">,</span> <span class="mf">0.431</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">24</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Purple&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.258</span><span class="p">,</span> <span class="mf">0.431</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.244</span><span class="p">,</span> <span class="mf">0.349</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">19</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">13</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">19</span><span class="p">)))</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Breneman (1987) experiment 2 results.</span>
+
+<span class="sd">BRENEMAN_EXPERIMENT_2_RESULTS : tuple</span>
+
+<span class="sd">Notes</span>
+<span class="sd">-----</span>
+<span class="sd">-   Illuminants : *Projector*, *D55*</span>
+<span class="sd">-   White Luminance : 1500 :math:`cd/m^2`</span>
+<span class="sd">-   Observers Count : 7</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">BRENEMAN_EXPERIMENT_3_RESULTS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Illuminant&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.223</span><span class="p">,</span> <span class="mf">0.521</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.206</span><span class="p">,</span> <span class="mf">0.478</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Gray&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.228</span><span class="p">,</span> <span class="mf">0.517</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.211</span><span class="p">,</span> <span class="mf">0.494</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Red&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.462</span><span class="p">,</span> <span class="mf">0.519</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.448</span><span class="p">,</span> <span class="mf">0.505</span><span class="p">),</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Skin&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.285</span><span class="p">,</span> <span class="mf">0.524</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.267</span><span class="p">,</span> <span class="mf">0.507</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Orange&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.346</span><span class="p">,</span> <span class="mf">0.546</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.325</span><span class="p">,</span> <span class="mf">0.541</span><span class="p">),</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Brown&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.338</span><span class="p">,</span> <span class="mf">0.543</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.321</span><span class="p">,</span> <span class="mf">0.532</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Yellow&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.287</span><span class="p">,</span> <span class="mf">0.554</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.267</span><span class="p">,</span> <span class="mf">0.548</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Foliage&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.244</span><span class="p">,</span> <span class="mf">0.547</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.226</span><span class="p">,</span> <span class="mf">0.531</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Green&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.157</span><span class="p">,</span> <span class="mf">0.548</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.141</span><span class="p">,</span> <span class="mf">0.528</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Blue-green&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.160</span><span class="p">,</span> <span class="mf">0.510</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.151</span><span class="p">,</span> <span class="mf">0.486</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Blue&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.162</span><span class="p">,</span> <span class="mf">0.407</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.158</span><span class="p">,</span> <span class="mf">0.375</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">23</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Sky&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.191</span><span class="p">,</span> <span class="mf">0.482</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.179</span><span class="p">,</span> <span class="mf">0.452</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Purple&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.258</span><span class="p">,</span> <span class="mf">0.432</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.238</span><span class="p">,</span> <span class="mf">0.396</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">11</span><span class="p">)))</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Breneman (1987) experiment 3 results.</span>
+
+<span class="sd">BRENEMAN_EXPERIMENT_3_RESULTS : tuple</span>
+
+<span class="sd">Notes</span>
+<span class="sd">-----</span>
+<span class="sd">-   Illuminants : *Projector*, *D55*</span>
+<span class="sd">-   White Luminance : 75 :math:`cd/m^2`</span>
+<span class="sd">-   Observers Count : 7</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">BRENEMAN_EXPERIMENT_4_RESULTS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Illuminant&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.258</span><span class="p">,</span> <span class="mf">0.523</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.199</span><span class="p">,</span> <span class="mf">0.467</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Gray&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.257</span><span class="p">,</span> <span class="mf">0.524</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.205</span><span class="p">,</span> <span class="mf">0.495</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Red&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.460</span><span class="p">,</span> <span class="mf">0.521</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.416</span><span class="p">,</span> <span class="mf">0.501</span><span class="p">),</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Skin&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.308</span><span class="p">,</span> <span class="mf">0.526</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.253</span><span class="p">,</span> <span class="mf">0.503</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Orange&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.360</span><span class="p">,</span> <span class="mf">0.544</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.303</span><span class="p">,</span> <span class="mf">0.541</span><span class="p">),</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Brown&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.350</span><span class="p">,</span> <span class="mf">0.541</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.296</span><span class="p">,</span> <span class="mf">0.527</span><span class="p">),</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Yellow&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.317</span><span class="p">,</span> <span class="mf">0.550</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.260</span><span class="p">,</span> <span class="mf">0.547</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Foliage&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.258</span><span class="p">,</span> <span class="mf">0.543</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.203</span><span class="p">,</span> <span class="mf">0.520</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Green&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.193</span><span class="p">,</span> <span class="mf">0.543</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.142</span><span class="p">,</span> <span class="mf">0.516</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Blue-green&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.180</span><span class="p">,</span> <span class="mf">0.516</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.140</span><span class="p">,</span> <span class="mf">0.484</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">9</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Blue&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.185</span><span class="p">,</span> <span class="mf">0.445</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.151</span><span class="p">,</span> <span class="mf">0.394</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">24</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Sky&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.225</span><span class="p">,</span> <span class="mf">0.490</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.180</span><span class="p">,</span> <span class="mf">0.448</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">11</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Purple&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.278</span><span class="p">,</span> <span class="mf">0.455</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.229</span><span class="p">,</span> <span class="mf">0.388</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">14</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">)))</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Breneman (1987) experiment 4 results.</span>
+
+<span class="sd">BRENEMAN_EXPERIMENT_4_RESULTS : tuple</span>
+
+<span class="sd">Notes</span>
+<span class="sd">-----</span>
+<span class="sd">-   Illuminants : *A*, *D65*</span>
+<span class="sd">-   White Luminance : 75 :math:`cd/m^2`</span>
+<span class="sd">-   Observers Count : 7</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">BRENEMAN_EXPERIMENT_5_RESULTS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Gray&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.028</span><span class="p">,</span> <span class="mf">0.480</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.212</span><span class="p">,</span> <span class="mf">0.491</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Red&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.449</span><span class="p">,</span> <span class="mf">0.512</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.408</span><span class="p">,</span> <span class="mf">0.514</span><span class="p">),</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Skin&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.269</span><span class="p">,</span> <span class="mf">0.505</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.262</span><span class="p">,</span> <span class="mf">0.511</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Orange&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.331</span><span class="p">,</span> <span class="mf">0.548</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.303</span><span class="p">,</span> <span class="mf">0.545</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Brown&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.322</span><span class="p">,</span> <span class="mf">0.541</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.303</span><span class="p">,</span> <span class="mf">0.538</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Yellow&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.268</span><span class="p">,</span> <span class="mf">0.555</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.264</span><span class="p">,</span> <span class="mf">0.550</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Foliage&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.224</span><span class="p">,</span> <span class="mf">0.538</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.227</span><span class="p">,</span> <span class="mf">0.535</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Green&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.134</span><span class="p">,</span> <span class="mf">0.531</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.159</span><span class="p">,</span> <span class="mf">0.530</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Blue-green&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.145</span><span class="p">,</span> <span class="mf">0.474</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.165</span><span class="p">,</span> <span class="mf">0.490</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Blue&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.163</span><span class="p">,</span> <span class="mf">0.329</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.173</span><span class="p">,</span> <span class="mf">0.378</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Sky&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.179</span><span class="p">,</span> <span class="mf">0.438</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.189</span><span class="p">,</span> <span class="mf">0.462</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Purple&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.245</span><span class="p">,</span> <span class="mf">0.364</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.239</span><span class="p">,</span> <span class="mf">0.401</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">16</span><span class="p">)))</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Breneman (1987) experiment 5 results.</span>
+
+<span class="sd">BRENEMAN_EXPERIMENT_5_RESULTS : tuple</span>
+
+<span class="sd">Notes</span>
+<span class="sd">-----</span>
+<span class="sd">-   Effective White Levels : 130 and 2120 :math:`cd/m^2`</span>
+<span class="sd">-   Observers Count : 7</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">BRENEMAN_EXPERIMENT_6_RESULTS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Illuminant&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.257</span><span class="p">,</span> <span class="mf">0.525</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.201</span><span class="p">,</span> <span class="mf">0.482</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Gray&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.267</span><span class="p">,</span> <span class="mf">0.521</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.207</span><span class="p">,</span> <span class="mf">0.485</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Red&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.457</span><span class="p">,</span> <span class="mf">0.521</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.398</span><span class="p">,</span> <span class="mf">0.516</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">9</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Skin&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.316</span><span class="p">,</span> <span class="mf">0.526</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.253</span><span class="p">,</span> <span class="mf">0.503</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Orange&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.358</span><span class="p">,</span> <span class="mf">0.545</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.287</span><span class="p">,</span> <span class="mf">0.550</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Brown&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.350</span><span class="p">,</span> <span class="mf">0.541</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.282</span><span class="p">,</span> <span class="mf">0.540</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Yellow&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.318</span><span class="p">,</span> <span class="mf">0.551</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.249</span><span class="p">,</span> <span class="mf">0.556</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Foliage&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.256</span><span class="p">,</span> <span class="mf">0.547</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.188</span><span class="p">,</span> <span class="mf">0.537</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Green&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.193</span><span class="p">,</span> <span class="mf">0.542</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.133</span><span class="p">,</span> <span class="mf">0.520</span><span class="p">),</span> <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Blue-green&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.180</span><span class="p">,</span> <span class="mf">0.516</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.137</span><span class="p">,</span> <span class="mf">0.466</span><span class="p">),</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Blue&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.186</span><span class="p">,</span> <span class="mf">0.445</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.156</span><span class="p">,</span> <span class="mf">0.353</span><span class="p">),</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">45</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Sky&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.225</span><span class="p">,</span> <span class="mf">0.492</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.178</span><span class="p">,</span> <span class="mf">0.428</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">14</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Purple&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.276</span><span class="p">,</span> <span class="mf">0.456</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.227</span><span class="p">,</span> <span class="mf">0.369</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">27</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">)))</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Breneman (1987) experiment 6 results.</span>
+
+<span class="sd">BRENEMAN_EXPERIMENT_6_RESULTS : tuple</span>
+
+<span class="sd">Notes</span>
+<span class="sd">-----</span>
+<span class="sd">-   Illuminants : *A*, *D55*</span>
+<span class="sd">-   White Luminance : 11100 :math:`cd/m^2`</span>
+<span class="sd">-   Observers Count : 8</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">BRENEMAN_EXPERIMENT_7_RESULTS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Gray&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.208</span><span class="p">,</span> <span class="mf">0.481</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.211</span><span class="p">,</span> <span class="mf">0.486</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Red&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.448</span><span class="p">,</span> <span class="mf">0.512</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.409</span><span class="p">,</span> <span class="mf">0.516</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Skin&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.269</span><span class="p">,</span> <span class="mf">0.505</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.256</span><span class="p">,</span> <span class="mf">0.506</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Orange&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.331</span><span class="p">,</span> <span class="mf">0.549</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.305</span><span class="p">,</span> <span class="mf">0.547</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Brown&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.322</span><span class="p">,</span> <span class="mf">0.541</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.301</span><span class="p">,</span> <span class="mf">0.539</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Yellow&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.268</span><span class="p">,</span> <span class="mf">0.555</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.257</span><span class="p">,</span> <span class="mf">0.552</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Foliage&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.225</span><span class="p">,</span> <span class="mf">0.538</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.222</span><span class="p">,</span> <span class="mf">0.536</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Green&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.135</span><span class="p">,</span> <span class="mf">0.531</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.153</span><span class="p">,</span> <span class="mf">0.529</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Blue-green&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.145</span><span class="p">,</span> <span class="mf">0.475</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.160</span><span class="p">,</span> <span class="mf">0.484</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Blue&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.163</span><span class="p">,</span> <span class="mf">0.331</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.171</span><span class="p">,</span> <span class="mf">0.379</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">11</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Sky&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.179</span><span class="p">,</span> <span class="mf">0.438</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.187</span><span class="p">,</span> <span class="mf">0.452</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Purple&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.245</span><span class="p">,</span> <span class="mf">0.365</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.240</span><span class="p">,</span> <span class="mf">0.398</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">)))</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Breneman (1987) experiment 7 results.</span>
+
+<span class="sd">BRENEMAN_EXPERIMENT_7_RESULTS : tuple</span>
+
+<span class="sd">Notes</span>
+<span class="sd">-----</span>
+<span class="sd">-   Effective White Levels : 850 and 11100 :math:`cd/m^2`</span>
+<span class="sd">-   Observers Count : 8</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">BRENEMAN_EXPERIMENT_8_RESULTS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Illuminant&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.258</span><span class="p">,</span> <span class="mf">0.524</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.195</span><span class="p">,</span> <span class="mf">0.469</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Gray&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.257</span><span class="p">,</span> <span class="mf">0.525</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.200</span><span class="p">,</span> <span class="mf">0.494</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Red&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.458</span><span class="p">,</span> <span class="mf">0.522</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.410</span><span class="p">,</span> <span class="mf">0.508</span><span class="p">),</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Skin&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.308</span><span class="p">,</span> <span class="mf">0.526</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.249</span><span class="p">,</span> <span class="mf">0.502</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Orange&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.359</span><span class="p">,</span> <span class="mf">0.545</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.299</span><span class="p">,</span> <span class="mf">0.545</span><span class="p">),</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Brown&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.349</span><span class="p">,</span> <span class="mf">0.540</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.289</span><span class="p">,</span> <span class="mf">0.532</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Yellow&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.317</span><span class="p">,</span> <span class="mf">0.550</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.256</span><span class="p">,</span> <span class="mf">0.549</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Foliage&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.260</span><span class="p">,</span> <span class="mf">0.545</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.198</span><span class="p">,</span> <span class="mf">0.529</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Green&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.193</span><span class="p">,</span> <span class="mf">0.543</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.137</span><span class="p">,</span> <span class="mf">0.520</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Blue-green&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.182</span><span class="p">,</span> <span class="mf">0.516</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.139</span><span class="p">,</span> <span class="mf">0.477</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Blue&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.184</span><span class="p">,</span> <span class="mf">0.444</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.150</span><span class="p">,</span> <span class="mf">0.387</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">22</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Sky&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.224</span><span class="p">,</span> <span class="mf">0.489</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.177</span><span class="p">,</span> <span class="mf">0.439</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Purple&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.277</span><span class="p">,</span> <span class="mf">0.454</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.226</span><span class="p">,</span> <span class="mf">0.389</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">)))</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Breneman (1987) experiment 8 results.</span>
+
+<span class="sd">BRENEMAN_EXPERIMENT_8_RESULTS : tuple</span>
+
+<span class="sd">Notes</span>
+<span class="sd">-----</span>
+<span class="sd">-   Illuminants : *A*, *D65*</span>
+<span class="sd">-   White Luminance : 350 :math:`cd/m^2`</span>
+<span class="sd">-   Observers Count : 8</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">BRENEMAN_EXPERIMENT_9_RESULTS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Illuminant&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.254</span><span class="p">,</span> <span class="mf">0.525</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.195</span><span class="p">,</span> <span class="mf">0.465</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Gray&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.256</span><span class="p">,</span> <span class="mf">0.524</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.207</span><span class="p">,</span> <span class="mf">0.496</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Red&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.459</span><span class="p">,</span> <span class="mf">0.521</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.415</span><span class="p">,</span> <span class="mf">0.489</span><span class="p">),</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">14</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">21</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Skin&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.307</span><span class="p">,</span> <span class="mf">0.525</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.261</span><span class="p">,</span> <span class="mf">0.500</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Orange&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.359</span><span class="p">,</span> <span class="mf">0.545</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.313</span><span class="p">,</span> <span class="mf">0.532</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">13</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Brown&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.349</span><span class="p">,</span> <span class="mf">0.540</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.302</span><span class="p">,</span> <span class="mf">0.510</span><span class="p">),</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">24</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Yellow&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.317</span><span class="p">,</span> <span class="mf">0.550</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.268</span><span class="p">,</span> <span class="mf">0.538</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">12</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Foliage&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.259</span><span class="p">,</span> <span class="mf">0.544</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.212</span><span class="p">,</span> <span class="mf">0.510</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">14</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">22</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Green&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.193</span><span class="p">,</span> <span class="mf">0.542</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.150</span><span class="p">,</span> <span class="mf">0.506</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Blue-green&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.181</span><span class="p">,</span> <span class="mf">0.517</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.144</span><span class="p">,</span> <span class="mf">0.487</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">9</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Blue&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.184</span><span class="p">,</span> <span class="mf">0.444</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.155</span><span class="p">,</span> <span class="mf">0.407</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">36</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Sky&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.225</span><span class="p">,</span> <span class="mf">0.490</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.183</span><span class="p">,</span> <span class="mf">0.458</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">19</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Purple&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.276</span><span class="p">,</span> <span class="mf">0.454</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.233</span><span class="p">,</span> <span class="mf">0.404</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">16</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;(Gray)h&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.256</span><span class="p">,</span> <span class="mf">0.525</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.208</span><span class="p">,</span> <span class="mf">0.498</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;(Red)h&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.456</span><span class="p">,</span> <span class="mf">0.521</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.416</span><span class="p">,</span> <span class="mf">0.501</span><span class="p">),</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="bp">None</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">9</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;(Brown)h&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.349</span><span class="p">,</span> <span class="mf">0.539</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.306</span><span class="p">,</span> <span class="mf">0.526</span><span class="p">),</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="bp">None</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;(Foliage)h&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.260</span><span class="p">,</span> <span class="mf">0.545</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.213</span><span class="p">,</span> <span class="mf">0.528</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span> <span class="bp">None</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;(Green)h&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.193</span><span class="p">,</span> <span class="mf">0.543</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.149</span><span class="p">,</span> <span class="mf">0.525</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="bp">None</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;(Blue)h&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.184</span><span class="p">,</span> <span class="mf">0.444</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.156</span><span class="p">,</span> <span class="mf">0.419</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="bp">None</span><span class="p">,</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">45</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;(Purple)h&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.277</span><span class="p">,</span> <span class="mf">0.456</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.236</span><span class="p">,</span> <span class="mf">0.422</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="bp">None</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">29</span><span class="p">)))</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Breneman (1987) experiment 9 results.</span>
+
+<span class="sd">BRENEMAN_EXPERIMENT_9_RESULTS : tuple</span>
+
+<span class="sd">Notes</span>
+<span class="sd">-----</span>
+<span class="sd">-   Illuminants : *A*, *D65*</span>
+<span class="sd">-   White Luminance : 15 :math:`cd/m^2`</span>
+<span class="sd">-   Observers Count : 8</span>
+<span class="sd">-   The colors indicated by (.)h are the darker colors presented at the higher</span>
+<span class="sd">    luminescence level of the lighter colors.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">BRENEMAN_EXPERIMENT_10_RESULTS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Gray&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.208</span><span class="p">,</span> <span class="mf">0.482</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.213</span><span class="p">,</span> <span class="mf">0.494</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Red&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.447</span><span class="p">,</span> <span class="mf">0.512</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.411</span><span class="p">,</span> <span class="mf">0.506</span><span class="p">),</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">7</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Skin&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.269</span><span class="p">,</span> <span class="mf">0.505</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.269</span><span class="p">,</span> <span class="mf">0.511</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Orange&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.331</span><span class="p">,</span> <span class="mf">0.549</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.315</span><span class="p">,</span> <span class="mf">0.536</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Brown&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.323</span><span class="p">,</span> <span class="mf">0.542</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.310</span><span class="p">,</span> <span class="mf">0.526</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Yellow&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.268</span><span class="p">,</span> <span class="mf">0.556</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.268</span><span class="p">,</span> <span class="mf">0.541</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Foliage&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.226</span><span class="p">,</span> <span class="mf">0.538</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.230</span><span class="p">,</span> <span class="mf">0.525</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Green&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.135</span><span class="p">,</span> <span class="mf">0.531</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.158</span><span class="p">,</span> <span class="mf">0.524</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Blue-green&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.145</span><span class="p">,</span> <span class="mf">0.476</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.161</span><span class="p">,</span> <span class="mf">0.491</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Blue&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.163</span><span class="p">,</span> <span class="mf">0.330</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.171</span><span class="p">,</span> <span class="mf">0.377</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">19</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Sky&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.179</span><span class="p">,</span> <span class="mf">0.439</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.187</span><span class="p">,</span> <span class="mf">0.465</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Purple&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.245</span><span class="p">,</span> <span class="mf">0.366</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.240</span><span class="p">,</span> <span class="mf">0.402</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">12</span><span class="p">)))</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Breneman (1987) experiment 10 results.</span>
+
+<span class="sd">BRENEMAN_EXPERIMENT_10_RESULTS : tuple</span>
+
+<span class="sd">Notes</span>
+<span class="sd">-----</span>
+<span class="sd">-   Effective White Levels : 15 and 270 :math:`cd/m^2`</span>
+<span class="sd">-   Observers Count : 7</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">BRENEMAN_EXPERIMENT_11_RESULTS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Illuminant&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.208</span><span class="p">,</span> <span class="mf">0.482</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.174</span><span class="p">,</span> <span class="mf">0.520</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Gray&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.209</span><span class="p">,</span> <span class="mf">0.483</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.176</span><span class="p">,</span> <span class="mf">0.513</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Red&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.450</span><span class="p">,</span> <span class="mf">0.512</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.419</span><span class="p">,</span> <span class="mf">0.524</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Skin&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.268</span><span class="p">,</span> <span class="mf">0.506</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.240</span><span class="p">,</span> <span class="mf">0.528</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Orange&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.331</span><span class="p">,</span> <span class="mf">0.547</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.293</span><span class="p">,</span> <span class="mf">0.553</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Brown&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.323</span><span class="p">,</span> <span class="mf">0.542</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.290</span><span class="p">,</span> <span class="mf">0.552</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Yellow&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.266</span><span class="p">,</span> <span class="mf">0.549</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.236</span><span class="p">,</span> <span class="mf">0.557</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Foliage&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.227</span><span class="p">,</span> <span class="mf">0.538</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.194</span><span class="p">,</span> <span class="mf">0.552</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Green&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.146</span><span class="p">,</span> <span class="mf">0.534</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.118</span><span class="p">,</span> <span class="mf">0.551</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Blue-green&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.160</span><span class="p">,</span> <span class="mf">0.475</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.130</span><span class="p">,</span> <span class="mf">0.513</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Blue&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.177</span><span class="p">,</span> <span class="mf">0.340</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.133</span><span class="p">,</span> <span class="mf">0.427</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">14</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">17</span><span class="p">),</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="o">-</span><span class="mi">29</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Sky&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.179</span><span class="p">,</span> <span class="mf">0.438</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.146</span><span class="p">,</span> <span class="mf">0.482</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Purple&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.245</span><span class="p">,</span> <span class="mf">0.366</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.216</span><span class="p">,</span> <span class="mf">0.419</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">13</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)))</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Breneman (1987) experiment 1 results.</span>
+
+<span class="sd">BRENEMAN_EXPERIMENT_11_RESULTS : tuple</span>
+
+<span class="sd">Notes</span>
+<span class="sd">-----</span>
+<span class="sd">-   Illuminants : *green*, *D65*</span>
+<span class="sd">-   White Luminance : 1560 :math:`cd/m^2`</span>
+<span class="sd">-   Observers Count : 7</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">BRENEMAN_EXPERIMENT_12_RESULTS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Illuminant&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.205</span><span class="p">,</span> <span class="mf">0.482</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.174</span><span class="p">,</span> <span class="mf">0.519</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Gray&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.208</span><span class="p">,</span> <span class="mf">0.482</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.181</span><span class="p">,</span> <span class="mf">0.507</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Red&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.451</span><span class="p">,</span> <span class="mf">0.512</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.422</span><span class="p">,</span> <span class="mf">0.526</span><span class="p">),</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Skin&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.268</span><span class="p">,</span> <span class="mf">0.506</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.244</span><span class="p">,</span> <span class="mf">0.525</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Orange&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.331</span><span class="p">,</span> <span class="mf">0.548</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.292</span><span class="p">,</span> <span class="mf">0.553</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Brown&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.324</span><span class="p">,</span> <span class="mf">0.542</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.286</span><span class="p">,</span> <span class="mf">0.554</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Yellow&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.266</span><span class="p">,</span> <span class="mf">0.548</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.238</span><span class="p">,</span> <span class="mf">0.558</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Foliage&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.227</span><span class="p">,</span> <span class="mf">0.538</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.196</span><span class="p">,</span> <span class="mf">0.555</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Green&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.145</span><span class="p">,</span> <span class="mf">0.534</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.124</span><span class="p">,</span> <span class="mf">0.551</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Blue-green&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.160</span><span class="p">,</span> <span class="mf">0.474</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.135</span><span class="p">,</span> <span class="mf">0.505</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Blue&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.178</span><span class="p">,</span> <span class="mf">0.339</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.149</span><span class="p">,</span> <span class="mf">0.392</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Sky&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.179</span><span class="p">,</span> <span class="mf">0.440</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.150</span><span class="p">,</span> <span class="mf">0.473</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
+    <span class="n">BrenemanExperimentResult</span><span class="p">(</span>
+        <span class="s">&#39;Purple&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.246</span><span class="p">,</span> <span class="mf">0.366</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.222</span><span class="p">,</span> <span class="mf">0.404</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Breneman (1987) experiment 12 results.</span>
+
+<span class="sd">BRENEMAN_EXPERIMENT_12_RESULTS : tuple</span>
+
+<span class="sd">Notes</span>
+<span class="sd">-----</span>
+<span class="sd">-   Illuminants : *D55*, *green*</span>
+<span class="sd">-   White Luminance : 75 :math:`cd/m^2`</span>
+<span class="sd">-   Observers Count : 7</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">BRENEMAN_EXPERIMENTS_PRIMARIES_CHROMATICITIES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">1</span><span class="p">:</span> <span class="n">PrimariesChromaticityCoordinates</span><span class="p">(</span>
+        <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;A&#39;</span><span class="p">,</span> <span class="s">&#39;D65&#39;</span><span class="p">),</span> <span class="mi">1500</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.671</span><span class="p">,</span> <span class="mf">0.519</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.586</span><span class="p">,</span> <span class="mf">0.627</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.253</span><span class="p">,</span> <span class="mf">0.016</span><span class="p">)),</span>
+    <span class="mi">2</span><span class="p">:</span> <span class="n">PrimariesChromaticityCoordinates</span><span class="p">(</span>
+        <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;Projector&#39;</span><span class="p">,</span> <span class="s">&#39;D55&#39;</span><span class="p">),</span> <span class="mi">1500</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.675</span><span class="p">,</span> <span class="mf">0.523</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.466</span><span class="p">,</span> <span class="mf">0.617</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.255</span><span class="p">,</span> <span class="mf">0.018</span><span class="p">)),</span>
+    <span class="mi">3</span><span class="p">:</span> <span class="n">PrimariesChromaticityCoordinates</span><span class="p">(</span>
+        <span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;Projector&#39;</span><span class="p">,</span> <span class="s">&#39;D55&#39;</span><span class="p">),</span> <span class="mi">75</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.664</span><span class="p">,</span> <span class="mf">0.510</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.256</span><span class="p">,</span> <span class="mf">0.729</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.244</span><span class="p">,</span> <span class="mf">0.003</span><span class="p">)),</span>
+    <span class="mi">4</span><span class="p">:</span> <span class="n">PrimariesChromaticityCoordinates</span><span class="p">(</span>
+        <span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;A&#39;</span><span class="p">,</span> <span class="s">&#39;D65&#39;</span><span class="p">),</span> <span class="mi">75</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.674</span><span class="p">,</span> <span class="mf">0.524</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.172</span><span class="p">,</span> <span class="mf">0.628</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.218</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.026</span><span class="p">)),</span>
+    <span class="mi">6</span><span class="p">:</span> <span class="n">PrimariesChromaticityCoordinates</span><span class="p">(</span>
+        <span class="mi">6</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;A&#39;</span><span class="p">,</span> <span class="s">&#39;D55&#39;</span><span class="p">),</span> <span class="mi">11100</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.659</span><span class="p">,</span> <span class="mf">0.506</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.141</span><span class="p">,</span> <span class="mf">0.615</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.249</span><span class="p">,</span> <span class="mf">0.009</span><span class="p">)),</span>
+    <span class="mi">8</span><span class="p">:</span> <span class="n">PrimariesChromaticityCoordinates</span><span class="p">(</span>
+        <span class="mi">8</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;A&#39;</span><span class="p">,</span> <span class="s">&#39;D65&#39;</span><span class="p">),</span> <span class="mi">350</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.659</span><span class="p">,</span> <span class="mf">0.505</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.246</span><span class="p">,</span> <span class="mf">0.672</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.235</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.006</span><span class="p">)),</span>
+    <span class="mi">9</span><span class="p">:</span> <span class="n">PrimariesChromaticityCoordinates</span><span class="p">(</span>
+        <span class="mi">9</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;A&#39;</span><span class="p">,</span> <span class="s">&#39;D65&#39;</span><span class="p">),</span> <span class="mi">15</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.693</span><span class="p">,</span> <span class="mf">0.546</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.446</span><span class="p">,</span> <span class="mf">0.773</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.221</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.023</span><span class="p">)),</span>
+    <span class="mi">11</span><span class="p">:</span> <span class="n">PrimariesChromaticityCoordinates</span><span class="p">(</span>
+        <span class="mi">11</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;D55&#39;</span><span class="p">,</span> <span class="s">&#39;green&#39;</span><span class="p">),</span> <span class="mi">1560</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.680</span><span class="p">,</span> <span class="mf">0.529</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.018</span><span class="p">,</span> <span class="mf">0.576</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.307</span><span class="p">,</span> <span class="mf">0.080</span><span class="p">)),</span>
+    <span class="mi">12</span><span class="p">:</span> <span class="n">PrimariesChromaticityCoordinates</span><span class="p">(</span>
+        <span class="mi">12</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;D55&#39;</span><span class="p">,</span> <span class="s">&#39;green&#39;</span><span class="p">),</span> <span class="mi">75</span><span class="p">,</span>
+        <span class="p">(</span><span class="mf">0.661</span><span class="p">,</span> <span class="mf">0.505</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.039</span><span class="p">,</span> <span class="mf">0.598</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.345</span><span class="p">,</span> <span class="mf">0.127</span><span class="p">))}</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Breneman (1987) experiments primaries chromaticities.</span>
+
+<span class="sd">BRENEMAN_EXPERIMENTS_PRIMARIES_CHROMATICITIES : dict</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">BRENEMAN_EXPERIMENTS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">1</span><span class="p">:</span> <span class="n">BRENEMAN_EXPERIMENT_1_RESULTS</span><span class="p">,</span>
+    <span class="mi">2</span><span class="p">:</span> <span class="n">BRENEMAN_EXPERIMENT_2_RESULTS</span><span class="p">,</span>
+    <span class="mi">3</span><span class="p">:</span> <span class="n">BRENEMAN_EXPERIMENT_3_RESULTS</span><span class="p">,</span>
+    <span class="mi">4</span><span class="p">:</span> <span class="n">BRENEMAN_EXPERIMENT_4_RESULTS</span><span class="p">,</span>
+    <span class="mi">5</span><span class="p">:</span> <span class="n">BRENEMAN_EXPERIMENT_5_RESULTS</span><span class="p">,</span>
+    <span class="mi">6</span><span class="p">:</span> <span class="n">BRENEMAN_EXPERIMENT_6_RESULTS</span><span class="p">,</span>
+    <span class="mi">7</span><span class="p">:</span> <span class="n">BRENEMAN_EXPERIMENT_7_RESULTS</span><span class="p">,</span>
+    <span class="mi">8</span><span class="p">:</span> <span class="n">BRENEMAN_EXPERIMENT_8_RESULTS</span><span class="p">,</span>
+    <span class="mi">9</span><span class="p">:</span> <span class="n">BRENEMAN_EXPERIMENT_9_RESULTS</span><span class="p">,</span>
+    <span class="mi">10</span><span class="p">:</span> <span class="n">BRENEMAN_EXPERIMENT_10_RESULTS</span><span class="p">,</span>
+    <span class="mi">11</span><span class="p">:</span> <span class="n">BRENEMAN_EXPERIMENT_11_RESULTS</span><span class="p">,</span>
+    <span class="mi">12</span><span class="p">:</span> <span class="n">BRENEMAN_EXPERIMENT_12_RESULTS</span><span class="p">}</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Breneman (1987) experiments.</span>
+
+<span class="sd">BRENEMAN_EXPERIMENTS : dict</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2015, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

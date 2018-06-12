@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.colorimetry.cmfs &mdash; Colour 0.3.6 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.3.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.6 documentation" href="../../../index.html" />
+    <link rel="up" title="colour.colorimetry" href="../colorimetry.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for colour.colorimetry.cmfs</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Colour Matching Functions</span>
+<span class="sd">=========================</span>
+
+<span class="sd">Defines colour matching functions classes for the dataset from</span>
+<span class="sd">:mod:`colour.colorimetry.dataset.cmfs`:</span>
+
+<span class="sd">-   :class:`LMS_ConeFundamentals`: Implements support for the</span>
+<span class="sd">    Stockman and Sharpe *LMS* cone fundamentals colour matching functions.</span>
+<span class="sd">-   :class:`RGB_ColourMatchingFunctions`: Implements support for the *CIE RGB*</span>
+<span class="sd">    colour matching functions.</span>
+<span class="sd">-   :class:`XYZ_ColourMatchingFunctions`: Implements support for the *CIE*</span>
+<span class="sd">    Standard Observers *XYZ* colour matching functions.</span>
+
+<span class="sd">See Also</span>
+<span class="sd">--------</span>
+<span class="sd">`Colour Matching Functions IPython Notebook</span>
+<span class="sd">&lt;http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colorimetry/cmfs.ipynb&gt;`_  # noqa</span>
+<span class="sd">colour.colorimetry.dataset.cmfs,</span>
+<span class="sd">colour.colorimetry.spectrum.TriSpectralPowerDistribution</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">unicode_literals</span>
+
+<span class="kn">from</span> <span class="nn">colour.colorimetry</span> <span class="kn">import</span> <span class="n">TriSpectralPowerDistribution</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s">&#39;Copyright (C) 2013 - 2015 - Colour Developers&#39;</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s">&#39;New BSD License - http://opensource.org/licenses/BSD-3-Clause&#39;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s">&#39;colour-science@googlegroups.com&#39;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s">&#39;Production&#39;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;LMS_ConeFundamentals&#39;</span><span class="p">,</span>
+           <span class="s">&#39;RGB_ColourMatchingFunctions&#39;</span><span class="p">,</span>
+           <span class="s">&#39;XYZ_ColourMatchingFunctions&#39;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="LMS_ConeFundamentals"><a class="viewcode-back" href="../../../colour.colorimetry.cmfs.html#colour.colorimetry.cmfs.LMS_ConeFundamentals">[docs]</a><span class="k">class</span> <span class="nc">LMS_ConeFundamentals</span><span class="p">(</span><span class="n">TriSpectralPowerDistribution</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Implements support for the Stockman and Sharpe *LMS* cone fundamentals</span>
+<span class="sd">    colour matching functions.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    name : unicode</span>
+<span class="sd">        *LMS* colour matching functions name.</span>
+<span class="sd">    data : dict</span>
+<span class="sd">        *LMS* colour matching functions.</span>
+<span class="sd">    title : unicode, optional</span>
+<span class="sd">        *LMS* colour matching functions title for figures.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    l_bar</span>
+<span class="sd">    m_bar</span>
+<span class="sd">    s_bar</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="n">TriSpectralPowerDistribution</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                                              <span class="n">name</span><span class="p">,</span>
+                                              <span class="n">data</span><span class="p">,</span>
+                                              <span class="n">mapping</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;x&#39;</span><span class="p">:</span> <span class="s">&#39;l_bar&#39;</span><span class="p">,</span>
+                                                       <span class="s">&#39;y&#39;</span><span class="p">:</span> <span class="s">&#39;m_bar&#39;</span><span class="p">,</span>
+                                                       <span class="s">&#39;z&#39;</span><span class="p">:</span> <span class="s">&#39;s_bar&#39;</span><span class="p">},</span>
+                                              <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;x&#39;</span><span class="p">:</span> <span class="s">&#39;$</span><span class="se">\\</span><span class="s">bar{l}$&#39;</span><span class="p">,</span>
+                                                      <span class="s">&#39;y&#39;</span><span class="p">:</span> <span class="s">&#39;$</span><span class="se">\\</span><span class="s">bar{m}$&#39;</span><span class="p">,</span>
+                                                      <span class="s">&#39;z&#39;</span><span class="p">:</span> <span class="s">&#39;$</span><span class="se">\\</span><span class="s">bar{s}$&#39;</span><span class="p">},</span>
+                                              <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">l_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Property for **self.x** attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        SpectralPowerDistribution</span>
+<span class="sd">            self.x</span>
+
+<span class="sd">        Warning</span>
+<span class="sd">        -------</span>
+<span class="sd">        :attr:`LMS_ConeFundamentals.l_bar` is read only.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span>
+
+    <span class="nd">@l_bar.setter</span>
+<div class="viewcode-block" id="LMS_ConeFundamentals.l_bar"><a class="viewcode-back" href="../../../colour.colorimetry.cmfs.html#colour.colorimetry.cmfs.LMS_ConeFundamentals.l_bar">[docs]</a>    <span class="k">def</span> <span class="nf">l_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for **self.x** attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : object</span>
+<span class="sd">            Attribute value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s">&#39;&quot;{0}&quot; attribute is read only!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;l_bar&#39;</span><span class="p">))</span>
+</div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">m_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Property for **self.y** attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        SpectralPowerDistribution</span>
+<span class="sd">            self.y</span>
+
+<span class="sd">        Warning</span>
+<span class="sd">        -------</span>
+<span class="sd">        :attr:`LMS_ConeFundamentals.m_bar` is read only.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
+
+    <span class="nd">@m_bar.setter</span>
+<div class="viewcode-block" id="LMS_ConeFundamentals.m_bar"><a class="viewcode-back" href="../../../colour.colorimetry.cmfs.html#colour.colorimetry.cmfs.LMS_ConeFundamentals.m_bar">[docs]</a>    <span class="k">def</span> <span class="nf">m_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for **self.y** attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : object</span>
+<span class="sd">            Attribute value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s">&#39;&quot;{0}&quot; attribute is read only!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;m_bar&#39;</span><span class="p">))</span>
+</div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">s_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Property for **self.z** attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        SpectralPowerDistribution</span>
+<span class="sd">            self.z</span>
+
+<span class="sd">        Warning</span>
+<span class="sd">        -------</span>
+<span class="sd">        :attr:`LMS_ConeFundamentals.s_bar` is read only.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span>
+
+    <span class="nd">@s_bar.setter</span>
+<div class="viewcode-block" id="LMS_ConeFundamentals.s_bar"><a class="viewcode-back" href="../../../colour.colorimetry.cmfs.html#colour.colorimetry.cmfs.LMS_ConeFundamentals.s_bar">[docs]</a>    <span class="k">def</span> <span class="nf">s_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for **self.z** attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+
+<span class="sd">        value : object</span>
+<span class="sd">            Attribute value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s">&#39;&quot;{0}&quot; attribute is read only!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;s_bar&#39;</span><span class="p">))</span>
+
+</div></div>
+<div class="viewcode-block" id="RGB_ColourMatchingFunctions"><a class="viewcode-back" href="../../../colour.colorimetry.cmfs.html#colour.colorimetry.cmfs.RGB_ColourMatchingFunctions">[docs]</a><span class="k">class</span> <span class="nc">RGB_ColourMatchingFunctions</span><span class="p">(</span><span class="n">TriSpectralPowerDistribution</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Implements support for the *CIE RGB* colour matching functions.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    name : unicode</span>
+<span class="sd">        *CIE RGB* colour matching functions name.</span>
+<span class="sd">    data : dict</span>
+<span class="sd">        *CIE RGB* colour matching functions.</span>
+<span class="sd">    title : unicode, optional</span>
+<span class="sd">        *CIE RGB* colour matching functions title for figures.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    r_bar</span>
+<span class="sd">    g_bar</span>
+<span class="sd">    b_bar</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="n">TriSpectralPowerDistribution</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                                              <span class="n">name</span><span class="p">,</span>
+                                              <span class="n">data</span><span class="p">,</span>
+                                              <span class="n">mapping</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;x&#39;</span><span class="p">:</span> <span class="s">&#39;r_bar&#39;</span><span class="p">,</span>
+                                                       <span class="s">&#39;y&#39;</span><span class="p">:</span> <span class="s">&#39;g_bar&#39;</span><span class="p">,</span>
+                                                       <span class="s">&#39;z&#39;</span><span class="p">:</span> <span class="s">&#39;b_bar&#39;</span><span class="p">},</span>
+                                              <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;x&#39;</span><span class="p">:</span> <span class="s">&#39;$</span><span class="se">\\</span><span class="s">bar{r}$&#39;</span><span class="p">,</span>
+                                                      <span class="s">&#39;y&#39;</span><span class="p">:</span> <span class="s">&#39;$</span><span class="se">\\</span><span class="s">bar{g}$&#39;</span><span class="p">,</span>
+                                                      <span class="s">&#39;z&#39;</span><span class="p">:</span> <span class="s">&#39;$</span><span class="se">\\</span><span class="s">bar{b}$&#39;</span><span class="p">},</span>
+                                              <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">r_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Property for **self.x** attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        SpectralPowerDistribution</span>
+<span class="sd">            self.x</span>
+
+<span class="sd">        Warning</span>
+<span class="sd">        -------</span>
+<span class="sd">        :attr:`RGB_ColourMatchingFunctions.r_bar` is read only.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span>
+
+    <span class="nd">@r_bar.setter</span>
+<div class="viewcode-block" id="RGB_ColourMatchingFunctions.r_bar"><a class="viewcode-back" href="../../../colour.colorimetry.cmfs.html#colour.colorimetry.cmfs.RGB_ColourMatchingFunctions.r_bar">[docs]</a>    <span class="k">def</span> <span class="nf">r_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for **self.x** attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : object</span>
+<span class="sd">            Attribute value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s">&#39;&quot;{0}&quot; attribute is read only!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;r_bar&#39;</span><span class="p">))</span>
+</div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">g_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Property for **self.y** attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        SpectralPowerDistribution</span>
+<span class="sd">            self.y</span>
+
+<span class="sd">        Warning</span>
+<span class="sd">        -------</span>
+<span class="sd">        :attr:`RGB_ColourMatchingFunctions.g_bar` is read only.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
+
+    <span class="nd">@g_bar.setter</span>
+<div class="viewcode-block" id="RGB_ColourMatchingFunctions.g_bar"><a class="viewcode-back" href="../../../colour.colorimetry.cmfs.html#colour.colorimetry.cmfs.RGB_ColourMatchingFunctions.g_bar">[docs]</a>    <span class="k">def</span> <span class="nf">g_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for **self.y** attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : object</span>
+<span class="sd">            Attribute value.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s">&#39;&quot;{0}&quot; attribute is read only!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;g_bar&#39;</span><span class="p">))</span>
+</div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">b_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Property for **self.z** attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        SpectralPowerDistribution</span>
+<span class="sd">            self.z</span>
+
+<span class="sd">        Warning</span>
+<span class="sd">        -------</span>
+<span class="sd">        :attr:`RGB_ColourMatchingFunctions.b_bar` is read only.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span>
+
+    <span class="nd">@b_bar.setter</span>
+<div class="viewcode-block" id="RGB_ColourMatchingFunctions.b_bar"><a class="viewcode-back" href="../../../colour.colorimetry.cmfs.html#colour.colorimetry.cmfs.RGB_ColourMatchingFunctions.b_bar">[docs]</a>    <span class="k">def</span> <span class="nf">b_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for **self.z** attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : object</span>
+<span class="sd">            Attribute value.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s">&#39;&quot;{0}&quot; attribute is read only!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;b_bar&#39;</span><span class="p">))</span>
+
+</div></div>
+<div class="viewcode-block" id="XYZ_ColourMatchingFunctions"><a class="viewcode-back" href="../../../colour.colorimetry.cmfs.html#colour.colorimetry.cmfs.XYZ_ColourMatchingFunctions">[docs]</a><span class="k">class</span> <span class="nc">XYZ_ColourMatchingFunctions</span><span class="p">(</span><span class="n">TriSpectralPowerDistribution</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Implements support for the *CIE* Standard Observers *XYZ* colour matching</span>
+<span class="sd">    functions.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    name : unicode</span>
+<span class="sd">        *CIE* Standard Observer *XYZ* colour matching functions name.</span>
+<span class="sd">    data : dict</span>
+<span class="sd">        *CIE* Standard Observer *XYZ* colour matching functions.</span>
+<span class="sd">    title : unicode, optional</span>
+<span class="sd">        *CIE* Standard Observer *XYZ* colour matching functions title for</span>
+<span class="sd">        figures.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x_bar</span>
+<span class="sd">    y_bar</span>
+<span class="sd">    z_bar</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="n">TriSpectralPowerDistribution</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                                              <span class="n">name</span><span class="p">,</span>
+                                              <span class="n">data</span><span class="p">,</span>
+                                              <span class="n">mapping</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;x&#39;</span><span class="p">:</span> <span class="s">&#39;x_bar&#39;</span><span class="p">,</span>
+                                                       <span class="s">&#39;y&#39;</span><span class="p">:</span> <span class="s">&#39;y_bar&#39;</span><span class="p">,</span>
+                                                       <span class="s">&#39;z&#39;</span><span class="p">:</span> <span class="s">&#39;z_bar&#39;</span><span class="p">},</span>
+                                              <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;x&#39;</span><span class="p">:</span> <span class="s">&#39;$</span><span class="se">\\</span><span class="s">bar{x}$&#39;</span><span class="p">,</span>
+                                                      <span class="s">&#39;y&#39;</span><span class="p">:</span> <span class="s">&#39;$</span><span class="se">\\</span><span class="s">bar{y}$&#39;</span><span class="p">,</span>
+                                                      <span class="s">&#39;z&#39;</span><span class="p">:</span> <span class="s">&#39;$</span><span class="se">\\</span><span class="s">bar{z}$&#39;</span><span class="p">},</span>
+                                              <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">x_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Property for **self.x** attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        SpectralPowerDistribution</span>
+<span class="sd">            self.x</span>
+
+<span class="sd">        Warning</span>
+<span class="sd">        -------</span>
+<span class="sd">        :attr:`XYZ_ColourMatchingFunctions.x_bar` is read only.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span>
+
+    <span class="nd">@x_bar.setter</span>
+<div class="viewcode-block" id="XYZ_ColourMatchingFunctions.x_bar"><a class="viewcode-back" href="../../../colour.colorimetry.cmfs.html#colour.colorimetry.cmfs.XYZ_ColourMatchingFunctions.x_bar">[docs]</a>    <span class="k">def</span> <span class="nf">x_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for **self.x** attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : object</span>
+<span class="sd">            Attribute value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s">&#39;&quot;{0}&quot; attribute is read only!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;x_bar&#39;</span><span class="p">))</span>
+</div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">y_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Property for **self.y** attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        SpectralPowerDistribution</span>
+<span class="sd">            self.y</span>
+
+<span class="sd">        Warning</span>
+<span class="sd">        -------</span>
+<span class="sd">        :attr:`XYZ_ColourMatchingFunctions.y_bar` is read only.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
+
+    <span class="nd">@y_bar.setter</span>
+<div class="viewcode-block" id="XYZ_ColourMatchingFunctions.y_bar"><a class="viewcode-back" href="../../../colour.colorimetry.cmfs.html#colour.colorimetry.cmfs.XYZ_ColourMatchingFunctions.y_bar">[docs]</a>    <span class="k">def</span> <span class="nf">y_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for **self.y** attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : object</span>
+<span class="sd">            Attribute value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s">&#39;&quot;{0}&quot; attribute is read only!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;y_bar&#39;</span><span class="p">))</span>
+</div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">z_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Property for **self.z** attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        SpectralPowerDistribution</span>
+<span class="sd">            self.z</span>
+
+<span class="sd">        Warning</span>
+<span class="sd">        -------</span>
+<span class="sd">        :attr:`XYZ_ColourMatchingFunctions.z_bar` is read only.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span>
+
+    <span class="nd">@z_bar.setter</span>
+<div class="viewcode-block" id="XYZ_ColourMatchingFunctions.z_bar"><a class="viewcode-back" href="../../../colour.colorimetry.cmfs.html#colour.colorimetry.cmfs.XYZ_ColourMatchingFunctions.z_bar">[docs]</a>    <span class="k">def</span> <span class="nf">z_bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for **self.z** attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : object</span>
+<span class="sd">            Attribute value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s">&#39;&quot;{0}&quot; attribute is read only!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;z_bar&#39;</span><span class="p">))</span></div></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2015, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

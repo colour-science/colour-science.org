@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.models.dataset.cie_rgb Module &mdash; Colour 0.3.5 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.5 documentation" href="index.html" />
+    <link rel="up" title="colour.models.dataset Package" href="colour.models.dataset.html" />
+    <link rel="next" title="colour.models.dataset.cinema_gamut Module" href="colour.models.dataset.cinema_gamut.html" />
+    <link rel="prev" title="colour.models.dataset.beta_rgb Module" href="colour.models.dataset.beta_rgb.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+  <li>
+    <a href="colour.models.dataset.beta_rgb.html" title="Previous Chapter: colour.models.dataset.beta_rgb Module"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; colour.models.da...</span>
+    </a>
+  </li>
+  <li>
+    <a href="colour.models.dataset.cinema_gamut.html" title="Next Chapter: colour.models.dataset.cinema_gamut Module"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">colour.models.da... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="module-colour.models.dataset.cie_rgb">
+<span id="colour-models-dataset-cie-rgb-module"></span><h1>colour.models.dataset.cie_rgb Module<a class="headerlink" href="#module-colour.models.dataset.cie_rgb" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="cie-rgb-colourspace">
+<h2>CIE RGB Colourspace<a class="headerlink" href="#cie-rgb-colourspace" title="Permalink to this headline">¶</a></h2>
+<p>Defines the <em>CIE RGB</em> colourspace:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#colour.models.dataset.cie_rgb.CIE_RGB_COLOURSPACE" title="colour.models.dataset.cie_rgb.CIE_RGB_COLOURSPACE"><tt class="xref py py-attr docutils literal"><span class="pre">CIE_RGB_COLOURSPACE</span></tt></a>.</li>
+</ul>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/models/rgb.ipynb">RGB Colourspaces IPython Notebook</a></p>
+</div>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td>Wikipedia. (n.d.). Construction of the CIE XYZ color space from the
+Wright–Guild data. Retrieved February 24, 2014, from
+<a class="reference external" href="http://en.wikipedia.org/wiki/CIE_1931_color_space#Construction_of_the_CIE_XYZ_color_space_from_the_Wright.E2.80.93Guild_data">http://en.wikipedia.org/wiki/CIE_1931_color_space#Construction_of_the_CIE_XYZ_color_space_from_the_Wright.E2.80.93Guild_data</a></td></tr>
+</tbody>
+</table>
+<dl class="data">
+<dt id="colour.models.dataset.cie_rgb.CIE_RGB_PRIMARIES">
+<tt class="descclassname">colour.models.dataset.cie_rgb.</tt><tt class="descname">CIE_RGB_PRIMARIES</tt><em class="property"> = array([[ 0.735,  0.265],        [ 0.274,  0.717],        [ 0.167,  0.009]])</em><a class="headerlink" href="#colour.models.dataset.cie_rgb.CIE_RGB_PRIMARIES" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>CIE RGB</em> colourspace primaries.</p>
+<p>CIE_RGB_PRIMARIES : ndarray, (3, 2)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.cie_rgb.CIE_RGB_ILLUMINANT">
+<tt class="descclassname">colour.models.dataset.cie_rgb.</tt><tt class="descname">CIE_RGB_ILLUMINANT</tt><em class="property"> = u'E'</em><a class="headerlink" href="#colour.models.dataset.cie_rgb.CIE_RGB_ILLUMINANT" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>CIE RGB</em> colourspace whitepoint name as illuminant.</p>
+<p>CIE_RGB_ILLUMINANT : unicode</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.cie_rgb.CIE_RGB_WHITEPOINT">
+<tt class="descclassname">colour.models.dataset.cie_rgb.</tt><tt class="descname">CIE_RGB_WHITEPOINT</tt><em class="property"> = (0.3333333333333333, 0.3333333333333333)</em><a class="headerlink" href="#colour.models.dataset.cie_rgb.CIE_RGB_WHITEPOINT" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>CIE RGB</em> colourspace whitepoint.</p>
+<p>CIE_RGB_WHITEPOINT : tuple</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.cie_rgb.CIE_RGB_TO_XYZ_MATRIX">
+<tt class="descclassname">colour.models.dataset.cie_rgb.</tt><tt class="descname">CIE_RGB_TO_XYZ_MATRIX</tt><em class="property"> = array([[ 0.488718 ,  0.3106803,  0.2006017],        [ 0.1762044,  0.8129847,  0.0108109],        [ 0.       ,  0.0102048,  0.9897952]])</em><a class="headerlink" href="#colour.models.dataset.cie_rgb.CIE_RGB_TO_XYZ_MATRIX" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>CIE RGB</em> colourspace to <em>CIE XYZ</em> tristimulus values matrix.</p>
+<p>CIE_RGB_TO_XYZ_MATRIX : array_like, (3, 3)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.cie_rgb.XYZ_TO_CIE_RGB_MATRIX">
+<tt class="descclassname">colour.models.dataset.cie_rgb.</tt><tt class="descname">XYZ_TO_CIE_RGB_MATRIX</tt><em class="property"> = array([[ 2.37067401, -0.9000403 , -0.47063371],        [-0.51388479,  1.42530348,  0.0885813 ],        [ 0.00529816, -0.0146949 ,  1.00939674]])</em><a class="headerlink" href="#colour.models.dataset.cie_rgb.XYZ_TO_CIE_RGB_MATRIX" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>CIE XYZ</em> tristimulus values to <em>CIE RGB</em> colourspace matrix.</p>
+<p>XYZ_TO_CIE_RGB_MATRIX : array_like, (3, 3)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.dataset.cie_rgb.CIE_RGB_TRANSFER_FUNCTION">
+<tt class="descclassname">colour.models.dataset.cie_rgb.</tt><tt class="descname">CIE_RGB_TRANSFER_FUNCTION</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#colour.models.dataset.cie_rgb.CIE_RGB_TRANSFER_FUNCTION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transfer function from linear to <em>CIE RGB</em> colourspace.</p>
+<p>CIE_RGB_TRANSFER_FUNCTION : object</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.dataset.cie_rgb.CIE_RGB_INVERSE_TRANSFER_FUNCTION">
+<tt class="descclassname">colour.models.dataset.cie_rgb.</tt><tt class="descname">CIE_RGB_INVERSE_TRANSFER_FUNCTION</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#colour.models.dataset.cie_rgb.CIE_RGB_INVERSE_TRANSFER_FUNCTION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse transfer function from <em>CIE RGB</em> colourspace to linear.</p>
+<p>CIE_RGB_INVERSE_TRANSFER_FUNCTION : object</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.cie_rgb.CIE_RGB_COLOURSPACE">
+<tt class="descclassname">colour.models.dataset.cie_rgb.</tt><tt class="descname">CIE_RGB_COLOURSPACE</tt><em class="property"> = &lt;colour.models.rgb.RGB_Colourspace object at 0x2adc37b95110&gt;</em><a class="headerlink" href="#colour.models.dataset.cie_rgb.CIE_RGB_COLOURSPACE" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>CIE RGB</em> colourspace.</p>
+<p>CIE_RGB_COLOURSPACE : RGB_Colourspace</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2015, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

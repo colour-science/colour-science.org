@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.io.ies_tm2714 &mdash; Colour 0.3.5 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.5 documentation" href="../../../index.html" />
+    <link rel="up" title="colour.io" href="../io.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for colour.io.ies_tm2714</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">IES TM-27-14 Data Input / Output</span>
+<span class="sd">================================</span>
+
+<span class="sd">Defines the :class:`IES_TM2714_Spd` class handling IES TM-27-14 spectral data</span>
+<span class="sd">XML files.</span>
+
+<span class="sd">References</span>
+<span class="sd">----------</span>
+<span class="sd">.. [1]  IES Computer Committee, &amp; TM-27-14 Working Group. (2014). IES Standard</span>
+<span class="sd">        Format for the Electronic Transfer of Spectral Data Electronic</span>
+<span class="sd">        Transfer of Spectral Data (pp. 1–16). ISBN:978-0879952952</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+<span class="kn">from</span> <span class="nn">xml.etree</span> <span class="kn">import</span> <span class="n">ElementTree</span>
+<span class="kn">from</span> <span class="nn">xml.dom</span> <span class="kn">import</span> <span class="n">minidom</span>
+
+<span class="kn">from</span> <span class="nn">colour.colorimetry</span> <span class="kn">import</span> <span class="n">SpectralPowerDistribution</span>
+<span class="kn">from</span> <span class="nn">colour.utilities</span> <span class="kn">import</span> <span class="n">Structure</span><span class="p">,</span> <span class="n">is_numeric</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s">&#39;Copyright (C) 2013 - 2015 - Colour Developers&#39;</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s">&#39;New BSD License - http://opensource.org/licenses/BSD-3-Clause&#39;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s">&#39;colour-science@googlegroups.com&#39;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s">&#39;Production&#39;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;IES_TM2714_VERSION&#39;</span><span class="p">,</span>
+           <span class="s">&#39;IES_TM2714_NAMESPACE&#39;</span><span class="p">,</span>
+           <span class="s">&#39;IES_TM2714_ElementSpecification&#39;</span><span class="p">,</span>
+           <span class="s">&#39;IES_TM2714_Header&#39;</span><span class="p">,</span>
+           <span class="s">&#39;IES_TM2714_Spd&#39;</span><span class="p">]</span>
+
+<span class="n">IES_TM2714_VERSION</span> <span class="o">=</span> <span class="s">&#39;1.0&#39;</span>
+<span class="n">IES_TM2714_NAMESPACE</span> <span class="o">=</span> <span class="s">&#39;http://www.ies.org/iestm2714&#39;</span>
+
+
+<div class="viewcode-block" id="IES_TM2714_ElementSpecification"><a class="viewcode-back" href="../../../colour.io.ies_tm2714.html#colour.io.ies_tm2714.IES_TM2714_ElementSpecification">[docs]</a><span class="k">class</span> <span class="nc">IES_TM2714_ElementSpecification</span><span class="p">(</span>
+    <span class="n">namedtuple</span><span class="p">(</span>
+        <span class="s">&#39;IES_TM2714_ElementSpecification&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="s">&#39;element&#39;</span><span class="p">,</span>
+         <span class="s">&#39;attribute&#39;</span><span class="p">,</span>
+         <span class="s">&#39;type&#39;</span><span class="p">,</span>
+         <span class="s">&#39;required&#39;</span><span class="p">,</span>
+         <span class="s">&#39;read_conversion&#39;</span><span class="p">,</span>
+         <span class="s">&#39;write_conversion&#39;</span><span class="p">))):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    IES TM-27-14 spectral data XML file element specification.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    attribute : unicode</span>
+<span class="sd">        Associated attribute name.</span>
+<span class="sd">    element : unicode</span>
+<span class="sd">        Element name.</span>
+<span class="sd">    attribute : object</span>
+<span class="sd">        Element type.</span>
+<span class="sd">    required : bool</span>
+<span class="sd">        Is element required.</span>
+<span class="sd">    read_conversion : object</span>
+<span class="sd">        Method to convert from XML to type on reading.</span>
+<span class="sd">    write_conversion : object</span>
+<span class="sd">        Method to convert from type to XML on writing.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span>
+                <span class="n">element</span><span class="p">,</span>
+                <span class="n">attribute</span><span class="p">,</span>
+                <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
+                <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                <span class="n">read_conversion</span><span class="o">=</span><span class="n">format</span><span class="p">,</span>
+                <span class="n">write_conversion</span><span class="o">=</span><span class="p">(</span>
+                        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="k">else</span> <span class="s">&#39;N/A&#39;</span><span class="p">)):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns a new instance of the :class:`IES_TM2714_Element` class.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">IES_TM2714_ElementSpecification</span><span class="p">,</span> <span class="n">cls</span><span class="p">)</span><span class="o">.</span><span class="n">__new__</span><span class="p">(</span>
+            <span class="n">cls</span><span class="p">,</span>
+            <span class="n">element</span><span class="p">,</span>
+            <span class="n">attribute</span><span class="p">,</span>
+            <span class="nb">type</span><span class="p">,</span>
+            <span class="n">required</span><span class="p">,</span>
+            <span class="n">read_conversion</span><span class="p">,</span>
+            <span class="n">write_conversion</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="IES_TM2714_Header"><a class="viewcode-back" href="../../../colour.io.ies_tm2714.html#colour.io.ies_tm2714.IES_TM2714_Header">[docs]</a><span class="k">class</span> <span class="nc">IES_TM2714_Header</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Defines the header object for a IES TM-27-14 spectral power distribution.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    manufacturer : unicode, optional</span>
+<span class="sd">        Manufacturer of the device under test.</span>
+<span class="sd">    catalog_number : unicode, optional</span>
+<span class="sd">        Manufacturer’s product catalog number.</span>
+<span class="sd">    description : unicode, optional</span>
+<span class="sd">        Description of the spectral data in the spectral data XML file.</span>
+<span class="sd">    document_creator : unicode, optional</span>
+<span class="sd">        Creator of the spectral data XML file, which may be a</span>
+<span class="sd">        test lab, a research group, a standard body, a company or an</span>
+<span class="sd">        individual.</span>
+<span class="sd">    unique_identifier : unicode, optional</span>
+<span class="sd">        Description of the equipment used to measure the spectral data.</span>
+<span class="sd">    measurement_equipment : unicode, optional</span>
+<span class="sd">        Description of the equipment used to measure the spectral data.</span>
+<span class="sd">    laboratory : unicode, optional</span>
+<span class="sd">        Testing laboratory name that performed the spectral data measurements.</span>
+<span class="sd">    report_number : unicode, optional</span>
+<span class="sd">        Testing laboratory report number.</span>
+<span class="sd">    report_date : unicode, optional</span>
+<span class="sd">        Testing laboratory report date using the *XML DateTime Data Type*,</span>
+<span class="sd">        *YYYY-MM-DDThh:mm:ss*.</span>
+<span class="sd">    document_creation_date : unicode, optional</span>
+<span class="sd">        Spectral data XML file creation date using the</span>
+<span class="sd">        *XML DateTime Data Type*, *YYYY-MM-DDThh:mm:ss*.</span>
+<span class="sd">    comments : unicode, optional</span>
+<span class="sd">        Additional information relating to the tested and reported data.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    mapping</span>
+<span class="sd">    manufacturer</span>
+<span class="sd">    catalog_number</span>
+<span class="sd">    description</span>
+<span class="sd">    document_creator</span>
+<span class="sd">    unique_identifier</span>
+<span class="sd">    measurement_equipment</span>
+<span class="sd">    laboratory</span>
+<span class="sd">    report_number</span>
+<span class="sd">    report_date</span>
+<span class="sd">    document_creation_date</span>
+<span class="sd">    comments</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; IES_TM2714_Header(&#39;colour-science&#39;)  # doctest: +ELLIPSIS</span>
+<span class="sd">    &lt;...IES_TM2714_Header object at 0x...&gt;</span>
+<span class="sd">    &gt;&gt;&gt; IES_TM2714_Header(&#39;colour-science&#39;).manufacturer  # doctest: +SKIP</span>
+<span class="sd">    &#39;colour-science&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">manufacturer</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                 <span class="n">catalog_number</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                 <span class="n">description</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                 <span class="n">document_creator</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                 <span class="n">unique_identifier</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                 <span class="n">measurement_equipment</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                 <span class="n">laboratory</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                 <span class="n">report_number</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                 <span class="n">report_date</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                 <span class="n">document_creation_date</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                 <span class="n">comments</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__mapping</span> <span class="o">=</span> <span class="n">Structure</span><span class="p">(</span><span class="o">**</span><span class="p">{</span>
+            <span class="s">&#39;element&#39;</span><span class="p">:</span> <span class="s">&#39;Header&#39;</span><span class="p">,</span>
+            <span class="s">&#39;elements&#39;</span><span class="p">:</span> <span class="p">(</span>
+                <span class="n">IES_TM2714_ElementSpecification</span><span class="p">(</span>
+                    <span class="s">&#39;Manufacturer&#39;</span><span class="p">,</span>
+                    <span class="s">&#39;manufacturer&#39;</span><span class="p">),</span>
+                <span class="n">IES_TM2714_ElementSpecification</span><span class="p">(</span>
+                    <span class="s">&#39;CatalogNumber&#39;</span><span class="p">,</span>
+                    <span class="s">&#39;catalog_number&#39;</span><span class="p">),</span>
+                <span class="n">IES_TM2714_ElementSpecification</span><span class="p">(</span>
+                    <span class="s">&#39;Description&#39;</span><span class="p">,</span>
+                    <span class="s">&#39;description&#39;</span><span class="p">,</span>
+                    <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">),</span>
+                <span class="n">IES_TM2714_ElementSpecification</span><span class="p">(</span>
+                    <span class="s">&#39;DocumentCreator&#39;</span><span class="p">,</span>
+                    <span class="s">&#39;document_creator&#39;</span><span class="p">,</span>
+                    <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">),</span>
+                <span class="n">IES_TM2714_ElementSpecification</span><span class="p">(</span>
+                    <span class="s">&#39;UniqueIdentifier&#39;</span><span class="p">,</span>
+                    <span class="s">&#39;unique_identifier&#39;</span><span class="p">),</span>
+                <span class="n">IES_TM2714_ElementSpecification</span><span class="p">(</span>
+                    <span class="s">&#39;MeasurementEquipment&#39;</span><span class="p">,</span>
+                    <span class="s">&#39;measurement_equipment&#39;</span><span class="p">),</span>
+                <span class="n">IES_TM2714_ElementSpecification</span><span class="p">(</span>
+                    <span class="s">&#39;Laboratory&#39;</span><span class="p">,</span>
+                    <span class="s">&#39;laboratory&#39;</span><span class="p">),</span>
+                <span class="n">IES_TM2714_ElementSpecification</span><span class="p">(</span>
+                    <span class="s">&#39;ReportNumber&#39;</span><span class="p">,</span>
+                    <span class="s">&#39;report_number&#39;</span><span class="p">),</span>
+                <span class="n">IES_TM2714_ElementSpecification</span><span class="p">(</span>
+                    <span class="s">&#39;ReportDate&#39;</span><span class="p">,</span>
+                    <span class="s">&#39;report_date&#39;</span><span class="p">),</span>
+                <span class="n">IES_TM2714_ElementSpecification</span><span class="p">(</span>
+                    <span class="s">&#39;DocumentCreationDate&#39;</span><span class="p">,</span>
+                    <span class="s">&#39;document_creation_date&#39;</span><span class="p">,</span>
+                    <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">),</span>
+                <span class="n">IES_TM2714_ElementSpecification</span><span class="p">(</span>
+                    <span class="s">&#39;Comments&#39;</span><span class="p">,</span>
+                    <span class="s">&#39;comments&#39;</span><span class="p">,</span>
+                    <span class="bp">False</span><span class="p">))})</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__manufacturer</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">manufacturer</span> <span class="o">=</span> <span class="n">manufacturer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__catalog_number</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">catalog_number</span> <span class="o">=</span> <span class="n">catalog_number</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__description</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="n">description</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__document_creator</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">document_creator</span> <span class="o">=</span> <span class="n">document_creator</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__unique_identifier</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">unique_identifier</span> <span class="o">=</span> <span class="n">unique_identifier</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__measurement_equipment</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">measurement_equipment</span> <span class="o">=</span> <span class="n">measurement_equipment</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__laboratory</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">laboratory</span> <span class="o">=</span> <span class="n">laboratory</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__report_number</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">report_number</span> <span class="o">=</span> <span class="n">report_number</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__report_date</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">report_date</span> <span class="o">=</span> <span class="n">report_date</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__document_creation_date</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">document_creation_date</span> <span class="o">=</span> <span class="n">document_creation_date</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__comments</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">comments</span> <span class="o">=</span> <span class="n">comments</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">mapping</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Property for **self.mapping** attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Structure</span>
+
+<span class="sd">        Warning</span>
+<span class="sd">        -------</span>
+<span class="sd">        :attr:`IES_TM2714_Header.mapping` is read only.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__mapping</span>
+
+    <span class="nd">@mapping.setter</span>
+<div class="viewcode-block" id="IES_TM2714_Header.mapping"><a class="viewcode-back" href="../../../colour.io.ies_tm2714.html#colour.io.ies_tm2714.IES_TM2714_Header.mapping">[docs]</a>    <span class="k">def</span> <span class="nf">mapping</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for **self.mapping** attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : object</span>
+<span class="sd">            Attribute value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span>
+            <span class="s">&#39;&quot;{0}&quot; attribute is read only!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;mapping&#39;</span><span class="p">))</span>
+</div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">manufacturer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Property for **self.__manufacturer** private attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        unicode</span>
+<span class="sd">            self.__manufacturer.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__manufacturer</span>
+
+    <span class="nd">@manufacturer.setter</span>
+<div class="viewcode-block" id="IES_TM2714_Header.manufacturer"><a class="viewcode-back" href="../../../colour.io.ies_tm2714.html#colour.io.ies_tm2714.IES_TM2714_Header.manufacturer">[docs]</a>    <span class="k">def</span> <span class="nf">manufacturer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for **self.__manufacturer** private attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : unicode</span>
+<span class="sd">            Attribute value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">unicode</span><span class="p">),</span> <span class="p">(</span>
+                <span class="p">(</span><span class="s">&#39;&quot;{0}&quot; attribute: &quot;{1}&quot; type is not &#39;</span>
+                 <span class="s">&#39;&quot;str&quot; or &quot;unicode&quot;!&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;manufacturer&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__manufacturer</span> <span class="o">=</span> <span class="n">value</span>
+</div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">catalog_number</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Property for **self.__catalog_number** private attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        unicode</span>
+<span class="sd">            self.__catalog_number.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__catalog_number</span>
+
+    <span class="nd">@catalog_number.setter</span>
+<div class="viewcode-block" id="IES_TM2714_Header.catalog_number"><a class="viewcode-back" href="../../../colour.io.ies_tm2714.html#colour.io.ies_tm2714.IES_TM2714_Header.catalog_number">[docs]</a>    <span class="k">def</span> <span class="nf">catalog_number</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for **self.__catalog_number** private attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : unicode</span>
+<span class="sd">            Attribute value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">unicode</span><span class="p">),</span> <span class="p">(</span>
+                <span class="p">(</span><span class="s">&#39;&quot;{0}&quot; attribute: &quot;{1}&quot; type is not &#39;</span>
+                 <span class="s">&#39;&quot;str&quot; or &quot;unicode&quot;!&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;catalog_number&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__catalog_number</span> <span class="o">=</span> <span class="n">value</span>
+</div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Property for **self.__description** private attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        unicode</span>
+<span class="sd">            self.__description.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__description</span>
+
+    <span class="nd">@description.setter</span>
+<div class="viewcode-block" id="IES_TM2714_Header.description"><a class="viewcode-back" href="../../../colour.io.ies_tm2714.html#colour.io.ies_tm2714.IES_TM2714_Header.description">[docs]</a>    <span class="k">def</span> <span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for **self.__description** private attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : unicode</span>
+<span class="sd">            Attribute value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">unicode</span><span class="p">),</span> <span class="p">(</span>
+                <span class="p">(</span><span class="s">&#39;&quot;{0}&quot; attribute: &quot;{1}&quot; type is not &#39;</span>
+                 <span class="s">&#39;&quot;str&quot; or &quot;unicode&quot;!&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;description&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__description</span> <span class="o">=</span> <span class="n">value</span>
+</div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">document_creator</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Property for **self.__document_creator** private attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        unicode</span>
+<span class="sd">            self.__document_creator.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__document_creator</span>
+
+    <span class="nd">@document_creator.setter</span>
+<div class="viewcode-block" id="IES_TM2714_Header.document_creator"><a class="viewcode-back" href="../../../colour.io.ies_tm2714.html#colour.io.ies_tm2714.IES_TM2714_Header.document_creator">[docs]</a>    <span class="k">def</span> <span class="nf">document_creator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for **self.__document_creator** private attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : unicode</span>
+<span class="sd">            Attribute value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">unicode</span><span class="p">),</span> <span class="p">(</span>
+                <span class="p">(</span><span class="s">&#39;&quot;{0}&quot; attribute: &quot;{1}&quot; type is not &#39;</span>
+                 <span class="s">&#39;&quot;str&quot; or &quot;unicode&quot;!&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;document_creator&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__document_creator</span> <span class="o">=</span> <span class="n">value</span>
+</div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">unique_identifier</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Property for **self.__unique_identifier** private attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        unicode</span>
+<span class="sd">            self.__unique_identifier.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__unique_identifier</span>
+
+    <span class="nd">@unique_identifier.setter</span>
+<div class="viewcode-block" id="IES_TM2714_Header.unique_identifier"><a class="viewcode-back" href="../../../colour.io.ies_tm2714.html#colour.io.ies_tm2714.IES_TM2714_Header.unique_identifier">[docs]</a>    <span class="k">def</span> <span class="nf">unique_identifier</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for **self.__unique_identifier** private attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : unicode</span>
+<span class="sd">            Attribute value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">unicode</span><span class="p">),</span> <span class="p">(</span>
+                <span class="p">(</span><span class="s">&#39;&quot;{0}&quot; attribute: &quot;{1}&quot; type is not &#39;</span>
+                 <span class="s">&#39;&quot;str&quot; or &quot;unicode&quot;!&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;unique_identifier&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__unique_identifier</span> <span class="o">=</span> <span class="n">value</span>
+</div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">measurement_equipment</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Property for **self.__measurement_equipment** private attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        unicode</span>
+<span class="sd">            self.__measurement_equipment.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__measurement_equipment</span>
+
+    <span class="nd">@measurement_equipment.setter</span>
+<div class="viewcode-block" id="IES_TM2714_Header.measurement_equipment"><a class="viewcode-back" href="../../../colour.io.ies_tm2714.html#colour.io.ies_tm2714.IES_TM2714_Header.measurement_equipment">[docs]</a>    <span class="k">def</span> <span class="nf">measurement_equipment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for **self.__measurement_equipment** private attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : unicode</span>
+<span class="sd">            Attribute value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">unicode</span><span class="p">),</span> <span class="p">(</span>
+                <span class="p">(</span><span class="s">&#39;&quot;{0}&quot; attribute: &quot;{1}&quot; type is not &#39;</span>
+                 <span class="s">&#39;&quot;str&quot; or &quot;unicode&quot;!&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;measurement_equipment&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__measurement_equipment</span> <span class="o">=</span> <span class="n">value</span>
+</div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">laboratory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Property for **self.__laboratory** private attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        unicode</span>
+<span class="sd">            self.__laboratory.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__laboratory</span>
+
+    <span class="nd">@laboratory.setter</span>
+<div class="viewcode-block" id="IES_TM2714_Header.laboratory"><a class="viewcode-back" href="../../../colour.io.ies_tm2714.html#colour.io.ies_tm2714.IES_TM2714_Header.laboratory">[docs]</a>    <span class="k">def</span> <span class="nf">laboratory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for **self.__laboratory** private attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : unicode</span>
+<span class="sd">            Attribute value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">unicode</span><span class="p">),</span> <span class="p">(</span>
+                <span class="p">(</span><span class="s">&#39;&quot;{0}&quot; attribute: &quot;{1}&quot; type is not &#39;</span>
+                 <span class="s">&#39;&quot;str&quot; or &quot;unicode&quot;!&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;laboratory&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__laboratory</span> <span class="o">=</span> <span class="n">value</span>
+</div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">report_number</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Property for **self.__report_number** private attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        unicode</span>
+<span class="sd">            self.__report_number.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__report_number</span>
+
+    <span class="nd">@report_number.setter</span>
+<div class="viewcode-block" id="IES_TM2714_Header.report_number"><a class="viewcode-back" href="../../../colour.io.ies_tm2714.html#colour.io.ies_tm2714.IES_TM2714_Header.report_number">[docs]</a>    <span class="k">def</span> <span class="nf">report_number</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for **self.__report_number** private attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : unicode</span>
+<span class="sd">            Attribute value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">unicode</span><span class="p">),</span> <span class="p">(</span>
+                <span class="p">(</span><span class="s">&#39;&quot;{0}&quot; attribute: &quot;{1}&quot; type is not &#39;</span>
+                 <span class="s">&#39;&quot;str&quot; or &quot;unicode&quot;!&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;report_number&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__report_number</span> <span class="o">=</span> <span class="n">value</span>
+</div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">report_date</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Property for **self.__report_date** private attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        unicode</span>
+<span class="sd">            self.__report_date.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__report_date</span>
+
+    <span class="nd">@report_date.setter</span>
+<div class="viewcode-block" id="IES_TM2714_Header.report_date"><a class="viewcode-back" href="../../../colour.io.ies_tm2714.html#colour.io.ies_tm2714.IES_TM2714_Header.report_date">[docs]</a>    <span class="k">def</span> <span class="nf">report_date</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for **self.__report_date** private attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : unicode</span>
+<span class="sd">            Attribute value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">unicode</span><span class="p">),</span> <span class="p">(</span>
+                <span class="p">(</span><span class="s">&#39;&quot;{0}&quot; attribute: &quot;{1}&quot; type is not &#39;</span>
+                 <span class="s">&#39;&quot;str&quot; or &quot;unicode&quot;!&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;report_date&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__report_date</span> <span class="o">=</span> <span class="n">value</span>
+</div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">document_creation_date</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Property for **self.__document_creation_date** private attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        unicode</span>
+<span class="sd">            self.__document_creation_date.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__document_creation_date</span>
+
+    <span class="nd">@document_creation_date.setter</span>
+<div class="viewcode-block" id="IES_TM2714_Header.document_creation_date"><a class="viewcode-back" href="../../../colour.io.ies_tm2714.html#colour.io.ies_tm2714.IES_TM2714_Header.document_creation_date">[docs]</a>    <span class="k">def</span> <span class="nf">document_creation_date</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for **self.__document_creation_date** private attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : unicode</span>
+<span class="sd">            Attribute value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">unicode</span><span class="p">),</span> <span class="p">(</span>
+                <span class="p">(</span><span class="s">&#39;&quot;{0}&quot; attribute: &quot;{1}&quot; type is not &#39;</span>
+                 <span class="s">&#39;&quot;str&quot; or &quot;unicode&quot;!&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;document_creation_date&#39;</span><span class="p">,</span>
+                                               <span class="n">value</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__document_creation_date</span> <span class="o">=</span> <span class="n">value</span>
+</div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">comments</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Property for **self.__comments** private attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        unicode</span>
+<span class="sd">            self.__comments.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__comments</span>
+
+    <span class="nd">@comments.setter</span>
+<div class="viewcode-block" id="IES_TM2714_Header.comments"><a class="viewcode-back" href="../../../colour.io.ies_tm2714.html#colour.io.ies_tm2714.IES_TM2714_Header.comments">[docs]</a>    <span class="k">def</span> <span class="nf">comments</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for **self.__comments** private attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : unicode</span>
+<span class="sd">            Attribute value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">unicode</span><span class="p">),</span> <span class="p">(</span>
+                <span class="p">(</span><span class="s">&#39;&quot;{0}&quot; attribute: &quot;{1}&quot; type is not &#39;</span>
+                 <span class="s">&#39;&quot;str&quot; or &quot;unicode&quot;!&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;comments&#39;</span><span class="p">,</span>
+                                               <span class="n">value</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__comments</span> <span class="o">=</span> <span class="n">value</span>
+
+</div></div>
+<div class="viewcode-block" id="IES_TM2714_Spd"><a class="viewcode-back" href="../../../colour.io.ies_tm2714.html#colour.io.ies_tm2714.IES_TM2714_Spd">[docs]</a><span class="k">class</span> <span class="nc">IES_TM2714_Spd</span><span class="p">(</span><span class="n">SpectralPowerDistribution</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Defines a IES TM-27-14 spectral power distribution.</span>
+
+<span class="sd">    This class can read and write IES TM-27-14 spectral data XML files.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    path : unicode, optional</span>
+<span class="sd">        Spectral data XML file path.</span>
+<span class="sd">    header : IES_TM2714_Header, optional</span>
+<span class="sd">        IES TM-27-14 spectral power distribution header.</span>
+<span class="sd">    spectral_quantity : unicode, optional</span>
+<span class="sd">        {&#39;flux&#39;, &#39;absorptance&#39;, &#39;transmittance&#39;, &#39;reflectance&#39;, &#39;intensity&#39;,</span>
+<span class="sd">        &#39;irradiance&#39;, &#39;radiance&#39;, &#39;exitance&#39;, &#39;R-Factor&#39;, &#39;T-Factor&#39;,</span>
+<span class="sd">        &#39;relative&#39;, &#39;other&#39;}</span>
+<span class="sd">        Quantity of measurement for each element of the spectral data.</span>
+<span class="sd">    reflection_geometry : unicode, optional</span>
+<span class="sd">        {&#39;di:8&#39;, &#39;de:8&#39;, &#39;8:di&#39;, &#39;8:de&#39;, &#39;d:d&#39;, &#39;d:0&#39;, &#39;45a:0&#39;, &#39;45c:0&#39;,</span>
+<span class="sd">        &#39;0:45a&#39;, &#39;45x:0&#39;, &#39;0:45x&#39;, &#39;other&#39;}</span>
+<span class="sd">        Spectral reflectance factors geometric conditions.</span>
+<span class="sd">    transmission_geometry : unicode, optional</span>
+<span class="sd">        {&#39;0:0&#39;, &#39;di:0&#39;, &#39;de:0&#39;, &#39;0:di&#39;, &#39;0:de&#39;, &#39;d:d&#39;, &#39;other&#39;}</span>
+<span class="sd">        Spectral transmittance factors geometric conditions.</span>
+<span class="sd">    bandwidth_FWHM : numeric, optional</span>
+<span class="sd">        Spectroradiometer full-width half-maximum bandwidth in nanometers.</span>
+<span class="sd">    bandwidth_corrected : bool, optional</span>
+<span class="sd">        Specifies if bandwidth correction has been applied to the measured</span>
+<span class="sd">        data.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    mapping</span>
+<span class="sd">    path</span>
+<span class="sd">    header</span>
+<span class="sd">    spectral_quantity</span>
+<span class="sd">    reflection_geometry</span>
+<span class="sd">    transmission_geometry</span>
+<span class="sd">    bandwidth_FWHM</span>
+<span class="sd">    bandwidth_corrected</span>
+
+<span class="sd">    Methods</span>
+<span class="sd">    -------</span>
+<span class="sd">    read</span>
+<span class="sd">    write</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    *Reflection Geometry*</span>
+
+<span class="sd">    -   di:8: Diffuse / eight-degree, specular component included.</span>
+<span class="sd">    -   de:8: Diffuse / eight-degree, specular component excluded.</span>
+<span class="sd">    -   8:di: Eight-degree / diffuse, specular component included.</span>
+<span class="sd">    -   8:de: Eight-degree / diffuse, specular component excluded.</span>
+<span class="sd">    -   d:d: Diffuse / diffuse.</span>
+<span class="sd">    -   d:0: Alternative diffuse.</span>
+<span class="sd">    -   45a:0: Forty-five degree annular / normal.</span>
+<span class="sd">    -   45c:0: Forty-five degree circumferential / normal.</span>
+<span class="sd">    -   0:45a: Normal / forty-five degree annular.</span>
+<span class="sd">    -   45x:0: Forty-five degree directional / normal.</span>
+<span class="sd">    -   0:45x: Normal / forty-five degree directional.</span>
+<span class="sd">    -   other: User-specified in comments.</span>
+
+<span class="sd">    *Transmission Geometry*</span>
+
+<span class="sd">    -	0:0: Normal / normal.</span>
+<span class="sd">    -	di:0: Diffuse / normal, regular component included.</span>
+<span class="sd">    -	de:0: Diffuse / normal, regular component excluded.</span>
+<span class="sd">    -	0:di: Normal / diffuse, regular component included.</span>
+<span class="sd">    -	0:de: Normal / diffuse, regular component excluded.</span>
+<span class="sd">    -	d:d: Diffuse / diffuse.</span>
+<span class="sd">    -	other: User-specified in comments.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from os.path import dirname, join</span>
+<span class="sd">    &gt;&gt;&gt; directory = join(dirname(__file__), &#39;tests&#39;, &#39;resources&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; spd = IES_TM2714_Spd(join(directory, &#39;Fluorescent.spdx&#39;))</span>
+<span class="sd">    &gt;&gt;&gt; spd.read()</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; spd.header.manufacturer</span>
+<span class="sd">    &#39;Unknown&#39;</span>
+<span class="sd">    &gt;&gt;&gt; # Doctests ellipsis for Python 2.x compatibility.</span>
+<span class="sd">    &gt;&gt;&gt; spd[501.7]  # doctest: +ELLIPSIS</span>
+<span class="sd">    array(0.095...)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">path</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                 <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                 <span class="n">spectral_quantity</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                 <span class="n">reflection_geometry</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                 <span class="n">transmission_geometry</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                 <span class="n">bandwidth_FWHM</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                 <span class="n">bandwidth_corrected</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+
+        <span class="nb">super</span><span class="p">(</span><span class="n">IES_TM2714_Spd</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{})</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__mapping</span> <span class="o">=</span> <span class="n">Structure</span><span class="p">(</span><span class="o">**</span><span class="p">{</span>
+            <span class="s">&#39;element&#39;</span><span class="p">:</span> <span class="s">&#39;SpectralDistribution&#39;</span><span class="p">,</span>
+            <span class="s">&#39;elements&#39;</span><span class="p">:</span> <span class="p">(</span>
+                <span class="n">IES_TM2714_ElementSpecification</span><span class="p">(</span>
+                    <span class="s">&#39;SpectralQuantity&#39;</span><span class="p">,</span>
+                    <span class="s">&#39;spectral_quantity&#39;</span><span class="p">,</span>
+                    <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">),</span>
+                <span class="n">IES_TM2714_ElementSpecification</span><span class="p">(</span>
+                    <span class="s">&#39;ReflectionGeometry&#39;</span><span class="p">,</span>
+                    <span class="s">&#39;reflection_geometry&#39;</span><span class="p">),</span>
+                <span class="n">IES_TM2714_ElementSpecification</span><span class="p">(</span>
+                    <span class="s">&#39;TransmissionGeometry&#39;</span><span class="p">,</span>
+                    <span class="s">&#39;transmission_geometry&#39;</span><span class="p">),</span>
+                <span class="n">IES_TM2714_ElementSpecification</span><span class="p">(</span>
+                    <span class="s">&#39;BandwidthFWHM&#39;</span><span class="p">,</span>
+                    <span class="s">&#39;bandwidth_FWHM&#39;</span><span class="p">,</span>
+                    <span class="n">read_conversion</span><span class="o">=</span><span class="nb">float</span><span class="p">),</span>
+                <span class="n">IES_TM2714_ElementSpecification</span><span class="p">(</span>
+                    <span class="s">&#39;BandwidthCorrected&#39;</span><span class="p">,</span>
+                    <span class="s">&#39;bandwidth_corrected&#39;</span><span class="p">,</span>
+                    <span class="n">read_conversion</span><span class="o">=</span><span class="p">(</span>
+                        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="bp">True</span>
+                        <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s">&#39;true&#39;</span> <span class="k">else</span> <span class="bp">False</span><span class="p">),</span>
+                    <span class="n">write_conversion</span><span class="o">=</span><span class="p">(</span>
+                        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s">&#39;true&#39;</span>
+                        <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="bp">True</span> <span class="k">else</span> <span class="s">&#39;False&#39;</span><span class="p">))),</span>
+            <span class="s">&#39;data&#39;</span><span class="p">:</span> <span class="n">IES_TM2714_ElementSpecification</span><span class="p">(</span>
+                <span class="s">&#39;SpectralData&#39;</span><span class="p">,</span>
+                <span class="s">&#39;wavelength&#39;</span><span class="p">,</span>
+                <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)})</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__path</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">path</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__header</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">header</span> <span class="o">=</span> <span class="n">header</span> <span class="k">if</span> <span class="n">header</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="k">else</span> <span class="n">IES_TM2714_Header</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__spectral_quantity</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">spectral_quantity</span> <span class="o">=</span> <span class="n">spectral_quantity</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__reflection_geometry</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reflection_geometry</span> <span class="o">=</span> <span class="n">reflection_geometry</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__transmission_geometry</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">transmission_geometry</span> <span class="o">=</span> <span class="n">transmission_geometry</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__bandwidth_FWHM</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bandwidth_FWHM</span> <span class="o">=</span> <span class="n">bandwidth_FWHM</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__bandwidth_corrected</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bandwidth_corrected</span> <span class="o">=</span> <span class="n">bandwidth_corrected</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">mapping</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Property for **self.mapping** attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Structure</span>
+
+<span class="sd">        Warning</span>
+<span class="sd">        -------</span>
+<span class="sd">        :attr:`IES_TM2714_Spd.mapping` is read only.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__mapping</span>
+
+    <span class="nd">@mapping.setter</span>
+<div class="viewcode-block" id="IES_TM2714_Spd.mapping"><a class="viewcode-back" href="../../../colour.io.ies_tm2714.html#colour.io.ies_tm2714.IES_TM2714_Spd.mapping">[docs]</a>    <span class="k">def</span> <span class="nf">mapping</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for **self.mapping** attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : object</span>
+<span class="sd">            Attribute value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span>
+            <span class="s">&#39;&quot;{0}&quot; attribute is read only!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;mapping&#39;</span><span class="p">))</span>
+</div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">path</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Property for **self.__path** private attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        unicode</span>
+<span class="sd">            self.__path.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__path</span>
+
+    <span class="nd">@path.setter</span>
+<div class="viewcode-block" id="IES_TM2714_Spd.path"><a class="viewcode-back" href="../../../colour.io.ies_tm2714.html#colour.io.ies_tm2714.IES_TM2714_Spd.path">[docs]</a>    <span class="k">def</span> <span class="nf">path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for **self.__path** private attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : unicode</span>
+<span class="sd">            Attribute value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">unicode</span><span class="p">),</span> <span class="p">(</span>
+                <span class="p">(</span><span class="s">&#39;&quot;{0}&quot; attribute: &quot;{1}&quot; type is not &#39;</span>
+                 <span class="s">&#39;&quot;str&quot; or &quot;unicode&quot;!&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;path&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__path</span> <span class="o">=</span> <span class="n">value</span>
+</div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">header</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Property for **self.__header** private attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        IES_TM2714_Header</span>
+<span class="sd">            self.__header.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__header</span>
+
+    <span class="nd">@header.setter</span>
+<div class="viewcode-block" id="IES_TM2714_Spd.header"><a class="viewcode-back" href="../../../colour.io.ies_tm2714.html#colour.io.ies_tm2714.IES_TM2714_Spd.header">[docs]</a>    <span class="k">def</span> <span class="nf">header</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for **self.__header** private attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : IES_TM2714_Header</span>
+<span class="sd">            Attribute value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">is</span> <span class="n">IES_TM2714_Header</span><span class="p">,</span> <span class="p">(</span>
+                <span class="p">(</span><span class="s">&#39;&quot;{0}&quot; attribute: &quot;{1}&quot; type is not &#39;</span>
+                 <span class="s">&#39;&quot;IES_TM2714_Header&quot;!&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;header&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__header</span> <span class="o">=</span> <span class="n">value</span>
+</div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">spectral_quantity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Property for **self.__spectral_quantity** private attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        unicode</span>
+<span class="sd">            self.__spectral_quantity.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__spectral_quantity</span>
+
+    <span class="nd">@spectral_quantity.setter</span>
+<div class="viewcode-block" id="IES_TM2714_Spd.spectral_quantity"><a class="viewcode-back" href="../../../colour.io.ies_tm2714.html#colour.io.ies_tm2714.IES_TM2714_Spd.spectral_quantity">[docs]</a>    <span class="k">def</span> <span class="nf">spectral_quantity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for **self.__spectral_quantity** private attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : unicode</span>
+<span class="sd">            Attribute value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">unicode</span><span class="p">),</span> <span class="p">(</span>
+                <span class="p">(</span><span class="s">&#39;&quot;{0}&quot; attribute: &quot;{1}&quot; type is not &#39;</span>
+                 <span class="s">&#39;&quot;str&quot; or &quot;unicode&quot;!&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;spectral_quantity&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__spectral_quantity</span> <span class="o">=</span> <span class="n">value</span>
+</div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">reflection_geometry</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Property for **self.__reflection_geometry** private attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        unicode</span>
+<span class="sd">            self.__reflection_geometry.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__reflection_geometry</span>
+
+    <span class="nd">@reflection_geometry.setter</span>
+<div class="viewcode-block" id="IES_TM2714_Spd.reflection_geometry"><a class="viewcode-back" href="../../../colour.io.ies_tm2714.html#colour.io.ies_tm2714.IES_TM2714_Spd.reflection_geometry">[docs]</a>    <span class="k">def</span> <span class="nf">reflection_geometry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for **self.__reflection_geometry** private attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : unicode</span>
+<span class="sd">            Attribute value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">unicode</span><span class="p">),</span> <span class="p">(</span>
+                <span class="p">(</span><span class="s">&#39;&quot;{0}&quot; attribute: &quot;{1}&quot; type is not &#39;</span>
+                 <span class="s">&#39;&quot;str&quot; or &quot;unicode&quot;!&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;reflection_geometry&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__reflection_geometry</span> <span class="o">=</span> <span class="n">value</span>
+</div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">transmission_geometry</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Property for **self.__transmission_geometry** private attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        unicode</span>
+<span class="sd">            self.__transmission_geometry.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__transmission_geometry</span>
+
+    <span class="nd">@transmission_geometry.setter</span>
+<div class="viewcode-block" id="IES_TM2714_Spd.transmission_geometry"><a class="viewcode-back" href="../../../colour.io.ies_tm2714.html#colour.io.ies_tm2714.IES_TM2714_Spd.transmission_geometry">[docs]</a>    <span class="k">def</span> <span class="nf">transmission_geometry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for **self.__transmission_geometry** private attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : unicode</span>
+<span class="sd">            Attribute value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">unicode</span><span class="p">),</span> <span class="p">(</span>
+                <span class="p">(</span><span class="s">&#39;&quot;{0}&quot; attribute: &quot;{1}&quot; type is not &#39;</span>
+                 <span class="s">&#39;&quot;str&quot; or &quot;unicode&quot;!&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;transmission_geometry&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__transmission_geometry</span> <span class="o">=</span> <span class="n">value</span>
+</div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">bandwidth_FWHM</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Property for **self.__bandwidth_FWHM** private attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        numeric</span>
+<span class="sd">            self.__bandwidth_FWHM.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bandwidth_FWHM</span>
+
+    <span class="nd">@bandwidth_FWHM.setter</span>
+<div class="viewcode-block" id="IES_TM2714_Spd.bandwidth_FWHM"><a class="viewcode-back" href="../../../colour.io.ies_tm2714.html#colour.io.ies_tm2714.IES_TM2714_Spd.bandwidth_FWHM">[docs]</a>    <span class="k">def</span> <span class="nf">bandwidth_FWHM</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for **self.__bandwidth_FWHM** private attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : numeric</span>
+<span class="sd">            Attribute value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="n">is_numeric</span><span class="p">(</span><span class="n">value</span><span class="p">),</span> <span class="p">(</span>
+                <span class="s">&#39;&quot;{0}&quot; attribute: &quot;{1}&quot; type is not &quot;numeric&quot;!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="s">&#39;bandwidth_FWHM&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__bandwidth_FWHM</span> <span class="o">=</span> <span class="n">value</span>
+</div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">bandwidth_corrected</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Property for **self.__bandwidth_corrected** private attribute.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            self.__bandwidth_corrected.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bandwidth_corrected</span>
+
+    <span class="nd">@bandwidth_corrected.setter</span>
+<div class="viewcode-block" id="IES_TM2714_Spd.bandwidth_corrected"><a class="viewcode-back" href="../../../colour.io.ies_tm2714.html#colour.io.ies_tm2714.IES_TM2714_Spd.bandwidth_corrected">[docs]</a>    <span class="k">def</span> <span class="nf">bandwidth_corrected</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setter for **self.__bandwidth_corrected** private attribute.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        value : bool</span>
+<span class="sd">            Attribute value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">bool</span><span class="p">,</span> <span class="p">(</span>
+                <span class="s">&#39;&quot;{0}&quot; attribute: &quot;{1}&quot; type is not &quot;bool&quot;!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="s">&#39;bandwidth_corrected&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__bandwidth_corrected</span> <span class="o">=</span> <span class="n">value</span>
+</div>
+<div class="viewcode-block" id="IES_TM2714_Spd.read"><a class="viewcode-back" href="../../../colour.io.ies_tm2714.html#colour.io.ies_tm2714.IES_TM2714_Spd.read">[docs]</a>    <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Reads and parses the spectral data XML file path.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            Definition success.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; from os.path import dirname, join</span>
+<span class="sd">        &gt;&gt;&gt; directory = join(dirname(__file__), &#39;tests&#39;, &#39;resources&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; spd = IES_TM2714_Spd(join(directory, &#39;Fluorescent.spdx&#39;))</span>
+<span class="sd">        &gt;&gt;&gt; spd.read()</span>
+<span class="sd">        True</span>
+<span class="sd">        &gt;&gt;&gt; spd.header.description</span>
+<span class="sd">        &#39;Rare earth fluorescent lamp&#39;</span>
+<span class="sd">        &gt;&gt;&gt; # Doctests ellipsis for Python 2.x compatibility.</span>
+<span class="sd">        &gt;&gt;&gt; spd[400]  # doctest: +ELLIPSIS</span>
+<span class="sd">        array(0.034...)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">formatter</span> <span class="o">=</span> <span class="s">&#39;./{{{0}}}{1}/{{{0}}}{2}&#39;</span>
+
+        <span class="n">tree</span> <span class="o">=</span> <span class="n">ElementTree</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__path</span><span class="p">)</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">getroot</span><span class="p">()</span>
+
+        <span class="n">namespace</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;\{(.*)\}&#39;</span><span class="p">,</span> <span class="n">root</span><span class="o">.</span><span class="n">tag</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__path</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="c"># *Element.iter* does not exist in *Python 2.6* and text must be</span>
+        <span class="c"># stripped.</span>
+        <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+            <span class="n">iterator</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">getiterator</span>
+            <span class="n">text_conversion</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">iterator</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">iter</span>
+            <span class="n">text_conversion</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span>
+
+        <span class="k">for</span> <span class="nb">object</span> <span class="ow">in</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">,</span> <span class="bp">self</span><span class="p">):</span>
+            <span class="n">mapping</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">mapping</span>
+            <span class="k">for</span> <span class="n">specification</span> <span class="ow">in</span> <span class="n">mapping</span><span class="o">.</span><span class="n">elements</span><span class="p">:</span>
+                <span class="n">element</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">formatter</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">namespace</span><span class="p">,</span> <span class="n">mapping</span><span class="o">.</span><span class="n">element</span><span class="p">,</span> <span class="n">specification</span><span class="o">.</span><span class="n">element</span><span class="p">))</span>
+                <span class="k">if</span> <span class="n">element</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="nb">setattr</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span>
+                            <span class="n">specification</span><span class="o">.</span><span class="n">attribute</span><span class="p">,</span>
+                            <span class="n">specification</span><span class="o">.</span><span class="n">read_conversion</span><span class="p">(</span>
+                                <span class="n">text_conversion</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">text</span><span class="p">)))</span>
+
+        <span class="c"># Reading spectral data.</span>
+        <span class="k">for</span> <span class="n">spectral_data</span> <span class="ow">in</span> <span class="n">iterator</span><span class="p">(</span><span class="s">&#39;{{{0}}}{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">namespace</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapping</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">element</span><span class="p">)):</span>
+            <span class="n">wavelength</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">spectral_data</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">mapping</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">attribute</span><span class="p">])</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">text_conversion</span><span class="p">(</span><span class="n">spectral_data</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+            <span class="bp">self</span><span class="p">[</span><span class="n">wavelength</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+        <span class="k">return</span> <span class="bp">True</span>
+</div>
+<div class="viewcode-block" id="IES_TM2714_Spd.write"><a class="viewcode-back" href="../../../colour.io.ies_tm2714.html#colour.io.ies_tm2714.IES_TM2714_Spd.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write the spd spectral data to XML file path.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            Definition success.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; from os.path import dirname, join</span>
+<span class="sd">        &gt;&gt;&gt; from shutil import rmtree</span>
+<span class="sd">        &gt;&gt;&gt; from tempfile import mkdtemp</span>
+<span class="sd">        &gt;&gt;&gt; directory = join(dirname(__file__), &#39;tests&#39;, &#39;resources&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; spd = IES_TM2714_Spd(join(directory, &#39;Fluorescent.spdx&#39;))</span>
+<span class="sd">        &gt;&gt;&gt; spd.read()</span>
+<span class="sd">        True</span>
+<span class="sd">        &gt;&gt;&gt; temporary_directory = mkdtemp()</span>
+<span class="sd">        &gt;&gt;&gt; spd.path = join(temporary_directory, &#39;Fluorescent.spdx&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; spd.write()</span>
+<span class="sd">        True</span>
+<span class="sd">        &gt;&gt;&gt; rmtree(temporary_directory)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">root</span> <span class="o">=</span> <span class="n">ElementTree</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s">&#39;IESTM2714&#39;</span><span class="p">)</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">attrib</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;xmlns&#39;</span><span class="p">:</span> <span class="n">IES_TM2714_NAMESPACE</span><span class="p">,</span>
+                       <span class="s">&#39;version&#39;</span><span class="p">:</span> <span class="n">IES_TM2714_VERSION</span><span class="p">}</span>
+
+        <span class="n">spectral_distribution</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">for</span> <span class="nb">object</span> <span class="ow">in</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">,</span> <span class="bp">self</span><span class="p">):</span>
+            <span class="n">mapping</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">mapping</span>
+            <span class="n">element</span> <span class="o">=</span> <span class="n">ElementTree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">mapping</span><span class="o">.</span><span class="n">element</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">specification</span> <span class="ow">in</span> <span class="n">mapping</span><span class="o">.</span><span class="n">elements</span><span class="p">:</span>
+                <span class="n">element_child</span> <span class="o">=</span> <span class="n">ElementTree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">element</span><span class="p">,</span>
+                                                       <span class="n">specification</span><span class="o">.</span><span class="n">element</span><span class="p">)</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="n">specification</span><span class="o">.</span><span class="n">attribute</span><span class="p">)</span>
+                <span class="n">element_child</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">specification</span><span class="o">.</span><span class="n">write_conversion</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="nb">object</span> <span class="ow">is</span> <span class="bp">self</span><span class="p">:</span>
+                <span class="n">spectral_distribution</span> <span class="o">=</span> <span class="n">element</span>
+
+        <span class="c"># Writing spectral data.</span>
+        <span class="k">for</span> <span class="n">wavelength</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+            <span class="n">element_child</span> <span class="o">=</span> <span class="n">ElementTree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">spectral_distribution</span><span class="p">,</span>
+                                                   <span class="n">mapping</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">element</span><span class="p">)</span>
+            <span class="n">element_child</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">mapping</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">write_conversion</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="n">element_child</span><span class="o">.</span><span class="n">attrib</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="n">mapping</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">attribute</span><span class="p">:</span> <span class="n">mapping</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">write_conversion</span><span class="p">(</span>
+                    <span class="n">wavelength</span><span class="p">)}</span>
+
+        <span class="n">xml</span> <span class="o">=</span> <span class="n">minidom</span><span class="o">.</span><span class="n">parseString</span><span class="p">(</span><span class="n">ElementTree</span><span class="o">.</span><span class="n">tostring</span><span class="p">(</span><span class="n">root</span><span class="p">))</span><span class="o">.</span><span class="n">toprettyxml</span><span class="p">()</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__path</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+            <span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">xml</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">True</span></div></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2015, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

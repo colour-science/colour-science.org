@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.io.ies_tm2714 Module &mdash; Colour 0.3.3 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.3.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.3 documentation" href="index.html" />
+    <link rel="up" title="colour.io Package" href="colour.io.html" />
+    <link rel="next" title="colour.io.tabular Module" href="colour.io.tabular.html" />
+    <link rel="prev" title="colour.io.common Module" href="colour.io.common.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+  <li>
+    <a href="colour.io.common.html" title="Previous Chapter: colour.io.common Module"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; colour.io.common...</span>
+    </a>
+  </li>
+  <li>
+    <a href="colour.io.tabular.html" title="Next Chapter: colour.io.tabular Module"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">colour.io.tabula... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="module-colour.io.ies_tm2714">
+<span id="colour-io-ies-tm2714-module"></span><h1>colour.io.ies_tm2714 Module<a class="headerlink" href="#module-colour.io.ies_tm2714" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ies-tm-27-14-data-input-output">
+<h2>IES TM-27-14 Data Input / Output<a class="headerlink" href="#ies-tm-27-14-data-input-output" title="Permalink to this headline">¶</a></h2>
+<p>Defines the <a class="reference internal" href="#colour.io.ies_tm2714.IES_TM2714_Spd" title="colour.io.ies_tm2714.IES_TM2714_Spd"><tt class="xref py py-class docutils literal"><span class="pre">IES_TM2714_Spd</span></tt></a> class handling IES TM-27-14 spectral data
+XML files.</p>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td>IES Computer Committee, &amp; TM-27-14 Working Group. (2014). IES Standard
+Format for the Electronic Transfer of Spectral Data Electronic
+Transfer of Spectral Data (pp. 1–16). ISBN:978-0879952952</td></tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="colour.io.ies_tm2714.IES_TM2714_ElementSpecification">
+<em class="property">class </em><tt class="descclassname">colour.io.ies_tm2714.</tt><tt class="descname">IES_TM2714_ElementSpecification</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_ElementSpecification"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.io.ies_tm2714.IES_TM2714_ElementSpecification" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#colour.io.ies_tm2714.IES_TM2714_ElementSpecification" title="colour.io.ies_tm2714.IES_TM2714_ElementSpecification"><tt class="xref py py-class docutils literal"><span class="pre">colour.io.ies_tm2714.IES_TM2714_ElementSpecification</span></tt></a></p>
+<p>IES TM-27-14 spectral data XML file element specification.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>attribute</strong> (<em>object</em>) &#8211; Associated attribute name.</li>
+<li><strong>element</strong> (<em>unicode</em>) &#8211; Element name.</li>
+<li><strong>attribute</strong> &#8211; Element type.</li>
+<li><strong>required</strong> (<em>bool</em>) &#8211; Is element required.</li>
+<li><strong>read_conversion</strong> (<em>object</em>) &#8211; Method to convert from XML to type on reading.</li>
+<li><strong>write_conversion</strong> (<em>object</em>) &#8211; Method to convert from type to XML on writing.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="colour.io.ies_tm2714.IES_TM2714_Header">
+<em class="property">class </em><tt class="descclassname">colour.io.ies_tm2714.</tt><tt class="descname">IES_TM2714_Header</tt><big>(</big><em>manufacturer=None</em>, <em>catalog_number=None</em>, <em>description=None</em>, <em>document_creator=None</em>, <em>unique_identifier=None</em>, <em>measurement_equipment=None</em>, <em>laboratory=None</em>, <em>report_number=None</em>, <em>report_date=None</em>, <em>document_creation_date=None</em>, <em>comments=None</em><big>)</big><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Header"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.io.ies_tm2714.IES_TM2714_Header" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Defines the header object for a IES TM-27-14 spectral power distribution.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>manufacturer</strong> (<em>unicode, optional</em>) &#8211; Manufacturer of the device under test.</li>
+<li><strong>catalog_number</strong> (<em>unicode, optional</em>) &#8211; Manufacturer’s product catalog number.</li>
+<li><strong>description</strong> (<em>unicode, optional</em>) &#8211; Description of the spectral data in the spectral data XML file.</li>
+<li><strong>document_creator</strong> (<em>unicode, optional</em>) &#8211; Creator of the spectral data XML file, which may be a
+test lab, a research group, a standard body, a company or an
+individual.</li>
+<li><strong>unique_identifier</strong> (<em>unicode, optional</em>) &#8211; Description of the equipment used to measure the spectral data.</li>
+<li><strong>measurement_equipment</strong> (<em>unicode, optional</em>) &#8211; Description of the equipment used to measure the spectral data.</li>
+<li><strong>laboratory</strong> (<em>unicode, optional</em>) &#8211; Testing laboratory name that performed the spectral data measurements.</li>
+<li><strong>report_number</strong> (<em>unicode, optional</em>) &#8211; Testing laboratory report number.</li>
+<li><strong>report_date</strong> (<em>unicode, optional</em>) &#8211; Testing laboratory report date using the <em>XML DateTime Data Type</em>,
+<em>YYYY-MM-DDThh:mm:ss</em>.</li>
+<li><strong>document_creation_date</strong> (<em>unicode, optional</em>) &#8211; Spectral data XML file creation date using the
+<em>XML DateTime Data Type</em>, <em>YYYY-MM-DDThh:mm:ss</em>.</li>
+<li><strong>comments</strong> (<em>unicode, optional</em>) &#8211; Additional information relating to the tested and reported data.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="colour.io.ies_tm2714.IES_TM2714_Header.mapping">
+<tt class="descname">mapping</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Header.mapping"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.io.ies_tm2714.IES_TM2714_Header.mapping" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="colour.io.ies_tm2714.IES_TM2714_Header.manufacturer">
+<tt class="descname">manufacturer</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Header.manufacturer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.io.ies_tm2714.IES_TM2714_Header.manufacturer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="colour.io.ies_tm2714.IES_TM2714_Header.catalog_number">
+<tt class="descname">catalog_number</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Header.catalog_number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.io.ies_tm2714.IES_TM2714_Header.catalog_number" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="colour.io.ies_tm2714.IES_TM2714_Header.description">
+<tt class="descname">description</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Header.description"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.io.ies_tm2714.IES_TM2714_Header.description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="colour.io.ies_tm2714.IES_TM2714_Header.document_creator">
+<tt class="descname">document_creator</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Header.document_creator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.io.ies_tm2714.IES_TM2714_Header.document_creator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="colour.io.ies_tm2714.IES_TM2714_Header.unique_identifier">
+<tt class="descname">unique_identifier</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Header.unique_identifier"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.io.ies_tm2714.IES_TM2714_Header.unique_identifier" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="colour.io.ies_tm2714.IES_TM2714_Header.measurement_equipment">
+<tt class="descname">measurement_equipment</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Header.measurement_equipment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.io.ies_tm2714.IES_TM2714_Header.measurement_equipment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="colour.io.ies_tm2714.IES_TM2714_Header.laboratory">
+<tt class="descname">laboratory</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Header.laboratory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.io.ies_tm2714.IES_TM2714_Header.laboratory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="colour.io.ies_tm2714.IES_TM2714_Header.report_number">
+<tt class="descname">report_number</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Header.report_number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.io.ies_tm2714.IES_TM2714_Header.report_number" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="colour.io.ies_tm2714.IES_TM2714_Header.report_date">
+<tt class="descname">report_date</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Header.report_date"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.io.ies_tm2714.IES_TM2714_Header.report_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="colour.io.ies_tm2714.IES_TM2714_Header.document_creation_date">
+<tt class="descname">document_creation_date</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Header.document_creation_date"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.io.ies_tm2714.IES_TM2714_Header.document_creation_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="colour.io.ies_tm2714.IES_TM2714_Header.comments">
+<tt class="descname">comments</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Header.comments"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.io.ies_tm2714.IES_TM2714_Header.comments" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">IES_TM2714_Header</span><span class="p">(</span><span class="s">&#39;colour-science&#39;</span><span class="p">)</span>  
+<span class="go">&lt;...IES_TM2714_Header object at 0x...&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">IES_TM2714_Header</span><span class="p">(</span><span class="s">&#39;colour-science&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">manufacturer</span>  
+<span class="go">&#39;colour-science&#39;</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt>
+<tt class="descname">catalog_number</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Header.catalog_number"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Property for <strong>self.__catalog_number</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__catalog_number.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">unicode</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<tt class="descname">comments</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Header.comments"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Property for <strong>self.__comments</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__comments.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">unicode</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<tt class="descname">description</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Header.description"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Property for <strong>self.__description</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__description.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">unicode</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<tt class="descname">document_creation_date</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Header.document_creation_date"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Property for <strong>self.__document_creation_date</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__document_creation_date.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">unicode</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<tt class="descname">document_creator</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Header.document_creator"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Property for <strong>self.__document_creator</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__document_creator.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">unicode</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<tt class="descname">laboratory</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Header.laboratory"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Property for <strong>self.__laboratory</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__laboratory.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">unicode</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<tt class="descname">manufacturer</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Header.manufacturer"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Property for <strong>self.__manufacturer</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__manufacturer.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">unicode</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<tt class="descname">mapping</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Header.mapping"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Property for <strong>self.mapping</strong> attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Structure</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><a class="reference internal" href="#colour.io.ies_tm2714.IES_TM2714_Header.mapping" title="colour.io.ies_tm2714.IES_TM2714_Header.mapping"><tt class="xref py py-attr docutils literal"><span class="pre">IES_TM2714_Header.mapping</span></tt></a> is read only.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<tt class="descname">measurement_equipment</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Header.measurement_equipment"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Property for <strong>self.__measurement_equipment</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__measurement_equipment.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">unicode</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<tt class="descname">report_date</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Header.report_date"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Property for <strong>self.__report_date</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__report_date.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">unicode</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<tt class="descname">report_number</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Header.report_number"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Property for <strong>self.__report_number</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__report_number.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">unicode</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<tt class="descname">unique_identifier</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Header.unique_identifier"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Property for <strong>self.__unique_identifier</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__unique_identifier.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">unicode</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="colour.io.ies_tm2714.IES_TM2714_Spd">
+<em class="property">class </em><tt class="descclassname">colour.io.ies_tm2714.</tt><tt class="descname">IES_TM2714_Spd</tt><big>(</big><em>path=None</em>, <em>header=None</em>, <em>spectral_quantity=None</em>, <em>reflection_geometry=None</em>, <em>transmission_geometry=None</em>, <em>bandwidth_FWHM=None</em>, <em>bandwidth_corrected=None</em><big>)</big><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Spd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.io.ies_tm2714.IES_TM2714_Spd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="colour.colorimetry.spectrum.html#colour.colorimetry.spectrum.SpectralPowerDistribution" title="colour.colorimetry.spectrum.SpectralPowerDistribution"><tt class="xref py py-class docutils literal"><span class="pre">colour.colorimetry.spectrum.SpectralPowerDistribution</span></tt></a></p>
+<p>Defines a IES TM-27-14 spectral power distribution.</p>
+<p>This class can read and write IES TM-27-14 spectral data XML files.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>path</strong> (<em>unicode, optional</em>) &#8211; Spectral data XML file path.</li>
+<li><strong>header</strong> (<em>IES_TM2714_Header, optional</em>) &#8211; IES TM-27-14 spectral power distribution header.</li>
+<li><strong>spectral_quantity</strong> (<em>unicode, optional</em>) &#8211; {&#8216;flux&#8217;, &#8216;absorptance&#8217;, &#8216;transmittance&#8217;, &#8216;reflectance&#8217;, &#8216;intensity&#8217;,
+&#8216;irradiance&#8217;, &#8216;radiance&#8217;, &#8216;exitance&#8217;, &#8216;R-Factor&#8217;, &#8216;T-Factor&#8217;,
+&#8216;relative&#8217;, &#8216;other&#8217;}
+Quantity of measurement for each element of the spectral data.</li>
+<li><strong>reflection_geometry</strong> (<em>unicode, optional</em>) &#8211; {&#8216;di:8&#8217;, &#8216;de:8&#8217;, &#8216;8:di&#8217;, &#8216;8:de&#8217;, &#8216;d:d&#8217;, &#8216;d:0&#8217;, &#8216;45a:0&#8217;, &#8216;45c:0&#8217;,
+&#8216;0:45a&#8217;, &#8216;45x:0&#8217;, &#8216;0:45x&#8217;, &#8216;other&#8217;}
+Spectral reflectance factors geometric conditions.</li>
+<li><strong>transmission_geometry</strong> (<em>unicode, optional</em>) &#8211; {&#8216;0:0&#8217;, &#8216;di:0&#8217;, &#8216;de:0&#8217;, &#8216;0:di&#8217;, &#8216;0:de&#8217;, &#8216;d:d&#8217;, &#8216;other&#8217;}
+Spectral transmittance factors geometric conditions.</li>
+<li><strong>bandwidth_FWHM</strong> (<em>numeric, optional</em>) &#8211; Spectroradiometer full-width half-maximum bandwidth in nanometers.</li>
+<li><strong>bandwidth_corrected</strong> (<em>bool, optional</em>) &#8211; Specifies if bandwidth correction has been applied to the measured
+data.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="colour.io.ies_tm2714.IES_TM2714_Spd.mapping">
+<tt class="descname">mapping</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Spd.mapping"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.io.ies_tm2714.IES_TM2714_Spd.mapping" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="colour.io.ies_tm2714.IES_TM2714_Spd.path">
+<tt class="descname">path</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Spd.path"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.io.ies_tm2714.IES_TM2714_Spd.path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="colour.io.ies_tm2714.IES_TM2714_Spd.header">
+<tt class="descname">header</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Spd.header"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.io.ies_tm2714.IES_TM2714_Spd.header" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="colour.io.ies_tm2714.IES_TM2714_Spd.spectral_quantity">
+<tt class="descname">spectral_quantity</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Spd.spectral_quantity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.io.ies_tm2714.IES_TM2714_Spd.spectral_quantity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="colour.io.ies_tm2714.IES_TM2714_Spd.reflection_geometry">
+<tt class="descname">reflection_geometry</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Spd.reflection_geometry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.io.ies_tm2714.IES_TM2714_Spd.reflection_geometry" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="colour.io.ies_tm2714.IES_TM2714_Spd.transmission_geometry">
+<tt class="descname">transmission_geometry</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Spd.transmission_geometry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.io.ies_tm2714.IES_TM2714_Spd.transmission_geometry" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="colour.io.ies_tm2714.IES_TM2714_Spd.bandwidth_FWHM">
+<tt class="descname">bandwidth_FWHM</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Spd.bandwidth_FWHM"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.io.ies_tm2714.IES_TM2714_Spd.bandwidth_FWHM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="colour.io.ies_tm2714.IES_TM2714_Spd.bandwidth_corrected">
+<tt class="descname">bandwidth_corrected</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Spd.bandwidth_corrected"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.io.ies_tm2714.IES_TM2714_Spd.bandwidth_corrected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="colour.io.ies_tm2714.IES_TM2714_Spd.read">
+<tt class="descname">read</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Spd.read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.io.ies_tm2714.IES_TM2714_Spd.read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="colour.io.ies_tm2714.IES_TM2714_Spd.write">
+<tt class="descname">write</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Spd.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.io.ies_tm2714.IES_TM2714_Spd.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Notes</p>
+<p><em>Reflection Geometry</em></p>
+<ul class="simple">
+<li>di:8: Diffuse / eight-degree, specular component included.</li>
+<li>de:8: Diffuse / eight-degree, specular component excluded.</li>
+<li>8:di: Eight-degree / diffuse, specular component included.</li>
+<li>8:de: Eight-degree / diffuse, specular component excluded.</li>
+<li>d:d: Diffuse / diffuse.</li>
+<li>d:0: Alternative diffuse.</li>
+<li>45a:0: Forty-five degree annular / normal.</li>
+<li>45c:0: Forty-five degree circumferential / normal.</li>
+<li>0:45a: Normal / forty-five degree annular.</li>
+<li>45x:0: Forty-five degree directional / normal.</li>
+<li>0:45x: Normal / forty-five degree directional.</li>
+<li>other: User-specified in comments.</li>
+</ul>
+<p><em>Transmission Geometry</em></p>
+<ul class="simple">
+<li>0:0: Normal / normal.</li>
+<li>di:0: Diffuse / normal, regular component included.</li>
+<li>de:0: Diffuse / normal, regular component excluded.</li>
+<li>0:di: Normal / diffuse, regular component included.</li>
+<li>0:de: Normal / diffuse, regular component excluded.</li>
+<li>d:d: Diffuse / diffuse.</li>
+<li>other: User-specified in comments.</li>
+</ul>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">dirname</span><span class="p">,</span> <span class="n">join</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">directory</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">),</span> <span class="s">&#39;tests&#39;</span><span class="p">,</span> <span class="s">&#39;resources&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spd</span> <span class="o">=</span> <span class="n">IES_TM2714_Spd</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s">&#39;Fluorescent.spdx&#39;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spd</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spd</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">manufacturer</span>
+<span class="go">&#39;Unknown&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spd</span><span class="p">[</span><span class="mf">501.7</span><span class="p">]</span>  
+<span class="go">0.095...</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt>
+<tt class="descname">bandwidth_FWHM</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Spd.bandwidth_FWHM"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Property for <strong>self.__bandwidth_FWHM</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__bandwidth_FWHM.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">numeric</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<tt class="descname">bandwidth_corrected</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Spd.bandwidth_corrected"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Property for <strong>self.__bandwidth_corrected</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__bandwidth_corrected.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<tt class="descname">header</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Spd.header"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Property for <strong>self.__header</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__header.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">IES_TM2714_Header</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<tt class="descname">mapping</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Spd.mapping"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Property for <strong>self.mapping</strong> attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Structure</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><a class="reference internal" href="#colour.io.ies_tm2714.IES_TM2714_Spd.mapping" title="colour.io.ies_tm2714.IES_TM2714_Spd.mapping"><tt class="xref py py-attr docutils literal"><span class="pre">IES_TM2714_Spd.mapping</span></tt></a> is read only.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<tt class="descname">path</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Spd.path"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Property for <strong>self.__path</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__path.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">unicode</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">read</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Spd.read"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Reads and parses the spectral data XML file path.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Definition success.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">dirname</span><span class="p">,</span> <span class="n">join</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">directory</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">),</span> <span class="s">&#39;tests&#39;</span><span class="p">,</span> <span class="s">&#39;resources&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spd</span> <span class="o">=</span> <span class="n">IES_TM2714_Spd</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s">&#39;Fluorescent.spdx&#39;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spd</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spd</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">description</span>
+<span class="go">&#39;Rare earth fluorescent lamp&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spd</span><span class="p">[</span><span class="mi">400</span><span class="p">]</span>  
+<span class="go">0.034...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<tt class="descname">reflection_geometry</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Spd.reflection_geometry"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Property for <strong>self.__reflection_geometry</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__reflection_geometry.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">unicode</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<tt class="descname">spectral_quantity</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Spd.spectral_quantity"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Property for <strong>self.__spectral_quantity</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__spectral_quantity.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">unicode</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<tt class="descname">transmission_geometry</tt><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Spd.transmission_geometry"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Property for <strong>self.__transmission_geometry</strong> private attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">self.__transmission_geometry.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">unicode</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">write</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/colour/io/ies_tm2714.html#IES_TM2714_Spd.write"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Write the spd spectral data to XML file path.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Definition success.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">dirname</span><span class="p">,</span> <span class="n">join</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">shutil</span> <span class="kn">import</span> <span class="n">rmtree</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">tempfile</span> <span class="kn">import</span> <span class="n">mkdtemp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">directory</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">),</span> <span class="s">&#39;tests&#39;</span><span class="p">,</span> <span class="s">&#39;resources&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spd</span> <span class="o">=</span> <span class="n">IES_TM2714_Spd</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s">&#39;Fluorescent.spdx&#39;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spd</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">temporary_directory</span> <span class="o">=</span> <span class="n">mkdtemp</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spd</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">temporary_directory</span><span class="p">,</span> <span class="s">&#39;Fluorescent.spdx&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spd</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rmtree</span><span class="p">(</span><span class="n">temporary_directory</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2014, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

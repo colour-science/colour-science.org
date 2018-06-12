@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.appearance.atd95 &mdash; Colour 0.3.6 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.3.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.6 documentation" href="../../../index.html" />
+    <link rel="up" title="colour.appearance" href="../appearance.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for colour.appearance.atd95</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">ATD (1995) Colour Vision Model</span>
+<span class="sd">==============================</span>
+
+<span class="sd">Defines ATD (1995) colour vision model objects:</span>
+
+<span class="sd">-   :class:`ATD95_Specification`</span>
+<span class="sd">-   :func:`XYZ_to_ATD95`</span>
+
+<span class="sd">See Also</span>
+<span class="sd">--------</span>
+<span class="sd">`ATD (1995) Colour Vision Model IPython Notebook</span>
+<span class="sd">&lt;http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/appearance/atd95.ipynb&gt;`_  # noqa</span>
+
+<span class="sd">Notes</span>
+<span class="sd">-----</span>
+<span class="sd">-   According to CIE TC1-34 definition of a colour appearance model, the</span>
+<span class="sd">    *ATD95* model cannot be considered as a colour appearance model. It was</span>
+<span class="sd">    developed with different aims and is described as a model of colour vision.</span>
+
+<span class="sd">References</span>
+<span class="sd">----------</span>
+<span class="sd">.. [1]  Fairchild, M. D. (2013). ATD Model. In Color Appearance Models</span>
+<span class="sd">        (3rd ed., pp. 5852–5991). Wiley. ASIN:B00DAYO8E2</span>
+<span class="sd">.. [2]  Guth, S. L. (1995). Further applications of the ATD model for color</span>
+<span class="sd">        vision. In E. Walowit (Ed.), IS&amp;T/SPIE’s Symposium on Electronic …</span>
+<span class="sd">        (Vol. 2414, pp. 12–26). doi:10.1117/12.206546</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+
+<span class="kn">from</span> <span class="nn">colour.utilities.array</span> <span class="kn">import</span> <span class="n">tsplit</span><span class="p">,</span> <span class="n">tstack</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s">&#39;Copyright (C) 2013 - 2015 - Colour Developers&#39;</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s">&#39;GPL V3.0 - http://www.gnu.org/licenses/&#39;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s">&#39;colour-science@googlegroups.com&#39;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s">&#39;Production&#39;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;ATD95_ReferenceSpecification&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ATD95_Specification&#39;</span><span class="p">,</span>
+           <span class="s">&#39;XYZ_to_ATD95&#39;</span><span class="p">,</span>
+           <span class="s">&#39;luminance_to_retinal_illuminance&#39;</span><span class="p">,</span>
+           <span class="s">&#39;XYZ_to_LMS_ATD95&#39;</span><span class="p">,</span>
+           <span class="s">&#39;opponent_colour_dimensions&#39;</span><span class="p">,</span>
+           <span class="s">&#39;final_response&#39;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="ATD95_ReferenceSpecification"><a class="viewcode-back" href="../../../colour.appearance.atd95.html#colour.appearance.atd95.ATD95_ReferenceSpecification">[docs]</a><span class="k">class</span> <span class="nc">ATD95_ReferenceSpecification</span><span class="p">(</span>
+    <span class="n">namedtuple</span><span class="p">(</span><span class="s">&#39;ATD95_ReferenceSpecification&#39;</span><span class="p">,</span>
+               <span class="p">(</span><span class="s">&#39;H&#39;</span><span class="p">,</span> <span class="s">&#39;C&#39;</span><span class="p">,</span> <span class="s">&#39;Br&#39;</span><span class="p">,</span> <span class="s">&#39;A_1&#39;</span><span class="p">,</span> <span class="s">&#39;T_1&#39;</span><span class="p">,</span> <span class="s">&#39;D_1&#39;</span><span class="p">,</span> <span class="s">&#39;A_2&#39;</span><span class="p">,</span> <span class="s">&#39;T_2&#39;</span><span class="p">,</span> <span class="s">&#39;D_2&#39;</span><span class="p">))):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Defines the ATD (1995) colour vision model reference specification.</span>
+
+<span class="sd">    This specification has field names consistent with Fairchild (2013)</span>
+<span class="sd">    reference.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    H : numeric or array_like</span>
+<span class="sd">        *Hue* angle :math:`H` in degrees.</span>
+<span class="sd">    C : numeric or array_like</span>
+<span class="sd">        Correlate of *saturation* :math:`C`. Guth (1995) incorrectly uses the</span>
+<span class="sd">        terms saturation and chroma interchangeably. However, :math:`C` is here</span>
+<span class="sd">        a measure of saturation rather than chroma since it is measured</span>
+<span class="sd">        relative to the achromatic response for the stimulus rather than that</span>
+<span class="sd">        of a similarly illuminated white.</span>
+<span class="sd">    Br : numeric or array_like</span>
+<span class="sd">        Correlate of *brightness* :math:`Br`.</span>
+<span class="sd">    A_1 : numeric or array_like</span>
+<span class="sd">        First stage :math:`A_1` response.</span>
+<span class="sd">    T_1 : numeric or array_like</span>
+<span class="sd">        First stage :math:`T_1` response.</span>
+<span class="sd">    D_1 : numeric or array_like</span>
+<span class="sd">        First stage :math:`D_1` response.</span>
+<span class="sd">    A_2 : numeric or array_like</span>
+<span class="sd">        Second stage :math:`A_2` response.</span>
+<span class="sd">    T_2 : numeric or array_like</span>
+<span class="sd">        Second stage :math:`A_2` response.</span>
+<span class="sd">    D_2 : numeric or array_like</span>
+<span class="sd">        Second stage :math:`D_2` response.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+</div>
+<div class="viewcode-block" id="ATD95_Specification"><a class="viewcode-back" href="../../../colour.appearance.atd95.html#colour.appearance.atd95.ATD95_Specification">[docs]</a><span class="k">class</span> <span class="nc">ATD95_Specification</span><span class="p">(</span>
+    <span class="n">namedtuple</span><span class="p">(</span><span class="s">&#39;ATD95_Specification&#39;</span><span class="p">,</span>
+               <span class="p">(</span><span class="s">&#39;h&#39;</span><span class="p">,</span> <span class="s">&#39;C&#39;</span><span class="p">,</span> <span class="s">&#39;Q&#39;</span><span class="p">,</span> <span class="s">&#39;A_1&#39;</span><span class="p">,</span> <span class="s">&#39;T_1&#39;</span><span class="p">,</span> <span class="s">&#39;D_1&#39;</span><span class="p">,</span> <span class="s">&#39;A_2&#39;</span><span class="p">,</span> <span class="s">&#39;T_2&#39;</span><span class="p">,</span> <span class="s">&#39;D_2&#39;</span><span class="p">))):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Defines the ATD (1995) colour vision model specification.</span>
+
+<span class="sd">    This specification has field names consistent with the remaining colour</span>
+<span class="sd">    appearance models in :mod:`colour.appearance` but diverge from Fairchild</span>
+<span class="sd">    (2013) reference.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   This specification is the one used in the current model implementation.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    h : numeric or array_like</span>
+<span class="sd">        *Hue* angle :math:`H` in degrees.</span>
+<span class="sd">    C : numeric or array_like</span>
+<span class="sd">        Correlate of *saturation* :math:`C`. Guth (1995) incorrectly uses the</span>
+<span class="sd">        terms saturation and chroma interchangeably. However, :math:`C` is here</span>
+<span class="sd">        a measure of saturation rather than chroma since it is measured</span>
+<span class="sd">        relative to the achromatic response for the stimulus rather than that</span>
+<span class="sd">        of a similarly illuminated white.</span>
+<span class="sd">    Q : numeric or array_like</span>
+<span class="sd">        Correlate of *brightness* :math:`Br`.</span>
+<span class="sd">    A_1 : numeric or array_like</span>
+<span class="sd">        First stage :math:`A_1` response.</span>
+<span class="sd">    T_1 : numeric or array_like</span>
+<span class="sd">        First stage :math:`T_1` response.</span>
+<span class="sd">    D_1 : numeric or array_like</span>
+<span class="sd">        First stage :math:`D_1` response.</span>
+<span class="sd">    A_2 : numeric or array_like</span>
+<span class="sd">        Second stage :math:`A_2` response.</span>
+<span class="sd">    T_2 : numeric or array_like</span>
+<span class="sd">        Second stage :math:`A_2` response.</span>
+<span class="sd">    D_2 : numeric or array_like</span>
+<span class="sd">        Second stage :math:`D_2` response.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+</div>
+<div class="viewcode-block" id="XYZ_to_ATD95"><a class="viewcode-back" href="../../../colour.appearance.atd95.html#colour.appearance.atd95.XYZ_to_ATD95">[docs]</a><span class="k">def</span> <span class="nf">XYZ_to_ATD95</span><span class="p">(</span><span class="n">XYZ</span><span class="p">,</span> <span class="n">XYZ_0</span><span class="p">,</span> <span class="n">Y_0</span><span class="p">,</span> <span class="n">k_1</span><span class="p">,</span> <span class="n">k_2</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">300</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Computes the ATD (1995) colour vision model correlates.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    XYZ : array_like</span>
+<span class="sd">        *CIE XYZ* tristimulus values of test sample / stimulus in domain</span>
+<span class="sd">        [0, 100].</span>
+<span class="sd">    XYZ_0 : array_like</span>
+<span class="sd">        *CIE XYZ* tristimulus values of reference white in domain [0, 100].</span>
+<span class="sd">    Y_0 : numeric or array_like</span>
+<span class="sd">        Absolute adapting field luminance in :math:`cd/m^2`.</span>
+<span class="sd">    k_1 : numeric or array_like</span>
+<span class="sd">        Application specific weight :math:`k_1`.</span>
+<span class="sd">    k_2 : numeric or array_like</span>
+<span class="sd">        Application specific weight :math:`k_2`.</span>
+<span class="sd">    sigma : numeric or array_like, optional</span>
+<span class="sd">        Constant :math:`\sigma` varied to predict different types of data.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ATD95_Specification</span>
+<span class="sd">        ATD (1995) colour vision model specification.</span>
+
+<span class="sd">    Warning</span>
+<span class="sd">    -------</span>
+<span class="sd">    The input domain of that definition is non standard!</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   Input *CIE XYZ* tristimulus values are in domain [0, 100].</span>
+<span class="sd">    -   Input *CIE XYZ_0* tristimulus values are in domain [0, 100].</span>
+<span class="sd">    -   For unrelated colors, there is only self-adaptation, and :math:`k_1` is</span>
+<span class="sd">        set to 1.0 while :math:`k_2` is set to 0.0. For related colors such as</span>
+<span class="sd">        typical colorimetric applications, :math:`k_1` is set to 0.0 and</span>
+<span class="sd">        :math:`k_2` is set to a value between 15 and 50 *(Guth, 1995)*.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; XYZ = np.array([19.01, 20.00, 21.78])</span>
+<span class="sd">    &gt;&gt;&gt; XYZ_0 = np.array([95.05, 100.00, 108.88])</span>
+<span class="sd">    &gt;&gt;&gt; Y_0 = 318.31</span>
+<span class="sd">    &gt;&gt;&gt; k_1 = 0.0</span>
+<span class="sd">    &gt;&gt;&gt; k_2 = 50.0</span>
+<span class="sd">    &gt;&gt;&gt; XYZ_to_ATD95(XYZ, XYZ_0, Y_0, k_1, k_2)  # doctest: +ELLIPSIS</span>
+<span class="sd">    ATD95_Specification(h=1.9089869..., C=1.2064060..., Q=0.1814003..., \</span>
+<span class="sd">A_1=0.1787931... T_1=0.0286942..., D_1=0.0107584..., A_2=0.0192182..., \</span>
+<span class="sd">T_2=0.0205377..., D_2=0.0107584...)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">Y_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Y_0</span><span class="p">)</span>
+    <span class="n">k_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">k_1</span><span class="p">)</span>
+    <span class="n">k_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">k_2</span><span class="p">)</span>
+    <span class="n">sigma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">sigma</span><span class="p">)</span>
+
+    <span class="n">XYZ</span> <span class="o">=</span> <span class="n">luminance_to_retinal_illuminance</span><span class="p">(</span><span class="n">XYZ</span><span class="p">,</span> <span class="n">Y_0</span><span class="p">)</span>
+    <span class="n">XYZ_0</span> <span class="o">=</span> <span class="n">luminance_to_retinal_illuminance</span><span class="p">(</span><span class="n">XYZ_0</span><span class="p">,</span> <span class="n">Y_0</span><span class="p">)</span>
+
+    <span class="c"># Computing adaptation model.</span>
+    <span class="n">LMS</span> <span class="o">=</span> <span class="n">XYZ_to_LMS_ATD95</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>
+    <span class="n">XYZ_a</span> <span class="o">=</span> <span class="n">k_1</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">*</span> <span class="n">XYZ</span> <span class="o">+</span> <span class="n">k_2</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">*</span> <span class="n">XYZ_0</span>
+    <span class="n">LMS_a</span> <span class="o">=</span> <span class="n">XYZ_to_LMS_ATD95</span><span class="p">(</span><span class="n">XYZ_a</span><span class="p">)</span>
+
+    <span class="n">LMS_g</span> <span class="o">=</span> <span class="n">LMS</span> <span class="o">*</span> <span class="p">(</span><span class="n">sigma</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="n">sigma</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">+</span> <span class="n">LMS_a</span><span class="p">))</span>
+
+    <span class="c"># Computing opponent colour dimensions.</span>
+    <span class="n">A_1</span><span class="p">,</span> <span class="n">T_1</span><span class="p">,</span> <span class="n">D_1</span><span class="p">,</span> <span class="n">A_2</span><span class="p">,</span> <span class="n">T_2</span><span class="p">,</span> <span class="n">D_2</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span>
+        <span class="n">opponent_colour_dimensions</span><span class="p">(</span><span class="n">LMS_g</span><span class="p">))</span>
+
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="c"># Computing the correlate of *brightness* :math:`Br`.</span>
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="n">Br</span> <span class="o">=</span> <span class="p">(</span><span class="n">A_1</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">T_1</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">D_1</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span>
+
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="c"># Computing the correlate of *saturation* :math:`C`.</span>
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="n">C</span> <span class="o">=</span> <span class="p">(</span><span class="n">T_2</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">D_2</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span> <span class="o">/</span> <span class="n">A_2</span>
+
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="c"># Computing the *hue* :math:`H`.</span>
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="n">H</span> <span class="o">=</span> <span class="n">T_2</span> <span class="o">/</span> <span class="n">D_2</span>
+
+    <span class="k">return</span> <span class="n">ATD95_Specification</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">Br</span><span class="p">,</span> <span class="n">A_1</span><span class="p">,</span> <span class="n">T_1</span><span class="p">,</span> <span class="n">D_1</span><span class="p">,</span> <span class="n">A_2</span><span class="p">,</span> <span class="n">T_2</span><span class="p">,</span> <span class="n">D_2</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="luminance_to_retinal_illuminance"><a class="viewcode-back" href="../../../colour.appearance.atd95.html#colour.appearance.atd95.luminance_to_retinal_illuminance">[docs]</a><span class="k">def</span> <span class="nf">luminance_to_retinal_illuminance</span><span class="p">(</span><span class="n">XYZ</span><span class="p">,</span> <span class="n">Y_c</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Converts from luminance in :math:`cd/m^2` to retinal illuminance in</span>
+<span class="sd">    trolands.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    XYZ : array_like</span>
+<span class="sd">        *CIE XYZ* tristimulus values.</span>
+
+<span class="sd">    Y_c : numeric or array_like</span>
+<span class="sd">        Absolute adapting field luminance in :math:`cd/m^2`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray</span>
+<span class="sd">        Converted *CIE XYZ* tristimulus values in trolands.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; XYZ = np.array([19.01, 20.00, 21.78])</span>
+<span class="sd">    &gt;&gt;&gt; Y_0 = 318.31</span>
+<span class="sd">    &gt;&gt;&gt; luminance_to_retinal_illuminance(XYZ, Y_0)  # doctest: +ELLIPSIS</span>
+<span class="sd">    array([ 479.4445924...,  499.3174313...,  534.5631673...])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>
+    <span class="n">Y_c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Y_c</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="mi">18</span> <span class="o">*</span> <span class="p">(</span><span class="n">Y_c</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">*</span> <span class="n">XYZ</span> <span class="o">/</span> <span class="mf">100.</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.8</span>
+
+</div>
+<div class="viewcode-block" id="XYZ_to_LMS_ATD95"><a class="viewcode-back" href="../../../colour.appearance.atd95.html#colour.appearance.atd95.XYZ_to_LMS_ATD95">[docs]</a><span class="k">def</span> <span class="nf">XYZ_to_LMS_ATD95</span><span class="p">(</span><span class="n">XYZ</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Converts from *CIE XYZ* tristimulus values to *LMS* cone responses.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    XYZ : array_like</span>
+<span class="sd">        *CIE XYZ* tristimulus values.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray</span>
+<span class="sd">        *LMS* cone responses.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; XYZ = np.array([19.01, 20.00, 21.78])</span>
+<span class="sd">    &gt;&gt;&gt; XYZ_to_LMS_ATD95(XYZ)  # doctest: +ELLIPSIS</span>
+<span class="sd">    array([ 6.2283272...,  7.4780666...,  3.8859772...])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>
+
+    <span class="n">L</span> <span class="o">=</span> <span class="p">((</span><span class="mf">0.66</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.2435</span> <span class="o">*</span> <span class="n">X</span> <span class="o">+</span> <span class="mf">0.8524</span> <span class="o">*</span> <span class="n">Y</span> <span class="o">-</span> <span class="mf">0.0516</span> <span class="o">*</span> <span class="n">Z</span><span class="p">))</span> <span class="o">**</span> <span class="mf">0.7</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.024</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="p">((</span><span class="o">-</span><span class="mf">0.3954</span> <span class="o">*</span> <span class="n">X</span> <span class="o">+</span> <span class="mf">1.1642</span> <span class="o">*</span> <span class="n">Y</span> <span class="o">+</span> <span class="mf">0.0837</span> <span class="o">*</span> <span class="n">Z</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.7</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.036</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="p">((</span><span class="mf">0.43</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.04</span> <span class="o">*</span> <span class="n">Y</span> <span class="o">+</span> <span class="mf">0.6225</span> <span class="o">*</span> <span class="n">Z</span><span class="p">))</span> <span class="o">**</span> <span class="mf">0.7</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.31</span>
+
+    <span class="n">LMS</span> <span class="o">=</span> <span class="n">tstack</span><span class="p">((</span><span class="n">L</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">S</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">LMS</span>
+
+</div>
+<div class="viewcode-block" id="opponent_colour_dimensions"><a class="viewcode-back" href="../../../colour.appearance.atd95.html#colour.appearance.atd95.opponent_colour_dimensions">[docs]</a><span class="k">def</span> <span class="nf">opponent_colour_dimensions</span><span class="p">(</span><span class="n">LMS_g</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns opponent colour dimensions from given post adaptation cone signals.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    LMS_g : array_like</span>
+<span class="sd">        Post adaptation cone signals.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray</span>
+<span class="sd">        Opponent colour dimensions.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; LMS_g = np.array([6.95457922, 7.08945043, 6.44069316])</span>
+<span class="sd">    &gt;&gt;&gt; opponent_colour_dimensions(LMS_g)  # doctest: +ELLIPSIS</span>
+<span class="sd">    array([ 0.1787931...,  0.0286942...,  0.0107584...,  0.0192182..., ...])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">L_g</span><span class="p">,</span> <span class="n">M_g</span><span class="p">,</span> <span class="n">S_g</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">LMS_g</span><span class="p">)</span>
+
+    <span class="n">A_1i</span> <span class="o">=</span> <span class="mf">3.57</span> <span class="o">*</span> <span class="n">L_g</span> <span class="o">+</span> <span class="mf">2.64</span> <span class="o">*</span> <span class="n">M_g</span>
+    <span class="n">T_1i</span> <span class="o">=</span> <span class="mf">7.18</span> <span class="o">*</span> <span class="n">L_g</span> <span class="o">-</span> <span class="mf">6.21</span> <span class="o">*</span> <span class="n">M_g</span>
+    <span class="n">D_1i</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.7</span> <span class="o">*</span> <span class="n">L_g</span> <span class="o">+</span> <span class="mf">0.085</span> <span class="o">*</span> <span class="n">M_g</span> <span class="o">+</span> <span class="n">S_g</span>
+    <span class="n">A_2i</span> <span class="o">=</span> <span class="mf">0.09</span> <span class="o">*</span> <span class="n">A_1i</span>
+    <span class="n">T_2i</span> <span class="o">=</span> <span class="mf">0.43</span> <span class="o">*</span> <span class="n">T_1i</span> <span class="o">+</span> <span class="mf">0.76</span> <span class="o">*</span> <span class="n">D_1i</span>
+    <span class="n">D_2i</span> <span class="o">=</span> <span class="n">D_1i</span>
+
+    <span class="n">A_1</span> <span class="o">=</span> <span class="n">final_response</span><span class="p">(</span><span class="n">A_1i</span><span class="p">)</span>
+    <span class="n">T_1</span> <span class="o">=</span> <span class="n">final_response</span><span class="p">(</span><span class="n">T_1i</span><span class="p">)</span>
+    <span class="n">D_1</span> <span class="o">=</span> <span class="n">final_response</span><span class="p">(</span><span class="n">D_1i</span><span class="p">)</span>
+    <span class="n">A_2</span> <span class="o">=</span> <span class="n">final_response</span><span class="p">(</span><span class="n">A_2i</span><span class="p">)</span>
+    <span class="n">T_2</span> <span class="o">=</span> <span class="n">final_response</span><span class="p">(</span><span class="n">T_2i</span><span class="p">)</span>
+    <span class="n">D_2</span> <span class="o">=</span> <span class="n">final_response</span><span class="p">(</span><span class="n">D_2i</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">tstack</span><span class="p">((</span><span class="n">A_1</span><span class="p">,</span> <span class="n">T_1</span><span class="p">,</span> <span class="n">D_1</span><span class="p">,</span> <span class="n">A_2</span><span class="p">,</span> <span class="n">T_2</span><span class="p">,</span> <span class="n">D_2</span><span class="p">))</span>
+
+</div>
+<div class="viewcode-block" id="final_response"><a class="viewcode-back" href="../../../colour.appearance.atd95.html#colour.appearance.atd95.final_response">[docs]</a><span class="k">def</span> <span class="nf">final_response</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the final response of given opponent colour dimension.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    value : numeric or array_like</span>
+<span class="sd">         Opponent colour dimension.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Final response of opponent colour dimension.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; final_response(43.54399695501678)  # doctest: +ELLIPSIS</span>
+<span class="sd">    0.1787931...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">value</span> <span class="o">/</span> <span class="p">(</span><span class="mi">200</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">value</span><span class="p">))</span></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2015, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

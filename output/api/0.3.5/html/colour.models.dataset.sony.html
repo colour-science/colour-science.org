@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.models.dataset.sony Module &mdash; Colour 0.3.5 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.5 documentation" href="index.html" />
+    <link rel="up" title="colour.models.dataset Package" href="colour.models.dataset.html" />
+    <link rel="next" title="colour.models.dataset.srgb Module" href="colour.models.dataset.srgb.html" />
+    <link rel="prev" title="colour.models.dataset.smptec_rgb Module" href="colour.models.dataset.smptec_rgb.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+  <li>
+    <a href="colour.models.dataset.smptec_rgb.html" title="Previous Chapter: colour.models.dataset.smptec_rgb Module"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; colour.models.da...</span>
+    </a>
+  </li>
+  <li>
+    <a href="colour.models.dataset.srgb.html" title="Next Chapter: colour.models.dataset.srgb Module"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">colour.models.da... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="module-colour.models.dataset.sony">
+<span id="colour-models-dataset-sony-module"></span><h1>colour.models.dataset.sony Module<a class="headerlink" href="#module-colour.models.dataset.sony" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sony-colourspaces">
+<h2>Sony Colourspaces<a class="headerlink" href="#sony-colourspaces" title="Permalink to this headline">¶</a></h2>
+<p>Defines the <em>S-Gamut</em>, <em>S-Gamut3</em> and <em>S-Gamut3.Cine</em> colourspaces:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#colour.models.dataset.sony.S_GAMUT_COLOURSPACE" title="colour.models.dataset.sony.S_GAMUT_COLOURSPACE"><tt class="xref py py-attr docutils literal"><span class="pre">S_GAMUT_COLOURSPACE</span></tt></a>.</li>
+<li><a class="reference internal" href="#colour.models.dataset.sony.S_GAMUT3_COLOURSPACE" title="colour.models.dataset.sony.S_GAMUT3_COLOURSPACE"><tt class="xref py py-attr docutils literal"><span class="pre">S_GAMUT3_COLOURSPACE</span></tt></a>.</li>
+<li><a class="reference internal" href="#colour.models.dataset.sony.S_GAMUT3_CINE_COLOURSPACE" title="colour.models.dataset.sony.S_GAMUT3_CINE_COLOURSPACE"><tt class="xref py py-attr docutils literal"><span class="pre">S_GAMUT3_CINE_COLOURSPACE</span></tt></a>.</li>
+</ul>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/models/rgb.ipynb">RGB Colourspaces IPython Notebook</a></p>
+</div>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td>Gaggioni, H., Dhanendra, P., Yamashita, J., Kawada, N., Endo, K., &amp;
+Clark, C. (n.d.). S-Log: A new LUT for digital production mastering
+and interchange applications. Retrieved from
+<a class="reference external" href="http://pro.sony.com/bbsccms/assets/files/mkt/cinema/solutions/slog_manual.pdf">http://pro.sony.com/bbsccms/assets/files/mkt/cinema/solutions/slog_manual.pdf</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[2]</td><td>Sony Corporation. (n.d.). S-Log Whitepaper. Retrieved from
+<a class="reference external" href="http://www.theodoropoulos.info/attachments/076_on">http://www.theodoropoulos.info/attachments/076_on</a> S-Log.pdf</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[3]</td><td>Sony Corporation. (n.d.). Technical Summary for
+S-Gamut3.Cine/S-Log3 and S-Gamut3/S-Log3. Retrieved from
+<a class="reference external" href="http://community.sony.com/sony/attachments/sony/large-sensor-camera-F5-F55/12359/2/TechnicalSummary_for_S-Gamut3Cine_S-Gamut3_S-Log3_V1_00.pdf">http://community.sony.com/sony/attachments/sony/large-sensor-camera-F5-F55/12359/2/TechnicalSummary_for_S-Gamut3Cine_S-Gamut3_S-Log3_V1_00.pdf</a></td></tr>
+</tbody>
+</table>
+<dl class="data">
+<dt id="colour.models.dataset.sony.S_GAMUT_PRIMARIES">
+<tt class="descclassname">colour.models.dataset.sony.</tt><tt class="descname">S_GAMUT_PRIMARIES</tt><em class="property"> = array([[ 0.73 ,  0.28 ],        [ 0.14 ,  0.855],        [ 0.1  , -0.05 ]])</em><a class="headerlink" href="#colour.models.dataset.sony.S_GAMUT_PRIMARIES" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>S-Gamut</em> colourspace primaries.</p>
+<p>S_GAMUT_PRIMARIES : ndarray, (3, 2)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.sony.S_GAMUT_ILLUMINANT">
+<tt class="descclassname">colour.models.dataset.sony.</tt><tt class="descname">S_GAMUT_ILLUMINANT</tt><em class="property"> = u'D65'</em><a class="headerlink" href="#colour.models.dataset.sony.S_GAMUT_ILLUMINANT" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>S-Gamut</em> colourspace whitepoint name as illuminant.</p>
+<p>S_GAMUT_ILLUMINANT : unicode</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.sony.S_GAMUT_WHITEPOINT">
+<tt class="descclassname">colour.models.dataset.sony.</tt><tt class="descname">S_GAMUT_WHITEPOINT</tt><em class="property"> = (0.31271, 0.32902)</em><a class="headerlink" href="#colour.models.dataset.sony.S_GAMUT_WHITEPOINT" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>S-Gamut</em> colourspace whitepoint.</p>
+<p>S_GAMUT_WHITEPOINT : tuple</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.sony.S_GAMUT_TO_XYZ_MATRIX">
+<tt class="descclassname">colour.models.dataset.sony.</tt><tt class="descname">S_GAMUT_TO_XYZ_MATRIX</tt><em class="property"> = array([[ 0.70647263,  0.12880033,  0.11515559],        [ 0.2709758 ,  0.78660199, -0.05757779],        [-0.00967771,  0.00460001,  1.09397807]])</em><a class="headerlink" href="#colour.models.dataset.sony.S_GAMUT_TO_XYZ_MATRIX" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>S-Gamut</em> colourspace to <em>CIE XYZ</em> tristimulus values matrix.</p>
+<p>S_GAMUT_TO_XYZ_MATRIX : array_like, (3, 3)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.sony.XYZ_TO_S_GAMUT_MATRIX">
+<tt class="descclassname">colour.models.dataset.sony.</tt><tt class="descname">XYZ_TO_S_GAMUT_MATRIX</tt><em class="property"> = array([[ 1.50742141, -0.24582564, -0.17161413],        [-0.51815464,  1.35539886,  0.12587938],        [ 0.01551393, -0.0078739 ,  0.91204765]])</em><a class="headerlink" href="#colour.models.dataset.sony.XYZ_TO_S_GAMUT_MATRIX" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>CIE XYZ</em> tristimulus values to <em>S-Gamut</em> colourspace matrix.</p>
+<p>XYZ_TO_S_GAMUT_MATRIX : array_like, (3, 3)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.dataset.sony.S_LOG_TRANSFER_FUNCTION">
+<tt class="descclassname">colour.models.dataset.sony.</tt><tt class="descname">S_LOG_TRANSFER_FUNCTION</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#colour.models.dataset.sony.S_LOG_TRANSFER_FUNCTION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transfer function from linear to <em>S-Log</em>.</p>
+<p>S_LOG_TRANSFER_FUNCTION : object</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.dataset.sony.S_LOG_INVERSE_TRANSFER_FUNCTION">
+<tt class="descclassname">colour.models.dataset.sony.</tt><tt class="descname">S_LOG_INVERSE_TRANSFER_FUNCTION</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#colour.models.dataset.sony.S_LOG_INVERSE_TRANSFER_FUNCTION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse transfer function from <em>S-Log</em> to linear.</p>
+<p>S_LOG_INVERSE_TRANSFER_FUNCTION : object</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.dataset.sony.S_LOG2_TRANSFER_FUNCTION">
+<tt class="descclassname">colour.models.dataset.sony.</tt><tt class="descname">S_LOG2_TRANSFER_FUNCTION</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#colour.models.dataset.sony.S_LOG2_TRANSFER_FUNCTION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transfer function from linear to <em>S-Log2</em>.</p>
+<p>S_LOG2_TRANSFER_FUNCTION : object</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.dataset.sony.S_LOG2_INVERSE_TRANSFER_FUNCTION">
+<tt class="descclassname">colour.models.dataset.sony.</tt><tt class="descname">S_LOG2_INVERSE_TRANSFER_FUNCTION</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#colour.models.dataset.sony.S_LOG2_INVERSE_TRANSFER_FUNCTION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse transfer function from <em>S-Log2</em> to linear.</p>
+<p>S_LOG2_INVERSE_TRANSFER_FUNCTION : object</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.sony.S_GAMUT_COLOURSPACE">
+<tt class="descclassname">colour.models.dataset.sony.</tt><tt class="descname">S_GAMUT_COLOURSPACE</tt><em class="property"> = &lt;colour.models.rgb.RGB_Colourspace object at 0x2adc37bae450&gt;</em><a class="headerlink" href="#colour.models.dataset.sony.S_GAMUT_COLOURSPACE" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>S-Gamut</em> colourspace.</p>
+<p>S_GAMUT_COLOURSPACE : RGB_Colourspace</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.dataset.sony.S_LOG3_TRANSFER_FUNCTION">
+<tt class="descclassname">colour.models.dataset.sony.</tt><tt class="descname">S_LOG3_TRANSFER_FUNCTION</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#colour.models.dataset.sony.S_LOG3_TRANSFER_FUNCTION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transfer function from linear to <em>S-Log3</em>.</p>
+<p>S_LOG3_TRANSFER_FUNCTION : object</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.dataset.sony.S_LOG3_INVERSE_TRANSFER_FUNCTION">
+<tt class="descclassname">colour.models.dataset.sony.</tt><tt class="descname">S_LOG3_INVERSE_TRANSFER_FUNCTION</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#colour.models.dataset.sony.S_LOG3_INVERSE_TRANSFER_FUNCTION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverse transfer function from <em>S-Log3</em> to linear.</p>
+<p>S_LOG3_INVERSE_TRANSFER_FUNCTION : object</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.sony.S_GAMUT3_COLOURSPACE">
+<tt class="descclassname">colour.models.dataset.sony.</tt><tt class="descname">S_GAMUT3_COLOURSPACE</tt><em class="property"> = &lt;colour.models.rgb.RGB_Colourspace object at 0x2adc37bae510&gt;</em><a class="headerlink" href="#colour.models.dataset.sony.S_GAMUT3_COLOURSPACE" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>S-Gamut3</em> colourspace.</p>
+<p>S_GAMUT3_COLOURSPACE : RGB_Colourspace</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.sony.S_GAMUT3_CINE_PRIMARIES">
+<tt class="descclassname">colour.models.dataset.sony.</tt><tt class="descname">S_GAMUT3_CINE_PRIMARIES</tt><em class="property"> = array([[ 0.766,  0.275],        [ 0.225,  0.8  ],        [ 0.089, -0.087]])</em><a class="headerlink" href="#colour.models.dataset.sony.S_GAMUT3_CINE_PRIMARIES" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>S-Gamut3.Cine</em> colourspace primaries.</p>
+<p>S_GAMUT_PRIMARIES : ndarray, (3, 2)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.sony.S_GAMUT3_CINE_ILLUMINANT">
+<tt class="descclassname">colour.models.dataset.sony.</tt><tt class="descname">S_GAMUT3_CINE_ILLUMINANT</tt><em class="property"> = u'D65'</em><a class="headerlink" href="#colour.models.dataset.sony.S_GAMUT3_CINE_ILLUMINANT" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>S-Gamut3.Cine</em> colourspace whitepoint name as illuminant.</p>
+<p>S_GAMUT3_CINE_ILLUMINANT : unicode</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.sony.S_GAMUT3_CINE_WHITEPOINT">
+<tt class="descclassname">colour.models.dataset.sony.</tt><tt class="descname">S_GAMUT3_CINE_WHITEPOINT</tt><em class="property"> = (0.31271, 0.32902)</em><a class="headerlink" href="#colour.models.dataset.sony.S_GAMUT3_CINE_WHITEPOINT" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>S-Gamut3.Cine</em> colourspace whitepoint.</p>
+<p>S_GAMUT3_CINE_WHITEPOINT : tuple</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.sony.S_GAMUT3_CINE_TO_XYZ_MATRIX">
+<tt class="descclassname">colour.models.dataset.sony.</tt><tt class="descname">S_GAMUT3_CINE_TO_XYZ_MATRIX</tt><em class="property"> = array([[ 0.59907348,  0.24892269,  0.10243238],        [ 0.21507207,  0.88505846, -0.10013053],        [-0.03206529, -0.02765808,  1.14862374]])</em><a class="headerlink" href="#colour.models.dataset.sony.S_GAMUT3_CINE_TO_XYZ_MATRIX" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>S-Gamut3.Cine</em> colourspace to <em>CIE XYZ</em> tristimulus values matrix.</p>
+<p>S_GAMUT3_CINE_TO_XYZ_MATRIX : array_like, (3, 3)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.sony.XYZ_TO_S_GAMUT3_CINE_MATRIX">
+<tt class="descclassname">colour.models.dataset.sony.</tt><tt class="descname">XYZ_TO_S_GAMUT3_CINE_MATRIX</tt><em class="property"> = array([[ 1.84681116, -0.52599529, -0.21054888],        [-0.4441583 ,  1.2594572 ,  0.14940167],        [ 0.04086105,  0.01564304,  0.86832687]])</em><a class="headerlink" href="#colour.models.dataset.sony.XYZ_TO_S_GAMUT3_CINE_MATRIX" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>CIE XYZ</em> tristimulus values to <em>S-Gamut3.Cine</em> colourspace matrix.</p>
+<p>XYZ_TO_S_GAMUT3_CINE_MATRIX : array_like, (3, 3)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.models.dataset.sony.S_GAMUT3_CINE_COLOURSPACE">
+<tt class="descclassname">colour.models.dataset.sony.</tt><tt class="descname">S_GAMUT3_CINE_COLOURSPACE</tt><em class="property"> = &lt;colour.models.rgb.RGB_Colourspace object at 0x2adc37bae550&gt;</em><a class="headerlink" href="#colour.models.dataset.sony.S_GAMUT3_CINE_COLOURSPACE" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>S-Gamut3.Cine</em> colourspace.</p>
+<p>S_GAMUT3_CINE_COLOURSPACE : RGB_Colourspace</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2015, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

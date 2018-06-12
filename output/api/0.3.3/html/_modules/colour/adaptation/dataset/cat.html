@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.adaptation.dataset.cat &mdash; Colour 0.3.3 documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '0.3.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.3 documentation" href="../../../../index.html" />
+    <link rel="up" title="colour.adaptation" href="../../adaptation.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../../index.html"><img src="../../../../_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for colour.adaptation.dataset.cat</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Chromatic Adaptation Transforms</span>
+<span class="sd">===============================</span>
+
+<span class="sd">Defines various chromatic adaptation transforms (CAT):</span>
+
+<span class="sd">-   :attr:`XYZ_SCALING_CAT`: XYZ Scaling CAT [1]_</span>
+<span class="sd">-   :attr:`VON_KRIES_CAT`: Von Kries CAT [1]_</span>
+<span class="sd">-   :attr:`BRADFORD_CAT`: Bradford CAT [1]_</span>
+<span class="sd">-   :attr:`SHARP_CAT`: Sharp CAT [4]_</span>
+<span class="sd">-   :attr:`FAIRCHILD_CAT`: Fairchild CAT [2]_</span>
+<span class="sd">-   :attr:`CMCCAT97_CAT`: CMCCAT97 CAT [5]_</span>
+<span class="sd">-   :attr:`CMCCAT2000_CAT`: CMCCAT2000 CAT [5]_</span>
+<span class="sd">-   :attr:`CAT02_CAT`: CAT02 CAT [3]_</span>
+<span class="sd">-   :attr:`CAT02_BRILL_CAT`: Brill and Süsstrunk (2008) corrected CAT02</span>
+<span class="sd">    CAT [6]_ [7]_</span>
+<span class="sd">-   :attr:`BS_CAT`: Bianco and Schettini (2010) CAT [4]_</span>
+<span class="sd">-   :attr:`BS_PC_CAT`: Bianco and Schettini PC (2010) CAT [4]_</span>
+
+<span class="sd">See Also</span>
+<span class="sd">--------</span>
+<span class="sd">`Chromatic Adaptation IPython Notebook</span>
+<span class="sd">&lt;http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/adaptation/vonkries.ipynb&gt;`_  # noqa</span>
+
+<span class="sd">References</span>
+<span class="sd">----------</span>
+<span class="sd">.. [1]  Lindbloom, B. (2009). Chromatic Adaptation. Retrieved February 24,</span>
+<span class="sd">        2014, from http://brucelindbloom.com/Eqn_ChromAdapt.html</span>
+<span class="sd">.. [2]  Fairchild, M. D. (n.d.). Fairchild YSh. Retrieved from</span>
+<span class="sd">        http://rit-mcsl.org/fairchild//files/FairchildYSh.zip</span>
+<span class="sd">.. [3]  Wikipedia. (n.d.). CAT02. Retrieved February 24, 2014,</span>
+<span class="sd">        from http://en.wikipedia.org/wiki/CIECAM02#CAT02</span>
+<span class="sd">.. [4]  Bianco, S., &amp; Schettini, R. (2010). Two New von Kries Based Chromatic</span>
+<span class="sd">        Adaptation Transforms Found by Numerical Optimization. Color Research</span>
+<span class="sd">        &amp; Application, 35(3), 184–192. doi:10.1002/col.20573</span>
+<span class="sd">.. [5]  Westland, S., Ripamonti, C., &amp; Cheung, V. (2012). CMCCAT97. In</span>
+<span class="sd">        Computational Colour Science Using MATLAB (2nd ed., p. 80).</span>
+<span class="sd">        ISBN:978-0-470-66569-5</span>
+<span class="sd">.. [6]  Brill, M. H., &amp; Süsstrunk, S. (2008). Repairing gamut problems in</span>
+<span class="sd">        CIECAM02: A progress report. Color Research &amp; Application, 33(5),</span>
+<span class="sd">        424–426. doi:10.1002/col.20432</span>
+<span class="sd">.. [7]  Li, C., Perales, E., Luo, M. R., &amp; Martínez-verdú, F. (2007). The</span>
+<span class="sd">        Problem with CAT02 and Its Correction, (July), 1–10.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">colour.utilities</span> <span class="kn">import</span> <span class="n">CaseInsensitiveMapping</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s">&#39;Copyright (C) 2013 - 2014 - Colour Developers&#39;</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s">&#39;New BSD License - http://opensource.org/licenses/BSD-3-Clause&#39;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s">&#39;colour-science@googlegroups.com&#39;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s">&#39;Production&#39;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;XYZ_SCALING_CAT&#39;</span><span class="p">,</span>
+           <span class="s">&#39;VON_KRIES_CAT&#39;</span><span class="p">,</span>
+           <span class="s">&#39;BRADFORD_CAT&#39;</span><span class="p">,</span>
+           <span class="s">&#39;SHARP_CAT&#39;</span><span class="p">,</span>
+           <span class="s">&#39;FAIRCHILD_CAT&#39;</span><span class="p">,</span>
+           <span class="s">&#39;CMCCAT97_CAT&#39;</span><span class="p">,</span>
+           <span class="s">&#39;CMCCAT2000_CAT&#39;</span><span class="p">,</span>
+           <span class="s">&#39;CAT02_CAT&#39;</span><span class="p">,</span>
+           <span class="s">&#39;CAT02_BRILL_CAT&#39;</span><span class="p">,</span>
+           <span class="s">&#39;BS_CAT&#39;</span><span class="p">,</span>
+           <span class="s">&#39;BS_PC_CAT&#39;</span><span class="p">,</span>
+           <span class="s">&#39;CHROMATIC_ADAPTATION_TRANSFORMS&#39;</span><span class="p">]</span>
+
+<span class="n">XYZ_SCALING_CAT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">XYZ Scaling chromatic adaptation transform. [1]_</span>
+
+<span class="sd">XYZ_SCALING_CAT : array_like, (3, 3)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">VON_KRIES_CAT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[[</span><span class="mf">0.4002400</span><span class="p">,</span> <span class="mf">0.7076000</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0808100</span><span class="p">],</span>
+     <span class="p">[</span><span class="o">-</span><span class="mf">0.2263000</span><span class="p">,</span> <span class="mf">1.1653200</span><span class="p">,</span> <span class="mf">0.0457000</span><span class="p">],</span>
+     <span class="p">[</span><span class="mf">0.0000000</span><span class="p">,</span> <span class="mf">0.0000000</span><span class="p">,</span> <span class="mf">0.9182200</span><span class="p">]])</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Von Kries chromatic adaptation transform. [1]_</span>
+
+<span class="sd">VON_KRIES_CAT : array_like, (3, 3)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">BRADFORD_CAT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[[</span><span class="mf">0.8951000</span><span class="p">,</span> <span class="mf">0.2664000</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1614000</span><span class="p">],</span>
+     <span class="p">[</span><span class="o">-</span><span class="mf">0.7502000</span><span class="p">,</span> <span class="mf">1.7135000</span><span class="p">,</span> <span class="mf">0.0367000</span><span class="p">],</span>
+     <span class="p">[</span><span class="mf">0.0389000</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0685000</span><span class="p">,</span> <span class="mf">1.0296000</span><span class="p">]])</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Bradford chromatic adaptation transform. [1]_</span>
+
+<span class="sd">BRADFORD_CAT : array_like, (3, 3)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">SHARP_CAT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[[</span><span class="mf">1.2694</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0988</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1706</span><span class="p">],</span>
+     <span class="p">[</span><span class="o">-</span><span class="mf">0.8364</span><span class="p">,</span> <span class="mf">1.8006</span><span class="p">,</span> <span class="mf">0.0357</span><span class="p">],</span>
+     <span class="p">[</span><span class="mf">0.0297</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0315</span><span class="p">,</span> <span class="mf">1.0018</span><span class="p">]])</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Sharp chromatic adaptation transform. [4]_</span>
+
+<span class="sd">SHARP_CAT : array_like, (3, 3)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">FAIRCHILD_CAT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[[</span><span class="mf">0.8562</span><span class="p">,</span> <span class="mf">0.3372</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1934</span><span class="p">],</span>
+     <span class="p">[</span><span class="o">-</span><span class="mf">0.8360</span><span class="p">,</span> <span class="mf">1.8327</span><span class="p">,</span> <span class="mf">0.0033</span><span class="p">],</span>
+     <span class="p">[</span><span class="mf">0.0357</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0469</span><span class="p">,</span> <span class="mf">1.0112</span><span class="p">]])</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Fairchild chromatic adaptation transform. [2]_</span>
+
+<span class="sd">FAIRCHILD_CAT : array_like, (3, 3)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">CMCCAT97_CAT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[[</span><span class="mf">0.8951</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7502</span><span class="p">,</span> <span class="mf">0.0389</span><span class="p">],</span>
+     <span class="p">[</span><span class="mf">0.2664</span><span class="p">,</span> <span class="mf">1.7135</span><span class="p">,</span> <span class="mf">0.0685</span><span class="p">],</span>
+     <span class="p">[</span><span class="o">-</span><span class="mf">0.1614</span><span class="p">,</span> <span class="mf">0.0367</span><span class="p">,</span> <span class="mf">1.0296</span><span class="p">]])</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">CMCCAT97 chromatic adaptation transform. [5]_</span>
+
+<span class="sd">CMCCAT97_CAT : array_like, (3, 3)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">CMCCAT2000_CAT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[[</span><span class="mf">0.7982</span><span class="p">,</span> <span class="mf">0.3389</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1371</span><span class="p">],</span>
+     <span class="p">[</span><span class="o">-</span><span class="mf">0.5918</span><span class="p">,</span> <span class="mf">1.5512</span><span class="p">,</span> <span class="mf">0.0406</span><span class="p">],</span>
+     <span class="p">[</span><span class="mf">0.0008</span><span class="p">,</span> <span class="mf">0.0239</span><span class="p">,</span> <span class="mf">0.9753</span><span class="p">]])</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">CMCCAT2000 chromatic adaptation transform. [5]_</span>
+
+<span class="sd">CMCCAT2000_CAT : array_like, (3, 3)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">CAT02_CAT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[[</span><span class="mf">0.7328</span><span class="p">,</span> <span class="mf">0.4296</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1624</span><span class="p">],</span>
+     <span class="p">[</span><span class="o">-</span><span class="mf">0.7036</span><span class="p">,</span> <span class="mf">1.6975</span><span class="p">,</span> <span class="mf">0.0061</span><span class="p">],</span>
+     <span class="p">[</span><span class="mf">0.0030</span><span class="p">,</span> <span class="mf">0.0136</span><span class="p">,</span> <span class="mf">0.9834</span><span class="p">]])</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">CAT02 chromatic adaptation transform. [3]_</span>
+
+<span class="sd">CAT02_CAT : array_like, (3, 3)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">CAT02_BRILL_CAT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[[</span><span class="mf">0.7328</span><span class="p">,</span> <span class="mf">0.4296</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1624</span><span class="p">],</span>
+     <span class="p">[</span><span class="o">-</span><span class="mf">0.7036</span><span class="p">,</span> <span class="mf">1.6975</span><span class="p">,</span> <span class="mf">0.0061</span><span class="p">],</span>
+     <span class="p">[</span><span class="mf">0.0000</span><span class="p">,</span> <span class="mf">0.0000</span><span class="p">,</span> <span class="mf">1.0000</span><span class="p">]])</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Brill and Süsstrunk (2008) corrected CAT02 chromatic adaptation</span>
+<span class="sd">transform. [6]_ [7]</span>
+
+<span class="sd">CAT02_BRILL_CAT : array_like, (3, 3)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">BS_CAT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[[</span><span class="mf">0.8752</span><span class="p">,</span> <span class="mf">0.2787</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1539</span><span class="p">],</span>
+     <span class="p">[</span><span class="o">-</span><span class="mf">0.8904</span><span class="p">,</span> <span class="mf">1.8709</span><span class="p">,</span> <span class="mf">0.0195</span><span class="p">],</span>
+     <span class="p">[</span><span class="o">-</span><span class="mf">0.0061</span><span class="p">,</span> <span class="mf">0.0162</span><span class="p">,</span> <span class="mf">0.9899</span><span class="p">]])</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Bianco and Schettini (2010) chromatic adaptation transform. [4]_</span>
+
+<span class="sd">BS_CAT : array_like, (3, 3)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">BS_PC_CAT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[[</span><span class="mf">0.6489</span><span class="p">,</span> <span class="mf">0.3915</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0404</span><span class="p">],</span>
+     <span class="p">[</span><span class="o">-</span><span class="mf">0.3775</span><span class="p">,</span> <span class="mf">1.3055</span><span class="p">,</span> <span class="mf">0.0720</span><span class="p">],</span>
+     <span class="p">[</span><span class="o">-</span><span class="mf">0.0271</span><span class="p">,</span> <span class="mf">0.0888</span><span class="p">,</span> <span class="mf">0.9383</span><span class="p">]])</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Bianco and Schettini PC (2010) chromatic adaptation transform. [4]_</span>
+
+<span class="sd">BS_PC_CAT : array_like, (3, 3)</span>
+
+<span class="sd">Notes</span>
+<span class="sd">-----</span>
+<span class="sd">-   This chromatic adaptation transform has no negative lobes.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">CHROMATIC_ADAPTATION_TRANSFORMS</span> <span class="o">=</span> <span class="n">CaseInsensitiveMapping</span><span class="p">(</span>
+    <span class="p">{</span><span class="s">&#39;XYZ Scaling&#39;</span><span class="p">:</span> <span class="n">XYZ_SCALING_CAT</span><span class="p">,</span>
+     <span class="s">&#39;Von Kries&#39;</span><span class="p">:</span> <span class="n">VON_KRIES_CAT</span><span class="p">,</span>
+     <span class="s">&#39;Bradford&#39;</span><span class="p">:</span> <span class="n">BRADFORD_CAT</span><span class="p">,</span>
+     <span class="s">&#39;Sharp&#39;</span><span class="p">:</span> <span class="n">SHARP_CAT</span><span class="p">,</span>
+     <span class="s">&#39;Fairchild&#39;</span><span class="p">:</span> <span class="n">FAIRCHILD_CAT</span><span class="p">,</span>
+     <span class="s">&#39;CMCCAT97&#39;</span><span class="p">:</span> <span class="n">CMCCAT97_CAT</span><span class="p">,</span>
+     <span class="s">&#39;CMCCAT2000&#39;</span><span class="p">:</span> <span class="n">CMCCAT2000_CAT</span><span class="p">,</span>
+     <span class="s">&#39;CAT02&#39;</span><span class="p">:</span> <span class="n">CAT02_CAT</span><span class="p">,</span>
+     <span class="s">&#39;CAT02_BRILL_CAT&#39;</span><span class="p">:</span> <span class="n">CAT02_BRILL_CAT</span><span class="p">,</span>
+     <span class="s">&#39;Bianco&#39;</span><span class="p">:</span> <span class="n">BS_CAT</span><span class="p">,</span>
+     <span class="s">&#39;Bianco PC&#39;</span><span class="p">:</span> <span class="n">BS_PC_CAT</span><span class="p">})</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Supported chromatic adaptation transforms.</span>
+
+<span class="sd">CHROMATIC_ADAPTATION_TRANSFORMS : CaseInsensitiveMapping</span>
+<span class="sd">    {&#39;XYZ Scaling&#39;, &#39;Von Kries&#39;, &#39;Bradford&#39;, &#39;Sharp&#39;, &#39;CMCCAT97&#39;, &#39;CMCCAT2000&#39;,</span>
+<span class="sd">    &#39;Fairchild, &#39;CAT02&#39;, &#39;CAT02_BRILL_CAT&#39;, &#39;Bianco&#39;, &#39;Bianco PC&#39;}</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2014, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

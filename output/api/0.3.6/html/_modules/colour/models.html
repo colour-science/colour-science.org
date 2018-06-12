@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.models &mdash; Colour 0.3.6 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.3.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.6 documentation" href="../../index.html" />
+    <link rel="up" title="colour" href="../colour.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><img src="../../_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for colour.models</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span>
+
+<span class="kn">from</span> <span class="nn">.cie_xyy</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">XYZ_to_xyY</span><span class="p">,</span>
+    <span class="n">xyY_to_XYZ</span><span class="p">,</span>
+    <span class="n">xy_to_xyY</span><span class="p">,</span>
+    <span class="n">xyY_to_xy</span><span class="p">,</span>
+    <span class="n">xy_to_XYZ</span><span class="p">,</span>
+    <span class="n">XYZ_to_xy</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">.rgb</span> <span class="kn">import</span> <span class="n">RGB_Colourspace</span>
+<span class="kn">from</span> <span class="nn">.derivation</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">normalised_primary_matrix</span><span class="p">,</span>
+    <span class="n">primaries_whitepoint</span><span class="p">,</span>
+    <span class="n">RGB_luminance_equation</span><span class="p">,</span>
+    <span class="n">RGB_luminance</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">.dataset</span> <span class="kn">import</span> <span class="o">*</span>  <span class="c"># noqa</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">dataset</span>
+<span class="kn">from</span> <span class="nn">.cie_lab</span> <span class="kn">import</span> <span class="n">XYZ_to_Lab</span><span class="p">,</span> <span class="n">Lab_to_XYZ</span><span class="p">,</span> <span class="n">Lab_to_LCHab</span><span class="p">,</span> <span class="n">LCHab_to_Lab</span>
+<span class="kn">from</span> <span class="nn">.cie_luv</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">XYZ_to_Luv</span><span class="p">,</span>
+    <span class="n">Luv_to_XYZ</span><span class="p">,</span>
+    <span class="n">Luv_to_uv</span><span class="p">,</span>
+    <span class="n">Luv_uv_to_xy</span><span class="p">,</span>
+    <span class="n">Luv_to_LCHuv</span><span class="p">,</span>
+    <span class="n">LCHuv_to_Luv</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">.cie_ucs</span> <span class="kn">import</span> <span class="n">XYZ_to_UCS</span><span class="p">,</span> <span class="n">UCS_to_XYZ</span><span class="p">,</span> <span class="n">UCS_to_uv</span><span class="p">,</span> <span class="n">UCS_uv_to_xy</span>
+<span class="kn">from</span> <span class="nn">.cie_uvw</span> <span class="kn">import</span> <span class="n">XYZ_to_UVW</span>
+<span class="kn">from</span> <span class="nn">.ipt</span> <span class="kn">import</span> <span class="n">XYZ_to_IPT</span><span class="p">,</span> <span class="n">IPT_to_XYZ</span><span class="p">,</span> <span class="n">IPT_hue_angle</span>
+<span class="kn">from</span> <span class="nn">.log</span> <span class="kn">import</span> <span class="n">LINEAR_TO_LOG_METHODS</span><span class="p">,</span> <span class="n">LOG_TO_LINEAR_METHODS</span>
+<span class="kn">from</span> <span class="nn">.log</span> <span class="kn">import</span> <span class="n">linear_to_log</span><span class="p">,</span> <span class="n">log_to_linear</span>
+<span class="kn">from</span> <span class="nn">.log</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">linear_to_cineon</span><span class="p">,</span>
+    <span class="n">cineon_to_linear</span><span class="p">,</span>
+    <span class="n">linear_to_panalog</span><span class="p">,</span>
+    <span class="n">panalog_to_linear</span><span class="p">,</span>
+    <span class="n">linear_to_red_log_film</span><span class="p">,</span>
+    <span class="n">red_log_film_to_linear</span><span class="p">,</span>
+    <span class="n">linear_to_viper_log</span><span class="p">,</span>
+    <span class="n">viper_log_to_linear</span><span class="p">,</span>
+    <span class="n">linear_to_pivoted_log</span><span class="p">,</span>
+    <span class="n">pivoted_log_to_linear</span><span class="p">,</span>
+    <span class="n">linear_to_c_log</span><span class="p">,</span>
+    <span class="n">c_log_to_linear</span><span class="p">,</span>
+    <span class="n">linear_to_aces_cc</span><span class="p">,</span>
+    <span class="n">aces_cc_to_linear</span><span class="p">,</span>
+    <span class="n">linear_to_alexa_log_c</span><span class="p">,</span>
+    <span class="n">alexa_log_c_to_linear</span><span class="p">,</span>
+    <span class="n">linear_to_dci_p3_log</span><span class="p">,</span>
+    <span class="n">dci_p3_log_to_linear</span><span class="p">,</span>
+    <span class="n">linear_to_s_log</span><span class="p">,</span>
+    <span class="n">s_log_to_linear</span><span class="p">,</span>
+    <span class="n">linear_to_s_log2</span><span class="p">,</span>
+    <span class="n">s_log2_to_linear</span><span class="p">,</span>
+    <span class="n">linear_to_s_log3</span><span class="p">,</span>
+    <span class="n">s_log3_to_linear</span><span class="p">,</span>
+    <span class="n">linear_to_v_log</span><span class="p">,</span>
+    <span class="n">v_log_to_linear</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">.rgb</span> <span class="kn">import</span> <span class="n">XYZ_to_RGB</span><span class="p">,</span> <span class="n">RGB_to_XYZ</span>
+<span class="kn">from</span> <span class="nn">.rgb</span> <span class="kn">import</span> <span class="n">RGB_to_RGB</span>
+<span class="kn">from</span> <span class="nn">.common</span> <span class="kn">import</span> <span class="n">XYZ_to_sRGB</span><span class="p">,</span> <span class="n">sRGB_to_XYZ</span>
+<span class="kn">from</span> <span class="nn">.aces_it</span> <span class="kn">import</span> <span class="n">spectral_to_aces_relative_exposure_values</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;XYZ_to_xyY&#39;</span><span class="p">,</span>
+           <span class="s">&#39;xyY_to_XYZ&#39;</span><span class="p">,</span>
+           <span class="s">&#39;xy_to_xyY&#39;</span><span class="p">,</span>
+           <span class="s">&#39;xyY_to_xy&#39;</span><span class="p">,</span>
+           <span class="s">&#39;xy_to_XYZ&#39;</span><span class="p">,</span>
+           <span class="s">&#39;XYZ_to_xy&#39;</span><span class="p">]</span>
+<span class="n">__all__</span> <span class="o">+=</span> <span class="p">[</span><span class="s">&#39;RGB_Colourspace&#39;</span><span class="p">]</span>
+<span class="n">__all__</span> <span class="o">+=</span> <span class="p">[</span><span class="s">&#39;normalised_primary_matrix&#39;</span><span class="p">,</span>
+            <span class="s">&#39;primaries_whitepoint&#39;</span><span class="p">,</span>
+            <span class="s">&#39;RGB_luminance_equation&#39;</span><span class="p">,</span>
+            <span class="s">&#39;RGB_luminance&#39;</span><span class="p">]</span>
+<span class="n">__all__</span> <span class="o">+=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">__all__</span>
+<span class="n">__all__</span> <span class="o">+=</span> <span class="p">[</span><span class="s">&#39;XYZ_to_Lab&#39;</span><span class="p">,</span> <span class="s">&#39;Lab_to_XYZ&#39;</span><span class="p">,</span> <span class="s">&#39;Lab_to_LCHab&#39;</span><span class="p">,</span> <span class="s">&#39;LCHab_to_Lab&#39;</span><span class="p">]</span>
+<span class="n">__all__</span> <span class="o">+=</span> <span class="p">[</span><span class="s">&#39;XYZ_to_Luv&#39;</span><span class="p">,</span>
+            <span class="s">&#39;Luv_to_XYZ&#39;</span><span class="p">,</span>
+            <span class="s">&#39;Luv_to_uv&#39;</span><span class="p">,</span>
+            <span class="s">&#39;Luv_uv_to_xy&#39;</span><span class="p">,</span>
+            <span class="s">&#39;Luv_to_LCHuv&#39;</span><span class="p">,</span>
+            <span class="s">&#39;LCHuv_to_Luv&#39;</span><span class="p">]</span>
+<span class="n">__all__</span> <span class="o">+=</span> <span class="p">[</span><span class="s">&#39;XYZ_to_UCS&#39;</span><span class="p">,</span> <span class="s">&#39;UCS_to_XYZ&#39;</span><span class="p">,</span> <span class="s">&#39;UCS_to_uv&#39;</span><span class="p">,</span> <span class="s">&#39;UCS_uv_to_xy&#39;</span><span class="p">]</span>
+<span class="n">__all__</span> <span class="o">+=</span> <span class="p">[</span><span class="s">&#39;XYZ_to_UVW&#39;</span><span class="p">]</span>
+<span class="n">__all__</span> <span class="o">+=</span> <span class="p">[</span><span class="s">&#39;XYZ_to_IPT&#39;</span><span class="p">,</span> <span class="s">&#39;IPT_to_XYZ&#39;</span><span class="p">,</span> <span class="s">&#39;IPT_hue_angle&#39;</span><span class="p">]</span>
+<span class="n">__all__</span> <span class="o">+=</span> <span class="p">[</span><span class="s">&#39;LINEAR_TO_LOG_METHODS&#39;</span><span class="p">,</span> <span class="s">&#39;LOG_TO_LINEAR_METHODS&#39;</span><span class="p">]</span>
+<span class="n">__all__</span> <span class="o">+=</span> <span class="p">[</span><span class="s">&#39;linear_to_log&#39;</span><span class="p">,</span> <span class="s">&#39;log_to_linear&#39;</span><span class="p">]</span>
+<span class="n">__all__</span> <span class="o">+=</span> <span class="p">[</span><span class="s">&#39;linear_to_cineon&#39;</span><span class="p">,</span>
+            <span class="s">&#39;cineon_to_linear&#39;</span><span class="p">,</span>
+            <span class="s">&#39;linear_to_panalog&#39;</span><span class="p">,</span>
+            <span class="s">&#39;panalog_to_linear&#39;</span><span class="p">,</span>
+            <span class="s">&#39;linear_to_red_log_film&#39;</span><span class="p">,</span>
+            <span class="s">&#39;red_log_film_to_linear&#39;</span><span class="p">,</span>
+            <span class="s">&#39;linear_to_viper_log&#39;</span><span class="p">,</span>
+            <span class="s">&#39;viper_log_to_linear&#39;</span><span class="p">,</span>
+            <span class="s">&#39;linear_to_pivoted_log&#39;</span><span class="p">,</span>
+            <span class="s">&#39;pivoted_log_to_linear&#39;</span><span class="p">,</span>
+            <span class="s">&#39;linear_to_c_log&#39;</span><span class="p">,</span>
+            <span class="s">&#39;c_log_to_linear&#39;</span><span class="p">,</span>
+            <span class="s">&#39;linear_to_aces_cc&#39;</span><span class="p">,</span>
+            <span class="s">&#39;aces_cc_to_linear&#39;</span><span class="p">,</span>
+            <span class="s">&#39;linear_to_alexa_log_c&#39;</span><span class="p">,</span>
+            <span class="s">&#39;alexa_log_c_to_linear&#39;</span><span class="p">,</span>
+            <span class="s">&#39;linear_to_s_log&#39;</span><span class="p">,</span>
+            <span class="s">&#39;linear_to_dci_p3_log&#39;</span><span class="p">,</span>
+            <span class="s">&#39;dci_p3_log_to_linear&#39;</span><span class="p">,</span>
+            <span class="s">&#39;s_log_to_linear&#39;</span><span class="p">,</span>
+            <span class="s">&#39;linear_to_s_log2&#39;</span><span class="p">,</span>
+            <span class="s">&#39;s_log2_to_linear&#39;</span><span class="p">,</span>
+            <span class="s">&#39;linear_to_s_log3&#39;</span><span class="p">,</span>
+            <span class="s">&#39;s_log3_to_linear&#39;</span><span class="p">,</span>
+            <span class="s">&#39;linear_to_v_log&#39;</span><span class="p">,</span>
+            <span class="s">&#39;v_log_to_linear&#39;</span><span class="p">]</span>
+<span class="n">__all__</span> <span class="o">+=</span> <span class="p">[</span><span class="s">&#39;XYZ_to_RGB&#39;</span><span class="p">,</span> <span class="s">&#39;RGB_to_XYZ&#39;</span><span class="p">]</span>
+<span class="n">__all__</span> <span class="o">+=</span> <span class="p">[</span><span class="s">&#39;RGB_to_RGB&#39;</span><span class="p">]</span>
+<span class="n">__all__</span> <span class="o">+=</span> <span class="p">[</span><span class="s">&#39;XYZ_to_sRGB&#39;</span><span class="p">,</span> <span class="s">&#39;sRGB_to_XYZ&#39;</span><span class="p">]</span>
+<span class="n">__all__</span> <span class="o">+=</span> <span class="p">[</span><span class="s">&#39;spectral_to_aces_relative_exposure_values&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2015, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

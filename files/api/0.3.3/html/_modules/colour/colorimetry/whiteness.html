@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.colorimetry.whiteness &mdash; Colour 0.3.3 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.3.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.3 documentation" href="../../../index.html" />
+    <link rel="up" title="colour.colorimetry" href="../colorimetry.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for colour.colorimetry.whiteness</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Whiteness Index :math:`W`</span>
+<span class="sd">=========================</span>
+
+<span class="sd">Defines *whiteness* index :math:`W` computation objects:</span>
+
+<span class="sd">-   :func:`whiteness_Berger1959`</span>
+<span class="sd">-   :func:`whiteness_Taube1960`</span>
+<span class="sd">-   :func:`whiteness_Stensby1968`</span>
+<span class="sd">-   :func:`whiteness_ASTM313`</span>
+<span class="sd">-   :func:`whiteness_Ganz1979`</span>
+<span class="sd">-   :func:`whiteness_CIE2004`</span>
+
+<span class="sd">See Also</span>
+<span class="sd">--------</span>
+<span class="sd">`Whiteness IPython Notebook</span>
+<span class="sd">&lt;http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colorimetry/whiteness.ipynb&gt;`_  # noqa</span>
+
+<span class="sd">References</span>
+<span class="sd">----------</span>
+<span class="sd">.. [1]  Wikipedia. (n.d.). Whiteness. Retrieved September 17, 2014, from</span>
+<span class="sd">        http://en.wikipedia.org/wiki/Whiteness</span>
+<span class="sd">.. [2]  X-Rite, &amp; Pantone. (2012). Color iQC and Color iMatch Color</span>
+<span class="sd">        Calculations Guide. Retrieved from</span>
+<span class="sd">        http://www.xrite.com/documents/literature/en/09_Color_Calculations_en.pdf  # noqa</span>
+<span class="sd">.. [3]  Wyszecki, G., &amp; Stiles, W. S. (2000). Table I(6.5.3) Whiteness</span>
+<span class="sd">        Formulae (Whiteness Measure Denoted by W). In Color Science: Concepts</span>
+<span class="sd">        and Methods, Quantitative Data and Formulae (pp. 837–839). Wiley.</span>
+<span class="sd">        ISBN:978-0471399186</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">colour.utilities</span> <span class="kn">import</span> <span class="n">CaseInsensitiveMapping</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s">&#39;Copyright (C) 2013 - 2014 - Colour Developers&#39;</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s">&#39;New BSD License - http://opensource.org/licenses/BSD-3-Clause&#39;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s">&#39;colour-science@googlegroups.com&#39;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s">&#39;Production&#39;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;whiteness_Berger1959&#39;</span><span class="p">,</span>
+           <span class="s">&#39;whiteness_Taube1960&#39;</span><span class="p">,</span>
+           <span class="s">&#39;whiteness_Stensby1968&#39;</span><span class="p">,</span>
+           <span class="s">&#39;whiteness_ASTM313&#39;</span><span class="p">,</span>
+           <span class="s">&#39;whiteness_Ganz1979&#39;</span><span class="p">,</span>
+           <span class="s">&#39;whiteness_CIE2004&#39;</span><span class="p">,</span>
+           <span class="s">&#39;WHITENESS_METHODS&#39;</span><span class="p">,</span>
+           <span class="s">&#39;whiteness&#39;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="whiteness_Berger1959"><a class="viewcode-back" href="../../../colour.colorimetry.whiteness.html#colour.colorimetry.whiteness.whiteness_Berger1959">[docs]</a><span class="k">def</span> <span class="nf">whiteness_Berger1959</span><span class="p">(</span><span class="n">XYZ</span><span class="p">,</span> <span class="n">XYZ_0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *whiteness* index :math:`WI` of given sample *CIE XYZ*</span>
+<span class="sd">    colourspace matrix using Berger (1959) method. [2]_</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    XYZ : array_like</span>
+<span class="sd">        *CIE XYZ* colourspace matrix of sample.</span>
+<span class="sd">    XYZ_0 : array_like</span>
+<span class="sd">        *CIE XYZ* colourspace matrix of reference white.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric</span>
+<span class="sd">        *Whiteness* :math:`WI`.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   Input *CIE XYZ* and *CIE XYZ_0* colourspace matrices are in domain</span>
+<span class="sd">        [0, 100].</span>
+<span class="sd">    -   *Whiteness* :math:`WI` values larger than 33.33 indicate a bluish</span>
+<span class="sd">        white, and values smaller than 33.33 indicate a yellowish white.</span>
+
+<span class="sd">    Warning</span>
+<span class="sd">    -------</span>
+<span class="sd">    The input domain of that definition is non standard!</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; XYZ = np.array([95., 100., 105.])</span>
+<span class="sd">    &gt;&gt;&gt; XYZ_0 = np.array([94.80966767, 100., 107.30513595])</span>
+<span class="sd">    &gt;&gt;&gt; whiteness_Berger1959(XYZ, XYZ_0)  # doctest: +ELLIPSIS</span>
+<span class="sd">    30.3638017...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>
+    <span class="n">X_0</span><span class="p">,</span> <span class="n">Y_0</span><span class="p">,</span> <span class="n">Z_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">XYZ_0</span><span class="p">)</span>
+
+    <span class="n">WI</span> <span class="o">=</span> <span class="mf">0.333</span> <span class="o">*</span> <span class="n">Y</span> <span class="o">+</span> <span class="mi">125</span> <span class="o">*</span> <span class="p">(</span><span class="n">Z</span> <span class="o">/</span> <span class="n">Z_0</span><span class="p">)</span> <span class="o">-</span> <span class="mi">125</span> <span class="o">*</span> <span class="p">(</span><span class="n">X</span> <span class="o">/</span> <span class="n">X_0</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">WI</span>
+
+</div>
+<div class="viewcode-block" id="whiteness_Taube1960"><a class="viewcode-back" href="../../../colour.colorimetry.whiteness.html#colour.colorimetry.whiteness.whiteness_Taube1960">[docs]</a><span class="k">def</span> <span class="nf">whiteness_Taube1960</span><span class="p">(</span><span class="n">XYZ</span><span class="p">,</span> <span class="n">XYZ_0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *whiteness* index :math:`WI` of given sample *CIE XYZ*</span>
+<span class="sd">    colourspace matrix using Taube (1960) method. [2]_</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    XYZ : array_like</span>
+<span class="sd">        *CIE XYZ* colourspace matrix of sample.</span>
+<span class="sd">    XYZ_0 : array_like</span>
+<span class="sd">        *CIE XYZ* colourspace matrix of reference white.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric</span>
+<span class="sd">        *Whiteness* :math:`WI`.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   Input *CIE XYZ* and *CIE XYZ_0* colourspace matrices are in domain</span>
+<span class="sd">        [0, 100].</span>
+<span class="sd">    -   *Whiteness* :math:`WI` values larger than 100 indicate a bluish</span>
+<span class="sd">        white, and values smaller than 100 indicate a yellowish white.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; XYZ = np.array([95., 100., 105.])</span>
+<span class="sd">    &gt;&gt;&gt; XYZ_0 = np.array([94.80966767, 100., 107.30513595])</span>
+<span class="sd">    &gt;&gt;&gt; whiteness_Taube1960(XYZ, XYZ_0)  # doctest: +ELLIPSIS</span>
+<span class="sd">    91.4071738...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>
+    <span class="n">X_0</span><span class="p">,</span> <span class="n">Y_0</span><span class="p">,</span> <span class="n">Z_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">XYZ_0</span><span class="p">)</span>
+
+    <span class="n">WI</span> <span class="o">=</span> <span class="mi">400</span> <span class="o">*</span> <span class="p">(</span><span class="n">Z</span> <span class="o">/</span> <span class="n">Z_0</span><span class="p">)</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">Y</span>
+
+    <span class="k">return</span> <span class="n">WI</span>
+
+</div>
+<div class="viewcode-block" id="whiteness_Stensby1968"><a class="viewcode-back" href="../../../colour.colorimetry.whiteness.html#colour.colorimetry.whiteness.whiteness_Stensby1968">[docs]</a><span class="k">def</span> <span class="nf">whiteness_Stensby1968</span><span class="p">(</span><span class="n">Lab</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *whiteness* index :math:`WI` of given sample *CIE Lab*</span>
+<span class="sd">    colourspace matrix using Stensby (1968) method. [2]_</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    Lab : array_like</span>
+<span class="sd">        *CIE Lab* colourspace matrix of sample.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric</span>
+<span class="sd">        *Whiteness* :math:`WI`.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   Input *CIE Lab* colourspace matrix are in domain [0, 100].</span>
+<span class="sd">    -   *Whiteness* :math:`WI` values larger than 100 indicate a bluish</span>
+<span class="sd">        white, and values smaller than 100 indicate a yellowish white.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; Lab = np.array([100., -2.46875131, -16.72486654])</span>
+<span class="sd">    &gt;&gt;&gt; whiteness_Stensby1968(Lab)  # doctest: +ELLIPSIS</span>
+<span class="sd">    142.7683456...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">L</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">Lab</span><span class="p">)</span>
+
+    <span class="n">WI</span> <span class="o">=</span> <span class="n">L</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">b</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">a</span>
+
+    <span class="k">return</span> <span class="n">WI</span>
+
+</div>
+<div class="viewcode-block" id="whiteness_ASTM313"><a class="viewcode-back" href="../../../colour.colorimetry.whiteness.html#colour.colorimetry.whiteness.whiteness_ASTM313">[docs]</a><span class="k">def</span> <span class="nf">whiteness_ASTM313</span><span class="p">(</span><span class="n">XYZ</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *whiteness* index :math:`WI` of given sample *CIE XYZ*</span>
+<span class="sd">    colourspace matrix using ASTM 313 method. [2]_</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    XYZ : array_like</span>
+<span class="sd">        *CIE XYZ* colourspace matrix of sample.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric</span>
+<span class="sd">        *Whiteness* :math:`WI`.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   Input *CIE XYZ* colourspace matrix is in domain [0, 100].</span>
+
+<span class="sd">    Warning</span>
+<span class="sd">    -------</span>
+<span class="sd">    The input domain of that definition is non standard!</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; XYZ = np.array([95., 100., 105.])</span>
+<span class="sd">    &gt;&gt;&gt; whiteness_ASTM313(XYZ)  # doctest: +ELLIPSIS</span>
+<span class="sd">    55.7400000...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>
+
+    <span class="n">WI</span> <span class="o">=</span> <span class="mf">3.388</span> <span class="o">*</span> <span class="n">Z</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">Y</span>
+
+    <span class="k">return</span> <span class="n">WI</span>
+
+</div>
+<div class="viewcode-block" id="whiteness_Ganz1979"><a class="viewcode-back" href="../../../colour.colorimetry.whiteness.html#colour.colorimetry.whiteness.whiteness_Ganz1979">[docs]</a><span class="k">def</span> <span class="nf">whiteness_Ganz1979</span><span class="p">(</span><span class="n">xy</span><span class="p">,</span> <span class="n">Y</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *whiteness* index :math:`W` and *tint* :math:`T` of given</span>
+<span class="sd">    sample *xy* chromaticity coordinates using Ganz and Griesser (1979)</span>
+<span class="sd">    method. [2]_</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    xy : tuple</span>
+<span class="sd">        Chromaticity coordinates *xy* of sample.</span>
+<span class="sd">    Y : numeric</span>
+<span class="sd">        Tristimulus :math:`Y` value of sample.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tuple</span>
+<span class="sd">        *Whiteness* :math:`W` and *tint* :math:`T`.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   Input tristimulus :math:`Y` value is in domain [0, 100].</span>
+<span class="sd">    -   The formula coefficients are valid for</span>
+<span class="sd">        *CIE Standard Illuminant D Series* *D65* and</span>
+<span class="sd">        *CIE 1964 10 Degree Standard Observer*.</span>
+<span class="sd">    -   Positive output *tint* :math:`T` values indicate a greener tint while</span>
+<span class="sd">        negative values indicate a redder tint.</span>
+<span class="sd">    -   Whiteness differences of less than 5 Ganz units appear to be</span>
+<span class="sd">        indistinguishable to the human eye.</span>
+<span class="sd">    -   Tint differences of less than 0.5 Ganz units appear to be</span>
+<span class="sd">        indistinguishable to the human eye.</span>
+
+<span class="sd">    Warning</span>
+<span class="sd">    -------</span>
+<span class="sd">    The input domain of that definition is non standard!</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; whiteness_Ganz1979((0.3167, 0.3334), 100.)  # doctest: +ELLIPSIS</span>
+<span class="sd">    (85.6003766..., 0.6789002...)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">xy</span><span class="p">)</span>
+
+    <span class="n">W</span> <span class="o">=</span> <span class="n">Y</span> <span class="o">-</span> <span class="mf">1868.322</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mf">3695.690</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">1809.441</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1001.223</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">748.366</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">68.261</span>
+
+    <span class="k">return</span> <span class="n">W</span><span class="p">,</span> <span class="n">T</span>
+
+</div>
+<div class="viewcode-block" id="whiteness_CIE2004"><a class="viewcode-back" href="../../../colour.colorimetry.whiteness.html#colour.colorimetry.whiteness.whiteness_CIE2004">[docs]</a><span class="k">def</span> <span class="nf">whiteness_CIE2004</span><span class="p">(</span><span class="n">xy</span><span class="p">,</span>
+                      <span class="n">Y</span><span class="p">,</span>
+                      <span class="n">xy_n</span><span class="p">,</span>
+                      <span class="n">observer</span><span class="o">=</span><span class="s">&#39;CIE 1931 2 Degree Standard Observer&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *whiteness* :math:`W` or :math:`W_{10}` and *tint* :math:`T`</span>
+<span class="sd">    or :math:`T_{10}` of given sample *xy* chromaticity coordinates using</span>
+<span class="sd">    CIE 2004 method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    xy : tuple</span>
+<span class="sd">        Chromaticity coordinates *xy* of sample.</span>
+<span class="sd">    Y : numeric</span>
+<span class="sd">        Tristimulus :math:`Y` value of sample.</span>
+<span class="sd">    xy_n : tuple</span>
+<span class="sd">        Chromaticity coordinates *xy_n* of perfect diffuser.</span>
+<span class="sd">    observer : unicode, optional</span>
+<span class="sd">        {&#39;CIE 1931 2 Degree Standard Observer&#39;,</span>
+<span class="sd">        &#39;CIE 1964 10 Degree Standard Observer&#39;}</span>
+<span class="sd">        *CIE Standard Observer* used for computations, *tint* :math:`T` or</span>
+<span class="sd">        :math:`T_{10}` value is dependent on viewing field angular subtense.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tuple</span>
+<span class="sd">        *Whiteness* :math:`W` or :math:`W_{10}` and *tint* :math:`T` or</span>
+<span class="sd">        :math:`T_{10}` of given sample.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   Input tristimulus :math:`Y` value is in domain [0, 100].</span>
+<span class="sd">    -   This method may be used only for samples whose values of :math:`W` or</span>
+<span class="sd">        :math:`W_{10}` lie within the following limits: greater than 40 and</span>
+<span class="sd">        less than 5Y - 280, or 5Y10 - 280.</span>
+<span class="sd">    -   This method may be used only for samples whose values of :math:`T` or</span>
+<span class="sd">        :math:`T_{10}` lie within the following limits: greater than -4 and</span>
+<span class="sd">        less than +2.</span>
+<span class="sd">    -   Output *whiteness* :math:`W` or :math:`W_{10}` values larger than 100</span>
+<span class="sd">        indicate a bluish white while values smaller than 100 indicate a</span>
+<span class="sd">        yellowish white. [2]_</span>
+<span class="sd">    -   Positive output *tint* :math:`T` or :math:`T_{10}` values indicate a</span>
+<span class="sd">        greener tint while negative values indicate a redder tint.</span>
+
+<span class="sd">    Warning</span>
+<span class="sd">    -------</span>
+<span class="sd">    The input domain of that definition is non standard!</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [4]  CIE TC 1-48. (2004). The evaluation of whiteness. In CIE 015:2004</span>
+<span class="sd">            Colorimetry, 3rd Edition (p. 24). ISBN:978-3-901-90633-6</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; xy_n = (0.3139, 0.3311)</span>
+<span class="sd">    &gt;&gt;&gt; whiteness_CIE2004((0.3167, 0.3334), 100., xy_n)  # doctest: +ELLIPSIS</span>
+<span class="sd">    (93.8500000..., -1.3049999...)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">xy</span><span class="p">)</span>
+    <span class="n">x_n</span><span class="p">,</span> <span class="n">y_n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">xy_n</span><span class="p">)</span>
+
+    <span class="n">W</span> <span class="o">=</span> <span class="n">Y</span> <span class="o">+</span> <span class="mi">800</span> <span class="o">*</span> <span class="p">(</span><span class="n">x_n</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1700</span> <span class="o">*</span> <span class="p">(</span><span class="n">y_n</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1000</span> <span class="k">if</span> <span class="s">&#39;1931&#39;</span> <span class="ow">in</span> <span class="n">observer</span> <span class="k">else</span> <span class="mi">900</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x_n</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">650</span> <span class="o">*</span> <span class="p">(</span><span class="n">y_n</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">W</span><span class="p">,</span> <span class="n">T</span>
+
+</div>
+<span class="n">WHITENESS_METHODS</span> <span class="o">=</span> <span class="n">CaseInsensitiveMapping</span><span class="p">(</span>
+    <span class="p">{</span><span class="s">&#39;Berger 1959&#39;</span><span class="p">:</span> <span class="n">whiteness_Berger1959</span><span class="p">,</span>
+     <span class="s">&#39;Taube 1960&#39;</span><span class="p">:</span> <span class="n">whiteness_Taube1960</span><span class="p">,</span>
+     <span class="s">&#39;Stensby 1968&#39;</span><span class="p">:</span> <span class="n">whiteness_Stensby1968</span><span class="p">,</span>
+     <span class="s">&#39;ASTM 313&#39;</span><span class="p">:</span> <span class="n">whiteness_ASTM313</span><span class="p">,</span>
+     <span class="s">&#39;Ganz 1979&#39;</span><span class="p">:</span> <span class="n">whiteness_Ganz1979</span><span class="p">,</span>
+     <span class="s">&#39;CIE 2004&#39;</span><span class="p">:</span> <span class="n">whiteness_CIE2004</span><span class="p">})</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Supported *whiteness* computations methods.</span>
+
+<span class="sd">WHITENESS_METHODS : CaseInsensitiveMapping</span>
+<span class="sd">    {&#39;CIE 2004&#39;, &#39;Berger 1959&#39;, &#39;Taube 1960&#39;, &#39;Stensby 1968&#39;, &#39;ASTM 313&#39;,</span>
+<span class="sd">    &#39;Ganz 1979&#39;, &#39;CIE 2004&#39;}</span>
+
+<span class="sd">Aliases:</span>
+
+<span class="sd">-   &#39;cie2004&#39;: &#39;CIE 2004&#39;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">WHITENESS_METHODS</span><span class="p">[</span><span class="s">&#39;cie2004&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">WHITENESS_METHODS</span><span class="p">[</span><span class="s">&#39;CIE 2004&#39;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="whiteness"><a class="viewcode-back" href="../../../colour.colorimetry.whiteness.html#colour.colorimetry.whiteness.whiteness">[docs]</a><span class="k">def</span> <span class="nf">whiteness</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s">&#39;CIE 2004&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *whiteness* :math:`W` using given method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    method : unicode, optional</span>
+<span class="sd">        {&#39;CIE 2004&#39;, &#39;Berger 1959&#39;, &#39;Taube 1960&#39;, &#39;Stensby 1968&#39;, &#39;ASTM 313&#39;,</span>
+<span class="sd">        &#39;Ganz 1979&#39;, &#39;CIE 2004&#39;}</span>
+<span class="sd">        Computation method.</span>
+<span class="sd">    \*\*kwargs : \*\*</span>
+<span class="sd">        Keywords arguments.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric</span>
+<span class="sd">        *whiteness* :math:`W`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; xy = (0.3167, 0.3334)</span>
+<span class="sd">    &gt;&gt;&gt; Y = 100</span>
+<span class="sd">    &gt;&gt;&gt; xy_n = (0.3139, 0.3311)</span>
+<span class="sd">    &gt;&gt;&gt; whiteness(xy=xy, Y=Y, xy_n=xy_n)  # doctest: +ELLIPSIS</span>
+<span class="sd">    (93.8500000..., -1.3049999...)</span>
+<span class="sd">    &gt;&gt;&gt; XYZ = np.array([95., 100., 105.])</span>
+<span class="sd">    &gt;&gt;&gt; XYZ_0 = np.array([94.80966767, 100., 107.30513595])</span>
+<span class="sd">    &gt;&gt;&gt; method = &#39;Taube 1960&#39;</span>
+<span class="sd">    &gt;&gt;&gt; whiteness(XYZ=XYZ, XYZ_0=XYZ_0, method=method)  # doctest: +ELLIPSIS</span>
+<span class="sd">    91.4071738...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">WHITENESS_METHODS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">method</span><span class="p">)(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2014, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

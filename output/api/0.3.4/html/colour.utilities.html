@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.utilities Package &mdash; Colour 0.3.4 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.3.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.4 documentation" href="index.html" />
+    <link rel="up" title="colour Package" href="colour.html" />
+    <link rel="next" title="colour.utilities.common Module" href="colour.utilities.common.html" />
+    <link rel="prev" title="colour.temperature.cct Module" href="colour.temperature.cct.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+  <li>
+    <a href="colour.temperature.cct.html" title="Previous Chapter: colour.temperature.cct Module"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; colour.temperatu...</span>
+    </a>
+  </li>
+  <li>
+    <a href="colour.utilities.common.html" title="Next Chapter: colour.utilities.common Module"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">colour.utilities... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="colour-utilities-package">
+<h1>colour.utilities Package<a class="headerlink" href="#colour-utilities-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sub-modules">
+<h2>Sub-Modules<a class="headerlink" href="#sub-modules" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="colour.utilities.common.html">colour.utilities.common Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="colour.utilities.common.html#common-utilities">Common Utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="colour.utilities.data_structures.html">colour.utilities.data_structures Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="colour.utilities.data_structures.html#data-structures">Data Structures</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="colour.utilities.verbose.html">colour.utilities.verbose Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="colour.utilities.verbose.html#verbose">Verbose</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="module-colour.utilities">
+<span id="module-contents"></span><h2>Module Contents<a class="headerlink" href="#module-colour.utilities" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="colour.utilities.batch">
+<tt class="descclassname">colour.utilities.</tt><tt class="descname">batch</tt><big>(</big><em>iterable</em>, <em>k=3</em><big>)</big><a class="headerlink" href="#colour.utilities.batch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a batch generator from given iterable.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>iterable</strong> (<em>iterable</em>) &#8211; Iterable to create batches from.</li>
+<li><strong>k</strong> (<em>integer</em>) &#8211; Batches size.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Is <em>string_like</em> variable.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">batch</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)))</span>  
+<span class="go">&lt;generator object batch at 0x...&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.utilities.is_scipy_installed">
+<tt class="descclassname">colour.utilities.</tt><tt class="descname">is_scipy_installed</tt><big>(</big><em>raise_exception=False</em><big>)</big><a class="headerlink" href="#colour.utilities.is_scipy_installed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns if <em>scipy</em> is installed and available.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>raise_exception</strong> (<em>bool</em>) &#8211; Raise exception if <em>scipy</em> is unavailable.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Is <em>scipy</em> installed.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><tt class="xref py py-exc docutils literal"><span class="pre">ImportError</span></tt> &#8211;
+If <em>scipy</em> is not installed.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.utilities.is_string">
+<tt class="descclassname">colour.utilities.</tt><tt class="descname">is_string</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#colour.utilities.is_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns if given data is a <em>string_like</em> variable.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> (<em>object</em>) &#8211; Data to test.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Is <em>string_like</em> variable.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">is_string</span><span class="p">(</span><span class="s">&#39;I`m a string!&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_string</span><span class="p">([</span><span class="s">&#39;I`m a string!&#39;</span><span class="p">])</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="colour.utilities.Lookup">
+<em class="property">class </em><tt class="descclassname">colour.utilities.</tt><tt class="descname">Lookup</tt><a class="headerlink" href="#colour.utilities.Lookup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">dict</span></tt></p>
+<p>Extends <em>dict</em> type to provide a lookup by value(s).</p>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[2]</td><td>Mansencal, T. (n.d.). Lookup. Retrieved from
+<a class="reference external" href="https://github.com/KelSolaar/Foundations/blob/develop/foundations/data_structures.py">https://github.com/KelSolaar/Foundations/blob/develop/foundations/data_structures.py</a></td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">person</span> <span class="o">=</span> <span class="n">Lookup</span><span class="p">(</span><span class="n">first_name</span><span class="o">=</span><span class="s">&#39;Doe&#39;</span><span class="p">,</span> <span class="n">last_name</span><span class="o">=</span><span class="s">&#39;John&#39;</span><span class="p">,</span> <span class="n">gender</span><span class="o">=</span><span class="s">&#39;male&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">person</span><span class="o">.</span><span class="n">first_key_from_value</span><span class="p">(</span><span class="s">&#39;Doe&#39;</span><span class="p">)</span>
+<span class="go">&#39;first_name&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">persons</span> <span class="o">=</span> <span class="n">Lookup</span><span class="p">(</span><span class="n">John</span><span class="o">=</span><span class="s">&#39;Doe&#39;</span><span class="p">,</span> <span class="n">Jane</span><span class="o">=</span><span class="s">&#39;Doe&#39;</span><span class="p">,</span> <span class="n">Luke</span><span class="o">=</span><span class="s">&#39;Skywalker&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">persons</span><span class="o">.</span><span class="n">keys_from_value</span><span class="p">(</span><span class="s">&#39;Doe&#39;</span><span class="p">))</span>
+<span class="go">[&#39;Jane&#39;, &#39;John&#39;]</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="colour.utilities.Lookup.first_key_from_value">
+<tt class="descname">first_key_from_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#colour.utilities.Lookup.first_key_from_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the first key with given value.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>object</em>) &#8211; Value.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Key.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="colour.utilities.Lookup.keys_from_value">
+<tt class="descname">keys_from_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#colour.utilities.Lookup.keys_from_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the keys with given value.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>object</em>) &#8211; Value.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Keys.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="colour.utilities.Structure">
+<em class="property">class </em><tt class="descclassname">colour.utilities.</tt><tt class="descname">Structure</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.utilities.Structure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">dict</span></tt></p>
+<p>Defines an object similar to C/C++ structured type.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>*args</strong> (<em>*</em>) &#8211; Arguments.</li>
+<li><strong>**kwargs</strong> (<em>dict</em>) &#8211; Key / Value pairs.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td>Mansencal, T. (n.d.). Structure. Retrieved from
+<a class="reference external" href="https://github.com/KelSolaar/Foundations/blob/develop/foundations/data_structures.py">https://github.com/KelSolaar/Foundations/blob/develop/foundations/data_structures.py</a></td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">person</span> <span class="o">=</span> <span class="n">Structure</span><span class="p">(</span><span class="n">first_name</span><span class="o">=</span><span class="s">&#39;Doe&#39;</span><span class="p">,</span> <span class="n">last_name</span><span class="o">=</span><span class="s">&#39;John&#39;</span><span class="p">,</span> <span class="n">gender</span><span class="o">=</span><span class="s">&#39;male&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># Doctests skip for Python 2.x compatibility.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">person</span><span class="o">.</span><span class="n">first_name</span>  
+<span class="go">&#39;Doe&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="go">[&#39;first_name&#39;, &#39;gender&#39;, &#39;last_name&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># Doctests skip for Python 2.x compatibility.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">person</span><span class="p">[</span><span class="s">&#39;gender&#39;</span><span class="p">]</span>  
+<span class="go">&#39;male&#39;</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="colour.utilities.Structure.__delattr__">
+<tt class="descname">__delattr__</tt><big>(</big><em>attribute</em><big>)</big><a class="headerlink" href="#colour.utilities.Structure.__delattr__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes both key and sibling attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>attribute</strong> (<em>object</em>) &#8211; Attribute.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Reimplements the <tt class="xref py py-meth docutils literal"><span class="pre">dict.__delattr__()</span></tt> method.</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="colour.utilities.Structure.__delitem__">
+<tt class="descname">__delitem__</tt><big>(</big><em>attribute</em><big>)</big><a class="headerlink" href="#colour.utilities.Structure.__delitem__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes both key and sibling attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>attribute</strong> (<em>object</em>) &#8211; Attribute.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Reimplements the <tt class="xref py py-meth docutils literal"><span class="pre">dict.__delattr__()</span></tt> method.</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="colour.utilities.Structure.__getattr__">
+<tt class="descname">__getattr__</tt><big>(</big><em>attribute</em><big>)</big><a class="headerlink" href="#colour.utilities.Structure.__getattr__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns given attribute value.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>attribute</strong> (<em>unicode</em>) &#8211; Attribute name.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Reimplements the <tt class="xref py py-meth docutils literal"><span class="pre">dict.__getattr__()</span></tt> method.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Attribute value.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">object</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><tt class="xref py py-exc docutils literal"><span class="pre">AttributeError</span></tt> &#8211;
+If the attribute is not defined.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="colour.utilities.Structure.__setattr__">
+<tt class="descname">__setattr__</tt><big>(</big><em>attribute</em>, <em>value</em><big>)</big><a class="headerlink" href="#colour.utilities.Structure.__setattr__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets both key and sibling attribute with given value.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>attribute</strong> (<em>object</em>) &#8211; Attribute.</li>
+<li><strong>value</strong> (<em>object</em>) &#8211; Value.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Reimplements the <tt class="xref py py-meth docutils literal"><span class="pre">dict.__setattr__()</span></tt> method.</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="colour.utilities.Structure.__setitem__">
+<tt class="descname">__setitem__</tt><big>(</big><em>attribute</em>, <em>value</em><big>)</big><a class="headerlink" href="#colour.utilities.Structure.__setitem__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets both key and sibling attribute with given value.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>attribute</strong> (<em>object</em>) &#8211; Attribute.</li>
+<li><strong>value</strong> (<em>object</em>) &#8211; Value.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Reimplements the <tt class="xref py py-meth docutils literal"><span class="pre">dict.__setattr__()</span></tt> method.</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="colour.utilities.Structure.update">
+<tt class="descname">update</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.utilities.Structure.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates both keys and sibling attributes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>*args</strong> (<em>*</em>) &#8211; Arguments.</li>
+<li><strong>**kwargs</strong> (<em>**</em>) &#8211; Keywords arguments.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Reimplements the <tt class="xref py py-meth docutils literal"><span class="pre">dict.update()</span></tt> method.</li>
+</ul>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="colour.utilities.CaseInsensitiveMapping">
+<em class="property">class </em><tt class="descclassname">colour.utilities.</tt><tt class="descname">CaseInsensitiveMapping</tt><big>(</big><em>data=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.utilities.CaseInsensitiveMapping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">_abcoll.MutableMapping</span></tt></p>
+<p>Implements a case-insensitive mutable mapping / <em>dict</em> object.</p>
+<p>Allows values retrieving from keys while ignoring the key case.
+The keys are expected to be unicode or string-like objects supporting the
+<tt class="xref py py-meth docutils literal"><span class="pre">str.lower()</span></tt> method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>data</strong> (<em>dict</em>) &#8211; <em>dict</em> of data to store into the mapping at initialisation.</li>
+<li><strong>**kwargs</strong> (<em>dict</em>) &#8211; Key / Value pairs to store into the mapping at initialisation.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The keys are expected to be unicode or string-like objects.</p>
+</div>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[3]</td><td>Reitz, K. (n.d.). CaseInsensitiveDict. Retrieved from
+<a class="reference external" href="https://github.com/kennethreitz/requests/blob/v1.2.3/requests/structures.py#L37">https://github.com/kennethreitz/requests/blob/v1.2.3/requests/structures.py#L37</a></td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">methods</span> <span class="o">=</span> <span class="n">CaseInsensitiveMapping</span><span class="p">({</span><span class="s">&#39;McCamy&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;Hernandez&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">methods</span><span class="p">[</span><span class="s">&#39;mccamy&#39;</span><span class="p">]</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="colour.utilities.CaseInsensitiveMapping.__contains__">
+<tt class="descname">__contains__</tt><big>(</big><em>item</em><big>)</big><a class="headerlink" href="#colour.utilities.CaseInsensitiveMapping.__contains__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns if the mapping contains given item.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>item</strong> (<em>unicode</em>) &#8211; Item name.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Is item in mapping.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Reimplements the <tt class="xref py py-meth docutils literal"><span class="pre">MutableMapping.__contains__()</span></tt> method.</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="colour.utilities.CaseInsensitiveMapping.__delitem__">
+<tt class="descname">__delitem__</tt><big>(</big><em>item</em><big>)</big><a class="headerlink" href="#colour.utilities.CaseInsensitiveMapping.__delitem__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the item with given name.</p>
+<p>The item is deleted from the mapping using its lower name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>item</strong> (<em>unicode</em>) &#8211; Item name.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Reimplements the <tt class="xref py py-meth docutils literal"><span class="pre">MutableMapping.__delitem__()</span></tt> method.</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="colour.utilities.CaseInsensitiveMapping.__eq__">
+<tt class="descname">__eq__</tt><big>(</big><em>item</em><big>)</big><a class="headerlink" href="#colour.utilities.CaseInsensitiveMapping.__eq__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the equality with given object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>item</strong> &#8211; Object item.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Equality.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Reimplements the <tt class="xref py py-meth docutils literal"><span class="pre">MutableMapping.__eq__()</span></tt> method.</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="colour.utilities.CaseInsensitiveMapping.__getitem__">
+<tt class="descname">__getitem__</tt><big>(</big><em>item</em><big>)</big><a class="headerlink" href="#colour.utilities.CaseInsensitiveMapping.__getitem__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of given item.</p>
+<p>The item value is retrieved using its lower name in the mapping.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>item</strong> (<em>unicode</em>) &#8211; Item name.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Item value</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">object</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Reimplements the <tt class="xref py py-meth docutils literal"><span class="pre">MutableMapping.__getitem__()</span></tt> method.</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="colour.utilities.CaseInsensitiveMapping.__iter__">
+<tt class="descname">__iter__</tt><big>(</big><big>)</big><a class="headerlink" href="#colour.utilities.CaseInsensitiveMapping.__iter__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterates over the items names in the mapping.</p>
+<p>The item names returned are the original input ones.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Item names.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">generator</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Reimplements the <tt class="xref py py-meth docutils literal"><span class="pre">MutableMapping.__iter__()</span></tt> method.</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="colour.utilities.CaseInsensitiveMapping.__len__">
+<tt class="descname">__len__</tt><big>(</big><big>)</big><a class="headerlink" href="#colour.utilities.CaseInsensitiveMapping.__len__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the items count.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Items count.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Reimplements the <tt class="xref py py-meth docutils literal"><span class="pre">MutableMapping.__iter__()</span></tt> method.</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="colour.utilities.CaseInsensitiveMapping.__ne__">
+<tt class="descname">__ne__</tt><big>(</big><em>item</em><big>)</big><a class="headerlink" href="#colour.utilities.CaseInsensitiveMapping.__ne__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the inequality with given object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>item</strong> &#8211; Object item.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Inequality.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Reimplements the <tt class="xref py py-meth docutils literal"><span class="pre">MutableMapping.__ne__()</span></tt> method.</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="colour.utilities.CaseInsensitiveMapping.__repr__">
+<tt class="descname">__repr__</tt><big>(</big><big>)</big><a class="headerlink" href="#colour.utilities.CaseInsensitiveMapping.__repr__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the mapping representation with the original item names.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Mapping representation.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">unicode</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Reimplements the <tt class="xref py py-meth docutils literal"><span class="pre">MutableMapping.__repr__()</span></tt> method.</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="colour.utilities.CaseInsensitiveMapping.__setitem__">
+<tt class="descname">__setitem__</tt><big>(</big><em>item</em>, <em>value</em><big>)</big><a class="headerlink" href="#colour.utilities.CaseInsensitiveMapping.__setitem__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets given item with given value.</p>
+<p>The item is stored as lower in the mapping while the original name and
+its value are stored together as the value in a <em>tuple</em>:</p>
+<p>{&#8220;item.lower()&#8221;: (&#8220;item&#8221;, value)}</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>item</strong> (<em>object</em>) &#8211; Attribute.</li>
+<li><strong>value</strong> (<em>object</em>) &#8211; Value.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Reimplements the <tt class="xref py py-meth docutils literal"><span class="pre">MutableMapping.__setitem__()</span></tt> method.</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="colour.utilities.CaseInsensitiveMapping.copy">
+<tt class="descname">copy</tt><big>(</big><big>)</big><a class="headerlink" href="#colour.utilities.CaseInsensitiveMapping.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a copy of the mapping.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Mapping copy.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">CaseInsensitiveMapping</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>The <a class="reference internal" href="#colour.utilities.CaseInsensitiveMapping" title="colour.utilities.CaseInsensitiveMapping"><tt class="xref py py-class docutils literal"><span class="pre">CaseInsensitiveMapping</span></tt></a> class copy returned is a simple
+<em>copy</em> not a <em>deepcopy</em>.</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="colour.utilities.CaseInsensitiveMapping.lower_items">
+<tt class="descname">lower_items</tt><big>(</big><big>)</big><a class="headerlink" href="#colour.utilities.CaseInsensitiveMapping.lower_items" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterates over the lower items names.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Lower item names.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">generator</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.utilities.message_box">
+<tt class="descclassname">colour.utilities.</tt><tt class="descname">message_box</tt><big>(</big><em>message</em>, <em>width=79</em>, <em>padding=3</em><big>)</big><a class="headerlink" href="#colour.utilities.message_box" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints a message inside a box.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>message</strong> (<em>unicode</em>) &#8211; Message to print.</li>
+<li><strong>width</strong> (<em>int, optional</em>) &#8211; Message box width.</li>
+<li><strong>padding</strong> (<em>unicode</em>) &#8211; Padding on each sides of the message.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Definition success.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">message</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;Lorem ipsum dolor sit amet, consectetur adipiscing elit, &#39;</span>
+<span class="gp">... </span>    <span class="s">&#39;sed do eiusmod tempor incididunt ut labore et dolore magna &#39;</span>
+<span class="gp">... </span>    <span class="s">&#39;aliqua.&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">message_box</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">75</span><span class="p">)</span>
+<span class="go">===========================================================================</span>
+<span class="go">*                                                                         *</span>
+<span class="go">*   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do       *</span>
+<span class="go">*   eiusmod tempor incididunt ut labore et dolore magna aliqua.           *</span>
+<span class="go">*                                                                         *</span>
+<span class="go">===========================================================================</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">message_box</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+<span class="go">============================================================</span>
+<span class="go">*                                                          *</span>
+<span class="go">*   Lorem ipsum dolor sit amet, consectetur adipiscing     *</span>
+<span class="go">*   elit, sed do eiusmod tempor incididunt ut labore et    *</span>
+<span class="go">*   dolore magna aliqua.                                   *</span>
+<span class="go">*                                                          *</span>
+<span class="go">============================================================</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">message_box</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">75</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="go">===========================================================================</span>
+<span class="go">*                                                                         *</span>
+<span class="go">*                Lorem ipsum dolor sit amet, consectetur                  *</span>
+<span class="go">*                adipiscing elit, sed do eiusmod tempor                   *</span>
+<span class="go">*                incididunt ut labore et dolore magna                     *</span>
+<span class="go">*                aliqua.                                                  *</span>
+<span class="go">*                                                                         *</span>
+<span class="go">===========================================================================</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.utilities.warning">
+<tt class="descclassname">colour.utilities.</tt><tt class="descname">warning</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.utilities.warning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Issues a warning.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>*args</strong> (<em>*</em>) &#8211; Arguments.</li>
+<li><strong>**kwargs</strong> (<em>**</em>) &#8211; Keywords arguments.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Definition success.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">colour</span><span class="o">.</span><span class="n">utilities</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">&#39;This is a warning!&#39;</span><span class="p">)</span>  
+<span class="go">/Users/.../colour/utilities/verbose.py:42: UserWarning: This is a warning!</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2015, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

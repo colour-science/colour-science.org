@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.colorimetry.dataset.illuminants.chromaticity_coordinates &mdash; Colour 0.3.4 documentation</title>
+    
+    <link rel="stylesheet" href="../../../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../../',
+        VERSION:     '0.3.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.4 documentation" href="../../../../../index.html" />
+    <link rel="up" title="colour.colorimetry" href="../../../colorimetry.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../../../index.html"><img src="../../../../../_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for colour.colorimetry.dataset.illuminants.chromaticity_coordinates</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Illuminants Chromaticity Coordinates</span>
+<span class="sd">====================================</span>
+
+<span class="sd">Defines *CIE* illuminants chromaticity coordinates for the</span>
+<span class="sd">*CIE 1931 2 Degree Standard Observer* and</span>
+<span class="sd">*CIE 1964 10 Degree Standard Observer*.</span>
+
+<span class="sd">The following *CIE* illuminants are available:</span>
+
+<span class="sd">-   CIE Standard Illuminant A</span>
+<span class="sd">-   CIE Illuminant B</span>
+<span class="sd">-   CIE Illuminant C</span>
+<span class="sd">-   CIE Illuminant D Series (D50, D55, D60, D63, D65, D75)</span>
+<span class="sd">-   CIE Illuminant E</span>
+<span class="sd">-   Illuminants F Series (F1, F10, F11, F12, F2, F3, F4, F5, F6, F7, F8, F9,</span>
+<span class="sd">    FL3.1, FL3.10, FL3.11, FL3.12, FL3.13, FL3.14, FL3.15, FL3.2, FL3.3, FL3.4,</span>
+<span class="sd">    FL3.5, FL3.6, FL3.7, FL3.8, FL3.9)</span>
+<span class="sd">-   High Pressure Discharge Lamps (HP1, HP2, HP3, HP4, HP5)</span>
+
+<span class="sd">See Also</span>
+<span class="sd">--------</span>
+<span class="sd">`Illuminants IPython Notebook</span>
+<span class="sd">&lt;http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colorimetry/illuminants.ipynb&gt;`_  # noqa</span>
+
+<span class="sd">Notes</span>
+<span class="sd">-----</span>
+<span class="sd">-   *CIE* illuminants with chromaticity coordinates not defined in the</span>
+<span class="sd">    reference [1]_ have been calculated using their relative spectral power</span>
+<span class="sd">    distributions and the</span>
+<span class="sd">    :func:`colour.colorimetry.tristimulus.spectral_to_XYZ` definition.</span>
+<span class="sd">-   *CIE Illuminant D Series* *D63* illuminant is used for *DCI-P3* whitepoint</span>
+<span class="sd">    at 48 :math:`cd/m^2`.</span>
+
+<span class="sd">References</span>
+<span class="sd">----------</span>
+<span class="sd">.. [1]  Wikipedia. (n.d.). White points of standard illuminants. Retrieved</span>
+<span class="sd">        February 24, 2014, from</span>
+<span class="sd">        http://en.wikipedia.org/wiki/Standard_illuminant#White_points_of_standard_illuminants  # noqa</span>
+<span class="sd">.. [2]  Digital Cinema Initiatives. (2007). Digital Cinema System</span>
+<span class="sd">        Specification - Version 1.1. Retrieved from</span>
+<span class="sd">        http://www.dcimovies.com/archives/spec_v1_1/DCI_DCinema_System_Spec_v1_1.pdf  # noqa</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">unicode_literals</span>
+
+<span class="kn">from</span> <span class="nn">colour.utilities</span> <span class="kn">import</span> <span class="n">CaseInsensitiveMapping</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s">&#39;Copyright (C) 2013 - 2015 - Colour Developers&#39;</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s">&#39;New BSD License - http://opensource.org/licenses/BSD-3-Clause&#39;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s">&#39;colour-science@googlegroups.com&#39;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s">&#39;Production&#39;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s">&#39;ILLUMINANTS_CIE_1931_2_DEGREE_STANDARD_OBSERVER&#39;</span><span class="p">,</span>
+    <span class="s">&#39;ILLUMINANTS_CIE_1964_10_DEGREE_STANDARD_OBSERVER&#39;</span><span class="p">,</span>
+    <span class="s">&#39;ILLUMINANTS&#39;</span><span class="p">]</span>
+
+<span class="n">ILLUMINANTS_CIE_1931_2_DEGREE_STANDARD_OBSERVER</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">CaseInsensitiveMapping</span><span class="p">(</span>
+        <span class="p">{</span><span class="s">&#39;A&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.44757</span><span class="p">,</span> <span class="mf">0.40745</span><span class="p">),</span>
+         <span class="s">&#39;B&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.34842</span><span class="p">,</span> <span class="mf">0.35161</span><span class="p">),</span>
+         <span class="s">&#39;C&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.31006</span><span class="p">,</span> <span class="mf">0.31616</span><span class="p">),</span>
+         <span class="s">&#39;D50&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.34567</span><span class="p">,</span> <span class="mf">0.35850</span><span class="p">),</span>
+         <span class="s">&#39;D55&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.33242</span><span class="p">,</span> <span class="mf">0.34743</span><span class="p">),</span>
+         <span class="s">&#39;D60&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.32168</span><span class="p">,</span> <span class="mf">0.33767</span><span class="p">),</span>
+         <span class="s">&#39;D63&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.3140</span><span class="p">,</span> <span class="mf">0.3510</span><span class="p">),</span>
+         <span class="s">&#39;D65&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.31271</span><span class="p">,</span> <span class="mf">0.32902</span><span class="p">),</span>
+         <span class="s">&#39;D75&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.29902</span><span class="p">,</span> <span class="mf">0.31485</span><span class="p">),</span>
+         <span class="s">&#39;E&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">),</span>
+         <span class="s">&#39;F1&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.31310</span><span class="p">,</span> <span class="mf">0.33727</span><span class="p">),</span>
+         <span class="s">&#39;F2&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.37208</span><span class="p">,</span> <span class="mf">0.37529</span><span class="p">),</span>
+         <span class="s">&#39;F3&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.40910</span><span class="p">,</span> <span class="mf">0.39430</span><span class="p">),</span>
+         <span class="s">&#39;F4&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.44018</span><span class="p">,</span> <span class="mf">0.40329</span><span class="p">),</span>
+         <span class="s">&#39;F5&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.31379</span><span class="p">,</span> <span class="mf">0.34531</span><span class="p">),</span>
+         <span class="s">&#39;F6&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.37790</span><span class="p">,</span> <span class="mf">0.38835</span><span class="p">),</span>
+         <span class="s">&#39;F7&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.31292</span><span class="p">,</span> <span class="mf">0.32933</span><span class="p">),</span>
+         <span class="s">&#39;F8&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.34588</span><span class="p">,</span> <span class="mf">0.35875</span><span class="p">),</span>
+         <span class="s">&#39;F9&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.37417</span><span class="p">,</span> <span class="mf">0.37281</span><span class="p">),</span>
+         <span class="s">&#39;F10&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.34609</span><span class="p">,</span> <span class="mf">0.35986</span><span class="p">),</span>
+         <span class="s">&#39;F12&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.43695</span><span class="p">,</span> <span class="mf">0.40441</span><span class="p">)}))</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*CIE* illuminant chromaticity coordinates for</span>
+<span class="sd">*CIE 1931 2 Degree Standard Observer*.</span>
+
+<span class="sd">ILLUMINANTS_CIE_1931_2_DEGREE_STANDARD_OBSERVER : CaseInsensitiveMapping</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">ILLUMINANTS_CIE_1964_10_DEGREE_STANDARD_OBSERVER</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">CaseInsensitiveMapping</span><span class="p">(</span>
+        <span class="p">{</span><span class="s">&#39;A&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.45117</span><span class="p">,</span> <span class="mf">0.40594</span><span class="p">),</span>
+         <span class="s">&#39;B&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.34980</span><span class="p">,</span> <span class="mf">0.35270</span><span class="p">),</span>
+         <span class="s">&#39;C&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.31039</span><span class="p">,</span> <span class="mf">0.31905</span><span class="p">),</span>
+         <span class="s">&#39;D50&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.34773</span><span class="p">,</span> <span class="mf">0.35952</span><span class="p">),</span>
+         <span class="s">&#39;D55&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.33411</span><span class="p">,</span> <span class="mf">0.34877</span><span class="p">),</span>
+         <span class="s">&#39;D60&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.32299152277736748</span><span class="p">,</span> <span class="mf">0.33912831290965012</span><span class="p">),</span>
+         <span class="s">&#39;D63&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.31767527574760079</span><span class="p">,</span> <span class="mf">0.3526443797824203</span><span class="p">),</span>
+         <span class="s">&#39;D65&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.31382</span><span class="p">,</span> <span class="mf">0.33100</span><span class="p">),</span>
+         <span class="s">&#39;D75&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.29968</span><span class="p">,</span> <span class="mf">0.31740</span><span class="p">),</span>
+         <span class="s">&#39;E&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">/</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">1.</span> <span class="o">/</span> <span class="mf">3.</span><span class="p">),</span>
+         <span class="s">&#39;F1&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.31811</span><span class="p">,</span> <span class="mf">0.33559</span><span class="p">),</span>
+         <span class="s">&#39;F2&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.37925</span><span class="p">,</span> <span class="mf">0.36733</span><span class="p">),</span>
+         <span class="s">&#39;F3&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.41761</span><span class="p">,</span> <span class="mf">0.38324</span><span class="p">),</span>
+         <span class="s">&#39;F4&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.44920</span><span class="p">,</span> <span class="mf">0.39074</span><span class="p">),</span>
+         <span class="s">&#39;F5&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.31975</span><span class="p">,</span> <span class="mf">0.34246</span><span class="p">),</span>
+         <span class="s">&#39;F6&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.38660</span><span class="p">,</span> <span class="mf">0.37847</span><span class="p">),</span>
+         <span class="s">&#39;F7&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.31569</span><span class="p">,</span> <span class="mf">0.32960</span><span class="p">),</span>
+         <span class="s">&#39;F8&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.34902</span><span class="p">,</span> <span class="mf">0.35939</span><span class="p">),</span>
+         <span class="s">&#39;F9&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.37829</span><span class="p">,</span> <span class="mf">0.37045</span><span class="p">),</span>
+         <span class="s">&#39;F10&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.35090</span><span class="p">,</span> <span class="mf">0.35444</span><span class="p">),</span>
+         <span class="s">&#39;F11&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.38541</span><span class="p">,</span> <span class="mf">0.37123</span><span class="p">),</span>
+         <span class="s">&#39;F12&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.44256</span><span class="p">,</span> <span class="mf">0.39717</span><span class="p">)}))</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*CIE* illuminant chromaticity coordinates for</span>
+<span class="sd">*CIE 1964 10 Degree Standard Observer*.</span>
+
+<span class="sd">ILLUMINANTS_CIE_1964_10_DEGREE_STANDARD_OBSERVER : CaseInsensitiveMapping</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">ILLUMINANTS</span> <span class="o">=</span> <span class="n">CaseInsensitiveMapping</span><span class="p">(</span>
+    <span class="p">{</span><span class="s">&#39;CIE 1931 2 Degree Standard Observer&#39;</span><span class="p">:</span>
+         <span class="n">ILLUMINANTS_CIE_1931_2_DEGREE_STANDARD_OBSERVER</span><span class="p">,</span>
+     <span class="s">&#39;CIE 1964 10 Degree Standard Observer&#39;</span><span class="p">:</span>
+         <span class="n">ILLUMINANTS_CIE_1964_10_DEGREE_STANDARD_OBSERVER</span><span class="p">})</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Aggregated *CIE* illuminants chromaticity coordinates.</span>
+
+<span class="sd">ILLUMINANTS : CaseInsensitiveMapping</span>
+<span class="sd">   {&#39;CIE 1931 2 Degree Standard Observer&#39;,</span>
+<span class="sd">    &#39;CIE 1964 10 Degree Standard Observer&#39;}</span>
+
+<span class="sd">Aliases:</span>
+
+<span class="sd">-   &#39;cie_2_1931&#39;: &#39;CIE 1931 2 Degree Standard Observer&#39;</span>
+<span class="sd">-   &#39;cie_10_1964&#39;: &#39;CIE 1964 10 Degree Standard Observer&#39;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">ILLUMINANTS</span><span class="p">[</span><span class="s">&#39;cie_2_1931&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">ILLUMINANTS</span><span class="p">[</span><span class="s">&#39;CIE 1931 2 Degree Standard Observer&#39;</span><span class="p">])</span>
+<span class="n">ILLUMINANTS</span><span class="p">[</span><span class="s">&#39;cie_10_1964&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">ILLUMINANTS</span><span class="p">[</span><span class="s">&#39;CIE 1964 10 Degree Standard Observer&#39;</span><span class="p">])</span>
+
+<span class="n">ILLUMINANTS_CIE_1931_2_DEGREE_STANDARD_OBSERVER</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+    <span class="p">{</span><span class="s">&#39;FL3.1&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.44067505367083887</span><span class="p">,</span> <span class="mf">0.40329824005212678</span><span class="p">),</span>
+     <span class="s">&#39;FL3.2&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.38077509554542083</span><span class="p">,</span> <span class="mf">0.37335593850329946</span><span class="p">),</span>
+     <span class="s">&#39;FL3.3&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.31528299995992398</span><span class="p">,</span> <span class="mf">0.34386075294770529</span><span class="p">),</span>
+     <span class="s">&#39;FL3.4&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.4429092105157883</span><span class="p">,</span> <span class="mf">0.40432363641263036</span><span class="p">),</span>
+     <span class="s">&#39;FL3.5&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.37489860509162237</span><span class="p">,</span> <span class="mf">0.36715721144008995</span><span class="p">),</span>
+     <span class="s">&#39;FL3.6&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.34880430112004895</span><span class="p">,</span> <span class="mf">0.36000066745930004</span><span class="p">),</span>
+     <span class="s">&#39;FL3.7&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.43842546777142649</span><span class="p">,</span> <span class="mf">0.40453105392942212</span><span class="p">),</span>
+     <span class="s">&#39;FL3.8&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.38197740008964315</span><span class="p">,</span> <span class="mf">0.38317934336436121</span><span class="p">),</span>
+     <span class="s">&#39;FL3.9&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.3498569555988198</span><span class="p">,</span> <span class="mf">0.35908801298815513</span><span class="p">),</span>
+     <span class="s">&#39;FL3.10&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.345504278345313</span><span class="p">,</span> <span class="mf">0.35595124320540111</span><span class="p">),</span>
+     <span class="s">&#39;FL3.11&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.32450996922163172</span><span class="p">,</span> <span class="mf">0.34336978810428798</span><span class="p">),</span>
+     <span class="s">&#39;FL3.12&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.43767464805198042</span><span class="p">,</span> <span class="mf">0.40366659242713887</span><span class="p">),</span>
+     <span class="s">&#39;FL3.13&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.38305207018919446</span><span class="p">,</span> <span class="mf">0.37244321884144194</span><span class="p">),</span>
+     <span class="s">&#39;FL3.14&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.34472222710251049</span><span class="p">,</span> <span class="mf">0.36093702097281111</span><span class="p">),</span>
+     <span class="s">&#39;FL3.15&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.31267061727694151</span><span class="p">,</span> <span class="mf">0.32875456607137038</span><span class="p">),</span>
+     <span class="s">&#39;HP1&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.53300082279238248</span><span class="p">,</span> <span class="mf">0.41495323768693643</span><span class="p">),</span>
+     <span class="s">&#39;HP2&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.47779207498613968</span><span class="p">,</span> <span class="mf">0.41584045880847942</span><span class="p">),</span>
+     <span class="s">&#39;HP3&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.43023140032725588</span><span class="p">,</span> <span class="mf">0.40751701140483843</span><span class="p">),</span>
+     <span class="s">&#39;HP4&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.38117189471910373</span><span class="p">,</span> <span class="mf">0.3797265745279147</span><span class="p">),</span>
+     <span class="s">&#39;HP5&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.37758320909195225</span><span class="p">,</span> <span class="mf">0.37134797280226028</span><span class="p">)})</span>
+
+<span class="n">ILLUMINANTS_CIE_1964_10_DEGREE_STANDARD_OBSERVER</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+    <span class="p">{</span><span class="s">&#39;FL3.1&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.44983072060097606</span><span class="p">,</span> <span class="mf">0.3902314548749185</span><span class="p">),</span>
+     <span class="s">&#39;FL3.2&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.38692417905929311</span><span class="p">,</span> <span class="mf">0.36575613990679151</span><span class="p">),</span>
+     <span class="s">&#39;FL3.3&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.32117704635900118</span><span class="p">,</span> <span class="mf">0.34050122948531319</span><span class="p">),</span>
+     <span class="s">&#39;FL3.4&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.44812132825245227</span><span class="p">,</span> <span class="mf">0.39707718739452286</span><span class="p">),</span>
+     <span class="s">&#39;FL3.5&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.37781421452801472</span><span class="p">,</span> <span class="mf">0.36662585171298506</span><span class="p">),</span>
+     <span class="s">&#39;FL3.6&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.35197652659197876</span><span class="p">,</span> <span class="mf">0.36109452832152122</span><span class="p">),</span>
+     <span class="s">&#39;FL3.7&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.44430926608426524</span><span class="p">,</span> <span class="mf">0.39679146953766947</span><span class="p">),</span>
+     <span class="s">&#39;FL3.8&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.38758897850585272</span><span class="p">,</span> <span class="mf">0.37630564994236454</span><span class="p">),</span>
+     <span class="s">&#39;FL3.9&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.35468902355093479</span><span class="p">,</span> <span class="mf">0.35344509693791348</span><span class="p">),</span>
+     <span class="s">&#39;FL3.10&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.3493448005253757</span><span class="p">,</span> <span class="mf">0.35498443751900227</span><span class="p">),</span>
+     <span class="s">&#39;FL3.11&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.32926800293079544</span><span class="p">,</span> <span class="mf">0.33886544553697306</span><span class="p">),</span>
+     <span class="s">&#39;FL3.12&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.44225210471167209</span><span class="p">,</span> <span class="mf">0.40122058660685506</span><span class="p">),</span>
+     <span class="s">&#39;FL3.13&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.3862752927999335</span><span class="p">,</span> <span class="mf">0.37428323257289459</span><span class="p">),</span>
+     <span class="s">&#39;FL3.14&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.34725510277403043</span><span class="p">,</span> <span class="mf">0.36680829309760771</span><span class="p">),</span>
+     <span class="s">&#39;FL3.15&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.31461426562662165</span><span class="p">,</span> <span class="mf">0.33337778105773069</span><span class="p">),</span>
+     <span class="s">&#39;HP1&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.54333464101412698</span><span class="p">,</span> <span class="mf">0.40528934193733374</span><span class="p">),</span>
+     <span class="s">&#39;HP2&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.48264737821938364</span><span class="p">,</span> <span class="mf">0.41081570598949713</span><span class="p">),</span>
+     <span class="s">&#39;HP3&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.43556008048844208</span><span class="p">,</span> <span class="mf">0.39880115305546204</span><span class="p">),</span>
+     <span class="s">&#39;HP4&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.3851937462655714</span><span class="p">,</span> <span class="mf">0.3682756593039444</span><span class="p">),</span>
+     <span class="s">&#39;HP5&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.38031641910835223</span><span class="p">,</span> <span class="mf">0.3666171209128104</span><span class="p">)})</span>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2015, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

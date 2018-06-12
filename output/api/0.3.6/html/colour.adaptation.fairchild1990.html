@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.adaptation.fairchild1990 Module &mdash; Colour 0.3.6 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.3.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.6 documentation" href="index.html" />
+    <link rel="up" title="colour.adaptation Package" href="colour.adaptation.html" />
+    <link rel="next" title="colour.adaptation.vonkries Module" href="colour.adaptation.vonkries.html" />
+    <link rel="prev" title="colour.adaptation.cmccat2000 Module" href="colour.adaptation.cmccat2000.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+  <li>
+    <a href="colour.adaptation.cmccat2000.html" title="Previous Chapter: colour.adaptation.cmccat2000 Module"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; colour.adaptatio...</span>
+    </a>
+  </li>
+  <li>
+    <a href="colour.adaptation.vonkries.html" title="Next Chapter: colour.adaptation.vonkries Module"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">colour.adaptatio... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="module-colour.adaptation.fairchild1990">
+<span id="colour-adaptation-fairchild1990-module"></span><h1>colour.adaptation.fairchild1990 Module<a class="headerlink" href="#module-colour.adaptation.fairchild1990" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="fairchild-1990-chromatic-adaptation-model">
+<h2>Fairchild (1990) Chromatic Adaptation Model<a class="headerlink" href="#fairchild-1990-chromatic-adaptation-model" title="Permalink to this headline">¶</a></h2>
+<p>Defines Fairchild (1990) chromatic adaptation model objects:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#colour.adaptation.fairchild1990.chromatic_adaptation_Fairchild1990" title="colour.adaptation.fairchild1990.chromatic_adaptation_Fairchild1990"><tt class="xref py py-func docutils literal"><span class="pre">chromatic_adaptation_Fairchild1990()</span></tt></a></li>
+</ul>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/adaptation/fairchild1990.ipynb">Fairchild (1990) Chromatic Adaptation Model IPython Notebook</a></p>
+</div>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td>Fairchild, M. D. (1991). Formulation and testing of an
+incomplete-chromatic-adaptation model. Color Research &amp; Application,
+16(4), 243–250. doi:10.1002/col.5080160406</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[2]</td><td>Fairchild, M. D. (2013). FAIRCHILD’S 1990 MODEL. In Color Appearance
+Models (3rd ed., pp. 4418–4495). Wiley. ASIN:B00DAYO8E2</td></tr>
+</tbody>
+</table>
+<dl class="data">
+<dt id="colour.adaptation.fairchild1990.FAIRCHILD1990_XYZ_TO_RGB_MATRIX">
+<tt class="descclassname">colour.adaptation.fairchild1990.</tt><tt class="descname">FAIRCHILD1990_XYZ_TO_RGB_MATRIX</tt><em class="property"> = array([[ 0.40024,  0.7076 , -0.08081],        [-0.2263 ,  1.16532,  0.0457 ],        [ 0.     ,  0.     ,  0.91822]])</em><a class="headerlink" href="#colour.adaptation.fairchild1990.FAIRCHILD1990_XYZ_TO_RGB_MATRIX" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fairchild (1990) colour appearance model <em>CIE XYZ</em> tristimulus values to cone
+responses matrix.</p>
+<p>FAIRCHILD1990_XYZ_TO_RGB_MATRIX : array_like, (3, 3)</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.adaptation.fairchild1990.FAIRCHILD1990_RGB_TO_XYZ_MATRIX">
+<tt class="descclassname">colour.adaptation.fairchild1990.</tt><tt class="descname">FAIRCHILD1990_RGB_TO_XYZ_MATRIX</tt><em class="property"> = array([[  1.85993639e+00,  -1.12938162e+00,   2.19897410e-01],        [  3.61191436e-01,   6.38812463e-01,  -6.37059684e-06],        [  0.00000000e+00,   0.00000000e+00,   1.08906362e+00]])</em><a class="headerlink" href="#colour.adaptation.fairchild1990.FAIRCHILD1990_RGB_TO_XYZ_MATRIX" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fairchild (1990) colour appearance model cone responses to <em>CIE XYZ</em>
+tristimulus values matrix.</p>
+<p>FAIRCHILD1990_RGB_TO_XYZ_MATRIX : array_like, (3, 3)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.adaptation.fairchild1990.chromatic_adaptation_Fairchild1990">
+<tt class="descclassname">colour.adaptation.fairchild1990.</tt><tt class="descname">chromatic_adaptation_Fairchild1990</tt><big>(</big><em>XYZ_1</em>, <em>XYZ_n</em>, <em>XYZ_r</em>, <em>Y_n</em>, <em>discount_illuminant=False</em><big>)</big><a class="reference internal" href="_modules/colour/adaptation/fairchild1990.html#chromatic_adaptation_Fairchild1990"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.adaptation.fairchild1990.chromatic_adaptation_Fairchild1990" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adapts given stimulus <em>CIE XYZ_1</em> tristimulus values from test viewing
+conditions to reference viewing conditions using Fairchild (1990) chromatic
+adaptation model.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>XYZ_1</strong> (<em>array_like</em>) &#8211; <em>CIE XYZ_1</em> tristimulus values of test sample / stimulus in domain
+[0, 100].</li>
+<li><strong>XYZ_n</strong> (<em>array_like</em>) &#8211; Test viewing condition <em>CIE XYZ_n</em> tristimulus values of whitepoint.</li>
+<li><strong>XYZ_r</strong> (<em>array_like</em>) &#8211; Reference viewing condition <em>CIE XYZ_r</em> tristimulus values of
+whitepoint.</li>
+<li><strong>Y_n</strong> (<em>numeric or array_like</em>) &#8211; Luminance <span class="math">\(Y_n\)</span> of test adapting stimulus in <span class="math">\(cd/m^2\)</span>.</li>
+<li><strong>discount_illuminant</strong> (<em>bool, optional</em>) &#8211; Truth value indicating if the illuminant should be discounted.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Adapted <em>CIE XYZ_2</em> tristimulus values of stimulus.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The input domain of that definition is non standard!</p>
+</div>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <em>CIE XYZ_1</em>, <em>CIE XYZ_n</em> and <em>CIE XYZ_r</em> tristimulus values are
+in domain [0, 100].</li>
+<li>Output <em>CIE XYZ_2</em> tristimulus values are in domain [0, 100].</li>
+</ul>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">19.53</span><span class="p">,</span> <span class="mf">23.07</span><span class="p">,</span> <span class="mf">24.97</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">111.15</span><span class="p">,</span> <span class="mf">100.00</span><span class="p">,</span> <span class="mf">35.20</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">94.81</span><span class="p">,</span> <span class="mf">100.00</span><span class="p">,</span> <span class="mf">107.30</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Y_n</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">chromatic_adaptation_Fairchild1990</span><span class="p">(</span>  
+<span class="gp">... </span>    <span class="n">XYZ_1</span><span class="p">,</span> <span class="n">XYZ_n</span><span class="p">,</span> <span class="n">XYZ_r</span><span class="p">,</span> <span class="n">Y_n</span><span class="p">)</span>
+<span class="go">array([ 23.3252634...,  23.3245581...,  76.1159375...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.adaptation.fairchild1990.XYZ_to_RGB_fairchild1990">
+<tt class="descclassname">colour.adaptation.fairchild1990.</tt><tt class="descname">XYZ_to_RGB_fairchild1990</tt><big>(</big><em>XYZ</em><big>)</big><a class="reference internal" href="_modules/colour/adaptation/fairchild1990.html#XYZ_to_RGB_fairchild1990"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.adaptation.fairchild1990.XYZ_to_RGB_fairchild1990" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from <em>CIE XYZ</em> tristimulus values to cone responses.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>XYZ</strong> (<em>array_like</em>) &#8211; <em>CIE XYZ</em> tristimulus values.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Cone responses.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">ndarray</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">19.53</span><span class="p">,</span> <span class="mf">23.07</span><span class="p">,</span> <span class="mf">24.97</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_to_RGB_fairchild1990</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>  
+<span class="go">array([ 22.1231935...,  23.6054224...,  22.9279534...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.adaptation.fairchild1990.RGB_to_XYZ_fairchild1990">
+<tt class="descclassname">colour.adaptation.fairchild1990.</tt><tt class="descname">RGB_to_XYZ_fairchild1990</tt><big>(</big><em>RGB</em><big>)</big><a class="reference internal" href="_modules/colour/adaptation/fairchild1990.html#RGB_to_XYZ_fairchild1990"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.adaptation.fairchild1990.RGB_to_XYZ_fairchild1990" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from cone responses to <em>CIE XYZ</em> tristimulus values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>RGB</strong> (<em>array_like</em>) &#8211; Cone responses.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>CIE XYZ</em> tristimulus values.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">ndarray</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">RGB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">22.12319350</span><span class="p">,</span> <span class="mf">23.60542240</span><span class="p">,</span> <span class="mf">22.92795340</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">RGB_to_XYZ_fairchild1990</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>  
+<span class="go">array([ 19.53,  23.07,  24.97])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.adaptation.fairchild1990.degrees_of_adaptation">
+<tt class="descclassname">colour.adaptation.fairchild1990.</tt><tt class="descname">degrees_of_adaptation</tt><big>(</big><em>LMS</em>, <em>Y_n</em>, <em>v=0.3333333333333333</em>, <em>discount_illuminant=False</em><big>)</big><a class="reference internal" href="_modules/colour/adaptation/fairchild1990.html#degrees_of_adaptation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.adaptation.fairchild1990.degrees_of_adaptation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the degrees of adaptation <span class="math">\(p_L\)</span>, <span class="math">\(p_M\)</span> and
+<span class="math">\(p_S\)</span>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>LMS</strong> (<em>array_like</em>) &#8211; Cone responses.</li>
+<li><strong>Y_n</strong> (<em>numeric or array_like</em>) &#8211; Luminance <span class="math">\(Y_n\)</span> of test adapting stimulus in <span class="math">\(cd/m^2\)</span>.</li>
+<li><strong>v</strong> (<em>numeric or array_like, optional</em>) &#8211; Exponent <span class="math">\(v\)</span>.</li>
+<li><strong>discount_illuminant</strong> (<em>bool, optional</em>) &#8211; Truth value indicating if the illuminant should be discounted.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Degrees of adaptation <span class="math">\(p_L\)</span>, <span class="math">\(p_M\)</span> and <span class="math">\(p_S\)</span>.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">LMS</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">20.00052060</span><span class="p">,</span> <span class="mf">19.99978300</span><span class="p">,</span> <span class="mf">19.99883160</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Y_n</span> <span class="o">=</span> <span class="mf">31.83</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">degrees_of_adaptation</span><span class="p">(</span><span class="n">LMS</span><span class="p">,</span> <span class="n">Y_n</span><span class="p">)</span>  
+<span class="go">array([ 0.9799324...,  0.9960035...,  1.0233041...])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">degrees_of_adaptation</span><span class="p">(</span><span class="n">LMS</span><span class="p">,</span> <span class="n">Y_n</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+<span class="go">array([ 1.,  1.,  1.])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2015, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.models.dataset.aces_rgb &mdash; Colour 0.3.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '0.3.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.1 documentation" href="../../../../index.html" />
+    <link rel="up" title="colour.models.dataset" href="../dataset.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../../index.html"><img src="../../../../_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for colour.models.dataset.aces_rgb</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">ACES RGB Colourspace</span>
+<span class="sd">====================</span>
+
+<span class="sd">Defines the *ACES RGB* colourspace and its variations:</span>
+
+<span class="sd">-   :attr:`ACES_RGB_COLOURSPACE`</span>
+<span class="sd">-   :attr:`ACES_RGB_LOG_COLOURSPACE`</span>
+<span class="sd">-   :attr:`ACES_RGB_PROXY_10_COLOURSPACE`</span>
+<span class="sd">-   :attr:`ACES_RGB_PROXY_12_COLOURSPACE`</span>
+
+<span class="sd">See Also</span>
+<span class="sd">--------</span>
+<span class="sd">`RGB Colourspaces IPython Notebook</span>
+<span class="sd">&lt;http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/models/rgb.ipynb&gt;`_  # noqa</span>
+
+<span class="sd">References</span>
+<span class="sd">----------</span>
+<span class="sd">.. [1]  http://www.oscars.org/science-technology/council/projects/aces.html</span>
+<span class="sd">        (Last accessed 24 February 2014)</span>
+<span class="sd">.. [2]  `Academy Color Encoding Specification (ACES)</span>
+<span class="sd">        &lt;https://www.dropbox.com/sh/nt9z9m6utzvkc5m/AACBum5OdkLPCZ3d6trfVeU8a/ACES_v1.0.1.pdf&gt;`_  # noqa</span>
+<span class="sd">        (Last accessed 24 February 2014)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">colour.colorimetry</span> <span class="kn">import</span> <span class="n">ILLUMINANTS</span>
+<span class="kn">from</span> <span class="nn">colour.utilities</span> <span class="kn">import</span> <span class="n">Structure</span>
+<span class="kn">from</span> <span class="nn">colour.models</span> <span class="kn">import</span> <span class="n">RGB_Colourspace</span>
+<span class="kn">from</span> <span class="nn">colour.utilities</span> <span class="kn">import</span> <span class="n">CaseInsensitiveMapping</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s">&#39;Copyright (C) 2013 - 2014 - Colour Developers&#39;</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s">&#39;New BSD License - http://opensource.org/licenses/BSD-3-Clause&#39;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s">&#39;colour-science@googlegroups.com&#39;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s">&#39;Production&#39;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;ACES_RGB_PRIMARIES&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ACES_RGB_WHITEPOINT&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ACES_RGB_TO_XYZ_MATRIX&#39;</span><span class="p">,</span>
+           <span class="s">&#39;XYZ_TO_ACES_RGB_MATRIX&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ACES_RGB_TRANSFER_FUNCTION&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ACES_RGB_INVERSE_TRANSFER_FUNCTION&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ACES_RGB_COLOURSPACE&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ACES_RGB_LOG_CONSTANTS&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ACES_RGB_LOG_TRANSFER_FUNCTION&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ACES_RGB_LOG_INVERSE_TRANSFER_FUNCTION&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ACES_RGB_LOG_COLOURSPACE&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ACES_RGB_PROXY_10_CONSTANTS&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ACES_RGB_PROXY_12_CONSTANTS&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ACES_RGB_PROXY_CONSTANTS&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ACES_RGB_PROXY_10_TRANSFER_FUNCTION&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ACES_RGB_PROXY_10_INVERSE_TRANSFER_FUNCTION&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ACES_RGB_PROXY_12_TRANSFER_FUNCTION&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ACES_RGB_PROXY_12_INVERSE_TRANSFER_FUNCTION&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ACES_RGB_PROXY_10_COLOURSPACE&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ACES_RGB_PROXY_12_COLOURSPACE&#39;</span><span class="p">]</span>
+
+<span class="n">ACES_RGB_PRIMARIES</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[[</span><span class="mf">0.73470</span><span class="p">,</span> <span class="mf">0.26530</span><span class="p">],</span>
+     <span class="p">[</span><span class="mf">0.00000</span><span class="p">,</span> <span class="mf">1.00000</span><span class="p">],</span>
+     <span class="p">[</span><span class="mf">0.00010</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.07700</span><span class="p">]])</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*ACES RGB* colourspace primaries.</span>
+
+<span class="sd">ACES_RGB_PRIMARIES : ndarray, (3, 2)</span>
+
+<span class="sd">References</span>
+<span class="sd">----------</span>
+<span class="sd">.. [3]  `Academy Color Encoding Specification (ACES)</span>
+<span class="sd">        &lt;https://www.dropbox.com/sh/nt9z9m6utzvkc5m/AACBum5OdkLPCZ3d6trfVeU8a/ACES_v1.0.1.pdf&gt;`_  # noqa</span>
+<span class="sd">        4.1.2 Color space chromaticities (Last accessed 24 February 2014)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">ACES_RGB_WHITEPOINT</span> <span class="o">=</span> <span class="n">ILLUMINANTS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s">&#39;CIE 1931 2 Degree Standard Observer&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;D60&#39;</span><span class="p">)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*ACES RGB* colourspace whitepoint.</span>
+
+<span class="sd">ACES_RGB_WHITEPOINT : tuple</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">ACES_RGB_TO_XYZ_MATRIX</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[[</span><span class="mf">9.52552396e-01</span><span class="p">,</span> <span class="mf">0.00000000e+00</span><span class="p">,</span> <span class="mf">9.36786317e-05</span><span class="p">],</span>
+     <span class="p">[</span><span class="mf">3.43966450e-01</span><span class="p">,</span> <span class="mf">7.28166097e-01</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.21325464e-02</span><span class="p">],</span>
+     <span class="p">[</span><span class="mf">0.00000000e+00</span><span class="p">,</span> <span class="mf">0.00000000e+00</span><span class="p">,</span> <span class="mf">1.00882518e+00</span><span class="p">]])</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*ACES RGB* colourspace to *CIE XYZ* colourspace matrix.</span>
+
+<span class="sd">ACES_RGB_TO_XYZ_MATRIX : array_like, (3, 3)</span>
+
+<span class="sd">References</span>
+<span class="sd">----------</span>
+<span class="sd">.. [4]  http://www.dropbox.com/sh/iwd09buudm3lfod/gyjDF-k7oC/ACES_v1.0.1.pdf:</span>
+<span class="sd">        4.1.4 Converting ACES RGB values to CIE XYZ values</span>
+<span class="sd">        (Last accessed 24 February 2014)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">XYZ_TO_ACES_RGB_MATRIX</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">ACES_RGB_TO_XYZ_MATRIX</span><span class="p">)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*CIE XYZ* colourspace to *ACES RGB* colourspace matrix.</span>
+
+<span class="sd">XYZ_TO_ACES_RGB_MATRIX : array_like, (3, 3)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">ACES_RGB_TRANSFER_FUNCTION</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Transfer function from linear to *ACES RGB* colourspace.</span>
+
+<span class="sd">ACES_RGB_TRANSFER_FUNCTION : object</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">ACES_RGB_INVERSE_TRANSFER_FUNCTION</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Inverse transfer function from *ACES RGB* colourspace to linear.</span>
+
+<span class="sd">ACES_RGB_INVERSE_TRANSFER_FUNCTION : object</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">ACES_RGB_COLOURSPACE</span> <span class="o">=</span> <span class="n">RGB_Colourspace</span><span class="p">(</span>
+    <span class="s">&#39;ACES RGB&#39;</span><span class="p">,</span>
+    <span class="n">ACES_RGB_PRIMARIES</span><span class="p">,</span>
+    <span class="n">ACES_RGB_WHITEPOINT</span><span class="p">,</span>
+    <span class="n">ACES_RGB_TO_XYZ_MATRIX</span><span class="p">,</span>
+    <span class="n">XYZ_TO_ACES_RGB_MATRIX</span><span class="p">,</span>
+    <span class="n">ACES_RGB_TRANSFER_FUNCTION</span><span class="p">,</span>
+    <span class="n">ACES_RGB_INVERSE_TRANSFER_FUNCTION</span><span class="p">)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*ACES RGB* colourspace.</span>
+
+<span class="sd">ACES_RGB_COLOURSPACE : RGB_Colourspace</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">ACES_RGB_LOG_CONSTANTS</span> <span class="o">=</span> <span class="n">Structure</span><span class="p">(</span>
+    <span class="n">log_unity</span><span class="o">=</span><span class="mi">32768</span><span class="p">,</span>
+    <span class="n">log_xperstop</span><span class="o">=</span><span class="mi">2048</span><span class="p">,</span>
+    <span class="n">denorm_trans</span><span class="o">=</span><span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">),</span>
+    <span class="n">denorm_fake0</span><span class="o">=</span><span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">16</span><span class="p">))</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*ACES RGB Log* colourspace constants.</span>
+
+<span class="sd">ACES_RGB_LOG_CONSTANTS : Structure</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="k">def</span> <span class="nf">_aces_rgb_log_transfer_function</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">is_16_bit_integer</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Defines the *ACES RGB Log* colourspace transfer function.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    value : numeric</span>
+<span class="sd">        value.</span>
+<span class="sd">    is_16_bit_integer : bool</span>
+<span class="sd">        Is value 16 bit integer.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric</span>
+<span class="sd">        Companded value.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+
+    <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="n">ACES_RGB_LOG_CONSTANTS</span><span class="o">.</span><span class="n">denorm_trans</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">ACES_RGB_LOG_CONSTANTS</span><span class="o">.</span><span class="n">denorm_fake0</span> <span class="o">+</span> <span class="p">(</span><span class="n">value</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">value</span> <span class="o">=</span> <span class="p">((</span><span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span>
+             <span class="n">ACES_RGB_LOG_CONSTANTS</span><span class="o">.</span><span class="n">log_xperstop</span> <span class="o">+</span>
+             <span class="n">ACES_RGB_LOG_CONSTANTS</span><span class="o">.</span><span class="n">log_unity</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">is_16_bit_integer</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">65535</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">value</span>
+
+
+<span class="k">def</span> <span class="nf">_aces_rgb_log_inverse_transfer_function</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Defines the *ACES RGB Log* colourspace inverse transfer function.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    value : numeric</span>
+<span class="sd">        value.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric</span>
+<span class="sd">        Companded value.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">value</span> <span class="o">=</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span>
+                      <span class="p">(</span><span class="n">value</span> <span class="o">-</span> <span class="n">ACES_RGB_LOG_CONSTANTS</span><span class="o">.</span><span class="n">log_unity</span><span class="p">)</span> <span class="o">/</span>
+                      <span class="n">ACES_RGB_LOG_CONSTANTS</span><span class="o">.</span><span class="n">log_xperstop</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="n">ACES_RGB_LOG_CONSTANTS</span><span class="o">.</span><span class="n">denorm_trans</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="p">(</span><span class="n">value</span> <span class="o">-</span> <span class="n">ACES_RGB_LOG_CONSTANTS</span><span class="o">.</span><span class="n">denorm_fake0</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span>
+
+    <span class="k">return</span> <span class="n">value</span>
+
+
+<span class="n">ACES_RGB_LOG_TRANSFER_FUNCTION</span> <span class="o">=</span> <span class="n">_aces_rgb_log_transfer_function</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Transfer function from linear to *ACES RGB Log* colourspace.</span>
+
+<span class="sd">ACES_RGB_LOG_TRANSFER_FUNCTION : object</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">ACES_RGB_LOG_INVERSE_TRANSFER_FUNCTION</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">_aces_rgb_log_inverse_transfer_function</span><span class="p">)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Inverse transfer function from *ACES RGB Log* colourspace to linear.</span>
+
+<span class="sd">ACES_RGB_LOG_INVERSE_TRANSFER_FUNCTION : object</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">ACES_RGB_LOG_COLOURSPACE</span> <span class="o">=</span> <span class="n">RGB_Colourspace</span><span class="p">(</span>
+    <span class="s">&#39;ACES RGB Log&#39;</span><span class="p">,</span>
+    <span class="n">ACES_RGB_PRIMARIES</span><span class="p">,</span>
+    <span class="n">ACES_RGB_WHITEPOINT</span><span class="p">,</span>
+    <span class="n">ACES_RGB_TO_XYZ_MATRIX</span><span class="p">,</span>
+    <span class="n">XYZ_TO_ACES_RGB_MATRIX</span><span class="p">,</span>
+    <span class="n">ACES_RGB_LOG_TRANSFER_FUNCTION</span><span class="p">,</span>
+    <span class="n">ACES_RGB_LOG_INVERSE_TRANSFER_FUNCTION</span><span class="p">)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*ACES RGB Log* colourspace.</span>
+
+<span class="sd">ACES_RGB_LOG_COLOURSPACE : RGB_Colourspace</span>
+
+<span class="sd">References</span>
+<span class="sd">----------</span>
+<span class="sd">.. [5]  `Logarithmic Encoding of ACES Data for use within Color Grading Systems</span>
+<span class="sd">        &lt;http://www.dropbox.com/sh/iwd09buudm3lfod/AAA-X1nVs_XLjWlzNhfhqiIna/ACESlog_v1.0.pdf&gt;`_  # noqa</span>
+<span class="sd">        (Last accessed 17 May 2014)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">ACES_RGB_PROXY_10_CONSTANTS</span> <span class="o">=</span> <span class="n">Structure</span><span class="p">(</span>
+    <span class="n">CV_min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">CV_max</span><span class="o">=</span><span class="mi">1023</span><span class="p">,</span>
+    <span class="n">steps_per_stop</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+    <span class="n">mid_CV_offset</span><span class="o">=</span><span class="mi">425</span><span class="p">,</span>
+    <span class="n">mid_log_offset</span><span class="o">=-</span><span class="mf">2.5</span><span class="p">)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*ACES RGB Proxy 10* colourspace constants.</span>
+
+<span class="sd">ACES_RGB_PROXY_10_CONSTANTS : Structure</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">ACES_RGB_PROXY_12_CONSTANTS</span> <span class="o">=</span> <span class="n">Structure</span><span class="p">(</span>
+    <span class="n">CV_min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">CV_max</span><span class="o">=</span><span class="mi">4095</span><span class="p">,</span>
+    <span class="n">steps_per_stop</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+    <span class="n">mid_CV_offset</span><span class="o">=</span><span class="mi">1700</span><span class="p">,</span>
+    <span class="n">mid_log_offset</span><span class="o">=-</span><span class="mf">2.5</span><span class="p">)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*ACES RGB Proxy 12* colourspace constants.</span>
+
+<span class="sd">ACES_RGB_PROXY_12_CONSTANTS : Structure</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">ACES_RGB_PROXY_CONSTANTS</span> <span class="o">=</span> <span class="n">CaseInsensitiveMapping</span><span class="p">(</span>
+    <span class="p">{</span><span class="s">&#39;10 Bit&#39;</span><span class="p">:</span> <span class="n">ACES_RGB_PROXY_10_CONSTANTS</span><span class="p">,</span>
+     <span class="s">&#39;12 Bit&#39;</span><span class="p">:</span> <span class="n">ACES_RGB_PROXY_12_CONSTANTS</span><span class="p">})</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Aggregated *ACES RGB Proxy* colourspace constants.</span>
+
+<span class="sd">ACES_RGB_PROXY_CONSTANTS : dict</span>
+<span class="sd">    (&#39;10 Bit&#39;, &#39;12 Bit&#39;)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="k">def</span> <span class="nf">_aces_rgb_proxy_transfer_function</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">bit_depth</span><span class="o">=</span><span class="s">&#39;10 Bit&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Defines the *ACES RGB Proxy* colourspace transfer function.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    value : numeric</span>
+<span class="sd">        value.</span>
+<span class="sd">    bit_depth : unicode (&#39;10 Bit&#39;, &#39;12 Bit&#39;)</span>
+<span class="sd">        *ACES RGB Proxy* bit depth.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric</span>
+<span class="sd">        Companded value.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">constants</span> <span class="o">=</span> <span class="n">ACES_RGB_PROXY_CONSTANTS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">bit_depth</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">constants</span><span class="o">.</span><span class="n">CV_min</span><span class="p">,</span>
+                   <span class="nb">min</span><span class="p">(</span><span class="n">constants</span><span class="o">.</span><span class="n">CV_max</span><span class="p">,</span>
+                       <span class="p">((</span><span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="o">-</span>
+                         <span class="n">constants</span><span class="o">.</span><span class="n">mid_log_offset</span><span class="p">)</span> <span class="o">*</span> <span class="n">constants</span><span class="o">.</span><span class="n">steps_per_stop</span> <span class="o">+</span>
+                        <span class="n">constants</span><span class="o">.</span><span class="n">mid_CV_offset</span><span class="p">))</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">constants</span><span class="o">.</span><span class="n">CV_min</span>
+
+
+<span class="k">def</span> <span class="nf">_aces_rgb_proxy_inverse_transfer_function</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">bit_depth</span><span class="o">=</span><span class="s">&#39;10 Bit&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Defines the *ACES RGB Proxy* colourspace inverse transfer function.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    value : numeric</span>
+<span class="sd">        value.</span>
+<span class="sd">    bit_depth : str (&#39;10 Bit&#39;, &#39;12 Bit&#39;)</span>
+<span class="sd">        *ACES RGB Proxy* bit depth.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric</span>
+<span class="sd">        Companded value.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">constants</span> <span class="o">=</span> <span class="n">ACES_RGB_PROXY_CONSTANTS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">bit_depth</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span>
+                    <span class="p">((((</span><span class="n">value</span> <span class="o">-</span> <span class="n">constants</span><span class="o">.</span><span class="n">mid_CV_offset</span><span class="p">)</span> <span class="o">/</span>
+                       <span class="n">constants</span><span class="o">.</span><span class="n">steps_per_stop</span><span class="p">)</span> <span class="o">+</span> <span class="n">constants</span><span class="o">.</span><span class="n">mid_log_offset</span><span class="p">)))</span>
+
+
+<span class="n">ACES_RGB_PROXY_10_TRANSFER_FUNCTION</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span>
+    <span class="n">_aces_rgb_proxy_transfer_function</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Transfer function from linear to *ACES RGB Proxy 10* colourspace.</span>
+
+<span class="sd">ACES_RGB_PROXY_10_TRANSFER_FUNCTION : object</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">ACES_RGB_PROXY_10_INVERSE_TRANSFER_FUNCTION</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span>
+    <span class="n">_aces_rgb_proxy_inverse_transfer_function</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Inverse transfer function from *ACES RGB Proxy 10* colourspace to linear.</span>
+
+<span class="sd">ACES_RGB_PROXY_10_INVERSE_TRANSFER_FUNCTION : object</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">ACES_RGB_PROXY_12_TRANSFER_FUNCTION</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span>
+    <span class="n">_aces_rgb_proxy_transfer_function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bit_depth</span><span class="o">=</span><span class="s">&#39;12 Bit&#39;</span><span class="p">))</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Transfer function from linear to *ACES RGB Proxy 12* colourspace.</span>
+
+<span class="sd">ACES_RGB_PROXY_12_TRANSFER_FUNCTION : object</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">ACES_RGB_PROXY_12_INVERSE_TRANSFER_FUNCTION</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span>
+    <span class="n">_aces_rgb_proxy_inverse_transfer_function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bit_depth</span><span class="o">=</span><span class="s">&#39;12 Bit&#39;</span><span class="p">))</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Inverse transfer function from *ACES RGB Proxy 12* colourspace to linear.</span>
+
+<span class="sd">ACES_RGB_PROXY_12_INVERSE_TRANSFER_FUNCTION : object</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">ACES_RGB_PROXY_10_COLOURSPACE</span> <span class="o">=</span> <span class="n">RGB_Colourspace</span><span class="p">(</span>
+    <span class="s">&#39;ACES RGB Proxy 10&#39;</span><span class="p">,</span>
+    <span class="n">ACES_RGB_PRIMARIES</span><span class="p">,</span>
+    <span class="n">ACES_RGB_WHITEPOINT</span><span class="p">,</span>
+    <span class="n">ACES_RGB_TO_XYZ_MATRIX</span><span class="p">,</span>
+    <span class="n">XYZ_TO_ACES_RGB_MATRIX</span><span class="p">,</span>
+    <span class="n">ACES_RGB_PROXY_10_TRANSFER_FUNCTION</span><span class="p">,</span>
+    <span class="n">ACES_RGB_PROXY_10_INVERSE_TRANSFER_FUNCTION</span><span class="p">)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*ACES RGB Proxy 10* colourspace.</span>
+
+<span class="sd">ACES_RGB_PROXY_10_COLOURSPACE : RGB_Colourspace</span>
+
+<span class="sd">References</span>
+<span class="sd">----------</span>
+<span class="sd">.. [6]  `ACESproxy, an Integer Log Encoding of ACES Image Data</span>
+<span class="sd">        &lt;http://www.dropbox.com/sh/iwd09buudm3lfod/AAAsl8WskbNNAJXh1r0dPlp2a/ACESproxy_v1.1.pdf&gt;`_  # noqa</span>
+<span class="sd">        (Last accessed 17 May 2014)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">ACES_RGB_PROXY_12_COLOURSPACE</span> <span class="o">=</span> <span class="n">RGB_Colourspace</span><span class="p">(</span>
+    <span class="s">&#39;ACES RGB Proxy 12&#39;</span><span class="p">,</span>
+    <span class="n">ACES_RGB_PRIMARIES</span><span class="p">,</span>
+    <span class="n">ACES_RGB_WHITEPOINT</span><span class="p">,</span>
+    <span class="n">ACES_RGB_TO_XYZ_MATRIX</span><span class="p">,</span>
+    <span class="n">XYZ_TO_ACES_RGB_MATRIX</span><span class="p">,</span>
+    <span class="n">ACES_RGB_PROXY_12_TRANSFER_FUNCTION</span><span class="p">,</span>
+    <span class="n">ACES_RGB_PROXY_12_INVERSE_TRANSFER_FUNCTION</span><span class="p">)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*ACES RGB Proxy 12* colourspace.</span>
+
+<span class="sd">ACES_RGB_PROXY_12_COLOURSPACE : RGB_Colourspace</span>
+
+<span class="sd">References</span>
+<span class="sd">----------</span>
+<span class="sd">.. [7]  `ACESproxy, an Integer Log Encoding of ACES Image Data</span>
+<span class="sd">        &lt;http://www.dropbox.com/sh/iwd09buudm3lfod/AAAsl8WskbNNAJXh1r0dPlp2a/ACESproxy_v1.1.pdf&gt;`_  # noqa</span>
+<span class="sd">        (Last accessed 17 May 2014)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2014, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.colorimetry.whiteness Module &mdash; Colour 0.3.6 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.3.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.6 documentation" href="index.html" />
+    <link rel="up" title="colour.colorimetry Package" href="colour.colorimetry.html" />
+    <link rel="next" title="colour.constants Package" href="colour.constants.html" />
+    <link rel="prev" title="colour.colorimetry.tristimulus Module" href="colour.colorimetry.tristimulus.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+  <li>
+    <a href="colour.colorimetry.tristimulus.html" title="Previous Chapter: colour.colorimetry.tristimulus Module"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; colour.colorimet...</span>
+    </a>
+  </li>
+  <li>
+    <a href="colour.constants.html" title="Next Chapter: colour.constants Package"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">colour.constants... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="module-colour.colorimetry.whiteness">
+<span id="colour-colorimetry-whiteness-module"></span><h1>colour.colorimetry.whiteness Module<a class="headerlink" href="#module-colour.colorimetry.whiteness" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="whiteness-index">
+<h2>Whiteness Index <span class="math">\(W\)</span><a class="headerlink" href="#whiteness-index" title="Permalink to this headline">¶</a></h2>
+<p>Defines <em>whiteness</em> index <span class="math">\(W\)</span> computation objects:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#colour.colorimetry.whiteness.whiteness_Berger1959" title="colour.colorimetry.whiteness.whiteness_Berger1959"><tt class="xref py py-func docutils literal"><span class="pre">whiteness_Berger1959()</span></tt></a></li>
+<li><a class="reference internal" href="#colour.colorimetry.whiteness.whiteness_Taube1960" title="colour.colorimetry.whiteness.whiteness_Taube1960"><tt class="xref py py-func docutils literal"><span class="pre">whiteness_Taube1960()</span></tt></a></li>
+<li><a class="reference internal" href="#colour.colorimetry.whiteness.whiteness_Stensby1968" title="colour.colorimetry.whiteness.whiteness_Stensby1968"><tt class="xref py py-func docutils literal"><span class="pre">whiteness_Stensby1968()</span></tt></a></li>
+<li><a class="reference internal" href="#colour.colorimetry.whiteness.whiteness_ASTM313" title="colour.colorimetry.whiteness.whiteness_ASTM313"><tt class="xref py py-func docutils literal"><span class="pre">whiteness_ASTM313()</span></tt></a></li>
+<li><a class="reference internal" href="#colour.colorimetry.whiteness.whiteness_Ganz1979" title="colour.colorimetry.whiteness.whiteness_Ganz1979"><tt class="xref py py-func docutils literal"><span class="pre">whiteness_Ganz1979()</span></tt></a></li>
+<li><a class="reference internal" href="#colour.colorimetry.whiteness.whiteness_CIE2004" title="colour.colorimetry.whiteness.whiteness_CIE2004"><tt class="xref py py-func docutils literal"><span class="pre">whiteness_CIE2004()</span></tt></a></li>
+</ul>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colorimetry/whiteness.ipynb">Whiteness IPython Notebook</a></p>
+</div>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td>Wikipedia. (n.d.). Whiteness. Retrieved September 17, 2014, from
+<a class="reference external" href="http://en.wikipedia.org/wiki/Whiteness">http://en.wikipedia.org/wiki/Whiteness</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[2]</td><td><em>(<a class="fn-backref" href="#id4">1</a>, <a class="fn-backref" href="#id5">2</a>, <a class="fn-backref" href="#id6">3</a>, <a class="fn-backref" href="#id7">4</a>, <a class="fn-backref" href="#id8">5</a>, <a class="fn-backref" href="#id9">6</a>)</em> X-Rite, &amp; Pantone. (2012). Color iQC and Color iMatch Color
+Calculations Guide. Retrieved from
+<a class="reference external" href="http://www.xrite.com/documents/literature/en/09_Color_Calculations_en.pdf">http://www.xrite.com/documents/literature/en/09_Color_Calculations_en.pdf</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[3]</td><td>Wyszecki, G., &amp; Stiles, W. S. (2000). Table I(6.5.3) Whiteness
+Formulae (Whiteness Measure Denoted by W). In Color Science: Concepts
+and Methods, Quantitative Data and Formulae (pp. 837–839). Wiley.
+ISBN:978-0471399186</td></tr>
+</tbody>
+</table>
+<dl class="function">
+<dt id="colour.colorimetry.whiteness.whiteness_Berger1959">
+<tt class="descclassname">colour.colorimetry.whiteness.</tt><tt class="descname">whiteness_Berger1959</tt><big>(</big><em>XYZ</em>, <em>XYZ_0</em><big>)</big><a class="reference internal" href="_modules/colour/colorimetry/whiteness.html#whiteness_Berger1959"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.colorimetry.whiteness.whiteness_Berger1959" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <em>whiteness</em> index <span class="math">\(WI\)</span> of given sample <em>CIE XYZ</em>
+tristimulus values using Berger (1959) method. <a class="footnote-reference" href="#id2" id="id4">[2]</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>XYZ</strong> (<em>array_like</em>) &#8211; <em>CIE XYZ</em> tristimulus values of sample.</li>
+<li><strong>XYZ_0</strong> (<em>array_like</em>) &#8211; <em>CIE XYZ</em> tristimulus values of reference white.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>Whiteness</em> <span class="math">\(WI\)</span>.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <em>CIE XYZ</em> and <em>CIE XYZ_0</em> tristimulus values are in domain
+[0, 100].</li>
+<li><em>Whiteness</em> <span class="math">\(WI\)</span> values larger than 33.33 indicate a bluish
+white, and values smaller than 33.33 indicate a yellowish white.</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The input domain of that definition is non standard!</p>
+</div>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">95.00000000</span><span class="p">,</span> <span class="mf">100.00000000</span><span class="p">,</span> <span class="mf">105.00000000</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">94.80966767</span><span class="p">,</span> <span class="mf">100.00000000</span><span class="p">,</span> <span class="mf">107.30513595</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">whiteness_Berger1959</span><span class="p">(</span><span class="n">XYZ</span><span class="p">,</span> <span class="n">XYZ_0</span><span class="p">)</span>  
+<span class="go">30.3638017...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.colorimetry.whiteness.whiteness_Taube1960">
+<tt class="descclassname">colour.colorimetry.whiteness.</tt><tt class="descname">whiteness_Taube1960</tt><big>(</big><em>XYZ</em>, <em>XYZ_0</em><big>)</big><a class="reference internal" href="_modules/colour/colorimetry/whiteness.html#whiteness_Taube1960"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.colorimetry.whiteness.whiteness_Taube1960" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <em>whiteness</em> index <span class="math">\(WI\)</span> of given sample <em>CIE XYZ</em>
+tristimulus values using Taube (1960) method. <a class="footnote-reference" href="#id2" id="id5">[2]</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>XYZ</strong> (<em>array_like</em>) &#8211; <em>CIE XYZ</em> tristimulus values of sample.</li>
+<li><strong>XYZ_0</strong> (<em>array_like</em>) &#8211; <em>CIE XYZ</em> tristimulus values of reference white.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>Whiteness</em> <span class="math">\(WI\)</span>.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <em>CIE XYZ</em> and <em>CIE XYZ_0</em> tristimulus values are in domain
+[0, 100].</li>
+<li><em>Whiteness</em> <span class="math">\(WI\)</span> values larger than 100 indicate a bluish
+white, and values smaller than 100 indicate a yellowish white.</li>
+</ul>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">95.00000000</span><span class="p">,</span> <span class="mf">100.00000000</span><span class="p">,</span> <span class="mf">105.00000000</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">94.80966767</span><span class="p">,</span> <span class="mf">100.00000000</span><span class="p">,</span> <span class="mf">107.30513595</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">whiteness_Taube1960</span><span class="p">(</span><span class="n">XYZ</span><span class="p">,</span> <span class="n">XYZ_0</span><span class="p">)</span>  
+<span class="go">91.4071738...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.colorimetry.whiteness.whiteness_Stensby1968">
+<tt class="descclassname">colour.colorimetry.whiteness.</tt><tt class="descname">whiteness_Stensby1968</tt><big>(</big><em>Lab</em><big>)</big><a class="reference internal" href="_modules/colour/colorimetry/whiteness.html#whiteness_Stensby1968"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.colorimetry.whiteness.whiteness_Stensby1968" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <em>whiteness</em> index <span class="math">\(WI\)</span> of given sample <em>CIE Lab</em>
+colourspace array using Stensby (1968) method. <a class="footnote-reference" href="#id2" id="id6">[2]</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>Lab</strong> (<em>array_like</em>) &#8211; <em>CIE Lab</em> colourspace array of sample.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>Whiteness</em> <span class="math">\(WI\)</span>.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">numeric or ndarray</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <em>CIE Lab</em> colourspace array is in domain [0, 100].</li>
+<li><em>Whiteness</em> <span class="math">\(WI\)</span> values larger than 100 indicate a bluish
+white, and values smaller than 100 indicate a yellowish white.</li>
+</ul>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Lab</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">100.00000000</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.46875131</span><span class="p">,</span> <span class="o">-</span><span class="mf">16.72486654</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">whiteness_Stensby1968</span><span class="p">(</span><span class="n">Lab</span><span class="p">)</span>  
+<span class="go">142.7683456...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.colorimetry.whiteness.whiteness_ASTM313">
+<tt class="descclassname">colour.colorimetry.whiteness.</tt><tt class="descname">whiteness_ASTM313</tt><big>(</big><em>XYZ</em><big>)</big><a class="reference internal" href="_modules/colour/colorimetry/whiteness.html#whiteness_ASTM313"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.colorimetry.whiteness.whiteness_ASTM313" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <em>whiteness</em> index <span class="math">\(WI\)</span> of given sample <em>CIE XYZ</em>
+tristimulus values using ASTM 313 method. <a class="footnote-reference" href="#id2" id="id7">[2]</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>XYZ</strong> (<em>array_like</em>) &#8211; <em>CIE XYZ</em> tristimulus values of sample.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>Whiteness</em> <span class="math">\(WI\)</span>.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">numeric or ndarray</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input <em>CIE XYZ</em> tristimulus values are in domain [0, 100].</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The input domain of that definition is non standard!</p>
+</div>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">95.00000000</span><span class="p">,</span> <span class="mf">100.00000000</span><span class="p">,</span> <span class="mf">105.00000000</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">whiteness_ASTM313</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>  
+<span class="go">55.7400000...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.colorimetry.whiteness.whiteness_Ganz1979">
+<tt class="descclassname">colour.colorimetry.whiteness.</tt><tt class="descname">whiteness_Ganz1979</tt><big>(</big><em>xy</em>, <em>Y</em><big>)</big><a class="reference internal" href="_modules/colour/colorimetry/whiteness.html#whiteness_Ganz1979"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.colorimetry.whiteness.whiteness_Ganz1979" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <em>whiteness</em> index <span class="math">\(W\)</span> and <em>tint</em> <span class="math">\(T\)</span> of given
+sample <em>xy</em> chromaticity coordinates using Ganz and Griesser (1979)
+method. <a class="footnote-reference" href="#id2" id="id8">[2]</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>xy</strong> (<em>array_like</em>) &#8211; Chromaticity coordinates <em>xy</em> of sample.</li>
+<li><strong>Y</strong> (<em>numeric or array_like</em>) &#8211; Tristimulus <span class="math">\(Y\)</span> value of sample.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>Whiteness</em> <span class="math">\(W\)</span> and <em>tint</em> <span class="math">\(T\)</span>.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input tristimulus <span class="math">\(Y\)</span> value is in domain [0, 100].</li>
+<li>The formula coefficients are valid for
+<em>CIE Standard Illuminant D Series</em> <em>D65</em> and
+<em>CIE 1964 10 Degree Standard Observer</em>.</li>
+<li>Positive output <em>tint</em> <span class="math">\(T\)</span> values indicate a greener tint while
+negative values indicate a redder tint.</li>
+<li>Whiteness differences of less than 5 Ganz units appear to be
+indistinguishable to the human eye.</li>
+<li>Tint differences of less than 0.5 Ganz units appear to be
+indistinguishable to the human eye.</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The input domain of that definition is non standard!</p>
+</div>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.3167</span><span class="p">,</span> <span class="mf">0.3334</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">whiteness_Ganz1979</span><span class="p">(</span><span class="n">xy</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>  
+<span class="go">array([ 85.6003766...,   0.6789003...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.colorimetry.whiteness.whiteness_CIE2004">
+<tt class="descclassname">colour.colorimetry.whiteness.</tt><tt class="descname">whiteness_CIE2004</tt><big>(</big><em>xy</em>, <em>Y</em>, <em>xy_n</em>, <em>observer=u'CIE 1931 2 Degree Standard Observer'</em><big>)</big><a class="reference internal" href="_modules/colour/colorimetry/whiteness.html#whiteness_CIE2004"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.colorimetry.whiteness.whiteness_CIE2004" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <em>whiteness</em> <span class="math">\(W\)</span> or <span class="math">\(W_{10}\)</span> and <em>tint</em> <span class="math">\(T\)</span>
+or <span class="math">\(T_{10}\)</span> of given sample <em>xy</em> chromaticity coordinates using
+CIE 2004 method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>xy</strong> (<em>array_like</em>) &#8211; Chromaticity coordinates <em>xy</em> of sample.</li>
+<li><strong>Y</strong> (<em>numeric or array_like</em>) &#8211; Tristimulus <span class="math">\(Y\)</span> value of sample.</li>
+<li><strong>xy_n</strong> (<em>array_like</em>) &#8211; Chromaticity coordinates <em>xy_n</em> of perfect diffuser.</li>
+<li><strong>observer</strong> (<em>unicode, optional</em>) &#8211; <strong>{&#8216;CIE 1931 2 Degree Standard Observer&#8217;,
+&#8216;CIE 1964 10 Degree Standard Observer&#8217;}</strong>,
+<em>CIE Standard Observer</em> used for computations, <em>tint</em> <span class="math">\(T\)</span> or
+<span class="math">\(T_{10}\)</span> value is dependent on viewing field angular subtense.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>Whiteness</em> <span class="math">\(W\)</span> or <span class="math">\(W_{10}\)</span> and <em>tint</em> <span class="math">\(T\)</span> or
+<span class="math">\(T_{10}\)</span> of given sample.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Input tristimulus <span class="math">\(Y\)</span> value is in domain [0, 100].</li>
+<li>This method may be used only for samples whose values of <span class="math">\(W\)</span> or
+<span class="math">\(W_{10}\)</span> lie within the following limits: greater than 40 and
+less than 5Y - 280, or 5Y10 - 280.</li>
+<li>This method may be used only for samples whose values of <span class="math">\(T\)</span> or
+<span class="math">\(T_{10}\)</span> lie within the following limits: greater than -4 and
+less than +2.</li>
+<li>Output <em>whiteness</em> <span class="math">\(W\)</span> or <span class="math">\(W_{10}\)</span> values larger than 100
+indicate a bluish white while values smaller than 100 indicate a
+yellowish white. <a class="footnote-reference" href="#id2" id="id9">[2]</a></li>
+<li>Positive output <em>tint</em> <span class="math">\(T\)</span> or <span class="math">\(T_{10}\)</span> values indicate a
+greener tint while negative values indicate a redder tint.</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The input domain of that definition is non standard!</p>
+</div>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id10" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[4]</td><td>CIE TC 1-48. (2004). The evaluation of whiteness. In CIE 015:2004
+Colorimetry, 3rd Edition (p. 24). ISBN:978-3-901-90633-6</td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.3167</span><span class="p">,</span> <span class="mf">0.3334</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xy_n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.3139</span><span class="p">,</span> <span class="mf">0.3311</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">whiteness_CIE2004</span><span class="p">(</span><span class="n">xy</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">xy_n</span><span class="p">)</span>  
+<span class="go">array([ 93.85...,  -1.305...])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.colorimetry.whiteness.WHITENESS_METHODS">
+<tt class="descclassname">colour.colorimetry.whiteness.</tt><tt class="descname">WHITENESS_METHODS</tt><em class="property"> = CaseInsensitiveMapping({u'ASTM 313': &lt;function whiteness_ASTM313 at 0x2abef8de8aa0&gt;, u'Ganz 1979': &lt;function whiteness_Ganz1979 at 0x2abef8de8b18&gt;, u'Stensby 1968': &lt;function whiteness_Stensby1968 at 0x2abef8de8a28&gt;, u'Taube 1960': &lt;function whiteness_Taube1960 at 0x2abef8de89b0&gt;, u'Berger 1959': &lt;function whiteness_Berger1959 at 0x2abef8de88c0&gt;, u'CIE 2004': &lt;function whiteness_CIE2004 at 0x2abef8de8b90&gt;, u'cie2004': &lt;function whiteness_CIE2004 at 0x2abef8de8b90&gt;})</em><a class="headerlink" href="#colour.colorimetry.whiteness.WHITENESS_METHODS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Supported <em>whiteness</em> computations methods.</p>
+<dl class="docutils">
+<dt>WHITENESS_METHODS <span class="classifier-delimiter">:</span> <span class="classifier">CaseInsensitiveMapping</span></dt>
+<dd><strong>{&#8216;CIE 2004&#8217;, &#8216;Berger 1959&#8217;, &#8216;Taube 1960&#8217;, &#8216;Stensby 1968&#8217;, &#8216;ASTM 313&#8217;,
+&#8216;Ganz 1979&#8217;, &#8216;CIE 2004&#8217;}</strong></dd>
+</dl>
+<p>Aliases:</p>
+<ul class="simple">
+<li>&#8216;cie2004&#8217;: &#8216;CIE 2004&#8217;</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.colorimetry.whiteness.whiteness">
+<tt class="descclassname">colour.colorimetry.whiteness.</tt><tt class="descname">whiteness</tt><big>(</big><em>method=u'CIE 2004'</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/colour/colorimetry/whiteness.html#whiteness"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.colorimetry.whiteness.whiteness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <em>whiteness</em> <span class="math">\(W\)</span> using given method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>method</strong> (<em>unicode, optional</em>) &#8211; <strong>{&#8216;CIE 2004&#8217;, &#8216;Berger 1959&#8217;, &#8216;Taube 1960&#8217;, &#8216;Stensby 1968&#8217;, &#8216;ASTM 313&#8217;,
+&#8216;Ganz 1979&#8217;, &#8216;CIE 2004&#8217;}</strong>,
+Computation method.</li>
+<li><strong>**kwargs</strong> (<em>**</em>) &#8211; Keywords arguments.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>whiteness</em> <span class="math">\(W\)</span>.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric or ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.3167</span><span class="p">,</span> <span class="mf">0.3334</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Y</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xy_n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.3139</span><span class="p">,</span> <span class="mf">0.3311</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">whiteness</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="n">xy</span><span class="p">,</span> <span class="n">Y</span><span class="o">=</span><span class="n">Y</span><span class="p">,</span> <span class="n">xy_n</span><span class="o">=</span><span class="n">xy_n</span><span class="p">)</span>  
+<span class="go">array([ 93.85...,  -1.305...])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">95.00000000</span><span class="p">,</span> <span class="mf">100.00000000</span><span class="p">,</span> <span class="mf">105.00000000</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">XYZ_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">94.80966767</span><span class="p">,</span> <span class="mf">100.00000000</span><span class="p">,</span> <span class="mf">107.30513595</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">method</span> <span class="o">=</span> <span class="s">&#39;Taube 1960&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">whiteness</span><span class="p">(</span><span class="n">XYZ</span><span class="o">=</span><span class="n">XYZ</span><span class="p">,</span> <span class="n">XYZ_0</span><span class="o">=</span><span class="n">XYZ_0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">)</span>  
+<span class="go">91.4071738...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2015, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

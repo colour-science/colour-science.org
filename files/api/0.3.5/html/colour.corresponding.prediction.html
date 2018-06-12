@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.corresponding.prediction Module &mdash; Colour 0.3.5 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.5 documentation" href="index.html" />
+    <link rel="up" title="colour.corresponding Package" href="colour.corresponding.html" />
+    <link rel="next" title="colour.difference Package" href="colour.difference.html" />
+    <link rel="prev" title="colour.corresponding.dataset.corresponding_chromaticities Module" href="colour.corresponding.dataset.corresponding_chromaticities.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+  <li>
+    <a href="colour.corresponding.dataset.corresponding_chromaticities.html" title="Previous Chapter: colour.corresponding.dataset.corresponding_chromaticities Module"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; colour.correspon...</span>
+    </a>
+  </li>
+  <li>
+    <a href="colour.difference.html" title="Next Chapter: colour.difference Package"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">colour.differenc... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="module-colour.corresponding.prediction">
+<span id="colour-corresponding-prediction-module"></span><h1>colour.corresponding.prediction Module<a class="headerlink" href="#module-colour.corresponding.prediction" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="corresponding-chromaticities-prediction">
+<h2>Corresponding Chromaticities Prediction<a class="headerlink" href="#corresponding-chromaticities-prediction" title="Permalink to this headline">¶</a></h2>
+<p>Defines objects to compute corresponding chromaticities prediction.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/corresponding/prediction.ipynb">Corresponding Chromaticities Prediction IPython Notebook</a></p>
+</div>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td>Breneman, E. J. (1987). Corresponding chromaticities for different
+states of adaptation to complex visual fields. JOSA A, 4(6). Retrieved
+from <a class="reference external" href="http://www.opticsinfobase.org/josaa/fulltext.cfm?uri=josaa-4-6-1115&amp;id=2783">http://www.opticsinfobase.org/josaa/fulltext.cfm?uri=josaa-4-6-1115&amp;id=2783</a></td></tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="colour.corresponding.prediction.CorrespondingChromaticitiesPrediction">
+<em class="property">class </em><tt class="descclassname">colour.corresponding.prediction.</tt><tt class="descname">CorrespondingChromaticitiesPrediction</tt><a class="reference internal" href="_modules/colour/corresponding/prediction.html#CorrespondingChromaticitiesPrediction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.corresponding.prediction.CorrespondingChromaticitiesPrediction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#colour.corresponding.prediction.CorrespondingChromaticitiesPrediction" title="colour.corresponding.prediction.CorrespondingChromaticitiesPrediction"><tt class="xref py py-class docutils literal"><span class="pre">colour.corresponding.prediction.CorrespondingChromaticitiesPrediction</span></tt></a></p>
+<p>Defines a chromatic adaptation model prediction.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>unicode</em>) &#8211; Test colour name.</li>
+<li><strong>uvp_t</strong> (<em>numeric</em>) &#8211; Chromaticity coordinates <span class="math">\(uv_t^p\)</span> of test colour.</li>
+<li><strong>uvp_m</strong> (<em>array_like, (2,)</em>) &#8211; Chromaticity coordinates <span class="math">\(uv_m^p\)</span> of matching colour.</li>
+<li><strong>uvp_p</strong> (<em>array_like, (2,)</em>) &#8211; Chromaticity coordinates <span class="math">\(uv_p^p\)</span> of predicted colour.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.corresponding.prediction.corresponding_chromaticities_prediction_CIE1994">
+<tt class="descclassname">colour.corresponding.prediction.</tt><tt class="descname">corresponding_chromaticities_prediction_CIE1994</tt><big>(</big><em>experiment=1</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/colour/corresponding/prediction.html#corresponding_chromaticities_prediction_CIE1994"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.corresponding.prediction.corresponding_chromaticities_prediction_CIE1994" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the corresponding chromaticities prediction for CIE 1994
+chromatic adaptation model.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>experiment</strong> (<em>integer, optional</em>) &#8211; {1, 2, 3, 4, 6, 8, 9, 11, 12}
+Breneman (1987) experiment number.</li>
+<li><strong>**kwargs</strong> (<em>**</em>) &#8211; Keywords arguments.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Corresponding chromaticities prediction.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tuple</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pr</span> <span class="o">=</span> <span class="n">corresponding_chromaticities_prediction_CIE1994</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pr</span> <span class="o">=</span> <span class="p">[(</span><span class="n">p</span><span class="o">.</span><span class="n">uvp_m</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">uvp_p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pr</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">pr</span><span class="p">)</span>  
+<span class="go">[((0.207, 0.486), (0.21339093279517196, 0.49397945742298016)),</span>
+<span class="go"> ((0.449, 0.511), (0.4450345313098153, 0.5120939085633327)),</span>
+<span class="go"> ((0.263, 0.505), (0.26932620724691858, 0.50832124608390727)),</span>
+<span class="go"> ((0.322, 0.545), (0.33085939370840811, 0.54439408389253441)),</span>
+<span class="go"> ((0.316, 0.537), (0.3225195584183046, 0.53778269440789594)),</span>
+<span class="go"> ((0.265, 0.553), (0.2709737181087471, 0.5513666373694861)),</span>
+<span class="go"> ((0.221, 0.538), (0.22807869730753863, 0.53515923458385406)),</span>
+<span class="go"> ((0.135, 0.532), (0.14394366662060523, 0.53035769204585748)),</span>
+<span class="go"> ((0.145, 0.472), (0.15007438031976222, 0.48428958620888679)),</span>
+<span class="go"> ((0.163, 0.331), (0.15599555781959967, 0.37723798698131394)),</span>
+<span class="go"> ((0.176, 0.431), (0.18063180902005657, 0.45184759430042898)),</span>
+<span class="go"> ((0.244, 0.349), (0.24544456656434688, 0.40180048388092021))]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.corresponding.prediction.corresponding_chromaticities_prediction_CMCCAT2000">
+<tt class="descclassname">colour.corresponding.prediction.</tt><tt class="descname">corresponding_chromaticities_prediction_CMCCAT2000</tt><big>(</big><em>experiment=1</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/colour/corresponding/prediction.html#corresponding_chromaticities_prediction_CMCCAT2000"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.corresponding.prediction.corresponding_chromaticities_prediction_CMCCAT2000" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the corresponding chromaticities prediction for CMCCAT2000
+chromatic adaptation model.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>experiment</strong> (<em>integer, optional</em>) &#8211; {1, 2, 3, 4, 6, 8, 9, 11, 12}
+Breneman (1987) experiment number.</li>
+<li><strong>**kwargs</strong> (<em>**</em>) &#8211; Keywords arguments.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Corresponding chromaticities prediction.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tuple</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pr</span> <span class="o">=</span> <span class="n">corresponding_chromaticities_prediction_CMCCAT2000</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pr</span> <span class="o">=</span> <span class="p">[(</span><span class="n">p</span><span class="o">.</span><span class="n">uvp_m</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">uvp_p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pr</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">pr</span><span class="p">)</span>  
+<span class="go">[((0.207, 0.486), (0.20832101929657834, 0.47271680534693694)),</span>
+<span class="go"> ((0.449, 0.511), (0.44592707020371486, 0.50777351504395707)),</span>
+<span class="go"> ((0.263, 0.505), (0.26402624712986333, 0.4955361681706304)),</span>
+<span class="go"> ((0.322, 0.545), (0.33168840090358015, 0.54315801981008516)),</span>
+<span class="go"> ((0.316, 0.537), (0.32226245779851387, 0.53576245377085929)),</span>
+<span class="go"> ((0.265, 0.553), (0.27107058097430181, 0.5501997842556422)),</span>
+<span class="go"> ((0.221, 0.538), (0.22618269421847523, 0.52947407170848704)),</span>
+<span class="go"> ((0.135, 0.532), (0.14396930475660724, 0.51909841743126817)),</span>
+<span class="go"> ((0.145, 0.472), (0.14948357434418671, 0.45567605010224305)),</span>
+<span class="go"> ((0.163, 0.331), (0.15631720730028753, 0.31641514460738623)),</span>
+<span class="go"> ((0.176, 0.431), (0.17631993066748047, 0.41275893424542082)),</span>
+<span class="go"> ((0.244, 0.349), (0.22876382018951744, 0.3499324084859976))]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.corresponding.prediction.corresponding_chromaticities_prediction_Fairchild1990">
+<tt class="descclassname">colour.corresponding.prediction.</tt><tt class="descname">corresponding_chromaticities_prediction_Fairchild1990</tt><big>(</big><em>experiment=1</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/colour/corresponding/prediction.html#corresponding_chromaticities_prediction_Fairchild1990"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.corresponding.prediction.corresponding_chromaticities_prediction_Fairchild1990" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the corresponding chromaticities prediction for Fairchild (1990)
+chromatic adaptation model.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>experiment</strong> (<em>integer, optional</em>) &#8211; {1, 2, 3, 4, 6, 8, 9, 11, 12}
+Breneman (1987) experiment number.</li>
+<li><strong>**kwargs</strong> (<em>**</em>) &#8211; Keywords arguments.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Corresponding chromaticities prediction.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tuple</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pr</span> <span class="o">=</span> <span class="n">corresponding_chromaticities_prediction_Fairchild1990</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pr</span> <span class="o">=</span> <span class="p">[(</span><span class="n">p</span><span class="o">.</span><span class="n">uvp_m</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">uvp_p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pr</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">pr</span><span class="p">)</span>  
+<span class="go">[((0.207, 0.486), (0.2089528677990308, 0.47240345174230519)),</span>
+<span class="go"> ((0.449, 0.511), (0.43756528098582792, 0.51210303139041924)),</span>
+<span class="go"> ((0.263, 0.505), (0.26213623665658092, 0.49725385033264224)),</span>
+<span class="go"> ((0.322, 0.545), (0.3235312762825191, 0.54756652922585702)),</span>
+<span class="go"> ((0.316, 0.537), (0.3151390992740366, 0.53983332031574016)),</span>
+<span class="go"> ((0.265, 0.553), (0.26347459238415272, 0.55443357809543037)),</span>
+<span class="go"> ((0.221, 0.538), (0.22115956537655593, 0.53244703908294599)),</span>
+<span class="go"> ((0.135, 0.532), (0.13969494108553854, 0.52072342107668024)),</span>
+<span class="go"> ((0.145, 0.472), (0.1512288710743511, 0.45330415352961834)),</span>
+<span class="go"> ((0.163, 0.331), (0.17156913711903982, 0.30262647410866889)),</span>
+<span class="go"> ((0.176, 0.431), (0.18257922398137369, 0.40778921192793854)),</span>
+<span class="go"> ((0.244, 0.349), (0.24189049501108895, 0.34134012046930529))]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.corresponding.prediction.corresponding_chromaticities_prediction_VonKries">
+<tt class="descclassname">colour.corresponding.prediction.</tt><tt class="descname">corresponding_chromaticities_prediction_VonKries</tt><big>(</big><em>experiment=1</em>, <em>transform=u'CAT02'</em><big>)</big><a class="reference internal" href="_modules/colour/corresponding/prediction.html#corresponding_chromaticities_prediction_VonKries"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.corresponding.prediction.corresponding_chromaticities_prediction_VonKries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the corresponding chromaticities prediction for Von Kries
+chromatic adaptation model using given transform.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>experiment</strong> (<em>integer, optional</em>) &#8211; {1, 2, 3, 4, 6, 8, 9, 11, 12}
+Breneman (1987) experiment number.</li>
+<li><strong>transform</strong> (<em>unicode, optional</em>) &#8211; {&#8216;CAT02&#8217;, &#8216;XYZ Scaling&#8217;, &#8216;Von Kries&#8217;, &#8216;Bradford&#8217;, &#8216;Sharp&#8217;, &#8216;Fairchild,
+&#8216;CMCCAT97&#8217;, &#8216;CMCCAT2000&#8217;, &#8216;CAT02_BRILL_CAT&#8217;, &#8216;Bianco&#8217;, &#8216;Bianco PC&#8217;},
+Chromatic adaptation transform.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Corresponding chromaticities prediction.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tuple</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pr</span> <span class="o">=</span> <span class="n">corresponding_chromaticities_prediction_VonKries</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s">&#39;Bradford&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pr</span> <span class="o">=</span> <span class="p">[(</span><span class="n">p</span><span class="o">.</span><span class="n">uvp_m</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">uvp_p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pr</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">pr</span><span class="p">)</span>  
+<span class="go">[((0.207, 0.486), (0.20820148430638033, 0.47229226819364528)),</span>
+<span class="go"> ((0.449, 0.511), (0.44891022948064191, 0.50716028901449561)),</span>
+<span class="go"> ((0.263, 0.505), (0.26435459360846608, 0.49596314494922683)),</span>
+<span class="go"> ((0.322, 0.545), (0.33487309037107632, 0.54712207251983425)),</span>
+<span class="go"> ((0.316, 0.537), (0.32487581236911361, 0.53905899356457776)),</span>
+<span class="go"> ((0.265, 0.553), (0.27331050571632376, 0.55550280647813977)),</span>
+<span class="go"> ((0.221, 0.538), (0.22714800102072819, 0.53313179748041983)),</span>
+<span class="go"> ((0.135, 0.532), (0.14427303768336433, 0.52268044497913713)),</span>
+<span class="go"> ((0.145, 0.472), (0.14987451889726533, 0.45507852741116867)),</span>
+<span class="go"> ((0.163, 0.331), (0.15649757464732098, 0.31487959772753954)),</span>
+<span class="go"> ((0.176, 0.431), (0.17605936460371163, 0.41037722722471409)),</span>
+<span class="go"> ((0.244, 0.349), (0.22598059059292835, 0.34652914678030416))]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.corresponding.prediction.CORRESPONDING_CHROMATICITIES_PREDICTION_MODELS">
+<tt class="descclassname">colour.corresponding.prediction.</tt><tt class="descname">CORRESPONDING_CHROMATICITIES_PREDICTION_MODELS</tt><em class="property"> = CaseInsensitiveMapping({u'vonkries': &lt;function corresponding_chromaticities_prediction_VonKries at 0x2adc48ef5230&gt;, u'Von Kries': &lt;function corresponding_chromaticities_prediction_VonKries at 0x2adc48ef5230&gt;, u'CMCCAT2000': &lt;function corresponding_chromaticities_prediction_CMCCAT2000 at 0x2adc48ef5140&gt;, u'CIE 1994': &lt;function corresponding_chromaticities_prediction_CIE1994 at 0x2adc48eda230&gt;, u'Fairchild 1990': &lt;function corresponding_chromaticities_prediction_Fairchild1990 at 0x2adc48ef51b8&gt;})</em><a class="headerlink" href="#colour.corresponding.prediction.CORRESPONDING_CHROMATICITIES_PREDICTION_MODELS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aggregated corresponding chromaticities prediction models.</p>
+<dl class="docutils">
+<dt>CORRESPONDING_CHROMATICITIES_PREDICTION_MODELS <span class="classifier-delimiter">:</span> <span class="classifier">CaseInsensitiveMapping</span></dt>
+<dd>{&#8216;CIE 1994&#8217;, &#8216;CMCCAT2000&#8217;, &#8216;Fairchild 1990&#8217;, &#8216;Von Kries&#8217;}</dd>
+</dl>
+<p>Aliases:</p>
+<ul class="simple">
+<li>&#8216;vonkries&#8217;: &#8216;Von Kries&#8217;</li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2015, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

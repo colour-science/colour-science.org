@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.phenomenons.rayleigh &mdash; Colour 0.3.6 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.3.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.6 documentation" href="../../../index.html" />
+    <link rel="up" title="colour.phenomenons" href="../phenomenons.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for colour.phenomenons.rayleigh</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Rayleigh Optical Depth - Scattering in the Atmosphere</span>
+<span class="sd">=====================================================</span>
+
+<span class="sd">Implements rayleigh scattering / optical depth in the atmosphere computation:</span>
+
+<span class="sd">-   :func:`scattering_cross_section`</span>
+<span class="sd">-   :func:`rayleigh_optical_depth`</span>
+<span class="sd">-   :func:`rayleigh_scattering`</span>
+
+<span class="sd">See Also</span>
+<span class="sd">--------</span>
+<span class="sd">`Rayleigh Optical Depth - Scattering in the Atmosphere IPython Notebook</span>
+<span class="sd">&lt;http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/phenomenons/rayleigh.ipynb&gt;`_  # noqa</span>
+
+<span class="sd">References</span>
+<span class="sd">----------</span>
+<span class="sd">.. [1]  Bodhaine, B. A., Wood, N. B., Dutton, E. G., &amp; Slusser, J. R. (1999).</span>
+<span class="sd">        On Rayleigh optical depth calculations. Journal of Atmospheric …,</span>
+<span class="sd">        16(11 PART 2), 1854–1861.</span>
+<span class="sd">        doi:10.1175/1520-0426(1999)016%3C1854:ORODC%3E2.0.CO;2</span>
+<span class="sd">.. [2]  Wikipedia. (n.d.). Rayleigh scattering. Retrieved September 23, 2014,</span>
+<span class="sd">        from http://en.wikipedia.org/wiki/Rayleigh_scattering</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">colour.colorimetry</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">DEFAULT_SPECTRAL_SHAPE</span><span class="p">,</span>
+    <span class="n">SpectralPowerDistribution</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">colour.constants</span> <span class="kn">import</span> <span class="n">AVOGADRO_CONSTANT</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s">&#39;Copyright (C) 2013 - 2015 - Colour Developers&#39;</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s">&#39;New BSD License - http://opensource.org/licenses/BSD-3-Clause&#39;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s">&#39;colour-science@googlegroups.com&#39;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s">&#39;Production&#39;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;STANDARD_AIR_TEMPERATURE&#39;</span><span class="p">,</span>
+           <span class="s">&#39;STANDARD_CO2_CONCENTRATION&#39;</span><span class="p">,</span>
+           <span class="s">&#39;AVERAGE_PRESSURE_MEAN_SEA_LEVEL&#39;</span><span class="p">,</span>
+           <span class="s">&#39;DEFAULT_LATITUDE&#39;</span><span class="p">,</span>
+           <span class="s">&#39;DEFAULT_ALTITUDE&#39;</span><span class="p">,</span>
+           <span class="s">&#39;air_refraction_index_Penndorf1957&#39;</span><span class="p">,</span>
+           <span class="s">&#39;air_refraction_index_Edlen1966&#39;</span><span class="p">,</span>
+           <span class="s">&#39;air_refraction_index_Peck1972&#39;</span><span class="p">,</span>
+           <span class="s">&#39;air_refraction_index_Bodhaine1999&#39;</span><span class="p">,</span>
+           <span class="s">&#39;N2_depolarisation&#39;</span><span class="p">,</span>
+           <span class="s">&#39;O2_depolarisation&#39;</span><span class="p">,</span>
+           <span class="s">&#39;F_air_Penndorf1957&#39;</span><span class="p">,</span>
+           <span class="s">&#39;F_air_Young1981&#39;</span><span class="p">,</span>
+           <span class="s">&#39;F_air_Bates1984&#39;</span><span class="p">,</span>
+           <span class="s">&#39;F_air_Bodhaine1999&#39;</span><span class="p">,</span>
+           <span class="s">&#39;molecular_density&#39;</span><span class="p">,</span>
+           <span class="s">&#39;mean_molecular_weights&#39;</span><span class="p">,</span>
+           <span class="s">&#39;gravity_List1968&#39;</span><span class="p">,</span>
+           <span class="s">&#39;scattering_cross_section&#39;</span><span class="p">,</span>
+           <span class="s">&#39;rayleigh_optical_depth&#39;</span><span class="p">,</span>
+           <span class="s">&#39;rayleigh_scattering&#39;</span><span class="p">]</span>
+
+<span class="n">STANDARD_AIR_TEMPERATURE</span> <span class="o">=</span> <span class="mf">288.15</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*Standard air* temperature :math:`T[K]` in kelvin degrees (:math:`15\circ C`).</span>
+
+<span class="sd">STANDARD_AIR_TEMPERATURE : numeric</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">STANDARD_CO2_CONCENTRATION</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*Standard air* :math:`CO_2` concentration in parts per million (ppm).</span>
+
+<span class="sd">STANDARD_CO2_CONCENTRATION : numeric</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">AVERAGE_PRESSURE_MEAN_SEA_LEVEL</span> <span class="o">=</span> <span class="mi">101325</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*Standard air* average pressure :math:`Hg` at mean sea-level in pascal (Pa).</span>
+
+<span class="sd">AVERAGE_PRESSURE_MEAN_SEA_LEVEL : numeric</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">DEFAULT_LATITUDE</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Default latitude in degrees (equator).</span>
+
+<span class="sd">DEFAULT_LATITUDE : numeric</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">DEFAULT_ALTITUDE</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Default altitude in meters (sea level).</span>
+
+<span class="sd">DEFAULT_ALTITUDE : numeric</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="air_refraction_index_Penndorf1957"><a class="viewcode-back" href="../../../colour.phenomenons.rayleigh.html#colour.phenomenons.rayleigh.air_refraction_index_Penndorf1957">[docs]</a><span class="k">def</span> <span class="nf">air_refraction_index_Penndorf1957</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the air refraction index :math:`n_s` from given wavelength</span>
+<span class="sd">    :math:`\lambda` in  micrometers (:math:`\mu m`) using Penndorf (1957)</span>
+<span class="sd">    method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    wavelength : numeric or array_like</span>
+<span class="sd">        Wavelength :math:`\lambda` in micrometers (:math:`\mu m`).</span>
+<span class="sd">    \*args : \*</span>
+<span class="sd">        Arguments.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Air refraction index :math:`n_s`.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    air_refraction_index_Edlen1966, air_refraction_index_Peck1972,</span>
+<span class="sd">    air_refraction_index_Bodhaine1999</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; air_refraction_index_Penndorf1957(0.555)  # doctest: +ELLIPSIS</span>
+<span class="sd">    1.0002777...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">wl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span>
+
+    <span class="n">n</span> <span class="o">=</span> <span class="mf">6432.8</span> <span class="o">+</span> <span class="mi">2949810</span> <span class="o">/</span> <span class="p">(</span><span class="mi">146</span> <span class="o">-</span> <span class="n">wl</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="mi">25540</span> <span class="o">/</span> <span class="p">(</span><span class="mi">41</span> <span class="o">-</span> <span class="n">wl</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">n</span> <span class="o">/=</span> <span class="mf">1.0e8</span>
+    <span class="n">n</span> <span class="o">+=</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">n</span>
+
+</div>
+<div class="viewcode-block" id="air_refraction_index_Edlen1966"><a class="viewcode-back" href="../../../colour.phenomenons.rayleigh.html#colour.phenomenons.rayleigh.air_refraction_index_Edlen1966">[docs]</a><span class="k">def</span> <span class="nf">air_refraction_index_Edlen1966</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the air refraction index :math:`n_s` from given wavelength</span>
+<span class="sd">    :math:`\lambda` in micrometers (:math:`\mu m`) using Edlen (1966) method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    wavelength : numeric or array_like</span>
+<span class="sd">        Wavelength :math:`\lambda` in micrometers (:math:`\mu m`).</span>
+<span class="sd">    \*args : \*</span>
+<span class="sd">        Arguments.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Air refraction index :math:`n_s`.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    air_refraction_index_Penndorf1957, air_refraction_index_Peck1972,</span>
+<span class="sd">    air_refraction_index_Bodhaine1999</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; air_refraction_index_Edlen1966(0.555)  # doctest: +ELLIPSIS</span>
+<span class="sd">    1.0002777...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">wl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span>
+
+    <span class="n">n</span> <span class="o">=</span> <span class="mf">8342.13</span> <span class="o">+</span> <span class="mi">2406030</span> <span class="o">/</span> <span class="p">(</span><span class="mi">130</span> <span class="o">-</span> <span class="n">wl</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="mi">15997</span> <span class="o">/</span> <span class="p">(</span><span class="mf">38.9</span> <span class="o">-</span> <span class="n">wl</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">n</span> <span class="o">/=</span> <span class="mf">1.0e8</span>
+    <span class="n">n</span> <span class="o">+=</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">n</span>
+
+</div>
+<div class="viewcode-block" id="air_refraction_index_Peck1972"><a class="viewcode-back" href="../../../colour.phenomenons.rayleigh.html#colour.phenomenons.rayleigh.air_refraction_index_Peck1972">[docs]</a><span class="k">def</span> <span class="nf">air_refraction_index_Peck1972</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the air refraction index :math:`n_s` from given wavelength</span>
+<span class="sd">    :math:`\lambda` in micrometers (:math:`\mu m`) using</span>
+<span class="sd">    Peck and Reeder (1972) method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    wavelength : numeric or array_like</span>
+<span class="sd">        Wavelength :math:`\lambda` in micrometers (:math:`\mu m`).</span>
+<span class="sd">    \*args : \*</span>
+<span class="sd">        Arguments.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Air refraction index :math:`n_s`.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    air_refraction_index_Penndorf1957, air_refraction_index_Edlen1966,</span>
+<span class="sd">    air_refraction_index_Bodhaine1999</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; air_refraction_index_Peck1972(0.555)  # doctest: +ELLIPSIS</span>
+<span class="sd">    1.0002777...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">wl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span>
+
+    <span class="n">n</span> <span class="o">=</span> <span class="p">(</span><span class="mf">8060.51</span> <span class="o">+</span> <span class="mi">2480990</span> <span class="o">/</span> <span class="p">(</span><span class="mf">132.274</span> <span class="o">-</span> <span class="n">wl</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="mf">17455.7</span> <span class="o">/</span>
+         <span class="p">(</span><span class="mf">39.32957</span> <span class="o">-</span> <span class="n">wl</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)))</span>
+    <span class="n">n</span> <span class="o">/=</span> <span class="mf">1.0e8</span>
+    <span class="n">n</span> <span class="o">+=</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">n</span>
+
+</div>
+<div class="viewcode-block" id="air_refraction_index_Bodhaine1999"><a class="viewcode-back" href="../../../colour.phenomenons.rayleigh.html#colour.phenomenons.rayleigh.air_refraction_index_Bodhaine1999">[docs]</a><span class="k">def</span> <span class="nf">air_refraction_index_Bodhaine1999</span><span class="p">(</span>
+        <span class="n">wavelength</span><span class="p">,</span>
+        <span class="n">CO2_concentration</span><span class="o">=</span><span class="n">STANDARD_CO2_CONCENTRATION</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the air refraction index :math:`n_s` from given wavelength</span>
+<span class="sd">    :math:`\lambda` in micrometers (:math:`\mu m`) using</span>
+<span class="sd">    Bodhaine, Wood, Dutton and Slusser (1999) method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    wavelength : numeric or array_like</span>
+<span class="sd">        Wavelength :math:`\lambda` in micrometers (:math:`\mu m`).</span>
+<span class="sd">    CO2_concentration : numeric or array_like</span>
+<span class="sd">        :math:`CO_2` concentration in parts per million (ppm).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Air refraction index :math:`n_s`.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    air_refraction_index_Penndorf1957, air_refraction_index_Edlen1966,</span>
+<span class="sd">    air_refraction_index_Peck1972</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; air_refraction_index_Bodhaine1999(0.555)  # doctest: +ELLIPSIS</span>
+<span class="sd">    1.0002777...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">wl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span>
+    <span class="n">CO2_c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">CO2_concentration</span><span class="p">)</span>
+
+    <span class="n">n</span> <span class="o">=</span> <span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">0.54</span> <span class="o">*</span> <span class="p">((</span><span class="n">CO2_c</span> <span class="o">*</span> <span class="mf">1e-6</span><span class="p">)</span> <span class="o">-</span> <span class="mf">300e-6</span><span class="p">))</span> <span class="o">*</span>
+         <span class="p">(</span><span class="n">air_refraction_index_Peck1972</span><span class="p">(</span><span class="n">wl</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">n</span>
+
+</div>
+<div class="viewcode-block" id="N2_depolarisation"><a class="viewcode-back" href="../../../colour.phenomenons.rayleigh.html#colour.phenomenons.rayleigh.N2_depolarisation">[docs]</a><span class="k">def</span> <span class="nf">N2_depolarisation</span><span class="p">(</span><span class="n">wavelength</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the depolarisation of nitrogen :math:`N_2` as function of</span>
+<span class="sd">    wavelength :math:`\lambda` in micrometers (:math:`\mu m`).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    wavelength : numeric or array_like</span>
+<span class="sd">        Wavelength :math:`\lambda` in micrometers (:math:`\mu m`).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Nitrogen :math:`N_2` depolarisation.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; N2_depolarisation(0.555)  # doctest: +ELLIPSIS</span>
+<span class="sd">    1.0350291...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">wl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span>
+
+    <span class="n">N2</span> <span class="o">=</span> <span class="mf">1.034</span> <span class="o">+</span> <span class="mf">3.17</span> <span class="o">*</span> <span class="mf">1.0e-4</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">wl</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">N2</span>
+
+</div>
+<div class="viewcode-block" id="O2_depolarisation"><a class="viewcode-back" href="../../../colour.phenomenons.rayleigh.html#colour.phenomenons.rayleigh.O2_depolarisation">[docs]</a><span class="k">def</span> <span class="nf">O2_depolarisation</span><span class="p">(</span><span class="n">wavelength</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the depolarisation of oxygen :math:`O_2` as function of</span>
+<span class="sd">    wavelength :math:`\lambda` in micrometers (:math:`\mu m`).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    wavelength : numeric or array_like</span>
+<span class="sd">        Wavelength :math:`\lambda` in micrometers (:math:`\mu m`).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Oxygen :math:`O_2` depolarisation.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; O2_depolarisation(0.555)  # doctest: +ELLIPSIS</span>
+<span class="sd">    1.1020225...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">wl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span>
+
+    <span class="n">O2</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.096</span> <span class="o">+</span> <span class="mf">1.385</span> <span class="o">*</span> <span class="mf">1.0e-3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">wl</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.448</span> <span class="o">*</span> <span class="mf">1.0e-4</span> <span class="o">*</span>
+          <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">wl</span> <span class="o">**</span> <span class="mi">4</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">O2</span>
+
+</div>
+<div class="viewcode-block" id="F_air_Penndorf1957"><a class="viewcode-back" href="../../../colour.phenomenons.rayleigh.html#colour.phenomenons.rayleigh.F_air_Penndorf1957">[docs]</a><span class="k">def</span> <span class="nf">F_air_Penndorf1957</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns :math:`(6+3_p)/(6-7_p)`, the depolarisation term :math:`F(air)` or</span>
+<span class="sd">    *King Factor* using Penndorf (1957) method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    wavelength : numeric or array_like</span>
+<span class="sd">        Wavelength :math:`\lambda` in micrometers (:math:`\mu m`).</span>
+<span class="sd">    \*args : \*</span>
+<span class="sd">        Arguments.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Air depolarisation.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    F_air_Young1981, F_air_Bates1984, F_air_Bodhaine1999</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   The argument *wavelength* is only provided for consistency with the</span>
+<span class="sd">        other air depolarisation methods but is actually not used as this</span>
+<span class="sd">        definition is essentially a constant in its current implementation.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; F_air_Penndorf1957(0.555)</span>
+<span class="sd">    array(1.0608)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">wl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0608</span><span class="p">]),</span> <span class="n">wl</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="F_air_Young1981"><a class="viewcode-back" href="../../../colour.phenomenons.rayleigh.html#colour.phenomenons.rayleigh.F_air_Young1981">[docs]</a><span class="k">def</span> <span class="nf">F_air_Young1981</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns :math:`(6+3_p)/(6-7_p)`, the depolarisation term :math:`F(air)` or</span>
+<span class="sd">    *King Factor* using Young (1981) method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    wavelength : numeric or array_like</span>
+<span class="sd">        Wavelength :math:`\lambda` in micrometers (:math:`\mu m`).</span>
+<span class="sd">    \*args : \*</span>
+<span class="sd">        Arguments.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Air depolarisation.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    F_air_Penndorf1957, F_air_Bates1984, F_air_Bodhaine1999</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   The argument *wavelength* is only provided for consistency with the</span>
+<span class="sd">        other air depolarisation methods but is actually not used as this</span>
+<span class="sd">        definition is essentially a constant in its current implementation.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; F_air_Young1981(0.555)</span>
+<span class="sd">    array(1.048)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">wl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0480</span><span class="p">]),</span> <span class="n">wl</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="F_air_Bates1984"><a class="viewcode-back" href="../../../colour.phenomenons.rayleigh.html#colour.phenomenons.rayleigh.F_air_Bates1984">[docs]</a><span class="k">def</span> <span class="nf">F_air_Bates1984</span><span class="p">(</span><span class="n">wavelength</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns :math:`(6+3_p)/(6-7_p)`, the depolarisation term :math:`F(air)` or</span>
+<span class="sd">    *King Factor* as function of wavelength :math:`\lambda` in micrometers</span>
+<span class="sd">    (:math:`\mu m`) using Bates (1984) method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    wavelength : numeric or array_like</span>
+<span class="sd">        Wavelength :math:`\lambda` in micrometers (:math:`\mu m`).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Air depolarisation.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    F_air_Penndorf1957, F_air_Young1981, F_air_Bodhaine1999</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; F_air_Bates1984(0.555)  # doctest: +ELLIPSIS</span>
+<span class="sd">    1.0481535...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">O2</span> <span class="o">=</span> <span class="n">O2_depolarisation</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span>
+    <span class="n">N2</span> <span class="o">=</span> <span class="n">N2_depolarisation</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span>
+    <span class="n">Ar</span> <span class="o">=</span> <span class="mf">1.00</span>
+    <span class="n">CO2</span> <span class="o">=</span> <span class="mf">1.15</span>
+
+    <span class="n">F_air</span> <span class="o">=</span> <span class="p">((</span><span class="mf">78.084</span> <span class="o">*</span> <span class="n">N2</span> <span class="o">+</span> <span class="mf">20.946</span> <span class="o">*</span> <span class="n">O2</span> <span class="o">+</span> <span class="n">CO2</span> <span class="o">+</span> <span class="n">Ar</span><span class="p">)</span> <span class="o">/</span>
+             <span class="p">(</span><span class="mf">78.084</span> <span class="o">+</span> <span class="mf">20.946</span> <span class="o">+</span> <span class="n">Ar</span> <span class="o">+</span> <span class="n">CO2</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">F_air</span>
+
+</div>
+<div class="viewcode-block" id="F_air_Bodhaine1999"><a class="viewcode-back" href="../../../colour.phenomenons.rayleigh.html#colour.phenomenons.rayleigh.F_air_Bodhaine1999">[docs]</a><span class="k">def</span> <span class="nf">F_air_Bodhaine1999</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span>
+                       <span class="n">CO2_concentration</span><span class="o">=</span><span class="n">STANDARD_CO2_CONCENTRATION</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns :math:`(6+3_p)/(6-7_p)`, the depolarisation term :math:`F(air)` or</span>
+<span class="sd">    *King Factor* as function of wavelength :math:`\lambda` in micrometers</span>
+<span class="sd">    (:math:`\mu m`) and :math:`CO_2` concentration in parts per million (ppm)</span>
+<span class="sd">    using Bodhaine, Wood, Dutton and Slusser (1999) method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    wavelength : numeric or array_like</span>
+<span class="sd">        Wavelength :math:`\lambda` in micrometers (:math:`\mu m`).</span>
+<span class="sd">    CO2_concentration : numeric or array_like, optional</span>
+<span class="sd">        :math:`CO_2` concentration in parts per million (ppm).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Air depolarisation.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    F_air_Penndorf1957, F_air_Young1981, F_air_Bates1984</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; F_air_Bodhaine1999(0.555)  # doctest: +ELLIPSIS</span>
+<span class="sd">    1.1246916...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">O2</span> <span class="o">=</span> <span class="n">O2_depolarisation</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span>
+    <span class="n">N2</span> <span class="o">=</span> <span class="n">N2_depolarisation</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span>
+    <span class="n">CO2_c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">CO2_concentration</span><span class="p">)</span>
+
+    <span class="n">F_air</span> <span class="o">=</span> <span class="p">((</span><span class="mf">78.084</span> <span class="o">*</span> <span class="n">N2</span> <span class="o">+</span> <span class="mf">20.946</span> <span class="o">*</span> <span class="n">O2</span> <span class="o">+</span> <span class="mf">0.934</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">CO2_c</span> <span class="o">*</span> <span class="mf">1.15</span><span class="p">)</span> <span class="o">/</span>
+             <span class="p">(</span><span class="mf">78.084</span> <span class="o">+</span> <span class="mf">20.946</span> <span class="o">+</span> <span class="mf">0.934</span> <span class="o">+</span> <span class="n">CO2_c</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">F_air</span>
+
+</div>
+<div class="viewcode-block" id="molecular_density"><a class="viewcode-back" href="../../../colour.phenomenons.rayleigh.html#colour.phenomenons.rayleigh.molecular_density">[docs]</a><span class="k">def</span> <span class="nf">molecular_density</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="n">STANDARD_AIR_TEMPERATURE</span><span class="p">,</span>
+                      <span class="n">avogadro_constant</span><span class="o">=</span><span class="n">AVOGADRO_CONSTANT</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the molecular density :math:`N_s` (molecules :math:`cm^{-3}`)</span>
+<span class="sd">    as function of air temperature :math:`T[K]` in kelvin degrees.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    temperature : numeric or array_like, optional</span>
+<span class="sd">        Air temperature :math:`T[K]` in kelvin degrees.</span>
+<span class="sd">    avogadro_constant : numeric or array_like, optional</span>
+<span class="sd">        *Avogadro*&#39;s number (molecules :math:`mol^{-1}`).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Molecular density :math:`N_s` (molecules :math:`cm^{-3}`).</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   The *Avogadro*&#39;s number used in this implementation is the one given by</span>
+<span class="sd">        by the Committee on Data for Science and Technology (CODATA):</span>
+<span class="sd">        :math:`6.02214179x10^{23}`, which is different from the reference [1]_</span>
+<span class="sd">        value :math:`6.0221367x10^{23}`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; molecular_density(288.15)  # doctest: +ELLIPSIS</span>
+<span class="sd">    2.5469021...e+19</span>
+<span class="sd">    &gt;&gt;&gt; molecular_density(288.15, 6.0221367e23)  # doctest: +ELLIPSIS</span>
+<span class="sd">    2.5468999...e+19</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">temperature</span><span class="p">)</span>
+
+    <span class="n">N_s</span> <span class="o">=</span> <span class="p">(</span><span class="n">avogadro_constant</span> <span class="o">/</span> <span class="mf">22.4141</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mf">273.15</span> <span class="o">/</span> <span class="n">T</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">N_s</span>
+
+</div>
+<div class="viewcode-block" id="mean_molecular_weights"><a class="viewcode-back" href="../../../colour.phenomenons.rayleigh.html#colour.phenomenons.rayleigh.mean_molecular_weights">[docs]</a><span class="k">def</span> <span class="nf">mean_molecular_weights</span><span class="p">(</span><span class="n">CO2_concentration</span><span class="o">=</span><span class="n">STANDARD_CO2_CONCENTRATION</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the mean molecular weights :math:`m_a` for dry air as function of</span>
+<span class="sd">    :math:`CO_2` concentration in parts per million (ppm).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    CO2_concentration : numeric or array_like, optional</span>
+<span class="sd">        :math:`CO_2` concentration in parts per million (ppm).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Mean molecular weights :math:`m_a` for dry air.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; mean_molecular_weights()  # doctest: +ELLIPSIS</span>
+<span class="sd">    28.9640166...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">CO2_c</span> <span class="o">=</span> <span class="n">CO2_concentration</span> <span class="o">*</span> <span class="mf">1.0e-6</span>
+
+    <span class="n">m_a</span> <span class="o">=</span> <span class="mf">15.0556</span> <span class="o">*</span> <span class="n">CO2_c</span> <span class="o">+</span> <span class="mf">28.9595</span>
+    <span class="k">return</span> <span class="n">m_a</span>
+
+</div>
+<div class="viewcode-block" id="gravity_List1968"><a class="viewcode-back" href="../../../colour.phenomenons.rayleigh.html#colour.phenomenons.rayleigh.gravity_List1968">[docs]</a><span class="k">def</span> <span class="nf">gravity_List1968</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="n">DEFAULT_LATITUDE</span><span class="p">,</span> <span class="n">altitude</span><span class="o">=</span><span class="n">DEFAULT_ALTITUDE</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the gravity :math:`g` in :math:`cm/s_2` (gal) representative of the</span>
+<span class="sd">    mass-weighted column of air molecules above the site of given latitude and</span>
+<span class="sd">    altitude using List (1968) method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    latitude : numeric or array_like, optional</span>
+<span class="sd">        Latitude of the site in degrees.</span>
+<span class="sd">    altitude : numeric or array_like, optional</span>
+<span class="sd">        Altitude of the site in meters.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Gravity :math:`g` in :math:`cm/s_2` (gal).</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; gravity_List1968()  # doctest: +ELLIPSIS</span>
+<span class="sd">    978.0356070...</span>
+<span class="sd">    &gt;&gt;&gt; gravity_List1968(0, 1500)  # doctest: +ELLIPSIS</span>
+<span class="sd">    977.5726106...</span>
+
+<span class="sd">    Gravity :math:`g` for Paris:</span>
+
+<span class="sd">    &gt;&gt;&gt; gravity_List1968(48.8567, 35)  # doctest: +ELLIPSIS</span>
+<span class="sd">    980.9524178...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">latitude</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">latitude</span><span class="p">)</span>
+    <span class="n">altitude</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">altitude</span><span class="p">)</span>
+
+    <span class="n">cos2phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">latitude</span><span class="p">))</span>
+
+    <span class="c"># Sea level acceleration of gravity.</span>
+    <span class="n">g0</span> <span class="o">=</span> <span class="mf">980.6160</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mf">0.0026373</span> <span class="o">*</span> <span class="n">cos2phi</span> <span class="o">+</span> <span class="mf">0.0000059</span> <span class="o">*</span> <span class="n">cos2phi</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">g</span> <span class="o">=</span> <span class="p">(</span><span class="n">g0</span> <span class="o">-</span> <span class="p">(</span><span class="mf">3.085462e-4</span> <span class="o">+</span> <span class="mf">2.27e-7</span> <span class="o">*</span> <span class="n">cos2phi</span><span class="p">)</span> <span class="o">*</span> <span class="n">altitude</span> <span class="o">+</span>
+         <span class="p">(</span><span class="mf">7.254e-11</span> <span class="o">+</span> <span class="mf">1.0e-13</span> <span class="o">*</span> <span class="n">cos2phi</span><span class="p">)</span> <span class="o">*</span> <span class="n">altitude</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span>
+         <span class="p">(</span><span class="mf">1.517e-17</span> <span class="o">+</span> <span class="mf">6e-20</span> <span class="o">*</span> <span class="n">cos2phi</span><span class="p">)</span> <span class="o">*</span> <span class="n">altitude</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">g</span>
+
+</div>
+<div class="viewcode-block" id="scattering_cross_section"><a class="viewcode-back" href="../../../colour.phenomenons.rayleigh.html#colour.phenomenons.rayleigh.scattering_cross_section">[docs]</a><span class="k">def</span> <span class="nf">scattering_cross_section</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span>
+                             <span class="n">CO2_concentration</span><span class="o">=</span><span class="n">STANDARD_CO2_CONCENTRATION</span><span class="p">,</span>
+                             <span class="n">temperature</span><span class="o">=</span><span class="n">STANDARD_AIR_TEMPERATURE</span><span class="p">,</span>
+                             <span class="n">avogadro_constant</span><span class="o">=</span><span class="n">AVOGADRO_CONSTANT</span><span class="p">,</span>
+                             <span class="n">n_s</span><span class="o">=</span><span class="n">air_refraction_index_Bodhaine1999</span><span class="p">,</span>
+                             <span class="n">F_air</span><span class="o">=</span><span class="n">F_air_Bodhaine1999</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the scattering cross section per molecule :math:`\sigma` of dry air</span>
+<span class="sd">    as function of wavelength :math:`\lambda` in centimeters (cm) using given</span>
+<span class="sd">    :math:`CO_2` concentration in parts per million (ppm) and temperature</span>
+<span class="sd">    :math:`T[K]` in kelvin degrees following Van de Hulst (1957) method.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    wavelength : numeric or array_like</span>
+<span class="sd">        Wavelength :math:`\lambda` in centimeters (cm).</span>
+<span class="sd">    CO2_concentration : numeric or array_like, optional</span>
+<span class="sd">        :math:`CO_2` concentration in parts per million (ppm).</span>
+<span class="sd">    temperature : numeric or array_like, optional</span>
+<span class="sd">        Air temperature :math:`T[K]` in kelvin degrees.</span>
+<span class="sd">    avogadro_constant : numeric or array_like, optional</span>
+<span class="sd">        *Avogadro*&#39;s number (molecules :math:`mol^{-1}`).</span>
+<span class="sd">    n_s : object</span>
+<span class="sd">        Air refraction index :math:`n_s` computation method.</span>
+<span class="sd">    F_air : object</span>
+<span class="sd">        :math:`(6+3_p)/(6-7_p)`, the depolarisation term :math:`F(air)` or</span>
+<span class="sd">        *King Factor* computation method.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Scattering cross section per molecule :math:`\sigma` of dry air.</span>
+
+<span class="sd">    Warning</span>
+<span class="sd">    -------</span>
+<span class="sd">    Unlike most objects of :mod:`colour.phenomenons.rayleigh` module,</span>
+<span class="sd">    :func:`colour.phenomenons.rayleigh.scattering_cross_section` expects</span>
+<span class="sd">    wavelength :math:`\lambda` to be expressed in centimeters (cm).</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; scattering_cross_section(555 * 10e-8)  # doctest: +ELLIPSIS</span>
+<span class="sd">    4.6613309...e-27</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">wl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span>
+    <span class="n">CO2_c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">CO2_concentration</span><span class="p">)</span>
+    <span class="n">temperature</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">temperature</span><span class="p">)</span>
+
+    <span class="n">wl_micrometers</span> <span class="o">=</span> <span class="n">wl</span> <span class="o">*</span> <span class="mf">10e3</span>
+
+    <span class="n">n_s</span> <span class="o">=</span> <span class="n">n_s</span><span class="p">(</span><span class="n">wl_micrometers</span><span class="p">)</span>
+    <span class="n">N_s</span> <span class="o">=</span> <span class="n">molecular_density</span><span class="p">(</span><span class="n">temperature</span><span class="p">,</span> <span class="n">avogadro_constant</span><span class="p">)</span>
+    <span class="n">F_air</span> <span class="o">=</span> <span class="n">F_air</span><span class="p">(</span><span class="n">wl_micrometers</span><span class="p">,</span> <span class="n">CO2_c</span><span class="p">)</span>
+
+    <span class="n">sigma</span> <span class="o">=</span> <span class="p">(</span><span class="mi">24</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="n">n_s</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span>
+             <span class="p">(</span><span class="n">wl</span> <span class="o">**</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">N_s</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">n_s</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="n">sigma</span> <span class="o">*=</span> <span class="n">F_air</span>
+
+    <span class="k">return</span> <span class="n">sigma</span>
+
+</div>
+<div class="viewcode-block" id="rayleigh_optical_depth"><a class="viewcode-back" href="../../../colour.phenomenons.rayleigh.html#colour.phenomenons.rayleigh.rayleigh_optical_depth">[docs]</a><span class="k">def</span> <span class="nf">rayleigh_optical_depth</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span>
+                           <span class="n">CO2_concentration</span><span class="o">=</span><span class="n">STANDARD_CO2_CONCENTRATION</span><span class="p">,</span>
+                           <span class="n">temperature</span><span class="o">=</span><span class="n">STANDARD_AIR_TEMPERATURE</span><span class="p">,</span>
+                           <span class="n">pressure</span><span class="o">=</span><span class="n">AVERAGE_PRESSURE_MEAN_SEA_LEVEL</span><span class="p">,</span>
+                           <span class="n">latitude</span><span class="o">=</span><span class="n">DEFAULT_LATITUDE</span><span class="p">,</span>
+                           <span class="n">altitude</span><span class="o">=</span><span class="n">DEFAULT_ALTITUDE</span><span class="p">,</span>
+                           <span class="n">avogadro_constant</span><span class="o">=</span><span class="n">AVOGADRO_CONSTANT</span><span class="p">,</span>
+                           <span class="n">n_s</span><span class="o">=</span><span class="n">air_refraction_index_Bodhaine1999</span><span class="p">,</span>
+                           <span class="n">F_air</span><span class="o">=</span><span class="n">F_air_Bodhaine1999</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the rayleigh optical depth :math:`T_r(\lambda)` as function of</span>
+<span class="sd">    wavelength :math:`\lambda` in centimeters (cm).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    wavelength : numeric or array_like</span>
+<span class="sd">        Wavelength :math:`\lambda` in centimeters (cm).</span>
+<span class="sd">    CO2_concentration : numeric or array_like, optional</span>
+<span class="sd">        :math:`CO_2` concentration in parts per million (ppm).</span>
+<span class="sd">    temperature : numeric or array_like, optional</span>
+<span class="sd">        Air temperature :math:`T[K]` in kelvin degrees.</span>
+<span class="sd">    pressure : numeric or array_like</span>
+<span class="sd">        Surface pressure :math:`P` of the measurement site.</span>
+<span class="sd">    latitude : numeric or array_like, optional</span>
+<span class="sd">        Latitude of the site in degrees.</span>
+<span class="sd">    altitude : numeric or array_like, optional</span>
+<span class="sd">        Altitude of the site in meters.</span>
+<span class="sd">    avogadro_constant : numeric or array_like, optional</span>
+<span class="sd">        *Avogadro*&#39;s number (molecules :math:`mol^{-1}`).</span>
+<span class="sd">    n_s : object</span>
+<span class="sd">        Air refraction index :math:`n_s` computation method.</span>
+<span class="sd">    F_air : object</span>
+<span class="sd">        :math:`(6+3_p)/(6-7_p)`, the depolarisation term :math:`F(air)` or</span>
+<span class="sd">        *King Factor* computation method.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Rayleigh optical depth :math:`T_r(\lambda)`.</span>
+
+<span class="sd">    Warning</span>
+<span class="sd">    -------</span>
+<span class="sd">    Unlike most objects of :mod:`colour.phenomenons.rayleigh` module,</span>
+<span class="sd">    :func:`colour.phenomenons.rayleigh.rayleigh_optical_depth` expects</span>
+<span class="sd">    wavelength :math:`\lambda` to be expressed in centimeters (cm).</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; rayleigh_optical_depth(555 * 10e-8)  # doctest: +ELLIPSIS</span>
+<span class="sd">    0.1004070...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">wavelength</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wavelength</span><span class="p">)</span>
+    <span class="n">CO2_c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">CO2_concentration</span><span class="p">)</span>
+    <span class="n">latitude</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">latitude</span><span class="p">)</span>
+    <span class="n">altitude</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">altitude</span><span class="p">)</span>
+    <span class="c"># Conversion from pascal to dyne/cm2.</span>
+    <span class="n">P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">pressure</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span>
+
+    <span class="n">sigma</span> <span class="o">=</span> <span class="n">scattering_cross_section</span><span class="p">(</span><span class="n">wavelength</span><span class="p">,</span>
+                                     <span class="n">CO2_c</span><span class="p">,</span>
+                                     <span class="n">temperature</span><span class="p">,</span>
+                                     <span class="n">avogadro_constant</span><span class="p">,</span>
+                                     <span class="n">n_s</span><span class="p">,</span>
+                                     <span class="n">F_air</span><span class="p">)</span>
+
+    <span class="n">m_a</span> <span class="o">=</span> <span class="n">mean_molecular_weights</span><span class="p">(</span><span class="n">CO2_c</span><span class="p">)</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">gravity_List1968</span><span class="p">(</span><span class="n">latitude</span><span class="p">,</span> <span class="n">altitude</span><span class="p">)</span>
+
+    <span class="n">T_R</span> <span class="o">=</span> <span class="n">sigma</span> <span class="o">*</span> <span class="p">(</span><span class="n">P</span> <span class="o">*</span> <span class="n">avogadro_constant</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">m_a</span> <span class="o">*</span> <span class="n">g</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">T_R</span>
+
+</div>
+<span class="n">rayleigh_scattering</span> <span class="o">=</span> <span class="n">rayleigh_optical_depth</span>
+
+
+<span class="k">def</span> <span class="nf">rayleigh_scattering_spd</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="n">DEFAULT_SPECTRAL_SHAPE</span><span class="p">,</span>
+                            <span class="n">CO2_concentration</span><span class="o">=</span><span class="n">STANDARD_CO2_CONCENTRATION</span><span class="p">,</span>
+                            <span class="n">temperature</span><span class="o">=</span><span class="n">STANDARD_AIR_TEMPERATURE</span><span class="p">,</span>
+                            <span class="n">pressure</span><span class="o">=</span><span class="n">AVERAGE_PRESSURE_MEAN_SEA_LEVEL</span><span class="p">,</span>
+                            <span class="n">latitude</span><span class="o">=</span><span class="n">DEFAULT_LATITUDE</span><span class="p">,</span>
+                            <span class="n">altitude</span><span class="o">=</span><span class="n">DEFAULT_ALTITUDE</span><span class="p">,</span>
+                            <span class="n">avogadro_constant</span><span class="o">=</span><span class="n">AVOGADRO_CONSTANT</span><span class="p">,</span>
+                            <span class="n">n_s</span><span class="o">=</span><span class="n">air_refraction_index_Bodhaine1999</span><span class="p">,</span>
+                            <span class="n">F_air</span><span class="o">=</span><span class="n">F_air_Bodhaine1999</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the rayleigh spectral power distribution for given spectral shape.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    shape : SpectralShape, optional</span>
+<span class="sd">        Spectral shape used to create the rayleigh scattering spectral power</span>
+<span class="sd">        distribution.</span>
+<span class="sd">    CO2_concentration : numeric or array_like, optional</span>
+<span class="sd">        :math:`CO_2` concentration in parts per million (ppm).</span>
+<span class="sd">    temperature : numeric or array_like, optional</span>
+<span class="sd">        Air temperature :math:`T[K]` in kelvin degrees.</span>
+<span class="sd">    pressure : numeric or array_like</span>
+<span class="sd">        Surface pressure :math:`P` of the measurement site.</span>
+<span class="sd">    latitude : numeric or array_like, optional</span>
+<span class="sd">        Latitude of the site in degrees.</span>
+<span class="sd">    altitude : numeric or array_like, optional</span>
+<span class="sd">        Altitude of the site in meters.</span>
+<span class="sd">    avogadro_constant : numeric or array_like, optional</span>
+<span class="sd">        *Avogadro*&#39;s number (molecules :math:`mol^{-1}`).</span>
+<span class="sd">    n_s : object</span>
+<span class="sd">        Air refraction index :math:`n_s` computation method.</span>
+<span class="sd">    F_air : object</span>
+<span class="sd">        :math:`(6+3_p)/(6-7_p)`, the depolarisation term :math:`F(air)` or</span>
+<span class="sd">        *King Factor* computation method.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    SpectralPowerDistribution</span>
+<span class="sd">        Rayleigh optical depth spectral power distribution.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; rayleigh_scattering_spd()  # doctest: +ELLIPSIS</span>
+<span class="sd">    &lt;colour.colorimetry.spectrum.SpectralPowerDistribution object at 0x...&gt;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">wavelengths</span> <span class="o">=</span> <span class="n">shape</span><span class="o">.</span><span class="n">range</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">SpectralPowerDistribution</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="p">(</span><span class="s">&#39;Rayleigh Scattering - {0} ppm, {1} K, {2} Pa, {3} Degrees, &#39;</span>
+              <span class="s">&#39;{4} m&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">CO2_concentration</span><span class="p">,</span>
+                              <span class="n">temperature</span><span class="p">,</span>
+                              <span class="n">pressure</span><span class="p">,</span>
+                              <span class="n">latitude</span><span class="p">,</span>
+                              <span class="n">altitude</span><span class="p">),</span>
+        <span class="n">data</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">wavelengths</span><span class="p">,</span>
+                      <span class="n">rayleigh_optical_depth</span><span class="p">(</span><span class="n">wavelengths</span> <span class="o">*</span> <span class="mf">10e-8</span><span class="p">,</span>
+                                             <span class="n">CO2_concentration</span><span class="p">,</span>
+                                             <span class="n">temperature</span><span class="p">,</span>
+                                             <span class="n">pressure</span><span class="p">,</span>
+                                             <span class="n">latitude</span><span class="p">,</span>
+                                             <span class="n">altitude</span><span class="p">,</span>
+                                             <span class="n">avogadro_constant</span><span class="p">,</span>
+                                             <span class="n">n_s</span><span class="p">,</span>
+                                             <span class="n">F_air</span><span class="p">))))</span>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2015, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

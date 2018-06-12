@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.temperature Package &mdash; Colour 0.3.3 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.3.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.3 documentation" href="index.html" />
+    <link rel="up" title="colour Package" href="colour.html" />
+    <link rel="next" title="colour.temperature.cct Module" href="colour.temperature.cct.html" />
+    <link rel="prev" title="colour.recovery.smits1999 Module" href="colour.recovery.smits1999.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+  <li>
+    <a href="colour.recovery.smits1999.html" title="Previous Chapter: colour.recovery.smits1999 Module"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; colour.recovery....</span>
+    </a>
+  </li>
+  <li>
+    <a href="colour.temperature.cct.html" title="Next Chapter: colour.temperature.cct Module"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">colour.temperatu... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="colour-temperature-package">
+<h1>colour.temperature Package<a class="headerlink" href="#colour-temperature-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sub-modules">
+<h2>Sub-Modules<a class="headerlink" href="#sub-modules" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="colour.temperature.cct.html">colour.temperature.cct Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="colour.temperature.cct.html#correlated-colour-temperature">Correlated Colour Temperature <span class="math">\(T_{cp}\)</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="module-colour.temperature">
+<span id="module-contents"></span><h2>Module Contents<a class="headerlink" href="#module-colour.temperature" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="colour.temperature.CCT_to_uv">
+<tt class="descclassname">colour.temperature.</tt><tt class="descname">CCT_to_uv</tt><big>(</big><em>CCT</em>, <em>D_uv=0</em>, <em>method=u'Ohno 2013'</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.temperature.CCT_to_uv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <em>CIE UCS</em> colourspace <em>uv</em> chromaticity coordinates from given
+correlated colour temperature <span class="math">\(T_{cp}\)</span> and <span class="math">\(\Delta_{uv}\)</span> using
+given method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>CCT</strong> (<em>numeric</em>) &#8211; Correlated colour temperature <span class="math">\(T_{cp}\)</span>.</li>
+<li><strong>D_uv</strong> (<em>numeric</em>) &#8211; <span class="math">\(\Delta_{uv}\)</span>.</li>
+<li><strong>method</strong> (<em>unicode, optional</em>) &#8211; </li>
+<li><strong>2013&#8217;, &#8216;Robertson 1968&#8217;}</strong> (<em>{&#8216;Ohno</em>) &#8211; Computation method.</li>
+<li><strong>**kwargs</strong> (<em>**</em>) &#8211; Keywords arguments.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>CIE UCS</em> colourspace <em>uv</em> chromaticity coordinates.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">tuple</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><tt class="xref py py-exc docutils literal"><span class="pre">ValueError</span></tt> &#8211;
+If the computation method is not defined.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">colour</span> <span class="kn">import</span> <span class="n">STANDARD_OBSERVERS_CMFS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cmfs</span> <span class="o">=</span> <span class="s">&#39;CIE 1931 2 Degree Standard Observer&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cmfs</span> <span class="o">=</span> <span class="n">STANDARD_OBSERVERS_CMFS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cmfs</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">CCT</span> <span class="o">=</span> <span class="mf">6507.4342201047066</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">D_uv</span> <span class="o">=</span> <span class="mf">0.003223690901512735</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">CCT_to_uv</span><span class="p">(</span><span class="n">CCT</span><span class="p">,</span> <span class="n">D_uv</span><span class="p">,</span> <span class="n">cmfs</span><span class="o">=</span><span class="n">cmfs</span><span class="p">)</span>  
+<span class="go">(0.1978003..., 0.3122005...)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.temperature.CCT_to_uv_Ohno2013">
+<tt class="descclassname">colour.temperature.</tt><tt class="descname">CCT_to_uv_Ohno2013</tt><big>(</big><em>CCT</em>, <em>D_uv=0</em>, <em>cmfs=&lt;colour.colorimetry.cmfs.XYZ_ColourMatchingFunctions object at 0x2b3679ab5690&gt;</em><big>)</big><a class="headerlink" href="#colour.temperature.CCT_to_uv_Ohno2013" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <em>CIE UCS</em> colourspace <em>uv</em> chromaticity coordinates from given
+correlated colour temperature <span class="math">\(T_{cp}\)</span>, <span class="math">\(\Delta_{uv}\)</span> and
+colour matching functions using Ohno (2013) method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>CCT</strong> (<em>numeric</em>) &#8211; Correlated colour temperature <span class="math">\(T_{cp}\)</span>.</li>
+<li><strong>D_uv</strong> (<em>numeric, optional</em>) &#8211; <span class="math">\(\Delta_{uv}\)</span>.</li>
+<li><strong>cmfs</strong> (<em>XYZ_ColourMatchingFunctions, optional</em>) &#8211; Standard observer colour matching functions.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>CIE UCS</em> colourspace <em>uv</em> chromaticity coordinates.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tuple</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[4]</td><td>Ohno, Y. (2014). Practical Use and Calculation of CCT and Duv.
+LEUKOS, 10(1), 47–55. doi:10.1080/15502724.2014.839020</td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">colour</span> <span class="kn">import</span> <span class="n">STANDARD_OBSERVERS_CMFS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cmfs</span> <span class="o">=</span> <span class="s">&#39;CIE 1931 2 Degree Standard Observer&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cmfs</span> <span class="o">=</span> <span class="n">STANDARD_OBSERVERS_CMFS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cmfs</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">CCT</span> <span class="o">=</span> <span class="mf">6507.4342201047066</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">D_uv</span> <span class="o">=</span> <span class="mf">0.003223690901512735</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">CCT_to_uv_Ohno2013</span><span class="p">(</span><span class="n">CCT</span><span class="p">,</span> <span class="n">D_uv</span><span class="p">,</span> <span class="n">cmfs</span><span class="p">)</span>  
+<span class="go">(0.1978003..., 0.3122005...)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.temperature.CCT_to_uv_Robertson1968">
+<tt class="descclassname">colour.temperature.</tt><tt class="descname">CCT_to_uv_Robertson1968</tt><big>(</big><em>CCT</em>, <em>D_uv=0</em><big>)</big><a class="headerlink" href="#colour.temperature.CCT_to_uv_Robertson1968" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <em>CIE UCS</em> colourspace <em>uv</em> chromaticity coordinates from given
+correlated colour temperature <span class="math">\(T_{cp}\)</span> and <span class="math">\(\Delta_{uv}\)</span> using
+<em>Roberston (1968)</em> method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>CCT</strong> (<em>numeric</em>) &#8211; Correlated colour temperature <span class="math">\(T_{cp}\)</span>.</li>
+<li><strong>D_uv</strong> (<em>numeric</em>) &#8211; <span class="math">\(\Delta_{uv}\)</span>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>CIE UCS</em> colourspace <em>uv</em> chromaticity coordinates.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tuple</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[7]</td><td>Wyszecki, G., &amp; Stiles, W. S. (2000). DISTRIBUTION TEMPERATURE,
+COLOR TEMPERATURE, AND CORRELATED COLOR TEMPERATURE. In Color
+Science: Concepts and Methods, Quantitative Data and Formulae
+(pp. 224–229). Wiley. ISBN:978-0471399186</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[8]</td><td>Adobe Systems. (2013). Adobe DNG Software Development Kit (SDK) -
+1.3.0.0 - dng_sdk_1_3/dng_sdk/source/dng_temperature.cpp::
+dng_temperature::xy_coord. Retrieved from
+<a class="reference external" href="https://www.adobe.com/support/downloads/dng/dng_sdk.html">https://www.adobe.com/support/downloads/dng/dng_sdk.html</a></td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">CCT</span> <span class="o">=</span> <span class="mf">6500.0081378199056</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">D_uv</span> <span class="o">=</span> <span class="mf">0.0083333312442250979</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">CCT_to_uv_Robertson1968</span><span class="p">(</span><span class="n">CCT</span><span class="p">,</span> <span class="n">D_uv</span><span class="p">)</span>  
+<span class="go">(0.1937413..., 0.3152210...)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.temperature.uv_to_CCT">
+<tt class="descclassname">colour.temperature.</tt><tt class="descname">uv_to_CCT</tt><big>(</big><em>uv</em>, <em>method=u'Ohno 2013'</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.temperature.uv_to_CCT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the correlated colour temperature <span class="math">\(T_{cp}\)</span> and
+<span class="math">\(\Delta_{uv}\)</span> from given <em>CIE UCS</em> colourspace <em>uv</em> chromaticity
+coordinates using given method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>uv</strong> (<em>array_like</em>) &#8211; <em>CIE UCS</em> colourspace <em>uv</em> chromaticity coordinates.</li>
+<li><strong>method</strong> (<em>unicode, optional</em>) &#8211; {&#8216;Ohno 2013&#8217;, &#8216;Robertson 1968&#8217;}
+Computation method.</li>
+<li><strong>**kwargs</strong> (<em>**</em>) &#8211; Keywords arguments.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Correlated colour temperature <span class="math">\(T_{cp}\)</span>, <span class="math">\(\Delta_{uv}\)</span>.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">tuple</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><tt class="xref py py-exc docutils literal"><span class="pre">ValueError</span></tt> &#8211;
+If the computation method is not defined.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">colour</span> <span class="kn">import</span> <span class="n">STANDARD_OBSERVERS_CMFS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cmfs</span> <span class="o">=</span> <span class="s">&#39;CIE 1931 2 Degree Standard Observer&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cmfs</span> <span class="o">=</span> <span class="n">STANDARD_OBSERVERS_CMFS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cmfs</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">uv_to_CCT</span><span class="p">((</span><span class="mf">0.1978</span><span class="p">,</span> <span class="mf">0.3122</span><span class="p">),</span> <span class="n">cmfs</span><span class="o">=</span><span class="n">cmfs</span><span class="p">)</span>  
+<span class="go">(6507.5470349..., 0.0032236...)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.temperature.uv_to_CCT_Ohno2013">
+<tt class="descclassname">colour.temperature.</tt><tt class="descname">uv_to_CCT_Ohno2013</tt><big>(</big><em>uv</em>, <em>cmfs=&lt;colour.colorimetry.cmfs.XYZ_ColourMatchingFunctions object at 0x2b3679ab5690&gt;</em>, <em>start=1000</em>, <em>end=100000</em>, <em>count=10</em>, <em>iterations=6</em><big>)</big><a class="headerlink" href="#colour.temperature.uv_to_CCT_Ohno2013" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the correlated colour temperature <span class="math">\(T_{cp}\)</span> and
+<span class="math">\(\Delta_{uv}\)</span> from given <em>CIE UCS</em> colourspace <em>uv</em> chromaticity
+coordinates, colour matching functions and temperature range using
+Ohno (2013) method.</p>
+<p>The iterations parameter defines the calculations precision: The higher its
+value, the more planckian tables will be generated through cascade
+expansion in order to converge to the exact solution.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>uv</strong> (<em>array_like</em>) &#8211; <em>CIE UCS</em> colourspace <em>uv</em> chromaticity coordinates.</li>
+<li><strong>cmfs</strong> (<em>XYZ_ColourMatchingFunctions, optional</em>) &#8211; Standard observer colour matching functions.</li>
+<li><strong>start</strong> (<em>numeric, optional</em>) &#8211; Temperature range start in kelvins.</li>
+<li><strong>end</strong> (<em>numeric, optional</em>) &#8211; Temperature range end in kelvins.</li>
+<li><strong>count</strong> (<em>int, optional</em>) &#8211; Temperatures count in the planckian tables.</li>
+<li><strong>iterations</strong> (<em>int, optional</em>) &#8211; Number of planckian tables to generate.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Correlated colour temperature <span class="math">\(T_{cp}\)</span>, <span class="math">\(\Delta_{uv}\)</span>.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tuple</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[3]</td><td>Ohno, Y. (2014). Practical Use and Calculation of CCT and Duv.
+LEUKOS, 10(1), 47–55. doi:10.1080/15502724.2014.839020</td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">colour</span> <span class="kn">import</span> <span class="n">STANDARD_OBSERVERS_CMFS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cmfs</span> <span class="o">=</span> <span class="s">&#39;CIE 1931 2 Degree Standard Observer&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cmfs</span> <span class="o">=</span> <span class="n">STANDARD_OBSERVERS_CMFS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cmfs</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">uv_to_CCT_Ohno2013</span><span class="p">((</span><span class="mf">0.1978</span><span class="p">,</span> <span class="mf">0.3122</span><span class="p">),</span> <span class="n">cmfs</span><span class="p">)</span>  
+<span class="go">(6507.5470349..., 0.0032236...)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.temperature.uv_to_CCT_Robertson1968">
+<tt class="descclassname">colour.temperature.</tt><tt class="descname">uv_to_CCT_Robertson1968</tt><big>(</big><em>uv</em><big>)</big><a class="headerlink" href="#colour.temperature.uv_to_CCT_Robertson1968" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the correlated colour temperature <span class="math">\(T_{cp}\)</span> and
+<span class="math">\(\Delta_{uv}\)</span> from given <em>CIE UCS</em> colourspace <em>uv</em> chromaticity
+coordinates using <em>Roberston (1968)</em> method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>uv</strong> (<em>array_like</em>) &#8211; <em>CIE UCS</em> colourspace <em>uv</em> chromaticity coordinates.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Correlated colour temperature <span class="math">\(T_{cp}\)</span>, <span class="math">\(\Delta_{uv}\)</span>.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">tuple</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id5" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[5]</td><td>Wyszecki, G., &amp; Stiles, W. S. (2000). DISTRIBUTION TEMPERATURE,
+COLOR TEMPERATURE, AND CORRELATED COLOR TEMPERATURE. In Color
+Science: Concepts and Methods, Quantitative Data and Formulae
+(pp. 224–229). Wiley. ISBN:978-0471399186</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id6" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[6]</td><td>Adobe Systems. (2013). Adobe DNG Software Development Kit (SDK) -
+1.3.0.0 - dng_sdk_1_3/dng_sdk/source/dng_temperature.cpp::
+dng_temperature::Set_xy_coord. Retrieved from
+<a class="reference external" href="https://www.adobe.com/support/downloads/dng/dng_sdk.html">https://www.adobe.com/support/downloads/dng/dng_sdk.html</a></td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">uv</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.19374137599822966</span><span class="p">,</span> <span class="mf">0.31522104394059397</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">uv_to_CCT_Robertson1968</span><span class="p">(</span><span class="n">uv</span><span class="p">)</span>  
+<span class="go">(6500.0162879..., 0.0083333...)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.temperature.CCT_to_xy">
+<tt class="descclassname">colour.temperature.</tt><tt class="descname">CCT_to_xy</tt><big>(</big><em>CCT</em>, <em>method=u'Kang 2002'</em><big>)</big><a class="headerlink" href="#colour.temperature.CCT_to_xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <em>CIE XYZ</em> colourspace <em>xy</em> chromaticity coordinates from given
+correlated colour temperature <span class="math">\(T_{cp}\)</span> using given method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>CCT</strong> (<em>numeric</em>) &#8211; Correlated colour temperature <span class="math">\(T_{cp}\)</span>.</li>
+<li><strong>method</strong> (<em>unicode, optional</em>) &#8211; {&#8216;Kang 2002&#8217;, &#8216;CIE Illuminant D Series&#8217;}
+Computation method.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>xy</em> chromaticity coordinates.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tuple</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.temperature.CCT_to_xy_Kang2002">
+<tt class="descclassname">colour.temperature.</tt><tt class="descname">CCT_to_xy_Kang2002</tt><big>(</big><em>CCT</em><big>)</big><a class="headerlink" href="#colour.temperature.CCT_to_xy_Kang2002" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <em>CIE XYZ</em> colourspace <em>xy</em> chromaticity coordinates from given
+correlated colour temperature <span class="math">\(T_{cp}\)</span> using Kang et al. (2002)
+method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>CCT</strong> (<em>numeric</em>) &#8211; Correlated colour temperature <span class="math">\(T_{cp}\)</span>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>xy</em> chromaticity coordinates.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">tuple</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><tt class="xref py py-exc docutils literal"><span class="pre">ValueError</span></tt> &#8211;
+If the correlated colour temperature is not in appropriate domain.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id7" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[11]</td><td>Kang, B., Moon, O., Hong, C., Lee, H., Cho, B., &amp; Kim, Y. (2002).
+Design of advanced color: Temperature control system for HDTV
+applications. Journal of the Korean …, 41(6), 865–871. Retrieved
+from <a class="reference external" href="http://cat.inist.fr/?aModele=afficheN&amp;cpsidt=14448733">http://cat.inist.fr/?aModele=afficheN&amp;cpsidt=14448733</a></td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">CCT_to_xy_Kang2002</span><span class="p">(</span><span class="mf">6504.38938305</span><span class="p">)</span>  
+<span class="go">(0.3134259..., 0.3235959...)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.temperature.CCT_to_xy_CIE_D">
+<tt class="descclassname">colour.temperature.</tt><tt class="descname">CCT_to_xy_CIE_D</tt><big>(</big><em>CCT</em><big>)</big><a class="headerlink" href="#colour.temperature.CCT_to_xy_CIE_D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts from the correlated colour temperature <span class="math">\(T_{cp}\)</span> of a
+<em>CIE Illuminant D Series</em> to the chromaticity of that
+<em>CIE Illuminant D Series</em> illuminant.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>CCT</strong> (<em>numeric</em>) &#8211; Correlated colour temperature <span class="math">\(T_{cp}\)</span>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>xy</em> chromaticity coordinates.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">tuple</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><tt class="xref py py-exc docutils literal"><span class="pre">ValueError</span></tt> &#8211;
+If the correlated colour temperature is not in appropriate domain.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id8" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[12]</td><td>Wyszecki, G., &amp; Stiles, W. S. (2000). CIE Method of Calculating
+D-Illuminants. In Color Science: Concepts and Methods,
+Quantitative Data and Formulae (pp. 145–146). Wiley.
+ISBN:978-0471399186</td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">CCT_to_xy_CIE_D</span><span class="p">(</span><span class="mf">6504.38938305</span><span class="p">)</span>  
+<span class="go">(0.3127077..., 0.3291128...)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.temperature.xy_to_CCT">
+<tt class="descclassname">colour.temperature.</tt><tt class="descname">xy_to_CCT</tt><big>(</big><em>xy</em>, <em>method=u'McCamy 1992'</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#colour.temperature.xy_to_CCT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the correlated colour temperature <span class="math">\(T_{cp}\)</span> from given
+<em>CIE XYZ</em> colourspace <em>xy</em> chromaticity coordinates using given method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>xy</strong> (<em>array_like</em>) &#8211; <em>xy</em> chromaticity coordinates.</li>
+<li><strong>method</strong> (<em>unicode, optional</em>) &#8211; {&#8216;McCamy 1992&#8217;, &#8216;Hernandez 1999&#8217;}
+Computation method.</li>
+<li><strong>**kwargs</strong> (<em>**</em>) &#8211; Keywords arguments.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Correlated colour temperature <span class="math">\(T_{cp}\)</span>.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.temperature.xy_to_CCT_McCamy1992">
+<tt class="descclassname">colour.temperature.</tt><tt class="descname">xy_to_CCT_McCamy1992</tt><big>(</big><em>xy</em><big>)</big><a class="headerlink" href="#colour.temperature.xy_to_CCT_McCamy1992" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the correlated colour temperature <span class="math">\(T_{cp}\)</span> from given
+<em>CIE XYZ</em> colourspace <em>xy</em> chromaticity coordinates using
+McCamy (1992) method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>xy</strong> (<em>array_like</em>) &#8211; <em>xy</em> chromaticity coordinates.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Correlated colour temperature <span class="math">\(T_{cp}\)</span>.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">numeric</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id9" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[9]</td><td>Wikipedia. (n.d.). Approximation. Retrieved June 28, 2014, from
+<a class="reference external" href="http://en.wikipedia.org/wiki/Color_temperature#Approximation">http://en.wikipedia.org/wiki/Color_temperature#Approximation</a></td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">xy_to_CCT_McCamy1992</span><span class="p">((</span><span class="mf">0.31271</span><span class="p">,</span> <span class="mf">0.32902</span><span class="p">))</span>  
+<span class="go">6504.3893830...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.temperature.xy_to_CCT_Hernandez1999">
+<tt class="descclassname">colour.temperature.</tt><tt class="descname">xy_to_CCT_Hernandez1999</tt><big>(</big><em>xy</em><big>)</big><a class="headerlink" href="#colour.temperature.xy_to_CCT_Hernandez1999" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the correlated colour temperature <span class="math">\(T_{cp}\)</span> from given
+<em>CIE XYZ</em> colourspace <em>xy</em> chromaticity coordinates using
+Hernandez-Andres, Lee and Romero (1999) method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>xy</strong> (<em>array_like</em>) &#8211; <em>xy</em> chromaticity coordinates.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Correlated colour temperature <span class="math">\(T_{cp}\)</span>.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">numeric</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id10" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[10]</td><td>Hernández-Andrés, J., Lee, R. L., &amp; Romero, J. (1999).
+Calculating correlated color temperatures across the entire gamut
+of daylight and skylight chromaticities. Applied Optics, 38(27),
+5703–5709. doi:10.1364/AO.38.005703</td></tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">xy_to_CCT_Hernandez1999</span><span class="p">((</span><span class="mf">0.31271</span><span class="p">,</span> <span class="mf">0.32902</span><span class="p">))</span>  
+<span class="go">6500.0421533...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2014, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

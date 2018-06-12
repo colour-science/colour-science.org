@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.io.tabular Module &mdash; Colour 0.3.6 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.3.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.6 documentation" href="index.html" />
+    <link rel="up" title="colour.io Package" href="colour.io.html" />
+    <link rel="next" title="colour.io.xrite Module" href="colour.io.xrite.html" />
+    <link rel="prev" title="colour.io.image Module" href="colour.io.image.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+  <li>
+    <a href="colour.io.image.html" title="Previous Chapter: colour.io.image Module"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; colour.io.image ...</span>
+    </a>
+  </li>
+  <li>
+    <a href="colour.io.xrite.html" title="Next Chapter: colour.io.xrite Module"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">colour.io.xrite ... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="module-colour.io.tabular">
+<span id="colour-io-tabular-module"></span><h1>colour.io.tabular Module<a class="headerlink" href="#module-colour.io.tabular" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="csv-tabular-data-input-output">
+<h2>CSV Tabular Data Input / Output<a class="headerlink" href="#csv-tabular-data-input-output" title="Permalink to this headline">¶</a></h2>
+<p>Defines various input / output objects for CSV tabular data files:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#colour.io.tabular.read_spectral_data_from_csv_file" title="colour.io.tabular.read_spectral_data_from_csv_file"><tt class="xref py py-func docutils literal"><span class="pre">read_spectral_data_from_csv_file()</span></tt></a></li>
+<li><a class="reference internal" href="#colour.io.tabular.read_spds_from_csv_file" title="colour.io.tabular.read_spds_from_csv_file"><tt class="xref py py-func docutils literal"><span class="pre">read_spds_from_csv_file()</span></tt></a></li>
+<li><a class="reference internal" href="#colour.io.tabular.write_spds_to_csv_file" title="colour.io.tabular.write_spds_to_csv_file"><tt class="xref py py-func docutils literal"><span class="pre">write_spds_to_csv_file()</span></tt></a></li>
+</ul>
+<dl class="function">
+<dt id="colour.io.tabular.read_spectral_data_from_csv_file">
+<tt class="descclassname">colour.io.tabular.</tt><tt class="descname">read_spectral_data_from_csv_file</tt><big>(</big><em>path</em>, <em>delimiter=u'</em>, <em>'</em>, <em>fields=None</em>, <em>default=0</em><big>)</big><a class="reference internal" href="_modules/colour/io/tabular.html#read_spectral_data_from_csv_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.io.tabular.read_spectral_data_from_csv_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads the spectral data from given CSV file in the following form:</p>
+<p>390,  4.15003E-04,  3.68349E-04,  9.54729E-03
+395,  1.05192E-03,  9.58658E-04,  2.38250E-02
+400,  2.40836E-03,  2.26991E-03,  5.66498E-02
+...
+830,  9.74306E-07,  9.53411E-08,  0.00000</p>
+<p>and returns it as an <em>OrderedDict</em> of <em>dict</em> as follows:</p>
+<p>OrderedDict([
+(&#8216;field&#8217;, {&#8216;wavelength&#8217;: &#8216;value&#8217;, ..., &#8216;wavelength&#8217;: &#8216;value&#8217;}),
+...,
+(&#8216;field&#8217;, {&#8216;wavelength&#8217;: &#8216;value&#8217;, ..., &#8216;wavelength&#8217;: &#8216;value&#8217;})])</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>path</strong> (<em>unicode</em>) &#8211; Absolute CSV file path.</li>
+<li><strong>delimiter</strong> (<em>unicode, optional</em>) &#8211; CSV file content delimiter.</li>
+<li><strong>fields</strong> (<em>array_like, optional</em>) &#8211; CSV file spectral data fields names. If no value is provided the
+first line of the file will be used as spectral data fields names.</li>
+<li><strong>default</strong> (<em>numeric, optional</em>) &#8211; Default value for fields row with missing value.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">CSV file content.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">OrderedDict</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><tt class="xref py py-exc docutils literal"><span class="pre">RuntimeError</span></tt> &#8211;
+If the CSV spectral data file doesn&#8217;t define the appropriate fields.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>A CSV spectral data file should define at least define two fields:
+one for the wavelengths and one for the associated values of one
+spectral power distribution.</li>
+<li>If no value is provided for the fields names, the first line of the
+file will be used as spectral data fields names.</li>
+</ul>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">csv_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="s">&#39;tests&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s">&#39;resources&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s">&#39;colorchecker_n_ohta.csv&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spds_data</span> <span class="o">=</span> <span class="n">read_spectral_data_from_csv_file</span><span class="p">(</span><span class="n">csv_file</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">spds_data</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+<span class="go">[&#39;1&#39;,</span>
+<span class="go"> &#39;2&#39;,</span>
+<span class="go"> &#39;3&#39;,</span>
+<span class="go"> &#39;4&#39;,</span>
+<span class="go"> &#39;5&#39;,</span>
+<span class="go"> &#39;6&#39;,</span>
+<span class="go"> &#39;7&#39;,</span>
+<span class="go"> &#39;8&#39;,</span>
+<span class="go"> &#39;9&#39;,</span>
+<span class="go"> &#39;10&#39;,</span>
+<span class="go"> &#39;11&#39;,</span>
+<span class="go"> &#39;12&#39;,</span>
+<span class="go"> &#39;13&#39;,</span>
+<span class="go"> &#39;14&#39;,</span>
+<span class="go"> &#39;15&#39;,</span>
+<span class="go"> &#39;16&#39;,</span>
+<span class="go"> &#39;17&#39;,</span>
+<span class="go"> &#39;18&#39;,</span>
+<span class="go"> &#39;19&#39;,</span>
+<span class="go"> &#39;20&#39;,</span>
+<span class="go"> &#39;21&#39;,</span>
+<span class="go"> &#39;22&#39;,</span>
+<span class="go"> &#39;23&#39;,</span>
+<span class="go"> &#39;24&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.io.tabular.read_spds_from_csv_file">
+<tt class="descclassname">colour.io.tabular.</tt><tt class="descname">read_spds_from_csv_file</tt><big>(</big><em>path</em>, <em>delimiter=u'</em>, <em>'</em>, <em>fields=None</em>, <em>default=0</em><big>)</big><a class="reference internal" href="_modules/colour/io/tabular.html#read_spds_from_csv_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.io.tabular.read_spds_from_csv_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads the spectral data from given CSV file and return its content as an
+<em>OrderedDict</em> of
+<a class="reference internal" href="colour.colorimetry.spectrum.html#colour.colorimetry.spectrum.SpectralPowerDistribution" title="colour.colorimetry.spectrum.SpectralPowerDistribution"><tt class="xref py py-class docutils literal"><span class="pre">colour.colorimetry.spectrum.SpectralPowerDistribution</span></tt></a> classes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>path</strong> (<em>unicode</em>) &#8211; Absolute CSV file path.</li>
+<li><strong>delimiter</strong> (<em>unicode, optional</em>) &#8211; CSV file content delimiter.</li>
+<li><strong>fields</strong> (<em>array_like, optional</em>) &#8211; CSV file spectral data fields names. If no value is provided the
+first line of the file will be used for as spectral data fields names.</li>
+<li><strong>default</strong> (<em>numeric</em>) &#8211; Default value for fields row with missing value.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="colour.colorimetry.spectrum.html#colour.colorimetry.spectrum.SpectralPowerDistribution" title="colour.colorimetry.spectrum.SpectralPowerDistribution"><tt class="xref py py-class docutils literal"><span class="pre">colour.colorimetry.spectrum.SpectralPowerDistribution</span></tt></a>
+classes of given CSV file.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">OrderedDict</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">csv_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="s">&#39;tests&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s">&#39;resources&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s">&#39;colorchecker_n_ohta.csv&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spds</span> <span class="o">=</span> <span class="n">read_spds_from_csv_file</span><span class="p">(</span><span class="n">csv_file</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">spds</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>  
+<span class="go">((&#39;1&#39;,</span>
+<span class="go">  &lt;...SpectralPowerDistribution object at 0x...&gt;),</span>
+<span class="go"> (&#39;2&#39;,</span>
+<span class="go">  &lt;...SpectralPowerDistribution object at 0x...&gt;),</span>
+<span class="go"> (&#39;3&#39;,</span>
+<span class="go">  &lt;...SpectralPowerDistribution object at 0x...&gt;),</span>
+<span class="go"> (&#39;4&#39;,</span>
+<span class="go">  &lt;...SpectralPowerDistribution object at 0x...&gt;),</span>
+<span class="go"> (&#39;5&#39;,</span>
+<span class="go">  &lt;...SpectralPowerDistribution object at 0x...&gt;),</span>
+<span class="go"> (&#39;6&#39;,</span>
+<span class="go">  &lt;...SpectralPowerDistribution object at 0x...&gt;),</span>
+<span class="go"> (&#39;7&#39;,</span>
+<span class="go">  &lt;...SpectralPowerDistribution object at 0x...&gt;),</span>
+<span class="go"> (&#39;8&#39;,</span>
+<span class="go">  &lt;...SpectralPowerDistribution object at 0x...&gt;),</span>
+<span class="go"> (&#39;9&#39;,</span>
+<span class="go">  &lt;...SpectralPowerDistribution object at 0x...&gt;),</span>
+<span class="go"> (&#39;10&#39;,</span>
+<span class="go">  &lt;...SpectralPowerDistribution object at 0x...&gt;),</span>
+<span class="go"> (&#39;11&#39;,</span>
+<span class="go">  &lt;...SpectralPowerDistribution object at 0x...&gt;),</span>
+<span class="go"> (&#39;12&#39;,</span>
+<span class="go">  &lt;...SpectralPowerDistribution object at 0x...&gt;),</span>
+<span class="go"> (&#39;13&#39;,</span>
+<span class="go">  &lt;...SpectralPowerDistribution object at 0x...&gt;),</span>
+<span class="go"> (&#39;14&#39;,</span>
+<span class="go">  &lt;...SpectralPowerDistribution object at 0x...&gt;),</span>
+<span class="go"> (&#39;15&#39;,</span>
+<span class="go">  &lt;...SpectralPowerDistribution object at 0x...&gt;),</span>
+<span class="go"> (&#39;16&#39;,</span>
+<span class="go">  &lt;...SpectralPowerDistribution object at 0x...&gt;),</span>
+<span class="go"> (&#39;17&#39;,</span>
+<span class="go">  &lt;...SpectralPowerDistribution object at 0x...&gt;),</span>
+<span class="go"> (&#39;18&#39;,</span>
+<span class="go">  &lt;...SpectralPowerDistribution object at 0x...&gt;),</span>
+<span class="go"> (&#39;19&#39;,</span>
+<span class="go">  &lt;...SpectralPowerDistribution object at 0x...&gt;),</span>
+<span class="go"> (&#39;20&#39;,</span>
+<span class="go">  &lt;...SpectralPowerDistribution object at 0x...&gt;),</span>
+<span class="go"> (&#39;21&#39;,</span>
+<span class="go">  &lt;...SpectralPowerDistribution object at 0x...&gt;),</span>
+<span class="go"> (&#39;22&#39;,</span>
+<span class="go">  &lt;...SpectralPowerDistribution object at 0x...&gt;),</span>
+<span class="go"> (&#39;23&#39;,</span>
+<span class="go">  &lt;...SpectralPowerDistribution object at 0x...&gt;),</span>
+<span class="go"> (&#39;24&#39;,</span>
+<span class="go">  &lt;...SpectralPowerDistribution object at 0x...&gt;))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.io.tabular.write_spds_to_csv_file">
+<tt class="descclassname">colour.io.tabular.</tt><tt class="descname">write_spds_to_csv_file</tt><big>(</big><em>spds</em>, <em>path</em>, <em>delimiter=u'</em>, <em>'</em>, <em>fields=None</em><big>)</big><a class="reference internal" href="_modules/colour/io/tabular.html#write_spds_to_csv_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.io.tabular.write_spds_to_csv_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes the given spectral power distributions to given CSV file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>spds</strong> (<em>dict</em>) &#8211; Spectral power distributions to write.</li>
+<li><strong>path</strong> (<em>unicode</em>) &#8211; Absolute CSV file path.</li>
+<li><strong>delimiter</strong> (<em>unicode, optional</em>) &#8211; CSV file content delimiter.</li>
+<li><strong>fields</strong> (<em>array_like, optional</em>) &#8211; CSV file spectral data fields names. If no value is provided the
+order of fields will be the one defined by the sorted spectral power
+distributions <em>dict</em>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Definition success.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">bool</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><tt class="xref py py-exc docutils literal"><span class="pre">RuntimeError</span></tt> &#8211;
+If the given spectral power distributions have different shapes.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2015, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

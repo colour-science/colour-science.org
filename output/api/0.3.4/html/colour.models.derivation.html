@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.models.derivation Module &mdash; Colour 0.3.4 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.3.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.4 documentation" href="index.html" />
+    <link rel="up" title="colour.models Package" href="colour.models.html" />
+    <link rel="next" title="colour.models.ipt Module" href="colour.models.ipt.html" />
+    <link rel="prev" title="colour.models.deprecated Module" href="colour.models.deprecated.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+  <li>
+    <a href="colour.models.deprecated.html" title="Previous Chapter: colour.models.deprecated Module"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; colour.models.de...</span>
+    </a>
+  </li>
+  <li>
+    <a href="colour.models.ipt.html" title="Next Chapter: colour.models.ipt Module"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">colour.models.ip... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="module-colour.models.derivation">
+<span id="colour-models-derivation-module"></span><h1>colour.models.derivation Module<a class="headerlink" href="#module-colour.models.derivation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="rgb-colourspace-derivation">
+<h2>RGB Colourspace Derivation<a class="headerlink" href="#rgb-colourspace-derivation" title="Permalink to this headline">¶</a></h2>
+<p>Defines objects related to <em>RGB</em> colourspace derivation, essentially
+calculating the normalised primary matrix for given <em>RGB</em> colourspace primaries
+and whitepoint.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/models/rgb.ipynb">RGB Colourspaces IPython Notebook</a></p>
+</div>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td>SMPTE. (1993). Derivation of Basic Television Color Equations. In
+RP 177:1993 (Vol. RP 177:199). doi:10.5594/S9781614821915</td></tr>
+</tbody>
+</table>
+<dl class="function">
+<dt id="colour.models.derivation.xy_to_z">
+<tt class="descclassname">colour.models.derivation.</tt><tt class="descname">xy_to_z</tt><big>(</big><em>xy</em><big>)</big><a class="reference internal" href="_modules/colour/models/derivation.html#xy_to_z"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.models.derivation.xy_to_z" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <em>z</em> coordinate using given <em>xy</em> chromaticity coordinates.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>xy</strong> (<em>array_like</em>) &#8211; <em>xy</em> chromaticity coordinates.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>z</em> coordinate.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">numeric</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">xy_to_z</span><span class="p">((</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">))</span>
+<span class="go">0.5</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.derivation.normalised_primary_matrix">
+<tt class="descclassname">colour.models.derivation.</tt><tt class="descname">normalised_primary_matrix</tt><big>(</big><em>primaries</em>, <em>whitepoint</em><big>)</big><a class="reference internal" href="_modules/colour/models/derivation.html#normalised_primary_matrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.models.derivation.normalised_primary_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <em>normalised primary matrix</em> using given <em>primaries</em> and
+<em>whitepoint</em> matrices.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>primaries</strong> (<em>array_like</em>) &#8211; Primaries chromaticity coordinate matrix, (3, 2).</li>
+<li><strong>whitepoint</strong> (<em>array_like</em>) &#8211; Illuminant / whitepoint chromaticity coordinates.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Normalised primary matrix.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray, (3, 3)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">pms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.73470</span><span class="p">,</span> <span class="mf">0.26530</span><span class="p">,</span> <span class="mf">0.00000</span><span class="p">,</span> <span class="mf">1.00000</span><span class="p">,</span> <span class="mf">0.00010</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.07700</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">whitepoint</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.32168</span><span class="p">,</span> <span class="mf">0.33767</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">normalised_primary_matrix</span><span class="p">(</span><span class="n">pms</span><span class="p">,</span> <span class="n">whitepoint</span><span class="p">)</span>  
+<span class="go">array([[  9.5255239...e-01,   0.0000000...e+00,   9.3678631...e-05],</span>
+<span class="go">       [  3.4396645...e-01,   7.2816609...e-01,  -7.2132546...e-02],</span>
+<span class="go">       [  0.0000000...e+00,   0.0000000...e+00,   1.0088251...e+00]])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.derivation.RGB_luminance_equation">
+<tt class="descclassname">colour.models.derivation.</tt><tt class="descname">RGB_luminance_equation</tt><big>(</big><em>primaries</em>, <em>whitepoint</em><big>)</big><a class="reference internal" href="_modules/colour/models/derivation.html#RGB_luminance_equation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.models.derivation.RGB_luminance_equation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <em>luminance equation</em> from given <em>primaries</em> and <em>whitepoint</em>
+matrices.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>primaries</strong> (<em>array_like, (3, 2)</em>) &#8211; Primaries chromaticity coordinate matrix.</li>
+<li><strong>whitepoint</strong> (<em>array_like</em>) &#8211; Illuminant / whitepoint chromaticity coordinates.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>Luminance</em> equation.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">unicode</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">pms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.73470</span><span class="p">,</span> <span class="mf">0.26530</span><span class="p">,</span> <span class="mf">0.00000</span><span class="p">,</span> <span class="mf">1.00000</span><span class="p">,</span> <span class="mf">0.00010</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.07700</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">whitepoint</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.32168</span><span class="p">,</span> <span class="mf">0.33767</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># Doctests skip for Python 2.x compatibility.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">RGB_luminance_equation</span><span class="p">(</span><span class="n">pms</span><span class="p">,</span> <span class="n">whitepoint</span><span class="p">)</span>  
+<span class="go">&#39;Y = 0.3439664...(R) + 0.7281660...(G) + -0.0721325...(B)&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.models.derivation.RGB_luminance">
+<tt class="descclassname">colour.models.derivation.</tt><tt class="descname">RGB_luminance</tt><big>(</big><em>RGB</em>, <em>primaries</em>, <em>whitepoint</em><big>)</big><a class="reference internal" href="_modules/colour/models/derivation.html#RGB_luminance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.models.derivation.RGB_luminance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <em>luminance</em> <span class="math">\(y\)</span> of given <em>RGB</em> components from given
+<em>primaries</em> and <em>whitepoint</em> matrices.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>RGB</strong> (<em>array_like, (3,)</em>) &#8211; <em>RGB</em> chromaticity coordinate matrix.</li>
+<li><strong>primaries</strong> (<em>array_like, (3, 2)</em>) &#8211; Primaries chromaticity coordinate matrix.</li>
+<li><strong>whitepoint</strong> (<em>array_like</em>) &#8211; Illuminant / whitepoint chromaticity coordinates.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><em>Luminance</em> <span class="math">\(y\)</span>.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numeric</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">RGB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">40.6</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">,</span> <span class="mf">67.4</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.73470</span><span class="p">,</span> <span class="mf">0.26530</span><span class="p">,</span> <span class="mf">0.00000</span><span class="p">,</span> <span class="mf">1.00000</span><span class="p">,</span> <span class="mf">0.00010</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.07700</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">whitepoint</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.32168</span><span class="p">,</span> <span class="mf">0.33767</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">RGB_luminance</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span> <span class="n">pms</span><span class="p">,</span> <span class="n">whitepoint</span><span class="p">)</span>  
+<span class="go">12.1616018...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2015, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

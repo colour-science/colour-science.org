@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.plotting.common Module &mdash; Colour 0.3.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.3.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.1 documentation" href="index.html" />
+    <link rel="up" title="colour.plotting Package" href="colour.plotting.html" />
+    <link rel="next" title="colour.plotting.diagrams Module" href="colour.plotting.diagrams.html" />
+    <link rel="prev" title="colour.plotting.colorimetry Module" href="colour.plotting.colorimetry.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+  <li>
+    <a href="colour.plotting.colorimetry.html" title="Previous Chapter: colour.plotting.colorimetry Module"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; colour.plotting....</span>
+    </a>
+  </li>
+  <li>
+    <a href="colour.plotting.diagrams.html" title="Next Chapter: colour.plotting.diagrams Module"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">colour.plotting.... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="module-colour.plotting.common">
+<span id="colour-plotting-common-module"></span><h1>colour.plotting.common Module<a class="headerlink" href="#module-colour.plotting.common" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="common-plotting">
+<h2>Common Plotting<a class="headerlink" href="#common-plotting" title="Permalink to this headline">¶</a></h2>
+<p>Defines the common plotting objects:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#colour.plotting.common.colour_cycle" title="colour.plotting.common.colour_cycle"><tt class="xref py py-func docutils literal"><span class="pre">colour_cycle()</span></tt></a></li>
+<li><a class="reference internal" href="#colour.plotting.common.figure_size" title="colour.plotting.common.figure_size"><tt class="xref py py-func docutils literal"><span class="pre">figure_size()</span></tt></a></li>
+<li><a class="reference internal" href="#colour.plotting.common.aspect" title="colour.plotting.common.aspect"><tt class="xref py py-func docutils literal"><span class="pre">aspect()</span></tt></a></li>
+<li><a class="reference internal" href="#colour.plotting.common.bounding_box" title="colour.plotting.common.bounding_box"><tt class="xref py py-func docutils literal"><span class="pre">bounding_box()</span></tt></a></li>
+<li><a class="reference internal" href="#colour.plotting.common.display" title="colour.plotting.common.display"><tt class="xref py py-func docutils literal"><span class="pre">display()</span></tt></a></li>
+<li><a class="reference internal" href="#colour.plotting.common.colour_parameter" title="colour.plotting.common.colour_parameter"><tt class="xref py py-func docutils literal"><span class="pre">colour_parameter()</span></tt></a></li>
+<li><a class="reference internal" href="#colour.plotting.common.colour_parameters_plot" title="colour.plotting.common.colour_parameters_plot"><tt class="xref py py-func docutils literal"><span class="pre">colour_parameters_plot()</span></tt></a></li>
+<li><a class="reference internal" href="#colour.plotting.common.single_colour_plot" title="colour.plotting.common.single_colour_plot"><tt class="xref py py-func docutils literal"><span class="pre">single_colour_plot()</span></tt></a></li>
+<li><a class="reference internal" href="#colour.plotting.common.multi_colour_plot" title="colour.plotting.common.multi_colour_plot"><tt class="xref py py-func docutils literal"><span class="pre">multi_colour_plot()</span></tt></a></li>
+</ul>
+<dl class="data">
+<dt id="colour.plotting.common.PLOTTING_RESOURCES_DIRECTORY">
+<tt class="descclassname">colour.plotting.common.</tt><tt class="descname">PLOTTING_RESOURCES_DIRECTORY</tt><em class="property"> = '/Users/kelsolaar/Documents/Development/VirtualEnv/Colour2.7/lib/python2.7/site-packages/colour/plotting/resources'</em><a class="headerlink" href="#colour.plotting.common.PLOTTING_RESOURCES_DIRECTORY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resources directory.</p>
+<p>RESOURCES_DIRECTORY : unicode</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.plotting.common.DEFAULT_FIGURE_SIZE">
+<tt class="descclassname">colour.plotting.common.</tt><tt class="descname">DEFAULT_FIGURE_SIZE</tt><em class="property"> = (14, 7)</em><a class="headerlink" href="#colour.plotting.common.DEFAULT_FIGURE_SIZE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default plots figure size.</p>
+<p>DEFAULT_FIGURE_SIZE : tuple</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="colour.plotting.common.ColourParameter">
+<em class="property">class </em><tt class="descclassname">colour.plotting.common.</tt><tt class="descname">ColourParameter</tt><a class="headerlink" href="#colour.plotting.common.ColourParameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">tuple</span></tt></p>
+<p>ColourParameter(name, RGB, x, y0, y1)</p>
+<dl class="attribute">
+<dt id="colour.plotting.common.ColourParameter.RGB">
+<tt class="descname">RGB</tt><a class="headerlink" href="#colour.plotting.common.ColourParameter.RGB" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="colour.plotting.common.ColourParameter.__getnewargs__">
+<tt class="descname">__getnewargs__</tt><big>(</big><big>)</big><a class="headerlink" href="#colour.plotting.common.ColourParameter.__getnewargs__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return self as a plain tuple.  Used by copy and pickle.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="colour.plotting.common.ColourParameter.__repr__">
+<tt class="descname">__repr__</tt><big>(</big><big>)</big><a class="headerlink" href="#colour.plotting.common.ColourParameter.__repr__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a nicely formatted representation string</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="colour.plotting.common.ColourParameter.name">
+<tt class="descname">name</tt><a class="headerlink" href="#colour.plotting.common.ColourParameter.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="colour.plotting.common.ColourParameter.x">
+<tt class="descname">x</tt><a class="headerlink" href="#colour.plotting.common.ColourParameter.x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="colour.plotting.common.ColourParameter.y0">
+<tt class="descname">y0</tt><a class="headerlink" href="#colour.plotting.common.ColourParameter.y0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="colour.plotting.common.ColourParameter.y1">
+<tt class="descname">y1</tt><a class="headerlink" href="#colour.plotting.common.ColourParameter.y1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 4</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.plotting.common.colour_cycle">
+<tt class="descclassname">colour.plotting.common.</tt><tt class="descname">colour_cycle</tt><big>(</big><em>colour_map='hsv'</em>, <em>count=7</em><big>)</big><a class="reference internal" href="_modules/colour/plotting/common.html#colour_cycle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.plotting.common.colour_cycle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a colour cycle iterator using given colour map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>colour_map</strong> (<em>unicode, optional</em>) &#8211; Matplotlib colour map.</li>
+<li><strong>count</strong> (<em>int, optional</em>) &#8211; Cycle length.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Colour cycle iterator.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">cycle</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.plotting.common.figure_size">
+<tt class="descclassname">colour.plotting.common.</tt><tt class="descname">figure_size</tt><big>(</big><em>size=(14</em>, <em>7)</em><big>)</big><a class="reference internal" href="_modules/colour/plotting/common.html#figure_size"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.plotting.common.figure_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets figures sizes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>size</strong> (<em>tuple, optional</em>) &#8211; Figure size.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Callable object.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.plotting.common.aspect">
+<tt class="descclassname">colour.plotting.common.</tt><tt class="descname">aspect</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/colour/plotting/common.html#aspect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.plotting.common.aspect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the figure aspect.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>**kwargs</strong> (<em>**</em>) &#8211; Keywords arguments.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Definition success.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.plotting.common.bounding_box">
+<tt class="descclassname">colour.plotting.common.</tt><tt class="descname">bounding_box</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/colour/plotting/common.html#bounding_box"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.plotting.common.bounding_box" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the plot bounding box.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>**kwargs</strong> (<em>**</em>) &#8211; Keywords arguments.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Definition success.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.plotting.common.display">
+<tt class="descclassname">colour.plotting.common.</tt><tt class="descname">display</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/colour/plotting/common.html#display"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.plotting.common.display" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the figure display.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>**kwargs</strong> (<em>**</em>) &#8211; Keywords arguments.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Definition success.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.plotting.common.colour_parameter">
+<tt class="descclassname">colour.plotting.common.</tt><tt class="descname">colour_parameter</tt><big>(</big><em>name=None</em>, <em>RGB=None</em>, <em>x=None</em>, <em>y0=None</em>, <em>y1=None</em><big>)</big><a class="reference internal" href="_modules/colour/plotting/common.html#colour_parameter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.plotting.common.colour_parameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines a factory for
+<tt class="xref py py-attr docutils literal"><span class="pre">colour.plotting.plots.COLOUR_PARAMETER</span></tt> attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> (<em>unicode, optional</em>) &#8211; Colour name.</li>
+<li><strong>RGB</strong> (<em>array_like, optional</em>) &#8211; RGB Colour.</li>
+<li><strong>x</strong> (<em>numeric, optional</em>) &#8211; X data.</li>
+<li><strong>y0</strong> (<em>numeric, optional</em>) &#8211; Y0 data.</li>
+<li><strong>y1</strong> (<em>numeric, optional</em>) &#8211; Y1 data.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">ColourParameter.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ColourParameter</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.plotting.common.colour_parameters_plot">
+<tt class="descclassname">colour.plotting.common.</tt><tt class="descname">colour_parameters_plot</tt><big>(</big><em>colour_parameters</em>, <em>y0_plot=True</em>, <em>y1_plot=True</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/colour/plotting/common.html#colour_parameters_plot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.plotting.common.colour_parameters_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots given colour colour_parameters.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>colour_parameters</strong> (<em>list</em>) &#8211; ColourParameter sequence.</li>
+<li><strong>y0_plot</strong> (<em>bool, optional</em>) &#8211; Plot y0 line.</li>
+<li><strong>y1_plot</strong> (<em>bool, optional</em>) &#8211; Plot y1 line.</li>
+<li><strong>**kwargs</strong> (<em>**</em>) &#8211; Keywords arguments.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Definition success.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cp1</span> <span class="o">=</span> <span class="n">colour_parameter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">390</span><span class="p">,</span> <span class="n">RGB</span><span class="o">=</span><span class="p">[</span><span class="mf">0.03009021</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.12300545</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cp2</span> <span class="o">=</span> <span class="n">colour_parameter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">391</span><span class="p">,</span> <span class="n">RGB</span><span class="o">=</span><span class="p">[</span><span class="mf">0.03434063</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.13328537</span><span class="p">],</span> <span class="n">y0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y1</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cp3</span> <span class="o">=</span> <span class="n">colour_parameter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">392</span><span class="p">,</span> <span class="n">RGB</span><span class="o">=</span><span class="p">[</span><span class="mf">0.03826312</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.14276247</span><span class="p">],</span> <span class="n">y0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y1</span><span class="o">=</span><span class="mf">0.35</span><span class="p">)</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cp4</span> <span class="o">=</span> <span class="n">colour_parameter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">393</span><span class="p">,</span> <span class="n">RGB</span><span class="o">=</span><span class="p">[</span><span class="mf">0.04191844</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.15158707</span><span class="p">],</span> <span class="n">y0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y1</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cp5</span> <span class="o">=</span> <span class="n">colour_parameter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">394</span><span class="p">,</span> <span class="n">RGB</span><span class="o">=</span><span class="p">[</span><span class="mf">0.04535085</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.15986838</span><span class="p">],</span> <span class="n">y0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y1</span><span class="o">=-.</span><span class="mi">25</span><span class="p">)</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">colour_parameters_plot</span><span class="p">([</span><span class="n">cp1</span><span class="p">,</span> <span class="n">cp2</span><span class="p">,</span> <span class="n">cp3</span><span class="p">,</span> <span class="n">cp3</span><span class="p">,</span> <span class="n">cp4</span><span class="p">,</span> <span class="n">cp5</span><span class="p">])</span>    
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.plotting.common.single_colour_plot">
+<tt class="descclassname">colour.plotting.common.</tt><tt class="descname">single_colour_plot</tt><big>(</big><em>colour_parameter</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/colour/plotting/common.html#single_colour_plot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.plotting.common.single_colour_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots given colour.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>colour_parameter</strong> (<em>ColourParameter</em>) &#8211; ColourParameter.</li>
+<li><strong>**kwargs</strong> (<em>**</em>) &#8211; Keywords arguments.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Definition success.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">RGB</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.32315746</span><span class="p">,</span> <span class="mf">0.32983556</span><span class="p">,</span> <span class="mf">0.33640183</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">single_colour_plot</span><span class="p">(</span><span class="n">colour_parameter</span><span class="p">(</span><span class="n">RGB</span><span class="p">))</span>  
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="colour.plotting.common.multi_colour_plot">
+<tt class="descclassname">colour.plotting.common.</tt><tt class="descname">multi_colour_plot</tt><big>(</big><em>colour_parameters</em>, <em>width=1</em>, <em>height=1</em>, <em>spacing=0</em>, <em>across=3</em>, <em>text_display=True</em>, <em>text_size='large'</em>, <em>text_offset=0.075</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/colour/plotting/common.html#multi_colour_plot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.plotting.common.multi_colour_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots given colours.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>colour_parameters</strong> (<em>list</em>) &#8211; ColourParameter sequence.</li>
+<li><strong>width</strong> (<em>numeric, optional</em>) &#8211; Colour polygon width.</li>
+<li><strong>height</strong> (<em>numeric, optional</em>) &#8211; Colour polygon height.</li>
+<li><strong>spacing</strong> (<em>numeric, optional</em>) &#8211; Colour polygons spacing.</li>
+<li><strong>across</strong> (<em>int, optional</em>) &#8211; Colour polygons count per row.</li>
+<li><strong>text_display</strong> (<em>bool, optional</em>) &#8211; Display colour text.</li>
+<li><strong>text_size</strong> (<em>numeric, optional</em>) &#8211; Colour text size.</li>
+<li><strong>text_offset</strong> (<em>numeric, optional</em>) &#8211; Colour text offset.</li>
+<li><strong>**kwargs</strong> (<em>**</em>) &#8211; Keywords arguments.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Definition success.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cp1</span> <span class="o">=</span> <span class="n">colour_parameter</span><span class="p">(</span><span class="n">RGB</span><span class="o">=</span><span class="p">(</span><span class="mf">0.45293517</span><span class="p">,</span> <span class="mf">0.31732158</span><span class="p">,</span> <span class="mf">0.26414773</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cp2</span> <span class="o">=</span> <span class="n">colour_parameter</span><span class="p">(</span><span class="n">RGB</span><span class="o">=</span><span class="p">(</span><span class="mf">0.77875824</span><span class="p">,</span> <span class="mf">0.5772645</span><span class="p">,</span>  <span class="mf">0.50453169</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">multi_colour_plot</span><span class="p">([</span><span class="n">cp1</span><span class="p">,</span> <span class="n">cp2</span><span class="p">])</span>  
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2014, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

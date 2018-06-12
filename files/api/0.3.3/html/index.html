@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Colour Science for Python &mdash; Colour 0.3.3 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.3.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.3 documentation" href="#" />
+    <link rel="next" title="colour Package" href="colour.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+  <li>
+    <a href="colour.html" title="Next Chapter: colour Package"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">colour Package &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="colour-science-for-python">
+<h1>Colour Science for Python<a class="headerlink" href="#colour-science-for-python" title="Permalink to this headline">¶</a></h1>
+<img alt="https://raw.githubusercontent.com/colour-science/colour-branding/master/images/Colour_Logo_Medium_001.png" src="https://raw.githubusercontent.com/colour-science/colour-branding/master/images/Colour_Logo_Medium_001.png" />
+<p><a class="reference external" href="https://github.com/colour-science/colour">Colour</a> is a <a class="reference external" href="https://www.python.org/">Python</a> colour science package implementing a comprehensive number of colour theory transformations and algorithms.</p>
+<p>It is open source and freely available and under the <a class="reference external" href="http://opensource.org/licenses/BSD-3-Clause">New BSD License</a> terms.</p>
+<div class="section" id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/colour-science/colour">Colour</a> features a rich dataset and collection of objects, please see the <a class="reference external" href="http://colour-science.org/features.php">highlights</a> page for more information.</p>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>The installation procedure is described in the <a class="reference external" href="http://colour-science.org/installation.php">Installation Guide</a>.</p>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>The two main references for <a class="reference external" href="https://github.com/colour-science/colour">Colour</a> usage are the complete sphinx <a class="reference external" href="http://colour-science.org/api/latest/html/index.html">API Reference</a> and the <a class="reference external" href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb">IPython Notebooks</a> with detailed historical and theoretical context and images:</p>
+<ul class="simple">
+<li><a class="reference internal" href="api.html"><em>API Reference</em></a></li>
+<li><a class="reference external" href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb">IPython Notebooks</a></li>
+</ul>
+<div id="hidden-toctree"><div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="colour.html">colour Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="colour.html#sub-packages">Sub-Packages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="colour.adaptation.html">colour.adaptation Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.adaptation.html#sub-packages">Sub-Packages</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="colour.adaptation.dataset.html">colour.adaptation.dataset Package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.adaptation.dataset.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="colour.adaptation.dataset.cat.html">colour.adaptation.dataset.cat Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.adaptation.dataset.cat.html#chromatic-adaptation-transforms">Chromatic Adaptation Transforms</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="colour.adaptation.dataset.html#module-contents">Module Contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="colour.adaptation.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="colour.adaptation.cie1994.html">colour.adaptation.cie1994 Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.adaptation.cie1994.html#cie-1994-chromatic-adaptation-model">CIE 1994 Chromatic Adaptation Model</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.adaptation.cmccat2000.html">colour.adaptation.cmccat2000 Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.adaptation.cmccat2000.html#cmccat2000-chromatic-adaptation-model">CMCCAT2000 Chromatic Adaptation Model</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.adaptation.fairchild1990.html">colour.adaptation.fairchild1990 Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.adaptation.fairchild1990.html#fairchild-1990-chromatic-adaptation-model">Fairchild (1990) Chromatic Adaptation Model</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.adaptation.vonkries.html">colour.adaptation.vonkries Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.adaptation.vonkries.html#von-kries-chromatic-adaptation-model">Von Kries Chromatic Adaptation Model</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="colour.adaptation.html#module-colour.adaptation">Module Contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.algebra.html">colour.algebra Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.algebra.html#sub-packages">Sub-Packages</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="colour.algebra.coordinates.html">colour.algebra.coordinates Package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.algebra.coordinates.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="colour.algebra.coordinates.transformations.html">colour.algebra.coordinates.transformations Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.algebra.coordinates.transformations.html#coordinates-system-transformations">Coordinates System Transformations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="colour.algebra.coordinates.html#module-colour.algebra.coordinates">Module Contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="colour.algebra.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="colour.algebra.common.html">colour.algebra.common Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.algebra.common.html#algebra-common-utilities">Algebra Common Utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.algebra.extrapolation.html">colour.algebra.extrapolation Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.algebra.extrapolation.html#extrapolation">Extrapolation</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.algebra.interpolation.html">colour.algebra.interpolation Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.algebra.interpolation.html#interpolation">Interpolation</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.algebra.matrix.html">colour.algebra.matrix Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.algebra.matrix.html#matrix-helpers">Matrix Helpers</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.algebra.regression.html">colour.algebra.regression Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.algebra.regression.html#regression-analysis">Regression Analysis</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="colour.algebra.html#module-colour.algebra">Module Contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.appearance.html">colour.appearance Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.appearance.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="colour.appearance.atd95.html">colour.appearance.atd95 Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.appearance.atd95.html#atd-1995-colour-vision-model">ATD (1995) Colour Vision Model</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.appearance.ciecam02.html">colour.appearance.ciecam02 Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.appearance.ciecam02.html#ciecam02-colour-appearance-model">CIECAM02 Colour Appearance Model</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.appearance.hunt.html">colour.appearance.hunt Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.appearance.hunt.html#hunt-colour-appearance-model">Hunt Colour Appearance Model</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.appearance.llab.html">colour.appearance.llab Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.appearance.llab.html#llab-l-c-colour-appearance-model">LLAB(l:c) Colour Appearance Model</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.appearance.nayatani95.html">colour.appearance.nayatani95 Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.appearance.nayatani95.html#nayatani-1995-colour-appearance-model">Nayatani (1995) Colour Appearance Model</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.appearance.rlab.html">colour.appearance.rlab Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.appearance.rlab.html#rlab-colour-appearance-model">RLAB Colour Appearance Model</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="colour.appearance.html#module-colour.appearance">Module Contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.characterisation.html">colour.characterisation Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.characterisation.html#sub-packages">Sub-Packages</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="colour.characterisation.dataset.html">colour.characterisation.dataset Package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.characterisation.dataset.html#sub-packages">Sub-Packages</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="colour.characterisation.dataset.colour_checkers.html">colour.characterisation.dataset.colour_checkers Package</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.characterisation.dataset.colour_checkers.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l9"><a class="reference internal" href="colour.characterisation.dataset.colour_checkers.chromaticity_coordinates.html">colour.characterisation.dataset.colour_checkers.chromaticity_coordinates Module</a><ul>
+<li class="toctree-l10"><a class="reference internal" href="colour.characterisation.dataset.colour_checkers.chromaticity_coordinates.html#colourcheckers-chromaticity-coordinates">ColourCheckers Chromaticity Coordinates</a></li>
+</ul>
+</li>
+<li class="toctree-l9"><a class="reference internal" href="colour.characterisation.dataset.colour_checkers.spds.html">colour.characterisation.dataset.colour_checkers.spds Module</a><ul>
+<li class="toctree-l10"><a class="reference internal" href="colour.characterisation.dataset.colour_checkers.spds.html#colourcheckers-spectral-power-distributions">ColourCheckers Spectral Power Distributions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l8"><a class="reference internal" href="colour.characterisation.dataset.colour_checkers.html#module-colour.characterisation.dataset.colour_checkers">Module Contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="colour.characterisation.dataset.html#module-colour.characterisation.dataset">Module Contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="colour.characterisation.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="colour.characterisation.fitting.html">colour.characterisation.fitting Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.characterisation.fitting.html#colour-fitting">Colour Fitting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="colour.characterisation.html#module-colour.characterisation">Module Contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.colorimetry.html">colour.colorimetry Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.colorimetry.html#sub-packages">Sub-Packages</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="colour.colorimetry.dataset.html">colour.colorimetry.dataset Package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.colorimetry.dataset.html#sub-packages">Sub-Packages</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="colour.colorimetry.dataset.illuminants.html">colour.colorimetry.dataset.illuminants Package</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.colorimetry.dataset.illuminants.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l9"><a class="reference internal" href="colour.colorimetry.dataset.illuminants.chromaticity_coordinates.html">colour.colorimetry.dataset.illuminants.chromaticity_coordinates Module</a><ul>
+<li class="toctree-l10"><a class="reference internal" href="colour.colorimetry.dataset.illuminants.chromaticity_coordinates.html#illuminants-chromaticity-coordinates">Illuminants Chromaticity Coordinates</a></li>
+</ul>
+</li>
+<li class="toctree-l9"><a class="reference internal" href="colour.colorimetry.dataset.illuminants.d_illuminants_s_spds.html">colour.colorimetry.dataset.illuminants.d_illuminants_s_spds Module</a><ul>
+<li class="toctree-l10"><a class="reference internal" href="colour.colorimetry.dataset.illuminants.d_illuminants_s_spds.html#cie-standard-illuminant-d-series-spectral-power-distributions">CIE Standard Illuminant D Series <span class="math">\(S_n(\lambda)\)</span> Spectral Power Distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l9"><a class="reference internal" href="colour.colorimetry.dataset.illuminants.spds.html">colour.colorimetry.dataset.illuminants.spds Module</a><ul>
+<li class="toctree-l10"><a class="reference internal" href="colour.colorimetry.dataset.illuminants.spds.html#illuminants-relative-spectral-power-distributions">Illuminants Relative Spectral Power Distributions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l8"><a class="reference internal" href="colour.colorimetry.dataset.illuminants.html#module-colour.colorimetry.dataset.illuminants">Module Contents</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="colour.colorimetry.dataset.light_sources.html">colour.colorimetry.dataset.light_sources Package</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.colorimetry.dataset.light_sources.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l9"><a class="reference internal" href="colour.colorimetry.dataset.light_sources.chromaticity_coordinates.html">colour.colorimetry.dataset.light_sources.chromaticity_coordinates Module</a><ul>
+<li class="toctree-l10"><a class="reference internal" href="colour.colorimetry.dataset.light_sources.chromaticity_coordinates.html#light-sources-chromaticity-coordinates">Light Sources Chromaticity Coordinates</a></li>
+</ul>
+</li>
+<li class="toctree-l9"><a class="reference internal" href="colour.colorimetry.dataset.light_sources.spds.html">colour.colorimetry.dataset.light_sources.spds Module</a><ul>
+<li class="toctree-l10"><a class="reference internal" href="colour.colorimetry.dataset.light_sources.spds.html#light-sources-relative-spectral-power-distributions">Light Sources Relative Spectral Power Distributions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l8"><a class="reference internal" href="colour.colorimetry.dataset.light_sources.html#module-colour.colorimetry.dataset.light_sources">Module Contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="colour.colorimetry.dataset.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="colour.colorimetry.dataset.cmfs.html">colour.colorimetry.dataset.cmfs Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.colorimetry.dataset.cmfs.html#colour-matching-functions-spectral-power-distributions">Colour Matching Functions Spectral Power Distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="colour.colorimetry.dataset.lefs.html">colour.colorimetry.dataset.lefs Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.colorimetry.dataset.lefs.html#luminous-efficiency-functions-spectral-power-distributions">Luminous Efficiency Functions Spectral Power Distributions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="colour.colorimetry.dataset.html#module-colour.colorimetry.dataset">Module Contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="colour.colorimetry.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="colour.colorimetry.blackbody.html">colour.colorimetry.blackbody Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.colorimetry.blackbody.html#blackbody-planckian-radiator">Blackbody - Planckian Radiator</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.colorimetry.cmfs.html">colour.colorimetry.cmfs Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.colorimetry.cmfs.html#colour-matching-functions">Colour Matching Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.colorimetry.correction.html">colour.colorimetry.correction Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.colorimetry.correction.html#spectral-bandpass-dependence-correction">Spectral Bandpass Dependence Correction</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.colorimetry.illuminants.html">colour.colorimetry.illuminants Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.colorimetry.illuminants.html#illuminants">Illuminants</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.colorimetry.lefs.html">colour.colorimetry.lefs Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.colorimetry.lefs.html#luminous-efficiency-functions-spectral-power-distributions">Luminous Efficiency Functions Spectral Power Distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.colorimetry.lightness.html">colour.colorimetry.lightness Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.colorimetry.lightness.html#lightness">Lightness <span class="math">\(L*\)</span></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.colorimetry.luminance.html">colour.colorimetry.luminance Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.colorimetry.luminance.html#luminance">Luminance <span class="math">\(Y\)</span></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.colorimetry.photometry.html">colour.colorimetry.photometry Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.colorimetry.photometry.html#photometry">Photometry</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.colorimetry.spectrum.html">colour.colorimetry.spectrum Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.colorimetry.spectrum.html#spectrum">Spectrum</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.colorimetry.transformations.html">colour.colorimetry.transformations Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.colorimetry.transformations.html#colour-matching-functions-transformations">Colour Matching Functions Transformations</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.colorimetry.tristimulus.html">colour.colorimetry.tristimulus Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.colorimetry.tristimulus.html#tristimulus-values">Tristimulus Values</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.colorimetry.whiteness.html">colour.colorimetry.whiteness Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.colorimetry.whiteness.html#whiteness-index">Whiteness Index <span class="math">\(W\)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="colour.colorimetry.html#module-colour.colorimetry">Module Contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.constants.html">colour.constants Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.constants.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="colour.constants.cie.html">colour.constants.cie Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.constants.cie.html#cie-constants">CIE Constants</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.constants.codata.html">colour.constants.codata Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.constants.codata.html#fundamental-physical-constants">Fundamental Physical Constants</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="colour.constants.html#module-colour.constants">Module Contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.corresponding.html">colour.corresponding Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.corresponding.html#sub-packages">Sub-Packages</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="colour.corresponding.dataset.html">colour.corresponding.dataset Package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.corresponding.dataset.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="colour.corresponding.dataset.corresponding_chromaticities.html">colour.corresponding.dataset.corresponding_chromaticities Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.corresponding.dataset.corresponding_chromaticities.html#breneman-s-corresponding-chromaticities-dataset">Breneman&#8217;s Corresponding Chromaticities Dataset</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="colour.corresponding.dataset.html#module-contents">Module Contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="colour.corresponding.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="colour.corresponding.prediction.html">colour.corresponding.prediction Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.corresponding.prediction.html#corresponding-chromaticities-prediction">Corresponding Chromaticities Prediction</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="colour.corresponding.html#module-colour.corresponding">Module Contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.difference.html">colour.difference Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.difference.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="colour.difference.delta_e.html">colour.difference.delta_e Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.difference.delta_e.html#delta-e-colour-difference"><span class="math">\(\Delta E_{ab}\)</span> - Delta E Colour Difference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="colour.difference.html#module-colour.difference">Module Contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.io.html">colour.io Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.io.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="colour.io.common.html">colour.io.common Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.io.common.html#input-output-common-utilities">Input / Output Common Utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.io.ies_tm2714.html">colour.io.ies_tm2714 Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.io.ies_tm2714.html#ies-tm-27-14-data-input-output">IES TM-27-14 Data Input / Output</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.io.tabular.html">colour.io.tabular Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.io.tabular.html#csv-tabular-data-input-output">CSV Tabular Data Input / Output</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.io.xrite.html">colour.io.xrite Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.io.xrite.html#x-rite-data-input">X-Rite Data Input</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="colour.io.html#module-colour.io">Module Contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.models.html">colour.models Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.html#sub-packages">Sub-Packages</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="colour.models.dataset.html">colour.models.dataset Package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.models.dataset.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="colour.models.dataset.aces_rgb.html">colour.models.dataset.aces_rgb Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.models.dataset.aces_rgb.html#aces-rgb-colourspace">ACES RGB Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="colour.models.dataset.aces_rgb_idt.html">colour.models.dataset.aces_rgb_idt Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.models.dataset.aces_rgb_idt.html#aces-rgb-colourspace-input-device-transform-dataset">ACES RGB Colourspace - Input Device Transform Dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="colour.models.dataset.adobe_rgb_1998.html">colour.models.dataset.adobe_rgb_1998 Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.models.dataset.adobe_rgb_1998.html#adobe-rgb-1998-colourspace">Adobe RGB 1998 Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="colour.models.dataset.adobe_wide_gamut_rgb.html">colour.models.dataset.adobe_wide_gamut_rgb Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.models.dataset.adobe_wide_gamut_rgb.html#adobe-wide-gamut-rgb-colourspace">Adobe Wide Gamut RGB Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="colour.models.dataset.alexa_wide_gamut_rgb.html">colour.models.dataset.alexa_wide_gamut_rgb Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.models.dataset.alexa_wide_gamut_rgb.html#alexa-wide-gamut-rgb-colourspace">ALEXA Wide Gamut RGB Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="colour.models.dataset.apple_rgb.html">colour.models.dataset.apple_rgb Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.models.dataset.apple_rgb.html#apple-rgb-colourspace">Apple RGB Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="colour.models.dataset.best_rgb.html">colour.models.dataset.best_rgb Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.models.dataset.best_rgb.html#best-rgb-colourspace">Best RGB Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="colour.models.dataset.beta_rgb.html">colour.models.dataset.beta_rgb Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.models.dataset.beta_rgb.html#beta-rgb-colourspace">Beta RGB Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="colour.models.dataset.c_log.html">colour.models.dataset.c_log Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.models.dataset.c_log.html#canon-c-log-colourspace">Canon C-Log Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="colour.models.dataset.cie_rgb.html">colour.models.dataset.cie_rgb Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.models.dataset.cie_rgb.html#cie-rgb-colourspace">CIE RGB Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="colour.models.dataset.color_match_rgb.html">colour.models.dataset.color_match_rgb Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.models.dataset.color_match_rgb.html#colormatch-rgb-colourspace">ColorMatch RGB Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="colour.models.dataset.dci_p3.html">colour.models.dataset.dci_p3 Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.models.dataset.dci_p3.html#dci-p3-colourspace">DCI-P3 Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="colour.models.dataset.don_rgb_4.html">colour.models.dataset.don_rgb_4 Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.models.dataset.don_rgb_4.html#don-rgb-4-colourspace">Don RGB 4 Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="colour.models.dataset.eci_rgb_v2.html">colour.models.dataset.eci_rgb_v2 Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.models.dataset.eci_rgb_v2.html#eci-rgb-v2-colourspace">ECI RGB v2 Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="colour.models.dataset.ekta_space_ps5.html">colour.models.dataset.ekta_space_ps5 Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.models.dataset.ekta_space_ps5.html#ekta-space-ps-5-colourspace">Ekta Space PS 5 Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="colour.models.dataset.max_rgb.html">colour.models.dataset.max_rgb Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.models.dataset.max_rgb.html#max-rgb-colourspace">Max RGB Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="colour.models.dataset.ntsc_rgb.html">colour.models.dataset.ntsc_rgb Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.models.dataset.ntsc_rgb.html#ntsc-rgb-colourspace">NTSC RGB Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="colour.models.dataset.pal_secam_rgb.html">colour.models.dataset.pal_secam_rgb Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.models.dataset.pal_secam_rgb.html#pal-secam-rgb-colourspace">Pal/Secam RGB Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="colour.models.dataset.pointer_gamut.html">colour.models.dataset.pointer_gamut Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.models.dataset.pointer_gamut.html#pointer-s-gamut">Pointer&#8217;s Gamut</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="colour.models.dataset.prophoto_rgb.html">colour.models.dataset.prophoto_rgb Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.models.dataset.prophoto_rgb.html#prophoto-rgb-colourspace">ProPhoto RGB Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="colour.models.dataset.rec_2020.html">colour.models.dataset.rec_2020 Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.models.dataset.rec_2020.html#rec-2020-colourspace">Rec. 2020 Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="colour.models.dataset.rec_709.html">colour.models.dataset.rec_709 Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.models.dataset.rec_709.html#rec-709-colourspace">Rec. 709 Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="colour.models.dataset.russell_rgb.html">colour.models.dataset.russell_rgb Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.models.dataset.russell_rgb.html#russell-rgb-colourspace">Russell RGB Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="colour.models.dataset.s_log.html">colour.models.dataset.s_log Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.models.dataset.s_log.html#sony-s-log-colourspace">Sony S-Log Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="colour.models.dataset.smptec_rgb.html">colour.models.dataset.smptec_rgb Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.models.dataset.smptec_rgb.html#smpte-c-rgb-colourspace">SMPTE-C RGB Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="colour.models.dataset.srgb.html">colour.models.dataset.srgb Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.models.dataset.srgb.html#srgb-colourspace">sRGB Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="colour.models.dataset.xtreme_rgb.html">colour.models.dataset.xtreme_rgb Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.models.dataset.xtreme_rgb.html#xtreme-rgb-colourspace">Xtreme RGB Colourspace</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="colour.models.dataset.html#module-colour.models.dataset">Module Contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="colour.models.aces_rgb_idt.html">colour.models.aces_rgb_idt Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.models.aces_rgb_idt.html#aces-rgb-colourspace-input-device-transform">ACES RGB Colourspace - Input Device Transform</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.models.cie_lab.html">colour.models.cie_lab Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.models.cie_lab.html#cie-lab-colourspace">CIE Lab Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.models.cie_luv.html">colour.models.cie_luv Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.models.cie_luv.html#cie-luv-colourspace">CIE Luv Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.models.cie_ucs.html">colour.models.cie_ucs Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.models.cie_ucs.html#cie-ucs-colourspace">CIE UCS Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.models.cie_uvw.html">colour.models.cie_uvw Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.models.cie_uvw.html#cie-uvw-colourspace">CIE UVW Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.models.cie_xyy.html">colour.models.cie_xyy Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.models.cie_xyy.html#cie-xyy-colourspace">CIE xyY Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.models.common.html">colour.models.common Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.models.common.html#common-colour-models-utilities">Common Colour Models Utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.models.deprecated.html">colour.models.deprecated Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.models.deprecated.html#deprecated-colour-models-transformations">Deprecated Colour Models Transformations</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.models.derivation.html">colour.models.derivation Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.models.derivation.html#rgb-colourspace-derivation">RGB Colourspace Derivation</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.models.ipt.html">colour.models.ipt Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.models.ipt.html#ipt-colourspace">IPT Colourspace</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.models.rgb.html">colour.models.rgb Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.models.rgb.html#rgb-colourspace-transformations">RGB Colourspace &amp; Transformations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="colour.models.html#module-colour.models">Module Contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.notation.html">colour.notation Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.notation.html#sub-packages">Sub-Packages</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="colour.notation.dataset.html">colour.notation.dataset Package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.notation.dataset.html#sub-packages">Sub-Packages</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="colour.notation.dataset.munsell.html">colour.notation.dataset.munsell Package</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.notation.dataset.munsell.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l9"><a class="reference internal" href="colour.notation.dataset.munsell.all.html">colour.notation.dataset.munsell.all Module</a><ul>
+<li class="toctree-l10"><a class="reference internal" href="colour.notation.dataset.munsell.all.html#munsell-renotation-system-dataset-all-munsell-colours">Munsell Renotation System Dataset - All Munsell Colours</a></li>
+</ul>
+</li>
+<li class="toctree-l9"><a class="reference internal" href="colour.notation.dataset.munsell.experimental.html">colour.notation.dataset.munsell.experimental Module</a><ul>
+<li class="toctree-l10"><a class="reference internal" href="colour.notation.dataset.munsell.experimental.html#munsell-renotation-system-dataset-1929-munsell-colours">Munsell Renotation System Dataset - 1929 Munsell Colours</a></li>
+</ul>
+</li>
+<li class="toctree-l9"><a class="reference internal" href="colour.notation.dataset.munsell.real.html">colour.notation.dataset.munsell.real Module</a><ul>
+<li class="toctree-l10"><a class="reference internal" href="colour.notation.dataset.munsell.real.html#munsell-renotation-system-dataset-real-munsell-colours">Munsell Renotation System Dataset - Real Munsell Colours</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l8"><a class="reference internal" href="colour.notation.dataset.munsell.html#module-colour.notation.dataset.munsell">Module Contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="colour.notation.dataset.html#module-colour.notation.dataset">Module Contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="colour.notation.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="colour.notation.munsell.html">colour.notation.munsell Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.notation.munsell.html#munsell-renotation-system">Munsell Renotation System</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.notation.triplet.html">colour.notation.triplet Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.notation.triplet.html#hexadecimal-triplet-notation">Hexadecimal Triplet Notation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="colour.notation.html#module-colour.notation">Module Contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.optimal.html">colour.optimal Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.optimal.html#sub-packages">Sub-Packages</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="colour.optimal.dataset.html">colour.optimal.dataset Package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.optimal.dataset.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="colour.optimal.dataset.optimal_colour_stimuli.html">colour.optimal.dataset.optimal_colour_stimuli Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.optimal.dataset.optimal_colour_stimuli.html#optimal-colour-stimuli">Optimal Colour Stimuli</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="colour.optimal.dataset.html#module-colour.optimal.dataset">Module Contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="colour.optimal.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="colour.optimal.macadam_limits.html">colour.optimal.macadam_limits Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.optimal.macadam_limits.html#optimal-colour-stimuli-macadam-limits">Optimal Colour Stimuli - MacAdam Limits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="colour.optimal.html#module-colour.optimal">Module Contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.phenomenons.html">colour.phenomenons Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.phenomenons.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="colour.phenomenons.rayleigh.html">colour.phenomenons.rayleigh Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.phenomenons.rayleigh.html#rayleigh-optical-depth-scattering-in-the-atmosphere">Rayleigh Optical Depth - Scattering in the Atmosphere</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="colour.phenomenons.html#module-colour.phenomenons">Module Contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.plotting.html">colour.plotting Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.plotting.html#sub-packages">Sub-Packages</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="colour.plotting.dataset.html">colour.plotting.dataset Package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.plotting.dataset.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="colour.plotting.dataset.astm_g_173.html">colour.plotting.dataset.astm_g_173 Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.plotting.dataset.astm_g_173.html#astm-g-173-solar-spectral-irradiance">ASTM G-173 Solar Spectral Irradiance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="colour.plotting.dataset.html#module-colour.plotting.dataset">Module Contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="colour.plotting.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="colour.plotting.characterisation.html">colour.plotting.characterisation Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.plotting.characterisation.html#characterisation-plotting">Characterisation Plotting</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.plotting.colorimetry.html">colour.plotting.colorimetry Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.plotting.colorimetry.html#colorimetry-plotting">Colorimetry Plotting</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.plotting.common.html">colour.plotting.common Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.plotting.common.html#common-plotting">Common Plotting</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.plotting.corresponding.html">colour.plotting.corresponding Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.plotting.corresponding.html#corresponding-chromaticities-prediction-plotting">Corresponding Chromaticities Prediction Plotting</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.plotting.diagrams.html">colour.plotting.diagrams Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.plotting.diagrams.html#cie-chromaticity-diagrams-plotting">CIE Chromaticity Diagrams Plotting</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.plotting.models.html">colour.plotting.models Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.plotting.models.html#colour-models-plotting">Colour Models Plotting</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.plotting.notation.html">colour.plotting.notation Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.plotting.notation.html#colour-notation-systems-plotting">Colour Notation Systems Plotting</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.plotting.phenomenon.html">colour.plotting.phenomenon Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.plotting.phenomenon.html#optical-phenomenon-plotting">Optical Phenomenon Plotting</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.plotting.quality.html">colour.plotting.quality Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.plotting.quality.html#colour-quality-plotting">Colour Quality Plotting</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.plotting.temperature.html">colour.plotting.temperature Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.plotting.temperature.html#colour-temperature-correlated-colour-temperature-plotting">Colour Temperature &amp; Correlated Colour Temperature Plotting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="colour.plotting.html#module-colour.plotting">Module Contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.quality.html">colour.quality Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.quality.html#sub-packages">Sub-Packages</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="colour.quality.dataset.html">colour.quality.dataset Package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.quality.dataset.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="colour.quality.dataset.tcs.html">colour.quality.dataset.tcs Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.quality.dataset.tcs.html#test-colour-samples-spectral-power-distributions">Test Colour Samples Spectral Power Distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="colour.quality.dataset.vs.html">colour.quality.dataset.vs Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.quality.dataset.vs.html#cqs-test-colour-samples-spectral-power-distributions">CQS Test Colour Samples Spectral Power Distributions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="colour.quality.dataset.html#module-colour.quality.dataset">Module Contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="colour.quality.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="colour.quality.cqs.html">colour.quality.cqs Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.quality.cqs.html#colour-quality-scale">Colour Quality Scale</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.quality.cri.html">colour.quality.cri Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.quality.cri.html#colour-rendering-index">Colour Rendering Index</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="colour.quality.html#module-colour.quality">Module Contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.recovery.html">colour.recovery Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.recovery.html#sub-packages">Sub-Packages</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="colour.recovery.dataset.html">colour.recovery.dataset Package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.recovery.dataset.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="colour.recovery.dataset.smits1999.html">colour.recovery.dataset.smits1999 Module</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="colour.recovery.dataset.smits1999.html#smits-1999-reflectance-recovery-dataset">Smits (1999) - Reflectance Recovery Dataset</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="colour.recovery.dataset.html#module-colour.recovery.dataset">Module Contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="colour.recovery.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="colour.recovery.smits1999.html">colour.recovery.smits1999 Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.recovery.smits1999.html#smits-1999-reflectance-recovery">Smits (1999) - Reflectance Recovery</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="colour.recovery.html#module-colour.recovery">Module Contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.temperature.html">colour.temperature Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.temperature.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="colour.temperature.cct.html">colour.temperature.cct Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.temperature.cct.html#correlated-colour-temperature">Correlated Colour Temperature <span class="math">\(T_{cp}\)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="colour.temperature.html#module-colour.temperature">Module Contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="colour.utilities.html">colour.utilities Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.utilities.html#sub-modules">Sub-Modules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="colour.utilities.common.html">colour.utilities.common Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.utilities.common.html#common-utilities">Common Utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.utilities.data_structures.html">colour.utilities.data_structures Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.utilities.data_structures.html#data-structures">Data Structures</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="colour.utilities.verbose.html">colour.utilities.verbose Module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="colour.utilities.verbose.html#verbose">Verbose</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="colour.utilities.html#module-colour.utilities">Module Contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="colour.html#module-colour">Module Contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="colour.html#colour">Colour</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="colour.html#subpackages">Subpackages</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div></div>
+<div class="section" id="contributing">
+<h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h2>
+<p>If you would like to contribute to <a class="reference external" href="https://github.com/colour-science/colour">Colour</a>, please refer to the following <a class="reference external" href="http://colour-science.org/contributing.php">Contributing</a> guide.</p>
+</div>
+<div class="section" id="changes">
+<h2>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h2>
+<p>The changes are viewable on the <a class="reference external" href="https://github.com/colour-science/colour/releases">Releases</a> page.</p>
+</div>
+<div class="section" id="bibliography">
+<h2>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>
+<p>The bibliography is available on the <a class="reference external" href="http://colour-science.org/bibliography.php">Bibliography</a> page.</p>
+<p>It is also viewable directly from the repository in either <a class="reference external" href="https://github.com/colour-science/colour/blob/develop/BIBLIOGRAPHY.bib">BibTeX</a> format or <a class="reference external" href="https://github.com/colour-science/colour/blob/develop/BIBLIOGRAPHY.rst">reStructuredText</a>.</p>
+</div>
+<div class="section" id="about">
+<h2>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><strong>Colour</strong> by Colour Developers - 2013 - 2014</div>
+<div class="line">Copyright © 2013 - 2014 – Colour Developers – <a class="reference external" href="mailto:colour-science&#37;&#52;&#48;googlegroups&#46;com">colour-science<span>&#64;</span>googlegroups<span>&#46;</span>com</a></div>
+<div class="line">This software is released under terms of New BSD License: <a class="reference external" href="http://opensource.org/licenses/BSD-3-Clause">http://opensource.org/licenses/BSD-3-Clause</a></div>
+<div class="line"><a class="reference external" href="http://github.com/colour-science/colour">http://github.com/colour-science/colour</a></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2014, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

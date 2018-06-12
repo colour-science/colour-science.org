@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.appearance.hunt &mdash; Colour 0.3.5 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.5 documentation" href="../../../index.html" />
+    <link rel="up" title="colour.appearance" href="../appearance.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for colour.appearance.hunt</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Hunt Colour Appearance Model</span>
+<span class="sd">============================</span>
+
+<span class="sd">Defines Hunt colour appearance model objects:</span>
+
+<span class="sd">-   :class:`Hunt_InductionFactors`</span>
+<span class="sd">-   :attr:`HUNT_VIEWING_CONDITIONS`</span>
+<span class="sd">-   :class:`Hunt_Specification`</span>
+<span class="sd">-   :func:`XYZ_to_Hunt`</span>
+
+<span class="sd">See Also</span>
+<span class="sd">--------</span>
+<span class="sd">`Hunt Colour Appearance Model IPython Notebook</span>
+<span class="sd">&lt;http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/appearance/hunt.ipynb&gt;`_  # noqa</span>
+
+<span class="sd">References</span>
+<span class="sd">----------</span>
+<span class="sd">.. [1]  Fairchild, M. D. (2013). The Hunt Model. In Color Appearance Models</span>
+<span class="sd">        (3rd ed., pp. 5094–5556). Wiley. ASIN:B00DAYO8E2</span>
+<span class="sd">.. [2]  Hunt, R. W. G. (2004). The Reproduction of Colour (6th ed.). Wiley.</span>
+<span class="sd">        ISBN:978-0-470-02425-6</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+
+<span class="kn">from</span> <span class="nn">colour.utilities</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">CaseInsensitiveMapping</span><span class="p">,</span>
+    <span class="n">dot_vector</span><span class="p">,</span>
+    <span class="n">tsplit</span><span class="p">,</span>
+    <span class="n">tstack</span><span class="p">,</span>
+    <span class="n">warning</span><span class="p">)</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s">&#39;Copyright (C) 2013 - 2015 - Colour Developers&#39;</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s">&#39;GPL V3.0 - http://www.gnu.org/licenses/&#39;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s">&#39;colour-science@googlegroups.com&#39;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s">&#39;Production&#39;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Hunt_InductionFactors&#39;</span><span class="p">,</span>
+           <span class="s">&#39;HUNT_VIEWING_CONDITIONS&#39;</span><span class="p">,</span>
+           <span class="s">&#39;HUE_DATA_FOR_HUE_QUADRATURE&#39;</span><span class="p">,</span>
+           <span class="s">&#39;XYZ_TO_HPE_MATRIX&#39;</span><span class="p">,</span>
+           <span class="s">&#39;HPE_TO_XYZ_MATRIX&#39;</span><span class="p">,</span>
+           <span class="s">&#39;Hunt_ReferenceSpecification&#39;</span><span class="p">,</span>
+           <span class="s">&#39;Hunt_Specification&#39;</span><span class="p">,</span>
+           <span class="s">&#39;XYZ_to_Hunt&#39;</span><span class="p">,</span>
+           <span class="s">&#39;luminance_level_adaptation_factor&#39;</span><span class="p">,</span>
+           <span class="s">&#39;illuminant_scotopic_luminance&#39;</span><span class="p">,</span>
+           <span class="s">&#39;XYZ_to_rgb&#39;</span><span class="p">,</span>
+           <span class="s">&#39;f_n&#39;</span><span class="p">,</span>
+           <span class="s">&#39;chromatic_adaptation&#39;</span><span class="p">,</span>
+           <span class="s">&#39;adjusted_reference_white_signals&#39;</span><span class="p">,</span>
+           <span class="s">&#39;achromatic_post_adaptation_signal&#39;</span><span class="p">,</span>
+           <span class="s">&#39;colour_difference_signals&#39;</span><span class="p">,</span>
+           <span class="s">&#39;hue_angle&#39;</span><span class="p">,</span>
+           <span class="s">&#39;eccentricity_factor&#39;</span><span class="p">,</span>
+           <span class="s">&#39;low_luminance_tritanopia_factor&#39;</span><span class="p">,</span>
+           <span class="s">&#39;yellowness_blueness_response&#39;</span><span class="p">,</span>
+           <span class="s">&#39;redness_greenness_response&#39;</span><span class="p">,</span>
+           <span class="s">&#39;overall_chromatic_response&#39;</span><span class="p">,</span>
+           <span class="s">&#39;saturation_correlate&#39;</span><span class="p">,</span>
+           <span class="s">&#39;achromatic_signal&#39;</span><span class="p">,</span>
+           <span class="s">&#39;brightness_correlate&#39;</span><span class="p">,</span>
+           <span class="s">&#39;lightness_correlate&#39;</span><span class="p">,</span>
+           <span class="s">&#39;chroma_correlate&#39;</span><span class="p">,</span>
+           <span class="s">&#39;colourfulness_correlate&#39;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="Hunt_InductionFactors"><a class="viewcode-back" href="../../../colour.appearance.hunt.html#colour.appearance.hunt.Hunt_InductionFactors">[docs]</a><span class="k">class</span> <span class="nc">Hunt_InductionFactors</span><span class="p">(</span>
+    <span class="n">namedtuple</span><span class="p">(</span><span class="s">&#39;Hunt_InductionFactors&#39;</span><span class="p">,</span>
+               <span class="p">(</span><span class="s">&#39;N_c&#39;</span><span class="p">,</span> <span class="s">&#39;N_b&#39;</span><span class="p">,</span> <span class="s">&#39;N_cb&#39;</span><span class="p">,</span> <span class="s">&#39;N_bb&#39;</span><span class="p">))):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Hunt colour appearance model induction factors.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    N_c : numeric or array_like</span>
+<span class="sd">        Chromatic surround induction factor :math:`N_c`.</span>
+<span class="sd">    N_b : numeric or array_like</span>
+<span class="sd">        *Brightness* surround induction factor :math:`N_b`.</span>
+<span class="sd">    N_cb : numeric or array_like, optional</span>
+<span class="sd">        Chromatic background induction factor :math:`N_{cb}`, approximated</span>
+<span class="sd">        using tristimulus values :math:`Y_w` and :math:`Y_b` of</span>
+<span class="sd">        respectively the reference white and the background if not specified.</span>
+<span class="sd">    N_bb : numeric or array_like, optional</span>
+<span class="sd">        *Brightness* background induction factor :math:`N_{bb}`, approximated</span>
+<span class="sd">        using tristimulus values :math:`Y_w` and :math:`Y_b` of</span>
+<span class="sd">        respectively the reference white and the background if not specified.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">N_c</span><span class="p">,</span> <span class="n">N_b</span><span class="p">,</span> <span class="n">N_cb</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">N_bb</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns a new instance of the :class:`Hunt_InductionFactors` class.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">Hunt_InductionFactors</span><span class="p">,</span> <span class="n">cls</span><span class="p">)</span><span class="o">.</span><span class="n">__new__</span><span class="p">(</span>
+            <span class="n">cls</span><span class="p">,</span> <span class="n">N_c</span><span class="p">,</span> <span class="n">N_b</span><span class="p">,</span> <span class="n">N_cb</span><span class="p">,</span> <span class="n">N_bb</span><span class="p">)</span>
+
+</div>
+<span class="n">HUNT_VIEWING_CONDITIONS</span> <span class="o">=</span> <span class="n">CaseInsensitiveMapping</span><span class="p">(</span>
+    <span class="p">{</span><span class="s">&#39;Small Areas, Uniform Background &amp; Surrounds&#39;</span><span class="p">:</span> <span class="p">(</span>
+        <span class="n">Hunt_InductionFactors</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">300</span><span class="p">)),</span>
+     <span class="s">&#39;Normal Scenes&#39;</span><span class="p">:</span> <span class="p">(</span>
+         <span class="n">Hunt_InductionFactors</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">75</span><span class="p">)),</span>
+     <span class="s">&#39;Television &amp; CRT, Dim Surrounds&#39;</span><span class="p">:</span> <span class="p">(</span>
+         <span class="n">Hunt_InductionFactors</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">25</span><span class="p">)),</span>
+     <span class="s">&#39;Large Transparencies On Light Boxes&#39;</span><span class="p">:</span> <span class="p">(</span>
+         <span class="n">Hunt_InductionFactors</span><span class="p">(</span><span class="mf">0.7</span><span class="p">,</span> <span class="mi">25</span><span class="p">)),</span>
+     <span class="s">&#39;Projected Transparencies, Dark Surrounds&#39;</span><span class="p">:</span> <span class="p">(</span>
+         <span class="n">Hunt_InductionFactors</span><span class="p">(</span><span class="mf">0.7</span><span class="p">,</span> <span class="mi">10</span><span class="p">))})</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Reference Hunt colour appearance model viewing conditions.</span>
+
+<span class="sd">HUNT_VIEWING_CONDITIONS : CaseInsensitiveMapping</span>
+<span class="sd">    {&#39;Small Areas, Uniform Background &amp; Surrounds&#39;,</span>
+<span class="sd">    &#39;Normal Scenes&#39;,</span>
+<span class="sd">    &#39;Television &amp; CRT, Dim Surrounds&#39;,</span>
+<span class="sd">    &#39;Large Transparencies On Light Boxes&#39;,</span>
+<span class="sd">    &#39;Projected Transparencies, Dark Surrounds&#39;}</span>
+
+<span class="sd">Aliases:</span>
+
+<span class="sd">-   &#39;small_uniform&#39;: &#39;Small Areas, Uniform Background &amp; Surrounds&#39;</span>
+<span class="sd">-   &#39;normal&#39;: &#39;Normal Scenes&#39;</span>
+<span class="sd">-   &#39;tv_dim&#39;: &#39;Television &amp; CRT, Dim Surrounds&#39;</span>
+<span class="sd">-   &#39;light_boxes&#39;: &#39;Large Transparencies On Light Boxes&#39;</span>
+<span class="sd">-   &#39;projected_dark&#39;: &#39;Projected Transparencies, Dark Surrounds&#39;</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">HUNT_VIEWING_CONDITIONS</span><span class="p">[</span><span class="s">&#39;small_uniform&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">HUNT_VIEWING_CONDITIONS</span><span class="p">[</span><span class="s">&#39;Small Areas, Uniform Background &amp; Surrounds&#39;</span><span class="p">])</span>
+<span class="n">HUNT_VIEWING_CONDITIONS</span><span class="p">[</span><span class="s">&#39;normal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">HUNT_VIEWING_CONDITIONS</span><span class="p">[</span><span class="s">&#39;Normal Scenes&#39;</span><span class="p">])</span>
+<span class="n">HUNT_VIEWING_CONDITIONS</span><span class="p">[</span><span class="s">&#39;tv_dim&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">HUNT_VIEWING_CONDITIONS</span><span class="p">[</span><span class="s">&#39;Television &amp; CRT, Dim Surrounds&#39;</span><span class="p">])</span>
+<span class="n">HUNT_VIEWING_CONDITIONS</span><span class="p">[</span><span class="s">&#39;light_boxes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">HUNT_VIEWING_CONDITIONS</span><span class="p">[</span><span class="s">&#39;Large Transparencies On Light Boxes&#39;</span><span class="p">])</span>
+<span class="n">HUNT_VIEWING_CONDITIONS</span><span class="p">[</span><span class="s">&#39;projected_dark&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">HUNT_VIEWING_CONDITIONS</span><span class="p">[</span><span class="s">&#39;Projected Transparencies, Dark Surrounds&#39;</span><span class="p">])</span>
+
+<span class="n">HUE_DATA_FOR_HUE_QUADRATURE</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&#39;h_s&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">20.14</span><span class="p">,</span> <span class="mf">90.00</span><span class="p">,</span> <span class="mf">164.25</span><span class="p">,</span> <span class="mf">237.53</span><span class="p">]),</span>
+    <span class="s">&#39;e_s&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">])}</span>
+
+<span class="n">XYZ_TO_HPE_MATRIX</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[[</span><span class="mf">0.38971</span><span class="p">,</span> <span class="mf">0.68898</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.07868</span><span class="p">],</span>
+     <span class="p">[</span><span class="o">-</span><span class="mf">0.22981</span><span class="p">,</span> <span class="mf">1.18340</span><span class="p">,</span> <span class="mf">0.04641</span><span class="p">],</span>
+     <span class="p">[</span><span class="mf">0.00000</span><span class="p">,</span> <span class="mf">0.00000</span><span class="p">,</span> <span class="mf">1.00000</span><span class="p">]])</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Hunt colour appearance model *CIE XYZ* tristimulus values to</span>
+<span class="sd">*Hunt-Pointer-Estevez* :math:`\\rho\gamma\\beta` colourspace matrix.</span>
+
+<span class="sd">XYZ_TO_HPE_MATRIX : array_like, (3, 3)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">HPE_TO_XYZ_MATRIX</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">XYZ_TO_HPE_MATRIX</span><span class="p">)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Hunt colour appearance model *Hunt-Pointer-Estevez* :math:`\\rho\gamma\\beta`</span>
+<span class="sd">colourspace to *CIE XYZ* tristimulus values matrix.</span>
+
+<span class="sd">HPE_TO_XYZ_MATRIX : array_like, (3, 3)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="Hunt_ReferenceSpecification"><a class="viewcode-back" href="../../../colour.appearance.hunt.html#colour.appearance.hunt.Hunt_ReferenceSpecification">[docs]</a><span class="k">class</span> <span class="nc">Hunt_ReferenceSpecification</span><span class="p">(</span>
+    <span class="n">namedtuple</span><span class="p">(</span><span class="s">&#39;Hunt_ReferenceSpecification&#39;</span><span class="p">,</span>
+               <span class="p">(</span><span class="s">&#39;J&#39;</span><span class="p">,</span> <span class="s">&#39;C_94&#39;</span><span class="p">,</span> <span class="s">&#39;h_S&#39;</span><span class="p">,</span> <span class="s">&#39;s&#39;</span><span class="p">,</span> <span class="s">&#39;Q&#39;</span><span class="p">,</span> <span class="s">&#39;M_94&#39;</span><span class="p">,</span> <span class="s">&#39;H&#39;</span><span class="p">,</span> <span class="s">&#39;H_C&#39;</span><span class="p">))):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Defines the Hunt colour appearance model reference specification.</span>
+
+<span class="sd">    This specification has field names consistent with Fairchild (2013)</span>
+<span class="sd">    reference.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    J : numeric or array_like</span>
+<span class="sd">        Correlate of *Lightness* :math:`J`.</span>
+<span class="sd">    C_94 : numeric or array_like</span>
+<span class="sd">        Correlate of *chroma* :math:`C_94`.</span>
+<span class="sd">    h_S : numeric or array_like</span>
+<span class="sd">        *Hue* angle :math:`h_S` in degrees.</span>
+<span class="sd">    s : numeric or array_like</span>
+<span class="sd">        Correlate of *saturation* :math:`s`.</span>
+<span class="sd">    Q : numeric or array_like</span>
+<span class="sd">        Correlate of *brightness* :math:`Q`.</span>
+<span class="sd">    M_94 : numeric or array_like</span>
+<span class="sd">        Correlate of *colourfulness* :math:`M_94`.</span>
+<span class="sd">    H : numeric or array_like</span>
+<span class="sd">        *Hue* :math:`h` quadrature :math:`H`.</span>
+<span class="sd">    H_C : numeric or array_like</span>
+<span class="sd">        *Hue* :math:`h` composition :math:`H_C`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+</div>
+<div class="viewcode-block" id="Hunt_Specification"><a class="viewcode-back" href="../../../colour.appearance.hunt.html#colour.appearance.hunt.Hunt_Specification">[docs]</a><span class="k">class</span> <span class="nc">Hunt_Specification</span><span class="p">(</span>
+    <span class="n">namedtuple</span><span class="p">(</span><span class="s">&#39;Hunt_Specification&#39;</span><span class="p">,</span>
+               <span class="p">(</span><span class="s">&#39;J&#39;</span><span class="p">,</span> <span class="s">&#39;C&#39;</span><span class="p">,</span> <span class="s">&#39;h&#39;</span><span class="p">,</span> <span class="s">&#39;s&#39;</span><span class="p">,</span> <span class="s">&#39;Q&#39;</span><span class="p">,</span> <span class="s">&#39;M&#39;</span><span class="p">,</span> <span class="s">&#39;H&#39;</span><span class="p">,</span> <span class="s">&#39;HC&#39;</span><span class="p">))):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Defines the Hunt colour appearance model specification.</span>
+
+<span class="sd">    This specification has field names consistent with the remaining colour</span>
+<span class="sd">    appearance models in :mod:`colour.appearance` but diverge from Fairchild</span>
+<span class="sd">    (2013) reference.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    J : numeric or array_like</span>
+<span class="sd">        Correlate of *Lightness* :math:`J`.</span>
+<span class="sd">    C : numeric or array_like</span>
+<span class="sd">        Correlate of *chroma* :math:`C_94`.</span>
+<span class="sd">    h : numeric or array_like</span>
+<span class="sd">        *Hue* angle :math:`h_S` in degrees.</span>
+<span class="sd">    s : numeric or array_like</span>
+<span class="sd">        Correlate of *saturation* :math:`s`.</span>
+<span class="sd">    Q : numeric or array_like</span>
+<span class="sd">        Correlate of *brightness* :math:`Q`.</span>
+<span class="sd">    M : numeric or array_like</span>
+<span class="sd">        Correlate of *colourfulness* :math:`M_94`.</span>
+<span class="sd">    H : numeric or array_like</span>
+<span class="sd">        *Hue* :math:`h` quadrature :math:`H`.</span>
+<span class="sd">    HC : numeric or array_like</span>
+<span class="sd">        *Hue* :math:`h` composition :math:`H_C`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+</div>
+<div class="viewcode-block" id="XYZ_to_Hunt"><a class="viewcode-back" href="../../../colour.appearance.hunt.html#colour.appearance.hunt.XYZ_to_Hunt">[docs]</a><span class="k">def</span> <span class="nf">XYZ_to_Hunt</span><span class="p">(</span><span class="n">XYZ</span><span class="p">,</span>
+                <span class="n">XYZ_w</span><span class="p">,</span>
+                <span class="n">XYZ_b</span><span class="p">,</span>
+                <span class="n">L_A</span><span class="p">,</span>
+                <span class="n">surround</span><span class="o">=</span><span class="n">HUNT_VIEWING_CONDITIONS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;Normal Scenes&#39;</span><span class="p">),</span>
+                <span class="n">L_AS</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                <span class="n">CCT_w</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                <span class="n">XYZ_p</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                <span class="n">p</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                <span class="n">S</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                <span class="n">S_W</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                <span class="n">helson_judd_effect</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                <span class="n">discount_illuminant</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Computes the Hunt colour appearance model correlates.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    XYZ : array_like</span>
+<span class="sd">        *CIE XYZ* tristimulus values of test sample / stimulus in domain</span>
+<span class="sd">        [0, 100].</span>
+<span class="sd">    XYZ_w : array_like</span>
+<span class="sd">        *CIE XYZ* tristimulus values of reference white in domain [0, 100].</span>
+<span class="sd">    XYZ_b : array_like</span>
+<span class="sd">        *CIE XYZ* tristimulus values of background in domain [0, 100].</span>
+<span class="sd">    L_A : numeric or array_like</span>
+<span class="sd">        Adapting field *luminance* :math:`L_A` in :math:`cd/m^2`.</span>
+<span class="sd">    surround : Hunt_InductionFactors, optional</span>
+<span class="sd">         Surround viewing conditions induction factors.</span>
+<span class="sd">    L_AS : numeric or array_like, optional</span>
+<span class="sd">        Scotopic luminance :math:`L_{AS}` of the illuminant, approximated if</span>
+<span class="sd">        not specified.</span>
+<span class="sd">    CCT_w : numeric or array_like, optional</span>
+<span class="sd">        Correlated color temperature :math:`T_{cp}`: of the illuminant, needed</span>
+<span class="sd">        to approximate :math:`L_{AS}`.</span>
+<span class="sd">    XYZ_p : array_like, optional</span>
+<span class="sd">        *CIE XYZ* tristimulus values of proximal field in domain [0, 100],</span>
+<span class="sd">        assumed to be equal to background if not specified.</span>
+<span class="sd">    p : numeric or array_like, optional</span>
+<span class="sd">        Simultaneous contrast / assimilation factor :math:`p` with value in</span>
+<span class="sd">        domain [-1, 0] when simultaneous contrast occurs and domain [0, 1]</span>
+<span class="sd">        when assimilation occurs.</span>
+<span class="sd">    S : numeric or array_like, optional</span>
+<span class="sd">        Scotopic response :math:`S` to the stimulus, approximated using</span>
+<span class="sd">        tristimulus values :math:`Y` of the stimulus if not specified.</span>
+<span class="sd">    S_w : numeric or array_like, optional</span>
+<span class="sd">        Scotopic response :math:`S_w` for the reference white, approximated</span>
+<span class="sd">        using the tristimulus values :math:`Y_w` of the reference white if not</span>
+<span class="sd">        specified.</span>
+<span class="sd">    helson_judd_effect : bool, optional</span>
+<span class="sd">        Truth value indicating whether the *Helson-Judd* effect should be</span>
+<span class="sd">        accounted for.</span>
+<span class="sd">    discount_illuminant : bool, optional</span>
+<span class="sd">       Truth value indicating if the illuminant should be discounted.</span>
+
+<span class="sd">    Warning</span>
+<span class="sd">    -------</span>
+<span class="sd">    The input domain of that definition is non standard!</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    -   Input *CIE XYZ* tristimulus values are in domain [0, 100].</span>
+<span class="sd">    -   Input *CIE XYZ_b* tristimulus values are in domain [0, 100].</span>
+<span class="sd">    -   Input *CIE XYZ_w* tristimulus values are in domain [0, 100].</span>
+<span class="sd">    -   Input *CIE XYZ_p* tristimulus values are in domain [0, 100].</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Hunt_Specification</span>
+<span class="sd">        Hunt colour appearance model specification.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If an illegal arguments combination is specified.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; XYZ = np.array([19.01, 20.00, 21.78])</span>
+<span class="sd">    &gt;&gt;&gt; XYZ_w = np.array([95.05, 100.00, 108.88])</span>
+<span class="sd">    &gt;&gt;&gt; XYZ_b = np.array([95.05, 100.00, 108.88])</span>
+<span class="sd">    &gt;&gt;&gt; L_A = 318.31</span>
+<span class="sd">    &gt;&gt;&gt; surround = HUNT_VIEWING_CONDITIONS[&#39;Normal Scenes&#39;]</span>
+<span class="sd">    &gt;&gt;&gt; CCT_w = 6504.0</span>
+<span class="sd">    &gt;&gt;&gt; XYZ_to_Hunt(XYZ, XYZ_w, XYZ_b, L_A, surround, CCT_w=CCT_w)  # noqa  # doctest: +ELLIPSIS</span>
+<span class="sd">    Hunt_Specification(J=30.0462678..., C=0.1210508..., h=269.2737594..., s=0.0199093..., Q=22.2097654..., M=0.1238964..., H=None, HC=None)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>
+    <span class="n">X_b</span><span class="p">,</span> <span class="n">Y_b</span><span class="p">,</span> <span class="n">Z_b</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">XYZ_b</span><span class="p">)</span>
+    <span class="n">X_w</span><span class="p">,</span> <span class="n">Y_w</span><span class="p">,</span> <span class="n">Z_w</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">XYZ_w</span><span class="p">)</span>
+
+    <span class="c"># Arguments handling.</span>
+    <span class="k">if</span> <span class="n">XYZ_p</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">X_p</span><span class="p">,</span> <span class="n">Y_p</span><span class="p">,</span> <span class="n">Z_p</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">XYZ_p</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">X_p</span> <span class="o">=</span> <span class="n">X_b</span>
+        <span class="n">Y_p</span> <span class="o">=</span> <span class="n">Y_b</span>
+        <span class="n">Z_p</span> <span class="o">=</span> <span class="n">Y_b</span>
+        <span class="n">warning</span><span class="p">(</span><span class="s">&#39;Unspecified proximal field &quot;XYZ_p&quot; argument, using &#39;</span>
+                <span class="s">&#39;background &quot;XYZ_b&quot; as approximation!&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">surround</span><span class="o">.</span><span class="n">N_cb</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">N_cb</span> <span class="o">=</span> <span class="mf">0.725</span> <span class="o">*</span> <span class="p">(</span><span class="n">Y_w</span> <span class="o">/</span> <span class="n">Y_b</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.2</span>
+        <span class="n">warning</span><span class="p">(</span><span class="s">&#39;Unspecified &quot;N_cb&quot; argument, using approximation: &#39;</span>
+                <span class="s">&#39;&quot;{0}&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">N_cb</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">surround</span><span class="o">.</span><span class="n">N_bb</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">N_bb</span> <span class="o">=</span> <span class="mf">0.725</span> <span class="o">*</span> <span class="p">(</span><span class="n">Y_w</span> <span class="o">/</span> <span class="n">Y_b</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.2</span>
+        <span class="n">warning</span><span class="p">(</span><span class="s">&#39;Unspecified &quot;N_bb&quot; argument, using approximation: &#39;</span>
+                <span class="s">&#39;&quot;{0}&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">N_bb</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">L_AS</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">CCT_w</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;Either the scotopic luminance &quot;L_AS&quot; of the &#39;</span>
+                         <span class="s">&#39;illuminant or its correlated colour temperature &#39;</span>
+                         <span class="s">&#39;&quot;CCT_w&quot; must be specified!&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">L_AS</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">L_AS</span> <span class="o">=</span> <span class="n">illuminant_scotopic_luminance</span><span class="p">(</span><span class="n">L_A</span><span class="p">,</span> <span class="n">CCT_w</span><span class="p">)</span>
+        <span class="n">warning</span><span class="p">(</span><span class="s">&#39;Unspecified &quot;L_AS&quot; argument, using approximation from &quot;CCT&quot;: &#39;</span>
+                <span class="s">&#39;&quot;{0}&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">L_AS</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">S</span> <span class="ow">is</span> <span class="bp">None</span> <span class="o">!=</span> <span class="n">S_W</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;Either both stimulus scotopic response &quot;S&quot; and &#39;</span>
+                         <span class="s">&#39;reference white scotopic response &quot;S_w&quot; arguments &#39;</span>
+                         <span class="s">&#39;need to be specified or none of them!&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">S</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">S_W</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">S</span> <span class="o">=</span> <span class="n">Y</span>
+        <span class="n">S_W</span> <span class="o">=</span> <span class="n">Y_w</span>
+        <span class="n">warning</span><span class="p">(</span><span class="s">&#39;Unspecified stimulus scotopic response &quot;S&quot; and reference &#39;</span>
+                <span class="s">&#39;white scotopic response &quot;S_w&quot; arguments, using &#39;</span>
+                <span class="s">&#39;approximation: &quot;{0}&quot;, &quot;{1}&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">S_W</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">p</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">warning</span><span class="p">(</span><span class="s">&#39;Unspecified simultaneous contrast / assimilation &quot;p&quot; &#39;</span>
+                <span class="s">&#39;argument, model will not account for simultaneous chromatic &#39;</span>
+                <span class="s">&#39;contrast!&#39;</span><span class="p">)</span>
+
+    <span class="n">XYZ_p</span> <span class="o">=</span> <span class="n">tstack</span><span class="p">((</span><span class="n">X_p</span><span class="p">,</span> <span class="n">Y_p</span><span class="p">,</span> <span class="n">Z_p</span><span class="p">))</span>
+
+    <span class="c"># Computing luminance level adaptation factor :math:`F_L`.</span>
+    <span class="n">F_L</span> <span class="o">=</span> <span class="n">luminance_level_adaptation_factor</span><span class="p">(</span><span class="n">L_A</span><span class="p">)</span>
+
+    <span class="c"># Computing test sample chromatic adaptation.</span>
+    <span class="n">rgb_a</span> <span class="o">=</span> <span class="n">chromatic_adaptation</span><span class="p">(</span><span class="n">XYZ</span><span class="p">,</span>
+                                 <span class="n">XYZ_w</span><span class="p">,</span>
+                                 <span class="n">XYZ_b</span><span class="p">,</span>
+                                 <span class="n">L_A</span><span class="p">,</span>
+                                 <span class="n">F_L</span><span class="p">,</span>
+                                 <span class="n">XYZ_p</span><span class="p">,</span>
+                                 <span class="n">p</span><span class="p">,</span>
+                                 <span class="n">helson_judd_effect</span><span class="p">,</span>
+                                 <span class="n">discount_illuminant</span><span class="p">)</span>
+
+    <span class="c"># Computing reference white chromatic adaptation.</span>
+    <span class="n">rgb_aw</span> <span class="o">=</span> <span class="n">chromatic_adaptation</span><span class="p">(</span><span class="n">XYZ_w</span><span class="p">,</span>
+                                  <span class="n">XYZ_w</span><span class="p">,</span>
+                                  <span class="n">XYZ_b</span><span class="p">,</span>
+                                  <span class="n">L_A</span><span class="p">,</span>
+                                  <span class="n">F_L</span><span class="p">,</span>
+                                  <span class="n">XYZ_p</span><span class="p">,</span>
+                                  <span class="n">p</span><span class="p">,</span>
+                                  <span class="n">helson_judd_effect</span><span class="p">,</span>
+                                  <span class="n">discount_illuminant</span><span class="p">)</span>
+
+    <span class="c"># Computing opponent colour dimensions.</span>
+    <span class="c"># Computing achromatic post adaptation signals.</span>
+    <span class="n">A_a</span> <span class="o">=</span> <span class="n">achromatic_post_adaptation_signal</span><span class="p">(</span><span class="n">rgb_a</span><span class="p">)</span>
+    <span class="n">A_aw</span> <span class="o">=</span> <span class="n">achromatic_post_adaptation_signal</span><span class="p">(</span><span class="n">rgb_aw</span><span class="p">)</span>
+
+    <span class="c"># Computing colour difference signals.</span>
+    <span class="n">C</span> <span class="o">=</span> <span class="n">colour_difference_signals</span><span class="p">(</span><span class="n">rgb_a</span><span class="p">)</span>
+    <span class="n">C_w</span> <span class="o">=</span> <span class="n">colour_difference_signals</span><span class="p">(</span><span class="n">rgb_aw</span><span class="p">)</span>
+
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="c"># Computing the *hue* angle :math:`h_s`.</span>
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">hue_angle</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+    <span class="c"># hue_w = hue_angle(C_w)</span>
+    <span class="c"># TODO: Implement hue quadrature &amp; composition computation.</span>
+
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="c"># Computing the correlate of *saturation* :math:`s`.</span>
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="c"># Computing eccentricity factors.</span>
+    <span class="n">e_s</span> <span class="o">=</span> <span class="n">eccentricity_factor</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+
+    <span class="c"># Computing low luminance tritanopia factor :math:`F_t`.</span>
+    <span class="n">F_t</span> <span class="o">=</span> <span class="n">low_luminance_tritanopia_factor</span><span class="p">(</span><span class="n">L_A</span><span class="p">)</span>
+
+    <span class="n">M_yb</span> <span class="o">=</span> <span class="n">yellowness_blueness_response</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">e_s</span><span class="p">,</span> <span class="n">surround</span><span class="o">.</span><span class="n">N_c</span><span class="p">,</span> <span class="n">N_cb</span><span class="p">,</span> <span class="n">F_t</span><span class="p">)</span>
+    <span class="n">M_rg</span> <span class="o">=</span> <span class="n">redness_greenness_response</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">e_s</span><span class="p">,</span> <span class="n">surround</span><span class="o">.</span><span class="n">N_c</span><span class="p">,</span> <span class="n">N_cb</span><span class="p">)</span>
+    <span class="n">M_yb_w</span> <span class="o">=</span> <span class="n">yellowness_blueness_response</span><span class="p">(</span><span class="n">C_w</span><span class="p">,</span> <span class="n">e_s</span><span class="p">,</span> <span class="n">surround</span><span class="o">.</span><span class="n">N_c</span><span class="p">,</span> <span class="n">N_cb</span><span class="p">,</span> <span class="n">F_t</span><span class="p">)</span>
+    <span class="n">M_rg_w</span> <span class="o">=</span> <span class="n">redness_greenness_response</span><span class="p">(</span><span class="n">C_w</span><span class="p">,</span> <span class="n">e_s</span><span class="p">,</span> <span class="n">surround</span><span class="o">.</span><span class="n">N_c</span><span class="p">,</span> <span class="n">N_cb</span><span class="p">)</span>
+
+    <span class="c"># Computing overall chromatic response.</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="n">overall_chromatic_response</span><span class="p">(</span><span class="n">M_yb</span><span class="p">,</span> <span class="n">M_rg</span><span class="p">)</span>
+    <span class="n">M_w</span> <span class="o">=</span> <span class="n">overall_chromatic_response</span><span class="p">(</span><span class="n">M_yb_w</span><span class="p">,</span> <span class="n">M_rg_w</span><span class="p">)</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="n">saturation_correlate</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">rgb_a</span><span class="p">)</span>
+
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="c"># Computing the correlate of *brightness* :math:`Q`.</span>
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="c"># Computing achromatic signal :math:`A`.</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">achromatic_signal</span><span class="p">(</span><span class="n">L_AS</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">S_W</span><span class="p">,</span> <span class="n">N_bb</span><span class="p">,</span> <span class="n">A_a</span><span class="p">)</span>
+    <span class="n">A_w</span> <span class="o">=</span> <span class="n">achromatic_signal</span><span class="p">(</span><span class="n">L_AS</span><span class="p">,</span> <span class="n">S_W</span><span class="p">,</span> <span class="n">S_W</span><span class="p">,</span> <span class="n">N_bb</span><span class="p">,</span> <span class="n">A_aw</span><span class="p">)</span>
+
+    <span class="n">Q</span> <span class="o">=</span> <span class="n">brightness_correlate</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">A_w</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">surround</span><span class="o">.</span><span class="n">N_b</span><span class="p">)</span>
+    <span class="n">brightness_w</span> <span class="o">=</span> <span class="n">brightness_correlate</span><span class="p">(</span><span class="n">A_w</span><span class="p">,</span> <span class="n">A_w</span><span class="p">,</span> <span class="n">M_w</span><span class="p">,</span> <span class="n">surround</span><span class="o">.</span><span class="n">N_b</span><span class="p">)</span>
+    <span class="c"># TODO: Implement whiteness-blackness :math:`Q_{wb}` computation.</span>
+
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="c"># Computing the correlate of *Lightness* :math:`J`.</span>
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="n">J</span> <span class="o">=</span> <span class="n">lightness_correlate</span><span class="p">(</span><span class="n">Y_b</span><span class="p">,</span> <span class="n">Y_w</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">brightness_w</span><span class="p">)</span>
+
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="c"># Computing the correlate of *chroma* :math:`C_{94}`.</span>
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="n">C_94</span> <span class="o">=</span> <span class="n">chroma_correlate</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">Y_b</span><span class="p">,</span> <span class="n">Y_w</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">brightness_w</span><span class="p">)</span>
+
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="c"># Computing the correlate of *colourfulness* :math:`M_{94}`.</span>
+    <span class="c"># -------------------------------------------------------------------------</span>
+    <span class="n">M_94</span> <span class="o">=</span> <span class="n">colourfulness_correlate</span><span class="p">(</span><span class="n">F_L</span><span class="p">,</span> <span class="n">C_94</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">Hunt_Specification</span><span class="p">(</span><span class="n">J</span><span class="p">,</span> <span class="n">C_94</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">M_94</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="luminance_level_adaptation_factor"><a class="viewcode-back" href="../../../colour.appearance.hunt.html#colour.appearance.hunt.luminance_level_adaptation_factor">[docs]</a><span class="k">def</span> <span class="nf">luminance_level_adaptation_factor</span><span class="p">(</span><span class="n">L_A</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *luminance* level adaptation factor :math:`F_L`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    L_A : numeric or array_like</span>
+<span class="sd">        Adapting field *luminance* :math:`L_A` in :math:`cd/m^2`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        *Luminance* level adaptation factor :math:`F_L`</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; luminance_level_adaptation_factor(318.31)  # doctest: +ELLIPSIS</span>
+<span class="sd">    1.1675444...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">L_A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">L_A</span><span class="p">)</span>
+
+    <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="n">L_A</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">k4</span> <span class="o">=</span> <span class="n">k</span> <span class="o">**</span> <span class="mi">4</span>
+    <span class="n">F_L</span> <span class="o">=</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="n">k4</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="n">L_A</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">k4</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="n">L_A</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">F_L</span>
+
+</div>
+<div class="viewcode-block" id="illuminant_scotopic_luminance"><a class="viewcode-back" href="../../../colour.appearance.hunt.html#colour.appearance.hunt.illuminant_scotopic_luminance">[docs]</a><span class="k">def</span> <span class="nf">illuminant_scotopic_luminance</span><span class="p">(</span><span class="n">L_A</span><span class="p">,</span> <span class="n">CCT</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the approximate scotopic luminance :math:`L_{AS}` of the</span>
+<span class="sd">    illuminant.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    L_A : numeric or array_like</span>
+<span class="sd">        Adapting field *luminance* :math:`L_A` in :math:`cd/m^2`.</span>
+<span class="sd">    CCT : numeric or array_like</span>
+<span class="sd">        Correlated color temperature :math:`T_{cp}` of the illuminant.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Approximate scotopic luminance :math:`L_{AS}`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; illuminant_scotopic_luminance(318.31, 6504.0)  # doctest: +ELLIPSIS</span>
+<span class="sd">    769.9376286...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">L_A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">L_A</span><span class="p">)</span>
+    <span class="n">CCT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">CCT</span><span class="p">)</span>
+
+    <span class="n">CCT</span> <span class="o">=</span> <span class="mf">2.26</span> <span class="o">*</span> <span class="n">L_A</span> <span class="o">*</span> <span class="p">((</span><span class="n">CCT</span> <span class="o">/</span> <span class="mi">4000</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.4</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">CCT</span>
+
+</div>
+<div class="viewcode-block" id="XYZ_to_rgb"><a class="viewcode-back" href="../../../colour.appearance.hunt.html#colour.appearance.hunt.XYZ_to_rgb">[docs]</a><span class="k">def</span> <span class="nf">XYZ_to_rgb</span><span class="p">(</span><span class="n">XYZ</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Converts from *CIE XYZ* tristimulus values to *Hunt-Pointer-Estevez*</span>
+<span class="sd">    :math:`\\rho\gamma\\beta` colourspace.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    XYZ : array_like</span>
+<span class="sd">        *CIE XYZ* tristimulus values.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray</span>
+<span class="sd">        *Hunt-Pointer-Estevez* :math:`\\rho\gamma\\beta` colourspace.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; XYZ = np.array([19.01, 20.00, 21.78])</span>
+<span class="sd">    &gt;&gt;&gt; XYZ_to_rgb(XYZ)  # doctest: +ELLIPSIS</span>
+<span class="sd">    array([ 19.4743367...,  20.3101217...,  21.78     ])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">dot_vector</span><span class="p">(</span><span class="n">XYZ_TO_HPE_MATRIX</span><span class="p">,</span> <span class="n">XYZ</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="f_n"><a class="viewcode-back" href="../../../colour.appearance.hunt.html#colour.appearance.hunt.f_n">[docs]</a><span class="k">def</span> <span class="nf">f_n</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Defines the nonlinear response function of the Hunt colour appearance</span>
+<span class="sd">    model used to model the nonlinear behavior of various visual responses.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x : numeric or array_like or array_like</span>
+<span class="sd">        Visual response variable :math:`x`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or array_like</span>
+<span class="sd">        Modeled visual response variable :math:`x`.</span>
+
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; x = np.array([0.23350512, 0.23351103, 0.23355179])</span>
+<span class="sd">    &gt;&gt;&gt; f_n(x)  # doctest: +ELLIPSIS</span>
+<span class="sd">    array([ 5.8968592...,  5.8969521...,  5.8975927...])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="n">x_m</span> <span class="o">=</span> <span class="mi">40</span> <span class="o">*</span> <span class="p">((</span><span class="n">x</span> <span class="o">**</span> <span class="mf">0.73</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span> <span class="o">**</span> <span class="mf">0.73</span> <span class="o">+</span> <span class="mi">2</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">x_m</span>
+
+</div>
+<div class="viewcode-block" id="chromatic_adaptation"><a class="viewcode-back" href="../../../colour.appearance.hunt.html#colour.appearance.hunt.chromatic_adaptation">[docs]</a><span class="k">def</span> <span class="nf">chromatic_adaptation</span><span class="p">(</span><span class="n">XYZ</span><span class="p">,</span>
+                         <span class="n">XYZ_w</span><span class="p">,</span>
+                         <span class="n">XYZ_b</span><span class="p">,</span>
+                         <span class="n">L_A</span><span class="p">,</span>
+                         <span class="n">F_L</span><span class="p">,</span>
+                         <span class="n">XYZ_p</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                         <span class="n">p</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                         <span class="n">helson_judd_effect</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                         <span class="n">discount_illuminant</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Applies chromatic adaptation to given *CIE XYZ* tristimulus values.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    XYZ : array_like</span>
+<span class="sd">        *CIE XYZ* tristimulus values of test sample in domain [0, 100].</span>
+<span class="sd">    XYZ_b : array_like</span>
+<span class="sd">        *CIE XYZ* tristimulus values of background in domain [0, 100].</span>
+<span class="sd">    XYZ_w : array_like</span>
+<span class="sd">        *CIE XYZ* tristimulus values of reference white in domain [0, 100].</span>
+<span class="sd">    L_A : numeric or array_like</span>
+<span class="sd">        Adapting field *luminance* :math:`L_A` in :math:`cd/m^2`.</span>
+<span class="sd">    F_L : numeric or array_like</span>
+<span class="sd">        Luminance adaptation factor :math:`F_L`.</span>
+<span class="sd">    XYZ_p : array_like, optional</span>
+<span class="sd">        *CIE XYZ* tristimulus values of proximal field in domain [0, 100],</span>
+<span class="sd">        assumed to be equal to background if not specified.</span>
+<span class="sd">    p : numeric or array_like, optional</span>
+<span class="sd">        Simultaneous contrast / assimilation factor :math:`p` with value in</span>
+<span class="sd">        domain [-1, 0] when simultaneous contrast occurs and domain [0, 1]</span>
+<span class="sd">        when assimilation occurs.</span>
+<span class="sd">    helson_judd_effect : bool, optional</span>
+<span class="sd">        Truth value indicating whether the *Helson-Judd* effect should be</span>
+<span class="sd">        accounted for.</span>
+<span class="sd">    discount_illuminant : bool, optional</span>
+<span class="sd">       Truth value indicating if the illuminant should be discounted.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray</span>
+<span class="sd">        Adapted *CIE XYZ* tristimulus values.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; XYZ = np.array([19.01, 20.00, 21.78])</span>
+<span class="sd">    &gt;&gt;&gt; XYZ_b = np.array([95.05, 100.00, 108.88])</span>
+<span class="sd">    &gt;&gt;&gt; XYZ_w = np.array([95.05, 100.00, 108.88])</span>
+<span class="sd">    &gt;&gt;&gt; L_A = 318.31</span>
+<span class="sd">    &gt;&gt;&gt; F_L = 1.16754446415</span>
+<span class="sd">    &gt;&gt;&gt; chromatic_adaptation(XYZ, XYZ_w, XYZ_b, L_A, F_L)  # doctest: +ELLIPSIS</span>
+<span class="sd">    array([ 6.8959454...,  6.8959991...,  6.8965708...])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">XYZ_w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">XYZ_w</span><span class="p">)</span>
+    <span class="n">XYZ_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">XYZ_b</span><span class="p">)</span>
+    <span class="n">L_A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">L_A</span><span class="p">)</span>
+    <span class="n">F_L</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">F_L</span><span class="p">)</span>
+
+    <span class="n">rgb</span> <span class="o">=</span> <span class="n">XYZ_to_rgb</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>
+    <span class="n">rgb_w</span> <span class="o">=</span> <span class="n">XYZ_to_rgb</span><span class="p">(</span><span class="n">XYZ_w</span><span class="p">)</span>
+    <span class="n">Y_w</span> <span class="o">=</span> <span class="n">XYZ_w</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">Y_b</span> <span class="o">=</span> <span class="n">XYZ_b</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">h_rgb</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">rgb_w</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">rgb_w</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+
+    <span class="c"># Computing chromatic adaptation factors.</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">discount_illuminant</span><span class="p">:</span>
+        <span class="n">F_rgb</span> <span class="o">=</span> <span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">L_A</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">))</span> <span class="o">+</span> <span class="n">h_rgb</span><span class="p">)</span> <span class="o">/</span>
+                 <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">L_A</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">))</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">h_rgb</span><span class="p">)))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">F_rgb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">h_rgb</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+    <span class="c"># Computing Helson-Judd effect parameters.</span>
+    <span class="k">if</span> <span class="n">helson_judd_effect</span><span class="p">:</span>
+        <span class="n">D_rgb</span> <span class="o">=</span> <span class="p">(</span><span class="n">f_n</span><span class="p">((</span><span class="n">Y_b</span> <span class="o">/</span> <span class="n">Y_w</span><span class="p">)</span> <span class="o">*</span> <span class="n">F_L</span> <span class="o">*</span> <span class="n">F_rgb</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="o">-</span>
+                 <span class="n">f_n</span><span class="p">((</span><span class="n">Y_b</span> <span class="o">/</span> <span class="n">Y_w</span><span class="p">)</span> <span class="o">*</span> <span class="n">F_L</span> <span class="o">*</span> <span class="n">F_rgb</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">D_rgb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">F_rgb</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+    <span class="c"># Computing cone bleach factors.</span>
+    <span class="n">B_rgb</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span> <span class="o">**</span> <span class="mi">7</span><span class="p">)</span> <span class="o">/</span> <span class="p">((</span><span class="mi">10</span> <span class="o">**</span> <span class="mi">7</span><span class="p">)</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">L_A</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">rgb_w</span> <span class="o">/</span> <span class="mi">100</span><span class="p">))</span>
+
+    <span class="c"># Computing adjusted reference white signals.</span>
+    <span class="k">if</span> <span class="n">XYZ_p</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">p</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">rgb_p</span> <span class="o">=</span> <span class="n">XYZ_to_rgb</span><span class="p">(</span><span class="n">XYZ_p</span><span class="p">)</span>
+        <span class="n">rgb_w</span> <span class="o">=</span> <span class="n">adjusted_reference_white_signals</span><span class="p">(</span><span class="n">rgb_p</span><span class="p">,</span> <span class="n">B_rgb</span><span class="p">,</span> <span class="n">rgb_w</span><span class="p">,</span>
+                                                 <span class="n">p</span><span class="p">)</span>
+
+    <span class="c"># Computing adapted cone responses.</span>
+    <span class="n">rgb_a</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">rgb_a</span> <span class="o">+=</span> <span class="n">B_rgb</span> <span class="o">*</span> <span class="p">(</span><span class="n">f_n</span><span class="p">(</span><span class="n">F_L</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">*</span> <span class="n">F_rgb</span> <span class="o">*</span> <span class="n">rgb</span> <span class="o">/</span> <span class="n">rgb_w</span><span class="p">)</span> <span class="o">+</span> <span class="n">D_rgb</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">rgb_a</span>
+
+</div>
+<div class="viewcode-block" id="adjusted_reference_white_signals"><a class="viewcode-back" href="../../../colour.appearance.hunt.html#colour.appearance.hunt.adjusted_reference_white_signals">[docs]</a><span class="k">def</span> <span class="nf">adjusted_reference_white_signals</span><span class="p">(</span><span class="n">rgb_p</span><span class="p">,</span> <span class="n">rgb_b</span><span class="p">,</span> <span class="n">rgb_w</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Adjusts the white point for simultaneous chromatic contrast.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    rgb_p :  array_like</span>
+<span class="sd">        Cone signals *Hunt-Pointer-Estevez* :math:`\\rho\gamma\\beta`</span>
+<span class="sd">        colourspace array of the proximal field.</span>
+<span class="sd">    rgb_b :  array_like</span>
+<span class="sd">        Cone signals *Hunt-Pointer-Estevez* :math:`\\rho\gamma\\beta`</span>
+<span class="sd">        colourspace array of the background.</span>
+<span class="sd">    rgb_w :  array_like</span>
+<span class="sd">        Cone signals array *Hunt-Pointer-Estevez* :math:`\\rho\gamma\\beta`</span>
+<span class="sd">        colourspace array of the reference white.</span>
+<span class="sd">    p : numeric or array_like</span>
+<span class="sd">        Simultaneous contrast / assimilation factor :math:`p` with value in</span>
+<span class="sd">        domain [-1, 0] when simultaneous contrast occurs and domain [0, 1]</span>
+<span class="sd">        when assimilation occurs.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray</span>
+<span class="sd">        Adjusted cone signals *Hunt-Pointer-Estevez* :math:`\\rho\gamma\\beta`</span>
+<span class="sd">        colourspace array of the reference white.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; rgb_p = np.array([98.07193550, 101.13755950, 100.00000000])</span>
+<span class="sd">    &gt;&gt;&gt; rgb_b = np.array([0.99984505, 0.99983840, 0.99982674])</span>
+<span class="sd">    &gt;&gt;&gt; rgb_w = np.array([97.37325710, 101.54968030, 108.88000000])</span>
+<span class="sd">    &gt;&gt;&gt; p = 0.1</span>
+<span class="sd">    &gt;&gt;&gt; adjusted_reference_white_signals(rgb_p, rgb_b, rgb_w, p)  # noqa  # doctest: +ELLIPSIS</span>
+<span class="sd">    array([ 88.0792742...,  91.8569553...,  98.4876543...])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">rgb_p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">rgb_p</span><span class="p">)</span>
+    <span class="n">rgb_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">rgb_b</span><span class="p">)</span>
+    <span class="n">rgb_w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">rgb_w</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+
+    <span class="n">p_rgb</span> <span class="o">=</span> <span class="n">rgb_p</span> <span class="o">/</span> <span class="n">rgb_b</span>
+    <span class="n">rgb_w</span> <span class="o">=</span> <span class="p">(</span><span class="n">rgb_w</span> <span class="o">*</span> <span class="p">(((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="p">)</span> <span class="o">*</span> <span class="n">p_rgb</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">p</span><span class="p">)</span> <span class="o">/</span> <span class="n">p_rgb</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">/</span>
+             <span class="p">(((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">p</span><span class="p">)</span> <span class="o">*</span> <span class="n">p_rgb</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="p">)</span> <span class="o">/</span> <span class="n">p_rgb</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">rgb_w</span>
+
+</div>
+<div class="viewcode-block" id="achromatic_post_adaptation_signal"><a class="viewcode-back" href="../../../colour.appearance.hunt.html#colour.appearance.hunt.achromatic_post_adaptation_signal">[docs]</a><span class="k">def</span> <span class="nf">achromatic_post_adaptation_signal</span><span class="p">(</span><span class="n">rgb</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the achromatic post adaptation signal :math:`A` from given</span>
+<span class="sd">    *Hunt-Pointer-Estevez* :math:`\\rho\gamma\\beta` colourspace array.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    rgb : array_like</span>
+<span class="sd">        *Hunt-Pointer-Estevez* :math:`\\rho\gamma\\beta` colourspace array.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Achromatic post adaptation signal :math:`A`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; rgb = np.array([6.89594549, 6.89599915, 6.89657085])</span>
+<span class="sd">    &gt;&gt;&gt; achromatic_post_adaptation_signal(rgb)  # doctest: +ELLIPSIS</span>
+<span class="sd">    18.9827186...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">rgb</span><span class="p">)</span>
+
+    <span class="n">A</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">r</span> <span class="o">+</span> <span class="n">g</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">20</span><span class="p">)</span> <span class="o">*</span> <span class="n">b</span> <span class="o">-</span> <span class="mf">3.05</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">A</span>
+
+</div>
+<div class="viewcode-block" id="colour_difference_signals"><a class="viewcode-back" href="../../../colour.appearance.hunt.html#colour.appearance.hunt.colour_difference_signals">[docs]</a><span class="k">def</span> <span class="nf">colour_difference_signals</span><span class="p">(</span><span class="n">rgb</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the colour difference signals :math:`C_1`, :math:`C_2` and</span>
+<span class="sd">    :math:`C_3` from given *Hunt-Pointer-Estevez* :math:`\\rho\gamma\\beta`</span>
+<span class="sd">    colourspace array.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    rgb : array_like</span>
+<span class="sd">        *Hunt-Pointer-Estevez* :math:`\\rho\gamma\\beta` colourspace array.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray</span>
+<span class="sd">        Colour difference signals :math:`C_1`, :math:`C_2` and :math:`C_3`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; rgb = np.array([6.89594549, 6.89599915, 6.89657085])</span>
+<span class="sd">    &gt;&gt;&gt; colour_difference_signals(rgb)  # doctest: +ELLIPSIS</span>
+<span class="sd">    array([ -5.3660000...e-05,  -5.7170000...e-04,   6.2536000...e-04])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">rgb</span><span class="p">)</span>
+
+    <span class="n">C_1</span> <span class="o">=</span> <span class="n">r</span> <span class="o">-</span> <span class="n">g</span>
+    <span class="n">C_2</span> <span class="o">=</span> <span class="n">g</span> <span class="o">-</span> <span class="n">b</span>
+    <span class="n">C_3</span> <span class="o">=</span> <span class="n">b</span> <span class="o">-</span> <span class="n">r</span>
+
+    <span class="n">C</span> <span class="o">=</span> <span class="n">tstack</span><span class="p">((</span><span class="n">C_1</span><span class="p">,</span> <span class="n">C_2</span><span class="p">,</span> <span class="n">C_3</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">C</span>
+
+</div>
+<div class="viewcode-block" id="hue_angle"><a class="viewcode-back" href="../../../colour.appearance.hunt.html#colour.appearance.hunt.hue_angle">[docs]</a><span class="k">def</span> <span class="nf">hue_angle</span><span class="p">(</span><span class="n">C</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *hue* angle :math:`h` from given colour difference signals</span>
+<span class="sd">    :math:`C`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    C : array_like</span>
+<span class="sd">        Colour difference signals :math:`C`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        *Hue* angle :math:`h`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; C = np.array([-5.3658655819965873e-05,</span>
+<span class="sd">    ...               -0.00057169938364687312,</span>
+<span class="sd">    ...               0.00062535803946683899])</span>
+<span class="sd">    &gt;&gt;&gt; hue_angle(C)  # doctest: +ELLIPSIS</span>
+<span class="sd">    269.2737594...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">C_1</span><span class="p">,</span> <span class="n">C_2</span><span class="p">,</span> <span class="n">C_3</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+
+    <span class="n">hue</span> <span class="o">=</span> <span class="p">(</span><span class="mi">180</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">C_2</span> <span class="o">-</span> <span class="n">C_3</span><span class="p">)</span> <span class="o">/</span> <span class="mf">4.5</span><span class="p">,</span>
+                            <span class="n">C_1</span> <span class="o">-</span> <span class="p">(</span><span class="n">C_2</span> <span class="o">/</span> <span class="mi">11</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">%</span> <span class="mi">360</span>
+    <span class="k">return</span> <span class="n">hue</span>
+
+</div>
+<div class="viewcode-block" id="eccentricity_factor"><a class="viewcode-back" href="../../../colour.appearance.hunt.html#colour.appearance.hunt.eccentricity_factor">[docs]</a><span class="k">def</span> <span class="nf">eccentricity_factor</span><span class="p">(</span><span class="n">hue</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns eccentricity factor :math:`e_s` from given hue angle :math:`h`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    hue : numeric or array_like</span>
+<span class="sd">        Hue angle :math:`h`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Eccentricity factor :math:`e_s`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; eccentricity_factor(269.273759)  # doctest: +ELLIPSIS</span>
+<span class="sd">    array(1.1108365...)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">hue</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">hue</span><span class="p">)</span>
+
+    <span class="n">h_s</span> <span class="o">=</span> <span class="n">HUE_DATA_FOR_HUE_QUADRATURE</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;h_s&#39;</span><span class="p">)</span>
+    <span class="n">e_s</span> <span class="o">=</span> <span class="n">HUE_DATA_FOR_HUE_QUADRATURE</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;e_s&#39;</span><span class="p">)</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">hue</span><span class="p">,</span> <span class="n">h_s</span><span class="p">,</span> <span class="n">e_s</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">hue</span> <span class="o">&lt;</span> <span class="mf">20.14</span><span class="p">,</span> <span class="mf">0.856</span> <span class="o">-</span> <span class="p">(</span><span class="n">hue</span> <span class="o">/</span> <span class="mf">20.14</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.056</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">hue</span> <span class="o">&gt;</span> <span class="mf">237.53</span><span class="p">,</span> <span class="mf">0.856</span> <span class="o">+</span> <span class="mf">0.344</span> <span class="o">*</span> <span class="p">(</span><span class="mi">360</span> <span class="o">-</span> <span class="n">hue</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">360</span> <span class="o">-</span> <span class="mf">237.53</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">x</span>
+
+</div>
+<div class="viewcode-block" id="low_luminance_tritanopia_factor"><a class="viewcode-back" href="../../../colour.appearance.hunt.html#colour.appearance.hunt.low_luminance_tritanopia_factor">[docs]</a><span class="k">def</span> <span class="nf">low_luminance_tritanopia_factor</span><span class="p">(</span><span class="n">L_A</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the low luminance tritanopia factor :math:`F_t` from given adapting</span>
+<span class="sd">    field *luminance* :math:`L_A` in :math:`cd/m^2`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    L_A : numeric or array_like</span>
+<span class="sd">        Adapting field *luminance* :math:`L_A` in :math:`cd/m^2`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Low luminance tritanopia factor :math:`F_t`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; low_luminance_tritanopia_factor(318.31)  # doctest: +ELLIPSIS</span>
+<span class="sd">    0.9996859...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">L_A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">L_A</span><span class="p">)</span>
+
+    <span class="n">F_t</span> <span class="o">=</span> <span class="n">L_A</span> <span class="o">/</span> <span class="p">(</span><span class="n">L_A</span> <span class="o">+</span> <span class="mf">0.1</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">F_t</span>
+
+</div>
+<div class="viewcode-block" id="yellowness_blueness_response"><a class="viewcode-back" href="../../../colour.appearance.hunt.html#colour.appearance.hunt.yellowness_blueness_response">[docs]</a><span class="k">def</span> <span class="nf">yellowness_blueness_response</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">e_s</span><span class="p">,</span> <span class="n">N_c</span><span class="p">,</span> <span class="n">N_cb</span><span class="p">,</span> <span class="n">F_t</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the yellowness / blueness response :math:`M_{yb}`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    C : array_like</span>
+<span class="sd">        Colour difference signals :math:`C`.</span>
+<span class="sd">    e_s : numeric or array_like</span>
+<span class="sd">        Eccentricity factor :math:`e_s`.</span>
+<span class="sd">    N_c : numeric or array_like</span>
+<span class="sd">         Chromatic surround induction factor :math:`N_c`.</span>
+<span class="sd">    N_b : numeric or array_like</span>
+<span class="sd">         Brightness surround induction factor :math:`N_b`.</span>
+<span class="sd">    F_t : numeric or array_like</span>
+<span class="sd">        Low luminance tritanopia factor :math:`F_t`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Yellowness / blueness response :math:`M_{yb}`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; C = np.array([-5.3658655819965873e-05,</span>
+<span class="sd">    ...               -0.00057169938364687312,</span>
+<span class="sd">    ...               0.00062535803946683899])</span>
+<span class="sd">    &gt;&gt;&gt; e_s = 1.1108365048626296</span>
+<span class="sd">    &gt;&gt;&gt; N_c = 1.0</span>
+<span class="sd">    &gt;&gt;&gt; N_cb = 0.72499999999999998</span>
+<span class="sd">    &gt;&gt;&gt; F_t = 0.99968593951195</span>
+<span class="sd">    &gt;&gt;&gt; yellowness_blueness_response(C, e_s, N_c, N_cb, F_t)  # noqa  # doctest: +ELLIPSIS</span>
+<span class="sd">    -0.0082372...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">C_1</span><span class="p">,</span> <span class="n">C_2</span><span class="p">,</span> <span class="n">C_3</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+    <span class="n">e_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">e_s</span><span class="p">)</span>
+    <span class="n">N_c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">N_c</span><span class="p">)</span>
+    <span class="n">N_cb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">N_cb</span><span class="p">)</span>
+    <span class="n">F_t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">F_t</span><span class="p">)</span>
+
+    <span class="n">M_yb</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">C_2</span> <span class="o">-</span> <span class="n">C_3</span><span class="p">)</span> <span class="o">/</span> <span class="mf">4.5</span><span class="p">)</span> <span class="o">*</span>
+            <span class="p">(</span><span class="n">e_s</span> <span class="o">*</span> <span class="p">(</span><span class="mi">10</span> <span class="o">/</span> <span class="mi">13</span><span class="p">)</span> <span class="o">*</span> <span class="n">N_c</span> <span class="o">*</span> <span class="n">N_cb</span> <span class="o">*</span> <span class="n">F_t</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">M_yb</span>
+
+</div>
+<div class="viewcode-block" id="redness_greenness_response"><a class="viewcode-back" href="../../../colour.appearance.hunt.html#colour.appearance.hunt.redness_greenness_response">[docs]</a><span class="k">def</span> <span class="nf">redness_greenness_response</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">e_s</span><span class="p">,</span> <span class="n">N_c</span><span class="p">,</span> <span class="n">N_cb</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the redness / greenness response :math:`M_{yb}`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    C : array_like</span>
+<span class="sd">        Colour difference signals :math:`C`.</span>
+<span class="sd">    e_s : numeric or array_like</span>
+<span class="sd">        Eccentricity factor :math:`e_s`.</span>
+<span class="sd">    N_c : numeric or array_like</span>
+<span class="sd">         Chromatic surround induction factor :math:`N_c`.</span>
+<span class="sd">    N_b : numeric or array_like</span>
+<span class="sd">         Brightness surround induction factor :math:`N_b`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Redness / greenness response :math:`M_{rg}`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; C = np.array([-5.3658655819965873e-05,</span>
+<span class="sd">    ...               -0.00057169938364687312,</span>
+<span class="sd">    ...               0.00062535803946683899])</span>
+<span class="sd">    &gt;&gt;&gt; e_s = 1.1108365048626296</span>
+<span class="sd">    &gt;&gt;&gt; N_c = 1.0</span>
+<span class="sd">    &gt;&gt;&gt; N_cb = 0.72499999999999998</span>
+<span class="sd">    &gt;&gt;&gt; redness_greenness_response(C, e_s, N_c, N_cb)  # doctest: +ELLIPSIS</span>
+<span class="sd">    -0.0001044...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">C_1</span><span class="p">,</span> <span class="n">C_2</span><span class="p">,</span> <span class="n">C_3</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+    <span class="n">e_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">e_s</span><span class="p">)</span>
+    <span class="n">N_c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">N_c</span><span class="p">)</span>
+    <span class="n">N_cb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">N_cb</span><span class="p">)</span>
+
+    <span class="n">M_rg</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="n">C_1</span> <span class="o">-</span> <span class="p">(</span><span class="n">C_2</span> <span class="o">/</span> <span class="mi">11</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">e_s</span> <span class="o">*</span> <span class="p">(</span><span class="mi">10</span> <span class="o">/</span> <span class="mi">13</span><span class="p">)</span> <span class="o">*</span> <span class="n">N_c</span> <span class="o">*</span> <span class="n">N_cb</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">M_rg</span>
+
+</div>
+<div class="viewcode-block" id="overall_chromatic_response"><a class="viewcode-back" href="../../../colour.appearance.hunt.html#colour.appearance.hunt.overall_chromatic_response">[docs]</a><span class="k">def</span> <span class="nf">overall_chromatic_response</span><span class="p">(</span><span class="n">M_yb</span><span class="p">,</span> <span class="n">M_rg</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the overall chromatic response :math:`M`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    M_yb : numeric or array_like</span>
+<span class="sd">         Yellowness / blueness response :math:`M_{yb}`.</span>
+<span class="sd">    M_rg : numeric or array_like</span>
+<span class="sd">         Redness / greenness response :math:`M_{rg}`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Overall chromatic response :math:`M`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; M_yb = -0.008237223618824608</span>
+<span class="sd">    &gt;&gt;&gt; M_rg = -0.00010444758327626432</span>
+<span class="sd">    &gt;&gt;&gt; overall_chromatic_response(M_yb, M_rg)  # doctest: +ELLIPSIS</span>
+<span class="sd">    0.0082378...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">M_yb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">M_yb</span><span class="p">)</span>
+    <span class="n">M_rg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">M_rg</span><span class="p">)</span>
+
+    <span class="n">M</span> <span class="o">=</span> <span class="p">((</span><span class="n">M_yb</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">M_rg</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span> <span class="o">**</span> <span class="mf">0.5</span>
+
+    <span class="k">return</span> <span class="n">M</span>
+
+</div>
+<div class="viewcode-block" id="saturation_correlate"><a class="viewcode-back" href="../../../colour.appearance.hunt.html#colour.appearance.hunt.saturation_correlate">[docs]</a><span class="k">def</span> <span class="nf">saturation_correlate</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">rgb_a</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *saturation* correlate :math:`s`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    M : numeric or array_like</span>
+<span class="sd">         Overall chromatic response :math:`M`.</span>
+<span class="sd">    rgb_a : array_like</span>
+<span class="sd">        Adapted *Hunt-Pointer-Estevez* :math:`\\rho\gamma\\beta` colourspace</span>
+<span class="sd">        array.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        *Saturation* correlate :math:`s`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; M = 0.008237885787274198</span>
+<span class="sd">    &gt;&gt;&gt; rgb_a = np.array([6.89594549, 6.89599915, 6.89657085])</span>
+<span class="sd">    &gt;&gt;&gt; saturation_correlate(M, rgb_a)  # doctest: +ELLIPSIS</span>
+<span class="sd">    0.0199093...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+    <span class="n">rgb_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">rgb_a</span><span class="p">)</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">50</span> <span class="o">*</span> <span class="n">M</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">rgb_a</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">s</span>
+
+</div>
+<div class="viewcode-block" id="achromatic_signal"><a class="viewcode-back" href="../../../colour.appearance.hunt.html#colour.appearance.hunt.achromatic_signal">[docs]</a><span class="k">def</span> <span class="nf">achromatic_signal</span><span class="p">(</span><span class="n">L_AS</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">S_W</span><span class="p">,</span> <span class="n">N_bb</span><span class="p">,</span> <span class="n">A_a</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the achromatic signal :math:`A`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    L_AS : numeric or array_like</span>
+<span class="sd">        Scotopic luminance :math:`L_{AS}` of the illuminant.</span>
+<span class="sd">    S : numeric or array_like</span>
+<span class="sd">        Scotopic response :math:`S` to the stimulus.</span>
+<span class="sd">    S_w : numeric or array_like</span>
+<span class="sd">        Scotopic response :math:`S_w` for the reference white.</span>
+<span class="sd">    N_bb : numeric or array_like</span>
+<span class="sd">        Brightness background induction factor :math:`N_{bb}`.</span>
+<span class="sd">    A_a: numeric or array_like</span>
+<span class="sd">        Achromatic post adaptation signal of the stimulus :math:`A_a`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Achromatic signal :math:`A`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; L_AS = 769.9376286541402</span>
+<span class="sd">    &gt;&gt;&gt; S = 20.0</span>
+<span class="sd">    &gt;&gt;&gt; S_W = 100.0</span>
+<span class="sd">    &gt;&gt;&gt; N_bb = 0.72499999999999998</span>
+<span class="sd">    &gt;&gt;&gt; A_a = 18.982718664838487</span>
+<span class="sd">    &gt;&gt;&gt; achromatic_signal(L_AS, S, S_W, N_bb, A_a)  # doctest: +ELLIPSIS</span>
+<span class="sd">    15.5068546...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">L_AS</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">L_AS</span><span class="p">)</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+    <span class="n">S_W</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">S_W</span><span class="p">)</span>
+    <span class="n">N_bb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">N_bb</span><span class="p">)</span>
+    <span class="n">A_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">A_a</span><span class="p">)</span>
+
+    <span class="n">j</span> <span class="o">=</span> <span class="mf">0.00001</span> <span class="o">/</span> <span class="p">((</span><span class="mi">5</span> <span class="o">*</span> <span class="n">L_AS</span> <span class="o">/</span> <span class="mf">2.26</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.00001</span><span class="p">)</span>
+
+    <span class="c"># Computing scotopic luminance level adaptation factor :math:`F_{LS}`.</span>
+    <span class="n">F_LS</span> <span class="o">=</span> <span class="mi">3800</span> <span class="o">*</span> <span class="p">(</span><span class="n">j</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="n">L_AS</span> <span class="o">/</span> <span class="mf">2.26</span><span class="p">)</span>
+    <span class="n">F_LS</span> <span class="o">+=</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">j</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span> <span class="o">**</span> <span class="mf">0.4</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="mi">5</span> <span class="o">*</span> <span class="n">L_AS</span> <span class="o">/</span> <span class="mf">2.26</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">6</span><span class="p">))</span>
+
+    <span class="c"># Computing cone bleach factors :math:`B_S`.</span>
+    <span class="n">B_S</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">0.3</span> <span class="o">*</span> <span class="p">((</span><span class="mi">5</span> <span class="o">*</span> <span class="n">L_AS</span> <span class="o">/</span> <span class="mf">2.26</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">S</span> <span class="o">/</span> <span class="n">S_W</span><span class="p">))</span> <span class="o">**</span> <span class="mf">0.3</span><span class="p">)</span>
+    <span class="n">B_S</span> <span class="o">+=</span> <span class="mf">0.5</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="n">L_AS</span> <span class="o">/</span> <span class="mf">2.26</span><span class="p">))</span>
+
+    <span class="c"># Computing adapted scotopic signal :math:`A_S`.</span>
+    <span class="n">A_S</span> <span class="o">=</span> <span class="p">(</span><span class="n">f_n</span><span class="p">(</span><span class="n">F_LS</span> <span class="o">*</span> <span class="n">S</span> <span class="o">/</span> <span class="n">S_W</span><span class="p">)</span> <span class="o">*</span> <span class="mf">3.05</span> <span class="o">*</span> <span class="n">B_S</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.3</span>
+
+    <span class="c"># Computing achromatic signal :math:`A`.</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">N_bb</span> <span class="o">*</span> <span class="p">(</span><span class="n">A_a</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">A_S</span> <span class="o">-</span> <span class="mf">0.3</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.3</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))))</span>
+
+    <span class="k">return</span> <span class="n">A</span>
+
+</div>
+<div class="viewcode-block" id="brightness_correlate"><a class="viewcode-back" href="../../../colour.appearance.hunt.html#colour.appearance.hunt.brightness_correlate">[docs]</a><span class="k">def</span> <span class="nf">brightness_correlate</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">A_w</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">N_b</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *brightness* correlate :math:`Q`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    A : numeric or array_like</span>
+<span class="sd">         Achromatic signal :math:`A`.</span>
+<span class="sd">    A_a: numeric or array_like</span>
+<span class="sd">        Achromatic post adaptation signal of the reference white :math:`A_w`.</span>
+<span class="sd">    M : numeric or array_like</span>
+<span class="sd">        Overall chromatic response :math:`M`.</span>
+<span class="sd">    N_b : numeric or array_like</span>
+<span class="sd">         Brightness surround induction factor :math:`N_b`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        *Brightness* correlate :math:`Q`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; A = 15.506854623621885</span>
+<span class="sd">    &gt;&gt;&gt; A_w = 35.718916676317086</span>
+<span class="sd">    &gt;&gt;&gt; M = 0.0082378857872741976</span>
+<span class="sd">    &gt;&gt;&gt; N_b = 75.0</span>
+<span class="sd">    &gt;&gt;&gt; brightness_correlate(A, A_w, M, N_b)  # doctest: +ELLIPSIS</span>
+<span class="sd">    22.2097654...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+    <span class="n">A_w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">A_w</span><span class="p">)</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+    <span class="n">N_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">N_b</span><span class="p">)</span>
+
+    <span class="n">N_1</span> <span class="o">=</span> <span class="p">((</span><span class="mi">7</span> <span class="o">*</span> <span class="n">A_w</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mf">5.33</span> <span class="o">*</span> <span class="n">N_b</span> <span class="o">**</span> <span class="mf">0.13</span><span class="p">)</span>
+    <span class="n">N_2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">7</span> <span class="o">*</span> <span class="n">A_w</span> <span class="o">*</span> <span class="n">N_b</span> <span class="o">**</span> <span class="mf">0.362</span><span class="p">)</span> <span class="o">/</span> <span class="mi">200</span>
+
+    <span class="n">Q</span> <span class="o">=</span> <span class="p">((</span><span class="mi">7</span> <span class="o">*</span> <span class="p">(</span><span class="n">A</span> <span class="o">+</span> <span class="p">(</span><span class="n">M</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)))</span> <span class="o">**</span> <span class="mf">0.6</span><span class="p">)</span> <span class="o">*</span> <span class="n">N_1</span> <span class="o">-</span> <span class="n">N_2</span>
+    <span class="k">return</span> <span class="n">Q</span>
+
+</div>
+<div class="viewcode-block" id="lightness_correlate"><a class="viewcode-back" href="../../../colour.appearance.hunt.html#colour.appearance.hunt.lightness_correlate">[docs]</a><span class="k">def</span> <span class="nf">lightness_correlate</span><span class="p">(</span><span class="n">Y_b</span><span class="p">,</span> <span class="n">Y_w</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">Q_w</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *Lightness* correlate :math:`J`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    Y_b : numeric or array_like</span>
+<span class="sd">         Tristimulus values :math:`Y_b` the background.</span>
+<span class="sd">    Y_w : numeric or array_like</span>
+<span class="sd">         Tristimulus values :math:`Y_b` the reference white.</span>
+<span class="sd">    Q : numeric or array_like</span>
+<span class="sd">        *Brightness* correlate :math:`Q` of the stimulus.</span>
+<span class="sd">    Q_w : numeric or array_like</span>
+<span class="sd">        *Brightness* correlate :math:`Q` of the reference white.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        *Lightness* correlate :math:`J`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; Y_b = 100.0</span>
+<span class="sd">    &gt;&gt;&gt; Y_w = 100.0</span>
+<span class="sd">    &gt;&gt;&gt; Q = 22.209765491265024</span>
+<span class="sd">    &gt;&gt;&gt; Q_w = 40.518065821226081</span>
+<span class="sd">    &gt;&gt;&gt; lightness_correlate(Y_b, Y_w, Q, Q_w)  # doctest: +ELLIPSIS</span>
+<span class="sd">    30.0462678...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">Y_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Y_b</span><span class="p">)</span>
+    <span class="n">Y_w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Y_w</span><span class="p">)</span>
+    <span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span>
+    <span class="n">Q_w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Q_w</span><span class="p">)</span>
+
+    <span class="n">Z</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">Y_b</span> <span class="o">/</span> <span class="n">Y_w</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span>
+    <span class="n">J</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="n">Q</span> <span class="o">/</span> <span class="n">Q_w</span><span class="p">)</span> <span class="o">**</span> <span class="n">Z</span>
+
+    <span class="k">return</span> <span class="n">J</span>
+
+</div>
+<div class="viewcode-block" id="chroma_correlate"><a class="viewcode-back" href="../../../colour.appearance.hunt.html#colour.appearance.hunt.chroma_correlate">[docs]</a><span class="k">def</span> <span class="nf">chroma_correlate</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">Y_b</span><span class="p">,</span> <span class="n">Y_w</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">Q_w</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *chroma* correlate :math:`C_94`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    s : numeric or array_like</span>
+<span class="sd">        *Saturation* correlate :math:`s`.</span>
+<span class="sd">    Y_b : numeric or array_like</span>
+<span class="sd">         Tristimulus values :math:`Y_b` the background.</span>
+<span class="sd">    Y_w : numeric or array_like</span>
+<span class="sd">         Tristimulus values :math:`Y_b` the reference white.</span>
+<span class="sd">    Q : numeric or array_like</span>
+<span class="sd">        *Brightness* correlate :math:`Q` of the stimulus.</span>
+<span class="sd">    Q_w : numeric or array_like</span>
+<span class="sd">        *Brightness* correlate :math:`Q` of the reference white.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        *Chroma* correlate :math:`C_94`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; s = 0.0199093206929</span>
+<span class="sd">    &gt;&gt;&gt; Y_b = 100.0</span>
+<span class="sd">    &gt;&gt;&gt; Y_w = 100.0</span>
+<span class="sd">    &gt;&gt;&gt; Q = 22.209765491265024</span>
+<span class="sd">    &gt;&gt;&gt; Q_w = 40.518065821226081</span>
+<span class="sd">    &gt;&gt;&gt; chroma_correlate(s, Y_b, Y_w, Q, Q_w)  # doctest: +ELLIPSIS</span>
+<span class="sd">    0.1210508...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="n">Y_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Y_b</span><span class="p">)</span>
+    <span class="n">Y_w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Y_w</span><span class="p">)</span>
+    <span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span>
+    <span class="n">Q_w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Q_w</span><span class="p">)</span>
+
+    <span class="n">C_94</span> <span class="o">=</span> <span class="p">(</span><span class="mf">2.44</span> <span class="o">*</span> <span class="p">(</span><span class="n">s</span> <span class="o">**</span> <span class="mf">0.69</span><span class="p">)</span> <span class="o">*</span>
+            <span class="p">((</span><span class="n">Q</span> <span class="o">/</span> <span class="n">Q_w</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="n">Y_b</span> <span class="o">/</span> <span class="n">Y_w</span><span class="p">))</span> <span class="o">*</span>
+            <span class="p">(</span><span class="mf">1.64</span> <span class="o">-</span> <span class="mf">0.29</span> <span class="o">**</span> <span class="p">(</span><span class="n">Y_b</span> <span class="o">/</span> <span class="n">Y_w</span><span class="p">)))</span>
+
+    <span class="k">return</span> <span class="n">C_94</span>
+
+</div>
+<div class="viewcode-block" id="colourfulness_correlate"><a class="viewcode-back" href="../../../colour.appearance.hunt.html#colour.appearance.hunt.colourfulness_correlate">[docs]</a><span class="k">def</span> <span class="nf">colourfulness_correlate</span><span class="p">(</span><span class="n">F_L</span><span class="p">,</span> <span class="n">C_94</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the *colourfulness* correlate :math:`M_94`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    F_L : numeric or array_like</span>
+<span class="sd">        Luminance adaptation factor :math:`F_L`.</span>
+<span class="sd">    numeric</span>
+<span class="sd">        *Chroma* correlate :math:`C_94`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric</span>
+<span class="sd">        *Colourfulness* correlate :math:`M_94`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; F_L = 1.16754446414718</span>
+<span class="sd">    &gt;&gt;&gt; C_94 = 0.12105083993617581</span>
+<span class="sd">    &gt;&gt;&gt; colourfulness_correlate(F_L, C_94)  # doctest: +ELLIPSIS</span>
+<span class="sd">    0.1238964...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">F_L</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">F_L</span><span class="p">)</span>
+    <span class="n">C_94</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">C_94</span><span class="p">)</span>
+
+    <span class="n">M_94</span> <span class="o">=</span> <span class="n">F_L</span> <span class="o">**</span> <span class="mf">0.15</span> <span class="o">*</span> <span class="n">C_94</span>
+
+    <span class="k">return</span> <span class="n">M_94</span></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2015, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

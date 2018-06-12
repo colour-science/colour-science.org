@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.corresponding.dataset.corresponding_chromaticities Module &mdash; Colour 0.3.3 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.3.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.3 documentation" href="index.html" />
+    <link rel="up" title="colour.corresponding.dataset Package" href="colour.corresponding.dataset.html" />
+    <link rel="next" title="colour.corresponding.prediction Module" href="colour.corresponding.prediction.html" />
+    <link rel="prev" title="colour.corresponding.dataset Package" href="colour.corresponding.dataset.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+  <li>
+    <a href="colour.corresponding.dataset.html" title="Previous Chapter: colour.corresponding.dataset Package"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; colour.correspon...</span>
+    </a>
+  </li>
+  <li>
+    <a href="colour.corresponding.prediction.html" title="Next Chapter: colour.corresponding.prediction Module"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">colour.correspon... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="module-colour.corresponding.dataset.corresponding_chromaticities">
+<span id="colour-corresponding-dataset-corresponding-chromaticities-module"></span><h1>colour.corresponding.dataset.corresponding_chromaticities Module<a class="headerlink" href="#module-colour.corresponding.dataset.corresponding_chromaticities" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="breneman-s-corresponding-chromaticities-dataset">
+<h2>Breneman&#8217;s Corresponding Chromaticities Dataset<a class="headerlink" href="#breneman-s-corresponding-chromaticities-dataset" title="Permalink to this headline">¶</a></h2>
+<p>Defines Breneman (1987) results for corresponding chromaticities experiments.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/corresponding/prediction.ipynb">Corresponding Chromaticities Prediction IPython Notebook</a></p>
+</div>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td>Breneman, E. J. (1987). Corresponding chromaticities for different
+states of adaptation to complex visual fields. JOSA A, 4(6). Retrieved
+from <a class="reference external" href="http://www.opticsinfobase.org/josaa/fulltext.cfm?uri=josaa-4-6-1115&amp;id=2783">http://www.opticsinfobase.org/josaa/fulltext.cfm?uri=josaa-4-6-1115&amp;id=2783</a></td></tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="colour.corresponding.dataset.corresponding_chromaticities.BrenemanExperimentResult">
+<em class="property">class </em><tt class="descclassname">colour.corresponding.dataset.corresponding_chromaticities.</tt><tt class="descname">BrenemanExperimentResult</tt><a class="reference internal" href="_modules/colour/corresponding/dataset/corresponding_chromaticities.html#BrenemanExperimentResult"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.corresponding.dataset.corresponding_chromaticities.BrenemanExperimentResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#colour.corresponding.dataset.corresponding_chromaticities.BrenemanExperimentResult" title="colour.corresponding.dataset.corresponding_chromaticities.BrenemanExperimentResult"><tt class="xref py py-class docutils literal"><span class="pre">colour.corresponding.dataset.corresponding_chromaticities.BrenemanExperimentResult</span></tt></a></p>
+<p>Experiment result.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>unicode</em>) &#8211; Test colour name.</li>
+<li><strong>uvp_t</strong> (<em>numeric</em>) &#8211; Chromaticity coordinates <span class="math">\(uv_t^p\)</span> of test colour.</li>
+<li><strong>uvp_m</strong> (<em>array_like, (2,)</em>) &#8211; Chromaticity coordinates <span class="math">\(uv_m^p\)</span> of matching colour.</li>
+<li><strong>s_uvp</strong> (<em>array_like, (2,), optional</em>) &#8211; Interobserver variation (<span class="math">\(x10^3\)</span>) <span class="math">\(\sigma_uv^p\)</span>.</li>
+<li><strong>d_uvp_i</strong> (<em>array_like, (2,), optional</em>) &#8211; Deviation of individual linear transformation (<span class="math">\(x10^3\)</span>)
+<span class="math">\(\delta_uv_i^p\)</span>.</li>
+<li><strong>d_uvp_g</strong> (<em>array_like, (2,), optional</em>) &#8211; Deviation of individual linear transformation (<span class="math">\(x10^3\)</span>)
+<span class="math">\(\delta_uv_g^p\)</span>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="colour.corresponding.dataset.corresponding_chromaticities.PrimariesChromaticityCoordinates">
+<em class="property">class </em><tt class="descclassname">colour.corresponding.dataset.corresponding_chromaticities.</tt><tt class="descname">PrimariesChromaticityCoordinates</tt><a class="reference internal" href="_modules/colour/corresponding/dataset/corresponding_chromaticities.html#PrimariesChromaticityCoordinates"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#colour.corresponding.dataset.corresponding_chromaticities.PrimariesChromaticityCoordinates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#colour.corresponding.dataset.corresponding_chromaticities.PrimariesChromaticityCoordinates" title="colour.corresponding.dataset.corresponding_chromaticities.PrimariesChromaticityCoordinates"><tt class="xref py py-class docutils literal"><span class="pre">colour.corresponding.dataset.corresponding_chromaticities.PrimariesChromaticityCoordinates</span></tt></a></p>
+<p>Chromaticity coordinates of primaries.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>experiment</strong> (<em>integer</em>) &#8211; Experiment.</li>
+<li><strong>illuminants</strong> (<em>array_like, (2,)</em>) &#8211; Chromaticity coordinates <span class="math">\(uv_t^p\)</span> of test colour.</li>
+<li><strong>Y</strong> (<em>numeric</em>) &#8211; White luminance <span class="math">\(Y\)</span> in <span class="math">\(cd/m^2\)</span>.</li>
+<li><strong>P_uvp</strong> (<em>numeric</em>) &#8211; Chromaticity coordinates <span class="math">\(uv^p\)</span> of primary <span class="math">\(P\)</span>.</li>
+<li><strong>D_uvp</strong> (<em>numeric</em>) &#8211; Chromaticity coordinates <span class="math">\(uv^p\)</span> of primary <span class="math">\(D\)</span>.</li>
+<li><strong>T_uvp</strong> (<em>numeric</em>) &#8211; Chromaticity coordinates <span class="math">\(uv^p\)</span> of primary <span class="math">\(T\)</span>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.corresponding.dataset.corresponding_chromaticities.BRENEMAN_EXPERIMENT_1_RESULTS">
+<tt class="descclassname">colour.corresponding.dataset.corresponding_chromaticities.</tt><tt class="descname">BRENEMAN_EXPERIMENT_1_RESULTS</tt><em class="property"> = (BrenemanExperimentResult(name=u'Illuminant', uvp_t=(0.259, 0.526), uvp_m=(0.2, 0.475), s_uvp=None, d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Gray', uvp_t=(0.259, 0.524), uvp_m=(0.199, 0.487), s_uvp=(4, 4), d_uvp_i=(2, 3), d_uvp_g=(0, 0)), BrenemanExperimentResult(name=u'Red', uvp_t=(0.459, 0.522), uvp_m=(0.42, 0.509), s_uvp=(19, 4), d_uvp_i=(-10, -7), d_uvp_g=(-19, -3)), BrenemanExperimentResult(name=u'Skin', uvp_t=(0.307, 0.526), uvp_m=(0.249, 0.497), s_uvp=(7, 4), d_uvp_i=(-1, 1), d_uvp_g=(-6, -1)), BrenemanExperimentResult(name=u'Orange', uvp_t=(0.36, 0.544), uvp_m=(0.302, 0.548), s_uvp=(12, 1), d_uvp_i=(1, -2), d_uvp_g=(-7, -6)), BrenemanExperimentResult(name=u'Brown', uvp_t=(0.35, 0.541), uvp_m=(0.29, 0.537), s_uvp=(11, 4), d_uvp_i=(3, 0), d_uvp_g=(-5, -3)), BrenemanExperimentResult(name=u'Yellow', uvp_t=(0.318, 0.55), uvp_m=(0.257, 0.554), s_uvp=(8, 2), d_uvp_i=(0, 2), d_uvp_g=(-5, -5)), BrenemanExperimentResult(name=u'Foliage', uvp_t=(0.258, 0.542), uvp_m=(0.192, 0.529), s_uvp=(4, 6), d_uvp_i=(3, 2), d_uvp_g=(3, -6)), BrenemanExperimentResult(name=u'Green', uvp_t=(0.193, 0.542), uvp_m=(0.129, 0.521), s_uvp=(7, 5), d_uvp_i=(3, 2), d_uvp_g=(9, -7)), BrenemanExperimentResult(name=u'Blue-green', uvp_t=(0.18, 0.516), uvp_m=(0.133, 0.469), s_uvp=(4, 6), d_uvp_i=(-3, -2), d_uvp_g=(2, -5)), BrenemanExperimentResult(name=u'Blue', uvp_t=(0.186, 0.445), uvp_m=(0.158, 0.34), s_uvp=(13, 33), d_uvp_i=(2, 7), d_uvp_g=(1, 13)), BrenemanExperimentResult(name=u'Sky', uvp_t=(0.226, 0.491), uvp_m=(0.178, 0.426), s_uvp=(3, 14), d_uvp_i=(1, -3), d_uvp_g=(0, -1)), BrenemanExperimentResult(name=u'Purple', uvp_t=(0.278, 0.456), uvp_m=(0.231, 0.365), s_uvp=(4, 25), d_uvp_i=(0, 2), d_uvp_g=(-5, 7)))</em><a class="headerlink" href="#colour.corresponding.dataset.corresponding_chromaticities.BRENEMAN_EXPERIMENT_1_RESULTS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Breneman (1987) experiment 1 results.</p>
+<p>BRENEMAN_EXPERIMENT_1_RESULTS : tuple</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Illuminants : <em>A</em>, <em>D65</em></li>
+<li>White Luminance : 1500 <span class="math">\(cd/m^2\)</span></li>
+<li>Observers Count : 7</li>
+</ul>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.corresponding.dataset.corresponding_chromaticities.BRENEMAN_EXPERIMENT_2_RESULTS">
+<tt class="descclassname">colour.corresponding.dataset.corresponding_chromaticities.</tt><tt class="descname">BRENEMAN_EXPERIMENT_2_RESULTS</tt><em class="property"> = (BrenemanExperimentResult(name=u'Illuminant', uvp_t=(0.222, 0.521), uvp_m=(0.204, 0.479), s_uvp=None, d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Gray', uvp_t=(0.227, 0.517), uvp_m=(0.207, 0.486), s_uvp=(2, 5), d_uvp_i=(-1, 0), d_uvp_g=(0, 0)), BrenemanExperimentResult(name=u'Red', uvp_t=(0.464, 0.52), uvp_m=(0.449, 0.511), s_uvp=(22, 3), d_uvp_i=(-8, -8), d_uvp_g=(-7, -2)), BrenemanExperimentResult(name=u'Skin', uvp_t=(0.286, 0.526), uvp_m=(0.263, 0.505), s_uvp=(7, 2), d_uvp_i=(0, -1), d_uvp_g=(0, -1)), BrenemanExperimentResult(name=u'Orange', uvp_t=(0.348, 0.546), uvp_m=(0.322, 0.545), s_uvp=(13, 3), d_uvp_i=(3, -1), d_uvp_g=(3, -2)), BrenemanExperimentResult(name=u'Brown', uvp_t=(0.34, 0.543), uvp_m=(0.316, 0.537), s_uvp=(11, 3), d_uvp_i=(1, 1), d_uvp_g=(0, 0)), BrenemanExperimentResult(name=u'Yellow', uvp_t=(0.288, 0.554), uvp_m=(0.265, 0.553), s_uvp=(5, 2), d_uvp_i=(-2, 2), d_uvp_g=(-1, -2)), BrenemanExperimentResult(name=u'Foliage', uvp_t=(0.244, 0.547), uvp_m=(0.221, 0.538), s_uvp=(4, 3), d_uvp_i=(-2, 1), d_uvp_g=(0, -3)), BrenemanExperimentResult(name=u'Green', uvp_t=(0.156, 0.548), uvp_m=(0.135, 0.532), s_uvp=(4, 3), d_uvp_i=(-1, 3), d_uvp_g=(3, -4)), BrenemanExperimentResult(name=u'Blue-green', uvp_t=(0.159, 0.511), uvp_m=(0.145, 0.472), s_uvp=(9, 7), d_uvp_i=(-1, 2), d_uvp_g=(2, 1)), BrenemanExperimentResult(name=u'Blue', uvp_t=(0.16, 0.406), uvp_m=(0.163, 0.331), s_uvp=(23, 31), d_uvp_i=(2, -3), d_uvp_g=(-1, 3)), BrenemanExperimentResult(name=u'Sky', uvp_t=(0.19, 0.481), uvp_m=(0.176, 0.431), s_uvp=(5, 24), d_uvp_i=(2, -2), d_uvp_g=(2, 0)), BrenemanExperimentResult(name=u'Purple', uvp_t=(0.258, 0.431), uvp_m=(0.244, 0.349), s_uvp=(4, 19), d_uvp_i=(-3, 13), d_uvp_g=(-4, 19)))</em><a class="headerlink" href="#colour.corresponding.dataset.corresponding_chromaticities.BRENEMAN_EXPERIMENT_2_RESULTS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Breneman (1987) experiment 2 results.</p>
+<p>BRENEMAN_EXPERIMENT_2_RESULTS : tuple</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Illuminants : <em>Projector</em>, <em>D55</em></li>
+<li>White Luminance : 1500 <span class="math">\(cd/m^2\)</span></li>
+<li>Observers Count : 7</li>
+</ul>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.corresponding.dataset.corresponding_chromaticities.BRENEMAN_EXPERIMENT_3_RESULTS">
+<tt class="descclassname">colour.corresponding.dataset.corresponding_chromaticities.</tt><tt class="descname">BRENEMAN_EXPERIMENT_3_RESULTS</tt><em class="property"> = (BrenemanExperimentResult(name=u'Illuminant', uvp_t=(0.223, 0.521), uvp_m=(0.206, 0.478), s_uvp=None, d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Gray', uvp_t=(0.228, 0.517), uvp_m=(0.211, 0.494), s_uvp=(1, 3), d_uvp_i=(0, 2), d_uvp_g=(0, 0)), BrenemanExperimentResult(name=u'Red', uvp_t=(0.462, 0.519), uvp_m=(0.448, 0.505), s_uvp=(11, 4), d_uvp_i=(-3, 6), d_uvp_g=(-4, 6)), BrenemanExperimentResult(name=u'Skin', uvp_t=(0.285, 0.524), uvp_m=(0.267, 0.507), s_uvp=(6, 3), d_uvp_i=(-1, 1), d_uvp_g=(-2, 1)), BrenemanExperimentResult(name=u'Orange', uvp_t=(0.346, 0.546), uvp_m=(0.325, 0.541), s_uvp=(11, 3), d_uvp_i=(1, -2), d_uvp_g=(2, 3)), BrenemanExperimentResult(name=u'Brown', uvp_t=(0.338, 0.543), uvp_m=(0.321, 0.532), s_uvp=(9, 6), d_uvp_i=(-3, 2), d_uvp_g=(-3, 7)), BrenemanExperimentResult(name=u'Yellow', uvp_t=(0.287, 0.554), uvp_m=(0.267, 0.548), s_uvp=(4, 5), d_uvp_i=(1, -2), d_uvp_g=(0, 5)), BrenemanExperimentResult(name=u'Foliage', uvp_t=(0.244, 0.547), uvp_m=(0.226, 0.531), s_uvp=(3, 6), d_uvp_i=(-1, 3), d_uvp_g=(-2, 8)), BrenemanExperimentResult(name=u'Green', uvp_t=(0.157, 0.548), uvp_m=(0.141, 0.528), s_uvp=(9, 6), d_uvp_i=(2, 2), d_uvp_g=(0, 6)), BrenemanExperimentResult(name=u'Blue-green', uvp_t=(0.16, 0.51), uvp_m=(0.151, 0.486), s_uvp=(8, 5), d_uvp_i=(-2, -1), d_uvp_g=(-2, -5)), BrenemanExperimentResult(name=u'Blue', uvp_t=(0.162, 0.407), uvp_m=(0.158, 0.375), s_uvp=(6, 7), d_uvp_i=(1, -6), d_uvp_g=(4, -23)), BrenemanExperimentResult(name=u'Sky', uvp_t=(0.191, 0.482), uvp_m=(0.179, 0.452), s_uvp=(4, 5), d_uvp_i=(0, 1), d_uvp_g=(1, -7)), BrenemanExperimentResult(name=u'Purple', uvp_t=(0.258, 0.432), uvp_m=(0.238, 0.396), s_uvp=(4, 8), d_uvp_i=(5, 3), d_uvp_g=(4, -11)))</em><a class="headerlink" href="#colour.corresponding.dataset.corresponding_chromaticities.BRENEMAN_EXPERIMENT_3_RESULTS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Breneman (1987) experiment 3 results.</p>
+<p>BRENEMAN_EXPERIMENT_3_RESULTS : tuple</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Illuminants : <em>Projector</em>, <em>D55</em></li>
+<li>White Luminance : 75 <span class="math">\(cd/m^2\)</span></li>
+<li>Observers Count : 7</li>
+</ul>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.corresponding.dataset.corresponding_chromaticities.BRENEMAN_EXPERIMENT_4_RESULTS">
+<tt class="descclassname">colour.corresponding.dataset.corresponding_chromaticities.</tt><tt class="descname">BRENEMAN_EXPERIMENT_4_RESULTS</tt><em class="property"> = (BrenemanExperimentResult(name=u'Illuminant', uvp_t=(0.258, 0.523), uvp_m=(0.199, 0.467), s_uvp=None, d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Gray', uvp_t=(0.257, 0.524), uvp_m=(0.205, 0.495), s_uvp=(2, 2), d_uvp_i=(0, 4), d_uvp_g=(0, 0)), BrenemanExperimentResult(name=u'Red', uvp_t=(0.46, 0.521), uvp_m=(0.416, 0.501), s_uvp=(11, 6), d_uvp_i=(-6, 4), d_uvp_g=(-6, 9)), BrenemanExperimentResult(name=u'Skin', uvp_t=(0.308, 0.526), uvp_m=(0.253, 0.503), s_uvp=(7, 3), d_uvp_i=(-1, 1), d_uvp_g=(-1, 0)), BrenemanExperimentResult(name=u'Orange', uvp_t=(0.36, 0.544), uvp_m=(0.303, 0.541), s_uvp=(14, 5), d_uvp_i=(1, -4), d_uvp_g=(1, 2)), BrenemanExperimentResult(name=u'Brown', uvp_t=(0.35, 0.541), uvp_m=(0.296, 0.527), s_uvp=(11, 7), d_uvp_i=(-2, 4), d_uvp_g=(-3, 9)), BrenemanExperimentResult(name=u'Yellow', uvp_t=(0.317, 0.55), uvp_m=(0.26, 0.547), s_uvp=(9, 5), d_uvp_i=(1, -3), d_uvp_g=(0, 3)), BrenemanExperimentResult(name=u'Foliage', uvp_t=(0.258, 0.543), uvp_m=(0.203, 0.52), s_uvp=(4, 6), d_uvp_i=(0, 8), d_uvp_g=(0, 9)), BrenemanExperimentResult(name=u'Green', uvp_t=(0.193, 0.543), uvp_m=(0.142, 0.516), s_uvp=(6, 9), d_uvp_i=(3, 8), d_uvp_g=(2, 6)), BrenemanExperimentResult(name=u'Blue-green', uvp_t=(0.18, 0.516), uvp_m=(0.14, 0.484), s_uvp=(9, 5), d_uvp_i=(-2, -1), d_uvp_g=(-1, -9)), BrenemanExperimentResult(name=u'Blue', uvp_t=(0.185, 0.445), uvp_m=(0.151, 0.394), s_uvp=(8, 10), d_uvp_i=(2, -8), d_uvp_g=(8, -24)), BrenemanExperimentResult(name=u'Sky', uvp_t=(0.225, 0.49), uvp_m=(0.18, 0.448), s_uvp=(4, 8), d_uvp_i=(1, -1), d_uvp_g=(3, -11)), BrenemanExperimentResult(name=u'Purple', uvp_t=(0.278, 0.455), uvp_m=(0.229, 0.388), s_uvp=(6, 14), d_uvp_i=(1, 12), d_uvp_g=(3, 0)))</em><a class="headerlink" href="#colour.corresponding.dataset.corresponding_chromaticities.BRENEMAN_EXPERIMENT_4_RESULTS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Breneman (1987) experiment 4 results.</p>
+<p>BRENEMAN_EXPERIMENT_4_RESULTS : tuple</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Illuminants : <em>A</em>, <em>D65</em></li>
+<li>White Luminance : 75 <span class="math">\(cd/m^2\)</span></li>
+<li>Observers Count : 7</li>
+</ul>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.corresponding.dataset.corresponding_chromaticities.BRENEMAN_EXPERIMENT_5_RESULTS">
+<tt class="descclassname">colour.corresponding.dataset.corresponding_chromaticities.</tt><tt class="descname">BRENEMAN_EXPERIMENT_5_RESULTS</tt><em class="property"> = (BrenemanExperimentResult(name=u'Gray', uvp_t=(0.028, 0.48), uvp_m=(0.212, 0.491), s_uvp=(2, 2), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Red', uvp_t=(0.449, 0.512), uvp_m=(0.408, 0.514), s_uvp=(11, 5), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Skin', uvp_t=(0.269, 0.505), uvp_m=(0.262, 0.511), s_uvp=(4, 2), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Orange', uvp_t=(0.331, 0.548), uvp_m=(0.303, 0.545), s_uvp=(4, 3), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Brown', uvp_t=(0.322, 0.541), uvp_m=(0.303, 0.538), s_uvp=(4, 4), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Yellow', uvp_t=(0.268, 0.555), uvp_m=(0.264, 0.55), s_uvp=(3, 2), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Foliage', uvp_t=(0.224, 0.538), uvp_m=(0.227, 0.535), s_uvp=(3, 3), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Green', uvp_t=(0.134, 0.531), uvp_m=(0.159, 0.53), s_uvp=(9, 3), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Blue-green', uvp_t=(0.145, 0.474), uvp_m=(0.165, 0.49), s_uvp=(8, 3), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Blue', uvp_t=(0.163, 0.329), uvp_m=(0.173, 0.378), s_uvp=(7, 12), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Sky', uvp_t=(0.179, 0.438), uvp_m=(0.189, 0.462), s_uvp=(5, 4), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Purple', uvp_t=(0.245, 0.364), uvp_m=(0.239, 0.401), s_uvp=(4, 16), d_uvp_i=None, d_uvp_g=None))</em><a class="headerlink" href="#colour.corresponding.dataset.corresponding_chromaticities.BRENEMAN_EXPERIMENT_5_RESULTS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Breneman (1987) experiment 5 results.</p>
+<p>BRENEMAN_EXPERIMENT_5_RESULTS : tuple</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Effective White Levels : 130 and 2120 <span class="math">\(cd/m^2\)</span></li>
+<li>Observers Count : 7</li>
+</ul>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.corresponding.dataset.corresponding_chromaticities.BRENEMAN_EXPERIMENT_6_RESULTS">
+<tt class="descclassname">colour.corresponding.dataset.corresponding_chromaticities.</tt><tt class="descname">BRENEMAN_EXPERIMENT_6_RESULTS</tt><em class="property"> = (BrenemanExperimentResult(name=u'Illuminant', uvp_t=(0.257, 0.525), uvp_m=(0.201, 0.482), s_uvp=None, d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Gray', uvp_t=(0.267, 0.521), uvp_m=(0.207, 0.485), s_uvp=(5, 3), d_uvp_i=(-1, 0), d_uvp_g=(0, 0)), BrenemanExperimentResult(name=u'Red', uvp_t=(0.457, 0.521), uvp_m=(0.398, 0.516), s_uvp=(9, 4), d_uvp_i=(-2, -5), d_uvp_g=(1, -9)), BrenemanExperimentResult(name=u'Skin', uvp_t=(0.316, 0.526), uvp_m=(0.253, 0.503), s_uvp=(5, 3), d_uvp_i=(-3, -2), d_uvp_g=(-1, -3)), BrenemanExperimentResult(name=u'Orange', uvp_t=(0.358, 0.545), uvp_m=(0.287, 0.55), s_uvp=(7, 3), d_uvp_i=(3, 0), d_uvp_g=(7, -6)), BrenemanExperimentResult(name=u'Brown', uvp_t=(0.35, 0.541), uvp_m=(0.282, 0.54), s_uvp=(6, 3), d_uvp_i=(-1, 0), d_uvp_g=(2, -5)), BrenemanExperimentResult(name=u'Yellow', uvp_t=(0.318, 0.551), uvp_m=(0.249, 0.556), s_uvp=(7, 2), d_uvp_i=(-1, 1), d_uvp_g=(2, -5)), BrenemanExperimentResult(name=u'Foliage', uvp_t=(0.256, 0.547), uvp_m=(0.188, 0.537), s_uvp=(5, 4), d_uvp_i=(3, 1), d_uvp_g=(4, -2)), BrenemanExperimentResult(name=u'Green', uvp_t=(0.193, 0.542), uvp_m=(0.133, 0.52), s_uvp=(13, 3), d_uvp_i=(5, -2), d_uvp_g=(5, -4)), BrenemanExperimentResult(name=u'Blue-green', uvp_t=(0.18, 0.516), uvp_m=(0.137, 0.466), s_uvp=(12, 10), d_uvp_i=(0, 0), d_uvp_g=(-2, 2)), BrenemanExperimentResult(name=u'Blue', uvp_t=(0.186, 0.445), uvp_m=(0.156, 0.353), s_uvp=(12, 45), d_uvp_i=(6, 1), d_uvp_g=(2, 6)), BrenemanExperimentResult(name=u'Sky', uvp_t=(0.225, 0.492), uvp_m=(0.178, 0.428), s_uvp=(6, 14), d_uvp_i=(1, -1), d_uvp_g=(-1, 3)), BrenemanExperimentResult(name=u'Purple', uvp_t=(0.276, 0.456), uvp_m=(0.227, 0.369), s_uvp=(6, 27), d_uvp_i=(-2, 4), d_uvp_g=(-3, 9)))</em><a class="headerlink" href="#colour.corresponding.dataset.corresponding_chromaticities.BRENEMAN_EXPERIMENT_6_RESULTS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Breneman (1987) experiment 6 results.</p>
+<p>BRENEMAN_EXPERIMENT_6_RESULTS : tuple</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Illuminants : <em>A</em>, <em>D55</em></li>
+<li>White Luminance : 11100 <span class="math">\(cd/m^2\)</span></li>
+<li>Observers Count : 8</li>
+</ul>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.corresponding.dataset.corresponding_chromaticities.BRENEMAN_EXPERIMENT_7_RESULTS">
+<tt class="descclassname">colour.corresponding.dataset.corresponding_chromaticities.</tt><tt class="descname">BRENEMAN_EXPERIMENT_7_RESULTS</tt><em class="property"> = (BrenemanExperimentResult(name=u'Gray', uvp_t=(0.208, 0.481), uvp_m=(0.211, 0.486), s_uvp=(2, 3), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Red', uvp_t=(0.448, 0.512), uvp_m=(0.409, 0.516), s_uvp=(9, 2), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Skin', uvp_t=(0.269, 0.505), uvp_m=(0.256, 0.506), s_uvp=(4, 3), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Orange', uvp_t=(0.331, 0.549), uvp_m=(0.305, 0.547), s_uvp=(5, 4), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Brown', uvp_t=(0.322, 0.541), uvp_m=(0.301, 0.539), s_uvp=(5, 2), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Yellow', uvp_t=(0.268, 0.555), uvp_m=(0.257, 0.552), s_uvp=(3, 4), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Foliage', uvp_t=(0.225, 0.538), uvp_m=(0.222, 0.536), s_uvp=(3, 2), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Green', uvp_t=(0.135, 0.531), uvp_m=(0.153, 0.529), s_uvp=(8, 2), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Blue-green', uvp_t=(0.145, 0.475), uvp_m=(0.16, 0.484), s_uvp=(3, 5), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Blue', uvp_t=(0.163, 0.331), uvp_m=(0.171, 0.379), s_uvp=(4, 11), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Sky', uvp_t=(0.179, 0.438), uvp_m=(0.187, 0.452), s_uvp=(4, 7), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Purple', uvp_t=(0.245, 0.365), uvp_m=(0.24, 0.398), s_uvp=(4, 10), d_uvp_i=None, d_uvp_g=None))</em><a class="headerlink" href="#colour.corresponding.dataset.corresponding_chromaticities.BRENEMAN_EXPERIMENT_7_RESULTS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Breneman (1987) experiment 7 results.</p>
+<p>BRENEMAN_EXPERIMENT_7_RESULTS : tuple</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Effective White Levels : 850 and 11100 <span class="math">\(cd/m^2\)</span></li>
+<li>Observers Count : 8</li>
+</ul>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.corresponding.dataset.corresponding_chromaticities.BRENEMAN_EXPERIMENT_10_RESULTS">
+<tt class="descclassname">colour.corresponding.dataset.corresponding_chromaticities.</tt><tt class="descname">BRENEMAN_EXPERIMENT_10_RESULTS</tt><em class="property"> = (BrenemanExperimentResult(name=u'Gray', uvp_t=(0.208, 0.482), uvp_m=(0.213, 0.494), s_uvp=(3, 3), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Red', uvp_t=(0.447, 0.512), uvp_m=(0.411, 0.506), s_uvp=(15, 7), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Skin', uvp_t=(0.269, 0.505), uvp_m=(0.269, 0.511), s_uvp=(4, 3), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Orange', uvp_t=(0.331, 0.549), uvp_m=(0.315, 0.536), s_uvp=(7, 8), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Brown', uvp_t=(0.323, 0.542), uvp_m=(0.31, 0.526), s_uvp=(6, 8), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Yellow', uvp_t=(0.268, 0.556), uvp_m=(0.268, 0.541), s_uvp=(3, 6), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Foliage', uvp_t=(0.226, 0.538), uvp_m=(0.23, 0.525), s_uvp=(4, 8), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Green', uvp_t=(0.135, 0.531), uvp_m=(0.158, 0.524), s_uvp=(6, 3), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Blue-green', uvp_t=(0.145, 0.476), uvp_m=(0.161, 0.491), s_uvp=(4, 4), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Blue', uvp_t=(0.163, 0.33), uvp_m=(0.171, 0.377), s_uvp=(6, 19), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Sky', uvp_t=(0.179, 0.439), uvp_m=(0.187, 0.465), s_uvp=(5, 5), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Purple', uvp_t=(0.245, 0.366), uvp_m=(0.24, 0.402), s_uvp=(3, 12), d_uvp_i=None, d_uvp_g=None))</em><a class="headerlink" href="#colour.corresponding.dataset.corresponding_chromaticities.BRENEMAN_EXPERIMENT_10_RESULTS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Breneman (1987) experiment 10 results.</p>
+<p>BRENEMAN_EXPERIMENT_10_RESULTS : tuple</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Effective White Levels : 15 and 270 <span class="math">\(cd/m^2\)</span></li>
+<li>Observers Count : 7</li>
+</ul>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.corresponding.dataset.corresponding_chromaticities.BRENEMAN_EXPERIMENT_8_RESULTS">
+<tt class="descclassname">colour.corresponding.dataset.corresponding_chromaticities.</tt><tt class="descname">BRENEMAN_EXPERIMENT_8_RESULTS</tt><em class="property"> = (BrenemanExperimentResult(name=u'Illuminant', uvp_t=(0.258, 0.524), uvp_m=(0.195, 0.469), s_uvp=None, d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Gray', uvp_t=(0.257, 0.525), uvp_m=(0.2, 0.494), s_uvp=(2, 3), d_uvp_i=(1, 2), d_uvp_g=(0, 0)), BrenemanExperimentResult(name=u'Red', uvp_t=(0.458, 0.522), uvp_m=(0.41, 0.508), s_uvp=(12, 4), d_uvp_i=(-3, 5), d_uvp_g=(-7, 2)), BrenemanExperimentResult(name=u'Skin', uvp_t=(0.308, 0.526), uvp_m=(0.249, 0.502), s_uvp=(6, 2), d_uvp_i=(-1, 1), d_uvp_g=(-3, -1)), BrenemanExperimentResult(name=u'Orange', uvp_t=(0.359, 0.545), uvp_m=(0.299, 0.545), s_uvp=(12, 4), d_uvp_i=(0, -2), d_uvp_g=(-3, 0)), BrenemanExperimentResult(name=u'Brown', uvp_t=(0.349, 0.54), uvp_m=(0.289, 0.532), s_uvp=(10, 4), d_uvp_i=(0, 1), d_uvp_g=(-2, 2)), BrenemanExperimentResult(name=u'Yellow', uvp_t=(0.317, 0.55), uvp_m=(0.256, 0.549), s_uvp=(9, 5), d_uvp_i=(0, -3), d_uvp_g=(-3, 1)), BrenemanExperimentResult(name=u'Foliage', uvp_t=(0.26, 0.545), uvp_m=(0.198, 0.529), s_uvp=(5, 5), d_uvp_i=(3, 1), d_uvp_g=(0, 3)), BrenemanExperimentResult(name=u'Green', uvp_t=(0.193, 0.543), uvp_m=(0.137, 0.52), s_uvp=(9, 5), d_uvp_i=(3, 0), d_uvp_g=(2, 1)), BrenemanExperimentResult(name=u'Blue-green', uvp_t=(0.182, 0.516), uvp_m=(0.139, 0.477), s_uvp=(9, 4), d_uvp_i=(-3, 0), d_uvp_g=(-2, -4)), BrenemanExperimentResult(name=u'Blue', uvp_t=(0.184, 0.444), uvp_m=(0.15, 0.387), s_uvp=(5, 11), d_uvp_i=(3, -10), d_uvp_g=(6, -22)), BrenemanExperimentResult(name=u'Sky', uvp_t=(0.224, 0.489), uvp_m=(0.177, 0.439), s_uvp=(5, 6), d_uvp_i=(1, 1), d_uvp_g=(1, -7)), BrenemanExperimentResult(name=u'Purple', uvp_t=(0.277, 0.454), uvp_m=(0.226, 0.389), s_uvp=(4, 10), d_uvp_i=(1, 4), d_uvp_g=(1, -8)))</em><a class="headerlink" href="#colour.corresponding.dataset.corresponding_chromaticities.BRENEMAN_EXPERIMENT_8_RESULTS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Breneman (1987) experiment 8 results.</p>
+<p>BRENEMAN_EXPERIMENT_8_RESULTS : tuple</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Illuminants : <em>A</em>, <em>D65</em></li>
+<li>White Luminance : 350 <span class="math">\(cd/m^2\)</span></li>
+<li>Observers Count : 8</li>
+</ul>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.corresponding.dataset.corresponding_chromaticities.BRENEMAN_EXPERIMENT_9_RESULTS">
+<tt class="descclassname">colour.corresponding.dataset.corresponding_chromaticities.</tt><tt class="descname">BRENEMAN_EXPERIMENT_9_RESULTS</tt><em class="property"> = (BrenemanExperimentResult(name=u'Illuminant', uvp_t=(0.254, 0.525), uvp_m=(0.195, 0.465), s_uvp=None, d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Gray', uvp_t=(0.256, 0.524), uvp_m=(0.207, 0.496), s_uvp=(4, 6), d_uvp_i=(3, 2), d_uvp_g=(0, 0)), BrenemanExperimentResult(name=u'Red', uvp_t=(0.459, 0.521), uvp_m=(0.415, 0.489), s_uvp=(20, 14), d_uvp_i=(2, 12), d_uvp_g=(-2, 21)), BrenemanExperimentResult(name=u'Skin', uvp_t=(0.307, 0.525), uvp_m=(0.261, 0.5), s_uvp=(7, 7), d_uvp_i=(0, 1), d_uvp_g=(-5, 2)), BrenemanExperimentResult(name=u'Orange', uvp_t=(0.359, 0.545), uvp_m=(0.313, 0.532), s_uvp=(7, 5), d_uvp_i=(-2, -3), d_uvp_g=(-6, 13)), BrenemanExperimentResult(name=u'Brown', uvp_t=(0.349, 0.54), uvp_m=(0.302, 0.51), s_uvp=(11, 15), d_uvp_i=(0, 12), d_uvp_g=(-5, 24)), BrenemanExperimentResult(name=u'Yellow', uvp_t=(0.317, 0.55), uvp_m=(0.268, 0.538), s_uvp=(7, 10), d_uvp_i=(1, -4), d_uvp_g=(-4, 12)), BrenemanExperimentResult(name=u'Foliage', uvp_t=(0.259, 0.544), uvp_m=(0.212, 0.51), s_uvp=(10, 11), d_uvp_i=(0, 14), d_uvp_g=(-4, 22)), BrenemanExperimentResult(name=u'Green', uvp_t=(0.193, 0.542), uvp_m=(0.15, 0.506), s_uvp=(6, 10), d_uvp_i=(-1, 13), d_uvp_g=(-2, 15)), BrenemanExperimentResult(name=u'Blue-green', uvp_t=(0.181, 0.517), uvp_m=(0.144, 0.487), s_uvp=(9, 6), d_uvp_i=(-3, 0), d_uvp_g=(-1, -9)), BrenemanExperimentResult(name=u'Blue', uvp_t=(0.184, 0.444), uvp_m=(0.155, 0.407), s_uvp=(4, 11), d_uvp_i=(-2, -6), d_uvp_g=(6, -36)), BrenemanExperimentResult(name=u'Sky', uvp_t=(0.225, 0.49), uvp_m=(0.183, 0.458), s_uvp=(5, 8), d_uvp_i=(1, -3), d_uvp_g=(2, -19)), BrenemanExperimentResult(name=u'Purple', uvp_t=(0.276, 0.454), uvp_m=(0.233, 0.404), s_uvp=(7, 12), d_uvp_i=(2, 9), d_uvp_g=(0, -16)), BrenemanExperimentResult(name=u'(Gray)h', uvp_t=(0.256, 0.525), uvp_m=(0.208, 0.498), s_uvp=None, d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'(Red)h', uvp_t=(0.456, 0.521), uvp_m=(0.416, 0.501), s_uvp=(15, 7), d_uvp_i=None, d_uvp_g=(-6, -9)), BrenemanExperimentResult(name=u'(Brown)h', uvp_t=(0.349, 0.539), uvp_m=(0.306, 0.526), s_uvp=(11, 8), d_uvp_i=None, d_uvp_g=(-8, 7)), BrenemanExperimentResult(name=u'(Foliage)h', uvp_t=(0.26, 0.545), uvp_m=(0.213, 0.528), s_uvp=(7, 9), d_uvp_i=None, d_uvp_g=(-4, 5)), BrenemanExperimentResult(name=u'(Green)h', uvp_t=(0.193, 0.543), uvp_m=(0.149, 0.525), s_uvp=(10, 8), d_uvp_i=None, d_uvp_g=(-1, -1)), BrenemanExperimentResult(name=u'(Blue)h', uvp_t=(0.184, 0.444), uvp_m=(0.156, 0.419), s_uvp=(7, 8), d_uvp_i=None, d_uvp_g=(4, -45)), BrenemanExperimentResult(name=u'(Purple)h', uvp_t=(0.277, 0.456), uvp_m=(0.236, 0.422), s_uvp=(6, 11), d_uvp_i=None, d_uvp_g=(-2, -29)))</em><a class="headerlink" href="#colour.corresponding.dataset.corresponding_chromaticities.BRENEMAN_EXPERIMENT_9_RESULTS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Breneman (1987) experiment 9 results.</p>
+<p>BRENEMAN_EXPERIMENT_9_RESULTS : tuple</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Illuminants : <em>A</em>, <em>D65</em></li>
+<li>White Luminance : 15 <span class="math">\(cd/m^2\)</span></li>
+<li>Observers Count : 8</li>
+<li>The colors indicated by (.)h are the darker colors presented at the higher
+luminescence level of the lighter colors.</li>
+</ul>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.corresponding.dataset.corresponding_chromaticities.BRENEMAN_EXPERIMENT_11_RESULTS">
+<tt class="descclassname">colour.corresponding.dataset.corresponding_chromaticities.</tt><tt class="descname">BRENEMAN_EXPERIMENT_11_RESULTS</tt><em class="property"> = (BrenemanExperimentResult(name=u'Illuminant', uvp_t=(0.208, 0.482), uvp_m=(0.174, 0.52), s_uvp=None, d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Gray', uvp_t=(0.209, 0.483), uvp_m=(0.176, 0.513), s_uvp=(3, 4), d_uvp_i=(2, 2), d_uvp_g=(0, 0)), BrenemanExperimentResult(name=u'Red', uvp_t=(0.45, 0.512), uvp_m=(0.419, 0.524), s_uvp=(10, 2), d_uvp_i=(3, 2), d_uvp_g=(8, -1)), BrenemanExperimentResult(name=u'Skin', uvp_t=(0.268, 0.506), uvp_m=(0.24, 0.528), s_uvp=(6, 2), d_uvp_i=(-4, 0), d_uvp_g=(-3, 0)), BrenemanExperimentResult(name=u'Orange', uvp_t=(0.331, 0.547), uvp_m=(0.293, 0.553), s_uvp=(6, 2), d_uvp_i=(3, -1), d_uvp_g=(5, 1)), BrenemanExperimentResult(name=u'Brown', uvp_t=(0.323, 0.542), uvp_m=(0.29, 0.552), s_uvp=(5, 2), d_uvp_i=(-1, -3), d_uvp_g=(0, -1)), BrenemanExperimentResult(name=u'Yellow', uvp_t=(0.266, 0.549), uvp_m=(0.236, 0.557), s_uvp=(4, 2), d_uvp_i=(-3, -2), d_uvp_g=(-4, 2)), BrenemanExperimentResult(name=u'Foliage', uvp_t=(0.227, 0.538), uvp_m=(0.194, 0.552), s_uvp=(4, 2), d_uvp_i=(2, -3), d_uvp_g=(-1, 1)), BrenemanExperimentResult(name=u'Green', uvp_t=(0.146, 0.534), uvp_m=(0.118, 0.551), s_uvp=(8, 3), d_uvp_i=(4, -2), d_uvp_g=(-6, 3)), BrenemanExperimentResult(name=u'Blue-green', uvp_t=(0.16, 0.475), uvp_m=(0.13, 0.513), s_uvp=(9, 4), d_uvp_i=(1, -1), d_uvp_g=(-4, -3)), BrenemanExperimentResult(name=u'Blue', uvp_t=(0.177, 0.34), uvp_m=(0.133, 0.427), s_uvp=(6, 14), d_uvp_i=(4, -17), d_uvp_g=(11, -29)), BrenemanExperimentResult(name=u'Sky', uvp_t=(0.179, 0.438), uvp_m=(0.146, 0.482), s_uvp=(6, 10), d_uvp_i=(1, 4), d_uvp_g=(0, -1)), BrenemanExperimentResult(name=u'Purple', uvp_t=(0.245, 0.366), uvp_m=(0.216, 0.419), s_uvp=(4, 13), d_uvp_i=(-3, 8), d_uvp_g=(4, -2)))</em><a class="headerlink" href="#colour.corresponding.dataset.corresponding_chromaticities.BRENEMAN_EXPERIMENT_11_RESULTS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Breneman (1987) experiment 1 results.</p>
+<p>BRENEMAN_EXPERIMENT_11_RESULTS : tuple</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Illuminants : <em>green</em>, <em>D65</em></li>
+<li>White Luminance : 1560 <span class="math">\(cd/m^2\)</span></li>
+<li>Observers Count : 7</li>
+</ul>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.corresponding.dataset.corresponding_chromaticities.BRENEMAN_EXPERIMENT_12_RESULTS">
+<tt class="descclassname">colour.corresponding.dataset.corresponding_chromaticities.</tt><tt class="descname">BRENEMAN_EXPERIMENT_12_RESULTS</tt><em class="property"> = (BrenemanExperimentResult(name=u'Illuminant', uvp_t=(0.205, 0.482), uvp_m=(0.174, 0.519), s_uvp=None, d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Gray', uvp_t=(0.208, 0.482), uvp_m=(0.181, 0.507), s_uvp=(4, 3), d_uvp_i=(0, 1), d_uvp_g=(0, 0)), BrenemanExperimentResult(name=u'Red', uvp_t=(0.451, 0.512), uvp_m=(0.422, 0.526), s_uvp=(20, 3), d_uvp_i=(0, -5), d_uvp_g=(10, -5)), BrenemanExperimentResult(name=u'Skin', uvp_t=(0.268, 0.506), uvp_m=(0.244, 0.525), s_uvp=(5, 2), d_uvp_i=(-6, 0), d_uvp_g=(-2, -1)), BrenemanExperimentResult(name=u'Orange', uvp_t=(0.331, 0.548), uvp_m=(0.292, 0.553), s_uvp=(10, 2), d_uvp_i=(5, 2), d_uvp_g=(11, 1)), BrenemanExperimentResult(name=u'Brown', uvp_t=(0.324, 0.542), uvp_m=(0.286, 0.554), s_uvp=(8, 1), d_uvp_i=(5, -3), d_uvp_g=(10, -4)), BrenemanExperimentResult(name=u'Yellow', uvp_t=(0.266, 0.548), uvp_m=(0.238, 0.558), s_uvp=(6, 2), d_uvp_i=(-3, -1), d_uvp_g=(-1, -2)), BrenemanExperimentResult(name=u'Foliage', uvp_t=(0.227, 0.538), uvp_m=(0.196, 0.555), s_uvp=(6, 3), d_uvp_i=(3, -4), d_uvp_g=(2, -5)), BrenemanExperimentResult(name=u'Green', uvp_t=(0.145, 0.534), uvp_m=(0.124, 0.551), s_uvp=(8, 6), d_uvp_i=(1, -1), d_uvp_g=(-8, -1)), BrenemanExperimentResult(name=u'Blue-green', uvp_t=(0.16, 0.474), uvp_m=(0.135, 0.505), s_uvp=(5, 2), d_uvp_i=(1, -1), d_uvp_g=(-4, -3)), BrenemanExperimentResult(name=u'Blue', uvp_t=(0.178, 0.339), uvp_m=(0.149, 0.392), s_uvp=(4, 20), d_uvp_i=(-1, -5), d_uvp_g=(3, -7)), BrenemanExperimentResult(name=u'Sky', uvp_t=(0.179, 0.44), uvp_m=(0.15, 0.473), s_uvp=(4, 8), d_uvp_i=(3, 2), d_uvp_g=(2, 0)), BrenemanExperimentResult(name=u'Purple', uvp_t=(0.246, 0.366), uvp_m=(0.222, 0.404), s_uvp=(5, 15), d_uvp_i=(-4, 2), d_uvp_g=(4, 2)))</em><a class="headerlink" href="#colour.corresponding.dataset.corresponding_chromaticities.BRENEMAN_EXPERIMENT_12_RESULTS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Breneman (1987) experiment 12 results.</p>
+<p>BRENEMAN_EXPERIMENT_12_RESULTS : tuple</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li>Illuminants : <em>D55</em>, <em>green</em></li>
+<li>White Luminance : 75 <span class="math">\(cd/m^2\)</span></li>
+<li>Observers Count : 7</li>
+</ul>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.corresponding.dataset.corresponding_chromaticities.BRENEMAN_EXPERIMENTS_PRIMARIES_CHROMATICITIES">
+<tt class="descclassname">colour.corresponding.dataset.corresponding_chromaticities.</tt><tt class="descname">BRENEMAN_EXPERIMENTS_PRIMARIES_CHROMATICITIES</tt><em class="property"> = {1: PrimariesChromaticityCoordinates(experiment=1, illuminants=(u'A', u'D65'), Y=1500, P_uvp=(0.671, 0.519), D_uvp=(-0.586, 0.627), T_uvp=(0.253, 0.016)), 2: PrimariesChromaticityCoordinates(experiment=2, illuminants=(u'Projector', u'D55'), Y=1500, P_uvp=(0.675, 0.523), D_uvp=(-0.466, 0.617), T_uvp=(0.255, 0.018)), 3: PrimariesChromaticityCoordinates(experiment=3, illuminants=(u'Projector', u'D55'), Y=75, P_uvp=(0.664, 0.51), D_uvp=(-0.256, 0.729), T_uvp=(0.244, 0.003)), 4: PrimariesChromaticityCoordinates(experiment=4, illuminants=(u'A', u'D65'), Y=75, P_uvp=(0.674, 0.524), D_uvp=(-0.172, 0.628), T_uvp=(0.218, -0.026)), 6: PrimariesChromaticityCoordinates(experiment=6, illuminants=(u'A', u'D55'), Y=11100, P_uvp=(0.659, 0.506), D_uvp=(-0.141, 0.615), T_uvp=(0.249, 0.009)), 8: PrimariesChromaticityCoordinates(experiment=8, illuminants=(u'A', u'D65'), Y=350, P_uvp=(0.659, 0.505), D_uvp=(-0.246, 0.672), T_uvp=(0.235, -0.006)), 9: PrimariesChromaticityCoordinates(experiment=9, illuminants=(u'A', u'D65'), Y=15, P_uvp=(0.693, 0.546), D_uvp=(-0.446, 0.773), T_uvp=(0.221, -0.023)), 11: PrimariesChromaticityCoordinates(experiment=11, illuminants=(u'D55', u'green'), Y=1560, P_uvp=(0.68, 0.529), D_uvp=(0.018, 0.576), T_uvp=(0.307, 0.08)), 12: PrimariesChromaticityCoordinates(experiment=12, illuminants=(u'D55', u'green'), Y=75, P_uvp=(0.661, 0.505), D_uvp=(0.039, 0.598), T_uvp=(0.345, 0.127))}</em><a class="headerlink" href="#colour.corresponding.dataset.corresponding_chromaticities.BRENEMAN_EXPERIMENTS_PRIMARIES_CHROMATICITIES" title="Permalink to this definition">¶</a></dt>
+<dd><p>Breneman (1987) experiments primaries chromaticities.</p>
+<p>BRENEMAN_EXPERIMENTS_PRIMARIES_CHROMATICITIES : dict</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.corresponding.dataset.corresponding_chromaticities.BRENEMAN_EXPERIMENTS">
+<tt class="descclassname">colour.corresponding.dataset.corresponding_chromaticities.</tt><tt class="descname">BRENEMAN_EXPERIMENTS</tt><em class="property"> = {1: (BrenemanExperimentResult(name=u'Illuminant', uvp_t=(0.259, 0.526), uvp_m=(0.2, 0.475), s_uvp=None, d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Gray', uvp_t=(0.259, 0.524), uvp_m=(0.199, 0.487), s_uvp=(4, 4), d_uvp_i=(2, 3), d_uvp_g=(0, 0)), BrenemanExperimentResult(name=u'Red', uvp_t=(0.459, 0.522), uvp_m=(0.42, 0.509), s_uvp=(19, 4), d_uvp_i=(-10, -7), d_uvp_g=(-19, -3)), BrenemanExperimentResult(name=u'Skin', uvp_t=(0.307, 0.526), uvp_m=(0.249, 0.497), s_uvp=(7, 4), d_uvp_i=(-1, 1), d_uvp_g=(-6, -1)), BrenemanExperimentResult(name=u'Orange', uvp_t=(0.36, 0.544), uvp_m=(0.302, 0.548), s_uvp=(12, 1), d_uvp_i=(1, -2), d_uvp_g=(-7, -6)), BrenemanExperimentResult(name=u'Brown', uvp_t=(0.35, 0.541), uvp_m=(0.29, 0.537), s_uvp=(11, 4), d_uvp_i=(3, 0), d_uvp_g=(-5, -3)), BrenemanExperimentResult(name=u'Yellow', uvp_t=(0.318, 0.55), uvp_m=(0.257, 0.554), s_uvp=(8, 2), d_uvp_i=(0, 2), d_uvp_g=(-5, -5)), BrenemanExperimentResult(name=u'Foliage', uvp_t=(0.258, 0.542), uvp_m=(0.192, 0.529), s_uvp=(4, 6), d_uvp_i=(3, 2), d_uvp_g=(3, -6)), BrenemanExperimentResult(name=u'Green', uvp_t=(0.193, 0.542), uvp_m=(0.129, 0.521), s_uvp=(7, 5), d_uvp_i=(3, 2), d_uvp_g=(9, -7)), BrenemanExperimentResult(name=u'Blue-green', uvp_t=(0.18, 0.516), uvp_m=(0.133, 0.469), s_uvp=(4, 6), d_uvp_i=(-3, -2), d_uvp_g=(2, -5)), BrenemanExperimentResult(name=u'Blue', uvp_t=(0.186, 0.445), uvp_m=(0.158, 0.34), s_uvp=(13, 33), d_uvp_i=(2, 7), d_uvp_g=(1, 13)), BrenemanExperimentResult(name=u'Sky', uvp_t=(0.226, 0.491), uvp_m=(0.178, 0.426), s_uvp=(3, 14), d_uvp_i=(1, -3), d_uvp_g=(0, -1)), BrenemanExperimentResult(name=u'Purple', uvp_t=(0.278, 0.456), uvp_m=(0.231, 0.365), s_uvp=(4, 25), d_uvp_i=(0, 2), d_uvp_g=(-5, 7))), 2: (BrenemanExperimentResult(name=u'Illuminant', uvp_t=(0.222, 0.521), uvp_m=(0.204, 0.479), s_uvp=None, d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Gray', uvp_t=(0.227, 0.517), uvp_m=(0.207, 0.486), s_uvp=(2, 5), d_uvp_i=(-1, 0), d_uvp_g=(0, 0)), BrenemanExperimentResult(name=u'Red', uvp_t=(0.464, 0.52), uvp_m=(0.449, 0.511), s_uvp=(22, 3), d_uvp_i=(-8, -8), d_uvp_g=(-7, -2)), BrenemanExperimentResult(name=u'Skin', uvp_t=(0.286, 0.526), uvp_m=(0.263, 0.505), s_uvp=(7, 2), d_uvp_i=(0, -1), d_uvp_g=(0, -1)), BrenemanExperimentResult(name=u'Orange', uvp_t=(0.348, 0.546), uvp_m=(0.322, 0.545), s_uvp=(13, 3), d_uvp_i=(3, -1), d_uvp_g=(3, -2)), BrenemanExperimentResult(name=u'Brown', uvp_t=(0.34, 0.543), uvp_m=(0.316, 0.537), s_uvp=(11, 3), d_uvp_i=(1, 1), d_uvp_g=(0, 0)), BrenemanExperimentResult(name=u'Yellow', uvp_t=(0.288, 0.554), uvp_m=(0.265, 0.553), s_uvp=(5, 2), d_uvp_i=(-2, 2), d_uvp_g=(-1, -2)), BrenemanExperimentResult(name=u'Foliage', uvp_t=(0.244, 0.547), uvp_m=(0.221, 0.538), s_uvp=(4, 3), d_uvp_i=(-2, 1), d_uvp_g=(0, -3)), BrenemanExperimentResult(name=u'Green', uvp_t=(0.156, 0.548), uvp_m=(0.135, 0.532), s_uvp=(4, 3), d_uvp_i=(-1, 3), d_uvp_g=(3, -4)), BrenemanExperimentResult(name=u'Blue-green', uvp_t=(0.159, 0.511), uvp_m=(0.145, 0.472), s_uvp=(9, 7), d_uvp_i=(-1, 2), d_uvp_g=(2, 1)), BrenemanExperimentResult(name=u'Blue', uvp_t=(0.16, 0.406), uvp_m=(0.163, 0.331), s_uvp=(23, 31), d_uvp_i=(2, -3), d_uvp_g=(-1, 3)), BrenemanExperimentResult(name=u'Sky', uvp_t=(0.19, 0.481), uvp_m=(0.176, 0.431), s_uvp=(5, 24), d_uvp_i=(2, -2), d_uvp_g=(2, 0)), BrenemanExperimentResult(name=u'Purple', uvp_t=(0.258, 0.431), uvp_m=(0.244, 0.349), s_uvp=(4, 19), d_uvp_i=(-3, 13), d_uvp_g=(-4, 19))), 3: (BrenemanExperimentResult(name=u'Illuminant', uvp_t=(0.223, 0.521), uvp_m=(0.206, 0.478), s_uvp=None, d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Gray', uvp_t=(0.228, 0.517), uvp_m=(0.211, 0.494), s_uvp=(1, 3), d_uvp_i=(0, 2), d_uvp_g=(0, 0)), BrenemanExperimentResult(name=u'Red', uvp_t=(0.462, 0.519), uvp_m=(0.448, 0.505), s_uvp=(11, 4), d_uvp_i=(-3, 6), d_uvp_g=(-4, 6)), BrenemanExperimentResult(name=u'Skin', uvp_t=(0.285, 0.524), uvp_m=(0.267, 0.507), s_uvp=(6, 3), d_uvp_i=(-1, 1), d_uvp_g=(-2, 1)), BrenemanExperimentResult(name=u'Orange', uvp_t=(0.346, 0.546), uvp_m=(0.325, 0.541), s_uvp=(11, 3), d_uvp_i=(1, -2), d_uvp_g=(2, 3)), BrenemanExperimentResult(name=u'Brown', uvp_t=(0.338, 0.543), uvp_m=(0.321, 0.532), s_uvp=(9, 6), d_uvp_i=(-3, 2), d_uvp_g=(-3, 7)), BrenemanExperimentResult(name=u'Yellow', uvp_t=(0.287, 0.554), uvp_m=(0.267, 0.548), s_uvp=(4, 5), d_uvp_i=(1, -2), d_uvp_g=(0, 5)), BrenemanExperimentResult(name=u'Foliage', uvp_t=(0.244, 0.547), uvp_m=(0.226, 0.531), s_uvp=(3, 6), d_uvp_i=(-1, 3), d_uvp_g=(-2, 8)), BrenemanExperimentResult(name=u'Green', uvp_t=(0.157, 0.548), uvp_m=(0.141, 0.528), s_uvp=(9, 6), d_uvp_i=(2, 2), d_uvp_g=(0, 6)), BrenemanExperimentResult(name=u'Blue-green', uvp_t=(0.16, 0.51), uvp_m=(0.151, 0.486), s_uvp=(8, 5), d_uvp_i=(-2, -1), d_uvp_g=(-2, -5)), BrenemanExperimentResult(name=u'Blue', uvp_t=(0.162, 0.407), uvp_m=(0.158, 0.375), s_uvp=(6, 7), d_uvp_i=(1, -6), d_uvp_g=(4, -23)), BrenemanExperimentResult(name=u'Sky', uvp_t=(0.191, 0.482), uvp_m=(0.179, 0.452), s_uvp=(4, 5), d_uvp_i=(0, 1), d_uvp_g=(1, -7)), BrenemanExperimentResult(name=u'Purple', uvp_t=(0.258, 0.432), uvp_m=(0.238, 0.396), s_uvp=(4, 8), d_uvp_i=(5, 3), d_uvp_g=(4, -11))), 4: (BrenemanExperimentResult(name=u'Illuminant', uvp_t=(0.258, 0.523), uvp_m=(0.199, 0.467), s_uvp=None, d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Gray', uvp_t=(0.257, 0.524), uvp_m=(0.205, 0.495), s_uvp=(2, 2), d_uvp_i=(0, 4), d_uvp_g=(0, 0)), BrenemanExperimentResult(name=u'Red', uvp_t=(0.46, 0.521), uvp_m=(0.416, 0.501), s_uvp=(11, 6), d_uvp_i=(-6, 4), d_uvp_g=(-6, 9)), BrenemanExperimentResult(name=u'Skin', uvp_t=(0.308, 0.526), uvp_m=(0.253, 0.503), s_uvp=(7, 3), d_uvp_i=(-1, 1), d_uvp_g=(-1, 0)), BrenemanExperimentResult(name=u'Orange', uvp_t=(0.36, 0.544), uvp_m=(0.303, 0.541), s_uvp=(14, 5), d_uvp_i=(1, -4), d_uvp_g=(1, 2)), BrenemanExperimentResult(name=u'Brown', uvp_t=(0.35, 0.541), uvp_m=(0.296, 0.527), s_uvp=(11, 7), d_uvp_i=(-2, 4), d_uvp_g=(-3, 9)), BrenemanExperimentResult(name=u'Yellow', uvp_t=(0.317, 0.55), uvp_m=(0.26, 0.547), s_uvp=(9, 5), d_uvp_i=(1, -3), d_uvp_g=(0, 3)), BrenemanExperimentResult(name=u'Foliage', uvp_t=(0.258, 0.543), uvp_m=(0.203, 0.52), s_uvp=(4, 6), d_uvp_i=(0, 8), d_uvp_g=(0, 9)), BrenemanExperimentResult(name=u'Green', uvp_t=(0.193, 0.543), uvp_m=(0.142, 0.516), s_uvp=(6, 9), d_uvp_i=(3, 8), d_uvp_g=(2, 6)), BrenemanExperimentResult(name=u'Blue-green', uvp_t=(0.18, 0.516), uvp_m=(0.14, 0.484), s_uvp=(9, 5), d_uvp_i=(-2, -1), d_uvp_g=(-1, -9)), BrenemanExperimentResult(name=u'Blue', uvp_t=(0.185, 0.445), uvp_m=(0.151, 0.394), s_uvp=(8, 10), d_uvp_i=(2, -8), d_uvp_g=(8, -24)), BrenemanExperimentResult(name=u'Sky', uvp_t=(0.225, 0.49), uvp_m=(0.18, 0.448), s_uvp=(4, 8), d_uvp_i=(1, -1), d_uvp_g=(3, -11)), BrenemanExperimentResult(name=u'Purple', uvp_t=(0.278, 0.455), uvp_m=(0.229, 0.388), s_uvp=(6, 14), d_uvp_i=(1, 12), d_uvp_g=(3, 0))), 5: (BrenemanExperimentResult(name=u'Gray', uvp_t=(0.028, 0.48), uvp_m=(0.212, 0.491), s_uvp=(2, 2), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Red', uvp_t=(0.449, 0.512), uvp_m=(0.408, 0.514), s_uvp=(11, 5), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Skin', uvp_t=(0.269, 0.505), uvp_m=(0.262, 0.511), s_uvp=(4, 2), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Orange', uvp_t=(0.331, 0.548), uvp_m=(0.303, 0.545), s_uvp=(4, 3), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Brown', uvp_t=(0.322, 0.541), uvp_m=(0.303, 0.538), s_uvp=(4, 4), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Yellow', uvp_t=(0.268, 0.555), uvp_m=(0.264, 0.55), s_uvp=(3, 2), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Foliage', uvp_t=(0.224, 0.538), uvp_m=(0.227, 0.535), s_uvp=(3, 3), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Green', uvp_t=(0.134, 0.531), uvp_m=(0.159, 0.53), s_uvp=(9, 3), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Blue-green', uvp_t=(0.145, 0.474), uvp_m=(0.165, 0.49), s_uvp=(8, 3), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Blue', uvp_t=(0.163, 0.329), uvp_m=(0.173, 0.378), s_uvp=(7, 12), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Sky', uvp_t=(0.179, 0.438), uvp_m=(0.189, 0.462), s_uvp=(5, 4), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Purple', uvp_t=(0.245, 0.364), uvp_m=(0.239, 0.401), s_uvp=(4, 16), d_uvp_i=None, d_uvp_g=None)), 6: (BrenemanExperimentResult(name=u'Illuminant', uvp_t=(0.257, 0.525), uvp_m=(0.201, 0.482), s_uvp=None, d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Gray', uvp_t=(0.267, 0.521), uvp_m=(0.207, 0.485), s_uvp=(5, 3), d_uvp_i=(-1, 0), d_uvp_g=(0, 0)), BrenemanExperimentResult(name=u'Red', uvp_t=(0.457, 0.521), uvp_m=(0.398, 0.516), s_uvp=(9, 4), d_uvp_i=(-2, -5), d_uvp_g=(1, -9)), BrenemanExperimentResult(name=u'Skin', uvp_t=(0.316, 0.526), uvp_m=(0.253, 0.503), s_uvp=(5, 3), d_uvp_i=(-3, -2), d_uvp_g=(-1, -3)), BrenemanExperimentResult(name=u'Orange', uvp_t=(0.358, 0.545), uvp_m=(0.287, 0.55), s_uvp=(7, 3), d_uvp_i=(3, 0), d_uvp_g=(7, -6)), BrenemanExperimentResult(name=u'Brown', uvp_t=(0.35, 0.541), uvp_m=(0.282, 0.54), s_uvp=(6, 3), d_uvp_i=(-1, 0), d_uvp_g=(2, -5)), BrenemanExperimentResult(name=u'Yellow', uvp_t=(0.318, 0.551), uvp_m=(0.249, 0.556), s_uvp=(7, 2), d_uvp_i=(-1, 1), d_uvp_g=(2, -5)), BrenemanExperimentResult(name=u'Foliage', uvp_t=(0.256, 0.547), uvp_m=(0.188, 0.537), s_uvp=(5, 4), d_uvp_i=(3, 1), d_uvp_g=(4, -2)), BrenemanExperimentResult(name=u'Green', uvp_t=(0.193, 0.542), uvp_m=(0.133, 0.52), s_uvp=(13, 3), d_uvp_i=(5, -2), d_uvp_g=(5, -4)), BrenemanExperimentResult(name=u'Blue-green', uvp_t=(0.18, 0.516), uvp_m=(0.137, 0.466), s_uvp=(12, 10), d_uvp_i=(0, 0), d_uvp_g=(-2, 2)), BrenemanExperimentResult(name=u'Blue', uvp_t=(0.186, 0.445), uvp_m=(0.156, 0.353), s_uvp=(12, 45), d_uvp_i=(6, 1), d_uvp_g=(2, 6)), BrenemanExperimentResult(name=u'Sky', uvp_t=(0.225, 0.492), uvp_m=(0.178, 0.428), s_uvp=(6, 14), d_uvp_i=(1, -1), d_uvp_g=(-1, 3)), BrenemanExperimentResult(name=u'Purple', uvp_t=(0.276, 0.456), uvp_m=(0.227, 0.369), s_uvp=(6, 27), d_uvp_i=(-2, 4), d_uvp_g=(-3, 9))), 7: (BrenemanExperimentResult(name=u'Gray', uvp_t=(0.208, 0.481), uvp_m=(0.211, 0.486), s_uvp=(2, 3), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Red', uvp_t=(0.448, 0.512), uvp_m=(0.409, 0.516), s_uvp=(9, 2), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Skin', uvp_t=(0.269, 0.505), uvp_m=(0.256, 0.506), s_uvp=(4, 3), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Orange', uvp_t=(0.331, 0.549), uvp_m=(0.305, 0.547), s_uvp=(5, 4), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Brown', uvp_t=(0.322, 0.541), uvp_m=(0.301, 0.539), s_uvp=(5, 2), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Yellow', uvp_t=(0.268, 0.555), uvp_m=(0.257, 0.552), s_uvp=(3, 4), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Foliage', uvp_t=(0.225, 0.538), uvp_m=(0.222, 0.536), s_uvp=(3, 2), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Green', uvp_t=(0.135, 0.531), uvp_m=(0.153, 0.529), s_uvp=(8, 2), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Blue-green', uvp_t=(0.145, 0.475), uvp_m=(0.16, 0.484), s_uvp=(3, 5), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Blue', uvp_t=(0.163, 0.331), uvp_m=(0.171, 0.379), s_uvp=(4, 11), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Sky', uvp_t=(0.179, 0.438), uvp_m=(0.187, 0.452), s_uvp=(4, 7), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Purple', uvp_t=(0.245, 0.365), uvp_m=(0.24, 0.398), s_uvp=(4, 10), d_uvp_i=None, d_uvp_g=None)), 8: (BrenemanExperimentResult(name=u'Illuminant', uvp_t=(0.258, 0.524), uvp_m=(0.195, 0.469), s_uvp=None, d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Gray', uvp_t=(0.257, 0.525), uvp_m=(0.2, 0.494), s_uvp=(2, 3), d_uvp_i=(1, 2), d_uvp_g=(0, 0)), BrenemanExperimentResult(name=u'Red', uvp_t=(0.458, 0.522), uvp_m=(0.41, 0.508), s_uvp=(12, 4), d_uvp_i=(-3, 5), d_uvp_g=(-7, 2)), BrenemanExperimentResult(name=u'Skin', uvp_t=(0.308, 0.526), uvp_m=(0.249, 0.502), s_uvp=(6, 2), d_uvp_i=(-1, 1), d_uvp_g=(-3, -1)), BrenemanExperimentResult(name=u'Orange', uvp_t=(0.359, 0.545), uvp_m=(0.299, 0.545), s_uvp=(12, 4), d_uvp_i=(0, -2), d_uvp_g=(-3, 0)), BrenemanExperimentResult(name=u'Brown', uvp_t=(0.349, 0.54), uvp_m=(0.289, 0.532), s_uvp=(10, 4), d_uvp_i=(0, 1), d_uvp_g=(-2, 2)), BrenemanExperimentResult(name=u'Yellow', uvp_t=(0.317, 0.55), uvp_m=(0.256, 0.549), s_uvp=(9, 5), d_uvp_i=(0, -3), d_uvp_g=(-3, 1)), BrenemanExperimentResult(name=u'Foliage', uvp_t=(0.26, 0.545), uvp_m=(0.198, 0.529), s_uvp=(5, 5), d_uvp_i=(3, 1), d_uvp_g=(0, 3)), BrenemanExperimentResult(name=u'Green', uvp_t=(0.193, 0.543), uvp_m=(0.137, 0.52), s_uvp=(9, 5), d_uvp_i=(3, 0), d_uvp_g=(2, 1)), BrenemanExperimentResult(name=u'Blue-green', uvp_t=(0.182, 0.516), uvp_m=(0.139, 0.477), s_uvp=(9, 4), d_uvp_i=(-3, 0), d_uvp_g=(-2, -4)), BrenemanExperimentResult(name=u'Blue', uvp_t=(0.184, 0.444), uvp_m=(0.15, 0.387), s_uvp=(5, 11), d_uvp_i=(3, -10), d_uvp_g=(6, -22)), BrenemanExperimentResult(name=u'Sky', uvp_t=(0.224, 0.489), uvp_m=(0.177, 0.439), s_uvp=(5, 6), d_uvp_i=(1, 1), d_uvp_g=(1, -7)), BrenemanExperimentResult(name=u'Purple', uvp_t=(0.277, 0.454), uvp_m=(0.226, 0.389), s_uvp=(4, 10), d_uvp_i=(1, 4), d_uvp_g=(1, -8))), 9: (BrenemanExperimentResult(name=u'Illuminant', uvp_t=(0.254, 0.525), uvp_m=(0.195, 0.465), s_uvp=None, d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Gray', uvp_t=(0.256, 0.524), uvp_m=(0.207, 0.496), s_uvp=(4, 6), d_uvp_i=(3, 2), d_uvp_g=(0, 0)), BrenemanExperimentResult(name=u'Red', uvp_t=(0.459, 0.521), uvp_m=(0.415, 0.489), s_uvp=(20, 14), d_uvp_i=(2, 12), d_uvp_g=(-2, 21)), BrenemanExperimentResult(name=u'Skin', uvp_t=(0.307, 0.525), uvp_m=(0.261, 0.5), s_uvp=(7, 7), d_uvp_i=(0, 1), d_uvp_g=(-5, 2)), BrenemanExperimentResult(name=u'Orange', uvp_t=(0.359, 0.545), uvp_m=(0.313, 0.532), s_uvp=(7, 5), d_uvp_i=(-2, -3), d_uvp_g=(-6, 13)), BrenemanExperimentResult(name=u'Brown', uvp_t=(0.349, 0.54), uvp_m=(0.302, 0.51), s_uvp=(11, 15), d_uvp_i=(0, 12), d_uvp_g=(-5, 24)), BrenemanExperimentResult(name=u'Yellow', uvp_t=(0.317, 0.55), uvp_m=(0.268, 0.538), s_uvp=(7, 10), d_uvp_i=(1, -4), d_uvp_g=(-4, 12)), BrenemanExperimentResult(name=u'Foliage', uvp_t=(0.259, 0.544), uvp_m=(0.212, 0.51), s_uvp=(10, 11), d_uvp_i=(0, 14), d_uvp_g=(-4, 22)), BrenemanExperimentResult(name=u'Green', uvp_t=(0.193, 0.542), uvp_m=(0.15, 0.506), s_uvp=(6, 10), d_uvp_i=(-1, 13), d_uvp_g=(-2, 15)), BrenemanExperimentResult(name=u'Blue-green', uvp_t=(0.181, 0.517), uvp_m=(0.144, 0.487), s_uvp=(9, 6), d_uvp_i=(-3, 0), d_uvp_g=(-1, -9)), BrenemanExperimentResult(name=u'Blue', uvp_t=(0.184, 0.444), uvp_m=(0.155, 0.407), s_uvp=(4, 11), d_uvp_i=(-2, -6), d_uvp_g=(6, -36)), BrenemanExperimentResult(name=u'Sky', uvp_t=(0.225, 0.49), uvp_m=(0.183, 0.458), s_uvp=(5, 8), d_uvp_i=(1, -3), d_uvp_g=(2, -19)), BrenemanExperimentResult(name=u'Purple', uvp_t=(0.276, 0.454), uvp_m=(0.233, 0.404), s_uvp=(7, 12), d_uvp_i=(2, 9), d_uvp_g=(0, -16)), BrenemanExperimentResult(name=u'(Gray)h', uvp_t=(0.256, 0.525), uvp_m=(0.208, 0.498), s_uvp=None, d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'(Red)h', uvp_t=(0.456, 0.521), uvp_m=(0.416, 0.501), s_uvp=(15, 7), d_uvp_i=None, d_uvp_g=(-6, -9)), BrenemanExperimentResult(name=u'(Brown)h', uvp_t=(0.349, 0.539), uvp_m=(0.306, 0.526), s_uvp=(11, 8), d_uvp_i=None, d_uvp_g=(-8, 7)), BrenemanExperimentResult(name=u'(Foliage)h', uvp_t=(0.26, 0.545), uvp_m=(0.213, 0.528), s_uvp=(7, 9), d_uvp_i=None, d_uvp_g=(-4, 5)), BrenemanExperimentResult(name=u'(Green)h', uvp_t=(0.193, 0.543), uvp_m=(0.149, 0.525), s_uvp=(10, 8), d_uvp_i=None, d_uvp_g=(-1, -1)), BrenemanExperimentResult(name=u'(Blue)h', uvp_t=(0.184, 0.444), uvp_m=(0.156, 0.419), s_uvp=(7, 8), d_uvp_i=None, d_uvp_g=(4, -45)), BrenemanExperimentResult(name=u'(Purple)h', uvp_t=(0.277, 0.456), uvp_m=(0.236, 0.422), s_uvp=(6, 11), d_uvp_i=None, d_uvp_g=(-2, -29))), 10: (BrenemanExperimentResult(name=u'Gray', uvp_t=(0.208, 0.482), uvp_m=(0.213, 0.494), s_uvp=(3, 3), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Red', uvp_t=(0.447, 0.512), uvp_m=(0.411, 0.506), s_uvp=(15, 7), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Skin', uvp_t=(0.269, 0.505), uvp_m=(0.269, 0.511), s_uvp=(4, 3), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Orange', uvp_t=(0.331, 0.549), uvp_m=(0.315, 0.536), s_uvp=(7, 8), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Brown', uvp_t=(0.323, 0.542), uvp_m=(0.31, 0.526), s_uvp=(6, 8), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Yellow', uvp_t=(0.268, 0.556), uvp_m=(0.268, 0.541), s_uvp=(3, 6), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Foliage', uvp_t=(0.226, 0.538), uvp_m=(0.23, 0.525), s_uvp=(4, 8), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Green', uvp_t=(0.135, 0.531), uvp_m=(0.158, 0.524), s_uvp=(6, 3), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Blue-green', uvp_t=(0.145, 0.476), uvp_m=(0.161, 0.491), s_uvp=(4, 4), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Blue', uvp_t=(0.163, 0.33), uvp_m=(0.171, 0.377), s_uvp=(6, 19), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Sky', uvp_t=(0.179, 0.439), uvp_m=(0.187, 0.465), s_uvp=(5, 5), d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Purple', uvp_t=(0.245, 0.366), uvp_m=(0.24, 0.402), s_uvp=(3, 12), d_uvp_i=None, d_uvp_g=None)), 11: (BrenemanExperimentResult(name=u'Illuminant', uvp_t=(0.208, 0.482), uvp_m=(0.174, 0.52), s_uvp=None, d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Gray', uvp_t=(0.209, 0.483), uvp_m=(0.176, 0.513), s_uvp=(3, 4), d_uvp_i=(2, 2), d_uvp_g=(0, 0)), BrenemanExperimentResult(name=u'Red', uvp_t=(0.45, 0.512), uvp_m=(0.419, 0.524), s_uvp=(10, 2), d_uvp_i=(3, 2), d_uvp_g=(8, -1)), BrenemanExperimentResult(name=u'Skin', uvp_t=(0.268, 0.506), uvp_m=(0.24, 0.528), s_uvp=(6, 2), d_uvp_i=(-4, 0), d_uvp_g=(-3, 0)), BrenemanExperimentResult(name=u'Orange', uvp_t=(0.331, 0.547), uvp_m=(0.293, 0.553), s_uvp=(6, 2), d_uvp_i=(3, -1), d_uvp_g=(5, 1)), BrenemanExperimentResult(name=u'Brown', uvp_t=(0.323, 0.542), uvp_m=(0.29, 0.552), s_uvp=(5, 2), d_uvp_i=(-1, -3), d_uvp_g=(0, -1)), BrenemanExperimentResult(name=u'Yellow', uvp_t=(0.266, 0.549), uvp_m=(0.236, 0.557), s_uvp=(4, 2), d_uvp_i=(-3, -2), d_uvp_g=(-4, 2)), BrenemanExperimentResult(name=u'Foliage', uvp_t=(0.227, 0.538), uvp_m=(0.194, 0.552), s_uvp=(4, 2), d_uvp_i=(2, -3), d_uvp_g=(-1, 1)), BrenemanExperimentResult(name=u'Green', uvp_t=(0.146, 0.534), uvp_m=(0.118, 0.551), s_uvp=(8, 3), d_uvp_i=(4, -2), d_uvp_g=(-6, 3)), BrenemanExperimentResult(name=u'Blue-green', uvp_t=(0.16, 0.475), uvp_m=(0.13, 0.513), s_uvp=(9, 4), d_uvp_i=(1, -1), d_uvp_g=(-4, -3)), BrenemanExperimentResult(name=u'Blue', uvp_t=(0.177, 0.34), uvp_m=(0.133, 0.427), s_uvp=(6, 14), d_uvp_i=(4, -17), d_uvp_g=(11, -29)), BrenemanExperimentResult(name=u'Sky', uvp_t=(0.179, 0.438), uvp_m=(0.146, 0.482), s_uvp=(6, 10), d_uvp_i=(1, 4), d_uvp_g=(0, -1)), BrenemanExperimentResult(name=u'Purple', uvp_t=(0.245, 0.366), uvp_m=(0.216, 0.419), s_uvp=(4, 13), d_uvp_i=(-3, 8), d_uvp_g=(4, -2))), 12: (BrenemanExperimentResult(name=u'Illuminant', uvp_t=(0.205, 0.482), uvp_m=(0.174, 0.519), s_uvp=None, d_uvp_i=None, d_uvp_g=None), BrenemanExperimentResult(name=u'Gray', uvp_t=(0.208, 0.482), uvp_m=(0.181, 0.507), s_uvp=(4, 3), d_uvp_i=(0, 1), d_uvp_g=(0, 0)), BrenemanExperimentResult(name=u'Red', uvp_t=(0.451, 0.512), uvp_m=(0.422, 0.526), s_uvp=(20, 3), d_uvp_i=(0, -5), d_uvp_g=(10, -5)), BrenemanExperimentResult(name=u'Skin', uvp_t=(0.268, 0.506), uvp_m=(0.244, 0.525), s_uvp=(5, 2), d_uvp_i=(-6, 0), d_uvp_g=(-2, -1)), BrenemanExperimentResult(name=u'Orange', uvp_t=(0.331, 0.548), uvp_m=(0.292, 0.553), s_uvp=(10, 2), d_uvp_i=(5, 2), d_uvp_g=(11, 1)), BrenemanExperimentResult(name=u'Brown', uvp_t=(0.324, 0.542), uvp_m=(0.286, 0.554), s_uvp=(8, 1), d_uvp_i=(5, -3), d_uvp_g=(10, -4)), BrenemanExperimentResult(name=u'Yellow', uvp_t=(0.266, 0.548), uvp_m=(0.238, 0.558), s_uvp=(6, 2), d_uvp_i=(-3, -1), d_uvp_g=(-1, -2)), BrenemanExperimentResult(name=u'Foliage', uvp_t=(0.227, 0.538), uvp_m=(0.196, 0.555), s_uvp=(6, 3), d_uvp_i=(3, -4), d_uvp_g=(2, -5)), BrenemanExperimentResult(name=u'Green', uvp_t=(0.145, 0.534), uvp_m=(0.124, 0.551), s_uvp=(8, 6), d_uvp_i=(1, -1), d_uvp_g=(-8, -1)), BrenemanExperimentResult(name=u'Blue-green', uvp_t=(0.16, 0.474), uvp_m=(0.135, 0.505), s_uvp=(5, 2), d_uvp_i=(1, -1), d_uvp_g=(-4, -3)), BrenemanExperimentResult(name=u'Blue', uvp_t=(0.178, 0.339), uvp_m=(0.149, 0.392), s_uvp=(4, 20), d_uvp_i=(-1, -5), d_uvp_g=(3, -7)), BrenemanExperimentResult(name=u'Sky', uvp_t=(0.179, 0.44), uvp_m=(0.15, 0.473), s_uvp=(4, 8), d_uvp_i=(3, 2), d_uvp_g=(2, 0)), BrenemanExperimentResult(name=u'Purple', uvp_t=(0.246, 0.366), uvp_m=(0.222, 0.404), s_uvp=(5, 15), d_uvp_i=(-4, 2), d_uvp_g=(4, 2)))}</em><a class="headerlink" href="#colour.corresponding.dataset.corresponding_chromaticities.BRENEMAN_EXPERIMENTS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Breneman (1987) experiments.</p>
+<p>BRENEMAN_EXPERIMENTS : dict</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2014, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.models.dataset.alexa_wide_gamut_rgb &mdash; Colour 0.3.5 documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/bootswatch-3.1.0/colour/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/styles.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '0.3.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Colour 0.3.5 documentation" href="../../../../index.html" />
+    <link rel="up" title="colour.models.dataset" href="../dataset.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../../index.html"><img src="../../../../_static/Colour_Logo_Icon_001.png">
+          Colour&nbsp;0.3</a>
+        <!--<span class="navbar-text navbar-version pull-left"><b>0.3</b></span>-->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+                <li><a href="http://colour-science.org">colour-science.org</a></li>
+            
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-life-ring">&nbsp;Documentation</i><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="api.html" class="fa fa-life-ring">&nbsp;API Reference</a>
+                      </li>
+                      <li>
+                          <a href="http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/colour.ipynb', True)" class="fa fa-book">&nbsp;IPython Notebooks</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/features.php" class="fa fa-lightbulb-o">&nbsp;Features</a>
+                      </li>
+                      <li>
+                          <a href="http://colour-science.org/contributing.php"><span class="fa fa-gears">&nbsp;Contributing</span></a>
+                      </li>
+                  </ul>
+              </li>
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for colour.models.dataset.alexa_wide_gamut_rgb</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">ALEXA Wide Gamut RGB Colourspace</span>
+<span class="sd">================================</span>
+
+<span class="sd">Defines the *ALEXA Wide Gamut RGB* colourspace:</span>
+
+<span class="sd">-   :attr:`ALEXA_WIDE_GAMUT_RGB_COLOURSPACE`.</span>
+
+<span class="sd">See Also</span>
+<span class="sd">--------</span>
+<span class="sd">`RGB Colourspaces IPython Notebook</span>
+<span class="sd">&lt;http://nbviewer.ipython.org/github/colour-science/colour-ipython/blob/master/notebooks/models/rgb.ipynb&gt;`_  # noqa</span>
+
+<span class="sd">References</span>
+<span class="sd">----------</span>
+<span class="sd">.. [1]  ARRI. (2012). ALEXA - Log C Curve - Usage in VFX. Retrieved from</span>
+<span class="sd">        http://www.arri.com/?eID=registration&amp;file_uid=8026</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">colour.colorimetry</span> <span class="kn">import</span> <span class="n">ILLUMINANTS</span>
+<span class="kn">from</span> <span class="nn">colour.models</span> <span class="kn">import</span> <span class="n">RGB_Colourspace</span>
+<span class="kn">from</span> <span class="nn">colour.utilities</span> <span class="kn">import</span> <span class="n">CaseInsensitiveMapping</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s">&#39;Copyright (C) 2013 - 2015 - Colour Developers&#39;</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s">&#39;New BSD License - http://opensource.org/licenses/BSD-3-Clause&#39;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s">&#39;Colour Developers&#39;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s">&#39;colour-science@googlegroups.com&#39;</span>
+<span class="n">__status__</span> <span class="o">=</span> <span class="s">&#39;Production&#39;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;ALEXA_LOG_C_CURVE_BCL_DATA&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ALEXA_LOG_C_CURVE_CONVERSION_DATA&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ALEXA_WIDE_GAMUT_RGB_PRIMARIES&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ALEXA_WIDE_GAMUT_RGB_ILLUMINANT&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ALEXA_WIDE_GAMUT_RGB_WHITEPOINT&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ALEXA_WIDE_GAMUT_RGB_TO_XYZ_MATRIX&#39;</span><span class="p">,</span>
+           <span class="s">&#39;XYZ_TO_ALEXA_WIDE_GAMUT_RGB_MATRIX&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ALEXA_LOG_C_TRANSFER_FUNCTION&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ALEXA_LOG_C_INVERSE_TRANSFER_FUNCTION&#39;</span><span class="p">,</span>
+           <span class="s">&#39;ALEXA_WIDE_GAMUT_RGB_COLOURSPACE&#39;</span><span class="p">]</span>
+
+<span class="n">ALEXA_LOG_C_CURVE_BCL_DATA</span> <span class="o">=</span> <span class="n">CaseInsensitiveMapping</span><span class="p">(</span>
+    <span class="p">{</span><span class="s">&#39;SUP 3.x&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="mi">160</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.0928</span><span class="p">,</span> <span class="mf">0.8128</span><span class="p">),</span>
+        <span class="mi">200</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.0928</span><span class="p">,</span> <span class="mf">0.8341</span><span class="p">),</span>
+        <span class="mi">250</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.0928</span><span class="p">,</span> <span class="mf">0.8549</span><span class="p">),</span>
+        <span class="mi">320</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.0928</span><span class="p">,</span> <span class="mf">0.8773</span><span class="p">),</span>
+        <span class="mi">400</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.0928</span><span class="p">,</span> <span class="mf">0.8968</span><span class="p">),</span>
+        <span class="mi">500</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.0928</span><span class="p">,</span> <span class="mf">0.9158</span><span class="p">),</span>
+        <span class="mi">640</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.0928</span><span class="p">,</span> <span class="mf">0.9362</span><span class="p">),</span>
+        <span class="mi">800</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.0928</span><span class="p">,</span> <span class="mf">0.9539</span><span class="p">),</span>
+        <span class="mi">1000</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.0928</span><span class="p">,</span> <span class="mf">0.9711</span><span class="p">),</span>
+        <span class="mi">1280</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.0928</span><span class="p">,</span> <span class="mf">0.9895</span><span class="p">),</span>
+        <span class="mi">1600</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.0928</span><span class="p">,</span> <span class="mf">1.0000</span><span class="p">),</span>
+        <span class="mi">2000</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.0928</span><span class="p">,</span> <span class="mf">1.0000</span><span class="p">),</span>
+        <span class="mi">2560</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.0928</span><span class="p">,</span> <span class="mf">1.0000</span><span class="p">),</span>
+        <span class="mi">3200</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.0928</span><span class="p">,</span> <span class="mf">1.0000</span><span class="p">)},</span>
+     <span class="s">&#39;SUP 2.x&#39;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="mi">160</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.1083</span><span class="p">,</span> <span class="mf">0.8110</span><span class="p">),</span>
+         <span class="mi">200</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.1115</span><span class="p">,</span> <span class="mf">0.8320</span><span class="p">),</span>
+         <span class="mi">250</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.1146</span><span class="p">,</span> <span class="mf">0.8524</span><span class="p">),</span>
+         <span class="mi">320</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.1181</span><span class="p">,</span> <span class="mf">0.8743</span><span class="p">),</span>
+         <span class="mi">400</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.1213</span><span class="p">,</span> <span class="mf">0.8935</span><span class="p">),</span>
+         <span class="mi">500</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.1245</span><span class="p">,</span> <span class="mf">0.9121</span><span class="p">),</span>
+         <span class="mi">640</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.1280</span><span class="p">,</span> <span class="mf">0.9320</span><span class="p">),</span>
+         <span class="mi">800</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.1311</span><span class="p">,</span> <span class="mf">0.9494</span><span class="p">),</span>
+         <span class="mi">1000</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.1343</span><span class="p">,</span> <span class="mf">0.9662</span><span class="p">),</span>
+         <span class="mi">1280</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.1378</span><span class="p">,</span> <span class="mf">0.9841</span><span class="p">),</span>
+         <span class="mi">1600</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.1409</span><span class="p">,</span> <span class="mf">0.9997</span><span class="p">)}})</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*ALEXA Log C* curve *Ei, Black, Clipping Level* data.</span>
+
+<span class="sd">ALEXA_LOG_C_CURVE_BCL_DATA : CaseInsensitiveMapping</span>
+<span class="sd">    {&#39;SUP 3.x&#39;, &#39;SUP 2.x&#39;}</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c"># @formatter:off</span>
+<span class="n">ALEXA_LOG_C_CURVE_CONVERSION_DATA</span> <span class="o">=</span> <span class="n">CaseInsensitiveMapping</span><span class="p">(</span>
+    <span class="p">{</span><span class="s">&#39;SUP 3.x&#39;</span><span class="p">:</span> <span class="n">CaseInsensitiveMapping</span><span class="p">(</span>
+        <span class="p">{</span><span class="s">&#39;Normalised Sensor Signal&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="mi">160</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.004680</span><span class="p">,</span> <span class="mf">40.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.076072</span><span class="p">,</span> <span class="mf">0.269036</span><span class="p">,</span> <span class="mf">0.381991</span><span class="p">,</span> <span class="mf">42.062665</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.071569</span><span class="p">,</span> <span class="mf">0.125266</span><span class="p">),</span>  <span class="c"># noqa</span>
+            <span class="mi">200</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.004597</span><span class="p">,</span> <span class="mf">50.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.118740</span><span class="p">,</span> <span class="mf">0.266007</span><span class="p">,</span> <span class="mf">0.382478</span><span class="p">,</span> <span class="mf">51.986387</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.110339</span><span class="p">,</span> <span class="mf">0.128643</span><span class="p">),</span>  <span class="c"># noqa</span>
+            <span class="mi">250</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.004518</span><span class="p">,</span> <span class="mf">62.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.171260</span><span class="p">,</span> <span class="mf">0.262978</span><span class="p">,</span> <span class="mf">0.382966</span><span class="p">,</span> <span class="mf">64.243053</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.158224</span><span class="p">,</span> <span class="mf">0.132021</span><span class="p">),</span>  <span class="c"># noqa</span>
+            <span class="mi">320</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.004436</span><span class="p">,</span> <span class="mf">80.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.243808</span><span class="p">,</span> <span class="mf">0.259627</span><span class="p">,</span> <span class="mf">0.383508</span><span class="p">,</span> <span class="mf">81.183335</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.224409</span><span class="p">,</span> <span class="mf">0.135761</span><span class="p">),</span>  <span class="c"># noqa</span>
+            <span class="mi">400</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.004369</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.325820</span><span class="p">,</span> <span class="mf">0.256598</span><span class="p">,</span> <span class="mf">0.383999</span><span class="p">,</span> <span class="mf">100.295280</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.299079</span><span class="p">,</span> <span class="mf">0.139142</span><span class="p">),</span>  <span class="c"># noqa</span>
+            <span class="mi">500</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.004309</span><span class="p">,</span> <span class="mf">125.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.427461</span><span class="p">,</span> <span class="mf">0.253569</span><span class="p">,</span> <span class="mf">0.384493</span><span class="p">,</span> <span class="mf">123.889239</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.391261</span><span class="p">,</span> <span class="mf">0.142526</span><span class="p">),</span>  <span class="c"># noqa</span>
+            <span class="mi">640</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.004249</span><span class="p">,</span> <span class="mf">160.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.568709</span><span class="p">,</span> <span class="mf">0.250219</span><span class="p">,</span> <span class="mf">0.385040</span><span class="p">,</span> <span class="mf">156.482680</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.518605</span><span class="p">,</span> <span class="mf">0.146271</span><span class="p">),</span>  <span class="c"># noqa</span>
+            <span class="mi">800</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.004201</span><span class="p">,</span> <span class="mf">200.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.729169</span><span class="p">,</span> <span class="mf">0.247190</span><span class="p">,</span> <span class="mf">0.385537</span><span class="p">,</span> <span class="mf">193.235573</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.662201</span><span class="p">,</span> <span class="mf">0.149658</span><span class="p">),</span>  <span class="c"># noqa</span>
+            <span class="mi">1000</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.004160</span><span class="p">,</span> <span class="mf">250.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.928805</span><span class="p">,</span> <span class="mf">0.244161</span><span class="p">,</span> <span class="mf">0.386036</span><span class="p">,</span> <span class="mf">238.584745</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.839385</span><span class="p">,</span> <span class="mf">0.153047</span><span class="p">),</span>  <span class="c"># noqa</span>
+            <span class="mi">1280</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.004120</span><span class="p">,</span> <span class="mf">320.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.207168</span><span class="p">,</span> <span class="mf">0.240810</span><span class="p">,</span> <span class="mf">0.386590</span><span class="p">,</span> <span class="mf">301.197380</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.084020</span><span class="p">,</span> <span class="mf">0.156799</span><span class="p">),</span>  <span class="c"># noqa</span>
+            <span class="mi">1600</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.004088</span><span class="p">,</span> <span class="mf">400.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.524256</span><span class="p">,</span> <span class="mf">0.237781</span><span class="p">,</span> <span class="mf">0.387093</span><span class="p">,</span> <span class="mf">371.761171</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.359723</span><span class="p">,</span> <span class="mf">0.160192</span><span class="p">)},</span>  <span class="c"># noqa</span>
+         <span class="s">&#39;Linear Scene Exposure Factor&#39;</span><span class="p">:</span> <span class="p">{</span>
+             <span class="mi">160</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.005561</span><span class="p">,</span> <span class="mf">5.555556</span><span class="p">,</span> <span class="mf">0.080216</span><span class="p">,</span> <span class="mf">0.269036</span><span class="p">,</span> <span class="mf">0.381991</span><span class="p">,</span> <span class="mf">5.842037</span><span class="p">,</span> <span class="mf">0.092778</span><span class="p">,</span> <span class="mf">0.125266</span><span class="p">),</span>  <span class="c"># noqa</span>
+             <span class="mi">200</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.006208</span><span class="p">,</span> <span class="mf">5.555556</span><span class="p">,</span> <span class="mf">0.076621</span><span class="p">,</span> <span class="mf">0.266007</span><span class="p">,</span> <span class="mf">0.382478</span><span class="p">,</span> <span class="mf">5.776265</span><span class="p">,</span> <span class="mf">0.092782</span><span class="p">,</span> <span class="mf">0.128643</span><span class="p">),</span>  <span class="c"># noqa</span>
+             <span class="mi">250</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.006871</span><span class="p">,</span> <span class="mf">5.555556</span><span class="p">,</span> <span class="mf">0.072941</span><span class="p">,</span> <span class="mf">0.262978</span><span class="p">,</span> <span class="mf">0.382966</span><span class="p">,</span> <span class="mf">5.710494</span><span class="p">,</span> <span class="mf">0.092786</span><span class="p">,</span> <span class="mf">0.132021</span><span class="p">),</span>  <span class="c"># noqa</span>
+             <span class="mi">320</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.007622</span><span class="p">,</span> <span class="mf">5.555556</span><span class="p">,</span> <span class="mf">0.068768</span><span class="p">,</span> <span class="mf">0.259627</span><span class="p">,</span> <span class="mf">0.383508</span><span class="p">,</span> <span class="mf">5.637732</span><span class="p">,</span> <span class="mf">0.092791</span><span class="p">,</span> <span class="mf">0.135761</span><span class="p">),</span>  <span class="c"># noqa</span>
+             <span class="mi">400</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.008318</span><span class="p">,</span> <span class="mf">5.555556</span><span class="p">,</span> <span class="mf">0.064901</span><span class="p">,</span> <span class="mf">0.256598</span><span class="p">,</span> <span class="mf">0.383999</span><span class="p">,</span> <span class="mf">5.571960</span><span class="p">,</span> <span class="mf">0.092795</span><span class="p">,</span> <span class="mf">0.139142</span><span class="p">),</span>  <span class="c"># noqa</span>
+             <span class="mi">500</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.009031</span><span class="p">,</span> <span class="mf">5.555556</span><span class="p">,</span> <span class="mf">0.060939</span><span class="p">,</span> <span class="mf">0.253569</span><span class="p">,</span> <span class="mf">0.384493</span><span class="p">,</span> <span class="mf">5.506188</span><span class="p">,</span> <span class="mf">0.092800</span><span class="p">,</span> <span class="mf">0.142526</span><span class="p">),</span>  <span class="c"># noqa</span>
+             <span class="mi">640</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.009840</span><span class="p">,</span> <span class="mf">5.555556</span><span class="p">,</span> <span class="mf">0.056443</span><span class="p">,</span> <span class="mf">0.250219</span><span class="p">,</span> <span class="mf">0.385040</span><span class="p">,</span> <span class="mf">5.433426</span><span class="p">,</span> <span class="mf">0.092805</span><span class="p">,</span> <span class="mf">0.146271</span><span class="p">),</span>  <span class="c"># noqa</span>
+             <span class="mi">800</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.010591</span><span class="p">,</span> <span class="mf">5.555556</span><span class="p">,</span> <span class="mf">0.052272</span><span class="p">,</span> <span class="mf">0.247190</span><span class="p">,</span> <span class="mf">0.385537</span><span class="p">,</span> <span class="mf">5.367655</span><span class="p">,</span> <span class="mf">0.092809</span><span class="p">,</span> <span class="mf">0.149658</span><span class="p">),</span>  <span class="c"># noqa</span>
+             <span class="mi">1000</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.011361</span><span class="p">,</span> <span class="mf">5.555556</span><span class="p">,</span> <span class="mf">0.047996</span><span class="p">,</span> <span class="mf">0.244161</span><span class="p">,</span> <span class="mf">0.386036</span><span class="p">,</span> <span class="mf">5.301883</span><span class="p">,</span> <span class="mf">0.092814</span><span class="p">,</span> <span class="mf">0.153047</span><span class="p">),</span>  <span class="c"># noqa</span>
+             <span class="mi">1280</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.012235</span><span class="p">,</span> <span class="mf">5.555556</span><span class="p">,</span> <span class="mf">0.043137</span><span class="p">,</span> <span class="mf">0.240810</span><span class="p">,</span> <span class="mf">0.386590</span><span class="p">,</span> <span class="mf">5.229121</span><span class="p">,</span> <span class="mf">0.092819</span><span class="p">,</span> <span class="mf">0.156799</span><span class="p">),</span>  <span class="c"># noqa</span>
+             <span class="mi">1600</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.013047</span><span class="p">,</span> <span class="mf">5.555556</span><span class="p">,</span> <span class="mf">0.038625</span><span class="p">,</span> <span class="mf">0.237781</span><span class="p">,</span> <span class="mf">0.387093</span><span class="p">,</span> <span class="mf">5.163350</span><span class="p">,</span> <span class="mf">0.092824</span><span class="p">,</span> <span class="mf">0.16019</span><span class="p">)}}),</span>  <span class="c"># noqa</span>
+     <span class="s">&#39;SUP 2.x&#39;</span><span class="p">:</span> <span class="n">CaseInsensitiveMapping</span><span class="p">(</span>
+         <span class="p">{</span><span class="s">&#39;Normalised Sensor Signal&#39;</span><span class="p">:</span> <span class="p">{</span>
+             <span class="mi">160</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.003907</span><span class="p">,</span> <span class="mf">36.439829</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.053366</span><span class="p">,</span> <span class="mf">0.269035</span><span class="p">,</span> <span class="mf">0.391007</span><span class="p">,</span> <span class="mf">45.593473</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.069772</span><span class="p">,</span> <span class="mf">0.10836</span><span class="p">),</span>  <span class="c"># noqa</span>
+             <span class="mi">200</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.003907</span><span class="p">,</span> <span class="mf">45.549786</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.088959</span><span class="p">,</span> <span class="mf">0.266007</span><span class="p">,</span> <span class="mf">0.391007</span><span class="p">,</span> <span class="mf">55.709581</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.106114</span><span class="p">,</span> <span class="mf">0.11154</span><span class="p">),</span>  <span class="c"># noqa</span>
+             <span class="mi">250</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.003907</span><span class="p">,</span> <span class="mf">56.937232</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.133449</span><span class="p">,</span> <span class="mf">0.262978</span><span class="p">,</span> <span class="mf">0.391007</span><span class="p">,</span> <span class="mf">67.887153</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.150510</span><span class="p">,</span> <span class="mf">0.11472</span><span class="p">),</span>  <span class="c"># noqa</span>
+             <span class="mi">320</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.003907</span><span class="p">,</span> <span class="mf">72.879657</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.195737</span><span class="p">,</span> <span class="mf">0.259627</span><span class="p">,</span> <span class="mf">0.391007</span><span class="p">,</span> <span class="mf">84.167616</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.210597</span><span class="p">,</span> <span class="mf">0.11824</span><span class="p">),</span>  <span class="c"># noqa</span>
+             <span class="mi">400</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.003907</span><span class="p">,</span> <span class="mf">91.099572</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.266922</span><span class="p">,</span> <span class="mf">0.256598</span><span class="p">,</span> <span class="mf">0.391007</span><span class="p">,</span> <span class="mf">101.811426</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.276349</span><span class="p">,</span> <span class="mf">0.12142</span><span class="p">),</span>  <span class="c"># noqa</span>
+             <span class="mi">500</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.003907</span><span class="p">,</span> <span class="mf">113.874465</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.355903</span><span class="p">,</span> <span class="mf">0.253569</span><span class="p">,</span> <span class="mf">0.391007</span><span class="p">,</span> <span class="mf">122.608379</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.354421</span><span class="p">,</span> <span class="mf">0.12461</span><span class="p">),</span>  <span class="c"># noqa</span>
+             <span class="mi">640</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.003907</span><span class="p">,</span> <span class="mf">145.759315</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.480477</span><span class="p">,</span> <span class="mf">0.250218</span><span class="p">,</span> <span class="mf">0.391007</span><span class="p">,</span> <span class="mf">149.703304</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.456760</span><span class="p">,</span> <span class="mf">0.12813</span><span class="p">),</span>  <span class="c"># noqa</span>
+             <span class="mi">800</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.003907</span><span class="p">,</span> <span class="mf">182.199144</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.622848</span><span class="p">,</span> <span class="mf">0.247189</span><span class="p">,</span> <span class="mf">0.391007</span><span class="p">,</span> <span class="mf">178.216873</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.564981</span><span class="p">,</span> <span class="mf">0.13131</span><span class="p">),</span>  <span class="c"># noqa</span>
+             <span class="mi">1000</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.003907</span><span class="p">,</span> <span class="mf">227.748930</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.800811</span><span class="p">,</span> <span class="mf">0.244161</span><span class="p">,</span> <span class="mf">0.391007</span><span class="p">,</span> <span class="mf">210.785040</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.689043</span><span class="p">,</span> <span class="mf">0.13449</span><span class="p">),</span>  <span class="c"># noqa</span>
+             <span class="mi">1280</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.003907</span><span class="p">,</span> <span class="mf">291.518630</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.049959</span><span class="p">,</span> <span class="mf">0.240810</span><span class="p">,</span> <span class="mf">0.391007</span><span class="p">,</span> <span class="mf">251.689459</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.845336</span><span class="p">,</span> <span class="mf">0.13801</span><span class="p">),</span>  <span class="c"># noqa</span>
+             <span class="mi">1600</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.003907</span><span class="p">,</span> <span class="mf">364.398287</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.334700</span><span class="p">,</span> <span class="mf">0.237781</span><span class="p">,</span> <span class="mf">0.391007</span><span class="p">,</span> <span class="mf">293.073575</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.003841</span><span class="p">,</span> <span class="mf">0.14119</span><span class="p">)},</span>  <span class="c"># noqa</span>
+          <span class="s">&#39;Linear Scene Exposure Factor&#39;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="mi">160</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">5.061087</span><span class="p">,</span> <span class="mf">0.089004</span><span class="p">,</span> <span class="mf">0.269035</span><span class="p">,</span> <span class="mf">0.391007</span><span class="p">,</span> <span class="mf">6.332427</span><span class="p">,</span> <span class="mf">0.108361</span><span class="p">,</span> <span class="mf">0.108361</span><span class="p">),</span>  <span class="c"># noqa</span>
+              <span class="mi">200</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">5.061087</span><span class="p">,</span> <span class="mf">0.089004</span><span class="p">,</span> <span class="mf">0.266007</span><span class="p">,</span> <span class="mf">0.391007</span><span class="p">,</span> <span class="mf">6.189953</span><span class="p">,</span> <span class="mf">0.111543</span><span class="p">,</span> <span class="mf">0.111543</span><span class="p">),</span>  <span class="c"># noqa</span>
+              <span class="mi">250</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">5.061087</span><span class="p">,</span> <span class="mf">0.089004</span><span class="p">,</span> <span class="mf">0.262978</span><span class="p">,</span> <span class="mf">0.391007</span><span class="p">,</span> <span class="mf">6.034414</span><span class="p">,</span> <span class="mf">0.114725</span><span class="p">,</span> <span class="mf">0.114725</span><span class="p">),</span>  <span class="c"># noqa</span>
+              <span class="mi">320</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">5.061087</span><span class="p">,</span> <span class="mf">0.089004</span><span class="p">,</span> <span class="mf">0.259627</span><span class="p">,</span> <span class="mf">0.391007</span><span class="p">,</span> <span class="mf">5.844973</span><span class="p">,</span> <span class="mf">0.118246</span><span class="p">,</span> <span class="mf">0.118246</span><span class="p">),</span>  <span class="c"># noqa</span>
+              <span class="mi">400</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">5.061087</span><span class="p">,</span> <span class="mf">0.089004</span><span class="p">,</span> <span class="mf">0.256598</span><span class="p">,</span> <span class="mf">0.391007</span><span class="p">,</span> <span class="mf">5.656190</span><span class="p">,</span> <span class="mf">0.121428</span><span class="p">,</span> <span class="mf">0.121428</span><span class="p">),</span>  <span class="c"># noqa</span>
+              <span class="mi">500</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">5.061087</span><span class="p">,</span> <span class="mf">0.089004</span><span class="p">,</span> <span class="mf">0.253569</span><span class="p">,</span> <span class="mf">0.391007</span><span class="p">,</span> <span class="mf">5.449261</span><span class="p">,</span> <span class="mf">0.124610</span><span class="p">,</span> <span class="mf">0.124610</span><span class="p">),</span>  <span class="c"># noqa</span>
+              <span class="mi">640</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">5.061087</span><span class="p">,</span> <span class="mf">0.089004</span><span class="p">,</span> <span class="mf">0.250218</span><span class="p">,</span> <span class="mf">0.391007</span><span class="p">,</span> <span class="mf">5.198031</span><span class="p">,</span> <span class="mf">0.128130</span><span class="p">,</span> <span class="mf">0.128130</span><span class="p">),</span>  <span class="c"># noqa</span>
+              <span class="mi">800</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">5.061087</span><span class="p">,</span> <span class="mf">0.089004</span><span class="p">,</span> <span class="mf">0.247189</span><span class="p">,</span> <span class="mf">0.391007</span><span class="p">,</span> <span class="mf">4.950469</span><span class="p">,</span> <span class="mf">0.131313</span><span class="p">,</span> <span class="mf">0.131313</span><span class="p">),</span>  <span class="c"># noqa</span>
+              <span class="mi">1000</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">5.061087</span><span class="p">,</span> <span class="mf">0.089004</span><span class="p">,</span> <span class="mf">0.244161</span><span class="p">,</span> <span class="mf">0.391007</span><span class="p">,</span> <span class="mf">4.684112</span><span class="p">,</span> <span class="mf">0.134495</span><span class="p">,</span> <span class="mf">0.134495</span><span class="p">),</span>  <span class="c"># noqa</span>
+              <span class="mi">1280</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">5.061087</span><span class="p">,</span> <span class="mf">0.089004</span><span class="p">,</span> <span class="mf">0.240810</span><span class="p">,</span> <span class="mf">0.391007</span><span class="p">,</span> <span class="mf">4.369609</span><span class="p">,</span> <span class="mf">0.138015</span><span class="p">,</span> <span class="mf">0.138015</span><span class="p">),</span>  <span class="c"># noqa</span>
+              <span class="mi">1600</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">5.061087</span><span class="p">,</span> <span class="mf">0.089004</span><span class="p">,</span> <span class="mf">0.237781</span><span class="p">,</span> <span class="mf">0.391007</span><span class="p">,</span> <span class="mf">4.070466</span><span class="p">,</span> <span class="mf">0.141197</span><span class="p">,</span> <span class="mf">0.14119</span><span class="p">)}})})</span>  <span class="c"># noqa</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*ALEXA Log C* curve conversion data between signal and linear scene exposure</span>
+<span class="sd">factor for *SUP 3.x* and signal and normalized sensor signal for *SUP 2.x*.</span>
+
+<span class="sd">ALEXA_LOG_C_CURVE_CONVERSION_DATA : CaseInsensitiveMapping</span>
+<span class="sd">    {&#39;SUP 3.x&#39;, &#39;SUP 2.x&#39;}</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="c"># @formatter:on</span>
+
+<span class="n">ALEXA_WIDE_GAMUT_RGB_PRIMARIES</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[[</span><span class="mf">0.6840</span><span class="p">,</span> <span class="mf">0.3130</span><span class="p">],</span>
+     <span class="p">[</span><span class="mf">0.2210</span><span class="p">,</span> <span class="mf">0.8480</span><span class="p">],</span>
+     <span class="p">[</span><span class="mf">0.0861</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1020</span><span class="p">]])</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*ALEXA Wide Gamut RGB* colourspace primaries.</span>
+
+<span class="sd">ALEXA_WIDE_GAMUT_RGB_PRIMARIES : ndarray, (3, 2)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">ALEXA_WIDE_GAMUT_RGB_ILLUMINANT</span> <span class="o">=</span> <span class="s">&#39;D65&#39;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*ALEXA Wide Gamut RGB* colourspace whitepoint name as illuminant.</span>
+
+<span class="sd">ALEXA_WIDE_GAMUT_RGB_WHITEPOINT : unicode</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">ALEXA_WIDE_GAMUT_RGB_WHITEPOINT</span> <span class="o">=</span> <span class="n">ILLUMINANTS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s">&#39;CIE 1931 2 Degree Standard Observer&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">ALEXA_WIDE_GAMUT_RGB_ILLUMINANT</span><span class="p">)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*ALEXA Wide Gamut RGB* colourspace whitepoint.</span>
+
+<span class="sd">ALEXA_WIDE_GAMUT_RGB_WHITEPOINT : tuple</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">ALEXA_WIDE_GAMUT_RGB_TO_XYZ_MATRIX</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[[</span><span class="mf">0.638008</span><span class="p">,</span> <span class="mf">0.214704</span><span class="p">,</span> <span class="mf">0.097744</span><span class="p">],</span>
+     <span class="p">[</span><span class="mf">0.291954</span><span class="p">,</span> <span class="mf">0.823841</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.115795</span><span class="p">],</span>
+     <span class="p">[</span><span class="mf">0.002798</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.067034</span><span class="p">,</span> <span class="mf">1.153294</span><span class="p">]])</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*ALEXA Wide Gamut RGB* colourspace to *CIE XYZ* tristimulus values matrix.</span>
+
+<span class="sd">ALEXA_WIDE_GAMUT_RGB_TO_XYZ_MATRIX : array_like, (3, 3)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">XYZ_TO_ALEXA_WIDE_GAMUT_RGB_MATRIX</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span>
+    <span class="n">ALEXA_WIDE_GAMUT_RGB_TO_XYZ_MATRIX</span><span class="p">)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*CIE XYZ* tristimulus values to *ALEXA Wide Gamut RGB* colourspace matrix.</span>
+
+<span class="sd">XYZ_TO_ALEXA_WIDE_GAMUT_RGB_MATRIX : array_like, (3, 3)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="k">def</span> <span class="nf">_linear_to_alexa_log_c</span><span class="p">(</span>
+        <span class="n">value</span><span class="p">,</span>
+        <span class="n">firmware</span><span class="o">=</span><span class="s">&#39;SUP 3.x&#39;</span><span class="p">,</span>
+        <span class="n">method</span><span class="o">=</span><span class="s">&#39;Linear Scene Exposure Factor&#39;</span><span class="p">,</span>
+        <span class="n">EI</span><span class="o">=</span><span class="mi">800</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Defines the *linear* to *ALEXA Log C* conversion function.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    value : numeric or array_like</span>
+<span class="sd">        Value.</span>
+<span class="sd">    firmware : unicode, optional</span>
+<span class="sd">        {&#39;SUP 3.x&#39;, &#39;SUP 2.x&#39;}</span>
+<span class="sd">        Alexa firmware version.</span>
+<span class="sd">    method : unicode, optional</span>
+<span class="sd">        {&#39;Linear Scene Exposure Factor&#39;, &#39;Normalised Sensor Signal&#39;}</span>
+<span class="sd">        Conversion method.</span>
+<span class="sd">    EI : int,  optional</span>
+<span class="sd">        Ei.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Companded value.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+    <span class="n">cut</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">ALEXA_LOG_C_CURVE_CONVERSION_DATA</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+        <span class="n">firmware</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">method</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">EI</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">value</span> <span class="o">&gt;</span> <span class="n">cut</span><span class="p">,</span>
+                    <span class="n">c</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">value</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">+</span> <span class="n">d</span><span class="p">,</span>
+                    <span class="n">e</span> <span class="o">*</span> <span class="n">value</span> <span class="o">+</span> <span class="n">f</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_alexa_log_c_to_linear</span><span class="p">(</span>
+        <span class="n">value</span><span class="p">,</span>
+        <span class="n">firmware</span><span class="o">=</span><span class="s">&#39;SUP 3.x&#39;</span><span class="p">,</span>
+        <span class="n">method</span><span class="o">=</span><span class="s">&#39;Linear Scene Exposure Factor&#39;</span><span class="p">,</span>
+        <span class="n">EI</span><span class="o">=</span><span class="mi">800</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Defines the *ALEXA Log C* to *linear* conversion function.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    value : numeric or array_like</span>
+<span class="sd">        Value.</span>
+<span class="sd">    firmware : unicode, optional</span>
+<span class="sd">        {&#39;SUP 3.x&#39;, &#39;SUP 2.x&#39;}</span>
+<span class="sd">        Alexa firmware version.</span>
+<span class="sd">    method : unicode,  optional</span>
+<span class="sd">        {&#39;Linear Scene Exposure Factor&#39;, &#39;Normalised Sensor Signal&#39;}</span>
+<span class="sd">        Conversion method.</span>
+<span class="sd">    EI : int,  optional</span>
+<span class="sd">        Ei.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numeric or ndarray</span>
+<span class="sd">        Companded value.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+    <span class="n">cut</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">ALEXA_LOG_C_CURVE_CONVERSION_DATA</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">firmware</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">method</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">EI</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">value</span> <span class="o">&gt;</span> <span class="n">e</span> <span class="o">*</span> <span class="n">cut</span> <span class="o">+</span> <span class="n">f</span><span class="p">,</span>
+                    <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="n">value</span> <span class="o">-</span> <span class="n">d</span><span class="p">)</span> <span class="o">/</span> <span class="n">c</span><span class="p">)</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="n">a</span><span class="p">,</span>
+                    <span class="p">(</span><span class="n">value</span> <span class="o">-</span> <span class="n">f</span><span class="p">)</span> <span class="o">/</span> <span class="n">e</span><span class="p">)</span>
+
+
+<span class="n">ALEXA_LOG_C_TRANSFER_FUNCTION</span> <span class="o">=</span> <span class="n">_linear_to_alexa_log_c</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Transfer function from linear to *ALEXA Log C*.</span>
+
+<span class="sd">ALEXA_LOG_C_TRANSFER_FUNCTION : object</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">ALEXA_LOG_C_INVERSE_TRANSFER_FUNCTION</span> <span class="o">=</span> <span class="n">_alexa_log_c_to_linear</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Inverse transfer function from *ALEXA Log C* to linear.</span>
+
+<span class="sd">ALEXA_LOG_C_INVERSE_TRANSFER_FUNCTION : object</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">ALEXA_WIDE_GAMUT_RGB_COLOURSPACE</span> <span class="o">=</span> <span class="n">RGB_Colourspace</span><span class="p">(</span>
+    <span class="s">&#39;ALEXA Wide Gamut RGB&#39;</span><span class="p">,</span>
+    <span class="n">ALEXA_WIDE_GAMUT_RGB_PRIMARIES</span><span class="p">,</span>
+    <span class="n">ALEXA_WIDE_GAMUT_RGB_WHITEPOINT</span><span class="p">,</span>
+    <span class="n">ALEXA_WIDE_GAMUT_RGB_ILLUMINANT</span><span class="p">,</span>
+    <span class="n">ALEXA_WIDE_GAMUT_RGB_TO_XYZ_MATRIX</span><span class="p">,</span>
+    <span class="n">XYZ_TO_ALEXA_WIDE_GAMUT_RGB_MATRIX</span><span class="p">,</span>
+    <span class="n">ALEXA_LOG_C_TRANSFER_FUNCTION</span><span class="p">,</span>
+    <span class="n">ALEXA_LOG_C_INVERSE_TRANSFER_FUNCTION</span><span class="p">)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">*ALEXA Wide Gamut RGB* colourspace.</span>
+
+<span class="sd">ALEXA_WIDE_GAMUT_RGB_COLOURSPACE : RGB_Colourspace</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 - 2015, Colour Developers.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
