@@ -35,6 +35,6 @@ If you still can't find what you are looking for, try using the search form belo
         <input
             type="hidden"
             name="sitesearch"
-            value="https://colour-science.org/">
+            value="https://www.colour-science.org/">
     </form>
     <div class="mt-5"></div>

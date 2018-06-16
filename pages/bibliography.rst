@@ -143,7 +143,7 @@
 -   Luo, R. M., Cui, G., & Li, C. (2006). Uniform Colour Spaces Based on CIECAM02 Colour Appearance Model. Color Research and Application, 31(4), 320–330. doi:10.1002/col.20227
 -   MacAdam, D. L. (1935). Maximum Visual Efficiency of Colored Materials. [. Opt. Soc. Am., 25(11], 361–367. doi:10.1364/JOSA.25.000361
 -   Machado, G. (2010). A model for simulation of color vision deficiency and a color contrast enhancement technique for dichromats. Retrieved from http://www.lume.ufrgs.br/handle/10183/26950
--   Mansencal, T. (2015). RED Colourspaces Derivation. Retrieved May 20, 2015, from https://colour-science.org/posts/red-colourspaces-derivation
+-   Mansencal, T. (2015). RED Colourspaces Derivation. Retrieved May 20, 2015, from https://www.colour-science.org/posts/red-colourspaces-derivation
 -   Mansencal, T. (n.d.). Lookup. Retrieved from https://github.com/KelSolaar/Foundations/blob/develop/foundations/data_structures.py
 -   Mansencal, T. (n.d.). Structure. Retrieved from https://github.com/KelSolaar/Foundations/blob/develop/foundations/data_structures.py
 -   Melgosa, M. (2013). CIE / ISO new standard: CIEDE2000, 2013(July). Retrieved from http://www.color.org/events/colorimetry/Melgosa_CIEDE2000_Workshop-July4.pdf
