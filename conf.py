@@ -19,10 +19,10 @@ BLOG_AUTHOR = "Colour Developers"  # (translatable)
 BLOG_TITLE = "Colour Science"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
-SITE_URL = "http://colour-science.org/"
+SITE_URL = "https://colour-science.org/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
-BASE_URL = "http://colour-science.org/"
+BASE_URL = "https://colour-science.org/"
 BLOG_EMAIL = "colour-science@googlegroups.com"
 BLOG_DESCRIPTION = "Colour: Colour Science for Python"  # (translatable)
 
@@ -1312,7 +1312,7 @@ BODY_END = """
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 <!-- <<< Gitter -->
 <!-- >>> Google Analytics -->
-<script async src="http://colour-science.org/assets/js/analytics.js"></script>
+<script async src="https://colour-science.org/assets/js/analytics.js"></script>
 <!-- <<< Google Analytics -->
 """
 

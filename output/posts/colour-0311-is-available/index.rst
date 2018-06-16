@@ -16,7 +16,7 @@ Colour 0.3.11
 -------------
 
 This was a release long in the making. It is an an important milestone on
-`The Road to Stable <http://colour-science.org/posts/the-road-to-stable/>`_ and
+`The Road to Stable <https://colour-science.org/posts/the-road-to-stable/>`_ and
 it introduces many new features, changes and fixes. The highlights of this
 release are:
 

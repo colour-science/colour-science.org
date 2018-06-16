@@ -29,6 +29,6 @@ Use the form below to perform a search on the whole website.
         <input
             type="hidden"
             name="sitesearch"
-            value="http://colour-science.org/">
+            value="https://colour-science.org/">
     </form>
     <div class="mt-5"></div>

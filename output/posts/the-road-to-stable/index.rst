@@ -7,7 +7,7 @@
 .. description: 
 .. type: text
 
-Colour has been in public development for over 3 years. The package has grown in various directions since the initial release and offers a significant amount of `features <http://colour-science.org/features/>`_.
+Colour has been in public development for over 3 years. The package has grown in various directions since the initial release and offers a significant amount of `features <https://colour-science.org/features/>`_.
 
 It is used in research groups such as the `St Andrews HCI Research Group <https://sachi.cs.st-andrews.ac.uk/>`_ or companies like `Google <https://www.google.com/>`_, `Merck KGaA <https://en.wikipedia.org/wiki/Merck_Group>`_ or `The Moving Picture Company <http://www.moving-picture.com/>`_. Even though it has reached a certain stability and maturity, it is still in alpha development status.
 

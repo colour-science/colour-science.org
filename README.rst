@@ -4,7 +4,7 @@ colour-science.org
 Introduction
 ------------
 
-Website code for http://colour-science.org/
+Website code for https://colour-science.org/
 
 About
 -----
