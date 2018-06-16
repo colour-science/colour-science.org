@@ -48,7 +48,7 @@
         </li>
         <li class="list-inline-item">
             <a href="https://coveralls.io/r/colour-science/colour">
-                <img src="http://img.shields.io/coveralls/colour-science/colour/develop.svg?style=flat-square" alt="Coverage Status">
+                <img src="https://img.shields.io/coveralls/colour-science/colour/develop.svg?style=flat-square" alt="Coverage Status">
             </a>
         </li>
         <li class="list-inline-item">

@@ -53,7 +53,7 @@ Tom confirms that intuition a few paragraph later:
     | The *gamut* defined by *sRGB* colourspace should actually be of a
         concern if one tries to achieve photo-realistic rendering as shown by
         `Steve Agland <http://nbviewer.jupyter.org/gist/sagland/3c791e79353673fd24fa>`_
-        and `us <https://colour-science.org/posts/about-rendering-engines-colourspaces-agnosticism/>`_.
+        and `us <https://www.colour-science.org/posts/about-rendering-engines-colourspaces-agnosticism/>`_.
 
 What is sRGB?
 -------------

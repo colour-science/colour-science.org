@@ -7,7 +7,7 @@
 .. description: 
 .. type: text
 
-`colour-science.org <https://colour-science.org>`_ has been quiet for a while
+`colour-science.org <https://www.colour-science.org>`_ has been quiet for a while
 however, it does not mean nothing happened. `Colour 0.3.9 <https://github.com/colour-science/colour/releases/tag/v0.3.9>`_
 and `Colour - HDRI 0.1.2 <https://github.com/colour-science/colour-hdri/releases/tag/v0.1.2>`_
 were released today and last week, concluding a major collaborative effort, the ACES
