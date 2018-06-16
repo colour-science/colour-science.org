@@ -10,7 +10,7 @@
 .. raw:: html
 
     <div>
-        <iframe id="apps" src="https://colour-science.org:8010/" frameborder="0" width="100%"></iframe>
+        <iframe id="apps" src="https://www.colour-science.org:8010/" frameborder="0" width="100%"></iframe>
     </div>
-    <script type="text/javascript" src="../assets/js/iframeResizer.min.js"></script>
+    <script type="text/javascript" src="https://www.colour-science.org/assets/js/iframeResizer.min.js"></script>
     <script>iFrameResize({}, '#apps')</script>
