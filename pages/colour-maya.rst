@@ -23,11 +23,11 @@ Examples
 
 Comparing *ProPhoto RGB* colourspace and *sRGB* colourspace volumes:
 
-.. image:: http://thomasmansencal.com/Sharing/Colour/Support/Pictures/Maya_sRGB_ProPhoto_RGB_CIE_Lab_001.jpg
+.. image:: https://www.colour-science.org/images/Maya_sRGB_ProPhoto_RGB_CIE_Lab_001.jpg
 
 The wide *ACES RGB* colourspace against *sRGB* colourspace:
 
-.. image:: http://thomasmansencal.com/Sharing/Colour/Support/Pictures/Maya_sRGB_ACES_RGB_CIE_Lab_001.jpg
+.. image:: https://www.colour-science.org/images/Maya_sRGB_ACES_RGB_CIE_Lab_001.jpg
 
 Downloads
 ^^^^^^^^^

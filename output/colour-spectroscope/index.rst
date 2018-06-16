@@ -20,7 +20,7 @@ The following features are available:
 Examples
 ^^^^^^^^
 
-.. image:: http://www.thomasmansencal.com/Sharing/Spectroscope/Philips_Softone_001.jpg
+.. image:: https://www.colour-science.org/images/Philips_Softone_001.jpg
 
 Downloads
 ^^^^^^^^^
