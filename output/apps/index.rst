@@ -19,5 +19,5 @@
             src="https://www.colour-science.org:8010/"
             frameborder="0"
             width="100%"
-            onload="iFrameResize({}, '#apps')"></iframe>
+            onload="iFrameResize({checkOrigin:false}, '#apps')"></iframe>
     </div>
