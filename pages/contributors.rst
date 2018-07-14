@@ -286,6 +286,9 @@
                             <a href="https://github.com/brandondube">brandondube</a>
                         </li>
                         <li>
+                            <a href="https://github.com/briend">briend</a>
+                        </li>
+                        <li>
                             <a href="https://github.com/cclauss">cclauss</a>
                         </li>
                         <li>
@@ -309,13 +312,13 @@
                         <li>
                             <a href="https://github.com/jaguarondi">jaguarondi</a>
                         </li>
-                        <li>
-                            <a href="https://github.com/iCagarro">iCagarro</a>
-                        </li>
                     </ul>
                 </div>
                 <div class="col">
                     <ul class="list-unstyled">
+                        <li>
+                            <a href="https://github.com/iCagarro">iCagarro</a>
+                        </li>
                         <li>
                             <a href="https://github.com/iinnovations">iinnovations</a>
                         </li>
