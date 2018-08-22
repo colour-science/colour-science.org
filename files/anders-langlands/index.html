@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Render Color Spaces">
+  <meta name="author" content="Anders Langlands">
+  <title>Render Color Spaces</title>
+  <!-- CSS -->
+  <link href="./assets/bootstrap.min.css" rel="stylesheet">
+  <link href="./assets/style.css" rel="stylesheet">
+  <link href="./assets/twentytwenty.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Wrapper start -->
+  <div class="main">
+    <section class="module">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-2"></div>
+          <!-- Content column start -->
+          <div class="col-sm-8">
+            <h1>Anders Langlands</h1>
+            <p>This page was formerly available at <a href="http://www.anderslanglands.com/blog//2016/06/23/render-color-space.html">www.anderslanglands.com</a>
+              and is now hosted on <a href="https://www.colour-science.org">www.colour-science.org</a> courtesy of Anders.</p>
+            <!-- Post start -->
+            <div class="post">
+              </h1>
+              <div class="post-thumbnail">
+                <a href="./assets/spectral_rec709_720p.jpg"><img src="./assets/spectral_rec709_720p.jpg"
+                    alt=""></a>
+              </div>
+              <div class="post-header font-alt">
+                <h1 class="post-title"><a>Render Color Spaces</a>
+                </h1>
+                <div class="post-meta">
+                  23 June 2016 | Tags:
+                  <a>rendering</a>
+                  <a>color</a>
+                </div>
+              </div>
+              <div class="post-entry">
+                <!-- Content Start -->
+                <p>I first conducted these tests in October 2014 in response to a 3D-Pro thread discussing the likely effects
+                  of using ACES primaries (specifically AP0) as a rendering color space. Since then the ACEScg specification
+                  was released (AP1), which is roughly equivalent to Rec.2020, so if you like you can read "Rec.2020" as
+                  "ACEScg" below.
+                </p>
+                <p>
+                  This page compares images rendered in Arnold using spectral rendering and different sets of colourspace primaries: Rec.709,
+                  Rec.2020, ACES and DCI-P3. The SPD data for the GretagMacbeth Color Checker are the measurements of Noburu
+                  Ohta, taken from Mansencal, Mauderer and Parsons (2014) <a href="http://colour-science.org/">colour-science.org</a>.
+                  Each box is lit by a small area light with a D65 SPD. All spectral calculations are performed over the
+                  interval [380nm, 780nm] at 5nm increments. For the RGB renders, the colour swatches are preconverted into
+                  the appropriate primaries before rendering, and the lightsource is pure white (1,1,1). To make comparison
+                  easier, all RGB colour spaces are assumed to have a D65 whitepoint. All materials are pure lambertian and
+                  the scene was rendered with 10 bounces.
+                </p>
+                <!-- <p>
+                                        For those interested, the Arnold shaders can be found on the spectral branch of alShaders on BitBucket, <a href="https://bitbucket.org/anderslanglands/alshaders/src/ed4832fe0731178b3575799b063113694354cbb7/alSpectral/?at=spectral">here</a>.
+                                        <p> -->
+                <p>
+                  You can compare the images with the slider thingy I nicked from <a href="http://cs.dartmouth.edu/~wjarosz/publications/georgiev13joint-image-comparison.html">Wojciech
+                    Jarosz's website</a> or you can download all the jpegs and exrs from google drive here:
+                  <a href="https://drive.google.com/open?id=0B_z8FmhJmV9rSmlsVG4tTVB5OTQ">color_checker_comparisons_v0002.zip</a>
+                </p>
+                <br>
+                <div class="alert-tldr">
+                  <strong>TL;DR: </strong> There's no clear winner, but Rec. 2020 performs the best from the options so far.
+                </div>
+                <br>
+                <h3>Contents</h3>
+                <ul>
+                  <li><a href="#1">1. Rec. 709 Display</a></li>
+                  <a href="#1">
+                  </a>
+                  <li>
+                    <a href="#1"></a><a href="#2">2. DCI-P3 Display
+                    </a>
+                  </li>
+                  <a href="#2">
+                  </a>
+                  <li>
+                    <a href="#2"></a><a href="#3">3. Colour Volume Analysis</a>
+                  </li>
+                  <a href="#3">
+                  </a>
+                  <li>
+                    <a href="#3"></a><a href="#4">4. Conclusions
+                    </a>
+                  </li>
+                  <a href="#4">
+                  </a>
+                </ul>
+                <a href="#4">
+                  <br>
+                </a>
+                <h2><a href="#4"></a><a id="1"></a>1. Rec. 709 Display
+                </h2>
+                <p>
+                  First, we compare images rendered in spectral, Rec.709, Rec.2020 and ACES and converted for a Rec.709 display using a display
+                  gamma of 2.2. In other words, it asks the question "what are the best set of primaries for rendering when
+                  targeting a computer monitor?"
+                </p>
+                <div class="twentytwenty-container twentytwenty-compare-4" style="max-width: 1080px; height: 497px;">
+                  <img src="./assets/spectral_rec709_720p.jpg" alt="Spectral" class="img-responsive twentytwenty-1"
+                    style="clip: rect(0px, 373px, 248.5px, 0px);">
+                  <img src="./assets/rgb_rec709_rec709_720p.jpg" alt="RGB Rec. 709" class="img-responsive twentytwenty-2"
+                    style="width: 746px; height: 497px; clip: rect(0px, 746px, 248.5px, 373px);">
+                  <img src="./assets/rgb_rec2020_rec709_720p.jpg" alt="RGB Rec. 2020" class="img-responsive twentytwenty-3"
+                    style="width: 746px; height: 497px; clip: rect(248.5px, 373px, 497px, 0px);">
+                  <img src="./assets/rgb_aces_rec709_720p.jpg" alt="RGB ACES" class="img-responsive twentytwenty-4"
+                    style="width: 746px; height: 497px; clip: rect(248.5px, 746px, 497px, 373px);">
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 497px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">
+                      Spectral
+                    </div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">
+                      RGB Rec. 709
+                    </div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020
+                    </div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES
+                    </div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">Spectral</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">Spectral</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">Spectral</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">Spectral</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                  </div>
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 497px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">Spectral</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">Spectral</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">Spectral</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">Spectral</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                  </div>
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 497px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">Spectral</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">Spectral</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">Spectral</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                  </div>
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 497px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">Spectral</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">Spectral</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                  </div>
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 497px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">Spectral</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                  </div>
+                </div>
+                <div class="caption">Rec. 709 (gamma 2.2) display comparison
+                </div>
+                <br>
+                <p>Click the links below to open the full-res (3k) jpegs.
+                </p>
+                <ul>
+                  <li>
+                    <a href="./assets/spectral_rec709.jpg">Spectral</a>
+                  </li>
+                  <li>
+                    <a href="./assets/rgb_rec709_rec709.jpg">RGB
+                      Rec. 709</a>
+                  </li>
+                  <li>
+                    <a href="./assets/rgb_rec2020_rec709.jpg">RGB
+                      Rec. 2020</a>
+                  </li>
+                  <li>
+                    <a href="./assets/rgb_aces_rec709.jpg">RGB
+                      ACES
+                    </a>
+                  </li>
+                </ul>
+                <br>
+                <br>
+                <div class="twentytwenty-container twentytwenty-compare-3" style="max-width: 1080px; height: 497px;">
+                  <!-- <img src="img/black_720p.jpg" alt="" class="img-responsive"> -->
+                  <img src="./assets/diff_rec709_rec709_720p.jpg" alt="RGB Rec. 709 - RMSE 0.0138161" class="img-responsive twentytwenty-1"
+                    style="clip: rect(0px, 373px, 248.5px, 0px);">
+                  <img src="./assets/diff_rec2020_rec709_720p.jpg" alt="RGB Rec. 2020 - RMSE 0.00704586" class="img-responsive twentytwenty-2"
+                    style="width: 746px; height: 497px; clip: rect(0px, 746px, 248.5px, 373px);">
+                  <img src="./assets/diff_aces_rec709_720p.jpg" alt="RGB ACES - RMSE 0.0153788" class="img-responsive twentytwenty-3"
+                    style="width: 746px; height: 497px; clip: rect(248.5px, 746px, 497px, 0px);">
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 497px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">
+                      RGB Rec. 709 - RMSE 0.0138161
+                    </div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">
+                      RGB Rec. 2020 - RMSE 0.00704586
+                    </div>
+                    <div class="twentytwenty-label-3" style="top: 248.5px;">RGB ACES - RMSE 0.0153788
+                    </div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 746px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">RGB Rec. 709 - RMSE 0.0138161</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 2020 - RMSE 0.00704586</div>
+                    <div class="twentytwenty-label-3" style="top: 248.5px;">RGB ACES - RMSE 0.0153788</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 746px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">RGB Rec. 709 - RMSE 0.0138161</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 2020 - RMSE 0.00704586</div>
+                    <div class="twentytwenty-label-3" style="top: 248.5px;">RGB ACES - RMSE 0.0153788</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 746px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">RGB Rec. 709 - RMSE 0.0138161</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 2020 - RMSE 0.00704586</div>
+                    <div class="twentytwenty-label-3" style="top: 248.5px;">RGB ACES - RMSE 0.0153788</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 746px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">RGB Rec. 709 - RMSE 0.0138161</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 2020 - RMSE 0.00704586</div>
+                    <div class="twentytwenty-label-3" style="top: 248.5px;">RGB ACES - RMSE 0.0153788</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 746px; height: 248.5px;"></div>
+                  </div>
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 497px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">RGB Rec. 709 - RMSE 0.0138161</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 2020 - RMSE 0.00704586</div>
+                    <div class="twentytwenty-label-3" style="top: 248.5px;">RGB ACES - RMSE 0.0153788</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 746px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">RGB Rec. 709 - RMSE 0.0138161</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 2020 - RMSE 0.00704586</div>
+                    <div class="twentytwenty-label-3" style="top: 248.5px;">RGB ACES - RMSE 0.0153788</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 746px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">RGB Rec. 709 - RMSE 0.0138161</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 2020 - RMSE 0.00704586</div>
+                    <div class="twentytwenty-label-3" style="top: 248.5px;">RGB ACES - RMSE 0.0153788</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 746px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">RGB Rec. 709 - RMSE 0.0138161</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 2020 - RMSE 0.00704586</div>
+                    <div class="twentytwenty-label-3" style="top: 248.5px;">RGB ACES - RMSE 0.0153788</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 746px; height: 248.5px;"></div>
+                  </div>
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 497px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">RGB Rec. 709 - RMSE 0.0138161</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 2020 - RMSE 0.00704586</div>
+                    <div class="twentytwenty-label-3" style="top: 248.5px;">RGB ACES - RMSE 0.0153788</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 746px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">RGB Rec. 709 - RMSE 0.0138161</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 2020 - RMSE 0.00704586</div>
+                    <div class="twentytwenty-label-3" style="top: 248.5px;">RGB ACES - RMSE 0.0153788</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 746px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">RGB Rec. 709 - RMSE 0.0138161</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 2020 - RMSE 0.00704586</div>
+                    <div class="twentytwenty-label-3" style="top: 248.5px;">RGB ACES - RMSE 0.0153788</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 746px; height: 248.5px;"></div>
+                  </div>
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 497px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">RGB Rec. 709 - RMSE 0.0138161</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 2020 - RMSE 0.00704586</div>
+                    <div class="twentytwenty-label-3" style="top: 248.5px;">RGB ACES - RMSE 0.0153788</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 746px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">RGB Rec. 709 - RMSE 0.0138161</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 2020 - RMSE 0.00704586</div>
+                    <div class="twentytwenty-label-3" style="top: 248.5px;">RGB ACES - RMSE 0.0153788</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 746px; height: 248.5px;"></div>
+                  </div>
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 497px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">RGB Rec. 709 - RMSE 0.0138161</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 2020 - RMSE 0.00704586</div>
+                    <div class="twentytwenty-label-3" style="top: 248.5px;">RGB ACES - RMSE 0.0153788</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 746px; height: 248.5px;"></div>
+                  </div>
+                </div>
+                <div class="caption">Rec. 709 2x diff comparison
+                </div>
+                <br>
+                <div align="center">
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <th>
+                          <em>Primaries</em>
+                        </th>
+                        <th>
+                          <em>RMS error</em>
+                        </th>
+                      </tr>
+                      <tr>
+                        <td>
+                          Rec. 709
+                        </td>
+                        <td>
+                          0.0138161
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Rec. 2020
+                        </td>
+                        <td>
+                          0.00704586
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          ACES
+                        </td>
+                        <td>
+                          0.0153788
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <br>
+                <h2><a id="2"></a>2. DCI-P3 Display</h2>
+                <p>
+                  Next, we target a DCI-P3 display, rendering spectrally and with Rec.709, Rec.2020, ACES and DCI-P3 primaries (but with a
+                  D65 white point). In this case we are asking, "what is the best set of primaries for rendering when targeting
+                  a digital cinema projector?"
+                </p>
+                <div class="twentytwenty-container twentytwenty-compare-4" style="max-width: 1080px; height: 497px;">
+                  <img src="./assets/spectral_p3_720p.jpg" alt="Spectral" class="img-responsive twentytwenty-1"
+                    style="clip: rect(0px, 373px, 248.5px, 0px);">
+                  <img src="./assets/rgb_rec709_p3_720p.jpg" alt="RGB Rec. 709" class="img-responsive twentytwenty-2"
+                    style="width: 746px; height: 497px; clip: rect(0px, 746px, 248.5px, 373px);">
+                  <img src="./assets/rgb_rec2020_p3_720p.jpg" alt="RGB Rec. 2020" class="img-responsive twentytwenty-3"
+                    style="width: 746px; height: 497px; clip: rect(248.5px, 373px, 497px, 0px);">
+                  <img src="./assets/rgb_aces_p3_720p.jpg" alt="RGB ACES" class="img-responsive twentytwenty-4"
+                    style="width: 746px; height: 497px; clip: rect(248.5px, 746px, 497px, 373px);">
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 497px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">
+                      Spectral
+                    </div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">
+                      RGB Rec. 709
+                    </div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020
+                    </div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES
+                    </div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">Spectral</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">Spectral</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">Spectral</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">Spectral</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                  </div>
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 497px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">Spectral</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">Spectral</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">Spectral</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">Spectral</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                  </div>
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 497px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">Spectral</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">Spectral</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">Spectral</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                  </div>
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 497px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">Spectral</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">Spectral</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                  </div>
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 497px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">Spectral</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                  </div>
+                </div>
+                <div class="caption">DCI-P3 (gamma 2.2) display comparison
+                </div>
+                <br>
+                <p>Click the links below to open the full-res (3k) jpegs.
+                </p>
+                <ul>
+                  <li>
+                    <a href="./assets/spectral_p3.jpg">Spectral</a>
+                  </li>
+                  <li>
+                    <a href="./assets/rgb_p3_p3.jpg">RGB
+                      DCI-P3
+                    </a>
+                  </li>
+                  <li>
+                    <a href="./assets/rgb_rec709_p3.jpg">RGB
+                      Rec. 709</a>
+                  </li>
+                  <li>
+                    <a href="./assets/rgb_rec2020_p3.jpg">RGB
+                      Rec. 2020</a>
+                  </li>
+                  <li>
+                    <a href="./assets/rgb_aces_p3.jpg">RGB
+                      ACES
+                    </a>
+                  </li>
+                </ul>
+                <br>
+                <br>
+                <div class="twentytwenty-container twentytwenty-compare-4" style="max-width: 1080px; height: 497px;">
+                  <img src="./assets/diff_p3_p3_720p.jpg" alt="RGB DCI-P3 - RMSE 0.00740128" class="img-responsive twentytwenty-1"
+                    style="clip: rect(0px, 373px, 248.5px, 0px);">
+                  <img src="./assets/diff_rec709_p3_720p.jpg" alt="RGB Rec. 709 - RMSE 0.011618" class="img-responsive twentytwenty-2"
+                    style="width: 746px; height: 497px; clip: rect(0px, 746px, 248.5px, 373px);">
+                  <img src="./assets/diff_rec2020_p3_720p.jpg" alt="RGB Rec. 2020 - RMSE 0.00581693" class="img-responsive twentytwenty-3"
+                    style="width: 746px; height: 497px; clip: rect(248.5px, 373px, 497px, 0px);">
+                  <img src="./assets/diff_aces_p3_720p.jpg" alt="RGB ACES - RMSE 0.0130438" class="img-responsive twentytwenty-4"
+                    style="width: 746px; height: 497px; clip: rect(248.5px, 746px, 497px, 373px);">
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 497px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">RGB DCI-P3 - RMSE 0.00740128
+                    </div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709 - RMSE 0.011618
+                    </div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020 - RMSE 0.00581693
+                    </div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES - RMSE 0.0130438
+                    </div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">RGB DCI-P3 - RMSE 0.00740128</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709 - RMSE 0.011618</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020 - RMSE 0.00581693</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES - RMSE 0.0130438</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">RGB DCI-P3 - RMSE 0.00740128</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709 - RMSE 0.011618</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020 - RMSE 0.00581693</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES - RMSE 0.0130438</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">RGB DCI-P3 - RMSE 0.00740128</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709 - RMSE 0.011618</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020 - RMSE 0.00581693</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES - RMSE 0.0130438</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">RGB DCI-P3 - RMSE 0.00740128</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709 - RMSE 0.011618</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020 - RMSE 0.00581693</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES - RMSE 0.0130438</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                  </div>
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 497px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">RGB DCI-P3 - RMSE 0.00740128</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709 - RMSE 0.011618</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020 - RMSE 0.00581693</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES - RMSE 0.0130438</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">RGB DCI-P3 - RMSE 0.00740128</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709 - RMSE 0.011618</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020 - RMSE 0.00581693</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES - RMSE 0.0130438</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">RGB DCI-P3 - RMSE 0.00740128</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709 - RMSE 0.011618</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020 - RMSE 0.00581693</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES - RMSE 0.0130438</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">RGB DCI-P3 - RMSE 0.00740128</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709 - RMSE 0.011618</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020 - RMSE 0.00581693</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES - RMSE 0.0130438</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                  </div>
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 497px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">RGB DCI-P3 - RMSE 0.00740128</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709 - RMSE 0.011618</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020 - RMSE 0.00581693</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES - RMSE 0.0130438</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">RGB DCI-P3 - RMSE 0.00740128</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709 - RMSE 0.011618</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020 - RMSE 0.00581693</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES - RMSE 0.0130438</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">RGB DCI-P3 - RMSE 0.00740128</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709 - RMSE 0.011618</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020 - RMSE 0.00581693</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES - RMSE 0.0130438</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                  </div>
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 497px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">RGB DCI-P3 - RMSE 0.00740128</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709 - RMSE 0.011618</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020 - RMSE 0.00581693</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES - RMSE 0.0130438</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">RGB DCI-P3 - RMSE 0.00740128</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709 - RMSE 0.011618</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020 - RMSE 0.00581693</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES - RMSE 0.0130438</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                  </div>
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 497px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 248.5px;">RGB DCI-P3 - RMSE 0.00740128</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 248.5px;">RGB Rec. 709 - RMSE 0.011618</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 248.5px;">RGB Rec. 2020 - RMSE 0.00581693</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 248.5px;">RGB ACES - RMSE 0.0130438</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 248.5px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 248.5px;"></div>
+                  </div>
+                </div>
+                <div class="caption">DCI-P3 (gamma 2.2) 2x diff comparison
+                </div>
+                <br>
+                <div align="center">
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <th>
+                          <em>Primaries</em>
+                        </th>
+                        <th>
+                          <em>RMS error</em>
+                        </th>
+                      </tr>
+                      <tr>
+                        <td>
+                          DCI-P3
+                        </td>
+                        <td>
+                          0.00740128
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Rec. 709
+                        </td>
+                        <td>
+                          0.011618
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Rec. 2020
+                        </td>
+                        <td>
+                          0.00581693
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          ACES
+                        </td>
+                        <td>
+                          0.0130438
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <br>
+                <h2><a id="3"></a>3. Colour Volume Anaysis</h2>
+                <p>
+                  Finally, we examine the range of colours generated relative to different colour volumes. Since we're targeting digital cinema,
+                  we'll just consider the P3 gamut and Pointer's gamut (please see <a href="http://colour-science.org/">colour-science.org</a>
+                  for more volumes).
+                </p>
+                <p>
+                  The images here are a small subset of the full analysis that Thomas Mansencal did on the renders. For the full results, including
+                  chroma diagrams, please see <a href="http://nbviewer.ipython.org/github/colour-science/colour-ramblings/blob/master/comparing_rgb_primaries_for_rendering_-_colour_volumes_analysis.ipynb">his
+                    notebook
+                  </a>.
+                </p>
+                <!-- <p>
+                                        First up, Rec.709.
+                                        </p>
+                                        <div class="twentytwenty-container">
+                                        <img src="img/ill_rec709_p3_rec709.png" alt="Rec.709" class="img-responsive">
+                                        <img src="img/ill_rec2020_p3_rec709.png" alt="Rec.2020" class="img-responsive">
+                                        <img src="img/ill_aces_p3_rec709.png" alt="ACES" class="img-responsive">
+                                        <img src="img/ill_p3_p3_rec709.png" alt="DCI-P3" class="img-responsive">
+                                        </div> -->
+                <br>
+                <p>
+                  First, DCI-P3. The P3 volume is large enough that even rendering with ACES primaries doesn't generate any out-of-gamut colours,
+                  so we're safe!
+                </p>
+                <div class="twentytwenty-container twentytwenty-compare-4" style="max-width: 1186px; height: 500px;">
+                  <img src="./assets/ill_rec709_p3_p3.png" alt="Rec.709" class="img-responsive twentytwenty-1"
+                    style="clip: rect(0px, 373px, 250px, 0px);">
+                  <img src="./assets/ill_rec2020_p3_p3.png" alt="Rec.2020" class="img-responsive twentytwenty-2"
+                    style="width: 746px; height: 500px; clip: rect(0px, 746px, 250px, 373px);">
+                  <img src="./assets/ill_aces_p3_p3.png" alt="ACES" class="img-responsive twentytwenty-3" style="width: 746px; height: 500px; clip: rect(250px, 373px, 500px, 0px);">
+                  <img src="./assets/ill_p3_p3_p3.png" alt="DCI-P3" class="img-responsive twentytwenty-4" style="width: 746px; height: 500px; clip: rect(250px, 746px, 500px, 373px);">
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 500px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">
+                      Rec.709
+                    </div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">
+                      Rec.2020
+                    </div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES
+                    </div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">
+                      DCI-P3
+                    </div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">Rec.709</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">Rec.2020</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">DCI-P3</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">Rec.709</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">Rec.2020</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">DCI-P3</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">Rec.709</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">Rec.2020</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">DCI-P3</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">Rec.709</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">Rec.2020</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">DCI-P3</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                  </div>
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 500px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">Rec.709</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">Rec.2020</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">DCI-P3</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">Rec.709</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">Rec.2020</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">DCI-P3</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">Rec.709</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">Rec.2020</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">DCI-P3</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">Rec.709</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">Rec.2020</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">DCI-P3</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                  </div>
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 500px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">Rec.709</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">Rec.2020</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">DCI-P3</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">Rec.709</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">Rec.2020</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">DCI-P3</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">Rec.709</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">Rec.2020</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">DCI-P3</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                  </div>
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 500px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">Rec.709</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">Rec.2020</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">DCI-P3</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">Rec.709</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">Rec.2020</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">DCI-P3</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                  </div>
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 500px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">Rec.709</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">Rec.2020</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">DCI-P3</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                  </div>
+                </div>
+                <br>
+                <p>
+                  Next, Pointer's gamut, a real object colour gamut, representing reflectance factors of approximately 4000 different objects.
+                  All the primaries generate non-physical colours, with ACES (unsurprisingly) being the worst, but not by
+                  much.
+                </p>
+                <div class="twentytwenty-container twentytwenty-compare-4" style="max-width: 1186px; height: 500px;">
+                  <img src="./assets/ill_rec709_p3_pointer.png" alt="Rec.709" class="img-responsive twentytwenty-1"
+                    style="clip: rect(0px, 373px, 250px, 0px);">
+                  <img src="./assets/ill_rec2020_p3_pointer.png" alt="Rec.2020" class="img-responsive twentytwenty-2"
+                    style="width: 746px; height: 500px; clip: rect(0px, 746px, 250px, 373px);">
+                  <img src="./assets/ill_aces_p3_pointer.png" alt="ACES" class="img-responsive twentytwenty-3"
+                    style="width: 746px; height: 500px; clip: rect(250px, 373px, 500px, 0px);">
+                  <img src="./assets/ill_p3_p3_pointer.png" alt="DCI-P3" class="img-responsive twentytwenty-4"
+                    style="width: 746px; height: 500px; clip: rect(250px, 746px, 500px, 373px);">
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 500px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">
+                      Rec.709
+                    </div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">
+                      Rec.2020
+                    </div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES
+                    </div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">
+                      DCI-P3
+                    </div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">Rec.709</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">Rec.2020</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">DCI-P3</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">Rec.709</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">Rec.2020</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">DCI-P3</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">Rec.709</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">Rec.2020</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">DCI-P3</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">Rec.709</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">Rec.2020</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">DCI-P3</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                  </div>
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 500px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">Rec.709</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">Rec.2020</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">DCI-P3</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">Rec.709</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">Rec.2020</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">DCI-P3</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">Rec.709</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">Rec.2020</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">DCI-P3</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">Rec.709</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">Rec.2020</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">DCI-P3</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                  </div>
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 500px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">Rec.709</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">Rec.2020</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">DCI-P3</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">Rec.709</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">Rec.2020</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">DCI-P3</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">Rec.709</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">Rec.2020</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">DCI-P3</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                  </div>
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 500px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">Rec.709</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">Rec.2020</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">DCI-P3</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">Rec.709</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">Rec.2020</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">DCI-P3</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                  </div>
+                  <div class="twentytwenty-overlay" style="width: 746px; height: 500px;">
+                    <div class="twentytwenty-label-1" style="right: 373px; bottom: 250px;">Rec.709</div>
+                    <div class="twentytwenty-label-2" style="left: 373px; bottom: 250px;">Rec.2020</div>
+                    <div class="twentytwenty-label-3" style="right: 373px; top: 250px;">ACES</div>
+                    <div class="twentytwenty-label-4" style="left: 373px; top: 250px;">DCI-P3</div>
+                    <div class="twentytwenty-frame-1" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-2" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-3" style="width: 373px; height: 250px;"></div>
+                    <div class="twentytwenty-frame-4" style="width: 373px; height: 250px;"></div>
+                  </div>
+                </div>
+                <br>
+                <h2><a id="4"></a>4. Conclusions</h2>
+                <p>
+                  The main takeaway is that, as expected, rendering in any set of 3 primaries is inadequate compared to spectral rendering.
+                  Subjectively speaking, the differences aren't huge (at least in this limited test) and all the spaces suffer
+                  from some noticeable colour shifts relative to the reference. Rec. 709 seems to suffer the worst from this,
+                  generating the most saturated colours. In terms of what makes a good colour space for rendering, Rec. 2020
+                  gives both the lowest RMS error and the smallest amount of colours that lie outside Pointer's gamut, the
+                  latter being theoretically important for generating physically plausible renders.
+                </p>
+                <p>
+                  More tests need to be done. In particular the next round of tests will consider glossy objects. It would be good to try Greg
+                  Ward's SharpRGB colour space and see how that compares. The tests should be fixed to use native white points
+                  and proper chromatic adaptation, to see if that affects the results. It would also be good to try some
+                  different scenes with different spectral data - a physical sun/sky system perhaps.
+                </p>
+                <!-- Content End -->
+              </div>
+            </div>
+            <!-- Post end -->
+          </div>
+          <!-- Content column end -->
+          <div class="col-sm-2"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- Javascript files -->
+  <script src="./assets/jquery-2.1.3.min.js"></script>
+  <script src="./assets/bootstrap.min.js"></script>
+  <script src="./assets/jquery.twentytwenty.js"></script>
+  <!-- >>> Google Analytics --><script async src="https://www.colour-science.org/assets/js/analytics.js"></script><!-- <<< Google Analytics -->
+  <script>
+    $(window).load(function () {
+      $(".twentytwenty-container").twentytwenty({
+        default_offset_pct: 0.5
+      });
+    });
+  </script>
+</body>
+
+</html>
