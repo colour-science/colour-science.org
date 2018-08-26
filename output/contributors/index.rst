@@ -76,7 +76,7 @@
         <div class="col">
             <h3>Kevin Wheatley</h3>
             <p>
-                <em>Head of Imaging at Framestore</em> @
+                <em>Head of Imaging</em> @
                 <a href="http://www.framestore.com/">Framestore</a>
             </p>
             <p>Technical support.</p>
