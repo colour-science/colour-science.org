@@ -112,7 +112,19 @@
                 <a href="https://github.com/katrinleinweber">Github</a>
             </p>
         </div>
-        <div class="col"></div>
+        <div class="col">
+            <h3>Jean D. Vandenberg</h3>
+            <p>
+                <em>Colour Scientist</em> @
+                <a href="https://www.waltdisneystudios.com/">The Walt Disney Studios</a>
+            </p>
+            <p>
+                Technical support.
+            </p>
+            <p>
+                <a href="https://github.com/jdvandenberg">Github</a>
+            </p>
+        </div>
         <div class="col"></div>
     </div>
     <div class="mt-5"></div>
