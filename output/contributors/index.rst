@@ -128,6 +128,7 @@
         <div class="col"></div>
     </div>
     <div class="mt-5"></div>
+
     <h1>Acknowledgements</h1>
     <div class="mb-3"></div>
     <div class="row">
@@ -232,6 +233,7 @@
         <div class="col"></div>
     </div>
     <div class="mt-5"></div>
+
     <h1>Special Mentions</h1>
     <div class="mb-3"></div>
     <div class="row">
@@ -244,129 +246,136 @@
             <p>Infinite patience</p>
         </div>
         <div class="col">
-            <h3>Issues & Discussions</h3>
-            <div class="row">
-                <div class="col">
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="https://github.com/JGoldstone">Joseph Goldstone</a>
-                        </li>
-                        <li>
-                            <a href="http://nickporcino.com/">Nick Porcino</a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/invisiblelightimages">Nick Spiker</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/Ampersandme">Ampersandme</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/Chandler">Chandler</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/Edwardlin-zlt">Edwardlin-zlt</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/Floschoe">Floschoe</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/Kunkka1988">Kunkka1988</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/Legendin">Legendin</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/Rob-Welch">Rob-Welch</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/Ron024">Ron024</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/TFiFiE">TFiFiE</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="https://github.com/Willingo">Willingo</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/awehring">awehring</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/brandondube">brandondube</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/briend">briend</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/cclauss">cclauss</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/codycuellar">codycuellar</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/eyeforcolor">eyeforcolor</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/fangjy88">fangjy88</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/foutoucour">foutoucour</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/habemus-papadum">habemus-papadum</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/henczati">henczati</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/jaguarondi">jaguarondi</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="https://github.com/iCagarro">iCagarro</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/iinnovations">iinnovations</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/lensz">lensz</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/naavis">naavis</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/nschloe">nschloe</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/peteroupc">peteroupc</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/shanest">shanest</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/sobotka">sobotka</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/stakemura">stakemura</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/tashdor">tashdor</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/tingeman">tingeman</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/zachlewis">zachlewis</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
         </div>
-        <div class="col"></div>
+        <div class="col">
+        </div>
+    </div>
+    <div class="mt-5"></div>
+
+    <h1>Issues & Discussions</h1>
+    <div class="mb-3"></div>
+    <div class="row">
+        <div class="col">
+            <ul class="list-unstyled">
+                <li>
+                    <a href="https://github.com/JGoldstone">Joseph Goldstone</a>
+                </li>
+                <li>
+                    <a href="http://nickporcino.com/">Nick Porcino</a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/invisiblelightimages">Nick Spiker</a>
+                </li>
+                <li>
+                    <a href="https://github.com/Ampersandme">Ampersandme</a>
+                </li>
+                <li>
+                    <a href="https://github.com/Chandler">Chandler</a>
+                </li>
+                <li>
+                    <a href="https://github.com/Edwardlin-zlt">Edwardlin-zlt</a>
+                </li>
+                <li>
+                    <a href="https://github.com/Floschoe">Floschoe</a>
+                </li>
+                <li>
+                    <a href="https://github.com/Kunkka1988">Kunkka1988</a>
+                </li>
+                <li>
+                    <a href="https://github.com/Legendin">Legendin</a>
+                </li>
+                <li>
+                    <a href="https://github.com/Rob-Welch">Rob-Welch</a>
+                </li>
+                <li>
+                    <a href="https://github.com/Ron024">Ron024</a>
+                </li>
+                <li>
+                    <a href="https://github.com/TFiFiE">TFiFiE</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col">
+            <ul class="list-unstyled">
+                <li>
+                    <a href="https://github.com/Willingo">Willingo</a>
+                </li>
+                <li>
+                    <a href="https://github.com/awehring">awehring</a>
+                </li>
+                <li>
+                    <a href="https://github.com/brandondube">brandondube</a>
+                </li>
+                <li>
+                    <a href="https://github.com/briend">briend</a>
+                </li>
+                <li>
+                    <a href="https://github.com/cclauss">cclauss</a>
+                </li>
+                <li>
+                    <a href="https://github.com/codycuellar">codycuellar</a>
+                </li>
+                <li>
+                    <a href="https://github.com/eyeforcolor">eyeforcolor</a>
+                </li>
+                <li>
+                    <a href="https://github.com/fangjy88">fangjy88</a>
+                </li>
+                <li>
+                    <a href="https://github.com/foutoucour">foutoucour</a>
+                </li>
+                <li>
+                    <a href="https://github.com/habemus-papadum">habemus-papadum</a>
+                </li>
+                <li>
+                    <a href="https://github.com/henczati">henczati</a>
+                </li>
+                <li>
+                    <a href="https://github.com/jaguarondi">jaguarondi</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col">
+            <ul class="list-unstyled">
+                <li>
+                    <a href="https://github.com/iCagarro">iCagarro</a>
+                </li>
+                <li>
+                    <a href="https://github.com/iinnovations">iinnovations</a>
+                </li>
+                <li>
+                    <a href="https://github.com/lensz">lensz</a>
+                </li>
+                <li>
+                    <a href="https://github.com/naavis">naavis</a>
+                </li>
+                <li>
+                    <a href="https://github.com/nschloe">nschloe</a>
+                </li>
+                <li>
+                    <a href="https://github.com/peteroupc">peteroupc</a>
+                </li>
+                <li>
+                    <a href="https://github.com/robbuckley">robbuckley</a>
+                </li>
+                <li>
+                    <a href="https://github.com/shanest">shanest</a>
+                </li>
+                <li>
+                    <a href="https://github.com/sobotka">sobotka</a>
+                </li>
+                <li>
+                    <a href="https://github.com/stakemura">stakemura</a>
+                </li>
+                <li>
+                    <a href="https://github.com/tashdor">tashdor</a>
+                </li>
+                <li>
+                    <a href="https://github.com/tingeman">tingeman</a>
+                </li>
+                <li>
+                    <a href="https://github.com/zachlewis">zachlewis</a>
+                </li>
+            </ul>
+        </div>
     </div>
