@@ -43,7 +43,12 @@
         </li>
         <li class="list-inline-item">
             <a href="https://travis-ci.org/colour-science/colour">
-                <img src="https://img.shields.io/travis/colour-science/colour/develop.svg?style=flat-square" alt="Continuous Integration Status">
+                <img src="https://img.shields.io/travis/colour-science/colour/develop.svg?style=flat-square" alt="Travis Continuous Integration Status">
+            </a>
+        </li>
+        <li class="list-inline-item">
+            <a href="https://dev.azure.com/colour-science/Colour/_build?definitionId=1">
+                <img src="https://img.shields.io/vso/build/colour-science/b0916647-91be-4025-951a-d791f64f3b96/1.svg?style=flat-square&label=azure+build" alt="Azure Devops Continuous Integration Status">
             </a>
         </li>
         <li class="list-inline-item">
