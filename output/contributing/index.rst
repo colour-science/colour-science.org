@@ -364,6 +364,99 @@ Python Style Rules
         a reference or rounded to 8 digits if computed with the API.
     -   Unit tests output numbers are rounded to 8 digits.
     -   Doctests output numbers trimmed with **ellipsis** to 7 digits.
+
+-   We recommend a set of values for use with examples and unit tests.
+    A `Gist <https://gist.github.com/KelSolaar/2ca5f4107a8ae05ec57a55a9ae2f3a13>`_
+    is available with the generating code.
+
+    Priority should be given for CIE Standard Illuminant D Series D65 computed
+    values:
+
+.. code:: text
+
+    Recommended Values for Use in Colour Examples and Unit Tests
+
+    Illuminants "xy"
+
+    D65 : array([0.31270000, 0.32900000])
+    D50 : array([0.34570000, 0.35850000])
+    A : array([0.44757000, 0.40745000])
+    F2 : array([0.37208000, 0.37529000])
+    CC I : array([0.34570000, 0.35850000])
+
+
+    Illuminants "XYZ"
+
+    D65 : array([0.95045593, 1.00000000, 1.08905775])
+    D50 : array([0.96429568, 1.00000000, 0.82510460])
+    A : array([1.09846607, 1.00000000, 0.35582280])
+    F2 : array([0.99144661, 1.00000000, 0.67315942])
+    CC I : array([0.96429568, 1.00000000, 0.82510460])
+
+
+    Illuminants "sRGB - Linear"
+
+    D65 : array([0.99984328, 1.00009915, 1.00007444])
+    D50 : array([1.17629941, 0.97573576, 0.72184683])
+    A : array([1.84507590, 0.82626287, 0.23328926])
+    F2 : array([1.34004461, 0.94312349, 0.56275309])
+    CC I : array([1.17629941, 0.97573576, 0.72184683])
+
+
+    ColorChecker 2005 "XYZ" for "D65"
+
+    red : array([0.20654008, 0.12197225, 0.05136952])
+    green : array([0.14222010, 0.23042768, 0.10495772])
+    blue : array([0.07818780, 0.06157201, 0.28099326])
+    cyan : array([0.14525849, 0.19799077, 0.40724370])
+    yellow : array([0.55676530, 0.58671628, 0.09785344])
+    magenta : array([0.30795495, 0.20024152, 0.31071274])
+    neutral 5 (.70 D) : array([0.18182171, 0.19153665, 0.21009620])
+
+
+    ColorChecker 2005 "XYZ" for "D50"
+
+    red : array([0.21638819, 0.12570000, 0.03847493])
+    green : array([0.14985004, 0.23180000, 0.07900179])
+    blue : array([0.06857861, 0.05750000, 0.21375591])
+    cyan : array([0.13605127, 0.19300000, 0.30938736])
+    yellow : array([0.59342537, 0.59810000, 0.07188823])
+    magenta : array([0.31084193, 0.20090000, 0.23565391])
+    neutral 5 (.70 D) : array([0.18438363, 0.19150000, 0.15918203])
+
+
+    ColorChecker 2005 "XYZ" for "A"
+
+    red : array([0.25330530, 0.13765139, 0.01543307])
+    green : array([0.18673833, 0.23111171, 0.03285972])
+    blue : array([0.05610693, 0.04992541, 0.09429057])
+    cyan : array([0.13623492, 0.18062024, 0.13553082])
+    yellow : array([0.73088905, 0.62177441, 0.02548927])
+    magenta : array([0.34280970, 0.20770559, 0.10214220])
+    neutral 5 (.70 D) : array([0.20988974, 0.19141324, 0.06866269])
+
+
+    ColorChecker 2005 "XYZ" for "F2"
+
+    red : array([0.22545552, 0.12877805, 0.03103172])
+    green : array([0.15832594, 0.23204226, 0.06406107])
+    blue : array([0.06385467, 0.05509729, 0.17506386])
+    cyan : array([0.13364947, 0.18951306, 0.25307753])
+    yellow : array([0.62718558, 0.60525456, 0.05690008])
+    magenta : array([0.31720246, 0.20226568, 0.19243480])
+    neutral 5 (.70 D) : array([0.18952683, 0.19147512, 0.12987334])
+
+
+    ColorChecker 2005 "sRGB - Linear" for "D65"
+
+    red : array([0.48881794, 0.02772625, 0.02707803])
+    green : array([0.08989079, 0.29289931, 0.04456434])
+    blue : array([0.02726813, 0.05028356, 0.21802983])
+    cyan : array([-0.01005238, 0.24304890, 0.29522850])
+    yellow : array([0.96781146, 0.54992950, -0.01297274])
+    magenta : array([0.58099383, 0.08545311, 0.22541647])
+    neutral 5 (.70 D) : array([0.22377162, 0.18717246, 0.13945958])
+
 -   Some commonly used dataset elements have aliases like **'cie\_2\_1931'**
     for **'CIE 1931 2 Degree Standard Observer'**. Those are provided for
     convenience and are reserved for external usage, please use the long form
@@ -409,7 +502,8 @@ using the `APA 6th Edition <http://www.apastyle.org/>`_ citation style:
     Lindbloom, B. (2014). RGB Working Space Information. Retrieved April 11, 2014, from http://www.brucelindbloom.com/WorkingSpaceInfo.html
 
 We are storing all our citations in a database maintained by
-`Mendeley <http://www.mendeley.com/>`_.
+`Mendeley <http://www.mendeley.com/>`_ and it is recommended that you are given
+a citation key.
 
 Commits
 ^^^^^^^
