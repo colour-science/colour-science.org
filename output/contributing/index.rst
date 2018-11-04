@@ -381,6 +381,7 @@ Python Style Rules
     D65 : array([0.31270000, 0.32900000])
     D50 : array([0.34570000, 0.35850000])
     A : array([0.44757000, 0.40745000])
+    E : array([0.33333333, 0.33333333])
     F2 : array([0.37208000, 0.37529000])
     CC I : array([0.34570000, 0.35850000])
 
@@ -391,19 +392,11 @@ Python Style Rules
     D50 : array([0.96429568, 1.00000000, 0.82510460])
     A : array([1.09846607, 1.00000000, 0.35582280])
     F2 : array([0.99144661, 1.00000000, 0.67315942])
+    E : array([1.00000000, 1.00000000, 1.00000000])
     CC I : array([0.96429568, 1.00000000, 0.82510460])
 
 
-    Illuminants "sRGB - Linear"
-
-    D65 : array([0.99984328, 1.00009915, 1.00007444])
-    D50 : array([1.17629941, 0.97573576, 0.72184683])
-    A : array([1.84507590, 0.82626287, 0.23328926])
-    F2 : array([1.34004461, 0.94312349, 0.56275309])
-    CC I : array([1.17629941, 0.97573576, 0.72184683])
-
-
-    ColorChecker 2005 "XYZ" for "D65"
+    ColorChecker 2005 "XYZ" Adapted to "D65"
 
     red : array([0.20654008, 0.12197225, 0.05136952])
     green : array([0.14222010, 0.23042768, 0.10495772])
@@ -414,7 +407,7 @@ Python Style Rules
     neutral 5 (.70 D) : array([0.18182171, 0.19153665, 0.21009620])
 
 
-    ColorChecker 2005 "XYZ" for "D50"
+    ColorChecker 2005 "XYZ" Adapted to "D50"
 
     red : array([0.21638819, 0.12570000, 0.03847493])
     green : array([0.14985004, 0.23180000, 0.07900179])
@@ -425,7 +418,7 @@ Python Style Rules
     neutral 5 (.70 D) : array([0.18438363, 0.19150000, 0.15918203])
 
 
-    ColorChecker 2005 "XYZ" for "A"
+    ColorChecker 2005 "XYZ" Adapted to "A"
 
     red : array([0.25330530, 0.13765139, 0.01543307])
     green : array([0.18673833, 0.23111171, 0.03285972])
@@ -436,7 +429,18 @@ Python Style Rules
     neutral 5 (.70 D) : array([0.20988974, 0.19141324, 0.06866269])
 
 
-    ColorChecker 2005 "XYZ" for "F2"
+    ColorChecker 2005 "XYZ" Adapted to "E"
+
+    red : array([0.21781186, 0.12541048, 0.04697113])
+    green : array([0.15434689, 0.22960951, 0.09620221])
+    blue : array([0.07683480, 0.06006092, 0.25833845])
+    cyan : array([0.14893167, 0.19487065, 0.37427698])
+    yellow : array([0.59874058, 0.59196415, 0.08899633])
+    magenta : array([0.31991986, 0.20277158, 0.28536138])
+    neutral 5 (.70 D) : array([0.19126715, 0.19151544, 0.19291812])
+
+
+    ColorChecker 2005 "XYZ" Adapted to "F2"
 
     red : array([0.22545552, 0.12877805, 0.03103172])
     green : array([0.15832594, 0.23204226, 0.06406107])
@@ -447,15 +451,103 @@ Python Style Rules
     neutral 5 (.70 D) : array([0.18952683, 0.19147512, 0.12987334])
 
 
-    ColorChecker 2005 "sRGB - Linear" for "D65"
+    Luminance "XYZ" Adapted to "D65"
 
-    red : array([0.48881794, 0.02772625, 0.02707803])
-    green : array([0.08989079, 0.29289931, 0.04456434])
-    blue : array([0.02726813, 0.05028356, 0.21802983])
-    cyan : array([-0.01005238, 0.24304890, 0.29522850])
-    yellow : array([0.96781146, 0.54992950, -0.01297274])
-    magenta : array([0.58099383, 0.08545311, 0.22541647])
-    neutral 5 (.70 D) : array([0.22377162, 0.18717246, 0.13945958])
+    red : 12.19722535
+    green : 23.04276781
+    blue : 6.15720079
+    cyan : 19.79907683
+    yellow : 58.67162787
+    magenta : 20.02415243
+    neutral 5 (.70 D) : 19.15366501
+
+
+    Luminance "XYZ" Adapted to "D50"
+
+    red : 12.57000000
+    green : 23.18000000
+    blue : 5.75000000
+    cyan : 19.30000000
+    yellow : 59.81000000
+    magenta : 20.09000000
+    neutral 5 (.70 D) : 19.15000000
+
+
+    Luminance "XYZ" Adapted to "A"
+
+    red : 13.76513858
+    green : 23.11117127
+    blue : 4.99254109
+    cyan : 18.06202404
+    yellow : 62.17744084
+    magenta : 20.77055938
+    neutral 5 (.70 D) : 19.14132354
+
+
+    Luminance "XYZ" Adapted to "E"
+
+    red : 12.54104823
+    green : 22.96095053
+    blue : 6.00609174
+    cyan : 19.48706483
+    yellow : 59.19641488
+    magenta : 20.27715822
+    neutral 5 (.70 D) : 19.15154358
+
+
+    Luminance "XYZ" Adapted to "F2"
+
+    red : 12.87780528
+    green : 23.20422641
+    blue : 5.50972884
+    cyan : 18.95130571
+    yellow : 60.52545632
+    magenta : 20.22656850
+    neutral 5 (.70 D) : 19.14751195
+
+
+    ColorChecker 2005 "sRGB - Linear" under "D65"
+
+    red : array([0.45620519, 0.03081071, 0.04091952])
+    green : array([0.05433312, 0.29879493, 0.07185472])
+    blue : array([0.01862364, 0.05140184, 0.28880425])
+    cyan : array([-0.03667845, 0.24755074, 0.39815738])
+    yellow : array([0.85356364, 0.56517342, 0.01475279])
+    magenta : array([0.53522616, 0.09013008, 0.30472718])
+    neutral 5 (.70 D) : array([0.19002735, 0.19183638, 0.19312568])
+
+
+    ColorChecker 2005 "sRGB - OETF" under "D65"
+
+    red : array([0.70573936, 0.19248268, 0.22354168])
+    green : array([0.25847007, 0.58276101, 0.29718877])
+    blue : array([0.14565317, 0.25130933, 0.57378757])
+    cyan : array([-0.47388561, 0.53467479, 0.66380090])
+    yellow : array([0.93264474, 0.77675390, 0.12708884])
+    magenta : array([0.75809823, 0.33206288, 0.58800664])
+    neutral 5 (.70 D) : array([0.47315229, 0.47524148, 0.47672343])
+
+
+    ColorChecker 2005 "Munsell Value"
+
+    red : 4.08244375
+    green : 5.39132685
+    blue : 2.97619312
+    cyan : 5.06675596
+    yellow : 8.04387670
+    magenta : 5.10225899
+    neutral 5 (.70 D) : 4.98656896
+
+
+    ColorChecker 2005 "ASTM D1535-08e1 Luminance"
+
+    red : 12.23634268
+    green : 22.89399987
+    blue : 6.29022535
+    cyan : 19.86282567
+    yellow : 58.37987916
+    magenta : 20.18160934
+    neutral 5 (.70 D) : 19.15426585
 
 -   Some commonly used dataset elements have aliases like **'cie\_2\_1931'**
     for **'CIE 1931 2 Degree Standard Observer'**. Those are provided for
