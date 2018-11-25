@@ -131,7 +131,7 @@ here we will leverage the *PyCharm* integration.
 -   Add a new `Vagrant <https://www.vagrantup.com/>`_ box to
     `PyCharm <http://www.jetbrains.com/pycharm/>`_ in the :code:`Boxes` tab
     and use the following image:
-    `bento/ubuntu-16.04 <https://vagrantcloud.com/bento/ubuntu-16.04>`_
+    `bento/ubuntu-16.04 <https://vagrantcloud.com/bento/boxes/ubuntu-16.04/versions/201808.24.0/providers/vmware_desktop.box>`_
 
 -   Add the `vagrant-fabric <https://github.com/wutali/vagrant-fabric>`_
     plugin to `PyCharm <http://www.jetbrains.com/pycharm/>`_ in the
