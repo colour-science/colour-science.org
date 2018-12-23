@@ -358,7 +358,7 @@ Python Style Rules
 -   Numbers in the API are usually rounded as follows:
 
     -   Dataset numbers are kept as is if they are from a known reference or
-        rounded to 15 digits if computed with the API (spectral power
+        rounded to 15 digits if computed with the API (spectral
         distributions, chromaticity coordinates, etc...).
     -   Unit tests and doctests input numbers are kept as is if they are from
         a reference or rounded to 8 digits if computed with the API.

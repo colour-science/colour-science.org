@@ -13,16 +13,24 @@ deploying:
 -   `Python 2.7 <https://www.python.org/download/releases/>`_ and
     `Python 3.5 <https://www.python.org/download/releases/>`_
 -   `NumPy <http://www.numpy.org/>`_
--   `Matplotlib <http://matplotlib.org/>`_
 -   `SciPy <http://www.scipy.org/>`_
--   `IPython <http://ipython.org/notebook.html>`_
--   `Nose <https://nose.readthedocs.io/en/latest>`_
--   `Coverage <https://pypi.python.org/pypi/coverage>`_
--   `Flake8 <https://pypi.python.org/pypi/flake8>`_
+-   `Six>=1.10.0 <https://pypi.python.org/pypi/six>`_
+-   `OpenImageIO <http://openimageio.org>`_
+-   `Pandas <https://pandas.pydata.org/>`_
+-   `Matplotlib <http://matplotlib.org/>`_
 -   `Sphinx <https://sphinx-doc.org>`_
+-   `sphinxcontrib-bibtex <https://sphinxcontrib-bibtex.readthedocs.io/>`_
+-   `sphinx_rtd_theme <https://github.com/rtfd/sphinx_rtd_theme/>`_
+-   `Coverage.py <https://pypi.python.org/pypi/coverage>`_
+-   `Flake8 <https://pypi.python.org/pypi/flake8>`_
+-   `mock <https://pypi.python.org/pypi/mock>`_
+-   `nose <https://nose.readthedocs.io/en/latest>`_
+-   `Invoke <http://www.pyinvoke.org/>`_
+-   `restructuredtext-lint <https://github.com/twolfson/restructuredtext-lint>`_
+-   `twine <https://pypi.python.org/pypi/twine>`_
+-   `YAPF <https://github.com/google/yapf>`_
 -   `Nikola <https://getnikola.com/>`_
 -   `Apache 2.2 <http://httpd.apache.org>`_
--   `OpenImageIO <http://openimageio.org>`_
 -   ... and too many things I just don't remember!
 
 I decided to see how I could make that setup a bit more portable and easier to

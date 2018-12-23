@@ -43,18 +43,18 @@ Documentation Building Dependencies
 Unit Tests Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^
 
--  `Coverage>=3.7.1 <https://pypi.python.org/pypi/coverage>`_
+-  `Coverage.py>=3.7.1 <https://pypi.python.org/pypi/coverage>`_
 -  `Flake8>=2.1.0 <https://pypi.python.org/pypi/flake8>`_
--  `Mock>=1.3.4 <https://pypi.python.org/pypi/mock>`_
--  `Nose <https://nose.readthedocs.io/en/latest>`_
+-  `mock>=1.3.4 <https://pypi.python.org/pypi/mock>`_
+-  `nose <https://nose.readthedocs.io/en/latest>`_
 
 Development Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  `Invoke <http://www.pyinvoke.org/>`_
 -  `restructuredtext-lint <https://github.com/twolfson/restructuredtext-lint>`_
--  `Twine <https://pypi.python.org/pypi/twine>`_
--  `Yapf <https://github.com/google/yapf>`_
+-  `twine <https://pypi.python.org/pypi/twine>`_
+-  `YAPF <https://github.com/google/yapf>`_
 
 Continuum Analytics Anaconda
 ----------------------------

@@ -209,6 +209,16 @@
         </div>
         <div class="w-100"></div>
         <div class="col">
+            <h3>Joseph Goldstone</h3>
+            <p>
+                <em>Image Science Engineer</em> @ <a href="https://www.arri.com">ARRI</a>
+            </p>
+            <p>Technical support.</p>
+            <p>
+                <a href="https://github.com/JGoldstone">Github</a>
+            </p>
+        </div>
+        <div class="col">
             <h3>Yoshi Ohno</h3>
             <p>
                 <em>Mathematician &amp; Colour Scientist</em>
@@ -230,7 +240,6 @@
                 <a href="http://www.poynton.com/">Website</a>
             </p>
         </div>
-        <div class="col"></div>
     </div>
     <div class="mt-5"></div>
 
@@ -258,13 +267,40 @@
         <div class="col">
             <ul class="list-unstyled">
                 <li>
-                    <a href="https://github.com/JGoldstone">Joseph Goldstone</a>
+                    Ryan Bass
+                </li>
+                <li>
+                    Giuseppe Di Guglielmo
+                </li>
+                <li>
+                    Vlad Enache
+                </li>
+                <li>
+                    Christophe Go
+                </li>
+                <li>
+                    Michal Krompiec
+                </li>
+                <li>
+                    Max Marrone
+                </li>
+                <li>
+                    Marie Meyer
                 </li>
                 <li>
                     <a href="http://nickporcino.com/">Nick Porcino</a>
                 </li>
                 <li>
+                    Iman Sajedian
+                </li>
+                <li>
                     <a href="https://www.facebook.com/invisiblelightimages">Nick Spiker</a>
+                </li>
+                <li>
+                    Albert Szostkiewicz
+                </li>
+                <li>
+                    Vishal Vashistha
                 </li>
                 <li>
                     <a href="https://github.com/Ampersandme">Ampersandme</a>
@@ -275,6 +311,10 @@
                 <li>
                     <a href="https://github.com/Edwardlin-zlt">Edwardlin-zlt</a>
                 </li>
+            </ul>
+        </div>
+        <div class="col">
+            <ul class="list-unstyled">
                 <li>
                     <a href="https://github.com/Floschoe">Floschoe</a>
                 </li>
@@ -293,10 +333,6 @@
                 <li>
                     <a href="https://github.com/TFiFiE">TFiFiE</a>
                 </li>
-            </ul>
-        </div>
-        <div class="col">
-            <ul class="list-unstyled">
                 <li>
                     <a href="https://github.com/Willingo">Willingo</a>
                 </li>
@@ -324,6 +360,10 @@
                 <li>
                     <a href="https://github.com/foutoucour">foutoucour</a>
                 </li>
+            </ul>
+        </div>
+        <div class="col">
+            <ul class="list-unstyled">
                 <li>
                     <a href="https://github.com/habemus-papadum">habemus-papadum</a>
                 </li>
@@ -333,10 +373,6 @@
                 <li>
                     <a href="https://github.com/jaguarondi">jaguarondi</a>
                 </li>
-            </ul>
-        </div>
-        <div class="col">
-            <ul class="list-unstyled">
                 <li>
                     <a href="https://github.com/iCagarro">iCagarro</a>
                 </li>
@@ -372,6 +408,9 @@
                 </li>
                 <li>
                     <a href="https://github.com/tingeman">tingeman</a>
+                </li>
+                <li>
+                    <a href="https://github.com/tashdor">totyped</a>
                 </li>
                 <li>
                     <a href="https://github.com/zachlewis">zachlewis</a>
