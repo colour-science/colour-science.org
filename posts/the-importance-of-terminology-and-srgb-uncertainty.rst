@@ -137,10 +137,13 @@ along its *Y* *Luminance* axis.
 Whitepoint
 ^^^^^^^^^^
 
-The `whitepoint <https://en.wikipedia.org/wiki/White_point>`_  defines the white
-colour for a given *RGB colourspace*. Any set of colours lying on the *neutral
-axis* passing through the **whitepoint**, no matter their *Luminance*, will be
-neutral to that *RGB colourspace*.
+The `whitepoint <https://en.wikipedia.org/wiki/White_point>`_  is defined by the
+`CIE <http://eilv.cie.co.at/term/1430>`_ as:
+
+    Achromatic reference stimulus in a chromaticity diagram that corresponds to the stimulus that produces an image area that has the perception of white.
+
+Any set of colours lying on the *neutral axis* passing through the **whitepoint**,
+no matter their *Luminance*, will be neutral to that *RGB colourspace*.
 
 .. figure:: /images/CIE_xyY_sRGB.png
 
