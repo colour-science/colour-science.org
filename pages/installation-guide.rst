@@ -55,7 +55,7 @@ Development Dependencies
 -  `Invoke <http://www.pyinvoke.org/>`_
 -  `restructuredtext-lint <https://github.com/twolfson/restructuredtext-lint>`_
 -  `twine <https://pypi.python.org/pypi/twine>`_
--  `YAPF <https://github.com/google/yapf>`_
+-  `YAPF=0.23.0 <https://github.com/google/yapf>`_
 
 Continuum Analytics Anaconda
 ----------------------------
