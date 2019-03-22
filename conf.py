@@ -185,14 +185,6 @@ NAVIGATION_LINKS = {
         ),
         (
             (
-                ('/blog', 'Posts'),
-                ("/archive.html", "Archive"),
-                ("/categories/", "Tags"),
-            ),
-            'Blog',
-        ),
-        (
-            (
                 ('mailto:colour-science@googlegroups.com', 'Contact Us'),
                 ('https://gitter.im/colour-science/colour', 'Gitter'),
                 ('https://groups.google.com/forum/#!forum/colour-science',
@@ -204,6 +196,14 @@ NAVIGATION_LINKS = {
                 ('/rss.xml', 'RSS Feed'),
             ),
             'Social',
+        ),
+        (
+            (
+                ('/blog', 'Posts'),
+                ("/archive.html", "Archive"),
+                ("/categories/", "Tags"),
+            ),
+            'Blog',
         ),
     ),
 }
