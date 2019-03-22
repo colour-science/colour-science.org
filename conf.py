@@ -148,9 +148,11 @@ NAVIGATION_LINKS = {
         (
             (
                 ('/installation-guide', 'Installation Guide'),
-                ('/tutorial', 'Tutorial'),
+                ('https://colour.readthedocs.io/en/develop/tutorial.html',
+                 'Tutorial'),
                 ('/api-reference', 'API Reference'),
-                ('https://nbviewer.jupyter.org/github/colour-science/colour-notebooks/blob/master/notebooks/colour.ipynb',
+                ('https://nbviewer.jupyter.org/github/colour-science/'
+                 'colour-notebooks/blob/master/notebooks/colour.ipynb',
                  'Jupyter Notebooks'),
                 ('/features', 'Features'),
                 ('/history', 'History'),
@@ -176,8 +178,8 @@ NAVIGATION_LINKS = {
                 ('/colour-playground', 'Colour - Playground'),
                 ('/colour-spectroscope', 'Colour - Spectroscope'),
                 ('/experiments', 'Experiments'),
-                ('https://colab.research.google.com/drive/1Im9J7or9qyClQCv5sPHmKdyiQbG4898K',
-                 'Google Colab Notebook'),
+                ('https://colab.research.google.com/drive/'
+                 '1Im9J7or9qyClQCv5sPHmKdyiQbG4898K', 'Google Colab Notebook'),
             ),
             'Projects',
         ),

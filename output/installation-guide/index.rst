@@ -51,7 +51,7 @@ Unit Tests Dependencies
 Development Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  `biblib <https://github.com/colour-science/biblib/>`_
+-  `biblib-simple <https://github.com/colour-science/biblib>`_
 -  `Invoke <http://www.pyinvoke.org/>`_
 -  `restructuredtext-lint <https://github.com/twolfson/restructuredtext-lint>`_
 -  `twine <https://pypi.python.org/pypi/twine>`_
