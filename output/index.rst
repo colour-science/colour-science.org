@@ -31,10 +31,10 @@
             </div>
             <div class="col">
                 <a class="btn btn-secondary btn-lg btn-block"
-                    href="https://github.com/colour-science/colour/archive/v0.3.11.zip"
+                    href="https://github.com/colour-science/colour/archive/v0.3.12.zip"
                     role="button">
                     <span class="fa fa-download">&nbsp;</span>
-                    Colour 0.3.11 Alpha
+                    Colour 0.3.12 Alpha
                 </a>
             </div>
         </div>

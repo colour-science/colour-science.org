@@ -136,8 +136,8 @@ NAVIGATION_LINKS = {
         (
             (
                 ('https://github.com/colour-science/colour', 'Source Code'),
-                ('https://github.com/colour-science/colour/archive/v0.3.11.zip',
-                 'Latest (v0.3.11)'),
+                ('https://github.com/colour-science/colour/archive/v0.3.12.zip',
+                 'Latest (v0.3.12)'),
                 ('https://github.com/colour-science/colour/releases',
                  'All Releases'),
                 ('https://pypi.python.org/pypi/colour-science/', 'Pypi'),
@@ -149,7 +149,10 @@ NAVIGATION_LINKS = {
             (
                 ('/installation-guide', 'Installation Guide'),
                 ('https://colour.readthedocs.io/en/develop/tutorial.html',
-                 'Tutorial'),
+                 'Static Tutorial'),
+                ('https://colab.research.google.com/drive/'
+                 '1Im9J7or9qyClQCv5sPHmKdyiQbG4898K',
+                 'Interactive Tutorial'),
                 ('/api-reference', 'API Reference'),
                 ('https://nbviewer.jupyter.org/github/colour-science/'
                  'colour-notebooks/blob/master/notebooks/colour.ipynb',
@@ -173,13 +176,12 @@ NAVIGATION_LINKS = {
                 ('http://awesome-colour.org/', 'Awesome Colour'),
                 ('/colour-demosaicing', 'Colour - Demosaicing'),
                 ('/colour-hdri', 'Colour - HDRI'),
+                ('/colour-checker-detection', 'Colour - Checker Detection'),
                 ('/colour-maya', 'Colour - Maya'),
                 ('/colour-nuke', 'Colour - Nuke'),
                 ('/colour-playground', 'Colour - Playground'),
                 ('/colour-spectroscope', 'Colour - Spectroscope'),
-                ('/experiments', 'Experiments'),
-                ('https://colab.research.google.com/drive/'
-                 '1Im9J7or9qyClQCv5sPHmKdyiQbG4898K', 'Google Colab Notebook'),
+                ('/experiments', 'Experiments')
             ),
             'Projects',
         ),

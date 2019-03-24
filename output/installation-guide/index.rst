@@ -17,7 +17,7 @@ Primary Dependencies
 ^^^^^^^^^^^^^^^^^^^^
 
 -  `Python>=2.7 <https://www.python.org/download/releases/>`_ or
-   `Python>=3.6 <https://www.python.org/download/releases/>`_
+   `Python>=3.7 <https://www.python.org/download/releases/>`_
 -  `NumPy>=1.8.1 <http://www.numpy.org/>`_
 -  `SciPy>=0.16.0 <http://www.scipy.org/>`_
 -  `Six>=1.10.0 <https://pypi.python.org/pypi/six>`_

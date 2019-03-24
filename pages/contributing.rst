@@ -800,7 +800,7 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                                         </li>
                                     </ul>
                                     <p>A typical commit message for version raise is as follows:</p>
-                                    <pre class="literal-block">Raise package version to 0.3.9.</pre>
+                                    <pre class="literal-block">Raise package version to 0.3.11.</pre>
                                 </dd>
                             </dl>
                         </li>
@@ -836,13 +836,15 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                             <div class="checkbox">
                                 <input type="checkbox" value="" />
                                 <label class="strikethrough">Run the
-                                    <em>tag</em> task: It will prompt for tagging the repository accordingly to defined version using
+                                    <em>tag</em> task: It should prompt for tagging the repository accordingly to the defined version using
                                     <a class="reference external" href="https://danielkummer.github.io/git-flow-cheatsheet/">git-flow</a>.
                                 </label>
                             </div>
                             <pre class="code shell">$ invoke tag</pre>
                             <p>A typical tag message for a <em>Colour</em> version is as follows:</p>
                             <pre class="literal-block">Create Colour v0.3.11 version.</pre>
+                            In the eventuality where the tag creation failed, it might be created manually as follows:
+                            <pre class="code shell">$ git tag -a -m "Create Colour v0.3.11 version." v0.3.11</pre>
                         </li>
                     </ul>
                 </dd>
@@ -980,15 +982,6 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                         </dl>
                     </ul>
                     <ul style="list-style-type: none;">
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value="" />
-                                <label class="strikethrough">Run
-                                    <a class="reference external" href="https://github.com/colour-science/colour-science.org/blob/master/pages/tutorial.ipynb">tutorial.ipynb</a>
-                                    Jupyter notebook
-                                </label>
-                            </div>
-                        </li>
                         <li>
                             <div class="checkbox">
                                 <input type="checkbox" value="" />
