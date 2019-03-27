@@ -150,8 +150,9 @@ NAVIGATION_LINKS = {
                 ('/installation-guide', 'Installation Guide'),
                 ('https://colour.readthedocs.io/en/develop/tutorial.html',
                  'Static Tutorial'),
-                ('https://colab.research.google.com/drive/'
-                 '1Im9J7or9qyClQCv5sPHmKdyiQbG4898K',
+                ('https://colab.research.google.com/notebook#fileId='
+                 '1Im9J7or9qyClQCv5sPHmKdyiQbG4898K&'
+                 'offline=true&sandboxMode=true',
                  'Interactive Tutorial'),
                 ('/api-reference', 'API Reference'),
                 ('https://nbviewer.jupyter.org/github/colour-science/'
