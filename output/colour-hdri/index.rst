@@ -37,4 +37,4 @@ Examples
 Downloads
 ^^^^^^^^^
 
--   `colour-hdri Github Repository <http://github.com/colour-science/colour-hdri>`_
+-   `colour-hdri Github Repository <https://github.com/colour-science/colour-hdri>`_

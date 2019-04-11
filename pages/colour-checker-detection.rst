@@ -33,4 +33,4 @@ Examples
 Downloads
 ^^^^^^^^^
 
--   `colour-checker-detection Github Repository <http://github.com/colour-science/colour-checker-detection>`_
+-   `colour-checker-detection Github Repository <https://github.com/colour-science/colour-checker-detection>`_

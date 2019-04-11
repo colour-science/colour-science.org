@@ -25,4 +25,4 @@ Examples
 Downloads
 ^^^^^^^^^
 
--   `colour-spectroscope Github Repository <http://github.com/colour-science/colour-spectroscope>`_
+-   `colour-spectroscope Github Repository <https://github.com/colour-science/colour-spectroscope>`_

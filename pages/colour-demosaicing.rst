@@ -36,4 +36,4 @@ Examples
 Downloads
 ^^^^^^^^^
 
--   `colour-demosaicing Github Repository <http://github.com/colour-science/colour-demosaicing>`_
+-   `colour-demosaicing Github Repository <https://github.com/colour-science/colour-demosaicing>`_

@@ -145,7 +145,7 @@ Github
 ------
 
 Alternatively, you can also install directly from
-`Github <http://github.com/colour-science/colour>`_ source repository:
+`Github <https://github.com/colour-science/colour>`_ source repository:
 
 .. code:: shell
 

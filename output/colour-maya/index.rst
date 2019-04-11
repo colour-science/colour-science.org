@@ -32,4 +32,4 @@ The wide *ACES RGB* colourspace against *sRGB* colourspace:
 Downloads
 ^^^^^^^^^
 
--   `colour-maya Github Repository <http://github.com/colour-science/colour-maya>`_
+-   `colour-maya Github Repository <https://github.com/colour-science/colour-maya>`_
