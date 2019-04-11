@@ -113,6 +113,15 @@
             </p>
         </div>
         <div class="col">
+            <h3>Shriramana Sharma</h3>
+            <p>
+                Documentation improvements.
+            </p>
+            <p>
+                <a href="https://github.com/jamadagni">Github</a>
+            </p>
+        </div>
+        <div class="col">
             <h3>Jean D. Vandenberg</h3>
             <p>
                 <em>Colour Scientist</em> @
@@ -125,7 +134,6 @@
                 <a href="https://github.com/jdvandenberg">Github</a>
             </p>
         </div>
-        <div class="col"></div>
     </div>
     <div class="mt-5"></div>
 
