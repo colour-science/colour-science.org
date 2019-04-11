@@ -150,7 +150,7 @@ like would help its implementation: publications, wikipedia article, etc...
 
 If there is an implementation existing in another language, we will be most
 likely be able to port it although the licence must be compatible with the
-`New BSD License <http://opensource.org/licenses/BSD-3-Clause>`_ terms.
+`New BSD License <https://opensource.org/licenses/BSD-3-Clause>`_ terms.
 
 We are also running `Matlab <http://www.mathworks.fr/products/matlab/>`_, so
 don't hesitate to provide snippets for it if you have functions you would like

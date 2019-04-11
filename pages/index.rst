@@ -41,7 +41,7 @@
 
         <p class="lead">
             It is open source and freely available under the
-            <a href="http://opensource.org/licenses/BSD-3-Clause">New BSD License</a> terms.
+            <a href="https://opensource.org/licenses/BSD-3-Clause">New BSD License</a> terms.
         </p>
 
         <p class="lead">

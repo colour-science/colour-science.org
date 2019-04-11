@@ -197,14 +197,14 @@ are using <em>macOs</em>, although it should pretty much be platform agnostic.</
 <li>On your local filesystem, in your development workspace, create a
 directory <code>colour-science</code> and <code>cd</code> into it:</li>
 </ul>
-<pre class="code shell"><a name="rest_code_4546d8b31e6141adb91883d06fedeea1-1"></a>mkdir colour-science
-<a name="rest_code_4546d8b31e6141adb91883d06fedeea1-2"></a><span class="nb">cd</span> colour-science
+<pre class="code shell"><a name="rest_code_1aa7e92658cb434dbe23da5388a5c17f-1"></a>mkdir colour-science
+<a name="rest_code_1aa7e92658cb434dbe23da5388a5c17f-2"></a><span class="nb">cd</span> colour-science
 </pre>
 <ul class="simple">
 <li>Clone the <a class="reference external" href="https://github.com/colour-science/colour-vagrant">colour-vagrant</a>
 repository:</li>
 </ul>
-<pre class="code shell"><a name="rest_code_6617dc7448614689963b7cacff6ba926-1"></a>git clone git://github.com/colour-science/colour-vagrant.git
+<pre class="code shell"><a name="rest_code_ae176c9f99304b849c633dbbf7b02753-1"></a>git clone git://github.com/colour-science/colour-vagrant.git
 </pre>
 <ul>
 <li>
@@ -232,7 +232,7 @@ environment. Initially, I was provisioning with <a class="reference external" hr
 It was cumbersome to use, so I decided to go for <a class="reference external" href="http://www.fabfile.org/">Fabric</a>
 and the <a class="reference external" href="https://github.com/wutali/vagrant-fabric">vagrant-fabric</a>
 plugin:</p>
-<pre class="code shell"><a name="rest_code_fdec3099f1d3492ab1449dd2f7dc73f0-1"></a>pip install fabric
+<pre class="code shell"><a name="rest_code_ddb3cc67fc764f7599bb00b3a049d3e4-1"></a>pip install fabric
 </pre>
 </li>
 </ul>
@@ -311,13 +311,13 @@ cloned into the <code>colour-science</code> directory right next to the
 <li>Remote Python environments installed into the virtual machine at the
 following location with all the dependencies needed:</li>
 </ul>
-<pre class="code shell"><a name="rest_code_fa7971d213a042d7bff9fcb3714e1d8d-1"></a>vagrant@vagrant:~$ <span class="nb">cd</span> /home/vagrant/miniconda/envs/
-<a name="rest_code_fa7971d213a042d7bff9fcb3714e1d8d-2"></a>vagrant@vagrant:~/miniconda/envs$ ll
-<a name="rest_code_fa7971d213a042d7bff9fcb3714e1d8d-3"></a>total <span class="m">16</span>
-<a name="rest_code_fa7971d213a042d7bff9fcb3714e1d8d-4"></a>drwxrwxr-x  <span class="m">4</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:12 ./
-<a name="rest_code_fa7971d213a042d7bff9fcb3714e1d8d-5"></a>drwxrwxr-x <span class="m">13</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:02 ../
-<a name="rest_code_fa7971d213a042d7bff9fcb3714e1d8d-6"></a>drwxrwxr-x <span class="m">20</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:09 python2.7/
-<a name="rest_code_fa7971d213a042d7bff9fcb3714e1d8d-7"></a>drwxrwxr-x <span class="m">20</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:30 python3.5/
+<pre class="code shell"><a name="rest_code_a801cd9412734ddfb85879732ea382f0-1"></a>vagrant@vagrant:~$ <span class="nb">cd</span> /home/vagrant/miniconda/envs/
+<a name="rest_code_a801cd9412734ddfb85879732ea382f0-2"></a>vagrant@vagrant:~/miniconda/envs$ ll
+<a name="rest_code_a801cd9412734ddfb85879732ea382f0-3"></a>total <span class="m">16</span>
+<a name="rest_code_a801cd9412734ddfb85879732ea382f0-4"></a>drwxrwxr-x  <span class="m">4</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:12 ./
+<a name="rest_code_a801cd9412734ddfb85879732ea382f0-5"></a>drwxrwxr-x <span class="m">13</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:02 ../
+<a name="rest_code_a801cd9412734ddfb85879732ea382f0-6"></a>drwxrwxr-x <span class="m">20</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:09 python2.7/
+<a name="rest_code_a801cd9412734ddfb85879732ea382f0-7"></a>drwxrwxr-x <span class="m">20</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:30 python3.5/
 </pre>
 <ul class="simple">
 <li>The <strong>colour-science.org</strong> website served from the virtual machine at
@@ -357,20 +357,20 @@ are as follows:</p>
 <code>PyCharm ---&gt; Tools Start SSH session...</code> menu item.</p>
 <p>However if you want to be able to export the display and see the figures you
 will have to manually <code>ssh</code> into the virtual machine:</p>
-<pre class="code shell"><a name="rest_code_fd0c440835234d899daf24ecc16d0585-1"></a>ssh -X vagrant@192.168.32.64
+<pre class="code shell"><a name="rest_code_853500d0477a4aa1a9df68b3a47f832b-1"></a>ssh -X vagrant@192.168.32.64
 </pre>
 <p>Password is <code>vagrant</code>.</p>
 <p>You will also need to add the virtual machine to the X11 hosts by issuing the
 following command on the <em>macOs</em> host:</p>
-<pre class="code shell"><a name="rest_code_d6b5004004174ba4a6ef2afe4e0fcc02-1"></a>xhost + <span class="m">192</span>.168.32.64
+<pre class="code shell"><a name="rest_code_4abd8188e08d4f5bbe52f6db7cfd8ee2-1"></a>xhost + <span class="m">192</span>.168.32.64
 </pre>
 </div>
 <div class="section" id="jupyter-notebooks">
 <h3>Jupyter Notebooks</h3>
 <p>The <a class="reference external" href="http://ipython.org/notebook.html">Jupyter Notebooks</a> server is started
 as follows:</p>
-<pre class="code shell"><a name="rest_code_ee40a29c4ea64f3f81f90c09b67c0456-1"></a><span class="nb">cd</span> /colour-science/colour-notebooks/notebooks
-<a name="rest_code_ee40a29c4ea64f3f81f90c09b67c0456-2"></a>ipython notebook --pylab<span class="o">=</span>inline --ip<span class="o">=</span><span class="m">0</span>.0.0.0
+<pre class="code shell"><a name="rest_code_a2bcd963189c42c189942ed24f223927-1"></a><span class="nb">cd</span> /colour-science/colour-notebooks/notebooks
+<a name="rest_code_a2bcd963189c42c189942ed24f223927-2"></a>ipython notebook --pylab<span class="o">=</span>inline --ip<span class="o">=</span><span class="m">0</span>.0.0.0
 </pre>
 <p>Then you can access it on the <em>macOs</em> host at the following url:
 <a class="reference external" href="http://localhost:8888/">http://localhost:8888/</a></p>
@@ -380,10 +380,10 @@ as follows:</p>
 <p>You can activate the remote Python environments in the virtual machine by
 issuing those commands:</p>
 <p>For <strong>python2.7</strong>:</p>
-<pre class="code shell"><a name="rest_code_1efe2225aff74b54a831d51e95c23ac0-1"></a><span class="nb">source</span> activate python2.7
+<pre class="code shell"><a name="rest_code_33ed8ba2d279439599b21c94c5bcb97f-1"></a><span class="nb">source</span> activate python2.7
 </pre>
 <p>For <strong>python3.5</strong>:</p>
-<pre class="code shell"><a name="rest_code_cea394fdecd44957948d433d8a65c2ba-1"></a><span class="nb">source</span> activate python3.5
+<pre class="code shell"><a name="rest_code_da1504ec7126432ca37ff42c1b3e0437-1"></a><span class="nb">source</span> activate python3.5
 </pre>
 </div>
 </div>
