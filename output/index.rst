@@ -34,7 +34,7 @@
                     href="https://github.com/colour-science/colour/archive/v0.3.13.zip"
                     role="button">
                     <span class="fa fa-download">&nbsp;</span>
-                    Colour 0.3.12 Alpha
+                    Colour 0.3.13 Alpha
                 </a>
             </div>
         </div>

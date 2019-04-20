@@ -12,8 +12,8 @@ is available!
 
 .. TEASER_END
 
-This release is mainly a maintenance release addressing regressions introduced
-into the *CIECAM02* and *CAM16* implementations.
+This is mainly a maintenance release addressing regressions introduced into the
+*CIECAM02* and *CAM16* implementations.
 
 Head to the `releases page <https://github.com/colour-science/colour/releases/tag/v0.3.13>`_
 for complete details.

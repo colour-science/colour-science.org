@@ -136,8 +136,8 @@ NAVIGATION_LINKS = {
         (
             (
                 ('https://github.com/colour-science/colour', 'Source Code'),
-                ('https://github.com/colour-science/colour/archive/v0.3.12.zip',
-                 'Latest (v0.3.12)'),
+                ('https://github.com/colour-science/colour/archive/v0.3.13.zip',
+                 'Latest (v0.3.13)'),
                 ('https://github.com/colour-science/colour/releases',
                  'All Releases'),
                 ('https://pypi.python.org/pypi/colour-science/', 'Pypi'),
