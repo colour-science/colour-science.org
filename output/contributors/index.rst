@@ -134,6 +134,17 @@
                 <a href="https://github.com/jdvandenberg">Github</a>
             </p>
         </div>
+        <div class="w-100"></div>
+        <div class="col">
+            <h3>Troy James Sobotka</h3>
+            <p>
+                <em>Motion Picture Technician</em>
+            <p>
+                <a href="mailto:troy.sobotka@gmail.com">Mailing List</a>
+            </p>
+        </div>
+        <div class="col"></div>
+        <div class="col"></div>
     </div>
     <div class="mt-5"></div>
 
@@ -248,17 +259,6 @@
                 <a href="http://www.poynton.com/">Website</a>
             </p>
         </div>
-        <div class="w-100"></div>
-        <div class="col">
-            <h3>Troy James Sobotka</h3>
-            <p>
-                <em>Motion Picture Technician</em>
-            <p>
-                <a href="mailto:troy.sobotka@gmail.com">Mailing List</a>
-            </p>
-        </div>
-        <div class="col"></div>
-        <div class="col"></div>
     </div>
     <div class="mt-5"></div>
 
