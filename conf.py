@@ -147,6 +147,7 @@ NAVIGATION_LINKS = {
         ),
         (
             (
+                ('/code-of-conduct', 'Code of Conduct'),
                 ('/installation-guide', 'Installation Guide'),
                 ('https://colour.readthedocs.io/en/develop/tutorial.html',
                  'Static Tutorial'),
