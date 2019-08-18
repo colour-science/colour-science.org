@@ -3,13 +3,13 @@ function fancydates(fanciness, date_format) {
         return;
     }
 
-    var dates = document.querySelectorAll('.dt-published, .dt-updated, .listdate');
+    dates = document.getElementsByClassName('dt-published');
 
-    var l = dates.length;
+    i = 0;
+    l = dates.length;
 
-    for (var i = 0; i < l; i++) {
-        var d = moment(dates[i].attributes.datetime.value);
-        var o;
+    for (i = 0; i < l; i++) {
+        d = moment(dates[i].attributes.datetime.value);
         if (fanciness == 1) {
             o = d.local().format(date_format);
         } else {

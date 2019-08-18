@@ -139,6 +139,10 @@
             <h3>Troy James Sobotka</h3>
             <p>
                 <em>Motion Picture Technician</em>
+            </p>
+            <p>
+                F-Gamut and Fuji F-Log support.
+            </p>
             <p>
                 <a href="mailto:troy.sobotka@gmail.com">Mailing List</a>
             </p>
