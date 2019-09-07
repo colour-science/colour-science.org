@@ -143,7 +143,10 @@ back about the missing descri">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     Colour Developers
             </span></p>
-            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2015-12-05T00:17:30Z" itemprop="datePublished" title="2015-12-05 00:17">2015-12-05 00:17</time></a></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2015-12-05T00:17:30Z" itemprop="datePublished" title="2015-12-05 00:17">2015-12-05 00:17</time></a>
+            </p>
                 <p class="commentline">
         
     <a href="#disqus_thread" data-disqus-identifier="cache/posts/the-importance-of-terminology-and-srgb-uncertainty.html">Comments</a>
@@ -170,13 +173,12 @@ set of <strong>primaries</strong>, <strong>whitepoint</strong> and <strong>trans
 <blockquote>
 <em>sRGB is a slight tweaking of the simple gamma 2.2 curve.</em>
 </blockquote>
-<p>While this depiction of <em>sRGB</em> colourspace <strong>EOTF</strong>
-(Electro-optical transfer function) is exact, it may be confusing for
-non experts by omitting an explicit emphasis of the components of an <em>RGB</em>
-colourspace.</p>
+<p>While this depiction of <em>sRGB</em> colourspace <strong>Electro-optical transfer function</strong>
+(<strong>EOTF</strong>) is exact, it may be confusing for non experts by omitting an explicit
+emphasis of the components of an <em>RGB</em> colourspace.</p>
 <p>For people experienced with colour theory and science, the post title and the
-mention of <strong>gamma</strong> indicates that the article will likely only involves
-<em>sRGB</em> colourspace <strong>EOTF</strong> and <strong>OETF</strong> (Opto-electronic transfer function).</p>
+mention of <strong>gamma</strong> indicates that the article will likely only involves the
+<em>sRGB</em> colourspace <strong>EOTF</strong> and its inverse.</p>
 <div class="alert alert-dismissible alert-info line-block">
 <div class="line"><strong>Note</strong></div>
 <div class="line"><br></div>
@@ -230,10 +232,10 @@ quoted in its entirety for reference:</p>
 green and blue) such that CIE XYZ tristimulus values can be determined
 from the RGB colour space values by forming a weighted combination of the
 CIE XYZ tristimulus values for the individual colour primaries, where the
-weights are proportional to the radiometrically linear colour space values
+weights are proportional to the radio-metrically linear colour space values
 for the corresponding colour primaries</p>
 <p>Note 1 to entry: A simple linear 3 × 3 matrix transformation can be used to
-transform between CIE XYZ tristimulus values and the radiometrically linear
+transform between CIE XYZ tristimulus values and the radio-metrically linear
 colour space values for an additive RGB colour space.</p>
 <p>Note 2 to entry: Additive RGB colour spaces are defined by specifying the
 CIE chromaticity values for a set of additive RGB primaries and a colour
@@ -248,7 +250,7 @@ of colours) that can be encoded by a given <em>RGB colourspace</em>.</p>
 <div class="line"><br></div>
 <div class="line">When performing computations allowing for negative values and with
 enough precision, a given <em>RGB colorspace</em> can virtually encode any colours.
-Colours exceeding its gamut are simply represented with negative coordinates.</div>
+Colours exceeding its gamut are simply represented with negative values.</div>
 </div>
 <p>It is important to understand that while commonly represented as triangles on a
 <em>Chromaticity Diagram</em> (such as the <em>CIE 1931 Chromaticity Diagram</em>), <em>RGB colourspace</em>
@@ -257,7 +259,7 @@ Colours exceeding its gamut are simply represented with negative coordinates.</d
 The <em>Chromaticity Diagram</em> is a 2D projection of the <em>CIE xyY colourspace</em> volume
 along its <em>Y</em> <em>Luminance</em> axis.</p>
 <div class="figure">
-<img alt="/images/ACES2065-1_ACEScg_DCI-P3_Rec__709_Rec__2020_CIE_1931_Chromaticity_Diagram.png" src="../../images/ACES2065-1_ACEScg_DCI-P3_Rec__709_Rec__2020_CIE_1931_Chromaticity_Diagram.png"><p class="caption">Various <em>RGB colourspace</em> <strong>gamuts</strong> compared in the <em>CIE 1931 Chromaticity Diagram</em>.</p>
+<img alt="/images/ACES2065-1_ACEScg_DCI-P3_ITU-R_BT__709_ITU-R_BT__2020_CIE_1931_Chromaticity_Diagram.png" src="../../images/ACES2065-1_ACEScg_DCI-P3_ITU-R_BT__709_ITU-R_BT__2020_CIE_1931_Chromaticity_Diagram.png"><p class="caption">Various <em>RGB colourspace</em> <strong>gamuts</strong> compared in the <em>CIE 1931 Chromaticity Diagram</em>.</p>
 </div>
 <div class="figure">
 <img alt="/images/Colour_-_Analysis_CIE_xyY.gif" src="../../images/Colour_-_Analysis_CIE_xyY.gif"><p class="caption">The <em>CIE 1931 Chromaticity Diagram</em> in the bottom right view is a 2D
@@ -270,7 +272,8 @@ projection of the <em>CIE xyY colourspace</em> in the left view.
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/White_point">whitepoint</a>  is defined by the
 <a class="reference external" href="http://eilv.cie.co.at/term/1430">CIE</a> as:</p>
 <blockquote>
-Achromatic reference stimulus in a chromaticity diagram that corresponds to the stimulus that produces an image area that has the perception of white.</blockquote>
+Achromatic reference stimulus in a chromaticity diagram that corresponds to
+the stimulus that produces an image area that has the perception of white.</blockquote>
 <p>Any set of colours lying on the <em>neutral axis</em> passing through the <strong>whitepoint</strong>,
 no matter their <em>Luminance</em>, will be neutral to that <em>RGB colourspace</em>.</p>
 <div class="figure">
@@ -300,10 +303,10 @@ of the time for coding optimisation and bandwidth performance). <a class="footno
 <p class="first">The <strong>Opto-electronic transfer function</strong> (<strong>OETF</strong>) maps estimated
 tristimulus values in a scene to a <em>non-linear</em> R'G'B' video component signal
 value. Typical <strong>OETFs</strong> are expressed by a power function with an exponent
-between 0.4 and 0.5. They can also be defined as piece-wise function, <em>sRGB</em>,
-<em>Rec. 709</em> or <em>Rec. 2020</em> colourspace OETFs are such examples.</p>
+between 0.4 and 0.5. They can also be defined as piece-wise functions,
+<em>SMPTE 240M</em> or <em>BT.709</em> OETFs are such examples.</p>
 <div class="figure">
-<img alt="/images/sRGB_BT709_OETF.png" src="../../images/sRGB_BT709_OETF.png"><p class="caption">Various <strong>opto-electronic transfer functions</strong>.</p>
+<img alt="/images/ITU-R_BT709_SMPTE_240M_OETF.png" src="../../images/ITU-R_BT709_SMPTE_240M_OETF.png"><p class="caption">Various <strong>opto-electronic transfer functions</strong>.</p>
 </div>
 </li>
 <li>
@@ -312,10 +315,23 @@ R'G'B' video component signal to a tristimulus value at the display.
 Typical <strong>EOTFs</strong> are expressed by a power function with an exponent
 between 2.2 and 2.6 or a piece-wise function.</p>
 <div class="figure">
-<img alt="/images/DCI_P3_BT1886_EOTF.png" src="../../images/DCI_P3_BT1886_EOTF.png"><p class="caption">Various <strong>electro-optical transfer functions</strong>.</p>
+<img alt="/images/ITU-R_BT1886_sRGB_EOTFs.png" src="../../images/ITU-R_BT1886_sRGB_EOTFs.png"><p class="caption">Various <strong>electro-optical transfer functions</strong>.</p>
 </div>
 </li>
 </ul>
+<div class="alert alert-dismissible alert-info line-block">
+<div class="line"><strong>Note</strong></div>
+<div class="line"><br></div>
+<div class="line">Jack Holm, technical secretary for IEC/TC 100/TA 2 which developed the
+<em>IEC 61966-2-1:1999 Standard</em> is unambiguous about the <em>sRGB</em> <strong>EOTF</strong>
+being piece-wise, i.e. not a <em>Gamma 2.2</em> approximation and that the
+<em>IEC 61966-2-1:1999 Standard</em> does not define an <strong>OETF</strong>.</div>
+</div>
+<blockquote class="alert alert-dismissible alert-info">
+<div class="figure">
+<img alt="https://i.imgur.com/ROXaICc.png" src="https://i.imgur.com/ROXaICc.png"><p class="caption">Message from Jack Holm, addressed the 1st February 2016 to the <a class="reference external" href="https://groups.google.com/forum/#!forum/academyaces">Academy ACES Google Group</a>.</p>
+</div>
+</blockquote>
 </div>
 <div class="section" id="the-importance-of-terminology">
 <h3>The Importance of Terminology</h3>
@@ -333,17 +349,17 @@ engine using linear <em>sRGB</em> colourspace input colours and textures, render
 the <em>sRGB</em> colourspace <strong>primaries</strong> and <strong>whitepoint</strong> (assuming no colour
 transformations are occurring internally), thus its output is within <em>sRGB</em>
 colourspace.</p>
-<p>When rendering using <a class="reference external" href="https://en.wikipedia.org/wiki/Rec._709">Rec. 709</a>
+<p>When rendering using <a class="reference external" href="https://en.wikipedia.org/wiki/Rec._709">BT.709</a>
 colourspace for HDTV, one is actually adopting <em>sRGB</em> colourspace <strong>primaries</strong>
 and <strong>whitepoint</strong> with different specific <strong>transfer functions</strong>.</p>
-<p>Movie cameras such as Canon ones (Canon EOS 1DC, Canon CX00) use <em>Rec. 709</em>
+<p>Movie cameras such as those from Canon (Canon EOS 1DC, Canon CX00) use <em>BT.709</em>
 <strong>primaries</strong> and <strong>whitepoint</strong> but encode their scene linear values with a
 custom log curve designated
 <a class="reference external" href="http://www.usa.canon.com/cusa/professional/standard_display/cinema-firmware-c500">C-Log</a>.</p>
 <div class="alert alert-dismissible alert-info line-block">
 <div class="line"><strong>Note</strong></div>
 <div class="line"><br></div>
-<div class="line">Most camera makers have their own log curves (ALEXA Log C for ARRI Alexa
+<div class="line">Most camera makers implement their own log curves (ALEXA Log C for ARRI Alexa
 cameras, RED Log Film for RED cameras, etc...) and proprietary
 <em>RGB colourspaces</em> specifications (ALEXA Wide Gamut RGB for ARRI Alexa
 cameras, REDcolor or DragonColor for RED cameras, etc...).</div>
@@ -410,7 +426,7 @@ and linear <strong>transfer functions</strong>.</li>
 </li>
 </ul>
 <p>In the near future it will likely become even more critical and relevant as
-new <em>RGB</em> colourspaces such as <a class="reference external" href="https://en.wikipedia.org/wiki/Rec._2020">Rec. 2020</a>
+new <em>RGB</em> colourspaces such as <a class="reference external" href="https://en.wikipedia.org/wiki/Rec._2020">BT.2020</a>
 or the <a class="reference external" href="http://www.oscars.org/science-technology/sci-tech-projects/aces">ACES encodings</a>
 become mainstream.</p>
 </div>

@@ -23,15 +23,13 @@ The article first description of *sRGB* is as follows:
 
     *sRGB is a slight tweaking of the simple gamma 2.2 curve.*
 
-While this depiction of *sRGB* colourspace **EOTF**
-(Electro-optical transfer function) is exact, it may be confusing for
-non experts by omitting an explicit emphasis of the components of an *RGB*
-colourspace.
+While this depiction of *sRGB* colourspace **Electro-optical transfer function**
+(**EOTF**) is exact, it may be confusing for non experts by omitting an explicit
+emphasis of the components of an *RGB* colourspace.
 
 For people experienced with colour theory and science, the post title and the
-mention of **gamma** indicates that the article will likely only involves
-*sRGB* colourspace **EOTF** and **OETF** (Opto-electronic transfer function).
-
+mention of **gamma** indicates that the article will likely only involves the
+*sRGB* colourspace **EOTF** and its inverse.
 
 .. class:: alert alert-dismissible alert-info
 
@@ -91,11 +89,11 @@ quoted in its entirety for reference:
     green and blue) such that CIE XYZ tristimulus values can be determined
     from the RGB colour space values by forming a weighted combination of the
     CIE XYZ tristimulus values for the individual colour primaries, where the
-    weights are proportional to the radiometrically linear colour space values
+    weights are proportional to the radio-metrically linear colour space values
     for the corresponding colour primaries
 
     Note 1 to entry: A simple linear 3 × 3 matrix transformation can be used to
-    transform between CIE XYZ tristimulus values and the radiometrically linear
+    transform between CIE XYZ tristimulus values and the radio-metrically linear
     colour space values for an additive RGB colour space.
 
     Note 2 to entry: Additive RGB colour spaces are defined by specifying the
@@ -115,7 +113,7 @@ of colours) that can be encoded by a given *RGB colourspace*.
     |
     | When performing computations allowing for negative values and with
         enough precision, a given *RGB colorspace* can virtually encode any colours.
-        Colours exceeding its gamut are simply represented with negative coordinates.
+        Colours exceeding its gamut are simply represented with negative values.
 
 It is important to understand that while commonly represented as triangles on a
 *Chromaticity Diagram* (such as the *CIE 1931 Chromaticity Diagram*), *RGB colourspace*
@@ -124,7 +122,7 @@ It is important to understand that while commonly represented as triangles on a
 The *Chromaticity Diagram* is a 2D projection of the *CIE xyY colourspace* volume
 along its *Y* *Luminance* axis.
 
-.. figure:: /images/ACES2065-1_ACEScg_DCI-P3_Rec__709_Rec__2020_CIE_1931_Chromaticity_Diagram.png
+.. figure:: /images/ACES2065-1_ACEScg_DCI-P3_ITU-R_BT__709_ITU-R_BT__2020_CIE_1931_Chromaticity_Diagram.png
 
     Various *RGB colourspace* **gamuts** compared in the *CIE 1931 Chromaticity Diagram*.
 
@@ -140,7 +138,8 @@ Whitepoint
 The `whitepoint <https://en.wikipedia.org/wiki/White_point>`_  is defined by the
 `CIE <http://eilv.cie.co.at/term/1430>`_ as:
 
-    Achromatic reference stimulus in a chromaticity diagram that corresponds to the stimulus that produces an image area that has the perception of white.
+    Achromatic reference stimulus in a chromaticity diagram that corresponds to
+    the stimulus that produces an image area that has the perception of white.
 
 Any set of colours lying on the *neutral axis* passing through the **whitepoint**,
 no matter their *Luminance*, will be neutral to that *RGB colourspace*.
@@ -164,7 +163,6 @@ as **whitepoint** but an `ICC <https://en.wikipedia.org/wiki/International_Color
     Various *CIE Illuminants D Series* *illuminants* in the
     *CIE 1960 UCS Chromaticity Diagram*.
 
-
 Transfer Functions (OETF and EOTF)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -175,10 +173,10 @@ of the time for coding optimisation and bandwidth performance). [2]_
 -   The **Opto-electronic transfer function** (**OETF**) maps estimated
     tristimulus values in a scene to a *non-linear* R'G'B' video component signal
     value. Typical **OETFs** are expressed by a power function with an exponent
-    between 0.4 and 0.5. They can also be defined as piece-wise function, *sRGB*,
-    *Rec. 709* or *Rec. 2020* colourspace OETFs are such examples.
+    between 0.4 and 0.5. They can also be defined as piece-wise functions,
+    *SMPTE 240M* or *BT.709* OETFs are such examples.
 
-    .. figure:: /images/sRGB_BT709_OETF.png
+    .. figure:: /images/ITU-R_BT709_SMPTE_240M_OETF.png
 
         Various **opto-electronic transfer functions**.
 
@@ -187,9 +185,22 @@ of the time for coding optimisation and bandwidth performance). [2]_
     Typical **EOTFs** are expressed by a power function with an exponent
     between 2.2 and 2.6 or a piece-wise function.
 
-    .. figure:: /images/DCI_P3_BT1886_EOTF.png
+    .. figure:: /images/ITU-R_BT1886_sRGB_EOTFs.png
 
         Various **electro-optical transfer functions**.
+
+.. class:: alert alert-dismissible alert-info
+
+    | **Note**
+    |
+    | Jack Holm, technical secretary for IEC/TC 100/TA 2 which developed the
+        *IEC 61966-2-1:1999 Standard* is unambiguous about the *sRGB* **EOTF**
+        being piece-wise, i.e. not a *Gamma 2.2* approximation and that the
+        *IEC 61966-2-1:1999 Standard* does not define an **OETF**.
+
+        .. figure:: https://i.imgur.com/ROXaICc.png
+
+            Message from Jack Holm, addressed the 1st February 2016 to the `Academy ACES Google Group <https://groups.google.com/forum/#!forum/academyaces>`_.
 
 The Importance of Terminology
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -211,11 +222,11 @@ the *sRGB* colourspace **primaries** and **whitepoint** (assuming no colour
 transformations are occurring internally), thus its output is within *sRGB*
 colourspace.
 
-When rendering using `Rec. 709 <https://en.wikipedia.org/wiki/Rec._709>`_
+When rendering using `BT.709 <https://en.wikipedia.org/wiki/Rec._709>`_
 colourspace for HDTV, one is actually adopting *sRGB* colourspace **primaries**
 and **whitepoint** with different specific **transfer functions**.
 
-Movie cameras such as Canon ones (Canon EOS 1DC, Canon CX00) use *Rec. 709*
+Movie cameras such as those from Canon (Canon EOS 1DC, Canon CX00) use *BT.709*
 **primaries** and **whitepoint** but encode their scene linear values with a
 custom log curve designated
 `C-Log <http://www.usa.canon.com/cusa/professional/standard_display/cinema-firmware-c500>`_.
@@ -224,7 +235,7 @@ custom log curve designated
 
     | **Note**
     |
-    | Most camera makers have their own log curves (ALEXA Log C for ARRI Alexa
+    | Most camera makers implement their own log curves (ALEXA Log C for ARRI Alexa
         cameras, RED Log Film for RED cameras, etc...) and proprietary
         *RGB colourspaces* specifications (ALEXA Wide Gamut RGB for ARRI Alexa
         cameras, REDcolor or DragonColor for RED cameras, etc...).
@@ -280,7 +291,7 @@ to lessen the uncertainty and improve the **terminology** used, we suggest that:
         1.8 **transfer functions**.
 
 In the near future it will likely become even more critical and relevant as
-new *RGB* colourspaces such as `Rec. 2020 <https://en.wikipedia.org/wiki/Rec._2020>`_
+new *RGB* colourspaces such as `BT.2020 <https://en.wikipedia.org/wiki/Rec._2020>`_
 or the `ACES encodings <http://www.oscars.org/science-technology/sci-tech-projects/aces>`_
 become mainstream.
 
