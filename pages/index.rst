@@ -17,9 +17,9 @@
 
         <p class="lead">
             <strong><span class="text-primary">Colour</span></strong>
-            is a <a href="https://www.python.org/">Python</a> colour science
-            package implementing a comprehensive number of colour theory
-            transformations and algorithms.
+            is an open-source <a href="https://www.python.org/">Python</a>
+            package providing a comprehensive number of algorithms and datasets
+            for colour science.
         </p>
         <div class="row">
             <div class="col">
@@ -40,7 +40,7 @@
         </div>
 
         <p class="lead">
-            It is open source and freely available under the
+            It is freely available under the
             <a href="https://opensource.org/licenses/BSD-3-Clause">New BSD License</a> terms.
         </p>
 
