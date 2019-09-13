@@ -12,7 +12,7 @@
 
     .. raw:: html
 
-        <img src="/images/Colour_Logo_Medium_Brand_001.png"
+        <img src="/images/Colour_Logo_Medium_Brand_Offset_001.png"
             class="img-responsive" alt="Colour - Logo">
 
         <p class="lead">

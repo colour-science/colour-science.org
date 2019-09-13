@@ -14,7 +14,7 @@ We are pleased to share with you our new logo and website!
 The new logo, less abstract than the previous, represents the light and its
 `wave-particle duality <https://en.wikipedia.org/wiki/Wave%E2%80%93particle_duality>`_:
 
-.. image:: /images/Colour_Logo_Medium_001.png
+.. image:: https://raw.githubusercontent.com/colour-science/colour-science.org/427b6b76805cb5a531140fae2ffc00395c37d0fb/images/Colour_Logo_Medium_001.png
 
 The website is now powered by `Nikola <https://getnikola.com/>`_, a brilliant
 static site generator.
