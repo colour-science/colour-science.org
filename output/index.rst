@@ -19,7 +19,9 @@
             <strong><span class="text-primary">Colour</span></strong>
             is an open-source <a href="https://www.python.org/">Python</a>
             package providing a comprehensive number of algorithms and datasets
-            for colour science.
+            for colour science. It is freely available under the
+            <a href="https://opensource.org/licenses/BSD-3-Clause">New BSD License</a>
+            terms.
         </p>
         <div class="row">
             <div class="col">
@@ -38,11 +40,6 @@
                 </a>
             </div>
         </div>
-
-        <p class="lead">
-            It is freely available under the
-            <a href="https://opensource.org/licenses/BSD-3-Clause">New BSD License</a> terms.
-        </p>
 
         <p class="lead">
             <strong><span class="text-primary">Colour</span></strong> is developed with
