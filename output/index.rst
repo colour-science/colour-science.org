@@ -41,10 +41,12 @@
             </div>
         </div>
 
+        <br>
+
         <p class="lead">
             <strong><span class="text-primary">Colour</span></strong> is developed with
             <a href="https://www.jetbrains.com/pycharm/">
-                <img src="/images/PyCharm_Logo.svg" width="32" alt=""> JetBrains PyCharm</a>.
+                <img src="/images/PyCharm_Logo.svg" width="48" alt=""> JetBrains PyCharm</a>.
         </p>
 
 .. raw:: html
