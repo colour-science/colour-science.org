@@ -17,36 +17,37 @@ Primary Dependencies
 ^^^^^^^^^^^^^^^^^^^^
 
 -  `Python>=2.7 <https://www.python.org/download/releases/>`_ or
-   `Python>=3.7 <https://www.python.org/download/releases/>`_
--  `Imageio>=2.0.0 <http://imageio.github.io/>`_
--  `NumPy>=1.8.1 <http://www.numpy.org/>`_
--  `SciPy>=0.16.0 <http://www.scipy.org/>`_
--  `Six>=1.10.0 <https://pypi.python.org/pypi/six>`_
+   `Python>=3.5 <https://www.python.org/download/releases/>`_
+-  `Imageio <http://imageio.github.io/>`_
+-  `NumPy>=1.8.* <http://www.numpy.org/>`_
+-  `SciPy>=0.16.* <http://www.scipy.org/>`_
+-  `Six <https://pypi.python.org/pypi/six>`_
 
 Optional Dependencies
 ^^^^^^^^^^^^^^^^^^^^^
 
+-  `NetworkX <https://networkx.github.io/>`_
 -  `OpenImageIO <https://github.com/OpenImageIO/oiio>`_
 -  `Pandas <https://pandas.pydata.org/>`_
 
 Optional Figures Plotting Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  `Matplotlib>=2.2.0 <http://matplotlib.org/>`_
+-  `Matplotlib>=2.2.* <http://matplotlib.org/>`_
 
 Documentation Building Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  `Sphinx>=1.6.6 <https://sphinx-doc.org>`_
+-  `Sphinx>=1.6.* <https://sphinx-doc.org>`_
 -  `sphinxcontrib-bibtex <https://sphinxcontrib-bibtex.readthedocs.io/>`_
 -  `sphinx_rtd_theme <https://github.com/rtfd/sphinx_rtd_theme/>`_
 
 Unit Tests Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^
 
--  `Coverage.py>=3.7.1 <https://pypi.python.org/pypi/coverage>`_
--  `Flake8>=2.1.0 <https://pypi.python.org/pypi/flake8>`_
--  `mock>=1.3.4 <https://pypi.python.org/pypi/mock>`_
+-  `Coverage.py <https://pypi.python.org/pypi/coverage>`_
+-  `Flake8 <https://pypi.python.org/pypi/flake8>`_
+-  `mock <https://pypi.python.org/pypi/mock>`_
 -  `nose <https://nose.readthedocs.io/en/latest>`_
 
 Development Dependencies
@@ -56,7 +57,7 @@ Development Dependencies
 -  `Invoke <http://www.pyinvoke.org/>`_
 -  `restructuredtext-lint <https://github.com/twolfson/restructuredtext-lint>`_
 -  `twine <https://pypi.python.org/pypi/twine>`_
--  `YAPF=0.23.0 <https://github.com/google/yapf>`_
+-  `YAPF==0.23.0 <https://github.com/google/yapf>`_
 
 Continuum Analytics Anaconda
 ----------------------------
