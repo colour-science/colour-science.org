@@ -37,18 +37,8 @@
 
     <ul class="list-inline">
         <li class="list-inline-item">
-            <a href="https://github.com/colour-science/colour/issues">
-                <img src="https://badge.waffle.io/colour-science/colour.svg?label=ready&title=Ready&style=flat-square" alt="Stories in Ready">
-            </a>
-        </li>
-        <li class="list-inline-item">
-            <a href="https://travis-ci.org/colour-science/colour">
-                <img src="https://img.shields.io/travis/colour-science/colour/develop.svg?label=travis+build&style=flat-square" alt="Travis Continuous Integration Status">
-            </a>
-        </li>
-        <li class="list-inline-item">
-            <a href="https://dev.azure.com/colour-science/Colour/_build?definitionId=1">
-                <img src="https://img.shields.io/vso/build/colour-science/b0916647-91be-4025-951a-d791f64f3b96/1.svg?label=azure+build&style=flat-square" alt="Azure Devops Continuous Integration Status">
+            <a href="https://github.com/colour-science/colour/actions">
+                <img src="https://github.com/colour-science/colour/workflows/Continuous%20Integration/badge.svg" alt="Develop Build Status">
             </a>
         </li>
         <li class="list-inline-item">
