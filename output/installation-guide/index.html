@@ -26,7 +26,11 @@ Primary Dependencies
 Python&gt;=2.7 or
 Python&gt;=3.5
 Imageio
-NumPy&gt;=1.8.*
+SciPy
+Six
+
+
+
 ">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2015-11-24T09:38:23Z">
@@ -55,7 +59,7 @@ NumPy&gt;=1.8.*
                     <a href="https://github.com/colour-science/colour" class="dropdown-item">Source Code</a>
                     <a href="https://github.com/colour-science/colour/archive/v0.3.13.zip" class="dropdown-item">Latest (v0.3.13)</a>
                     <a href="https://github.com/colour-science/colour/releases" class="dropdown-item">All Releases</a>
-                    <a href="https://pypi.python.org/pypi/colour-science/" class="dropdown-item">Pypi</a>
+                    <a href="https://pypi.org/project/colour-science/" class="dropdown-item">Pypi</a>
                     <a href="../api-status-and-badges" class="dropdown-item">API Status and Badges</a>
             </div>
             </li>
@@ -145,9 +149,8 @@ you may not need to install all of them.</p>
 <a class="reference external" href="https://www.python.org/download/releases/">Python&gt;=3.5</a>
 </li>
 <li><a class="reference external" href="http://imageio.github.io/">Imageio</a></li>
-<li><a class="reference external" href="http://www.numpy.org/">NumPy&gt;=1.8.*</a></li>
-<li><a class="reference external" href="http://www.scipy.org/">SciPy&gt;=0.16.*</a></li>
-<li><a class="reference external" href="https://pypi.python.org/pypi/six">Six</a></li>
+<li><a class="reference external" href="http://www.scipy.org/">SciPy</a></li>
+<li><a class="reference external" href="https://pypi.org/project/six/">Six</a></li>
 </ul>
 </div>
 <div class="section" id="optional-dependencies">
@@ -158,58 +161,36 @@ you may not need to install all of them.</p>
 <li><a class="reference external" href="https://pandas.pydata.org/">Pandas</a></li>
 </ul>
 </div>
-<div class="section" id="optional-figures-plotting-dependencies">
-<h3>Optional Figures Plotting Dependencies</h3>
+<div class="section" id="plotting-dependencies">
+<h3>Plotting Dependencies</h3>
 <ul class="simple">
-<li><a class="reference external" href="http://matplotlib.org/">Matplotlib&gt;=2.2.*</a></li>
-</ul>
-</div>
-<div class="section" id="documentation-building-dependencies">
-<h3>Documentation Building Dependencies</h3>
-<ul class="simple">
-<li><a class="reference external" href="https://sphinx-doc.org">Sphinx&gt;=1.6.*</a></li>
-<li><a class="reference external" href="https://sphinxcontrib-bibtex.readthedocs.io/">sphinxcontrib-bibtex</a></li>
-<li><a class="reference external" href="https://github.com/rtfd/sphinx_rtd_theme/">sphinx_rtd_theme</a></li>
-</ul>
-</div>
-<div class="section" id="unit-tests-dependencies">
-<h3>Unit Tests Dependencies</h3>
-<ul class="simple">
-<li><a class="reference external" href="https://pypi.python.org/pypi/coverage">Coverage.py</a></li>
-<li><a class="reference external" href="https://pypi.python.org/pypi/flake8">Flake8</a></li>
-<li><a class="reference external" href="https://pypi.python.org/pypi/mock">mock</a></li>
-<li><a class="reference external" href="https://nose.readthedocs.io/en/latest">nose</a></li>
+<li><a class="reference external" href="http://matplotlib.org/">Matplotlib</a></li>
+<li><a class="reference external" href="https://pygraphviz.github.io/">PyGraphviz</a></li>
 </ul>
 </div>
 <div class="section" id="development-dependencies">
 <h3>Development Dependencies</h3>
 <ul class="simple">
-<li><a class="reference external" href="https://github.com/colour-science/biblib">biblib-simple</a></li>
+<li><a class="reference external" href="https://pypi.org/project/biblib-simple/">biblib-simple</a></li>
+<li><a class="reference external" href="https://pypi.org/project/coverage/">Coverage.py</a></li>
+<li><a class="reference external" href="https://pypi.org/project/coveralls/">coveralls</a></li>
+<li><a class="reference external" href="https://pypi.org/project/flake8/">Flake8</a></li>
 <li><a class="reference external" href="http://www.pyinvoke.org/">Invoke</a></li>
+<li><a class="reference external" href="https://pypi.org/project/mock/">mock</a></li>
+<li><a class="reference external" href="https://nose.readthedocs.io/en/latest">nose</a></li>
 <li><a class="reference external" href="https://github.com/twolfson/restructuredtext-lint">restructuredtext-lint</a></li>
-<li><a class="reference external" href="https://pypi.python.org/pypi/twine">twine</a></li>
+<li><a class="reference external" href="https://sphinx-doc.org">Sphinx&gt;=1.6.*</a></li>
+<li><a class="reference external" href="https://github.com/rtfd/sphinx_rtd_theme/">sphinx_rtd_theme</a></li>
+<li><a class="reference external" href="https://sphinxcontrib-bibtex.readthedocs.io/">sphinxcontrib-bibtex</a></li>
+<li><a class="reference external" href="https://pypi.org/project/twine/">twine</a></li>
 <li><a class="reference external" href="https://github.com/google/yapf">YAPF==0.23.0</a></li>
 </ul>
 </div>
 </div>
-<div class="section" id="continuum-analytics-anaconda">
-<h2>Continuum Analytics Anaconda</h2>
-<p><a class="reference external" href="https://www.continuum.io/downloads">Anaconda</a> from <em>Continuum Analytics</em>
-is the Python distribution we use to develop <strong>Colour</strong>:
-it ships all the scientific dependencies we require and is easily deployed
-cross-platform.</p>
-<p>Colour is available on <em>conda</em> and can be installed as follows:</p>
-<pre class="code shell"><a name="rest_code_43e094f1a296462ea6158ebfc072305e-1"></a>conda install -c conda-forge colour-science
-</pre>
-<p>This <em>asciicast</em> demonstrates how to generate a pristine Python <em>conda</em>
-environment for Colour:</p>
-<script type="text/javascript" src="https://asciinema.org/a/257385.js" id="asciicast-257385" async data-speed="3">
-</script>
-</div>
 <div class="section" id="pypi">
 <h2>Pypi</h2>
 <p><strong>Colour</strong> can be easily installed from the
-<a class="reference external" href="https://pypi.python.org/pypi/colour-science/">Python Package Index</a> by
+<a class="reference external" href="https://pypi.org/project/colour-science/">Python Package Index</a> by
 issuing this command in a shell:</p>
 <div class="alert alert-dismissible alert-info line-block">
 <div class="line"><strong>Note</strong></div>
@@ -220,34 +201,39 @@ dependencies, <a class="reference external" href="http://www.scipy.org/">SciPy</
 performed as follows: <cite>pip install numpy</cite>
 </div>
 </div>
-<pre class="code shell"><a name="rest_code_9e9953959e2b44279f6993188c879992-1"></a>pip install colour-science
+<pre class="code shell"><a name="rest_code_409b3e29022a44c6a121133976d579d1-1"></a>$ pip install colour-science
 </pre>
 <p>This <em>asciicast</em> demonstrates how to generate a pristine Python <em>VirtualEnv</em>
 environment for Colour:</p>
 <script type="text/javascript" src="https://asciinema.org/a/257384.js" id="asciicast-257384" async data-speed="3">
 </script><p>The optional features dependencies are installed as follows:</p>
-<pre class="code shell"><a name="rest_code_2f1b5bfd6681427588753e430f39075d-1"></a>pip install <span class="s1">'colour-science[optional]'</span>
+<pre class="code shell"><a name="rest_code_6d2d12ee6caa4f6d84d7945ed515f5e9-1"></a>$ pip install <span class="s1">'colour-science[optional]'</span>
+</pre>
+<p>The development dependencies are installed as follows:</p>
+<pre class="code shell"><a name="rest_code_8030328d910f4ca8b90c0569fbd23e51-1"></a>$ pip install <span class="s1">'colour-science[development]'</span>
 </pre>
 <p>The figures plotting dependencies are installed as follows:</p>
-<pre class="code shell"><a name="rest_code_eaec148f5a4845269d41ecd5a5219b61-1"></a>pip install <span class="s1">'colour-science[plotting]'</span>
+<pre class="code shell"><a name="rest_code_152f21cf0fc64722a51edb8adb7b77dc-1"></a>$ pip install <span class="s1">'colour-science[plotting]'</span>
 </pre>
-<p>The tests suite dependencies are installed as follows:</p>
-<pre class="code shell"><a name="rest_code_2b4d94d8f6264692861333188fb0fd17-1"></a>pip install <span class="s1">'colour-science[tests]'</span>
+</div>
+<div class="section" id="continuum-analytics-anaconda">
+<h2>Continuum Analytics Anaconda</h2>
+<p><strong>Colour</strong> is also available for <a class="reference external" href="https://www.continuum.io/downloads">Anaconda</a>
+from <em>Continuum Analytics</em> via <a class="reference external" href="https://conda-forge.org/">conda-forge</a>:</p>
+<pre class="code shell"><a name="rest_code_e8f08eba7e2747f8af0be53dd9c4be40-1"></a>$ conda install -c conda-forge colour-science
 </pre>
-<p>The documentation building dependencies are installed as follows:</p>
-<pre class="code shell"><a name="rest_code_be6395419ae3464c83dae5296b92ceb9-1"></a>pip install <span class="s1">'colour-science[docs]'</span>
-</pre>
-<p>The overall development dependencies are installed as follows:</p>
-<pre class="code shell"><a name="rest_code_33e06d3a514248079133c82c4dab9bb9-1"></a>pip install <span class="s1">'colour-science[development]'</span>
-</pre>
+<p>This <em>asciicast</em> demonstrates how to generate a pristine Python <em>conda</em>
+environment for Colour:</p>
+<script type="text/javascript" src="https://asciinema.org/a/257385.js" id="asciicast-257385" async data-speed="3">
+</script>
 </div>
 <div class="section" id="github">
 <h2>Github</h2>
 <p>Alternatively, you can also install directly from
 <a class="reference external" href="https://github.com/colour-science/colour">Github</a> source repository:</p>
-<pre class="code shell"><a name="rest_code_d0fd602d8ead4fa9ba4cc898e491fcf6-1"></a>git clone git://github.com/colour-science/colour.git
-<a name="rest_code_d0fd602d8ead4fa9ba4cc898e491fcf6-2"></a><span class="nb">cd</span> colour
-<a name="rest_code_d0fd602d8ead4fa9ba4cc898e491fcf6-3"></a>pip install .
+<pre class="code shell"><a name="rest_code_0ee8c08e63f345eeabff609fb4b68daa-1"></a>$ git clone git://github.com/colour-science/colour.git
+<a name="rest_code_0ee8c08e63f345eeabff609fb4b68daa-2"></a>$ <span class="nb">cd</span> colour
+<a name="rest_code_0ee8c08e63f345eeabff609fb4b68daa-3"></a>$ pip install .
 </pre>
 </div>
 <div class="section" id="vagrant">

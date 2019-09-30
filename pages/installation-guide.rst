@@ -19,9 +19,8 @@ Primary Dependencies
 -  `Python>=2.7 <https://www.python.org/download/releases/>`_ or
    `Python>=3.5 <https://www.python.org/download/releases/>`_
 -  `Imageio <http://imageio.github.io/>`_
--  `NumPy>=1.8.* <http://www.numpy.org/>`_
--  `SciPy>=0.16.* <http://www.scipy.org/>`_
--  `Six <https://pypi.python.org/pypi/six>`_
+-  `SciPy <http://www.scipy.org/>`_
+-  `Six <https://pypi.org/project/six/>`_
 
 Optional Dependencies
 ^^^^^^^^^^^^^^^^^^^^^
@@ -30,64 +29,34 @@ Optional Dependencies
 -  `OpenImageIO <https://github.com/OpenImageIO/oiio>`_
 -  `Pandas <https://pandas.pydata.org/>`_
 
-Optional Figures Plotting Dependencies
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Plotting Dependencies
+^^^^^^^^^^^^^^^^^^^^^
 
--  `Matplotlib>=2.2.* <http://matplotlib.org/>`_
-
-Documentation Building Dependencies
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
--  `Sphinx>=1.6.* <https://sphinx-doc.org>`_
--  `sphinxcontrib-bibtex <https://sphinxcontrib-bibtex.readthedocs.io/>`_
--  `sphinx_rtd_theme <https://github.com/rtfd/sphinx_rtd_theme/>`_
-
-Unit Tests Dependencies
-^^^^^^^^^^^^^^^^^^^^^^^
-
--  `Coverage.py <https://pypi.python.org/pypi/coverage>`_
--  `Flake8 <https://pypi.python.org/pypi/flake8>`_
--  `mock <https://pypi.python.org/pypi/mock>`_
--  `nose <https://nose.readthedocs.io/en/latest>`_
+-  `Matplotlib <http://matplotlib.org/>`_
+-  `PyGraphviz <https://pygraphviz.github.io/>`_
 
 Development Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  `biblib-simple <https://github.com/colour-science/biblib>`_
+-  `biblib-simple <https://pypi.org/project/biblib-simple/>`_
+-  `Coverage.py <https://pypi.org/project/coverage/>`_
+-  `coveralls <https://pypi.org/project/coveralls/>`_
+-  `Flake8 <https://pypi.org/project/flake8/>`_
 -  `Invoke <http://www.pyinvoke.org/>`_
+-  `mock <https://pypi.org/project/mock/>`_
+-  `nose <https://nose.readthedocs.io/en/latest>`_
 -  `restructuredtext-lint <https://github.com/twolfson/restructuredtext-lint>`_
--  `twine <https://pypi.python.org/pypi/twine>`_
+-  `Sphinx>=1.6.* <https://sphinx-doc.org>`_
+-  `sphinx_rtd_theme <https://github.com/rtfd/sphinx_rtd_theme/>`_
+-  `sphinxcontrib-bibtex <https://sphinxcontrib-bibtex.readthedocs.io/>`_
+-  `twine <https://pypi.org/project/twine/>`_
 -  `YAPF==0.23.0 <https://github.com/google/yapf>`_
-
-Continuum Analytics Anaconda
-----------------------------
-
-`Anaconda <https://www.continuum.io/downloads>`_ from *Continuum Analytics*
-is the Python distribution we use to develop **Colour**:
-it ships all the scientific dependencies we require and is easily deployed
-cross-platform.
-
-Colour is available on *conda* and can be installed as follows:
-
-.. code:: shell
-
-    conda install -c conda-forge colour-science
-
-This *asciicast* demonstrates how to generate a pristine Python *conda*
-environment for Colour:
-
-.. raw:: html
-
-    <script type="text/javascript"
-        src="https://asciinema.org/a/257385.js"
-        id="asciicast-257385" async data-speed=3>
-    </script>
 
 Pypi
 ----
 
 **Colour** can be easily installed from the
-`Python Package Index <https://pypi.python.org/pypi/colour-science/>`_ by
+`Python Package Index <https://pypi.org/project/colour-science/>`_ by
 issuing this command in a shell:
 
 .. class:: alert alert-dismissible alert-info
@@ -101,7 +70,7 @@ issuing this command in a shell:
 
 .. code:: shell
 
-    pip install colour-science
+    $ pip install colour-science
 
 This *asciicast* demonstrates how to generate a pristine Python *VirtualEnv*
 environment for Colour:
@@ -117,31 +86,39 @@ The optional features dependencies are installed as follows:
 
 .. code:: shell
 
-    pip install 'colour-science[optional]'
+    $ pip install 'colour-science[optional]'
+
+The development dependencies are installed as follows:
+
+.. code:: shell
+
+    $ pip install 'colour-science[development]'
 
 The figures plotting dependencies are installed as follows:
 
 .. code:: shell
 
-    pip install 'colour-science[plotting]'
+    $ pip install 'colour-science[plotting]'
 
-The tests suite dependencies are installed as follows:
+Continuum Analytics Anaconda
+----------------------------
 
-.. code:: shell
-
-    pip install 'colour-science[tests]'
-
-The documentation building dependencies are installed as follows:
+**Colour** is also available for `Anaconda <https://www.continuum.io/downloads>`_
+from *Continuum Analytics* via `conda-forge <https://conda-forge.org/>`_:
 
 .. code:: shell
 
-    pip install 'colour-science[docs]'
+    $ conda install -c conda-forge colour-science
 
-The overall development dependencies are installed as follows:
+This *asciicast* demonstrates how to generate a pristine Python *conda*
+environment for Colour:
 
-.. code:: shell
+.. raw:: html
 
-    pip install 'colour-science[development]'
+    <script type="text/javascript"
+        src="https://asciinema.org/a/257385.js"
+        id="asciicast-257385" async data-speed=3>
+    </script>
 
 Github
 ------
@@ -151,9 +128,9 @@ Alternatively, you can also install directly from
 
 .. code:: shell
 
-    git clone git://github.com/colour-science/colour.git
-    cd colour
-    pip install .
+    $ git clone git://github.com/colour-science/colour.git
+    $ cd colour
+    $ pip install .
 
 Vagrant
 -------

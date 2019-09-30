@@ -63,7 +63,7 @@ sphinx_rtd_t">
                     <a href="https://github.com/colour-science/colour" class="dropdown-item">Source Code</a>
                     <a href="https://github.com/colour-science/colour/archive/v0.3.13.zip" class="dropdown-item">Latest (v0.3.13)</a>
                     <a href="https://github.com/colour-science/colour/releases" class="dropdown-item">All Releases</a>
-                    <a href="https://pypi.python.org/pypi/colour-science/" class="dropdown-item">Pypi</a>
+                    <a href="https://pypi.org/project/colour-science/" class="dropdown-item">Pypi</a>
                     <a href="../../api-status-and-badges" class="dropdown-item">API Status and Badges</a>
             </div>
             </li>
@@ -167,20 +167,20 @@ deploying:</p>
 </li>
 <li><a class="reference external" href="http://www.numpy.org/">NumPy</a></li>
 <li><a class="reference external" href="http://www.scipy.org/">SciPy</a></li>
-<li><a class="reference external" href="https://pypi.python.org/pypi/six">Six&gt;=1.10.0</a></li>
+<li><a class="reference external" href="https://pypi.org/project/six">Six&gt;=1.10.0</a></li>
 <li><a class="reference external" href="http://openimageio.org">OpenImageIO</a></li>
 <li><a class="reference external" href="https://pandas.pydata.org/">Pandas</a></li>
 <li><a class="reference external" href="http://matplotlib.org/">Matplotlib</a></li>
 <li><a class="reference external" href="https://sphinx-doc.org">Sphinx</a></li>
 <li><a class="reference external" href="https://sphinxcontrib-bibtex.readthedocs.io/">sphinxcontrib-bibtex</a></li>
 <li><a class="reference external" href="https://github.com/rtfd/sphinx_rtd_theme/">sphinx_rtd_theme</a></li>
-<li><a class="reference external" href="https://pypi.python.org/pypi/coverage">Coverage.py</a></li>
-<li><a class="reference external" href="https://pypi.python.org/pypi/flake8">Flake8</a></li>
-<li><a class="reference external" href="https://pypi.python.org/pypi/mock">mock</a></li>
+<li><a class="reference external" href="https://pypi.org/project/coverage">Coverage.py</a></li>
+<li><a class="reference external" href="https://pypi.org/project/flake8">Flake8</a></li>
+<li><a class="reference external" href="https://pypi.org/project/mock">mock</a></li>
 <li><a class="reference external" href="https://nose.readthedocs.io/en/latest">nose</a></li>
 <li><a class="reference external" href="http://www.pyinvoke.org/">Invoke</a></li>
 <li><a class="reference external" href="https://github.com/twolfson/restructuredtext-lint">restructuredtext-lint</a></li>
-<li><a class="reference external" href="https://pypi.python.org/pypi/twine">twine</a></li>
+<li><a class="reference external" href="https://pypi.org/project/twine">twine</a></li>
 <li><a class="reference external" href="https://github.com/google/yapf">YAPF</a></li>
 <li><a class="reference external" href="https://getnikola.com/">Nikola</a></li>
 <li><a class="reference external" href="http://httpd.apache.org">Apache 2.2</a></li>
@@ -200,14 +200,14 @@ are using <em>macOs</em>, although it should pretty much be platform agnostic.</
 <li>On your local filesystem, in your development workspace, create a
 directory <code>colour-science</code> and <code>cd</code> into it:</li>
 </ul>
-<pre class="code shell"><a name="rest_code_42f809d46730478faaec09f3e892ac64-1"></a>mkdir colour-science
-<a name="rest_code_42f809d46730478faaec09f3e892ac64-2"></a><span class="nb">cd</span> colour-science
+<pre class="code shell"><a name="rest_code_9e7a6fe10afa4f908108527bf71f7fb8-1"></a>$ mkdir colour-science
+<a name="rest_code_9e7a6fe10afa4f908108527bf71f7fb8-2"></a>$ <span class="nb">cd</span> colour-science
 </pre>
 <ul class="simple">
 <li>Clone the <a class="reference external" href="https://github.com/colour-science/colour-vagrant">colour-vagrant</a>
 repository:</li>
 </ul>
-<pre class="code shell"><a name="rest_code_b185ac4a1e1b4879afabe6b33de1453f-1"></a>git clone git://github.com/colour-science/colour-vagrant.git
+<pre class="code shell"><a name="rest_code_97b14dc9066f4bea8d2c70c46c19e514-1"></a>$ git clone git://github.com/colour-science/colour-vagrant.git
 </pre>
 <ul>
 <li>
@@ -235,7 +235,7 @@ environment. Initially, I was provisioning with <a class="reference external" hr
 It was cumbersome to use, so I decided to go for <a class="reference external" href="http://www.fabfile.org/">Fabric</a>
 and the <a class="reference external" href="https://github.com/wutali/vagrant-fabric">vagrant-fabric</a>
 plugin:</p>
-<pre class="code shell"><a name="rest_code_0d3ddddd012944f98c15aa7eb81a627e-1"></a>pip install fabric
+<pre class="code shell"><a name="rest_code_9138ec502aae40f1a9a47715faf92261-1"></a>$ pip install fabric
 </pre>
 </li>
 </ul>
@@ -314,13 +314,13 @@ cloned into the <code>colour-science</code> directory right next to the
 <li>Remote Python environments installed into the virtual machine at the
 following location with all the dependencies needed:</li>
 </ul>
-<pre class="code shell"><a name="rest_code_832fda6d17a046afbbdab34fb0ee3e24-1"></a>vagrant@vagrant:~$ <span class="nb">cd</span> /home/vagrant/miniconda/envs/
-<a name="rest_code_832fda6d17a046afbbdab34fb0ee3e24-2"></a>vagrant@vagrant:~/miniconda/envs$ ll
-<a name="rest_code_832fda6d17a046afbbdab34fb0ee3e24-3"></a>total <span class="m">16</span>
-<a name="rest_code_832fda6d17a046afbbdab34fb0ee3e24-4"></a>drwxrwxr-x  <span class="m">4</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:12 ./
-<a name="rest_code_832fda6d17a046afbbdab34fb0ee3e24-5"></a>drwxrwxr-x <span class="m">13</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:02 ../
-<a name="rest_code_832fda6d17a046afbbdab34fb0ee3e24-6"></a>drwxrwxr-x <span class="m">20</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:09 python2.7/
-<a name="rest_code_832fda6d17a046afbbdab34fb0ee3e24-7"></a>drwxrwxr-x <span class="m">20</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:30 python3.5/
+<pre class="code shell"><a name="rest_code_254fd5926da04858addb57e9e1dcaa25-1"></a>$ <span class="nb">cd</span> /home/vagrant/miniconda/envs/
+<a name="rest_code_254fd5926da04858addb57e9e1dcaa25-2"></a>$ ls -l
+<a name="rest_code_254fd5926da04858addb57e9e1dcaa25-3"></a>total <span class="m">16</span>
+<a name="rest_code_254fd5926da04858addb57e9e1dcaa25-4"></a>drwxrwxr-x  <span class="m">4</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:12 ./
+<a name="rest_code_254fd5926da04858addb57e9e1dcaa25-5"></a>drwxrwxr-x <span class="m">13</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:02 ../
+<a name="rest_code_254fd5926da04858addb57e9e1dcaa25-6"></a>drwxrwxr-x <span class="m">20</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:09 python2.7/
+<a name="rest_code_254fd5926da04858addb57e9e1dcaa25-7"></a>drwxrwxr-x <span class="m">20</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:30 python3.5/
 </pre>
 <ul class="simple">
 <li>The <strong>colour-science.org</strong> website served from the virtual machine at
@@ -360,20 +360,20 @@ are as follows:</p>
 <code>PyCharm ---&gt; Tools Start SSH session...</code> menu item.</p>
 <p>However if you want to be able to export the display and see the figures you
 will have to manually <code>ssh</code> into the virtual machine:</p>
-<pre class="code shell"><a name="rest_code_a370603cfa2e4f0ea9c21aa5d9d4c0ca-1"></a>ssh -X vagrant@192.168.32.64
+<pre class="code shell"><a name="rest_code_5adb8548809344958d7040ebd4e405d7-1"></a>$ ssh -X vagrant@192.168.32.64
 </pre>
 <p>Password is <code>vagrant</code>.</p>
 <p>You will also need to add the virtual machine to the X11 hosts by issuing the
 following command on the <em>macOs</em> host:</p>
-<pre class="code shell"><a name="rest_code_e135742cd35942449f9356e3cd0cf229-1"></a>xhost + <span class="m">192</span>.168.32.64
+<pre class="code shell"><a name="rest_code_ac181766aeeb475aa9b98ac04283e906-1"></a>$ xhost + <span class="m">192</span>.168.32.64
 </pre>
 </div>
 <div class="section" id="jupyter-notebooks">
 <h3>Jupyter Notebooks</h3>
 <p>The <a class="reference external" href="http://ipython.org/notebook.html">Jupyter Notebooks</a> server is started
 as follows:</p>
-<pre class="code shell"><a name="rest_code_f9b1e9a146e54685b40cfb4bfae33fd1-1"></a><span class="nb">cd</span> /colour-science/colour-notebooks/notebooks
-<a name="rest_code_f9b1e9a146e54685b40cfb4bfae33fd1-2"></a>ipython notebook --pylab<span class="o">=</span>inline --ip<span class="o">=</span><span class="m">0</span>.0.0.0
+<pre class="code shell"><a name="rest_code_1629cee8dbba49d897628daf7a9bed40-1"></a>$ <span class="nb">cd</span> /colour-science/colour-notebooks/notebooks
+<a name="rest_code_1629cee8dbba49d897628daf7a9bed40-2"></a>$ ipython notebook --pylab<span class="o">=</span>inline --ip<span class="o">=</span><span class="m">0</span>.0.0.0
 </pre>
 <p>Then you can access it on the <em>macOs</em> host at the following url:
 <a class="reference external" href="http://localhost:8888/">http://localhost:8888/</a></p>
@@ -383,10 +383,10 @@ as follows:</p>
 <p>You can activate the remote Python environments in the virtual machine by
 issuing those commands:</p>
 <p>For <strong>python2.7</strong>:</p>
-<pre class="code shell"><a name="rest_code_4ecdb1f5b85847a1b6312916f01c7b8c-1"></a><span class="nb">source</span> activate python2.7
+<pre class="code shell"><a name="rest_code_004081e1597646dca9000a147d916bc4-1"></a>$ <span class="nb">source</span> activate python2.7
 </pre>
 <p>For <strong>python3.5</strong>:</p>
-<pre class="code shell"><a name="rest_code_24c95493947a45539411f4ced2adc432-1"></a><span class="nb">source</span> activate python3.5
+<pre class="code shell"><a name="rest_code_a73e2f36f16c4654882f06e6553f123a-1"></a>$ <span class="nb">source</span> activate python3.5
 </pre>
 </div>
 </div>

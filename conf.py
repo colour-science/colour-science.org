@@ -140,7 +140,7 @@ NAVIGATION_LINKS = {
                  'Latest (v0.3.13)'),
                 ('https://github.com/colour-science/colour/releases',
                  'All Releases'),
-                ('https://pypi.python.org/pypi/colour-science/', 'Pypi'),
+                ('https://pypi.org/project/colour-science/', 'Pypi'),
                 ('/api-status-and-badges', 'API Status and Badges'),
             ),
             'Development',

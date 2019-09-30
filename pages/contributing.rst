@@ -17,10 +17,8 @@ There are many ways to help:
     Tracker <https://github.com/colour-science/colour/issues>`_
 -   Contributing new code by implementing new features or adding
     examples, for some ideas you can take a look at the issues with the
-    `Enhancement <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AEnhancement>`_,
+    `Enhancement <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AEnhancement>`_ and
     `Feature <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AFeature>`_
-    and
-    `Ready <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AReady>`_
     labels or the
     `v9.9.9 <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+milestone%3Av9.9.9>`_
     milestone.
@@ -44,6 +42,9 @@ There are many ways to help:
     -   `Colour - Spectroscope </colour-spectroscope/>`_
 
 -   Participating in discussions on the `Mailing List <colour-science@googlegroups.com>`_.
+
+**Github** hosts a `First Contributions <https://github.com/firstcontributions/first-contributions>`_
+repository with good information for new comers.
 
 Reporting Issues
 ----------------
@@ -103,12 +104,8 @@ We currently use a large set of labels to categorise issues:
     Used for a duplicate issue.
 -   `Examples <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AExamples>`_:
     Used for issues related to the examples.
--   `In Progress <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AIn%20Progress>`_:
-    Used for an issue started and ongoing with very long development time.
 -   `Postponed <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3APostponed>`_:
     Used for an issue postponed for a future milestone.
--   `Ready <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AReady>`_:
-    Used for an issue ready to be addressed.
 -   `Task <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ATask>`_:
     Used for a task not directly related to pure programming.
 -   `Good First Issue <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3A"Good+First+Issue">`_:
@@ -116,6 +113,8 @@ We currently use a large set of labels to categorise issues:
 -   `Help Wanted <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3A"Help+Wanted">`_:
     Used for an issue appropriate for a first time contribution but likely harder than a
     `Good First Issue <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3A"Good+First+Issue">`_ one.
+-   `Hacktoberfest <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3A"Hacktoberfest">`_:
+    Used for an issue relevant to `Digital Ocean's Hacktoberfest <https://hacktoberfest.digitalocean.com>`_.
 
 Defects
 ^^^^^^^
@@ -218,7 +217,7 @@ Here is a succinct overview of the steps you will most likely go through:
     -   Hotfix branch prefix: **hotfix/**
 
 8.  Check if the unit tests and doctests are running properly.
-9.  `flake8 <https://pypi.python.org/pypi/flake8>`_ is currently set to error if
+9.  `flake8 <https://pypi.org/project/flake8>`_ is currently set to error if
     anything incorrect is found, thus we advice that you run it before
     committing and pushing your code to *origin*, your own fork.
 10. Commit your changes:
@@ -313,7 +312,7 @@ Python Language Rules
     and `scikit-image <http://scikit-image.org/>`_.
 -   All the code must be checked with the static analysis tool of your choice
     (we use `PyCharm <http://www.jetbrains.com/pycharm/>`_ extensively),
-    `flake8 <https://pypi.python.org/pypi/flake8>`_,  `Landscape <https://landscape.io/>`_
+    `flake8 <https://pypi.org/project/flake8>`_,  `Landscape <https://landscape.io/>`_
     and `Scrutinizer <https://scrutinizer-ci.com/>`_
 -   No *pull request* should be merged without being reviewed and ensuring that
     the tests suite pass in `Travis-CI <http://travis-ci.org/>`_.
@@ -861,8 +860,8 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                                 <label class="strikethrough">Run the
                                     <em>release</em>
                                     task: It releases the project to
-                                    <a class="reference external" href="https://pypi.python.org/pypi/colour-science">Pypi</a> with
-                                    <a class="reference external" href="https://pypi.python.org/pypi/twine">Twine</a>.
+                                    <a class="reference external" href="https://pypi.org/project/colour-science">Pypi</a> with
+                                    <a class="reference external" href="https://pypi.org/project/twine">Twine</a>.
                                 </label>
                             </div>
                             <pre class="code shell">$ invoke release</pre>

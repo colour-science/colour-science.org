@@ -18,7 +18,7 @@ objects and *backward incompatible changes*. It provides support for
 
 The API documentation is now hosted on `readthedocs.io <https://colour.readthedocs.io/en/latest/api.html>`_
 
-Python 2.7 and 3.5 wheels are now available on `Pypi <https://pypi.python.org/pypi/colour-science/>`_.
+Python 2.7 and 3.5 wheels are now available on `Pypi <https://pypi.org/project/colour-science/>`_.
 
 Head to the `releases page <https://github.com/colour-science/colour/releases/tag/v0.3.7>`_
 for complete details.

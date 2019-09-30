@@ -14,20 +14,20 @@ deploying:
     `Python 3.5 <https://www.python.org/download/releases/>`_
 -   `NumPy <http://www.numpy.org/>`_
 -   `SciPy <http://www.scipy.org/>`_
--   `Six>=1.10.0 <https://pypi.python.org/pypi/six>`_
+-   `Six>=1.10.0 <https://pypi.org/project/six>`_
 -   `OpenImageIO <http://openimageio.org>`_
 -   `Pandas <https://pandas.pydata.org/>`_
 -   `Matplotlib <http://matplotlib.org/>`_
 -   `Sphinx <https://sphinx-doc.org>`_
 -   `sphinxcontrib-bibtex <https://sphinxcontrib-bibtex.readthedocs.io/>`_
 -   `sphinx_rtd_theme <https://github.com/rtfd/sphinx_rtd_theme/>`_
--   `Coverage.py <https://pypi.python.org/pypi/coverage>`_
--   `Flake8 <https://pypi.python.org/pypi/flake8>`_
--   `mock <https://pypi.python.org/pypi/mock>`_
+-   `Coverage.py <https://pypi.org/project/coverage>`_
+-   `Flake8 <https://pypi.org/project/flake8>`_
+-   `mock <https://pypi.org/project/mock>`_
 -   `nose <https://nose.readthedocs.io/en/latest>`_
 -   `Invoke <http://www.pyinvoke.org/>`_
 -   `restructuredtext-lint <https://github.com/twolfson/restructuredtext-lint>`_
--   `twine <https://pypi.python.org/pypi/twine>`_
+-   `twine <https://pypi.org/project/twine>`_
 -   `YAPF <https://github.com/google/yapf>`_
 -   `Nikola <https://getnikola.com/>`_
 -   `Apache 2.2 <http://httpd.apache.org>`_
@@ -53,15 +53,15 @@ Development Workspace Creation
 
 .. code:: shell
 
-    mkdir colour-science
-    cd colour-science
+    $ mkdir colour-science
+    $ cd colour-science
 
 -   Clone the `colour-vagrant <https://github.com/colour-science/colour-vagrant>`_
     repository:
 
 .. code:: shell
 
-    git clone git://github.com/colour-science/colour-vagrant.git
+    $ git clone git://github.com/colour-science/colour-vagrant.git
 
 -   You should now have a :code:`colour-vagrant` directory nested into the
     :code:`colour-science` one.
@@ -85,7 +85,7 @@ We will loosely follow
 
     .. code:: shell
 
-        pip install fabric
+        $ pip install fabric
 
 .. class:: alert alert-dismissible alert-warning
 
@@ -171,8 +171,8 @@ elements available:
 
 .. code:: shell
 
-    vagrant@vagrant:~$ cd /home/vagrant/miniconda/envs/
-    vagrant@vagrant:~/miniconda/envs$ ll
+    $ cd /home/vagrant/miniconda/envs/
+    $ ls -l
     total 16
     drwxrwxr-x  4 vagrant vagrant 4096 Apr 29 03:12 ./
     drwxrwxr-x 13 vagrant vagrant 4096 Apr 29 03:02 ../
@@ -220,7 +220,7 @@ will have to manually :code:`ssh` into the virtual machine:
 
 .. code:: shell
 
-    ssh -X vagrant@192.168.32.64
+    $ ssh -X vagrant@192.168.32.64
 
 Password is :code:`vagrant`.
 
@@ -229,7 +229,7 @@ following command on the *macOs* host:
 
 .. code:: shell
 
-    xhost + 192.168.32.64
+    $ xhost + 192.168.32.64
 
 Jupyter Notebooks
 ^^^^^^^^^^^^^^^^^
@@ -239,8 +239,8 @@ as follows:
 
 .. code:: shell
 
-    cd /colour-science/colour-notebooks/notebooks
-    ipython notebook --pylab=inline --ip=0.0.0.0
+    $ cd /colour-science/colour-notebooks/notebooks
+    $ ipython notebook --pylab=inline --ip=0.0.0.0
 
 Then you can access it on the *macOs* host at the following url:
 `http://localhost:8888/ <http://localhost:8888/>`_
@@ -255,10 +255,10 @@ For **python2.7**:
 
 .. code:: shell
 
-    source activate python2.7
+    $ source activate python2.7
 
 For **python3.5**:
 
 .. code:: shell
 
-    source activate python3.5
+    $ source activate python3.5

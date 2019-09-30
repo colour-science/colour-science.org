@@ -52,7 +52,7 @@
             </a>
         </li>
         <li class="list-inline-item">
-            <a href="https://pypi.python.org/pypi/colour-science">
+            <a href="https://pypi.org/project/colour-science">
                 <img src="https://img.shields.io/pypi/v/colour-science.svg?style=flat-square" alt="PyPI version" height="18">
             </a>
         </li>
