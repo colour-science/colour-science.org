@@ -157,7 +157,16 @@
                 Documentation improvements.
             </p>
         </div>
-        <div class="col"></div>
+        <div class="col">
+            <h3>Matt Pppp</h3>
+            <p>
+                <a href="https://github.com/colour-science/colour/issues/507">Hacktoberfest 2019</a>
+                technical support.
+            </p>
+            <p>
+                <a href="https://github.com/feralpoosum">Github</a>
+            </p>
+        </div>
     </div>
     <div class="mt-5"></div>
 
