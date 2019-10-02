@@ -167,6 +167,21 @@
                 <a href="https://github.com/feralpoosum">Github</a>
             </p>
         </div>
+        <div class="w-100"></div>
+        <div class="col">
+            <h3>Chinmay Rane</h3>
+            <p>
+                <a href="https://github.com/colour-science/colour/issues/511">Hacktoberfest 2019</a>
+                technical support.
+            </p>
+            <p>
+                <a href="https://github.com/Chinmayrane16">Github</a>
+            </p>
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
+        </div> 
     </div>
     <div class="mt-5"></div>
 
