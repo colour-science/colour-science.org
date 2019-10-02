@@ -1036,7 +1036,7 @@ CONTENT_FOOTER = """
         </a>
     </li>
 </ul>
-<p class="text-center">Copyright © 2013-{date} – {author} – <a href="mailto:{email}">{email}</a></p>
+<p class="text-center">Copyright © 2013-{date} – {author}</p>
 """
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
