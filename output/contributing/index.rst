@@ -197,8 +197,8 @@ Here is a succinct overview of the steps you will most likely go through:
 
 .. code:: shell
 
-    git checkout master
-    git pull upstream master
+    git checkout develop
+    git pull upstream develop
 
 7.  Create a branch for your contribution:
 
