@@ -56,7 +56,8 @@
                             </a>
 
                             <p class="lead pt-5">
-                                We are an affiliated project of
+                                <strong><span class="text-primary">Colour</span></strong> is
+                                an affiliated project of
                                 <a href="https://numfocus.org/">NumFOCUS</a>, a 501(c)(3)
                                 nonprofit in the United States.
                             </p>
