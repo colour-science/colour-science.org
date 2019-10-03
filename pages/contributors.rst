@@ -348,6 +348,7 @@
                 <li><a href="https://github.com/briend">briend</a></li>
                 <li><a href="https://github.com/cclauss">cclauss</a></li>
                 <li><a href="https://github.com/Chandler">Chandler</a></li>
+                <li><a href="https://github.com/chesschi">chesschi</a></li>
             </ul>
         </div>
         <div class="col">
