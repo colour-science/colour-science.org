@@ -12,6 +12,10 @@ colour-science.org
 
     Documentation improvements.
 
+-   **Eva Levanto**
+
+    *Hacktoberfest 2019* technical support.
+
 About
 -----
 
