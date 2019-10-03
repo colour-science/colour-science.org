@@ -179,6 +179,14 @@
             </p>
         </div>
         <div class="col">
+            <h3>Pavithra Eswaramoorthy</h3>
+            <p>
+                <a href="https://github.com/colour-science/colour/issues/505">Hacktoberfest 2019</a>
+                technical support.
+            </p>
+            <p>
+                <a href="https://github.com/pavithraes">Github</a>
+            </p>
         </div>
         <div class="col">
         </div>
