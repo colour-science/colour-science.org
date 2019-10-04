@@ -722,6 +722,7 @@
                             <li><a href="https://github.com/TFiFiE">TFiFiE</a></li>
                             <li><a href="https://github.com/tingeman">tingeman</a></li>
                             <li><a href="https://github.com/totyped">totyped</a></li>
+                            <li><a href="https://github.com/vidakDK">vidakDK</a></li>
                             <li><a href="https://github.com/Willingo">Willingo</a></li>
                             <li><a href="https://github.com/zachlewis">zachlewis</a></li>
                         </ul>
