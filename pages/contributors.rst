@@ -22,9 +22,11 @@
             <div class="card h-100">
                 <div class="card-header text-center">
                     <h3>Thomas Mansencal</h3>
-                    <h5 class="card-subtitle text-muted mt-3">
-                        <em>Visual Effects Artist</em> @
+                    <h4>
                         <a href="http://wetafx.co.nz">Weta Digital</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>Visual Effects Artist</em>
                     </h5>
                 </div>
                 <div class="card-body">
@@ -42,10 +44,6 @@
             <div class="card h-100">
                 <div class="card-header text-center">
                     <h3>Michael Mauderer</h3>
-                    <h5 class="card-subtitle text-muted mt-3">
-                        <em>HCI Researcher</em> @
-                        <a href="https://www.dundee.ac.uk/">University of Dundee</a>
-                    </h5>
                 </div>
                 <div class="card-body">
                     <p class="card-text">
@@ -61,9 +59,11 @@
             <div class="card h-100">
                 <div class="card-header text-center">
                     <h3>Michael Parsons</h3>
-                    <h5 class="card-subtitle text-muted mt-3">
-                        <em>Colour Scientist</em> @
+                    <h4>
                         <a href="http://www.moving-picture.com/">The Moving Picture Company</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>Colour Scientist</em>
                     </h5>
                 </div>
                 <div class="card-body">
@@ -84,9 +84,11 @@
             <div class="card h-100">
                 <div class="card-header text-center">
                     <h3>Nick Shaw</h3>
-                    <h5 class="card-subtitle text-muted mt-3">
-                        <em>Workflow Consultant</em> @
+                    <h4>
                         <a href="http://antlerpost.com/">Antler Post</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>Workflow Consultant</em>
                     </h5>
                 </div>
                 <div class="card-body">
@@ -119,9 +121,11 @@
             <div class="card h-100">
                 <div class="card-header text-center">
                     <h3>Sean Cooper</h3>
-                    <h5 class="card-subtitle text-muted mt-3">
-                        <em>Colour Scientist</em> @
+                    <h4>
                         <a href="https://www.dneg.com/">Double Negative</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>Colour Scientist</em>
                     </h5>
                 </div>
                 <div class="card-body">
@@ -145,9 +149,11 @@
             <div class="card h-100">
                 <div class="card-header text-center">
                     <h3>Kevin Wheatley</h3>
-                    <h5 class="card-subtitle text-muted mt-3">
-                        <em>Head of Imaging</em> @
+                    <h4>
                         <a href="http://www.framestore.com/">Framestore</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>Head of Imaging</em>
                     </h5>
                 </div>
                 <div class="card-body">
@@ -231,8 +237,12 @@
             <div class="card h-100">
                 <div class="card-header text-center">
                     <h3>Jean D. Vandenberg</h3>
-                    <em>Colour Scientist</em> @
-                    <a href="https://www.waltdisneystudios.com/">The Walt Disney Studios</a>
+                    <h4>
+                        <a href="https://www.waltdisneystudios.com/">The Walt Disney Studios</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>Colour Scientist</em>
+                    </h5>
                 </div>
                 <div class="card-body">
                     <p class="card-text">
@@ -255,7 +265,9 @@
             <div class="card h-100">
                 <div class="card-header text-center">
                     <h3>Troy James Sobotka</h3>
-                    <em>Motion Picture Technician</em>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>Motion Picture Technician</em>
+                    </h5>
                 </div>
                 <div class="card-body">
                     <p class="card-text">
@@ -271,8 +283,12 @@
             <div class="card h-100">
                 <div class="card-header text-center">
                     <h3>Dominik Moritz</h3>
-                    <em>PhD in Computer Science</em> @
-                    <a href="https://www.washington.edu/">University of Washington</a>
+                    <h4>
+                        <a href="https://www.washington.edu/">University of Washington</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>PhD in Computer Science</em>
+                    </h5>
                 </div>
                 <div class="card-body">
                     <p class="card-text">
@@ -382,9 +398,11 @@
             <div class="card h-100">
                 <div class="card-header text-center">
                     <h3>Steve Agland</h3>
-                    <h5 class="card-subtitle text-muted mt-3">
-                        <em>Supervising Lighting Technical Director</em> @
+                    <h4>
                         <a href="http://www.animallogic.com/">Animal Logic</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>Supervising Lighting Technical Director</em>
                     </h5>
                 </div>
                 <div class="card-body">
@@ -401,9 +419,11 @@
             <div class="card h-100">
                 <div class="card-header text-center">
                     <h3>Tim Borer</h3>
-                    <h5 class="card-subtitle text-muted mt-3">
-                        <em>Lead Engineer</em> @
+                    <h4>
                         <a href="http://www.bbc.co.uk/rd">BBC Research & Development</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>Lead Engineer</em>
                     </h5>
                 </div>
                 <div class="card-body">
@@ -445,9 +465,11 @@
             <div class="card h-100">
                 <div class="card-header text-center">
                     <h3>Scott Dyer</h3>
-                    <h5 class="card-subtitle text-muted mt-3">
-                        <em>Image Engineering</em> @
+                    <h4>
                         <a href="http://www.oscars.org">Academy of Motion Picture Arts and Sciences</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>Image Engineering</em>
                     </h5>
                 </div>
                 <div class="card-body">
@@ -464,12 +486,13 @@
             <div class="card h-100">
                 <div class="card-header text-center">
                     <h3>Mark D. Fairchild</h3>
-                    <h5 class="card-subtitle text-muted mt-3">
-                        <em>Director</em> @
-                        <a href="https://www.rit.edu/cos/colorscience/">Munsell Color Science Lab</a>,
-
-                        <em>Director</em> @
+                    <h4>
+                        <a href="https://www.rit.edu/cos/colorscience/">Munsell Color Science Lab</a>
+                        <br>
                         <a href="https://www.rit.edu/cos/colorscience/">Program of Color Science</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>Director</em>
                     </h5>
                 </div>
                 <div class="card-body">
@@ -486,9 +509,11 @@
             <div class="card h-100">
                 <div class="card-header text-center">
                     <h3>Alex Forsythe</h3>
-                    <h5 class="card-subtitle text-muted mt-3">
-                        <em>Image Engineering Manager</em> @
+                    <h4>
                         <a href="http://www.oscars.org">Academy of Motion Picture Arts and Sciences</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>Image Engineering Manager</em>
                     </h5>
                 </div>
                 <div class="card-body">
@@ -512,8 +537,11 @@
             <div class="card h-100">
                 <div class="card-header text-center">
                     <h3>Joseph Goldstone</h3>
+                    <h4>
+                        <a href="https://www.arri.com/">ARRI</a>
+                    </h4>
                     <h5 class="card-subtitle text-muted mt-3">
-                        <em>Image Science Engineer</em> @ <a href="https://www.arri.com">ARRI</a>
+                        <em>Image Science Engineer</em>
                     </h5>
                 </div>
                 <div class="card-body">
@@ -547,7 +575,7 @@
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
-                    <h3>Yoshi Ohno</h3>
+                    <h3>Charles Poynton</h3>
                     <h5 class="card-subtitle text-muted mt-3">
                         <em>Mathematician &amp; Colour Scientist</em>
                     </h5>
@@ -574,9 +602,11 @@
             <div class="card h-100">
                 <div class="card-header text-center">
                     <h3>Aurélia Sellier</h3>
-                    <h5 class="card-subtitle text-muted mt-3">
-                        <em>FX Production Coordinator</em> @
+                    <h4>
                         <a href="http://wetafx.co.nz">Weta Digital</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>FX Production Coordinator</em>
                     </h5>
                 </div>
                 <div class="card-body">
@@ -591,7 +621,6 @@
         <div class="col">
         </div>
     </div>
-    <div class="mt-5"></div>
 
     <!-- ------------------------------------------------------------------ -->
     <!-- Issues & Discussions                                               -->
