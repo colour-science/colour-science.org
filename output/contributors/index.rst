@@ -697,6 +697,7 @@
                             <li><a href="https://github.com/leklbk">leklbk</a></li>
                             <li><a href="https://github.com/lensz">lensz</a></li>
                             <li><a href="https://github.com/Myndex">Myndex</a></li>
+                            <li><a href="https://github.com/naavis">naavis</a></li>
                         </ul>
                     </p>
                 </div>
@@ -707,7 +708,6 @@
                 <div class="card-body">
                     <p class="card-text">
                         <ul class="list-unstyled text-center">
-                            <li><a href="https://github.com/naavis">naavis</a></li>
                             <li><a href="https://github.com/NoRoKr">NoRoKr</a></li>
                             <li><a href="https://github.com/nschloe">nschloe</a></li>
                             <li><a href="https://github.com/peteroupc">peteroupc</a></li>
@@ -721,6 +721,7 @@
                             <li><a href="https://github.com/tashdor">tashdor</a></li>
                             <li><a href="https://github.com/TFiFiE">TFiFiE</a></li>
                             <li><a href="https://github.com/tingeman">tingeman</a></li>
+                            <li><a href="https://github.com/thunders82">thunders82</a></li>
                             <li><a href="https://github.com/totyped">totyped</a></li>
                             <li><a href="https://github.com/vidakDK">vidakDK</a></li>
                             <li><a href="https://github.com/Willingo">Willingo</a></li>
