@@ -378,6 +378,20 @@
 
     <div class="row my-5">
         <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>Ben Pearlstine</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        <a href="https://github.com/colour-science/colour/issues/513">Hacktoberfest 2019</a>
+                        technical support.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/BPearlstine" class="card-link">Github</a>
+                </div>
+            </div>
         </div>
         <div class="col">
         </div>
