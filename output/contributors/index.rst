@@ -189,6 +189,13 @@
             </p>
         </div>
         <div class="col">
+            <h3>John Mertic</h3>
+            <p>
+                License discovery improvements.
+            </p>
+            <p>
+                <a href="https://github.com/jmertic">Github</a>
+            </p>
         </div>
     </div>
     <div class="mt-5"></div>
