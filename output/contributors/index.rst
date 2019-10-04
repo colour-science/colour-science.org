@@ -663,12 +663,12 @@
                             <li>Vishal Vashistha</li>
                             <li>Vlad Enache</li>
                             <li><a href="https://github.com/Ampersandme">Ampersandme</a></li>
+                            <li><a href="https://github.com/Apoorva-13">Apoorva-13</a></li>
                             <li><a href="https://github.com/awehring">awehring</a></li>
                             <li><a href="https://github.com/brandondube">brandondube</a></li>
                             <li><a href="https://github.com/briend">briend</a></li>
                             <li><a href="https://github.com/cclauss">cclauss</a></li>
                             <li><a href="https://github.com/Chandler">Chandler</a></li>
-                            <li><a href="https://github.com/chesschi">chesschi</a></li>
                         </ul>
                     </p>
                 </div>
@@ -679,6 +679,7 @@
                 <div class="card-body">
                     <p class="card-text">
                         <ul class="list-unstyled text-center">
+                            <li><a href="https://github.com/chesschi">chesschi</a></li>
                             <li><a href="https://github.com/codycuellar">codycuellar</a></li>
                             <li><a href="https://github.com/Edwardlin-zlt">Edwardlin-zlt</a></li>
                             <li><a href="https://github.com/eyeforcolor">eyeforcolor</a></li>
