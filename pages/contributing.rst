@@ -12,11 +12,11 @@ give you an overview on how to contribute.
 
 There are many ways to help:
 
--   Reporting a defect, proposing a new feature or enhancement or
+-   Reporting a defect, proposing a new feature, an enhancement or
     commenting existing issues on the `Issue
-    Tracker <https://github.com/colour-science/colour/issues>`_
+    Tracker <https://github.com/colour-science/colour/issues>`_.
 -   Contributing new code by implementing new features or adding
-    examples, for some ideas you can take a look at the issues with the
+    examples. For some ideas you can take a look at the issues with the
     `Enhancement <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AEnhancement>`_ and
     `Feature <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AFeature>`_
     labels or the
@@ -35,8 +35,10 @@ There are many ways to help:
     lot to do.
 -   Improving siblings packages:
 
+    -   `Colour - Datasets </colour-datasets/>`_
     -   `Colour - Demosaicing </colour-demosaicing/>`_
     -   `Colour - HDRI </colour-hdri/>`_
+    -   `Colour - Checker Detection </colour-checker-detection/>`_
     -   `Colour - Maya </colour-maya/>`_
     -   `Colour - Nuke </colour-nuke/>`_
     -   `Colour - Spectroscope </colour-spectroscope/>`_
@@ -51,10 +53,10 @@ Reporting Issues
 
 The three major issue types one can report on the issue tracker are the
 following:
-`Defect <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ADefect>`_,
-`Enhancement <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AEnhancement>`_
-and
-`Feature <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AFeature>`_.
+
+-   `Defect <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ADefect>`_
+-   `Enhancement <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AEnhancement>`_
+-   `Feature <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AFeature>`_
 
 We currently use a large set of labels to categorise issues:
 
@@ -129,16 +131,37 @@ issue tracker and we will have to label them as
 `Duplicate <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ADuplicate>`_
 and close them.
 
-When reporting a defect please provide the following details if possible and
-makes sense to do so:
+When reporting a defect please provide the output of the following command if
+possible, and if it makes sense to do so:
 
--   **Colour** version.
--   `Python <https://www.python.org/>`_ version.
--   `NumPy <http://www.numpy.org/>`_ and `SciPy <http://www.scipy.org/>`_
-    versions.
+.. code:: shell
+
+    $ python -c "import colour;colour.utilities.describe_environment()"
+
+The typical output is something along those lines:
+
+::
+
+    ===============================================================================
+    *                                                                             *
+    *   Interpreter :                                                             *
+    *       python : 3.7.4 (default, Sep  7 2019, 18:27:02)                       *
+    *                [Clang 10.0.1 (clang-1001.0.46.4)]                           *
+    *                                                                             *
+    *   colour-science.org :                                                      *
+    *       colour : v0.3.13-236-g476410d4                                        *
+    *                                                                             *
+    *   Runtime :                                                                 *
+    *       numpy : 1.16.5                                                        *
+    *       scipy : 1.2.2                                                         *
+    *       pandas : 0.24.2                                                       *
+    *       matplotlib : 2.2.4                                                    *
+    *       OpenImageIO : 2.0.9                                                   *
+    *                                                                             *
+    ===============================================================================
 
 If you are reporting an exception, please provide the complete traceback, it
-will tremendously help us understand what happened.
+will help us tremendously understand what happened.
 
 Features & Enhancements
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -168,88 +191,125 @@ Here is a succinct overview of the steps you will most likely go through:
 
 1.  `Fork <https://github.com/colour-science/colour/fork>`_ the
     `Colour <https://github.com/colour-science/colour>`_ repository.
-2.  Activate `Travis-CI <http://travis-ci.org/>`_ for your *fork* so that the
-    tests suite is run when you push your changes.
-3.  Clone the repository locally to your workspace:
+2.  Clone the repository locally to your workspace:
 
 .. code:: shell
 
-    git clone git@github.com:$USER/colour.git
+    $ git clone git@github.com:$USER/colour.git
 
-4.  Connect your clone to the original *upstream* repository by adding it as a
+3.  Navigate to the *colour* directory:
+
+.. code:: shell
+
+    $ cd colour
+
+4.  Install the development dependencies with `Poetry <https://poetry.eustace.io>`_:
+
+.. code:: shell
+
+    $ poetry install
+
+5.  Connect your clone to the original *upstream* repository by adding it as a
     remote:
 
 .. code:: shell
 
-    git remote add upstream git@github.com:colour-science/colour
+    $ git remote add upstream git@github.com:colour-science/colour
 
-5.  You should now have two remotes:
+6.  You should now have two remotes:
 
 .. code:: shell
 
-    git remote -v
+    $ git remote -v
     origin  https://github.com/$USER/colour (fetch)
     origin  https://github.com/$USER/colour (push)
     upstream  https://github.com/colour-science/colour (fetch)
     upstream  https://github.com/colour-science/colour (push)
 
-6.  Pull the latest changes from *upstream*:
+7.  Pull the latest changes from *upstream*:
 
 .. code:: shell
 
-    git checkout develop
-    git pull upstream develop
+    $ git checkout develop
+    $ git pull upstream develop
 
 7.  Create a branch for your contribution:
 
+The core developers are using the
+`git flow branching model <http://nvie.com/posts/a-successful-git-branching-model/>`_
+for most of the development tasks and since the branch name appears in the
+commit message and for consistency, please use the following branch
+prefixes:
+
+-   Feature branch prefix: **feature/**
+-   Release branch prefix: **release/**
+-   Hotfix branch prefix: **hotfix/**
+
+As an example, working to implement `Mie Scattering <https://en.wikipedia.org/wiki/Mie_scattering>`_
+support:
+
 .. code:: shell
 
-    git checkout -b feature/mie_scattering
+    $ git checkout -b feature/mie_scattering
 
-    The core developers are using the
-    `git flow branching model <http://nvie.com/posts/a-successful-git-branching-model/>`_
-    for most of the development tasks and since the branch name appears in the
-    commit message and for consistency, please use the following branch
-    prefixes:
+8.  Check if the unit tests and doctests are running properly:
 
-    -   Feature branch prefix: **feature/**
-    -   Release branch prefix: **release/**
-    -   Hotfix branch prefix: **hotfix/**
+.. code:: shell
 
-8.  Check if the unit tests and doctests are running properly.
-9.  `flake8 <https://pypi.org/project/flake8>`_ is currently set to error if
-    anything incorrect is found, thus we advice that you run it before
-    committing and pushing your code to *origin*, your own fork.
+    $ poetry run invoke tests
+
+or alternatively:
+
+.. code:: shell
+
+    $ source $(poetry env info -p)/bin/activate
+    $ invoke tests
+
+9.  Check the compliance with `PEP8 <https://www.python.org/dev/peps/pep-0008/>`_:
+
+.. code:: shell
+
+    $ poetry run invoke quality
+
+or alternatively:
+
+.. code:: shell
+
+    $ source $(poetry env info -p)/bin/activate
+    $ invoke quality
+
 10. Commit your changes:
 
 .. code:: shell
 
-    git add mie_scattering.py
-    git commit -m 'Implement "Mie Scattering" support.'
+    $ git add mie_scattering.py
+    $ git commit -m 'Implement "Mie Scattering" support.'
 
 11. Push your changes back to *origin*, your own fork:
 
 .. code:: shell
 
-    git push origin feature/mie_scattering
+    $ git push origin feature/mie_scattering
 
-12. Ensure that the test suite is all right on `Travis-CI <http://travis-ci.org/>`_.
-13. Visit your repository fork on `Github <http://github.com/>`_. Your branch
-    should have a green *Pull Request* button, this will open a *pull request*
-    and let us know that we have some code to review :)
+12. Ensure that the `continuous integration <https://github.com/$USER/colour/actions>`_
+    suite succeeded.
+13. Visit your repository fork on `Github <https://github.com/$USER/colour>`_.
+    Your branch should have a green *Pull Request* button, this will open a
+    *pull request* and let us know that we have some code to review :)
 
 Code Reviews
 ------------
 
 Your *pull request* will be reviewed by the maintainers and any other developer
-interested in the project.
+interested by the project.
 
 Every single developer has his code reviewed, this is a natural process helping
-to raise the codebase quality while having a friendly discussion. Comments will
-be made on various aspects such as the documentation and references, the code
-style and its implementation. Those can be discouraging, although they are not
-meant to criticize but aim at improving the quality of your submission. We all
-learn from that process and the project ultimately benefits from them.
+to raise the codebase quality around a friendly and constructive discussion.
+Comments will be made on various aspects such as the documentation and
+references, the code style and its implementation. Those can be discouraging,
+although they are not meant to criticize but aim at improving the quality of
+your submission. We all learn from that process and the project ultimately
+benefits from them.
 
 Guidelines
 ----------
@@ -263,7 +323,8 @@ Overview
 
 We follow the `Google Python Style Guide <https://google-styleguide.googlecode.com/svn/trunk/pyguide.html>`_
 and especially the *Python Language Rules* although with the main exception
-being the docstrings / documentation formatted with `Numpy Docstrings Style <https://github.com/numpy/numpy/blob/master/doc/example.py>`_.
+being the docstrings / documentation formatted with
+`Numpy Docstrings Style <https://github.com/numpy/numpy/blob/master/doc/example.py>`_.
 
 The code has to be `PEP 8 <http://legacy.python.org/dev/peps/pep-0008/>`_
 compliant although but before anything else, it needs to be consistent with the
@@ -271,8 +332,9 @@ Colour Science litterature:
 
 For example, the base **CIE** colourspace is **CIE XYZ** with upper case
 notation. It can be converted to chromaticity coordinates **xy** with lower
-case notation. If we were to follow the `PEP 8 <http://legacy.python.org/dev/peps/pep-0008/>`_
-recommendations, we would have written a conversion definition as follows:
+case notation. If we were to fully abide by the
+`PEP 8 <http://legacy.python.org/dev/peps/pep-0008/>`_ recommendations, we
+would have written a conversion definition as follows:
 
 .. code:: python
 
@@ -281,9 +343,9 @@ recommendations, we would have written a conversion definition as follows:
         x, y = x / (x + y + z), y / (x + y + z)
         return x, y
 
-Abstracting the fact the above definition is totally undocumented, it can be
-confusing to understand when we are referencing big **X** tristimulus value or
-little **x** chromaticity coordinate.
+Abstracting the fact that the above definition is totally undocumented, it can
+be confusing to understand when we are referencing big **X** tristimulus value
+or little **x** chromaticity coordinate.
 
 For those cases, and there are legions of them in Colour Science, we have
 decided to go for clarity and consistency with the literature for the object
@@ -297,9 +359,10 @@ names:
         return x, y
 
 When the reference is using upper case named variables, we try to follow
-the same convention, it is unfortunately not `PEP 8 <http://legacy.python.org/dev/peps/pep-0008/>`_
-compliant but has the benefit of a much easier comparison between the
-implementation and the reference.
+the same convention, it is unfortunately not
+`PEP 8 <http://legacy.python.org/dev/peps/pep-0008/>`_ compliant but has the
+benefit of a much easier comparison between the implementation and the
+reference.
 
 We suggest that contributors follow the same rule.
 
@@ -310,12 +373,13 @@ Python Language Rules
 -   All the code must be documented to the same standard than
     `NumPy <http://www.numpy.org/>`_, `SciPy <http://www.scipy.org/>`_
     and `scikit-image <http://scikit-image.org/>`_.
--   All the code must be checked with the static analysis tool of your choice
-    (we use `PyCharm <http://www.jetbrains.com/pycharm/>`_ extensively),
-    `flake8 <https://pypi.org/project/flake8>`_,  `Landscape <https://landscape.io/>`_
-    and `Scrutinizer <https://scrutinizer-ci.com/>`_
+-   All the code must be checked with the static analysis tool of your choice,
+    e.g. `PyCharm <http://www.jetbrains.com/pycharm/>`_ ,
+    `flake8 <https://pypi.org/project/flake8>`_, or
+    `Codacy <https://www.codacy.com/>`_.
 -   No *pull request* should be merged without being reviewed and ensuring that
-    the tests suite pass in `Travis-CI <http://travis-ci.org/>`_.
+    the `Github Actions <https://github.com/colour-science/colour/actions>`_
+    continuous integration suite succeeded.
 -   Examples should be provided for new features.
 
 Python Style Rules
@@ -323,12 +387,12 @@ Python Style Rules
 
 -   Ensure consistency with Colour Science literature first.
 -   Ensure `PEP 8 <http://legacy.python.org/dev/peps/pep-0008/>`_ compliance.
--   Try using a close to *Latex* syntax for variables names so that they are
+-   Try using a close to *LaTeX* syntax for variables names so that they are
     easier to compare to the reference.
 
     For instance, a variable defined \\(D\_{uv}\\) in a paper would be defined
-    as *D\_uv* in the code, \\(L^\*\\) as *Lstar* and \\(X\_{ab}^{\\prime}\\) as
-    *Xp\_ab*.
+    as *D\_uv* in the code, \\(L^\*\\) as *Lstar* and \\(X\_{ab}^{\\prime}\\)
+    as *Xp\_ab*.
 -   Try using uppercase for author names in definitions:
 
 .. code:: python
@@ -559,11 +623,20 @@ Python Style Rules
     can use the **# noqa** pragma in those cases, although do it in last resort,
     we have already too much of them.
 -   Avoid **/** to wrap lines, prefer using the parenthesis **()**.
--   The code formatting is performed using `Yapf <https://github.com/google/yapf>`_. You can invoke it recursively on a directory as follows:
+-   The code formatting is performed using
+    `Yapf <https://github.com/google/yapf>`_. You can invoke it recursively on
+    a directory as follows:
 
 .. code:: shell
 
-          find . -type f -name '*.py' -exec yapf -i {} \;
+    $ poetry run yapf -ri colour/my_feature
+
+or alternatively:
+
+.. code:: shell
+
+    $ source $(poetry env info -p)/bin/activate
+    $ yapf -ri colour/my_feature
 
 -   Inline comments must have two spaces.
 -   Ensure that you have blank line at the end of the files.
@@ -594,7 +667,7 @@ using the `APA 6th Edition <http://www.apastyle.org/>`_ citation style:
 
 We are storing all our citations in a database maintained by
 `Mendeley <http://www.mendeley.com/>`_ and it is recommended that you are given
-a citation key.
+a citation key by us.
 
 Commits
 ^^^^^^^
@@ -620,9 +693,10 @@ it in the commit message using the following syntax: **Closes #32.**
     Yes:
     Implement "Yoshi Ohno" correlated colour temperature calculation.
 
-    Closes #32.
     This implementation allows for a more precise correlated colour temperature
     calculation by using a two solutions hybrid approach.
+
+    Closes #32.
 
 ::
 
