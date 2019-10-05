@@ -10,8 +10,10 @@
 Dependencies
 ------------
 
-**Colour** requires various dependencies in order to run. Depending your usage
-you may not need to install all of them.
+**Colour** requires various dependencies in order to run. Depending your
+intended use, i.e. using or developing, you may not need to install all of them.
+Please refer to the `Installation Methods for Using Colour`_
+and `Installation Methods for Developing Colour`_ sections below.
 
 Primary Dependencies
 ^^^^^^^^^^^^^^^^^^^^
@@ -46,14 +48,17 @@ Development Dependencies
 -  `mock <https://pypi.org/project/mock/>`_
 -  `nose <https://nose.readthedocs.io/en/latest>`_
 -  `restructuredtext-lint <https://github.com/twolfson/restructuredtext-lint>`_
--  `Sphinx>=1.6.* <https://sphinx-doc.org>`_
+-  `Sphinx <https://sphinx-doc.org>`_
 -  `sphinx_rtd_theme <https://github.com/rtfd/sphinx_rtd_theme/>`_
 -  `sphinxcontrib-bibtex <https://sphinxcontrib-bibtex.readthedocs.io/>`_
 -  `twine <https://pypi.org/project/twine/>`_
 -  `YAPF==0.23.0 <https://github.com/google/yapf>`_
 
+Installation Methods for Using Colour
+-------------------------------------
+
 Pypi
-----
+^^^^
 
 **Colour** can be easily installed from the
 `Python Package Index <https://pypi.org/project/colour-science/>`_ by
@@ -101,7 +106,7 @@ The figures plotting dependencies are installed as follows:
     $ pip install 'colour-science[plotting]'
 
 Continuum Analytics Anaconda
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Colour** is also available for `Anaconda <https://www.continuum.io/downloads>`_
 from *Continuum Analytics* via `conda-forge <https://conda-forge.org/>`_:
@@ -121,7 +126,7 @@ environment for Colour:
     </script>
 
 Github
-------
+^^^^^^
 
 Alternatively, you can also install directly from
 `Github <https://github.com/colour-science/colour>`_ source repository:
@@ -132,8 +137,38 @@ Alternatively, you can also install directly from
     $ cd colour
     $ pip install .
 
+Installation Methods for Developing Colour
+------------------------------------------
+
+Poetry
+^^^^^^
+
+**Colour** adopts `Poetry <https://poetry.eustace.io>`_ to help managing its
+dependencies, this is the recommended way to get started with **Colour**
+development:
+
+.. code:: shell
+
+    $ git clone git://github.com/colour-science/colour.git
+    $ cd colour
+    $ poetry install
+
+Those commands will create a Virtual Environment in which all the required
+dependencies will be installed. Tools can then be run as follows:
+
+.. code:: shell
+
+    $ poetry run invoke -l
+
+or alternatively:
+
+.. code:: shell
+
+    $ source $(poetry env info -p)/bin/activate
+    $ invoke -l
+
 Vagrant
--------
+^^^^^^^
 
 An easy way to get all the pre-requisites at once is to use our
 `colour-vagrant <https://github.com/colour-science/colour-vagrant>`_
