@@ -169,6 +169,7 @@ and <a class="reference internal" href="#installation-methods-for-developing-col
 <li><a class="reference external" href="http://www.pyinvoke.org/">Invoke</a></li>
 <li><a class="reference external" href="https://pypi.org/project/mock/">mock</a></li>
 <li><a class="reference external" href="https://nose.readthedocs.io/en/latest">nose</a></li>
+<li><a class="reference external" href="https://docs.pytest.org/en/latest/">pytest</a></li>
 <li><a class="reference external" href="https://github.com/twolfson/restructuredtext-lint">restructuredtext-lint</a></li>
 <li><a class="reference external" href="https://sphinx-doc.org">Sphinx</a></li>
 <li><a class="reference external" href="https://github.com/rtfd/sphinx_rtd_theme/">sphinx_rtd_theme</a></li>
@@ -194,26 +195,26 @@ dependencies, <a class="reference external" href="http://www.scipy.org/">SciPy</
 performed as follows: <cite>pip install numpy</cite>
 </div>
 </div>
-<pre class="code shell"><a name="rest_code_c967a41a25e645cc82db870762959743-1"></a>$ pip install colour-science
+<pre class="code shell"><a name="rest_code_9e2acf4fe8224348a25b656ffa21e445-1"></a>$ pip install colour-science
 </pre>
 <p>This <em>asciicast</em> demonstrates how to generate a pristine Python <em>VirtualEnv</em>
 environment for Colour:</p>
 <script type="text/javascript" src="https://asciinema.org/a/257384.js" id="asciicast-257384" async data-speed="3">
 </script><p>The optional features dependencies are installed as follows:</p>
-<pre class="code shell"><a name="rest_code_84943c619ed5466aa71d4fb6ae350368-1"></a>$ pip install <span class="s1">'colour-science[optional]'</span>
+<pre class="code shell"><a name="rest_code_a838ed2ea42a4c58b0f1fa4d788ca4ba-1"></a>$ pip install <span class="s1">'colour-science[optional]'</span>
 </pre>
 <p>The development dependencies are installed as follows:</p>
-<pre class="code shell"><a name="rest_code_277ffc3da8ff4f1e94ef980d23b20136-1"></a>$ pip install <span class="s1">'colour-science[development]'</span>
+<pre class="code shell"><a name="rest_code_72305936c4064409966da75f013d5218-1"></a>$ pip install <span class="s1">'colour-science[development]'</span>
 </pre>
 <p>The figures plotting dependencies are installed as follows:</p>
-<pre class="code shell"><a name="rest_code_cb6b05a1110d406dbdc888dd1e6f4ce7-1"></a>$ pip install <span class="s1">'colour-science[plotting]'</span>
+<pre class="code shell"><a name="rest_code_7713c6f862154e76aa14bd7a21027e55-1"></a>$ pip install <span class="s1">'colour-science[plotting]'</span>
 </pre>
 </div>
 <div class="section" id="continuum-analytics-anaconda">
 <h3>Continuum Analytics Anaconda</h3>
 <p><strong>Colour</strong> is also available for <a class="reference external" href="https://www.continuum.io/downloads">Anaconda</a>
 from <em>Continuum Analytics</em> via <a class="reference external" href="https://conda-forge.org/">conda-forge</a>:</p>
-<pre class="code shell"><a name="rest_code_1e6fa153b0cf4ed2b255b1e124717672-1"></a>$ conda install -c conda-forge colour-science
+<pre class="code shell"><a name="rest_code_559bed531e444848b86f333a1b643028-1"></a>$ conda install -c conda-forge colour-science
 </pre>
 <p>This <em>asciicast</em> demonstrates how to generate a pristine Python <em>conda</em>
 environment for Colour:</p>
@@ -224,9 +225,9 @@ environment for Colour:</p>
 <h3>Github</h3>
 <p>Alternatively, you can also install directly from
 <a class="reference external" href="https://github.com/colour-science/colour">Github</a> source repository:</p>
-<pre class="code shell"><a name="rest_code_ef59a311e820441884907196c6711355-1"></a>$ git clone git://github.com/colour-science/colour.git
-<a name="rest_code_ef59a311e820441884907196c6711355-2"></a>$ <span class="nb">cd</span> colour
-<a name="rest_code_ef59a311e820441884907196c6711355-3"></a>$ pip install .
+<pre class="code shell"><a name="rest_code_8bef691af8da4fb3810b5658f97cb8f3-1"></a>$ git clone git://github.com/colour-science/colour.git
+<a name="rest_code_8bef691af8da4fb3810b5658f97cb8f3-2"></a>$ <span class="nb">cd</span> colour
+<a name="rest_code_8bef691af8da4fb3810b5658f97cb8f3-3"></a>$ pip install .
 </pre>
 </div>
 </div>
@@ -237,17 +238,17 @@ environment for Colour:</p>
 <p><strong>Colour</strong> adopts <a class="reference external" href="https://poetry.eustace.io">Poetry</a> to help managing its
 dependencies, this is the recommended way to get started with <strong>Colour</strong>
 development:</p>
-<pre class="code shell"><a name="rest_code_e83dc908cf834d92b244b5dd66be44e0-1"></a>$ git clone git://github.com/colour-science/colour.git
-<a name="rest_code_e83dc908cf834d92b244b5dd66be44e0-2"></a>$ <span class="nb">cd</span> colour
-<a name="rest_code_e83dc908cf834d92b244b5dd66be44e0-3"></a>$ poetry install
+<pre class="code shell"><a name="rest_code_015a2f55adce4d438b23603e38969013-1"></a>$ git clone git://github.com/colour-science/colour.git
+<a name="rest_code_015a2f55adce4d438b23603e38969013-2"></a>$ <span class="nb">cd</span> colour
+<a name="rest_code_015a2f55adce4d438b23603e38969013-3"></a>$ poetry install
 </pre>
 <p>Those commands will create a Virtual Environment in which all the required
 dependencies will be installed. Tools can then be run as follows:</p>
-<pre class="code shell"><a name="rest_code_128ab425841b4001ab53efd0daeb3c73-1"></a>$ poetry run invoke -l
+<pre class="code shell"><a name="rest_code_ced46949d1534813b8bff1459f38e04e-1"></a>$ poetry run invoke -l
 </pre>
 <p>or alternatively:</p>
-<pre class="code shell"><a name="rest_code_828b9bb5ae094693aaaa548e6cd8cad2-1"></a>$ <span class="nb">source</span> <span class="k">$(</span>poetry env info -p<span class="k">)</span>/bin/activate
-<a name="rest_code_828b9bb5ae094693aaaa548e6cd8cad2-2"></a>$ invoke -l
+<pre class="code shell"><a name="rest_code_22367450281f4b8cac72ebfbc1a0ee59-1"></a>$ <span class="nb">source</span> <span class="k">$(</span>poetry env info -p<span class="k">)</span>/bin/activate
+<a name="rest_code_22367450281f4b8cac72ebfbc1a0ee59-2"></a>$ invoke -l
 </pre>
 </div>
 <div class="section" id="vagrant">

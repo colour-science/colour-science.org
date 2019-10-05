@@ -47,6 +47,7 @@ Development Dependencies
 -  `Invoke <http://www.pyinvoke.org/>`_
 -  `mock <https://pypi.org/project/mock/>`_
 -  `nose <https://nose.readthedocs.io/en/latest>`_
+-  `pytest <https://docs.pytest.org/en/latest/>`_
 -  `restructuredtext-lint <https://github.com/twolfson/restructuredtext-lint>`_
 -  `Sphinx <https://sphinx-doc.org>`_
 -  `sphinx_rtd_theme <https://github.com/rtfd/sphinx_rtd_theme/>`_
