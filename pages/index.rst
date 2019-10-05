@@ -37,12 +37,12 @@
                             <a class="btn btn-primary btn-sm btn-block"
                                 href="/installation-guide/"
                                 role="button">
-                                Get Started
+                                <h3 class="text-white my-0">Get Started</h3>
                             </a>
-                            <a class="btn btn-secondary btn-sm btn-block"
+                            <a class="btn btn-secondary bg-white btn-sm btn-block"
                                 href="https://github.com/colour-science/colour/archive/v0.3.13.zip"
                                 role="button">
-                                <span class="fa fa-download">&nbsp;</span> 0.3.13 Alpha
+                                <h3 class="my-0"><span class="fa fa-download">&nbsp;</span> 0.3.13 Alpha</h3>
                             </a>
                         </div>
                     </div>

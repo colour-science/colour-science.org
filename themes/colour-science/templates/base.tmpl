@@ -13,7 +13,7 @@ ${template_hooks['extra_head']()}
 
 <!-- Menubar -->
 
-<nav class="navbar navbar-expand-xl navbar-light bg-light static-top mb-4 py-3">
+<nav class="navbar navbar-expand-xl navbar-light bg-white static-top">
     <div class="container"><!-- This keeps the margins nice -->
         <a class="navbar-brand" href="${abs_link(_link("root", None, lang))}">
         %if logo_url:
@@ -29,7 +29,7 @@ ${template_hooks['extra_head']()}
         </button>
 
         <div class="collapse navbar-collapse" id="bs-navbar">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav ml-auto">
                 ${base.html_navigation_links_entries(navigation_links)}
                 ${template_hooks['menu']()}
             </ul>
@@ -55,19 +55,27 @@ ${template_hooks['extra_head']()}
 
 <!-- End of Menubar -->
 
+<!-- Main -->
+
 <div class="container" id="content" role="main">
     <div class="body-content">
         <!--Body content-->
         ${template_hooks['page_header']()}
         <%block name="content"></%block>
         <!--End of body content-->
-
-        <footer id="footer">
-            ${content_footer}
-            ${template_hooks['page_footer']()}
-        </footer>
     </div>
 </div>
+
+<!-- End of Main -->
+
+<!-- Footer -->
+
+<footer id="footer">
+    ${content_footer}
+    ${template_hooks['page_footer']()}
+</footer>
+
+<!-- End of Footer -->
 
 ${base.late_load_js()}
     <!-- fancy dates -->

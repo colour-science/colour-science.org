@@ -135,9 +135,10 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         (
             (
-                ('https://github.com/colour-science/colour', 'Source Code'),
+                ('https://github.com/colour-science/colour',
+                 '<strong>Source Code</strong>'),
                 ('https://github.com/colour-science/colour/archive/v0.3.13.zip',
-                 'Latest (v0.3.13)'),
+                 '<strong>Latest (v0.3.13)</strong>'),
                 ('https://github.com/colour-science/colour/releases',
                  'All Releases'),
                 ('https://pypi.org/project/colour-science/', 'Pypi'),
@@ -147,22 +148,22 @@ NAVIGATION_LINKS = {
         ),
         (
             (
-                ('/code-of-conduct', 'Code of Conduct'),
-                ('/installation-guide', 'Installation Guide'),
+                ('/code-of-conduct', '<strong>Code of Conduct</strong>'),
+                ('/installation-guide', '<strong>Installation Guide</strong>'),
                 ('https://colour.readthedocs.io/en/develop/tutorial.html',
-                 'Static Tutorial'),
+                 '<strong>Static Tutorial</strong>'),
                 ('https://colab.research.google.com/notebook#fileId='
                  '1Im9J7or9qyClQCv5sPHmKdyiQbG4898K&'
                  'offline=true&sandboxMode=true',
-                 'Interactive Tutorial'),
+                 '<strong>Interactive Tutorial</strong>'),
+                ('/contributing', '<strong>Contributing</strong>'),
+                ('/contributors', 'Contributors'),
                 ('/api-reference', 'API Reference'),
                 ('https://nbviewer.jupyter.org/github/colour-science/'
                  'colour-notebooks/blob/master/notebooks/colour.ipynb',
                  'Jupyter Notebooks'),
                 ('/features', 'Features'),
                 ('/history', 'History'),
-                ('/contributing', 'Contributing'),
-                ('/contributors', 'Contributors'),
                 ('https://colour.readthedocs.io/en/develop/bibliography.html',
                  'Bibliography'),
                 ('https://doi.org/10.5281/zenodo.2647615', 'Cite Us'),
@@ -173,18 +174,19 @@ NAVIGATION_LINKS = {
             'Documentation',
         ),
         (
-            (
-                ('/apps', 'Apps (Colour - Dash)'),
-                ('http://awesome-colour.org/', 'Awesome Colour'),
-                ('/colour-demosaicing', 'Colour - Demosaicing'),
-                ('/colour-hdri', 'Colour - HDRI'),
-                ('/colour-checker-detection', 'Colour - Checker Detection'),
-                ('/colour-maya', 'Colour - Maya'),
-                ('/colour-nuke', 'Colour - Nuke'),
-                ('/colour-playground', 'Colour - Playground'),
-                ('/colour-spectroscope', 'Colour - Spectroscope'),
-                ('/experiments', 'Experiments')
-            ),
+            (('/apps', '<strong>Apps (Colour - Dash)</strong>'),
+             ('http://awesome-colour.org/', '<strong>Awesome Colour</strong>'),
+             ('/colour-datasets', '<strong>Colour - Datasets</strong>'),
+             ('/colour-demosaicing', '<strong>Colour - Demosaicing</strong>'),
+             ('/colour-hdri', '<strong>Colour - HDRI</strong>'),
+             ('/colour-checker-detection',
+              '<strong>Colour - Checker Detection</strong>'),
+             ('/colour-maya',
+              'Colour - Maya'), ('/colour-nuke',
+                                 'Colour - Nuke'), ('/colour-playground',
+                                                    'Colour - Playground'),
+             ('/colour-spectroscope',
+              'Colour - Spectroscope'), ('/experiments', 'Experiments')),
             'Projects',
         ),
         (
@@ -195,15 +197,13 @@ NAVIGATION_LINKS = {
                  'Mailing List'),
                 ('https://twitter.com/colour_science', 'Twitter'),
                 ('https://www.facebook.com/python.colour.science', 'Facebook'),
-                ('https://plus.google.com/u/0/b/101380914519940603334/',
-                 'Google Plus'),
                 ('/rss.xml', 'RSS Feed'),
             ),
             'Social',
         ),
         (
             (
-                ('/blog', 'Posts'),
+                ('/blog', '<strong>Posts</strong>'),
                 ("/archive.html", "Archive"),
                 ("/categories/", "Tags"),
             ),
@@ -222,7 +222,7 @@ THEME = "colour-science"
 
 # Primary color of your theme. This will be used to customize your theme.
 # Must be a HEX value.
-THEME_COLOR = '#5670d4'
+THEME_COLOR = '#19191d'
 
 # Theme configuration. Fully theme-dependent. (translatable)
 # Examples below are for bootblog4.
@@ -750,9 +750,9 @@ GITHUB_COMMIT_SOURCE = True
 #
 from nikola import filters
 FILTERS = {
-   ".html": [filters.add_header_permalinks],
-   # ".js": [filters.closure_compiler],
-   # ".jpg": ["jpegoptim --strip-all -m75 -v %s"],
+    # ".html": [filters.add_header_permalinks],
+    # ".js": [filters.closure_compiler],
+    # ".jpg": ["jpegoptim --strip-all -m75 -v %s"],
 }
 
 # Executable for the "yui_compressor" filter (defaults to 'yui-compressor').
@@ -1031,7 +1031,7 @@ CONTENT_FOOTER = """
         </a>
     </li>
 </ul>
-<p class="text-center py-3">Copyright © 2013-{date} – {author}</p>
+<div class="text-center py-3"><span>Copyright © 2013-{date} – {author}</span></div>
 """
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
@@ -1306,7 +1306,9 @@ EXTRA_HEAD_DATA = """
 <script
     src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous">
+</script>
+<script src="https://www.colour-science.org/assets/js/custom.js"></script>
 <link rel="stylesheet"
     href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
     integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
@@ -1323,7 +1325,7 @@ BODY_END = """
     room: 'colour-science/colour'
   };
 </script>
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+<script async src="https://sidecar.gitter.im/dist/sidecar.v1.js"></script>
 <!-- <<< Gitter -->
 <!-- >>> Google Analytics -->
 <script async src="https://www.colour-science.org/assets/js/analytics.js"></script>
