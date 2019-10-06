@@ -1308,7 +1308,6 @@ EXTRA_HEAD_DATA = """
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous">
 </script>
-<script src="https://www.colour-science.org/assets/js/custom.js"></script>
 <link rel="stylesheet"
     href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
     integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
@@ -1319,6 +1318,9 @@ EXTRA_HEAD_DATA = """
 # in the default template (base.tmpl).
 # (translatable)
 BODY_END = """
+<!-- >>> Custom -->
+<script src="https://www.colour-science.org/assets/js/custom.js"></script>
+<!-- <<< Custom -->
 <!-- >>> Gitter -->
 <script>
   ((window.gitter = {}).chat = {}).options = {
