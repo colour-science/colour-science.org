@@ -136,9 +136,9 @@ NAVIGATION_LINKS = {
         (
             (
                 ('https://github.com/colour-science/colour',
-                 '<strong>Source Code</strong>'),
+                 '<span class="lead">Source Code</span>'),
                 ('https://github.com/colour-science/colour/archive/v0.3.13.zip',
-                 '<strong>Latest (v0.3.13)</strong>'),
+                 '<span class="lead">Latest (v0.3.13)</span>'),
                 ('https://github.com/colour-science/colour/releases',
                  'All Releases'),
                 ('https://pypi.org/project/colour-science/', 'Pypi'),
@@ -148,16 +148,18 @@ NAVIGATION_LINKS = {
         ),
         (
             (
-                ('/code-of-conduct', '<strong>Code of Conduct</strong>'),
-                ('/installation-guide', '<strong>Installation Guide</strong>'),
+                ('/code-of-conduct',
+                 '<span class="lead">Code of Conduct</span>'),
+                ('/installation-guide',
+                 '<span class="lead">Installation Guide</span>'),
                 ('https://colour.readthedocs.io/en/develop/tutorial.html',
-                 '<strong>Static Tutorial</strong>'),
+                 '<span class="lead">Static Tutorial</span>'),
                 ('https://colab.research.google.com/notebook#fileId='
                  '1Im9J7or9qyClQCv5sPHmKdyiQbG4898K&'
                  'offline=true&sandboxMode=true',
-                 '<strong>Interactive Tutorial</strong>'),
-                ('/contributing', '<strong>Contributing</strong>'),
-                ('/contributors', 'Contributors'),
+                 '<span class="lead">Interactive Tutorial</span>'),
+                ('/contributing', '<span class="lead">Contributing</span>'),
+                ('/contributors', '<span class="lead">Contributors</span>'),
                 ('/api-reference', 'API Reference'),
                 ('https://nbviewer.jupyter.org/github/colour-science/'
                  'colour-notebooks/blob/master/notebooks/colour.ipynb',
@@ -174,13 +176,16 @@ NAVIGATION_LINKS = {
             'Documentation',
         ),
         (
-            (('/apps', '<strong>Apps (Colour - Dash)</strong>'),
-             ('http://awesome-colour.org/', '<strong>Awesome Colour</strong>'),
-             ('/colour-datasets', '<strong>Colour - Datasets</strong>'),
-             ('/colour-demosaicing', '<strong>Colour - Demosaicing</strong>'),
-             ('/colour-hdri', '<strong>Colour - HDRI</strong>'),
+            (('/apps', '<span class="lead">Apps (Colour - Dash)</span>'),
+             ('http://awesome-colour.org/',
+              '<span class="lead">Awesome Colour</span>'),
+             ('/colour-datasets',
+              '<span class="lead">Colour - Datasets</span>'),
+             ('/colour-demosaicing',
+              '<span class="lead">Colour - Demosaicing</span>'),
+             ('/colour-hdri', '<span class="lead">Colour - HDRI</span>'),
              ('/colour-checker-detection',
-              '<strong>Colour - Checker Detection</strong>'),
+              '<span class="lead">Colour - Checker Detection</span>'),
              ('/colour-maya',
               'Colour - Maya'), ('/colour-nuke',
                                  'Colour - Nuke'), ('/colour-playground',
@@ -191,7 +196,8 @@ NAVIGATION_LINKS = {
         ),
         (
             (
-                ('mailto:colour-science@googlegroups.com', 'Contact Us'),
+                ('mailto:colour-science@googlegroups.com',
+                 '<span class="lead">Contact Us</span>'),
                 ('https://gitter.im/colour-science/colour', 'Gitter'),
                 ('https://groups.google.com/forum/#!forum/colour-science',
                  'Mailing List'),
@@ -203,7 +209,7 @@ NAVIGATION_LINKS = {
         ),
         (
             (
-                ('/blog', '<strong>Posts</strong>'),
+                ('/blog', '<span class="lead">Posts</span>'),
                 ("/archive.html", "Archive"),
                 ("/categories/", "Tags"),
             ),
@@ -1002,36 +1008,36 @@ CONTENT_FOOTER = """
 <ul class="nav justify-content-center">
     <li class="nav-item mx-3">
         <a href="mailto:colour-science@googlegroups.com">
-            <span class="fa fa-envelope fa-2x"></span>
+            <span class="fa fa-envelope fa-2x text-light"></span>
         </a>
     </li>
     <li class="nav-item mx-3">
         <a href="https://gitter.im/colour-science/colour">
-            <span class="fab fa-gitter fa-2x"></span>
+            <span class="fab fa-gitter fa-2x text-light"></span>
         </a>
     </li>
     <li class="nav-item mx-3">
         <a href="https://groups.google.com/forum/#!forum/colour-science">
-            <span class="fas fa-users fa-2x"></span>
+            <span class="fas fa-users fa-2x text-light"></span>
         </a>
     </li>
     <li class="nav-item mx-3">
         <a href="https://twitter.com/colour_science">
-            <span class="fab fa-twitter fa-2x"></span>
+            <span class="fab fa-twitter fa-2x text-light"></span>
         </a>
     </li>
     <li class="nav-item mx-3">
         <a href="https://www.facebook.com/python.colour.science">
-            <span class="fab fa-facebook fa-2x"></span>
+            <span class="fab fa-facebook fa-2x text-light"></span>
         </a>
     </li>
     <li class="nav-item mx-3">
         <a href="/rss.xml">
-            <span class="fas fa-rss fa-2x"></span>
+            <span class="fas fa-rss fa-2x text-light"></span>
         </a>
     </li>
 </ul>
-<div class="text-center py-3"><span>Copyright © 2013-{date} – {author}</span></div>
+<div class="text-center text-light py-3"><span>Copyright © 2013-{date} – {author}</span></div>
 """
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
