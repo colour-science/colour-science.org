@@ -160,7 +160,7 @@ NAVIGATION_LINKS = {
                  '<span class="lead">Interactive Tutorial</span>'),
                 ('/contributing', '<span class="lead">Contributing</span>'),
                 ('/contributors', '<span class="lead">Contributors</span>'),
-                ('/api-reference', 'API Reference'),
+                ('/api-reference', '<span class="lead">API Reference</span>'),
                 ('https://nbviewer.jupyter.org/github/colour-science/'
                  'colour-notebooks/blob/master/notebooks/colour.ipynb',
                  'Jupyter Notebooks'),
