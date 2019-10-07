@@ -900,6 +900,14 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                                             <div class="checkbox">
                                                 <input type="checkbox" value="" />
                                                 <label class="strikethrough">
+                                                    <a class="reference external" href="https://github.com/colour-science/colour/blob/develop/pyproject.toml">pyproject.toml</a>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkbox">
+                                                <input type="checkbox" value="" />
+                                                <label class="strikethrough">
                                                     <a class="reference external" href="https://github.com/colour-science/colour/blob/develop/colour/__init__.py">__init__.py</a>
                                                 </label>
                                             </div>
