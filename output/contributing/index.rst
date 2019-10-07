@@ -203,20 +203,26 @@ Here is a succinct overview of the steps you will most likely go through:
 
     $ cd colour
 
-4.  Install the development dependencies with `Poetry <https://poetry.eustace.io>`_:
+4.  Install the development dependencies using `Poetry <https://poetry.eustace.io>`_:
 
 .. code:: shell
 
     $ poetry install
 
-5.  Connect your clone to the original *upstream* repository by adding it as a
+5.  Install the `pre-commit <https://pre-commit.com/>`_ hooks:
+
+.. code:: shell
+
+    $ poetry run pre-commit install
+
+6.  Connect your clone to the original *upstream* repository by adding it as a
     remote:
 
 .. code:: shell
 
     $ git remote add upstream git@github.com:colour-science/colour
 
-6.  You should now have two remotes:
+7.  You should now have two remotes:
 
 .. code:: shell
 
@@ -226,14 +232,14 @@ Here is a succinct overview of the steps you will most likely go through:
     upstream  https://github.com/colour-science/colour (fetch)
     upstream  https://github.com/colour-science/colour (push)
 
-7.  Pull the latest changes from *upstream*:
+8.  Pull the latest changes from *upstream*:
 
 .. code:: shell
 
     $ git checkout develop
     $ git pull upstream develop
 
-7.  Create a branch for your contribution:
+9.  Create a branch for your contribution:
 
 The core developers are using the
 `git flow branching model <http://nvie.com/posts/a-successful-git-branching-model/>`_
@@ -252,7 +258,7 @@ support:
 
     $ git checkout -b feature/mie_scattering
 
-8.  Check if the unit tests and doctests are running properly:
+10.  Check if the unit tests and doctests are running properly:
 
 .. code:: shell
 
@@ -265,35 +271,22 @@ or alternatively:
     $ source $(poetry env info -p)/bin/activate
     $ invoke tests
 
-9.  Check the compliance with `PEP8 <https://www.python.org/dev/peps/pep-0008/>`_:
-
-.. code:: shell
-
-    $ poetry run invoke quality
-
-or alternatively:
-
-.. code:: shell
-
-    $ source $(poetry env info -p)/bin/activate
-    $ invoke quality
-
-10. Commit your changes:
+11. Commit your changes, note that the **pre-commit** hooks will run:
 
 .. code:: shell
 
     $ git add mie_scattering.py
     $ git commit -m 'Implement "Mie Scattering" support.'
 
-11. Push your changes back to *origin*, your own fork:
+12. Push your changes to *origin*, i.e. your own fork:
 
 .. code:: shell
 
     $ git push origin feature/mie_scattering
 
-12. Ensure that the `continuous integration <https://github.com/$USER/colour/actions>`_
+13. Ensure that the `continuous integration <https://github.com/$USER/colour/actions>`_
     suite succeeded.
-13. Visit your repository fork on `Github <https://github.com/$USER/colour>`_.
+14. Visit your repository fork on `Github <https://github.com/$USER/colour>`_.
     Your branch should have a green *Pull Request* button, this will open a
     *pull request* and let us know that we have some code to review :)
 
