@@ -209,6 +209,36 @@ Here is a succinct overview of the steps you will most likely go through:
 
     $ poetry install
 
+.. class:: alert alert-dismissible alert-info
+
+    | **Note**
+    |
+    | At the time of this writing, the preview version of *Poetry*, i.e. 1.0.0b1,
+        is recommended to be used. Poetry can be updated to the latest preview
+        version by issuing `poetry self:update --preview`.
+
+For people in a hurry and not willing to type `poetry run` before each command,
+it is possible to put the following function in your `.bash_profile`:
+
+.. code:: shell
+
+    function poem() {
+        if [[ -n "$@" ]]; then
+            poetry env use "$@"
+        else
+            poetry env use 3
+        fi;
+
+        if [ -f "pyproject.toml" ]; then
+            source $(poetry env info -p)/bin/activate
+        else
+            echo "The current directory has no associated \"poetry\" capability!"
+        fi;
+    }
+
+Then issuing `poem` will activate the appropriate virtual environment for your
+clone.
+
 5.  Install the `pre-commit <https://pre-commit.com/>`_ hooks:
 
 .. code:: shell

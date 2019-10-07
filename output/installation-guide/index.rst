@@ -66,15 +66,6 @@ Pypi
 `Python Package Index <https://pypi.org/project/colour-science/>`_ by
 issuing this command in a shell:
 
-.. class:: alert alert-dismissible alert-info
-
-    | **Note**
-    |
-    | Because of the non deterministic order in which *pip* installs
-        dependencies, `SciPy <http://www.scipy.org/>`_ will require
-        `NumPy <http://www.numpy.org/>`_ to be installed first which can be
-        performed as follows: `pip install numpy`
-
 .. code:: shell
 
     $ pip install colour-science
@@ -154,6 +145,14 @@ development:
     $ git clone git://github.com/colour-science/colour.git
     $ cd colour
     $ poetry install
+
+.. class:: alert alert-dismissible alert-info
+
+    | **Note**
+    |
+    | At the time of this writing, the preview version of *Poetry*, i.e. 1.0.0b1,
+        is recommended to be used. Poetry can be updated to the latest preview
+        version by issuing `poetry self:update --preview`.
 
 Those commands will create a Virtual Environment in which all the required
 dependencies will be installed. Tools can then be run as follows:
