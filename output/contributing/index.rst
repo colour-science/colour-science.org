@@ -301,12 +301,22 @@ or alternatively:
     $ source $(poetry env info -p)/bin/activate
     $ invoke tests
 
-11. Commit your changes, note that the **pre-commit** hooks will run:
+11. Commit your changes:
 
 .. code:: shell
 
     $ git add mie_scattering.py
     $ git commit -m 'Implement "Mie Scattering" support.'
+
+.. class:: alert alert-dismissible alert-warning
+
+    | **Note**
+    |
+    | The **pre-commit** hooks will run before committing, notably
+        `Flake8 <https://pypi.org/project/flake8/>`_ and
+        `YAPF <https://github.com/google/yapf>`_ thus depending their status,
+        you might not be able to commit until you have fixed the issues they
+        reported.
 
 12. Push your changes to *origin*, i.e. your own fork:
 
@@ -398,7 +408,7 @@ Python Language Rules
     and `scikit-image <http://scikit-image.org/>`_.
 -   All the code must be checked with the static analysis tool of your choice,
     e.g. `PyCharm <http://www.jetbrains.com/pycharm/>`_ ,
-    `flake8 <https://pypi.org/project/flake8>`_, or
+    `Flake8 <https://pypi.org/project/flake8>`__, or
     `Codacy <https://www.codacy.com/>`_.
 -   No *pull request* should be merged without being reviewed and ensuring that
     the `Github Actions <https://github.com/colour-science/colour/actions>`_
