@@ -20,13 +20,7 @@ Primary Dependencies
 
 -   `Python>=2.7 <https://www.python.org/download/releases/>`_ or
     `Python>=3.5 <https://www.python.org/download/releases/>`_
--   `Imageio <http://imageio.github.io/>`_, if you wish to read *OpenEXR* files,
-    you will need to install the FreeImage plugin as follows:
-
-.. code:: shell
-
-    $ python -c "import imageio;imageio.plugins.freeimage.download()"
-
+-   `Imageio <http://imageio.github.io/>`_
 -   `SciPy <http://www.scipy.org/>`_
 -   `Six <https://pypi.org/project/six/>`_
 
@@ -41,10 +35,8 @@ Plotting Dependencies
 ^^^^^^^^^^^^^^^^^^^^^
 
 -   `Matplotlib <http://matplotlib.org/>`_
--   `PyGraphviz <https://pygraphviz.github.io/>`_,
-    `Graphviz <https://www.graphviz.org/>`_ might need to be installed
-    beforehand, please refer to the specific section of your platform on the
-    `Graphviz download page <https://www.graphviz.org/download/>`_.
+-   `Graphviz <https://www.graphviz.org/>`_
+-   `PyGraphviz <https://pygraphviz.github.io/>`_
 
 Development Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -104,9 +96,24 @@ The development dependencies are installed as follows:
 
 The figures plotting dependencies are installed as follows:
 
+.. class:: alert alert-dismissible alert-info
+
+    | **Note**
+    |
+    | `Graphviz <https://www.graphviz.org/>`__ might need to be installed
+        beforehand, please refer to the specific section for your platform on
+        the `Graphviz download page <https://www.graphviz.org/download/>`_.
+
 .. code:: shell
 
     $ pip install 'colour-science[plotting]'
+
+If you wish to read *OpenEXR* files, you will need to install the *FreeImage*
+plugin for `Imageio <http://imageio.github.io/>`__ as follows:
+
+.. code:: shell
+
+    $ python -c "import imageio;imageio.plugins.freeimage.download()"
 
 Continuum Analytics Anaconda
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
