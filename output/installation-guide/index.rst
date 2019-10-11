@@ -20,7 +20,13 @@ Primary Dependencies
 
 -   `Python>=2.7 <https://www.python.org/download/releases/>`_ or
     `Python>=3.5 <https://www.python.org/download/releases/>`_
--   `Imageio <http://imageio.github.io/>`_
+-   `Imageio <http://imageio.github.io/>`_, if you wish to read *OpenEXR* files,
+    you will need to install the FreeImage plugin as follows:
+
+.. code:: shell
+
+    $ python -c "import imageio;imageio.plugins.freeimage.download()"
+
 -   `SciPy <http://www.scipy.org/>`_
 -   `Six <https://pypi.org/project/six/>`_
 
@@ -35,9 +41,10 @@ Plotting Dependencies
 ^^^^^^^^^^^^^^^^^^^^^
 
 -   `Matplotlib <http://matplotlib.org/>`_
--   `PyGraphviz <https://pygraphviz.github.io/>`_, note that
+-   `PyGraphviz <https://pygraphviz.github.io/>`_,
     `Graphviz <https://www.graphviz.org/>`_ might need to be installed
-    beforehand.
+    beforehand, please refer to the specific section of your platform on the
+    `Graphviz download page <https://www.graphviz.org/download/>`_.
 
 Development Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^
