@@ -157,7 +157,10 @@ and <a class="reference internal" href="#installation-methods-for-developing-col
 <h3>Plotting Dependencies</h3>
 <ul class="simple">
 <li><a class="reference external" href="http://matplotlib.org/">Matplotlib</a></li>
-<li><a class="reference external" href="https://pygraphviz.github.io/">PyGraphviz</a></li>
+<li>
+<a class="reference external" href="https://pygraphviz.github.io/">PyGraphviz</a>, note that
+<a class="reference external" href="https://www.graphviz.org/">Graphviz</a> might need to be installed
+beforehand.</li>
 </ul>
 </div>
 <div class="section" id="development-dependencies">
@@ -168,6 +171,7 @@ and <a class="reference internal" href="#installation-methods-for-developing-col
 <li><a class="reference external" href="https://pypi.org/project/coveralls/">coveralls</a></li>
 <li><a class="reference external" href="https://pypi.org/project/flake8/">Flake8</a></li>
 <li><a class="reference external" href="http://www.pyinvoke.org/">Invoke</a></li>
+<li><a class="reference external" href="https://jupyter.org/">Jupyter</a></li>
 <li><a class="reference external" href="https://pypi.org/project/mock/">mock</a></li>
 <li><a class="reference external" href="https://nose.readthedocs.io/en/latest">nose</a></li>
 <li><a class="reference external" href="https://pre-commit.com/">pre-commit</a></li>
@@ -188,26 +192,26 @@ and <a class="reference internal" href="#installation-methods-for-developing-col
 <p><strong>Colour</strong> can be easily installed from the
 <a class="reference external" href="https://pypi.org/project/colour-science/">Python Package Index</a> by
 issuing this command in a shell:</p>
-<pre class="code shell"><a name="rest_code_97ac9cc4054d464ba52724d5d037ae3d-1"></a>$ pip install colour-science
+<pre class="code shell"><a name="rest_code_a2213e7f736c4697911e978bd4d773ff-1"></a>$ pip install colour-science
 </pre>
 <p>This <em>asciicast</em> demonstrates how to generate a pristine Python <em>VirtualEnv</em>
 environment for Colour:</p>
 <script type="text/javascript" src="https://asciinema.org/a/257384.js" id="asciicast-257384" async data-speed="3">
 </script><p>The optional features dependencies are installed as follows:</p>
-<pre class="code shell"><a name="rest_code_fc5746a7dde74907bdacd40742d98a9c-1"></a>$ pip install <span class="s1">'colour-science[optional]'</span>
+<pre class="code shell"><a name="rest_code_a307a2592c294c69b355d5cf7b59e76c-1"></a>$ pip install <span class="s1">'colour-science[optional]'</span>
 </pre>
 <p>The development dependencies are installed as follows:</p>
-<pre class="code shell"><a name="rest_code_12b866d482bd44e381fe646ebc7c83e9-1"></a>$ pip install <span class="s1">'colour-science[development]'</span>
+<pre class="code shell"><a name="rest_code_a756bd614fd84b6996cd7a24055d09bb-1"></a>$ pip install <span class="s1">'colour-science[development]'</span>
 </pre>
 <p>The figures plotting dependencies are installed as follows:</p>
-<pre class="code shell"><a name="rest_code_da299de09fae458489968221758f634e-1"></a>$ pip install <span class="s1">'colour-science[plotting]'</span>
+<pre class="code shell"><a name="rest_code_d3082c09fd594e8db4ca17beadb21b28-1"></a>$ pip install <span class="s1">'colour-science[plotting]'</span>
 </pre>
 </div>
 <div class="section" id="continuum-analytics-anaconda">
 <h3>Continuum Analytics Anaconda</h3>
 <p><strong>Colour</strong> is also available for <a class="reference external" href="https://www.continuum.io/downloads">Anaconda</a>
 from <em>Continuum Analytics</em> via <a class="reference external" href="https://conda-forge.org/">conda-forge</a>:</p>
-<pre class="code shell"><a name="rest_code_fde174dbc5984f78acddded3023815b8-1"></a>$ conda install -c conda-forge colour-science
+<pre class="code shell"><a name="rest_code_b31ebd10a68c4ebca88a1a8e78f0c757-1"></a>$ conda install -c conda-forge colour-science
 </pre>
 <p>This <em>asciicast</em> demonstrates how to generate a pristine Python <em>conda</em>
 environment for Colour:</p>
@@ -218,9 +222,9 @@ environment for Colour:</p>
 <h3>Github</h3>
 <p>Alternatively, you can also install directly from
 <a class="reference external" href="https://github.com/colour-science/colour">Github</a> source repository:</p>
-<pre class="code shell"><a name="rest_code_43087c96f8fd47a29b91f613a95e61c9-1"></a>$ git clone git://github.com/colour-science/colour.git
-<a name="rest_code_43087c96f8fd47a29b91f613a95e61c9-2"></a>$ <span class="nb">cd</span> colour
-<a name="rest_code_43087c96f8fd47a29b91f613a95e61c9-3"></a>$ pip install .
+<pre class="code shell"><a name="rest_code_6cdf78d6213a48ce8a2c6f684e2a43d5-1"></a>$ git clone git://github.com/colour-science/colour.git
+<a name="rest_code_6cdf78d6213a48ce8a2c6f684e2a43d5-2"></a>$ <span class="nb">cd</span> colour
+<a name="rest_code_6cdf78d6213a48ce8a2c6f684e2a43d5-3"></a>$ pip install .
 </pre>
 </div>
 </div>
@@ -231,9 +235,9 @@ environment for Colour:</p>
 <p><strong>Colour</strong> adopts <a class="reference external" href="https://poetry.eustace.io">Poetry</a> to help managing its
 dependencies, this is the recommended way to get started with <strong>Colour</strong>
 development:</p>
-<pre class="code shell"><a name="rest_code_a9eb3d0036fd4666b749ce56435473eb-1"></a>$ git clone git://github.com/colour-science/colour.git
-<a name="rest_code_a9eb3d0036fd4666b749ce56435473eb-2"></a>$ <span class="nb">cd</span> colour
-<a name="rest_code_a9eb3d0036fd4666b749ce56435473eb-3"></a>$ poetry install
+<pre class="code shell"><a name="rest_code_752fd88a3aca4217afd6b88347609231-1"></a>$ git clone git://github.com/colour-science/colour.git
+<a name="rest_code_752fd88a3aca4217afd6b88347609231-2"></a>$ <span class="nb">cd</span> colour
+<a name="rest_code_752fd88a3aca4217afd6b88347609231-3"></a>$ poetry install
 </pre>
 <div class="alert alert-dismissible alert-info line-block">
 <div class="line"><strong>Note</strong></div>
@@ -244,11 +248,11 @@ version by issuing <cite>poetry self:update --preview</cite>.</div>
 </div>
 <p>Those commands will create a Virtual Environment in which all the required
 dependencies will be installed. Tools can then be run as follows:</p>
-<pre class="code shell"><a name="rest_code_c81dc5b08f35443389db68e5ff581092-1"></a>$ poetry run invoke -l
+<pre class="code shell"><a name="rest_code_4ccc363d619a465ea0f0d647c1c66993-1"></a>$ poetry run invoke -l
 </pre>
 <p>or alternatively:</p>
-<pre class="code shell"><a name="rest_code_30a478987f97481db48f806d1b4e301f-1"></a>$ <span class="nb">source</span> <span class="k">$(</span>poetry env info -p<span class="k">)</span>/bin/activate
-<a name="rest_code_30a478987f97481db48f806d1b4e301f-2"></a>$ invoke -l
+<pre class="code shell"><a name="rest_code_bfceea8c4f8349acb786fc7f3c81d862-1"></a>$ <span class="nb">source</span> <span class="k">$(</span>poetry env info -p<span class="k">)</span>/bin/activate
+<a name="rest_code_bfceea8c4f8349acb786fc7f3c81d862-2"></a>$ invoke -l
 </pre>
 </div>
 <div class="section" id="vagrant">

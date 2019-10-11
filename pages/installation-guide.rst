@@ -18,43 +18,46 @@ and `Installation Methods for Developing Colour`_ sections below.
 Primary Dependencies
 ^^^^^^^^^^^^^^^^^^^^
 
--  `Python>=2.7 <https://www.python.org/download/releases/>`_ or
-   `Python>=3.5 <https://www.python.org/download/releases/>`_
--  `Imageio <http://imageio.github.io/>`_
--  `SciPy <http://www.scipy.org/>`_
--  `Six <https://pypi.org/project/six/>`_
+-   `Python>=2.7 <https://www.python.org/download/releases/>`_ or
+    `Python>=3.5 <https://www.python.org/download/releases/>`_
+-   `Imageio <http://imageio.github.io/>`_
+-   `SciPy <http://www.scipy.org/>`_
+-   `Six <https://pypi.org/project/six/>`_
 
 Optional Dependencies
 ^^^^^^^^^^^^^^^^^^^^^
 
--  `NetworkX <https://networkx.github.io/>`_
--  `OpenImageIO <https://github.com/OpenImageIO/oiio>`_
--  `Pandas <https://pandas.pydata.org/>`_
+-   `NetworkX <https://networkx.github.io/>`_
+-   `OpenImageIO <https://github.com/OpenImageIO/oiio>`_
+-   `Pandas <https://pandas.pydata.org/>`_
 
 Plotting Dependencies
 ^^^^^^^^^^^^^^^^^^^^^
 
--  `Matplotlib <http://matplotlib.org/>`_
--  `PyGraphviz <https://pygraphviz.github.io/>`_
+-   `Matplotlib <http://matplotlib.org/>`_
+-   `PyGraphviz <https://pygraphviz.github.io/>`_, note that
+    `Graphviz <https://www.graphviz.org/>`_ might need to be installed
+    beforehand.
 
 Development Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  `biblib-simple <https://pypi.org/project/biblib-simple/>`_
--  `Coverage.py <https://pypi.org/project/coverage/>`_
--  `coveralls <https://pypi.org/project/coveralls/>`_
--  `Flake8 <https://pypi.org/project/flake8/>`_
--  `Invoke <http://www.pyinvoke.org/>`_
--  `mock <https://pypi.org/project/mock/>`_
--  `nose <https://nose.readthedocs.io/en/latest>`_
--  `pre-commit <https://pre-commit.com/>`_
--  `pytest <https://docs.pytest.org/en/latest/>`_
--  `restructuredtext-lint <https://github.com/twolfson/restructuredtext-lint>`_
--  `Sphinx <https://sphinx-doc.org>`_
--  `sphinx_rtd_theme <https://github.com/rtfd/sphinx_rtd_theme/>`_
--  `sphinxcontrib-bibtex <https://sphinxcontrib-bibtex.readthedocs.io/>`_
--  `twine <https://pypi.org/project/twine/>`_
--  `YAPF==0.23.0 <https://github.com/google/yapf>`_
+-   `biblib-simple <https://pypi.org/project/biblib-simple/>`_
+-   `Coverage.py <https://pypi.org/project/coverage/>`_
+-   `coveralls <https://pypi.org/project/coveralls/>`_
+-   `Flake8 <https://pypi.org/project/flake8/>`_
+-   `Invoke <http://www.pyinvoke.org/>`_
+-   `Jupyter <https://jupyter.org/>`_
+-   `mock <https://pypi.org/project/mock/>`_
+-   `nose <https://nose.readthedocs.io/en/latest>`_
+-   `pre-commit <https://pre-commit.com/>`_
+-   `pytest <https://docs.pytest.org/en/latest/>`_
+-   `restructuredtext-lint <https://github.com/twolfson/restructuredtext-lint>`_
+-   `Sphinx <https://sphinx-doc.org>`_
+-   `sphinx_rtd_theme <https://github.com/rtfd/sphinx_rtd_theme/>`_
+-   `sphinxcontrib-bibtex <https://sphinxcontrib-bibtex.readthedocs.io/>`_
+-   `twine <https://pypi.org/project/twine/>`_
+-   `YAPF==0.23.0 <https://github.com/google/yapf>`_
 
 Installation Methods for Using Colour
 -------------------------------------
