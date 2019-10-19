@@ -1328,9 +1328,6 @@ EXTRA_HEAD_DATA = """
 # in the default template (base.tmpl).
 # (translatable)
 BODY_END = """
-<!-- >>> Custom -->
-<script src="https://www.colour-science.org/assets/js/custom.js"></script>
-<!-- <<< Custom -->
 <!-- >>> Gitter -->
 <script>
   ((window.gitter = {}).chat = {}).options = {

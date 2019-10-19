@@ -1,6 +1,6 @@
 /*** Enable hover on dropdown menu. ***/
-$('.dropdown-hoverable').hover(function(){
-    $(this).children('[data-toggle="dropdown"]').click();
-}, function(){
-    $(this).children('[data-toggle="dropdown"]').click();
+$('ul.navbar-nav li.dropdown').hover(function () {
+    $(this).find('.dropdown-menu').stop(true, true).delay(50).fadeIn(100);
+}, function () {
+    $(this).find('.dropdown-menu').stop(true, true).delay(50).fadeOut(100);
 });
