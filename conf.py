@@ -148,8 +148,6 @@ NAVIGATION_LINKS = {
         ),
         (
             (
-                ('/code-of-conduct',
-                 '<span class="lead">Code of Conduct</span>'),
                 ('/installation-guide',
                  '<span class="lead">Installation Guide</span>'),
                 ('https://colour.readthedocs.io/en/develop/tutorial.html',
@@ -158,9 +156,15 @@ NAVIGATION_LINKS = {
                  '1Im9J7or9qyClQCv5sPHmKdyiQbG4898K&'
                  'offline=true&sandboxMode=true',
                  '<span class="lead">Interactive Tutorial</span>'),
+                ('https://colab.research.google.com/notebook#fileId='
+                 '1NRcdXSCshivkwoU2nieCvC3y14fx1X4X&'
+                 'offline=true&sandboxMode=true',
+                 '<span class="lead">How-To Guide</span>'),
+                ('/api-reference', '<span class="lead">API Reference</span>'),
+                ('/code-of-conduct',
+                 '<span class="lead">Code of Conduct</span>'),
                 ('/contributing', '<span class="lead">Contributing</span>'),
                 ('/contributors', '<span class="lead">Contributors</span>'),
-                ('/api-reference', '<span class="lead">API Reference</span>'),
                 ('https://nbviewer.jupyter.org/github/colour-science/'
                  'colour-notebooks/blob/master/notebooks/colour.ipynb',
                  'Jupyter Notebooks'),
