@@ -46,13 +46,13 @@ This Code of Conduct applies within all project spaces, and it also applies when
 Enforcement
 ^^^^^^^^^^^
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting Thomas Mansencal and Michael Mauderer via email at `thomas.mansencal@gmail.com <mailto:thomas.mansencal@gmail.com>`_ and `m.w.mauderer@gmail.com <mailto:m.w.mauderer@gmail.com>`_ respectively. All complaints will be reviewed and investigated and will result in a response that is deemed necessary and appropriate to the circumstances. The project team is obligated to maintain confidentiality with regard to the reporter of an incident. Further details of specific enforcement policies may be posted separately.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting Thomas Mansencal and Michael Mauderer via email at `thomas.mansencal@gmail.com <mailto:thomas.mansencal@gmail.com>`__ and `m.w.mauderer@gmail.com <mailto:m.w.mauderer@gmail.com>`__ respectively. All complaints will be reviewed and investigated and will result in a response that is deemed necessary and appropriate to the circumstances. The project team is obligated to maintain confidentiality with regard to the reporter of an incident. Further details of specific enforcement policies may be posted separately.
 
 Project maintainers who do not follow or enforce the Code of Conduct in good faith may face temporary or permanent repercussions as determined by other members of the project’s leadership.
 
 Attribution
 ^^^^^^^^^^^
 
-This Code of Conduct is adapted from the Contributor Covenant, version 1.4, available at `https://www.contributor-covenant.org/version/1/4/code-of-conduct.html <https://www.contributor-covenant.org/version/1/4/code-of-conduct.html>`_
+This Code of Conduct is adapted from the Contributor Covenant, version 1.4, available at `https://www.contributor-covenant.org/version/1/4/code-of-conduct.html <https://www.contributor-covenant.org/version/1/4/code-of-conduct.html>`__
 
-For answers to common questions about this code of conduct, see `https://www.contributor-covenant.org/faq <https://www.contributor-covenant.org/faq>`_
+For answers to common questions about this code of conduct, see `https://www.contributor-covenant.org/faq <https://www.contributor-covenant.org/faq>`__

@@ -7,7 +7,7 @@
 .. description: 
 .. type: text
 
-`Colour 0.3.8 <https://github.com/colour-science/colour/releases/tag/v0.3.8>`_
+`Colour 0.3.8 <https://github.com/colour-science/colour/releases/tag/v0.3.8>`__
 is available!
 
 .. TEASER_END
@@ -22,10 +22,10 @@ incompatible changes:
     adopt.
 -   The RGB colourspace transfer functions implementation has been overhauled in
     order to be easily extended in the future.
--   `SciPy <https://www.scipy.org/>`_ is now a requirement.
+-   `SciPy <https://www.scipy.org/>`__ is now a requirement.
 
 Please carefully refer to the
-`releases page <https://github.com/colour-science/colour/releases/tag/v0.3.8>`_
+`releases page <https://github.com/colour-science/colour/releases/tag/v0.3.8>`__
 *Changes* section.
 
 Highlights of this release are:
@@ -39,12 +39,12 @@ Highlights of this release are:
 -   Support for BT.1886 EOTF and ST 2084 OETF / EOTF.
 -   Support for RIMM, ROMM and ERIMM colour encodings.
 
-A `Jupyter Notebook <https://github.com/colour-science/colour-ramblings/blob/master/colour_0_3_8_computational_changes.ipynb>`_
+A `Jupyter Notebook <https://github.com/colour-science/colour-ramblings/blob/master/colour_0_3_8_computational_changes.ipynb>`__
 is available to illustrate the expected computational differences. They should
 remain orders of magnitude under visual discrimination threshold however they
 will likely create computational discrepancies.
 
-`Colour - Demosaicing </colour-demosaicing>`_ and `Colour - HDRI </colour-hdri>`_
+`Colour - Demosaicing </colour-demosaicing>`__ and `Colour - HDRI </colour-hdri>`__
 packages have been updated accordingly.
 
 Michael and I would like to thanks all the contributors for that release
@@ -57,6 +57,6 @@ whether they contribute to the code or participate in discussions.
 -   Ron024
 -   Kevin Wheatley
 
-Visit the `releases page <https://github.com/colour-science/colour/releases/tag/v0.3.8>`_
+Visit the `releases page <https://github.com/colour-science/colour/releases/tag/v0.3.8>`__
 for complete details.
 

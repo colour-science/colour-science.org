@@ -7,7 +7,7 @@
 .. description: 
 .. type: text
 
-We are pleased to announce that `Colour 0.3.10 <https://github.com/colour-science/colour/releases/tag/v0.3.10>`_
+We are pleased to announce that `Colour 0.3.10 <https://github.com/colour-science/colour/releases/tag/v0.3.10>`__
 is available!
 
 .. TEASER_END
@@ -23,9 +23,9 @@ The highlights of this release are:
 -   Support for hdr-CIELab and hdr-IPT colourspaces.
 -   Implementation of Meng, Simon and Hanika (2015) reflectance recovery.
 -   Improved CIECAM02 implementation robustness with full round-trip capability.
--   Colour is now formatted using `Yapf <https://github.com/google/yapf>`_, the current configuration is subject to change but this will help contributors not using *PyCharm* to use their favourite editor while having the capability to format the contributed code to our *Colour* standard.
+-   Colour is now formatted using `Yapf <https://github.com/google/yapf>`__, the current configuration is subject to change but this will help contributors not using *PyCharm* to use their favourite editor while having the capability to format the contributed code to our *Colour* standard.
 
-Please refer to the `releases page <https://github.com/colour-science/colour/releases/tag/v0.3.10>`_
+Please refer to the `releases page <https://github.com/colour-science/colour/releases/tag/v0.3.10>`__
 for complete details.
 
 Michael and I would like to thanks Katherine Crowson and Nick Shaw for their contributions to that release.

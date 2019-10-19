@@ -8,6 +8,6 @@
 .. type: text
 
 Courtesy of Anders Langlands, we are hosting the
-`Render Color Spaces <https://www.colour-science.org/anders-langlands>`_ page
+`Render Color Spaces <https://www.colour-science.org/anders-langlands>`__ page
 that was formerly available at
-`www.anderslanglands.com <http://www.anderslanglands.com/blog//2016/06/23/render-color-space.html>`_.
+`www.anderslanglands.com <http://www.anderslanglands.com/blog//2016/06/23/render-color-space.html>`__.

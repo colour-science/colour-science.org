@@ -18,45 +18,45 @@ and `Installation Methods for Developing Colour`_ sections below.
 Primary Dependencies
 ^^^^^^^^^^^^^^^^^^^^
 
--   `Python>=2.7 <https://www.python.org/download/releases/>`_ or
-    `Python>=3.5 <https://www.python.org/download/releases/>`_
--   `Imageio <http://imageio.github.io/>`_
--   `SciPy <http://www.scipy.org/>`_
--   `Six <https://pypi.org/project/six/>`_
+-   `Python>=2.7 <https://www.python.org/download/releases/>`__ or
+    `Python>=3.5 <https://www.python.org/download/releases/>`__
+-   `Imageio <http://imageio.github.io/>`__
+-   `SciPy <http://www.scipy.org/>`__
+-   `Six <https://pypi.org/project/six/>`__
 
 Optional Dependencies
 ^^^^^^^^^^^^^^^^^^^^^
 
--   `NetworkX <https://networkx.github.io/>`_
--   `OpenImageIO <https://github.com/OpenImageIO/oiio>`_
--   `Pandas <https://pandas.pydata.org/>`_
+-   `NetworkX <https://networkx.github.io/>`__
+-   `OpenImageIO <https://github.com/OpenImageIO/oiio>`__
+-   `Pandas <https://pandas.pydata.org/>`__
 
 Plotting Dependencies
 ^^^^^^^^^^^^^^^^^^^^^
 
--   `Matplotlib <http://matplotlib.org/>`_
--   `Graphviz <https://www.graphviz.org/>`_
--   `PyGraphviz <https://pygraphviz.github.io/>`_
+-   `Matplotlib <http://matplotlib.org/>`__
+-   `Graphviz <https://www.graphviz.org/>`__
+-   `PyGraphviz <https://pygraphviz.github.io/>`__
 
 Development Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
--   `biblib-simple <https://pypi.org/project/biblib-simple/>`_
--   `Coverage.py <https://pypi.org/project/coverage/>`_
--   `coveralls <https://pypi.org/project/coveralls/>`_
--   `Flake8 <https://pypi.org/project/flake8/>`_
--   `Invoke <http://www.pyinvoke.org/>`_
--   `Jupyter <https://jupyter.org/>`_
--   `mock <https://pypi.org/project/mock/>`_
--   `nose <https://nose.readthedocs.io/en/latest>`_
--   `pre-commit <https://pre-commit.com/>`_
--   `pytest <https://docs.pytest.org/en/latest/>`_
--   `restructuredtext-lint <https://github.com/twolfson/restructuredtext-lint>`_
--   `Sphinx <https://sphinx-doc.org>`_
--   `sphinx_rtd_theme <https://github.com/rtfd/sphinx_rtd_theme/>`_
--   `sphinxcontrib-bibtex <https://sphinxcontrib-bibtex.readthedocs.io/>`_
--   `twine <https://pypi.org/project/twine/>`_
--   `YAPF==0.23.0 <https://github.com/google/yapf>`_
+-   `biblib-simple <https://pypi.org/project/biblib-simple/>`__
+-   `Coverage.py <https://pypi.org/project/coverage/>`__
+-   `coveralls <https://pypi.org/project/coveralls/>`__
+-   `Flake8 <https://pypi.org/project/flake8/>`__
+-   `Invoke <http://www.pyinvoke.org/>`__
+-   `Jupyter <https://jupyter.org/>`__
+-   `mock <https://pypi.org/project/mock/>`__
+-   `nose <https://nose.readthedocs.io/en/latest>`__
+-   `pre-commit <https://pre-commit.com/>`__
+-   `pytest <https://docs.pytest.org/en/latest/>`__
+-   `restructuredtext-lint <https://github.com/twolfson/restructuredtext-lint>`__
+-   `Sphinx <https://sphinx-doc.org>`__
+-   `sphinx_rtd_theme <https://github.com/rtfd/sphinx_rtd_theme/>`__
+-   `sphinxcontrib-bibtex <https://sphinxcontrib-bibtex.readthedocs.io/>`__
+-   `twine <https://pypi.org/project/twine/>`__
+-   `YAPF==0.23.0 <https://github.com/google/yapf>`__
 
 Installation Methods for Using Colour
 -------------------------------------
@@ -65,7 +65,7 @@ Pypi
 ^^^^
 
 **Colour** can be easily installed from the
-`Python Package Index <https://pypi.org/project/colour-science/>`_ by
+`Python Package Index <https://pypi.org/project/colour-science/>`__ by
 issuing this command in a shell:
 
 .. code:: shell
@@ -102,7 +102,7 @@ The figures plotting dependencies are installed as follows:
     |
     | `Graphviz <https://www.graphviz.org/>`__ might need to be installed
         beforehand, please refer to the specific section for your platform on
-        the `Graphviz download page <https://www.graphviz.org/download/>`_.
+        the `Graphviz download page <https://www.graphviz.org/download/>`__.
 
 .. code:: shell
 
@@ -118,8 +118,8 @@ plugin for `Imageio <http://imageio.github.io/>`__ as follows:
 Continuum Analytics Anaconda
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Colour** is also available for `Anaconda <https://www.continuum.io/downloads>`_
-from *Continuum Analytics* via `conda-forge <https://conda-forge.org/>`_:
+**Colour** is also available for `Anaconda <https://www.continuum.io/downloads>`__
+from *Continuum Analytics* via `conda-forge <https://conda-forge.org/>`__:
 
 .. code:: shell
 
@@ -139,7 +139,7 @@ Github
 ^^^^^^
 
 Alternatively, you can also install directly from
-`Github <https://github.com/colour-science/colour>`_ source repository:
+`Github <https://github.com/colour-science/colour>`__ source repository:
 
 .. code:: shell
 
@@ -153,7 +153,7 @@ Installation Methods for Developing Colour
 Poetry
 ^^^^^^
 
-**Colour** adopts `Poetry <https://poetry.eustace.io>`_ to help managing its
+**Colour** adopts `Poetry <https://poetry.eustace.io>`__ to help managing its
 dependencies, this is the recommended way to get started with **Colour**
 development:
 
@@ -189,8 +189,8 @@ Vagrant
 ^^^^^^^
 
 An easy way to get all the pre-requisites at once is to use our
-`colour-vagrant <https://github.com/colour-science/colour-vagrant>`_
-environment for `Vagrant <https://www.vagrantup.com/>`_.
+`colour-vagrant <https://github.com/colour-science/colour-vagrant>`__
+environment for `Vagrant <https://www.vagrantup.com/>`__.
 
 Please refer to the dedicated blog post for more details about its deployment:
-`PyCharm, Vagrant, Fabric & Anaconda </posts/pycharm-vagrant-fabric-anaconda/>`_
+`PyCharm, Vagrant, Fabric & Anaconda </posts/pycharm-vagrant-fabric-anaconda/>`__

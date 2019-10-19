@@ -7,7 +7,7 @@
 .. description: 
 .. type: text
 
-**Colour - Demosaicing** is a `Python <https://www.python.org/>`_ package
+**Colour - Demosaicing** is a `Python <https://www.python.org/>`__ package
 implementing various CFA (Colour Filter Array) demosaicing algorithms and
 related utilities.
 
@@ -25,15 +25,15 @@ The following CFA (Colour Filter Array) demosaicing algorithms are implemented:
 API
 ^^^
 
-The main reference for `Colour - Demosaicing <https://github.com/colour-science/colour-demosaicing>`_
-is the `Colour - Demosaicing Manual <https://colour-demosaicing.readthedocs.io/en/latest/manual.html>`_.
+The main reference for `Colour - Demosaicing <https://github.com/colour-science/colour-demosaicing>`__
+is the `Colour - Demosaicing Manual <https://colour-demosaicing.readthedocs.io/en/latest/manual.html>`__.
 
 Examples
 ^^^^^^^^
 
--   `Colour - Demosaicing - Examples <https://github.com/colour-science/colour-demosaicing/tree/develop/colour_demosaicing/examples>`_
+-   `Colour - Demosaicing - Examples <https://github.com/colour-science/colour-demosaicing/tree/develop/colour_demosaicing/examples>`__
 
 Downloads
 ^^^^^^^^^
 
--   `colour-demosaicing Github Repository <https://github.com/colour-science/colour-demosaicing>`_
+-   `colour-demosaicing Github Repository <https://github.com/colour-science/colour-demosaicing>`__

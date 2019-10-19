@@ -7,9 +7,9 @@
 .. description: 
 .. type: text
 
-`colour-science.org <https://www.colour-science.org>`_ has been quiet for a while
-however, it does not mean nothing happened. `Colour 0.3.9 <https://github.com/colour-science/colour/releases/tag/v0.3.9>`_
-and `Colour - HDRI 0.1.2 <https://github.com/colour-science/colour-hdri/releases/tag/v0.1.2>`_
+`colour-science.org <https://www.colour-science.org>`__ has been quiet for a while
+however, it does not mean nothing happened. `Colour 0.3.9 <https://github.com/colour-science/colour/releases/tag/v0.3.9>`__
+and `Colour - HDRI 0.1.2 <https://github.com/colour-science/colour-hdri/releases/tag/v0.1.2>`__
 were released today and last week, concluding a major collaborative effort, the ACES
 community addressed an important feedback paper to the Academy leadership.
 
@@ -43,13 +43,13 @@ improvements and various new objects:
 -   Implement support for RedWideGamut RGB colourspace and Log3G10, Log3G12 log curves.
 -   Implement support for ACEScct colourspace and ACEScct log curves.
 
-Colour can now be installed from `conda-forge <https://conda-forge.github.io/>`_:
+Colour can now be installed from `conda-forge <https://conda-forge.github.io/>`__:
 
 .. code:: shell
 
     conda install -c conda-forge colour-science
 
-Visit the `Colour's releases page <https://github.com/colour-science/colour/releases/tag/v0.3.9>`_
+Visit the `Colour's releases page <https://github.com/colour-science/colour/releases/tag/v0.3.9>`__
 for complete details.
 
 Colour - HDRI 0.1.2
@@ -60,7 +60,7 @@ This release introduces some new capabilities:
 -   Support for Adobe DNG SDK colour processing for improved white balancing.
 -   Custom CIE LCHab highlights recovery definition.
 
-Visit the `Colour - HDRI's releases page <https://github.com/colour-science/colour-hdri/releases/tag/v0.1.2>`_
+Visit the `Colour - HDRI's releases page <https://github.com/colour-science/colour-hdri/releases/tag/v0.1.2>`__
 for complete details.
 
 ACES
@@ -105,4 +105,4 @@ Reviewers
 -   **Troy James Sobotka**, *Freelancer*
 
 The document can be found at this URL: https://doi.org/10.5281/zenodo.345624
-and the LaTex code is hosted on `Github <https://github.com/colour-science/aces-retrospective-and-enhancements>`_.
+and the LaTex code is hosted on `Github <https://github.com/colour-science/aces-retrospective-and-enhancements>`__.

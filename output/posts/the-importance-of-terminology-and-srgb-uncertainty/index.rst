@@ -8,14 +8,14 @@
 .. type: text
 
 We were meant to write that entry since a while, and a
-`great post <https://gamedevdaily.io/the-srgb-learning-curve-773b7f68cf7a#>`_ by
-`Tom Forsyth <https://twitter.com/tom_forsyth>`_ from
-`Oculus VR <https://www.oculus.com/en-us/>`_ triggered us in doing so.
+`great post <https://gamedevdaily.io/the-srgb-learning-curve-773b7f68cf7a#>`__ by
+`Tom Forsyth <https://twitter.com/tom_forsyth>`__ from
+`Oculus VR <https://www.oculus.com/en-us/>`__ triggered us in doing so.
 
 .. TEASER_END
 
 As I was quickly reading his article, I
-`tweeted <https://twitter.com/colour_science/status/671647698546626560>`_
+`tweeted <https://twitter.com/colour_science/status/671647698546626560>`__
 back about the missing description of *sRGB* as being an *RGB* colourspace: a
 set of **primaries**, **whitepoint** and **transfer functions** components.
 
@@ -35,7 +35,7 @@ mention of **gamma** indicates that the article will likely only involves the
 
     | **Note**
     |
-    | Charles Poynton's `Gamma FAQ <http://www.poynton.com/notes/colour_and_gamma/GammaFAQ.html>`_
+    | Charles Poynton's `Gamma FAQ <http://www.poynton.com/notes/colour_and_gamma/GammaFAQ.html>`__
         is an extensive reference on gamma correction.
 
 Tom confirms that intuition a few paragraph later:
@@ -50,8 +50,8 @@ Tom confirms that intuition a few paragraph later:
     |
     | The *gamut* defined by *sRGB* colourspace should actually be of a
         concern if one tries to achieve photo-realistic rendering as shown by
-        `Steve Agland <http://nbviewer.jupyter.org/gist/sagland/3c791e79353673fd24fa>`_
-        and `us <https://www.colour-science.org/posts/about-rendering-engines-colourspaces-agnosticism/>`_.
+        `Steve Agland <http://nbviewer.jupyter.org/gist/sagland/3c791e79353673fd24fa>`__
+        and `us <https://www.colour-science.org/posts/about-rendering-engines-colourspaces-agnosticism/>`__.
 
 What is sRGB?
 -------------
@@ -59,7 +59,7 @@ What is sRGB?
 Terminology in a given scientific domain is key to its understanding, and this
 is especially true in colour science. Everybody knows what colour is but yet
 only a few can define it correctly, in this regard, we often cite
-`Mark D. Fairchild <https://twitter.com/MDFairchild>`_:
+`Mark D. Fairchild <https://twitter.com/MDFairchild>`__:
 
     *Why should it be particularly difficult to agree upon consistent
     terminology in the field of color appearance? Perhaps the answer lies in
@@ -69,9 +69,9 @@ only a few can define it correctly, in this regard, we often cite
     even precisely define color.* [1]_
 
 *sRGB* is not a bunch of **transfer functions**, it is an actual
-`RGB colourspace <https://en.wikipedia.org/wiki/RGB_color_space>`_, specified by
-`IEC 61966-2-1:1999 Standard <https://webstore.iec.ch/publication/6169>`_
-standard. As per `ISO 22028-1 Standard <http://www.iso.org/iso/catalogue_detail.htm?csnumber=37161>`_,
+`RGB colourspace <https://en.wikipedia.org/wiki/RGB_color_space>`__, specified by
+`IEC 61966-2-1:1999 Standard <https://webstore.iec.ch/publication/6169>`__
+standard. As per `ISO 22028-1 Standard <http://www.iso.org/iso/catalogue_detail.htm?csnumber=37161>`__,
 an *RGB* colourspace is defined by those mandatory 3 components:
 
 - `Primaries`_
@@ -118,7 +118,7 @@ of colours) that can be encoded by a given *RGB colourspace*.
 It is important to understand that while commonly represented as triangles on a
 *Chromaticity Diagram* (such as the *CIE 1931 Chromaticity Diagram*), *RGB colourspace*
 **gamuts** define the boundaries of an actual 3D volume within the
-`CIE xyY colourspace <https://en.wikipedia.org/wiki/CIE_1931_color_space#CIE_xy_chromaticity_diagram_and_the_CIE_xyY_color_space>`_:
+`CIE xyY colourspace <https://en.wikipedia.org/wiki/CIE_1931_color_space#CIE_xy_chromaticity_diagram_and_the_CIE_xyY_color_space>`__:
 The *Chromaticity Diagram* is a 2D projection of the *CIE xyY colourspace* volume
 along its *Y* *Luminance* axis.
 
@@ -135,8 +135,8 @@ along its *Y* *Luminance* axis.
 Whitepoint
 ^^^^^^^^^^
 
-The `whitepoint <https://en.wikipedia.org/wiki/White_point>`_  is defined by the
-`CIE <http://eilv.cie.co.at/term/1430>`_ as:
+The `whitepoint <https://en.wikipedia.org/wiki/White_point>`__  is defined by the
+`CIE <http://eilv.cie.co.at/term/1430>`__ as:
 
     Achromatic reference stimulus in a chromaticity diagram that corresponds to
     the stimulus that produces an image area that has the perception of white.
@@ -151,10 +151,10 @@ no matter their *Luminance*, will be neutral to that *RGB colourspace*.
     (`Colour - Analysis <https://github.com/colour-science/colour-analysis>`__)
 
 An *RGB colourspace* can have
-`different whitepoints <https://github.com/colour-science/colour-notebooks/blob/master/notebooks/colorimetry/illuminants.ipynb>`_
+`different whitepoints <https://github.com/colour-science/colour-notebooks/blob/master/notebooks/colorimetry/illuminants.ipynb>`__
 depending its context usage, *sRGB colourspace* *IEC 61966-2-1:1999 Standard*
-adopts `CIE Standard Illuminant D65 <https://en.wikipedia.org/wiki/Illuminant_D65>`_
-as **whitepoint** but an `ICC <https://en.wikipedia.org/wiki/International_Color_Consortium>`_
+adopts `CIE Standard Illuminant D65 <https://en.wikipedia.org/wiki/Illuminant_D65>`__
+as **whitepoint** but an `ICC <https://en.wikipedia.org/wiki/International_Color_Consortium>`__
 *sRGB colourspace* profile would likely have been chromatically adapted to
 *CIE Standard Illuminant D50*.
 
@@ -200,7 +200,7 @@ of the time for coding optimisation and bandwidth performance). [2]_
 
         .. figure:: https://i.imgur.com/ROXaICc.png
 
-            Message from Jack Holm, addressed the 1st February 2016 to the `Academy ACES Google Group <https://groups.google.com/forum/#!forum/academyaces>`_.
+            Message from Jack Holm, addressed the 1st February 2016 to the `Academy ACES Google Group <https://groups.google.com/forum/#!forum/academyaces>`__.
 
 The Importance of Terminology
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -222,14 +222,14 @@ the *sRGB* colourspace **primaries** and **whitepoint** (assuming no colour
 transformations are occurring internally), thus its output is within *sRGB*
 colourspace.
 
-When rendering using `BT.709 <https://en.wikipedia.org/wiki/Rec._709>`_
+When rendering using `BT.709 <https://en.wikipedia.org/wiki/Rec._709>`__
 colourspace for HDTV, one is actually adopting *sRGB* colourspace **primaries**
 and **whitepoint** with different specific **transfer functions**.
 
 Movie cameras such as those from Canon (Canon EOS 1DC, Canon CX00) use *BT.709*
 **primaries** and **whitepoint** but encode their scene linear values with a
 custom log curve designated
-`C-Log <http://www.usa.canon.com/cusa/professional/standard_display/cinema-firmware-c500>`_.
+`C-Log <http://www.usa.canon.com/cusa/professional/standard_display/cinema-firmware-c500>`__.
 
 .. class:: alert alert-dismissible alert-info
 
@@ -291,8 +291,8 @@ to lessen the uncertainty and improve the **terminology** used, we suggest that:
         1.8 **transfer functions**.
 
 In the near future it will likely become even more critical and relevant as
-new *RGB* colourspaces such as `BT.2020 <https://en.wikipedia.org/wiki/Rec._2020>`_
-or the `ACES encodings <http://www.oscars.org/science-technology/sci-tech-projects/aces>`_
+new *RGB* colourspaces such as `BT.2020 <https://en.wikipedia.org/wiki/Rec._2020>`__
+or the `ACES encodings <http://www.oscars.org/science-technology/sci-tech-projects/aces>`__
 become mainstream.
 
 Bibliography

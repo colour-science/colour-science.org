@@ -7,16 +7,16 @@
 .. description:
 .. type: text
 
-`Colour 0.3.3 <https://github.com/colour-science/colour/releases/tag/v0.3.3>`_
+`Colour 0.3.3 <https://github.com/colour-science/colour/releases/tag/v0.3.3>`__
 is available!
 
 .. TEASER_END
 
-We would like to thanks `Luke Canavan <https://github.com/canavandl>`_
-and `Steve Agland <https://github.com/sagland>`_ for their contributions
+We would like to thanks `Luke Canavan <https://github.com/canavandl>`__
+and `Steve Agland <https://github.com/sagland>`__ for their contributions
 and help.
 
-The most notable `features <https://github.com/colour-science/colour/releases/tag/v0.3.3>`_
+The most notable `features <https://github.com/colour-science/colour/releases/tag/v0.3.3>`__
 are:
 
 -   New chromatic adaptation models:
@@ -45,11 +45,11 @@ are:
 
 A lot of object names have been changed, especially the ones featuring an author
 name that are now partially title-cased. Please take a look at the
-`releases <https://github.com/colour-science/colour/releases/tag/v0.3.3>`_
+`releases <https://github.com/colour-science/colour/releases/tag/v0.3.3>`__
 page for exact details.
 
 Michael and myself won't have too much time in the coming weeks, thus
 the project may look slightly stalled. Still, we have started working
 toward the next major milestone which will be centered around code
 optimisation and vectorisation. The initial results are exciting with
-computations speed `being over 95 times faster on average <https://docs.google.com/spreadsheets/d/10O344GaDbZaS9dNLIhP-uSPIgJXEMgz0MKEPPECtTy0/edit?usp=sharing>`_!
+computations speed `being over 95 times faster on average <https://docs.google.com/spreadsheets/d/10O344GaDbZaS9dNLIhP-uSPIgJXEMgz0MKEPPECtTy0/edit?usp=sharing>`__!

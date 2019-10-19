@@ -351,7 +351,7 @@ Input & Output
 - CSV tabular data files
 - IES TM-27-14 spectral data XML files
 - X-Rite spectral data files
-- Image I/O using `OpenImageIO <http://openimageio.org>`_
+- Image I/O using `OpenImageIO <http://openimageio.org>`__
 
 Colour Models
 -------------

@@ -8,7 +8,7 @@
 .. type: text
 
 **Colour - Maya** provides an implementation of **Colour** within
-`Autodesk Maya <http://www.autodesk.co.uk/products/maya/>`_.
+`Autodesk Maya <http://www.autodesk.co.uk/products/maya/>`__.
 
 Features
 ^^^^^^^^
@@ -32,4 +32,4 @@ The wide *ACES RGB* colourspace against *sRGB* colourspace:
 Downloads
 ^^^^^^^^^
 
--   `colour-maya Github Repository <https://github.com/colour-science/colour-maya>`_
+-   `colour-maya Github Repository <https://github.com/colour-science/colour-maya>`__

@@ -10,35 +10,35 @@
 Installing the whole development toolchain for **Colour** roughly means
 deploying:
 
--   `Python 2.7 <https://www.python.org/download/releases/>`_ and
-    `Python 3.5 <https://www.python.org/download/releases/>`_
--   `NumPy <http://www.numpy.org/>`_
--   `SciPy <http://www.scipy.org/>`_
--   `Six>=1.10.0 <https://pypi.org/project/six>`_
--   `OpenImageIO <http://openimageio.org>`_
--   `Pandas <https://pandas.pydata.org/>`_
--   `Matplotlib <http://matplotlib.org/>`_
--   `Sphinx <https://sphinx-doc.org>`_
--   `sphinxcontrib-bibtex <https://sphinxcontrib-bibtex.readthedocs.io/>`_
--   `sphinx_rtd_theme <https://github.com/rtfd/sphinx_rtd_theme/>`_
--   `Coverage.py <https://pypi.org/project/coverage>`_
--   `Flake8 <https://pypi.org/project/flake8>`_
--   `mock <https://pypi.org/project/mock>`_
--   `nose <https://nose.readthedocs.io/en/latest>`_
--   `Invoke <http://www.pyinvoke.org/>`_
--   `restructuredtext-lint <https://github.com/twolfson/restructuredtext-lint>`_
--   `twine <https://pypi.org/project/twine>`_
--   `YAPF <https://github.com/google/yapf>`_
--   `Nikola <https://getnikola.com/>`_
--   `Apache 2.2 <http://httpd.apache.org>`_
+-   `Python 2.7 <https://www.python.org/download/releases/>`__ and
+    `Python 3.5 <https://www.python.org/download/releases/>`__
+-   `NumPy <http://www.numpy.org/>`__
+-   `SciPy <http://www.scipy.org/>`__
+-   `Six>=1.10.0 <https://pypi.org/project/six>`__
+-   `OpenImageIO <http://openimageio.org>`__
+-   `Pandas <https://pandas.pydata.org/>`__
+-   `Matplotlib <http://matplotlib.org/>`__
+-   `Sphinx <https://sphinx-doc.org>`__
+-   `sphinxcontrib-bibtex <https://sphinxcontrib-bibtex.readthedocs.io/>`__
+-   `sphinx_rtd_theme <https://github.com/rtfd/sphinx_rtd_theme/>`__
+-   `Coverage.py <https://pypi.org/project/coverage>`__
+-   `Flake8 <https://pypi.org/project/flake8>`__
+-   `mock <https://pypi.org/project/mock>`__
+-   `nose <https://nose.readthedocs.io/en/latest>`__
+-   `Invoke <http://www.pyinvoke.org/>`__
+-   `restructuredtext-lint <https://github.com/twolfson/restructuredtext-lint>`__
+-   `twine <https://pypi.org/project/twine>`__
+-   `YAPF <https://github.com/google/yapf>`__
+-   `Nikola <https://getnikola.com/>`__
+-   `Apache 2.2 <http://httpd.apache.org>`__
 -   ... and too many things I just don't remember!
 
 I decided to see how I could make that setup a bit more portable and easier to
 deploy.
 
-That's where `Vagrant <https://www.vagrantup.com/>`_ kicks in along
-`PyCharm <http://www.jetbrains.com/pycharm/>`_  and
-`Anaconda <https://store.continuum.io/cshop/anaconda/>`_!
+That's where `Vagrant <https://www.vagrantup.com/>`__ kicks in along
+`PyCharm <http://www.jetbrains.com/pycharm/>`__  and
+`Anaconda <https://store.continuum.io/cshop/anaconda/>`__!
 
 The following guide assume that you have that you have *PyCharm* installed and
 are using *macOs*, although it should pretty much be platform agnostic.
@@ -56,7 +56,7 @@ Development Workspace Creation
     $ mkdir colour-science
     $ cd colour-science
 
--   Clone the `colour-vagrant <https://github.com/colour-science/colour-vagrant>`_
+-   Clone the `colour-vagrant <https://github.com/colour-science/colour-vagrant>`__
     repository:
 
 .. code:: shell
@@ -72,15 +72,15 @@ Vagrant Installation
 --------------------
 
 We will loosely follow
-`Jetbrain's PyCharm Documentation <http://www.jetbrains.com/pycharm/quickstart/configuring_for_vm.html>`_.
+`Jetbrain's PyCharm Documentation <http://www.jetbrains.com/pycharm/quickstart/configuring_for_vm.html>`__.
 
--   Install `VirtualBox <https://www.virtualbox.org/>`_.
--   Install `Vagrant <https://www.vagrantup.com/>`_.
--   Install `Fabric <http://www.fabfile.org/>`_, this is the provider needed for
-    the `colour-vagrant <https://github.com/colour-science/colour-vagrant>`_
-    environment. Initially, I was provisioning with `Puppet <http://puppetlabs.com/>`_.
-    It was cumbersome to use, so I decided to go for `Fabric <http://www.fabfile.org/>`_
-    and the `vagrant-fabric <https://github.com/wutali/vagrant-fabric>`_
+-   Install `VirtualBox <https://www.virtualbox.org/>`__.
+-   Install `Vagrant <https://www.vagrantup.com/>`__.
+-   Install `Fabric <http://www.fabfile.org/>`__, this is the provider needed for
+    the `colour-vagrant <https://github.com/colour-science/colour-vagrant>`__
+    environment. Initially, I was provisioning with `Puppet <http://puppetlabs.com/>`__.
+    It was cumbersome to use, so I decided to go for `Fabric <http://www.fabfile.org/>`__
+    and the `vagrant-fabric <https://github.com/wutali/vagrant-fabric>`__
     plugin:
 
     .. code:: shell
@@ -91,14 +91,14 @@ We will loosely follow
 
     | **Note**
     |
-    | `Fabric <http://www.fabfile.org/>`_ does
-        `not support Python 3 yet <https://github.com/fabric/fabric/issues/1424>`_
+    | `Fabric <http://www.fabfile.org/>`__ does
+        `not support Python 3 yet <https://github.com/fabric/fabric/issues/1424>`__
         thus if you want to use Python 3 you will need to
-        `switch to the fork <https://pypi.org/project/Fabric3/>`_.
+        `switch to the fork <https://pypi.org/project/Fabric3/>`__.
 
--   Install `XQuartz <http://xquartz.macosforge.org/>`_: This is the X11 display
+-   Install `XQuartz <http://xquartz.macosforge.org/>`__: This is the X11 display
     server for *macOs*. The virtual machine will export the display to it
-    so that you can see the figures from `Matplotlib <http://matplotlib.org/>`_.
+    so that you can see the figures from `Matplotlib <http://matplotlib.org/>`__.
 
 -   *VirtualBox* directories syncing performance degrades quickly with large
     number of files.
@@ -110,7 +110,7 @@ We will loosely follow
     the *macOs* host.
 
     In order to avoid that and following the
-    `Vagrant Documentation <https://docs.vagrantup.com/v2/synced-folders/nfs.html>`_,
+    `Vagrant Documentation <https://docs.vagrantup.com/v2/synced-folders/nfs.html>`__,
     you can edit your *macOs* :code:`/etc/sudoers` file and append the
     following content:
 
@@ -131,18 +131,18 @@ here we will leverage the *PyCharm* integration.
 -   Set the :code:`Vagrant Executable` field to your *Vagrant* executable, e.g.
     :code:`/usr/local/bin/vagrant`. This should not be needed as
     :code:`vagrant` should be enough, but
-    `I encountered issues lately <https://youtrack.jetbrains.com/issue/PY-29806#comment=27-2846352>`_.
+    `I encountered issues lately <https://youtrack.jetbrains.com/issue/PY-29806#comment=27-2846352>`__.
 
 -   Set the :code:`Instance Folder` field to your :code:`colour-vagrant`
     directory.
 
--   Add a new `Vagrant <https://www.vagrantup.com/>`_ box to
-    `PyCharm <http://www.jetbrains.com/pycharm/>`_ in the :code:`Boxes` tab
+-   Add a new `Vagrant <https://www.vagrantup.com/>`__ box to
+    `PyCharm <http://www.jetbrains.com/pycharm/>`__ in the :code:`Boxes` tab
     and use the following image:
-    `bento/ubuntu-16.04 <https://vagrantcloud.com/bento/boxes/ubuntu-16.04/versions/201808.24.0/providers/vmware_desktop.box>`_
+    `bento/ubuntu-16.04 <https://vagrantcloud.com/bento/boxes/ubuntu-16.04/versions/201808.24.0/providers/vmware_desktop.box>`__
 
--   Add the `vagrant-fabric <https://github.com/wutali/vagrant-fabric>`_
-    plugin to `PyCharm <http://www.jetbrains.com/pycharm/>`_ in the
+-   Add the `vagrant-fabric <https://github.com/wutali/vagrant-fabric>`__
+    plugin to `PyCharm <http://www.jetbrains.com/pycharm/>`__ in the
     :code:`Plugins` tab.
 
 Your configuration screen should be approximately as follows:
@@ -180,15 +180,15 @@ elements available:
     drwxrwxr-x 20 vagrant vagrant 4096 Apr 29 03:30 python3.5/
 
 -  The **colour-science.org** website served from the virtual machine at
-   the following address: `http://localhost:8080/ <http://localhost:8080/>`_
+   the following address: `http://localhost:8080/ <http://localhost:8080/>`__
 
 PyCharm Environment Configuration
 ---------------------------------
 
 -  Add the various remote Python interpreters to
-   `PyCharm <http://www.jetbrains.com/pycharm/>`_ following the
+   `PyCharm <http://www.jetbrains.com/pycharm/>`__ following the
    quickstart guide: `Remote interpreter via virtual box:
-   2 <http://www.jetbrains.com/pycharm/quickstart/configuring_interpreter.html>`_
+   2 <http://www.jetbrains.com/pycharm/quickstart/configuring_interpreter.html>`__
 
    The remote Python interpreters paths are as follows:
 
@@ -234,7 +234,7 @@ following command on the *macOs* host:
 Jupyter Notebooks
 ^^^^^^^^^^^^^^^^^
 
-The `Jupyter Notebooks <http://ipython.org/notebook.html>`_ server is started
+The `Jupyter Notebooks <http://ipython.org/notebook.html>`__ server is started
 as follows:
 
 .. code:: shell
@@ -243,7 +243,7 @@ as follows:
     $ ipython notebook --pylab=inline --ip=0.0.0.0
 
 Then you can access it on the *macOs* host at the following url:
-`http://localhost:8888/ <http://localhost:8888/>`_
+`http://localhost:8888/ <http://localhost:8888/>`__
 
 Remote Python Environments & Interpreters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

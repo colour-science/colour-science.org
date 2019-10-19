@@ -7,7 +7,7 @@
 .. description: 
 .. type: text
 
-**Colour - Checker Detection** is a `Python <https://www.python.org/>`_ package
+**Colour - Checker Detection** is a `Python <https://www.python.org/>`__ package
 implementing various colour checker detection algorithms and related utilities.
 
 .. image:: https://raw.githubusercontent.com/colour-science/colour-checker-detection/master/docs/_static/ColourCheckerDetection_001.png
@@ -22,15 +22,15 @@ The following colour checker detection algorithms are implemented:
 API
 ^^^
 
-The main reference for `Colour - Checker Detection <https://github.com/colour-science/colour-checker-detection>`_
-is the `Colour - Checker Detection Manual <https://colour-checker-detection.readthedocs.io/en/latest/manual.html>`_.
+The main reference for `Colour - Checker Detection <https://github.com/colour-science/colour-checker-detection>`__
+is the `Colour - Checker Detection Manual <https://colour-checker-detection.readthedocs.io/en/latest/manual.html>`__.
 
 Examples
 ^^^^^^^^
 
--   `Colour - Checker Detection - Examples <https://github.com/colour-science/colour-checker-detection/tree/develop/colour_checker_detection/examples>`_
+-   `Colour - Checker Detection - Examples <https://github.com/colour-science/colour-checker-detection/tree/develop/colour_checker_detection/examples>`__
 
 Downloads
 ^^^^^^^^^
 
--   `colour-checker-detection Github Repository <https://github.com/colour-science/colour-checker-detection>`_
+-   `colour-checker-detection Github Repository <https://github.com/colour-science/colour-checker-detection>`__

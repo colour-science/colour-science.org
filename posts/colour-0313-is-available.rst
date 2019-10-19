@@ -7,7 +7,7 @@
 .. description: 
 .. type: text
 
-`Colour 0.3.13 <https://github.com/colour-science/colour/releases/tag/v0.3.13>`_
+`Colour 0.3.13 <https://github.com/colour-science/colour/releases/tag/v0.3.13>`__
 is available!
 
 .. TEASER_END
@@ -15,5 +15,5 @@ is available!
 This is mainly a maintenance release addressing regressions introduced into the
 *CIECAM02* and *CAM16* implementations.
 
-Head to the `releases page <https://github.com/colour-science/colour/releases/tag/v0.3.13>`_
+Head to the `releases page <https://github.com/colour-science/colour/releases/tag/v0.3.13>`__
 for complete details.

@@ -14,38 +14,38 @@ There are many ways to help:
 
 -   Reporting a defect, proposing a new feature, an enhancement or
     commenting existing issues on the `Issue
-    Tracker <https://github.com/colour-science/colour/issues>`_.
+    Tracker <https://github.com/colour-science/colour/issues>`__.
 -   Contributing new code by implementing new features or adding
     examples. For some ideas you can take a look at the issues with the
-    `Enhancement <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AEnhancement>`_ and
-    `Feature <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AFeature>`_
+    `Enhancement <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AEnhancement>`__ and
+    `Feature <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AFeature>`__
     labels or the
-    `v9.9.9 <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+milestone%3Av9.9.9>`_
+    `v9.9.9 <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+milestone%3Av9.9.9>`__
     milestone.
 -   Maintaining the existing code base, improving the code style and quality,
     improving the coverage, updating the documentation, fixing bugs, addressing
     TODOs, etc... Issues with the
-    `Defect <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ADefect>`_
+    `Defect <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ADefect>`__
     or
-    `Enhancement <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AEnhancement>`_
+    `Enhancement <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AEnhancement>`__
     labels are a good place to start.
 -   Improving the
-    `Jupyter Notebooks <http://nbviewer.jupyter.org/github/colour-science/colour-notebooks/blob/master/notebooks/colour.ipynb>`_,
+    `Jupyter Notebooks <http://nbviewer.jupyter.org/github/colour-science/colour-notebooks/blob/master/notebooks/colour.ipynb>`__,
     we aim to provide a good scientific support to the API and there is still a
     lot to do.
 -   Improving siblings packages:
 
-    -   `Colour - Datasets </colour-datasets/>`_
-    -   `Colour - Demosaicing </colour-demosaicing/>`_
-    -   `Colour - HDRI </colour-hdri/>`_
-    -   `Colour - Checker Detection </colour-checker-detection/>`_
-    -   `Colour - Maya </colour-maya/>`_
-    -   `Colour - Nuke </colour-nuke/>`_
-    -   `Colour - Spectroscope </colour-spectroscope/>`_
+    -   `Colour - Datasets </colour-datasets/>`__
+    -   `Colour - Demosaicing </colour-demosaicing/>`__
+    -   `Colour - HDRI </colour-hdri/>`__
+    -   `Colour - Checker Detection </colour-checker-detection/>`__
+    -   `Colour - Maya </colour-maya/>`__
+    -   `Colour - Nuke </colour-nuke/>`__
+    -   `Colour - Spectroscope </colour-spectroscope/>`__
 
--   Participating in discussions on the `Mailing List <colour-science@googlegroups.com>`_.
+-   Participating in discussions on the `Mailing List <colour-science@googlegroups.com>`__.
 
-**Github** hosts a `First Contributions <https://github.com/firstcontributions/first-contributions>`_
+**Github** hosts a `First Contributions <https://github.com/firstcontributions/first-contributions>`__
 repository with good information for new comers.
 
 Reporting Issues
@@ -54,81 +54,81 @@ Reporting Issues
 The three major issue types one can report on the issue tracker are the
 following:
 
--   `Defect <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ADefect>`_
--   `Enhancement <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AEnhancement>`_
--   `Feature <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AFeature>`_
+-   `Defect <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ADefect>`__
+-   `Enhancement <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AEnhancement>`__
+-   `Feature <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AFeature>`__
 
 We currently use a large set of labels to categorise issues:
 
--   `Defect <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ADefect>`_:
+-   `Defect <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ADefect>`__:
     Used for any kind of defect reported.
 
-    -    `Critical <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ACritical>`_:
+    -    `Critical <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ACritical>`__:
          Used for issues either rendering the software unusable, causing loss of
          data, or preventing people to work. These issues need to be fixed
          immediately.
-    -    `Major <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AMajor>`_:
+    -    `Major <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AMajor>`__:
          Used for issues which have significant consequences on the ability of
          people to work but do not lead to the whole API being unusable.
-    -    `Normal <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ANormal>`_:
+    -    `Normal <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ANormal>`__:
          Used for issues affecting one piece of functionality. Those are usually
          self-contained and don't impact the overall functionality of the API.
-    -    `Minor <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AMinor>`_:
+    -    `Minor <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AMinor>`__:
          Used for cosmetic issues that don't prevent the API to run properly.
 
--   `Enhancement <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AEnhancement>`_:
+-   `Enhancement <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AEnhancement>`__:
     Used for an enhancement of an existing feature, can also be used for new
     feature suggestion, although
-    `Feature <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AFeature>`_
+    `Feature <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AFeature>`__
     label should be preferred.
--   `Feature <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AFeature>`_:
+-   `Feature <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AFeature>`__:
     Used for a new feature, functionality suggestion.
 
-    -    `P1 <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AP1>`_:
+    -    `P1 <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AP1>`__:
          Used for the highest priority.
-    -    `P2 <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AP2>`_:
+    -    `P2 <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AP2>`__:
          Used for average priority.
-    -    `P3 <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AP3>`_:
+    -    `P3 <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AP3>`__:
          Used for the lowest priority.
 
--   `API <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AAPI>`_:
+-   `API <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AAPI>`__:
     Used for issues related to the API.
--   `Discarded <https://github.com/colour-science/colour/issues?q=is%3Aclose+is%3Aissue+label%3ADiscarded>`_:
+-   `Discarded <https://github.com/colour-science/colour/issues?q=is%3Aclose+is%3Aissue+label%3ADiscarded>`__:
     Used for a discarded / canceled issue.
--   `Discussion <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ADiscussion>`_:
+-   `Discussion <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ADiscussion>`__:
     Used to discuss any subject, those issues often turn into features or
     enhancement.
--   `Distribution <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ADistribution>`_:
+-   `Distribution <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ADistribution>`__:
     Used to discuss distribution and packaging of the API.
--   `Documentation <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ADocumentation>`_:
+-   `Documentation <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ADocumentation>`__:
     Used for issues related to the documentation.
--   `Duplicate <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ADuplicate>`_:
+-   `Duplicate <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ADuplicate>`__:
     Used for a duplicate issue.
--   `Examples <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AExamples>`_:
+-   `Examples <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AExamples>`__:
     Used for issues related to the examples.
--   `Postponed <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3APostponed>`_:
+-   `Postponed <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3APostponed>`__:
     Used for an issue postponed for a future milestone.
--   `Task <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ATask>`_:
+-   `Task <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ATask>`__:
     Used for a task not directly related to pure programming.
--   `Good First Issue <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3A"Good+First+Issue">`_:
+-   `Good First Issue <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3A"Good+First+Issue">`__:
     Used for an issue appropriate for a first time contribution.
--   `Help Wanted <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3A"Help+Wanted">`_:
+-   `Help Wanted <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3A"Help+Wanted">`__:
     Used for an issue appropriate for a first time contribution but likely harder than a
-    `Good First Issue <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3A"Good+First+Issue">`_ one.
--   `Hacktoberfest <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3A"Hacktoberfest">`_:
-    Used for an issue relevant to `Digital Ocean's Hacktoberfest <https://hacktoberfest.digitalocean.com>`_.
+    `Good First Issue <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3A"Good+First+Issue">`__ one.
+-   `Hacktoberfest <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3A"Hacktoberfest">`__:
+    Used for an issue relevant to `Digital Ocean's Hacktoberfest <https://hacktoberfest.digitalocean.com>`__.
 
 Defects
 ^^^^^^^
 
 You encountered a problem while using **Colour**, please consider reporting it
-on the `Issue Tracker <https://github.com/colour-science/colour/issues>`_.
+on the `Issue Tracker <https://github.com/colour-science/colour/issues>`__.
 
 The first thing to do, is to check if there are any existing issues describing
 your problem, if there is one, you are welcome commenting into it and provide
 more details. However, please avoid creating duplicates, they add noise to the
 issue tracker and we will have to label them as
-`Duplicate <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ADuplicate>`_
+`Duplicate <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ADuplicate>`__
 and close them.
 
 When reporting a defect please provide the output of the following command if
@@ -172,9 +172,9 @@ like would help its implementation: publications, wikipedia article, etc...
 
 If there is an implementation existing in another language, we will be most
 likely be able to port it although the licence must be compatible with the
-`New BSD License <https://opensource.org/licenses/BSD-3-Clause>`_ terms.
+`New BSD License <https://opensource.org/licenses/BSD-3-Clause>`__ terms.
 
-We are also running `Matlab <http://www.mathworks.fr/products/matlab/>`_, so
+We are also running `Matlab <http://www.mathworks.fr/products/matlab/>`__, so
 don't hesitate to provide snippets for it if you have functions you would like
 to be ported.
 
@@ -189,8 +189,8 @@ Development for Colour
 
 Here is a succinct overview of the steps you will most likely go through:
 
-1.  `Fork <https://github.com/colour-science/colour/fork>`_ the
-    `Colour <https://github.com/colour-science/colour>`_ repository.
+1.  `Fork <https://github.com/colour-science/colour/fork>`__ the
+    `Colour <https://github.com/colour-science/colour>`__ repository.
 2.  Clone the repository locally to your workspace:
 
 .. code:: shell
@@ -203,7 +203,7 @@ Here is a succinct overview of the steps you will most likely go through:
 
     $ cd colour
 
-4.  Install the development dependencies using `Poetry <https://poetry.eustace.io>`_:
+4.  Install the development dependencies using `Poetry <https://poetry.eustace.io>`__:
 
 .. code:: shell
 
@@ -239,7 +239,7 @@ it is possible to put the following function in your `.bash_profile`:
 Then issuing `poem` will activate the appropriate virtual environment for your
 clone.
 
-5.  Install the `pre-commit <https://pre-commit.com/>`_ hooks:
+5.  Install the `pre-commit <https://pre-commit.com/>`__ hooks:
 
 .. code:: shell
 
@@ -272,7 +272,7 @@ clone.
 9.  Create a branch for your contribution:
 
 The core developers are using the
-`git flow branching model <http://nvie.com/posts/a-successful-git-branching-model/>`_
+`git flow branching model <http://nvie.com/posts/a-successful-git-branching-model/>`__
 for most of the development tasks and since the branch name appears in the
 commit message and for consistency, please use the following branch
 prefixes:
@@ -281,7 +281,7 @@ prefixes:
 -   Release branch prefix: **release/**
 -   Hotfix branch prefix: **hotfix/**
 
-As an example, working to implement `Mie Scattering <https://en.wikipedia.org/wiki/Mie_scattering>`_
+As an example, working to implement `Mie Scattering <https://en.wikipedia.org/wiki/Mie_scattering>`__
 support:
 
 .. code:: shell
@@ -313,8 +313,8 @@ or alternatively:
     | **Note**
     |
     | The **pre-commit** hooks will run before committing, notably
-        `Flake8 <https://pypi.org/project/flake8/>`_ and
-        `YAPF <https://github.com/google/yapf>`_ thus depending their status,
+        `Flake8 <https://pypi.org/project/flake8/>`__ and
+        `YAPF <https://github.com/google/yapf>`__ thus depending their status,
         you might not be able to commit until you have fixed the issues they
         reported.
 
@@ -324,9 +324,9 @@ or alternatively:
 
     $ git push origin feature/mie_scattering
 
-13. Ensure that the `continuous integration <https://github.com/$USER/colour/actions>`_
+13. Ensure that the `continuous integration <https://github.com/$USER/colour/actions>`__
     suite succeeded.
-14. Visit your repository fork on `Github <https://github.com/$USER/colour>`_.
+14. Visit your repository fork on `Github <https://github.com/$USER/colour>`__.
     Your branch should have a green *Pull Request* button, this will open a
     *pull request* and let us know that we have some code to review :)
 
@@ -348,25 +348,25 @@ Guidelines
 ----------
 
 Most of the conventions used in **Colour** are the same than
-`NumPy <http://www.numpy.org/>`_, `SciPy <http://www.scipy.org/>`_ and
-`scikit-image <http://scikit-image.org/>`_.
+`NumPy <http://www.numpy.org/>`__, `SciPy <http://www.scipy.org/>`__ and
+`scikit-image <http://scikit-image.org/>`__.
 
 Overview
 ^^^^^^^^
 
-We follow the `Google Python Style Guide <https://google-styleguide.googlecode.com/svn/trunk/pyguide.html>`_
+We follow the `Google Python Style Guide <https://google-styleguide.googlecode.com/svn/trunk/pyguide.html>`__
 and especially the *Python Language Rules* although with the main exception
 being the docstrings / documentation formatted with
-`Numpy Docstrings Style <https://github.com/numpy/numpy/blob/master/doc/example.py>`_.
+`Numpy Docstrings Style <https://github.com/numpy/numpy/blob/master/doc/example.py>`__.
 
-The code has to be `PEP 8 <http://legacy.python.org/dev/peps/pep-0008/>`_
+The code has to be `PEP 8 <http://legacy.python.org/dev/peps/pep-0008/>`__
 compliant although but before anything else, it needs to be consistent with the
 Colour Science litterature:
 
 For example, the base **CIE** colourspace is **CIE XYZ** with upper case
 notation. It can be converted to chromaticity coordinates **xy** with lower
 case notation. If we were to fully abide by the
-`PEP 8 <http://legacy.python.org/dev/peps/pep-0008/>`_ recommendations, we
+`PEP 8 <http://legacy.python.org/dev/peps/pep-0008/>`__ recommendations, we
 would have written a conversion definition as follows:
 
 .. code:: python
@@ -393,7 +393,7 @@ names:
 
 When the reference is using upper case named variables, we try to follow
 the same convention, it is unfortunately not
-`PEP 8 <http://legacy.python.org/dev/peps/pep-0008/>`_ compliant but has the
+`PEP 8 <http://legacy.python.org/dev/peps/pep-0008/>`__ compliant but has the
 benefit of a much easier comparison between the implementation and the
 reference.
 
@@ -404,14 +404,14 @@ Python Language Rules
 
 -   All the code must be covered by unit tests and doctests.
 -   All the code must be documented to the same standard than
-    `NumPy <http://www.numpy.org/>`_, `SciPy <http://www.scipy.org/>`_
-    and `scikit-image <http://scikit-image.org/>`_.
+    `NumPy <http://www.numpy.org/>`__, `SciPy <http://www.scipy.org/>`__
+    and `scikit-image <http://scikit-image.org/>`__.
 -   All the code must be checked with the static analysis tool of your choice,
-    e.g. `PyCharm <http://www.jetbrains.com/pycharm/>`_ ,
+    e.g. `PyCharm <http://www.jetbrains.com/pycharm/>`__ ,
     `Flake8 <https://pypi.org/project/flake8>`__, or
-    `Codacy <https://www.codacy.com/>`_.
+    `Codacy <https://www.codacy.com/>`__.
 -   No *pull request* should be merged without being reviewed and ensuring that
-    the `Github Actions <https://github.com/colour-science/colour/actions>`_
+    the `Github Actions <https://github.com/colour-science/colour/actions>`__
     continuous integration suite succeeded.
 -   Examples should be provided for new features.
 
@@ -419,7 +419,7 @@ Python Style Rules
 ^^^^^^^^^^^^^^^^^^
 
 -   Ensure consistency with Colour Science literature first.
--   Ensure `PEP 8 <http://legacy.python.org/dev/peps/pep-0008/>`_ compliance.
+-   Ensure `PEP 8 <http://legacy.python.org/dev/peps/pep-0008/>`__ compliance.
 -   Try using a close to *LaTeX* syntax for variables names so that they are
     easier to compare to the reference.
 
@@ -434,9 +434,9 @@ Python Style Rules
 
 -   Please use *British English* words instead of *American English* ones as
     the **CIE** does, the most important of all being **colour** instead of
-    **color**. You can consult the `CIE Termlist <http://eilv.cie.co.at/>`_ if
+    **color**. You can consult the `CIE Termlist <http://eilv.cie.co.at/>`__ if
     any doubts.
--   Import `NumPy <http://www.numpy.org/>`_ as follows:
+-   Import `NumPy <http://www.numpy.org/>`__ as follows:
 
 .. code:: python
 
@@ -462,7 +462,7 @@ Python Style Rules
     -   Doctests output numbers trimmed with **ellipsis** to 7 digits.
 
 -   We recommend a set of values for use with examples and unit tests.
-    A `Gist <https://gist.github.com/KelSolaar/2ca5f4107a8ae05ec57a55a9ae2f3a13>`_
+    A `Gist <https://gist.github.com/KelSolaar/2ca5f4107a8ae05ec57a55a9ae2f3a13>`__
     is available with the generating code.
 
     Priority should be given for CIE Standard Illuminant D Series D65 computed
@@ -657,7 +657,7 @@ Python Style Rules
     we have already too much of them.
 -   Avoid **/** to wrap lines, prefer using the parenthesis **()**.
 -   The code formatting is performed using
-    `Yapf <https://github.com/google/yapf>`_. You can invoke it recursively on
+    `Yapf <https://github.com/google/yapf>`__. You can invoke it recursively on
     a directory as follows:
 
 .. code:: shell
@@ -684,7 +684,7 @@ Citations
 ^^^^^^^^^
 
 It's likely that the code you contribute will be based upon references, we are
-using the `APA 6th Edition <http://www.apastyle.org/>`_ citation style:
+using the `APA 6th Edition <http://www.apastyle.org/>`__ citation style:
 
 ::
 
@@ -699,7 +699,7 @@ using the `APA 6th Edition <http://www.apastyle.org/>`_ citation style:
     Lindbloom, B. (2014). RGB Working Space Information. Retrieved April 11, 2014, from http://www.brucelindbloom.com/WorkingSpaceInfo.html
 
 We are storing all our citations in a database maintained by
-`Mendeley <http://www.mendeley.com/>`_ and it is recommended that you are given
+`Mendeley <http://www.mendeley.com/>`__ and it is recommended that you are given
 a citation key by us.
 
 Commits
@@ -745,14 +745,14 @@ submitting a *pull request*. It is perfectly fine to modify your local branch
 as you wish.
 
 However, if you need to change history on a public and used **feature**
-branch, please inform the `Colour developers <mailto:colour-science@googlegroups.com>`_
+branch, please inform the `Colour developers <mailto:colour-science@googlegroups.com>`__
 in order to avoid commit losses or a merging disaster.
 
 Releasing Colour
 ----------------
 
 The following stages help maintainers navigate through the release of a new
-version of **Colour**, some automation is provided by `Invoke <http://www.pyinvoke.org/>`_:
+version of **Colour**, some automation is provided by `Invoke <http://www.pyinvoke.org/>`__:
 
 .. raw:: html
 

@@ -7,19 +7,19 @@
 .. description: 
 .. type: text
 
-We have released two complementary image processing  `Python <https://www.python.org/>`_
+We have released two complementary image processing  `Python <https://www.python.org/>`__
 packages:
 
--   `Colour - Demosaicing </colour-demosaicing>`_ which implements various CFA
+-   `Colour - Demosaicing </colour-demosaicing>`__ which implements various CFA
     (Colour Filter Array) demosaicing algorithms and related utilities.
--   `Colour - HDRI </colour-hdri>`_ which implements various HDRI / Radiance image
+-   `Colour - HDRI </colour-hdri>`__ which implements various HDRI / Radiance image
     processing algorithms.
 
 .. TEASER_END
 
 .. image:: https://raw.githubusercontent.com/colour-science/colour-hdri/master/docs/_static/Radiance_001.png
 
-`Colour <https://github.com/colour-science/colour>`_ has its roots in a company
+`Colour <https://github.com/colour-science/colour>`__ has its roots in a company
 being created to deliver high quality images for the VFX industry with an
 emphasis on colour processing correctness, dynamic range and resolution.
 
@@ -43,30 +43,30 @@ toolchain and compare various approaches.
 A key aspect of that effort was to find out if there is a true benefit at
 creating the radiance image prior to CFA (Colour Filter Array) demosaicing,
 unfortunately, we don't have yet
-`a definite answer <https://github.com/colour-science/colour-hdri/blob/develop/colour_hdri/examples/examples_merge_from_raw_files_with_post_demosaicing.ipynb>`_.
+`a definite answer <https://github.com/colour-science/colour-hdri/blob/develop/colour_hdri/examples/examples_merge_from_raw_files_with_post_demosaicing.ipynb>`__.
 
 Both packages provide examples notebooks:
 
--   `Colour - Demosaicing - Examples <https://github.com/colour-science/colour-demosaicing/tree/develop/colour_demosaicing/examples>`_
--   `Colour - HDRI - Examples <https://github.com/colour-science/colour-hdri/tree/develop/colour_hdri/examples>`_
+-   `Colour - Demosaicing - Examples <https://github.com/colour-science/colour-demosaicing/tree/develop/colour_demosaicing/examples>`__
+-   `Colour - HDRI - Examples <https://github.com/colour-science/colour-hdri/tree/develop/colour_hdri/examples>`__
 
 Some of the notebooks rely on third-party libraries or applications to run such as
 
--   `Adobe DNG Converter <https://www.adobe.com/support/downloads/product.jsp?product=106&platform=Mac>`_
--   `dcraw <https://www.cybercom.net/~dcoffin/dcraw/>`_
--   `ExifTool <http://www.sno.phy.queensu.ca/~phil/exiftool/>`_
--   `rawpy <https://github.com/neothemachine/rawpy>`_
+-   `Adobe DNG Converter <https://www.adobe.com/support/downloads/product.jsp?product=106&platform=Mac>`__
+-   `dcraw <https://www.cybercom.net/~dcoffin/dcraw/>`__
+-   `ExifTool <http://www.sno.phy.queensu.ca/~phil/exiftool/>`__
+-   `rawpy <https://github.com/neothemachine/rawpy>`__
 
 They are not mandatory and the data they provide can be acquired in various
 different ways. We don't advocate an approach or another.
 
 That work wouldn't have been possible without the excellent
-`Advanced High Dynamic Range Imaging Book <http://www.advancedhdrbook.com/>`_
+`Advanced High Dynamic Range Imaging Book <http://www.advancedhdrbook.com/>`__
 and the tremendous amount of publications we gathered (over 30 publications
 related to demosaicing and 20 publications for HDRI).
 
-Finally, we recommend that you read `Posterior Sparisty-Directed Demosaicking <http://campus.udayton.edu/~ISSL/index.php/research/denoising-demosaicking/>`_
-and `Robust Patch-Based HDR Reconstruction of Dynamic Scenes <http://cvc.ucsb.edu/graphics/Papers/Sen2012_PatchHDR/>`_
+Finally, we recommend that you read `Posterior Sparisty-Directed Demosaicking <http://campus.udayton.edu/~ISSL/index.php/research/denoising-demosaicking/>`__
+and `Robust Patch-Based HDR Reconstruction of Dynamic Scenes <http://cvc.ucsb.edu/graphics/Papers/Sen2012_PatchHDR/>`__
 publications which are probably the state of the art although patented to various
 degrees.
 

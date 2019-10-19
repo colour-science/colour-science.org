@@ -8,14 +8,14 @@
 .. type: text
 
 After months of work, we are pleased to announce that
-`Colour 0.3.5 <https://github.com/colour-science/colour/releases/tag/v0.3.5>`_
+`Colour 0.3.5 <https://github.com/colour-science/colour/releases/tag/v0.3.5>`__
 is finally available. This release is a major milestone toward a stable API.
 
 .. TEASER_END
 
 The focus has been vectorisation of most of the API code. The average
 speed increase is a **x235** factor for over a hundred core definitions
-(details are available in this `Google Docs Spreadsheet <https://docs.google.com/spreadsheets/d/10O344GaDbZaS9dNLIhP-uSPIgJXEMgz0MKEPPECtTy0/edit?usp=sharing>`_).
+(details are available in this `Google Docs Spreadsheet <https://docs.google.com/spreadsheets/d/10O344GaDbZaS9dNLIhP-uSPIgJXEMgz0MKEPPECtTy0/edit?usp=sharing>`__).
 
 The direct benefit is that the API is now well suited to work on images with
 acceptable computation times. Favoring flexibility over high level
@@ -23,7 +23,7 @@ optimisations and speed, we have also maintained almost complete backward
 compatibility.
 
 Another key feature is our recent derivation of
-`RED colourspaces </posts/red-colourspaces-derivation/>`_.
+`RED colourspaces </posts/red-colourspaces-derivation/>`__.
 
-Feel free to take a look at the `releases page <https://github.com/colour-science/colour/releases/tag/v0.3.5>`_
+Feel free to take a look at the `releases page <https://github.com/colour-science/colour/releases/tag/v0.3.5>`__
 for complete details.

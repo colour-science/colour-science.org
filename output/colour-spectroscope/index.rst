@@ -8,7 +8,7 @@
 .. type: text
 
 **Colour - Spectroscope** provides an implementation of **Colour** for
-`The Homemade Spectroscope <http://thomasmansencal.blogspot.fr/2014/07/a-homemade-spectroscope.html>`_.
+`The Homemade Spectroscope <http://thomasmansencal.blogspot.fr/2014/07/a-homemade-spectroscope.html>`__.
 
 Features
 ^^^^^^^^
@@ -25,4 +25,4 @@ Examples
 Downloads
 ^^^^^^^^^
 
--   `colour-spectroscope Github Repository <https://github.com/colour-science/colour-spectroscope>`_
+-   `colour-spectroscope Github Repository <https://github.com/colour-science/colour-spectroscope>`__
