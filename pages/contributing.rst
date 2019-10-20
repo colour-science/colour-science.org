@@ -209,6 +209,15 @@ Here is a succinct overview of the steps you will most likely go through:
 
     $ poetry install
 
+.. class:: alert alert-dismissible alert-warning
+
+    | **Warning**
+    |
+    | Various **Colour** unit tests require being able to perform IO with
+        `OpenEXR <https://www.openexr.com/>`__ images. You will need to install
+        the *FreeImage* plugin for `Imageio <http://imageio.github.io/>`__ as
+        follows: `python -c "import imageio;imageio.plugins.freeimage.download()"`
+
 .. class:: alert alert-dismissible alert-info
 
     | **Note**
@@ -217,7 +226,7 @@ Here is a succinct overview of the steps you will most likely go through:
         is recommended to be used. Poetry can be updated to the latest preview
         version by issuing `poetry self:update --preview`.
 
-For people in a hurry and not willing to type `poetry run` before each command,
+If you are in a hurry and not willing to prepend each command with `poetry run`,
 it is possible to put the following function in your `.bash_profile`:
 
 .. code:: shell
