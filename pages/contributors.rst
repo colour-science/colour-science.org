@@ -10,12 +10,12 @@
 .. raw:: html
 
     <!-- ------------------------------------------------------------------ -->
-    <!-- Development & Technical Support                                    -->
+    <!-- The Colour Developers                                              -->
     <!-- ------------------------------------------------------------------ -->
 
-    <h1>Development &amp; Technical Support</h1>
+    <h1>The Colour Developers</h1>
 
-    <h4>Sorted by initial contribution date order:</h4>
+    <h4>Sorted by maintainership status and initial contribution date order:</h4>
 
     <div class="row my-5">
         <div class="col">
@@ -31,7 +31,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Project coordination, overall development.
+                        <span class="font-weight-bold">Maintainer</span>, Project coordination, overall development.
                     </p>
                 </div>
                 <div class="card-footer">
@@ -47,7 +47,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Colour appearance models, overall development.
+                        <span class="font-weight-bold">Maintainer</span>, Colour appearance models, overall development.
                     </p>
                 </div>
                 <div class="card-footer">
@@ -68,7 +68,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Continuous technical support.
+                        <span class="font-weight-bold">Maintainer</span>, Continuous technical support.
                     </p>
                 </div>
             </div>
@@ -93,7 +93,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        YCbCr Colour Encoding, RED Colourspaces Derivation,
+                        <span class="font-weight-bold">Maintainer</span>, YCbCr Colour Encoding, RED Colourspaces Derivation,
                         LUT IO, continuous technical support.
                     </p>
                 </div>
@@ -105,15 +105,21 @@
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
-                    <h3>Luke Canavan</h3>
+                    <h3>Kevin Wheatley</h3>
+                    <h4>
+                        <a href="http://www.framestore.com/">Framestore</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>Head of Imaging</em>
+                    </h5>
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Colour Quality Scale, Luminous Flux.
+                        Technical support.
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://twitter.com/canavandl" class="card-link">Twitter</a>
+                    <a href="https://www.linkedin.com/in/kevin-wheatley-6551401a" class="card-link">Linkedin</a>
                 </div>
             </div>
         </div>
@@ -148,12 +154,12 @@
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
-                    <h3>Kevin Wheatley</h3>
+                    <h3>Jean D. Vandenberg</h3>
                     <h4>
-                        <a href="http://www.framestore.com/">Framestore</a>
+                        <a href="https://www.waltdisneystudios.com/">The Walt Disney Studios</a>
                     </h4>
                     <h5 class="card-subtitle text-muted mt-3">
-                        <em>Head of Imaging</em>
+                        <em>Colour Scientist</em>
                     </h5>
                 </div>
                 <div class="card-body">
@@ -162,7 +168,37 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://www.linkedin.com/in/kevin-wheatley-6551401a" class="card-link">Linkedin</a>
+                    <a href="https://github.com/jdvandenberg" class="card-link">Github</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
+    </div>
+
+    <!-- ------------------------------------------------------------------ -->
+    <!-- Development & Technical Support                                    -->
+    <!-- ------------------------------------------------------------------ -->
+
+    <h1>Development &amp; Technical Support</h1>
+
+    <h4>Sorted by initial contribution date order:</h4>
+
+    <div class="row my-5">
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>Luke Canavan</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Colour Quality Scale, Luminous Flux.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://twitter.com/canavandl" class="card-link">Twitter</a>
                 </div>
             </div>
         </div>
@@ -236,34 +272,6 @@
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
-                    <h3>Jean D. Vandenberg</h3>
-                    <h4>
-                        <a href="https://www.waltdisneystudios.com/">The Walt Disney Studios</a>
-                    </h4>
-                    <h5 class="card-subtitle text-muted mt-3">
-                        <em>Colour Scientist</em>
-                    </h5>
-                </div>
-                <div class="card-body">
-                    <p class="card-text">
-                        Technical support.
-                    </p>
-                </div>
-                <div class="card-footer">
-                    <a href="https://github.com/jdvandenberg" class="card-link">Github</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ------------------------------------------------------------------ -->
-    <!-- ------------------------------------------------------------------ -->
-    <!-- ------------------------------------------------------------------ -->
-
-    <div class="row my-5">
-        <div class="col">
-            <div class="card h-100">
-                <div class="card-header text-center">
                     <h3>Troy James Sobotka</h3>
                     <h5 class="card-subtitle text-muted mt-3">
                         <em>Motion Picture Technician</em>
@@ -279,6 +287,13 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- ------------------------------------------------------------------ -->
+    <!-- ------------------------------------------------------------------ -->
+    <!-- ------------------------------------------------------------------ -->
+
+    <div class="row my-5">
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -316,13 +331,6 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- ------------------------------------------------------------------ -->
-    <!-- ------------------------------------------------------------------ -->
-    <!-- ------------------------------------------------------------------ -->
-
-    <div class="row my-5">
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -339,6 +347,13 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- ------------------------------------------------------------------ -->
+    <!-- ------------------------------------------------------------------ -->
+    <!-- ------------------------------------------------------------------ -->
+
+    <div class="row my-5">
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -370,13 +385,6 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- ------------------------------------------------------------------ -->
-    <!-- ------------------------------------------------------------------ -->
-    <!-- ------------------------------------------------------------------ -->
-
-    <div class="row my-5">
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -393,6 +401,13 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- ------------------------------------------------------------------ -->
+    <!-- ------------------------------------------------------------------ -->
+    <!-- ------------------------------------------------------------------ -->
+
+    <div class="row my-5">
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -414,7 +429,8 @@
                 </div>
             </div>
         </div>
-
+        <div class="col">
+        </div>
         <div class="col">
         </div>
     </div>
