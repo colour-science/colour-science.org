@@ -136,9 +136,9 @@ NAVIGATION_LINKS = {
         (
             (
                 ('https://github.com/colour-science/colour',
-                 '<span class="lead">Source Code</span>'),
+                 '<span class="font-weight-bold">Source Code</span>'),
                 ('https://github.com/colour-science/colour/archive/v0.3.13.zip',
-                 '<span class="lead">Latest (v0.3.13)</span>'),
+                 '<span class="font-weight-bold">Latest (v0.3.13)</span>'),
                 ('https://github.com/colour-science/colour/releases',
                  'All Releases'),
                 ('https://pypi.org/project/colour-science/', 'Pypi'),
@@ -149,22 +149,22 @@ NAVIGATION_LINKS = {
         (
             (
                 ('/installation-guide',
-                 '<span class="lead">Installation Guide</span>'),
+                 '<span class="font-weight-bold">Installation Guide</span>'),
                 ('https://colour.readthedocs.io/en/develop/tutorial.html',
-                 '<span class="lead">Static Tutorial</span>'),
+                 '<span class="font-weight-bold">Static Tutorial</span>'),
                 ('https://colab.research.google.com/notebook#fileId='
                  '1Im9J7or9qyClQCv5sPHmKdyiQbG4898K&'
                  'offline=true&sandboxMode=true',
-                 '<span class="lead">Interactive Tutorial</span>'),
+                 '<span class="font-weight-bold">Interactive Tutorial</span>'),
                 ('https://colab.research.google.com/notebook#fileId='
                  '1NRcdXSCshivkwoU2nieCvC3y14fx1X4X&'
                  'offline=true&sandboxMode=true',
-                 '<span class="lead">How-To Guide</span>'),
-                ('/api-reference', '<span class="lead">API Reference</span>'),
+                 '<span class="font-weight-bold">How-To Guide</span>'),
+                ('/api-reference', '<span class="font-weight-bold">API Reference</span>'),
                 ('/code-of-conduct',
-                 '<span class="lead">Code of Conduct</span>'),
-                ('/contributing', '<span class="lead">Contributing</span>'),
-                ('/contributors', '<span class="lead">Contributors</span>'),
+                 '<span class="font-weight-bold">Code of Conduct</span>'),
+                ('/contributing', '<span class="font-weight-bold">Contributing</span>'),
+                ('/contributors', '<span class="font-weight-bold">Contributors</span>'),
                 ('https://nbviewer.jupyter.org/github/colour-science/'
                  'colour-notebooks/blob/master/notebooks/colour.ipynb',
                  'Jupyter Notebooks'),
@@ -180,16 +180,16 @@ NAVIGATION_LINKS = {
             'Documentation',
         ),
         (
-            (('/apps', '<span class="lead">Apps (Colour - Dash)</span>'),
+            (('/apps', '<span class="font-weight-bold">Apps (Colour - Dash)</span>'),
              ('http://awesome-colour.org/',
-              '<span class="lead">Awesome Colour</span>'),
+              '<span class="font-weight-bold">Awesome Colour</span>'),
              ('/colour-datasets',
-              '<span class="lead">Colour - Datasets</span>'),
+              '<span class="font-weight-bold">Colour - Datasets</span>'),
              ('/colour-demosaicing',
-              '<span class="lead">Colour - Demosaicing</span>'),
-             ('/colour-hdri', '<span class="lead">Colour - HDRI</span>'),
+              '<span class="font-weight-bold">Colour - Demosaicing</span>'),
+             ('/colour-hdri', '<span class="font-weight-bold">Colour - HDRI</span>'),
              ('/colour-checker-detection',
-              '<span class="lead">Colour - Checker Detection</span>'),
+              '<span class="font-weight-bold">Colour - Checker Detection</span>'),
              ('/colour-maya',
               'Colour - Maya'), ('/colour-nuke',
                                  'Colour - Nuke'), ('/colour-playground',
@@ -201,7 +201,7 @@ NAVIGATION_LINKS = {
         (
             (
                 ('mailto:colour-science@googlegroups.com',
-                 '<span class="lead">Contact Us</span>'),
+                 '<span class="font-weight-bold">Contact Us</span>'),
                 ('https://gitter.im/colour-science/colour', 'Gitter'),
                 ('https://groups.google.com/forum/#!forum/colour-science',
                  'Mailing List'),
@@ -213,7 +213,7 @@ NAVIGATION_LINKS = {
         ),
         (
             (
-                ('/blog', '<span class="lead">Posts</span>'),
+                ('/blog', '<span class="font-weight-bold">Posts</span>'),
                 ("/archive.html", "Archive"),
                 ("/categories/", "Tags"),
             ),
