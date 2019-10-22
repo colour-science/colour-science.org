@@ -39,12 +39,12 @@
                     <a class="btn btn-primary btn-lg btn-block"
                         href="/installation-guide/"
                         role="button">
-                        <h5 class="text-light my-0">Get Started</h5>
+                        <h4 class="text-light my-0">Get Started</h4>
                     </a>
                     <a class="btn btn-secondary bg-white btn-lg btn-block"
                         href="https://github.com/colour-science/colour/archive/v0.3.13.zip"
                         role="button">
-                        <h5 class="my-0"><span class="fa fa-download">&nbsp;</span> 0.3.13 Alpha</h5>
+                        <h4 class="my-0"><span class="fa fa-download">&nbsp;</span> 0.3.13 Alpha</h4>
                     </a>
                 </div>
                 <div class="jumbotron">
