@@ -89,7 +89,7 @@ We will loosely follow
 
 .. class:: alert alert-dismissible alert-warning
 
-    | **Note**
+    | *Note*
     |
     | `Fabric <http://www.fabfile.org/>`__ does
         `not support Python 3 yet <https://github.com/fabric/fabric/issues/1424>`__

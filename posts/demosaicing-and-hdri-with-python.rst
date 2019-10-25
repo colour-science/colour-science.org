@@ -30,7 +30,7 @@ automation, it was an area we needed to revisit.
 
 .. class:: alert alert-dismissible alert-info
 
-    | **Note**
+    | *Note*
     |
     | The company is unfortunately stalled since a few years. On the bright
         side it gave birth to **Colour**.

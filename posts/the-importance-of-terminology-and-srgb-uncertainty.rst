@@ -33,7 +33,7 @@ mention of **Gamma** indicates that the article will likely only involves the
 
 .. class:: alert alert-dismissible alert-warning
 
-    | **Warning**
+    | *Warning*
     |
     | When using the term *Gamma* at
         `colour-science.org <https://colour-science.org/>`__,
@@ -42,7 +42,7 @@ mention of **Gamma** indicates that the article will likely only involves the
 
 .. class:: alert alert-dismissible alert-info
 
-    | **Note**
+    | *Note*
     |
     | Charles Poynton's `Gamma FAQ <http://www.poynton.com/notes/colour_and_gamma/GammaFAQ.html>`__
         is an extensive reference on *Gamma* correction.
@@ -55,7 +55,7 @@ Tom confirms that intuition a few paragraph later:
 
 .. class:: alert alert-dismissible alert-info
 
-    | **Note**
+    | *Note*
     |
     | The *gamut* defined by *sRGB* colourspace should actually be of a
         concern if one tries to achieve photo-realistic rendering as shown by
@@ -118,7 +118,7 @@ of colours) that can be encoded by a given *RGB colourspace*.
 
 .. class:: alert alert-dismissible alert-info
 
-    | **Note**
+    | *Note*
     |
     | When performing computations allowing for negative values and with
         enough precision, a given *RGB colorspace* can virtually encode any colours.
@@ -200,7 +200,7 @@ of the time for coding optimisation and bandwidth performance). [2]_
 
 .. class:: alert alert-dismissible alert-info
 
-    | **Note**
+    | *Note*
     |
     | Jack Holm, technical secretary for IEC/TC 100/TA 2 which developed the
         *IEC 61966-2-1:1999 Standard* is unambiguous about the *sRGB* **EOTF**
@@ -242,7 +242,7 @@ custom log curve designated
 
 .. class:: alert alert-dismissible alert-info
 
-    | **Note**
+    | *Note*
     |
     | Most camera makers implement their own log curves (ALEXA Log C for ARRI Alexa
         cameras, RED Log Film for RED cameras, etc...) and proprietary
