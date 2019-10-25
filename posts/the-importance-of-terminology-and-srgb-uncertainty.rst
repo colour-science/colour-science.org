@@ -28,15 +28,24 @@ While this depiction of *sRGB* colourspace **Electro-Optical Transfer Function**
 emphasis of the components of an *RGB* colourspace.
 
 For people experienced with colour theory and science, the post title and the
-mention of **gamma** indicates that the article will likely only involves the
+mention of **Gamma** indicates that the article will likely only involves the
 *sRGB* colourspace **EOTF** and its inverse.
+
+.. class:: alert alert-dismissible alert-warning
+
+    | **Warning**
+    |
+    | When using the term *Gamma* at
+        `colour-science.org <https://colour-science.org/>`__,
+        we are always referring to a pure power function whose exponent is
+        known as *Gamma*.
 
 .. class:: alert alert-dismissible alert-info
 
     | **Note**
     |
     | Charles Poynton's `Gamma FAQ <http://www.poynton.com/notes/colour_and_gamma/GammaFAQ.html>`__
-        is an extensive reference on gamma correction.
+        is an extensive reference on *Gamma* correction.
 
 Tom confirms that intuition a few paragraph later:
 
@@ -276,8 +285,8 @@ to lessen the uncertainty and improve the **terminology** used, we suggest that:
 
     or for completeness:
 
-        *The sRGB electro-optical transfer function (EOTF) is a slight tweaking
-        of the simple gamma 2.2 curve.*
+        *The sRGB Electro-Optical Transfer Function (EOTF) is a slight tweaking
+        of the simple Gamma 2.2 function.*
 
 -   When describing an *RGB* colourspace not supported by an official specification
     or standard, one should probably use a name that explicitly defines the complete
@@ -287,7 +296,7 @@ to lessen the uncertainty and improve the **terminology** used, we suggest that:
         chromatically adapted to *CIE Standard Illuminant D60* **whitepoint**
         and linear **transfer functions**.
     -   `Adobe 1998 RGB-D65-Gamma1.8`: an *RGB* colourspace using *Adobe 1998 RGB*
-        **primaries**, *CIE Standard Illuminant D65* **whitepoint** and gamma
+        **primaries**, *CIE Standard Illuminant D65* **whitepoint** and Gamma
         1.8 **transfer functions**.
 
 In the near future it will likely become even more critical and relevant as
