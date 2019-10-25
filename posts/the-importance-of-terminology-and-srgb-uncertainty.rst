@@ -23,7 +23,7 @@ The article first description of *sRGB* is as follows:
 
     *sRGB is a slight tweaking of the simple gamma 2.2 curve.*
 
-While this depiction of *sRGB* colourspace **Electro-optical transfer function**
+While this depiction of *sRGB* colourspace **Electro-Optical Transfer Function**
 (**EOTF**) is exact, it may be confusing for non experts by omitting an explicit
 emphasis of the components of an *RGB* colourspace.
 
@@ -170,7 +170,7 @@ The transfer functions perform the mapping between the *linear* light
 components (tristimulus values) and a *non-linear* R'G'B' video signal (most
 of the time for coding optimisation and bandwidth performance). [2]_
 
--   The **Opto-electronic transfer function** (**OETF**) maps estimated
+-   The **Opto-Electronic Transfer Function** (**OETF**) maps estimated
     tristimulus values in a scene to a *non-linear* R'G'B' video component signal
     value. Typical **OETFs** are expressed by a power function with an exponent
     between 0.4 and 0.5. They can also be defined as piece-wise functions,
@@ -178,16 +178,16 @@ of the time for coding optimisation and bandwidth performance). [2]_
 
     .. figure:: /images/ITU-R_BT709_SMPTE_240M_OETFs.png
 
-        Various **opto-electronic transfer functions**.
+        Various **Opto-Electronic Transfer Functions**.
 
--   The **Electro-optical transfer function** (**EOTF**) maps a *non-linear*
+-   The **Electro-Optical Transfer Function** (**EOTF**) maps a *non-linear*
     R'G'B' video component signal to a tristimulus value at the display.
     Typical **EOTFs** are expressed by a power function with an exponent
     between 2.2 and 2.6 or a piece-wise function.
 
     .. figure:: /images/ITU-R_BT1886_sRGB_EOTFs.png
 
-        Various **electro-optical transfer functions**.
+        Various **Electro-Optical Transfer Functions**.
 
 .. class:: alert alert-dismissible alert-info
 
