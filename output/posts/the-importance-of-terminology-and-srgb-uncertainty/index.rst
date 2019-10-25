@@ -176,7 +176,7 @@ of the time for coding optimisation and bandwidth performance). [2]_
     between 0.4 and 0.5. They can also be defined as piece-wise functions,
     *SMPTE 240M* or *BT.709* OETFs are such examples.
 
-    .. figure:: /images/ITU-R_BT709_SMPTE_240M_OETF.png
+    .. figure:: /images/ITU-R_BT709_SMPTE_240M_OETFs.png
 
         Various **opto-electronic transfer functions**.
 
