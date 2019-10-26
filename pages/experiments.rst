@@ -12,4 +12,4 @@ Chromatic induction is the modification of the visual response that occurs when
 side-by-side in which each stimulus alters the appearance of the other.
 
 `Chromatic Induction - Experiment 001 <../experiments/induction/chromatic_induction_001.html>`__
------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
