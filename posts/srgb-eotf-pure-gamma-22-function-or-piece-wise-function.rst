@@ -76,10 +76,17 @@ standard states what follows in **2.1 Reference Display Conditions**:
     :math:`V{sRGB} = (V\prime{sRGB} + 0.0)^{2.2}`
 
 While it is effectively common to find displays adopting the *Gamma 2.2*
-function as an **EOTF**, many, such as
-`EIZO <https://colour-science.org/images/Lift-Gamma-Gain_EIZO-Colour-Navigator-7.png>`__ and
-`NEC <https://colour-science.org/images/Lift-Gamma-Gain_NEC-Spectral-View-2.png>`__
-are shipping with the *IEC 61966-2-1:1999 Standard* *piece-wise function*.
+function as an **EOTF**, many, such as `EIZO <https://www.eizo.com>`__ and
+`NEC <https://www.nec-display-solutions.com/>`__ are shipping with the
+*IEC 61966-2-1:1999 Standard* *piece-wise function*:
+
+.. figure:: /images/Lift-Gamma-Gain_EIZO-Colour-Navigator-7.png
+
+    EIZO - Colour Navigator 7
+
+.. figure:: /images/Lift-Gamma-Gain_NEC-Spectral-View-2.png
+
+    NEC - Spectral View 2 - Cameron Rad @ Lift-Gamma-Gain
 
 Fortunately, Jack Holm, technical secretary for IEC/TC 100/TA 2 which developed
 the *IEC 61966-2-1:1999 Standard* is unambiguous about the *sRGB* **EOTF**
