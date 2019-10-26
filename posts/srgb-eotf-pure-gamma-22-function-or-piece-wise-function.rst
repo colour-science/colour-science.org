@@ -65,9 +65,9 @@ To put is another way: Should a display calibrated to *sRGB* adopt the
     A *Gamma 2.2 function* only approximates the *piece-wise function* defined
     in *IEC 61966-2-1:1999 Standard*.
 
-*IEC 61966-2-1:1999 Standard* lacks of the clarity that would gives the
-definitive answer to the *EOTF* question. The quest takes on a muddy path when
-the standard states the following in **2.1 Reference Display Conditions**:
+*IEC 61966-2-1:1999 Standard* lacks the clarity that would give the definitive
+answer to the *EOTF* question. The quest takes on a muddy path when the
+standard states what follows in **2.1 Reference Display Conditions**:
 
     *Relative to this methodology, the reference display is characterised by the
     equation below where* :math:`V\prime{sRGB}` *is the input data signal and*
