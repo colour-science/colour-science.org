@@ -77,15 +77,15 @@ standard states what follows in **2.1 Reference Display Conditions**:
 
 While it is effectively common to find displays adopting the *Gamma 2.2*
 function as an **EOTF**, many, such as
-`EIZO </images/Lift-Gamma-Gain_EIZO-Colour-Navigator-7.png>`__ and
-`NEC </images/Lift-Gamma-Gain_NEC-Spectral-View-2.png>`__ are shipping with the
-*IEC 61966-2-1:1999 Standard* *piece-wise function*.
+`EIZO <https://colour-science.org/images/Lift-Gamma-Gain_EIZO-Colour-Navigator-7.png>`__ and
+`NEC <https://colour-science.org/images/Lift-Gamma-Gain_NEC-Spectral-View-2.png>`__
+are shipping with the *IEC 61966-2-1:1999 Standard* *piece-wise function*.
 
 Fortunately, Jack Holm, technical secretary for IEC/TC 100/TA 2 which developed
 the *IEC 61966-2-1:1999 Standard* is unambiguous about the *sRGB* **EOTF**
 being the *piece-wise function*:
 
-.. figure:: https://i.imgur.com/ROXaICc.png
+.. figure:: /images/Jack-Holm_on_the_sRGB-EOTF.png
 
     Message from Jack Holm, addressed the 1st February 2016 to the
     `Academy ACES Google Group <https://groups.google.com/forum/#!forum/academyaces>`__.

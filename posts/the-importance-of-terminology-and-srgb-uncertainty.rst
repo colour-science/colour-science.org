@@ -207,7 +207,7 @@ of the time for coding optimisation and bandwidth performance). [2]_
         being piece-wise, i.e. not a *Gamma 2.2* approximation and that the
         *IEC 61966-2-1:1999 Standard* does not define an **OETF**.
 
-        .. figure:: https://i.imgur.com/ROXaICc.png
+        .. figure:: /images/Jack-Holm_on_the_sRGB-EOTF.png
 
             Message from Jack Holm, addressed the 1st February 2016 to the `Academy ACES Google Group <https://groups.google.com/forum/#!forum/academyaces>`__.
 
