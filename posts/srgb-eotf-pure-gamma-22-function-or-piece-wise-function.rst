@@ -1,7 +1,7 @@
 .. title: sRGB EOTF: Pure Gamma 2.2 Function or Piece-Wise Function?
 .. slug: srgb-eotf-pure-gamma-22-or-piece-wise-function
 .. date: 2019-10-25 20:54:39 UTC+01:00
-.. tags:
+.. tags:  colour, colour science, EOTF, sRGB, transfer function
 .. category:
 .. link:
 .. description:
@@ -62,8 +62,8 @@ To put is another way: Should a display calibrated to *sRGB* adopt the
 
 .. figure:: /images/Gamma-2.2_sRGB_CCTFs.png
 
-    A *Gamma 2.2 function* approximates the *piece-wise function* defined in
-    *IEC 61966-2-1:1999 Standard*.
+    A *Gamma 2.2 function* only approximates the *piece-wise function* defined
+    in *IEC 61966-2-1:1999 Standard*.
 
 *IEC 61966-2-1:1999 Standard* lacks of the clarity that would gives the
 definitive answer to the *EOTF* question. The quest takes on a muddy path when
