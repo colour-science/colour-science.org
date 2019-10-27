@@ -1,4 +1,4 @@
-    .. title: Features
+.. title: Features
 .. slug: features
 .. date: 2015-11-25 09:47:50 UTC
 .. tags: colour, colour science, features
@@ -9,6 +9,9 @@
 
 **Colour** features a rich dataset and collection of objects, some of them are
 listed in approximate sub-packages order:
+
+Automatic Colour Conversion Graph
+---------------------------------
 
 Chromatic Adaptation
 --------------------
@@ -455,13 +458,15 @@ RGB Colourspaces
 - ECI RGB v2
 - ERIMM RGB
 - Ekta Space PS 5
+- F-Gamut
 - FilmLight E-Gamut
 - ITU-R BT.2020
 - ITU-R BT.470 - 525
 - ITU-R BT.470 - 625
 - ITU-R BT.709
 - Max RGB
-- NTSC
+- NTSC (1953)
+- NTSC (1987)
 - P3-D65
 - Pal/Secam
 - ProPhoto RGB
@@ -478,6 +483,7 @@ RGB Colourspaces
 - S-Gamut3
 - S-Gamut3.Cine
 - SMPTE 240M
+- SMPTE C
 - Sharp RGB
 - V-Gamut
 - Xtreme RGB
@@ -487,20 +493,14 @@ OETFs
 ^^^^^
 
 - ARIB STD-B67
-- DICOM GSDF
 - ITU-R BT.2020
 - ITU-R BT.2100 HLG
 - ITU-R BT.2100 PQ
 - ITU-R BT.601
 - ITU-R BT.709
-- ProPhoto RGB
-- RIMM RGB
-- ROMM RGB
 - SMPTE 240M
-- ST 2084
-- sRGB
 
-OETFs Reverse
+OETFs Inverse
 ^^^^^^^^^^^^^
 
 - ARIB STD-B67
@@ -508,7 +508,6 @@ OETFs Reverse
 - ITU-R BT.2100 PQ
 - ITU-R BT.601
 - ITU-R BT.709
-- sRGB
 
 EOTFs
 ^^^^^
@@ -519,19 +518,20 @@ EOTFs
 - ITU-R BT.2020
 - ITU-R BT.2100 HLG
 - ITU-R BT.2100 PQ
-- ProPhoto RGB
-- RIMM RGB
-- ROMM RGB
 - SMPTE 240M
 - ST 2084
+- sRGB
 
-EOTFs Reverse
+EOTFs Inverse
 ^^^^^^^^^^^^^
 
 - DCDM
+- DICOM GSDF
 - ITU-R BT.1886
 - ITU-R BT.2100 HLG
 - ITU-R BT.2100 PQ
+- ST 2084
+- sRGB
 
 OOTFs
 ^^^^^
@@ -539,7 +539,7 @@ OOTFs
 - ITU-R BT.2100 HLG
 - ITU-R BT.2100 PQ
 
-OOTFs Reverse
+OOTFs Inverse
 ^^^^^^^^^^^^^
 
 - ITU-R BT.2100 HLG
@@ -558,6 +558,7 @@ Log Encoding / Decoding Curves
 - Cineon
 - D-Log
 - ERIMM RGB
+- F-Log
 - Filmic Pro 6
 - Log3G10
 - Log3G12
@@ -656,3 +657,4 @@ Volume
 - Monte Carlo RGB Colourspace Volume Computation
 - Monte Carlo Pointer's Gamut Colourspace Coverage Computation
 - Monte Carlo Visible Spectrum Colourspace Coverage Computation
+

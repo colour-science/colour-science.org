@@ -98,7 +98,7 @@ The figures plotting dependencies are installed as follows:
 
 .. class:: alert alert-dismissible alert-info
 
-    | **Note**
+    | *Note*
     |
     | `Graphviz <https://www.graphviz.org/>`__ might need to be installed
         beforehand, please refer to the specific section for your platform on
@@ -165,7 +165,7 @@ development:
 
 .. class:: alert alert-dismissible alert-info
 
-    | **Note**
+    | *Note*
     |
     | At the time of this writing, the preview version of *Poetry*, i.e. 1.0.0b1,
         is recommended to be used. Poetry can be updated to the latest preview

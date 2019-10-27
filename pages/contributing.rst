@@ -220,7 +220,7 @@ Here is a succinct overview of the steps you will most likely go through:
 
 .. class:: alert alert-dismissible alert-info
 
-    | **Note**
+    | *Note*
     |
     | At the time of this writing, the preview version of *Poetry*, i.e. 1.0.0b1,
         is recommended to be used. Poetry can be updated to the latest preview
@@ -319,9 +319,9 @@ or alternatively:
 
 .. class:: alert alert-dismissible alert-warning
 
-    | **Note**
+    | *Note*
     |
-    | The **pre-commit** hooks will run before committing, notably
+    | The *pre-commit* hooks will run before committing, notably
         `Flake8 <https://pypi.org/project/flake8/>`__ and
         `YAPF <https://github.com/google/yapf>`__ thus depending their status,
         you might not be able to commit until you have fixed the issues they
@@ -733,6 +733,7 @@ it in the commit message using the following syntax: **Closes #32.**
 ::
 
     Yes:
+
     Implement "Yoshi Ohno" correlated colour temperature calculation.
 
     This implementation allows for a more precise correlated colour temperature
@@ -743,6 +744,7 @@ it in the commit message using the following syntax: **Closes #32.**
 ::
 
     No:
+
     Coded new cool cct method
 
 Feature Branches & History
