@@ -9,6 +9,25 @@ license = "BSD-3-Clause"
 python = "^3.5"
 nikola = { extras = [ "extras" ], version = "^8.*.*" }
 
+flake8 = { version = "*", optional = true }  # Development dependency.
+invoke = { version = "*", optional = true }  # Development dependency.
+pre-commit = { version = "*", optional = true }  # Development dependency.
+yapf = { version = "0.23", optional = true }  # Development dependency.
+
+[tool.poetry.dev-dependencies]
+flake8 = "*"
+invoke = "*"
+pre-commit = "*"
+yapf = "0.23"
+
+[tool.poetry.extras]
+development = [
+    "flake8",
+    "invoke",
+    "pre-commit",
+    "yapf"
+]
+
 [build-system]
 requires = [ "poetry>=0.12" ]
 build-backend = "poetry.masonry.api"

@@ -160,11 +160,14 @@ NAVIGATION_LINKS = {
                  '1NRcdXSCshivkwoU2nieCvC3y14fx1X4X&'
                  'offline=true&sandboxMode=true',
                  '<span class="font-weight-bold">How-To Guide</span>'),
-                ('/api-reference', '<span class="font-weight-bold">API Reference</span>'),
+                ('/api-reference',
+                 '<span class="font-weight-bold">API Reference</span>'),
                 ('/code-of-conduct',
                  '<span class="font-weight-bold">Code of Conduct</span>'),
-                ('/contributing', '<span class="font-weight-bold">Contributing</span>'),
-                ('/contributors', '<span class="font-weight-bold">Contributors</span>'),
+                ('/contributing',
+                 '<span class="font-weight-bold">Contributing</span>'),
+                ('/contributors',
+                 '<span class="font-weight-bold">Contributors</span>'),
                 ('https://nbviewer.jupyter.org/github/colour-science/'
                  'colour-notebooks/blob/master/notebooks/colour.ipynb',
                  'Jupyter Notebooks'),
@@ -180,20 +183,22 @@ NAVIGATION_LINKS = {
             'Documentation',
         ),
         (
-            (('/apps', '<span class="font-weight-bold">Apps (Colour - Dash)</span>'),
+            (('/apps',
+              '<span class="font-weight-bold">Apps (Colour - Dash)</span>'),
              ('http://awesome-colour.org/',
               '<span class="font-weight-bold">Awesome Colour</span>'),
              ('/colour-datasets',
               '<span class="font-weight-bold">Colour - Datasets</span>'),
              ('/colour-demosaicing',
               '<span class="font-weight-bold">Colour - Demosaicing</span>'),
-             ('/colour-hdri', '<span class="font-weight-bold">Colour - HDRI</span>'),
+             ('/colour-hdri',
+              '<span class="font-weight-bold">Colour - HDRI</span>'),
              ('/colour-checker-detection',
-              '<span class="font-weight-bold">Colour - Checker Detection</span>'),
-             ('/colour-maya',
-              'Colour - Maya'), ('/colour-nuke',
-                                 'Colour - Nuke'), ('/colour-playground',
-                                                    'Colour - Playground'),
+              '<span class="font-weight-bold">Colour - Checker Detection</span>'
+              ), ('/colour-maya',
+                  'Colour - Maya'), ('/colour-nuke',
+                                     'Colour - Nuke'), ('/colour-playground',
+                                                        'Colour - Playground'),
              ('/colour-spectroscope',
               'Colour - Spectroscope'), ('/experiments', 'Experiments')),
             'Projects',
@@ -758,8 +763,8 @@ GITHUB_COMMIT_SOURCE = True
 # Many filters are shipped with Nikola. A list is available in the manual:
 # <https://getnikola.com/handbook.html#post-processing-filters>
 #
-from nikola import filters
-FILTERS = {
+from nikola import filters  # noqa
+FILTERS = {  # noqa
     # ".html": [filters.add_header_permalinks],
     # ".js": [filters.closure_compiler],
     # ".jpg": ["jpegoptim --strip-all -m75 -v %s"],
@@ -1205,7 +1210,7 @@ MARKDOWN_EXTENSIONS = [
 # (translatable)
 # SOCIAL_BUTTONS_CODE = """
 # <!-- Social buttons -->
-# <div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+# <div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">  # noqa
 # <a class="addthis_button_more">Share</a>
 # <ul><li><a class="addthis_button_facebook"></a>
 # <li><a class="addthis_button_google_plusone_share"></a>
