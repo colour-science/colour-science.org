@@ -7,6 +7,13 @@
 .. description:
 .. type: text
 
+.. class:: alert alert-dismissible alert-warning
+
+    | *Warning*
+    |
+    | Our *Vagrant* setup is now using *Ansible*, thus this guide is out-of-date
+        but will receive an update soon.
+
 Installing the whole development toolchain for **Colour** roughly means
 deploying:
 
