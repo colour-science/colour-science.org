@@ -193,4 +193,4 @@ An easy way to get all the pre-requisites at once is to use our
 environment for `Vagrant <https://www.vagrantup.com/>`__.
 
 Please refer to the dedicated blog post for more details about its deployment:
-`PyCharm, Vagrant, Fabric & Anaconda </posts/pycharm-vagrant-fabric-anaconda/>`__
+`PyCharm, Vagrant, Ansible & Poetry </posts/pycharm-vagrant-ansible-poetry/>`__

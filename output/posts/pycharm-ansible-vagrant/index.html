@@ -4,33 +4,34 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PyCharm, Vagrant, Fabric &amp; Anaconda | Colour Science</title>
+<title>PyCharm, Ansible &amp; Vagrant | Colour Science</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#19191d">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
-<link rel="canonical" href="https://www.colour-science.org/posts/pycharm-vagrant-fabric-anaconda/">
+<link rel="canonical" href="https://www.colour-science.org/posts/pycharm-ansible-vagrant/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
 </script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 <meta name="author" content="Colour Developers">
-<link rel="prev" href="../the-first-public-release-of-colour-is-available/" title="The first public release of Colour is available!" type="text/html">
-<link rel="next" href="../about-rendering-engines-colourspaces-agnosticism/" title="About Rendering Engines Colourspaces Agnosticism" type="text/html">
+<link rel="prev" href="../numfocus-colour-0314-and-colour-datasets-010/" title="NumFOCUS, Colour 0.3.14 and Colour - Datasets 0.1.0!" type="text/html">
 <meta property="og:site_name" content="Colour Science">
-<meta property="og:title" content="PyCharm, Vagrant, Fabric &amp; Anaconda">
-<meta property="og:url" content="https://www.colour-science.org/posts/pycharm-vagrant-fabric-anaconda/">
-<meta property="og:description" content="Warning
+<meta property="og:title" content="PyCharm, Ansible &amp; Vagrant">
+<meta property="og:url" content="https://www.colour-science.org/posts/pycharm-ansible-vagrant/">
+<meta property="og:description" content="Note
 
-Our Vagrant setup is now using Ansible and Poetry, please refer to the
-PyCharm, Vagrant, Ansible &amp; Poetry post.
+This post is an updated version of the
+PyCharm, Vagrant, Fabric &amp; Anaconda post.
 
 Installing the whole development toolchain for Colour roughly means
-deploying:">
+deploying:
+
+Python&gt;=2.7 or
+Python&gt;=3.5
+Image">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2014-09-06T02:45:00-12:00">
-<meta property="article:tag" content="anaconda">
-<meta property="article:tag" content="fabric">
+<meta property="article:published_time" content="2019-11-09T02:46:40Z">
 <meta property="article:tag" content="pycharm">
 <meta property="article:tag" content="vagrant">
 </head>
@@ -130,7 +131,7 @@ deploying:">
         <!--Body content-->
         
         
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">PyCharm, Vagrant, Fabric &amp; Anaconda</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">PyCharm, Ansible &amp; Vagrant</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
@@ -138,11 +139,11 @@ deploying:">
             </span></p>
             <p class="dateline">
             <a href="." rel="bookmark">
-            <time class="published dt-published" datetime="2014-09-06T02:45:00-12:00" itemprop="datePublished" title="2014-09-06 02:45">2014-09-06 02:45</time></a>
+            <time class="published dt-published" datetime="2019-11-09T02:46:40Z" itemprop="datePublished" title="2019-11-09 02:46">2019-11-09 02:46</time></a>
             </p>
                 <p class="commentline">
         
-    <a href="#disqus_thread" data-disqus-identifier="cache/posts/pycharm-vagrant-fabric-anaconda.html">Comments</a>
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/pycharm-vagrant.html">Comments</a>
 
 
             
@@ -153,36 +154,42 @@ deploying:">
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
-<div class="alert alert-dismissible alert-warning line-block">
-<div class="line"><em>Warning</em></div>
+<div class="alert alert-dismissible alert-info line-block">
+<div class="line"><em>Note</em></div>
 <div class="line"><br></div>
-<div class="line">Our <em>Vagrant</em> setup is now using <em>Ansible</em> and <em>Poetry</em>, please refer to the
-<a class="reference external" href="../pycharm-vagrant-ansible-poetry/">PyCharm, Vagrant, Ansible &amp; Poetry</a> post.</div>
+<div class="line">This post is an updated version of the
+<a class="reference external" href="../pycharm-vagrant-fabric-anaconda/">PyCharm, Vagrant, Fabric &amp; Anaconda</a> post.</div>
 </div>
 <p>Installing the whole development toolchain for <strong>Colour</strong> roughly means
 deploying:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.python.org/download/releases/">Python 2.7</a> and
-<a class="reference external" href="https://www.python.org/download/releases/">Python 3.5</a></p></li>
-<li><p><a class="reference external" href="http://www.numpy.org/">NumPy</a></p></li>
+<li><p><a class="reference external" href="https://www.python.org/download/releases/">Python&gt;=2.7</a> or
+<a class="reference external" href="https://www.python.org/download/releases/">Python&gt;=3.5</a></p></li>
+<li><p><a class="reference external" href="http://imageio.github.io/">Imageio</a></p></li>
 <li><p><a class="reference external" href="http://www.scipy.org/">SciPy</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/six">Six&gt;=1.10.0</a></p></li>
-<li><p><a class="reference external" href="http://openimageio.org">OpenImageIO</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/six/">Six</a></p></li>
+<li><p><a class="reference external" href="https://networkx.github.io/">NetworkX</a></p></li>
+<li><p><a class="reference external" href="https://github.com/OpenImageIO/oiio">OpenImageIO</a></p></li>
 <li><p><a class="reference external" href="https://pandas.pydata.org/">Pandas</a></p></li>
 <li><p><a class="reference external" href="http://matplotlib.org/">Matplotlib</a></p></li>
-<li><p><a class="reference external" href="https://sphinx-doc.org">Sphinx</a></p></li>
-<li><p><a class="reference external" href="https://sphinxcontrib-bibtex.readthedocs.io/">sphinxcontrib-bibtex</a></p></li>
-<li><p><a class="reference external" href="https://github.com/rtfd/sphinx_rtd_theme/">sphinx_rtd_theme</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/coverage">Coverage.py</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/flake8">Flake8</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/mock">mock</a></p></li>
-<li><p><a class="reference external" href="https://nose.readthedocs.io/en/latest">nose</a></p></li>
+<li><p><a class="reference external" href="https://www.graphviz.org/">Graphviz</a></p></li>
+<li><p><a class="reference external" href="https://pygraphviz.github.io/">PyGraphviz</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/biblib-simple/">biblib-simple</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/coverage/">Coverage.py</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/coveralls/">coveralls</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/flake8/">Flake8</a></p></li>
 <li><p><a class="reference external" href="http://www.pyinvoke.org/">Invoke</a></p></li>
+<li><p><a class="reference external" href="https://jupyter.org/">Jupyter</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/mock/">mock</a></p></li>
+<li><p><a class="reference external" href="https://nose.readthedocs.io/en/latest">nose</a></p></li>
+<li><p><a class="reference external" href="https://pre-commit.com/">pre-commit</a></p></li>
+<li><p><a class="reference external" href="https://docs.pytest.org/en/latest/">pytest</a></p></li>
 <li><p><a class="reference external" href="https://github.com/twolfson/restructuredtext-lint">restructuredtext-lint</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/twine">twine</a></p></li>
-<li><p><a class="reference external" href="https://github.com/google/yapf">YAPF</a></p></li>
-<li><p><a class="reference external" href="https://getnikola.com/">Nikola</a></p></li>
-<li><p><a class="reference external" href="http://httpd.apache.org">Apache 2.2</a></p></li>
+<li><p><a class="reference external" href="https://sphinx-doc.org">Sphinx</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rtfd/sphinx_rtd_theme/">sphinx_rtd_theme</a></p></li>
+<li><p><a class="reference external" href="https://sphinxcontrib-bibtex.readthedocs.io/">sphinxcontrib-bibtex</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/twine/">twine</a></p></li>
+<li><p><a class="reference external" href="https://github.com/google/yapf">YAPF==0.23.0</a></p></li>
 <li><p>... and too many things I just don't remember!</p></li>
 </ul>
 <p>I decided to see how I could make that setup a bit more portable and easier to
@@ -191,7 +198,7 @@ deploy.</p>
 <a class="reference external" href="http://www.jetbrains.com/pycharm/">PyCharm</a>  and
 <a class="reference external" href="https://store.continuum.io/cshop/anaconda/">Anaconda</a>!</p>
 <p>The following guide assume that you have that you have <em>PyCharm</em> installed and
-are using <em>macOS</em>, although it should pretty much be platform agnostic.</p>
+are using <em>macOs</em>, although it should pretty much be platform agnostic.</p>
 <!-- TEASER_END -->
 <div class="section" id="development-workspace-creation">
 <h2>Development Workspace Creation</h2>
@@ -199,14 +206,14 @@ are using <em>macOS</em>, although it should pretty much be platform agnostic.</
 <li><p>On your local filesystem, in your development workspace, create a
 directory <code>colour-science</code> and <code>cd</code> into it:</p></li>
 </ul>
-<pre class="code shell"><a name="rest_code_b48808cb10e449fbaa728ff0b07fa5ef-1"></a>$ mkdir colour-science
-<a name="rest_code_b48808cb10e449fbaa728ff0b07fa5ef-2"></a>$ <span class="nb">cd</span> colour-science
+<pre class="code shell"><a name="rest_code_ca4745c4a4844486a97d5816c8c3be16-1"></a>$ mkdir colour-science
+<a name="rest_code_ca4745c4a4844486a97d5816c8c3be16-2"></a>$ <span class="nb">cd</span> colour-science
 </pre>
 <ul class="simple">
 <li><p>Clone the <a class="reference external" href="https://github.com/colour-science/colour-vagrant">colour-vagrant</a>
 repository:</p></li>
 </ul>
-<pre class="code shell"><a name="rest_code_4196263d602a4f8d8d06635e1d094e36-1"></a>$ git clone git://github.com/colour-science/colour-vagrant.git
+<pre class="code shell"><a name="rest_code_da1ca5c14d024df1a02f76ff1c19e98f-1"></a>$ git clone git://github.com/colour-science/colour-vagrant.git
 </pre>
 <ul>
 <li>
@@ -223,40 +230,19 @@ repository:</p></li>
 <ul>
 <li><p>Install <a class="reference external" href="https://www.virtualbox.org/">VirtualBox</a>.</p></li>
 <li><p>Install <a class="reference external" href="https://www.vagrantup.com/">Vagrant</a>.</p></li>
-<li>
-<p>Install <a class="reference external" href="http://www.fabfile.org/">Fabric</a>, this is the provider needed for
-the <a class="reference external" href="https://github.com/colour-science/colour-vagrant">colour-vagrant</a>
-environment. Initially, I was provisioning with <a class="reference external" href="http://puppetlabs.com/">Puppet</a>.
-It was cumbersome to use, so I decided to go for <a class="reference external" href="http://www.fabfile.org/">Fabric</a>
-and the <a class="reference external" href="https://github.com/wutali/vagrant-fabric">vagrant-fabric</a>
-plugin:</p>
-<pre class="code shell"><a name="rest_code_300f756ac9f24ffea9237b312eead13a-1"></a>$ pip install fabric
-</pre>
-</li>
-</ul>
-<div class="alert alert-dismissible alert-warning line-block">
-<div class="line"><em>Note</em></div>
-<div class="line"><br></div>
-<div class="line">
-<a class="reference external" href="http://www.fabfile.org/">Fabric</a> does
-<a class="reference external" href="https://github.com/fabric/fabric/issues/1424">not support Python 3 yet</a>
-thus if you want to use Python 3 you will need to
-<a class="reference external" href="https://pypi.org/project/Fabric3/">switch to the fork</a>.</div>
-</div>
-<ul>
 <li><p>Install <a class="reference external" href="http://xquartz.macosforge.org/">XQuartz</a>: This is the X11 display
-server for <em>macOS</em>. The virtual machine will export the display to it
+server for <em>macOs</em>. The virtual machine will export the display to it
 so that you can see the figures from <a class="reference external" href="http://matplotlib.org/">Matplotlib</a>.</p></li>
 <li>
 <p><em>VirtualBox</em> directories syncing performance degrades quickly with large
 number of files.</p>
 <p>As a result the directories syncing is done with <em>NFS</em>.</p>
-<p>You will however be asked for your <em>macOS</em> password at each virtual
+<p>You will however be asked for your <em>macOs</em> password at each virtual
 machine spin up because <em>Vagrant</em> needs to modify configuration files on
-the <em>macOS</em> host.</p>
+the <em>macOs</em> host.</p>
 <p>In order to avoid that and following the
 <a class="reference external" href="https://docs.vagrantup.com/v2/synced-folders/nfs.html">Vagrant Documentation</a>,
-you can edit your <em>macOS</em> <code>/etc/sudoers</code> file and append the
+you can edit your <em>macOs</em> <code>/etc/sudoers</code> file and append the
 following content:</p>
 <pre class="literal-block">Cmnd_Alias VAGRANT_EXPORTS_ADD = /usr/bin/tee -a /etc/exports
 Cmnd_Alias VAGRANT_NFSD = /sbin/nfsd restart
@@ -272,7 +258,7 @@ Cmnd_Alias VAGRANT_EXPORTS_REMOVE = /usr/bin/sed -E -e /*/ d -ibak /etc/exports
 here we will leverage the <em>PyCharm</em> integration.</p>
 <ul class="simple">
 <li><p>Set the <code>Vagrant Executable</code> field to your <em>Vagrant</em> executable, e.g.
-<code>/usr/local/bin/vagrant</code>. This should not be required as
+<code>/usr/local/bin/vagrant</code>. This should not be needed as
 <code>vagrant</code> should be enough, but
 <a class="reference external" href="https://youtrack.jetbrains.com/issue/PY-29806#comment=27-2846352">I encountered issues lately</a>.</p></li>
 <li><p>Set the <code>Instance Folder</code> field to your <code>colour-vagrant</code>
@@ -280,59 +266,78 @@ directory.</p></li>
 <li><p>Add a new <a class="reference external" href="https://www.vagrantup.com/">Vagrant</a> box to
 <a class="reference external" href="http://www.jetbrains.com/pycharm/">PyCharm</a> in the <code>Boxes</code> tab
 and use the following image:
-<a class="reference external" href="https://vagrantcloud.com/bento/boxes/ubuntu-16.04/versions/201808.24.0/providers/vmware_desktop.box">bento/ubuntu-16.04</a></p></li>
-<li><p>Add the <a class="reference external" href="https://github.com/wutali/vagrant-fabric">vagrant-fabric</a>
-plugin to <a class="reference external" href="http://www.jetbrains.com/pycharm/">PyCharm</a> in the
-<code>Plugins</code> tab.</p></li>
+<a class="reference external" href="https://app.vagrantup.com/bento/boxes/ubuntu-18.04/versions/201910.20.0">bento/ubuntu-18.04</a></p></li>
 </ul>
 <p>Your configuration screen should be approximately as follows:</p>
 <img alt="/images/Blog_PyCharm_Vagrant_001.png" src="../../images/Blog_PyCharm_Vagrant_001.png"><img alt="/images/Blog_PyCharm_Vagrant_002.png" src="../../images/Blog_PyCharm_Vagrant_002.png">
 </div>
 <div class="section" id="vagrant-up">
 <h2>Vagrant Up</h2>
-<p>With everything setup, hit the <code>PyCharm --&gt; Tools --&gt; Vagrant --&gt; Up</code>
+<p>With everything setup, hit the <code>PyCharm ---&gt; Tools ---&gt; Vagrant ---&gt; Up</code>
 menu item to spin up the virtual machine.</p>
-<p>You can go grab a coffee, the initial provisioning will take roughly
-25-30 minutes.</p>
+<p>You can go grab a coffee, the initial provisioning will take roughly 45 minutes.</p>
 <p>If the provisioning ended smoothly, you should have the following
 elements available:</p>
 <ul class="simple">
-<li><p><strong>colour</strong>, <strong>colour-notebooks</strong> and <strong>colour-science.org</strong> repositories
-cloned into the <code>colour-science</code> directory right next to the
-<code>colour-vagrant</code> one.</p></li>
+<li>
+<p>The following repositories cloned into the <code>colour-science</code> directory
+right next to the <code>colour-vagrant</code> one:</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/colour-science/awesome-colour">Awesome Colour</a></p></li>
+<li><p><a class="reference external" href="https://github.com/colour-science/colour">Colour</a></p></li>
+<li><p><a class="reference external" href="https://github.com/colour-science/colour-checker-detection">Colour - Checker Detection</a></p></li>
+<li><p><a class="reference external" href="https://github.com/colour-science/colour-analysis-three.js">Colour - Analysis - Three.js</a></p></li>
+<li><p><a class="reference external" href="https://github.com/colour-science/colour-datasets">Colour - Datasets</a></p></li>
+<li><p><a class="reference external" href="https://github.com/colour-science/colour-demosaicing">Colour - Demosaicing</a></p></li>
+<li><p><a class="reference external" href="https://github.com/colour-science/colour-dash">Colour - Dash</a></p></li>
+<li><p><a class="reference external" href="https://github.com/colour-science/colour-hdri">Colour - HDRI</a></p></li>
+<li><p><a class="reference external" href="https://github.com/colour-science/colour-science.org">colour-science.org</a></p></li>
+<li><p><a class="reference external" href="https://github.com/colour-science/colour-branding">Colour - Branding</a></p></li>
+<li><p><a class="reference external" href="https://github.com/colour-science/colour-analysis">Colour - Analysis</a></p></li>
+<li><p><a class="reference external" href="https://github.com/colour-science/colour-notebooks">Colour - Notebooks</a></p></li>
+<li><p><a class="reference external" href="https://github.com/colour-science/colour-nuke">Colour - Nuke</a></p></li>
+<li><p><a class="reference external" href="https://github.com/colour-science/colour-ocean">Colour - Ocean</a></p></li>
+<li><p><a class="reference external" href="https://github.com/colour-science/colour-playground">Colour - Playground</a></p></li>
+<li><p><a class="reference external" href="https://github.com/colour-science/colour-spectroscope">Colour - Spectroscope</a></p></li>
+<li><p><a class="reference external" href="https://github.com/colour-science/colour-webhook">Colour - Webhook</a></p></li>
+</ul>
+</li>
 <li><p>Remote Python environments installed into the virtual machine at the
 following location with all the dependencies needed:</p></li>
 </ul>
-<pre class="code shell"><a name="rest_code_a147d663ce1b488d9451ab7ce8df3040-1"></a>$ <span class="nb">cd</span> /home/vagrant/miniconda/envs/
-<a name="rest_code_a147d663ce1b488d9451ab7ce8df3040-2"></a>$ ls -l
-<a name="rest_code_a147d663ce1b488d9451ab7ce8df3040-3"></a>total <span class="m">16</span>
-<a name="rest_code_a147d663ce1b488d9451ab7ce8df3040-4"></a>drwxrwxr-x  <span class="m">4</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:12 ./
-<a name="rest_code_a147d663ce1b488d9451ab7ce8df3040-5"></a>drwxrwxr-x <span class="m">13</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:02 ../
-<a name="rest_code_a147d663ce1b488d9451ab7ce8df3040-6"></a>drwxrwxr-x <span class="m">20</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:09 python2.7/
-<a name="rest_code_a147d663ce1b488d9451ab7ce8df3040-7"></a>drwxrwxr-x <span class="m">20</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:30 python3.5/
+<pre class="code shell"><a name="rest_code_6ad07b1d7b5442b0ab940e7c424b8711-1"></a>$ <span class="nb">cd</span> /home/vagrant/.cache/pypoetry/virtualenvs
+<a name="rest_code_6ad07b1d7b5442b0ab940e7c424b8711-2"></a>$ ls -l
+<a name="rest_code_6ad07b1d7b5442b0ab940e7c424b8711-3"></a>total <span class="m">40</span>
+<a name="rest_code_6ad07b1d7b5442b0ab940e7c424b8711-4"></a>drwxrwxr-x <span class="m">6</span> vagrant vagrant <span class="m">4096</span> Nov  <span class="m">3</span> <span class="m">09</span>:45 awesome-colour-xc1lGgeX-py3.6
+<a name="rest_code_6ad07b1d7b5442b0ab940e7c424b8711-5"></a>drwxrwxr-x <span class="m">8</span> vagrant vagrant <span class="m">4096</span> Nov  <span class="m">3</span> <span class="m">09</span>:58 colour-analysis-ztt4I_b6-py3.6
+<a name="rest_code_6ad07b1d7b5442b0ab940e7c424b8711-6"></a>drwxrwxr-x <span class="m">7</span> vagrant vagrant <span class="m">4096</span> Nov  <span class="m">3</span> <span class="m">09</span>:55 colour-checker-detection-LJan8R0H-py3.6
+<a name="rest_code_6ad07b1d7b5442b0ab940e7c424b8711-7"></a>drwxrwxr-x <span class="m">8</span> vagrant vagrant <span class="m">4096</span> Nov  <span class="m">3</span> <span class="m">10</span>:07 colour-dash-yRMdyS1F-py3.6
+<a name="rest_code_6ad07b1d7b5442b0ab940e7c424b8711-8"></a>drwxrwxr-x <span class="m">7</span> vagrant vagrant <span class="m">4096</span> Nov  <span class="m">3</span> <span class="m">10</span>:01 colour-datasets-68eTMDT3-py3.6
+<a name="rest_code_6ad07b1d7b5442b0ab940e7c424b8711-9"></a>drwxrwxr-x <span class="m">8</span> vagrant vagrant <span class="m">4096</span> Nov  <span class="m">3</span> <span class="m">10</span>:05 colour-demosaicing-Me5Z4P5l-py3.6
+<a name="rest_code_6ad07b1d7b5442b0ab940e7c424b8711-10"></a>drwxrwxr-x <span class="m">8</span> vagrant vagrant <span class="m">4096</span> Nov  <span class="m">3</span> <span class="m">10</span>:11 colour-hdri--Cpkjfr--py3.6
+<a name="rest_code_6ad07b1d7b5442b0ab940e7c424b8711-11"></a>drwxrwxr-x <span class="m">8</span> vagrant vagrant <span class="m">4096</span> Nov  <span class="m">3</span> <span class="m">09</span>:52 colour-O_tqvl_6-py3.6
+<a name="rest_code_6ad07b1d7b5442b0ab940e7c424b8711-12"></a>drwxrwxr-x <span class="m">6</span> vagrant vagrant <span class="m">4096</span> Nov  <span class="m">3</span> <span class="m">10</span>:12 colour-science.org-k8ouBR-B-py3.6
+<a name="rest_code_6ad07b1d7b5442b0ab940e7c424b8711-13"></a>-rw-rw-r-- <span class="m">1</span> vagrant vagrant  <span class="m">520</span> Nov  <span class="m">3</span> <span class="m">10</span>:12 envs.toml
 </pre>
-<ul class="simple">
-<li><p>The <strong>colour-science.org</strong> website served from the virtual machine at
-the following address: <a class="reference external" href="http://localhost:8080/">http://localhost:8080/</a></p></li>
-</ul>
 </div>
 <div class="section" id="pycharm-environment-configuration">
 <h2>PyCharm Environment Configuration</h2>
 <ul>
 <li>
-<p>Add the various remote Python interpreters to
-<a class="reference external" href="http://www.jetbrains.com/pycharm/">PyCharm</a> the
-<a class="reference external" href="https://www.jetbrains.com/help/pycharm/configuring-remote-interpreters-via-virtual-boxes.html">Configure a remote interpreter using Vagrant</a> guide:</p>
+<p>Add the various remote Python interpreters you intend to use to
+<a class="reference external" href="http://www.jetbrains.com/pycharm/">PyCharm</a> following the
+quickstart guide: <a class="reference external" href="http://www.jetbrains.com/pycharm/quickstart/configuring_interpreter.html">Remote interpreter via virtual box:
+2</a></p>
+<p>For example:</p>
 <ul class="simple">
-<li><p>/home/vagrant/miniconda/envs/python2.7/bin/python</p></li>
-<li><p>/home/vagrant/miniconda/envs/python3.5/bin/python</p></li>
+<li><p>/home/vagrant/.cache/pypoetry/virtualenvs/colour-O_tqvl_6-py3.6/bin/python</p></li>
 </ul>
 </li>
 <li>
-<p>Add the paths mappings from the <em>macOS</em> host to the virtual
+<p>Add the paths mappings from the <em>macOs</em> host to the virtual
 machine in the <code>Defaults</code> configurations, in my case the mappings
 are as follows:</p>
-<p><code class="docutils literal"><span class="pre">/Users/KelSolaar/Documents/Development/colour-science</span> = <span class="pre">/colour-science</span></code></p>
+<p><code class="docutils literal"><span class="pre">/Users/KelSolaar/Documents/Developement/colour-science</span> = <span class="pre">/colour-science</span></code></p>
 </li>
 </ul>
 <p>Your Run/Debug configuration screen should be approximately looking like that:</p>
@@ -343,53 +348,50 @@ are as follows:</p>
 <div class="section" id="ssh-connection-display">
 <h3>SSH Connection &amp; Display</h3>
 <p>Accessing the virtual machine is done by using
-<code>PyCharm --&gt; Tools Start SSH session...</code> menu item.</p>
+<code>PyCharm ---&gt; Tools Start SSH session...</code> menu item.</p>
 <p>However if you want to be able to export the display and see the figures you
 will have to manually <code>ssh</code> into the virtual machine:</p>
-<pre class="code shell"><a name="rest_code_604314694b6e43868e685fbf1826f58a-1"></a>$ ssh -X vagrant@192.168.32.64
+<pre class="code shell"><a name="rest_code_4efb538ba6e34a719dda0a98b8076b20-1"></a>$ ssh -X vagrant@192.168.32.64
 </pre>
 <p>Password is <code>vagrant</code>.</p>
 <p>You will also need to add the virtual machine to the X11 hosts by issuing the
-following command on the <em>macOS</em> host:</p>
-<pre class="code shell"><a name="rest_code_aecd3462303c4e1d8b3165ebbec497fb-1"></a>$ xhost + <span class="m">192</span>.168.32.64
+following command on the <em>macOs</em> host:</p>
+<pre class="code shell"><a name="rest_code_a7451550c6734e6e815c98d6ee9752cc-1"></a>$ xhost + <span class="m">192</span>.168.32.64
 </pre>
 </div>
 <div class="section" id="jupyter-notebooks">
 <h3>Jupyter Notebooks</h3>
 <p>The <a class="reference external" href="http://ipython.org/notebook.html">Jupyter Notebooks</a> server is started
 as follows:</p>
-<pre class="code shell"><a name="rest_code_55efdc0f496b438e84ed174de1f6da36-1"></a>$ <span class="nb">cd</span> /colour-science/colour-notebooks/notebooks
-<a name="rest_code_55efdc0f496b438e84ed174de1f6da36-2"></a>$ ipython notebook --pylab<span class="o">=</span>inline --ip<span class="o">=</span><span class="m">0</span>.0.0.0
+<pre class="code shell"><a name="rest_code_9bd32beccd3645fca6b078d595e9e0b4-1"></a>$ <span class="nb">cd</span> /colour-science/colour-notebooks/notebooks
+<a name="rest_code_9bd32beccd3645fca6b078d595e9e0b4-2"></a>$ jupyter notebook --pylab<span class="o">=</span>inline --ip<span class="o">=</span><span class="m">0</span>.0.0.0
 </pre>
-<p>Then you can access it on the <em>macOS</em> host at the following url:
+<p>Then you can access it on the <em>macOs</em> host at the following url:
 <a class="reference external" href="http://localhost:8888/">http://localhost:8888/</a></p>
 </div>
 <div class="section" id="remote-python-environments-interpreters">
 <h3>Remote Python Environments &amp; Interpreters</h3>
 <p>You can activate the remote Python environments in the virtual machine by
 issuing those commands:</p>
-<p>For <strong>python2.7</strong>:</p>
-<pre class="code shell"><a name="rest_code_fa40925ed740445a856981737e4c17dc-1"></a>$ <span class="nb">source</span> activate python2.7
+<p>For <strong>Colour</strong>:</p>
+<pre class="code shell"><a name="rest_code_42ee1278e49448189ff46a52f247a6a9-1"></a>$ colour
+<a name="rest_code_42ee1278e49448189ff46a52f247a6a9-2"></a>Using virtualenv: /home/vagrant/.cache/pypoetry/virtualenvs/colour-O_tqvl_6-py3.6
 </pre>
-<p>For <strong>python3.5</strong>:</p>
-<pre class="code shell"><a name="rest_code_8271c4d27c644d53bd3efe046206381d-1"></a>$ <span class="nb">source</span> activate python3.5
+<p>For <strong>Colour - Demosaicing</strong>:</p>
+<pre class="code shell"><a name="rest_code_198b773df79f474f8af3ce58db40eb92-1"></a>$ colour-demosaicing
+<a name="rest_code_198b773df79f474f8af3ce58db40eb92-2"></a>Using virtualenv: /home/vagrant/.cache/pypoetry/virtualenvs/colour-demosaicing-Me5Z4P5l-py3.6
 </pre>
 </div>
 </div>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../../categories/anaconda/" rel="tag">anaconda</a></li>
-            <li><a class="tag p-category" href="../../categories/fabric/" rel="tag">fabric</a></li>
-            <li><a class="tag p-category" href="../../categories/pycharm/" rel="tag">pycharm</a></li>
+<li><a class="tag p-category" href="../../categories/pycharm/" rel="tag">pycharm</a></li>
             <li><a class="tag p-category" href="../../categories/vagrant/" rel="tag">vagrant</a></li>
         </ul>
 <ul class="pager hidden-print">
 <li class="previous">
-                <a href="../the-first-public-release-of-colour-is-available/" rel="prev" title="The first public release of Colour is available!">Previous post</a>
-            </li>
-            <li class="next">
-                <a href="../about-rendering-engines-colourspaces-agnosticism/" rel="next" title="About Rendering Engines Colourspaces Agnosticism">Next post</a>
+                <a href="../numfocus-colour-0314-and-colour-datasets-010/" rel="prev" title="NumFOCUS, Colour 0.3.14 and Colour - Datasets 0.1.0!">Previous post</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
@@ -397,9 +399,9 @@ issuing those commands:</p>
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="colour-science",
-            disqus_url="https://www.colour-science.org/posts/pycharm-vagrant-fabric-anaconda/",
-        disqus_title="PyCharm, Vagrant, Fabric & Anaconda",
-        disqus_identifier="cache/posts/pycharm-vagrant-fabric-anaconda.html",
+            disqus_url="https://www.colour-science.org/posts/pycharm-ansible-vagrant/",
+        disqus_title="PyCharm, Ansible & Vagrant",
+        disqus_identifier="cache/posts/pycharm-vagrant.html",
         disqus_config = function () {
             this.language = "en";
         };

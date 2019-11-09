@@ -85,7 +85,7 @@ non-linearity of data, for example, film stocks colours. With great powers come
 great responsibilities and polynomials will eventually alter significantly
 colour data that is not present in the original fitting set.
 
-Windows and macOs CI
+Windows and macOS CI
 ====================
 
 Support for Azure Pipelines was added by @MichaelMauderer giving for the first

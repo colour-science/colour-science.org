@@ -119,7 +119,73 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/numfocus-colour-0314-and-colour-datasets-010/" class="u-url">NumFOCUS, Colour 0.3.14 and Colour - Datasets 0.1.0!</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/pycharm-vagrant-ansible-poetry/" class="u-url">PyCharm, Vagrant, Ansible &amp; Poetry</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Colour Developers
+            </span></p>
+            <p class="dateline">
+            <a href="../posts/pycharm-vagrant-ansible-poetry/" rel="bookmark">
+            <time class="published dt-published" datetime="2019-11-09T02:46:40Z" itemprop="datePublished" title="2019-11-09 02:46">2019-11-09 02:46</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="../posts/pycharm-vagrant-ansible-poetry/#disqus_thread" data-disqus-identifier="cache/posts/pycharm-vagrant-ansible-poetry.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<div class="alert alert-dismissible alert-info line-block">
+<div class="line"><em>Note</em></div>
+<div class="line"><br></div>
+<div class="line">This post is an updated version of the
+<a class="reference external" href="../posts/pycharm-vagrant-fabric-anaconda/">PyCharm, Vagrant, Fabric &amp; Anaconda</a> post.</div>
+</div>
+<p>Installing the whole development toolchain for <strong>Colour</strong> roughly means
+deploying:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.python.org/download/releases/">Python&gt;=2.7</a> or
+<a class="reference external" href="https://www.python.org/download/releases/">Python&gt;=3.5</a></p></li>
+<li><p><a class="reference external" href="http://imageio.github.io/">Imageio</a></p></li>
+<li><p><a class="reference external" href="http://www.scipy.org/">SciPy</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/six/">Six</a></p></li>
+<li><p><a class="reference external" href="https://networkx.github.io/">NetworkX</a></p></li>
+<li><p><a class="reference external" href="https://github.com/OpenImageIO/oiio">OpenImageIO</a></p></li>
+<li><p><a class="reference external" href="https://pandas.pydata.org/">Pandas</a></p></li>
+<li><p><a class="reference external" href="http://matplotlib.org/">Matplotlib</a></p></li>
+<li><p><a class="reference external" href="https://www.graphviz.org/">Graphviz</a></p></li>
+<li><p><a class="reference external" href="https://pygraphviz.github.io/">PyGraphviz</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/biblib-simple/">biblib-simple</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/coverage/">Coverage.py</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/coveralls/">coveralls</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/flake8/">Flake8</a></p></li>
+<li><p><a class="reference external" href="http://www.pyinvoke.org/">Invoke</a></p></li>
+<li><p><a class="reference external" href="https://jupyter.org/">Jupyter</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/mock/">mock</a></p></li>
+<li><p><a class="reference external" href="https://nose.readthedocs.io/en/latest">nose</a></p></li>
+<li><p><a class="reference external" href="https://pre-commit.com/">pre-commit</a></p></li>
+<li><p><a class="reference external" href="https://docs.pytest.org/en/latest/">pytest</a></p></li>
+<li><p><a class="reference external" href="https://github.com/twolfson/restructuredtext-lint">restructuredtext-lint</a></p></li>
+<li><p><a class="reference external" href="https://sphinx-doc.org">Sphinx</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rtfd/sphinx_rtd_theme/">sphinx_rtd_theme</a></p></li>
+<li><p><a class="reference external" href="https://sphinxcontrib-bibtex.readthedocs.io/">sphinxcontrib-bibtex</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/twine/">twine</a></p></li>
+<li><p><a class="reference external" href="https://github.com/google/yapf">YAPF==0.23.0</a></p></li>
+<li><p>... and too many things I just don't remember!</p></li>
+</ul>
+<p>I decided to see how I could make that setup a bit more portable and easier to
+deploy.</p>
+<p>That's where <a class="reference external" href="https://www.vagrantup.com/">Vagrant</a> kicks in along
+<a class="reference external" href="http://www.jetbrains.com/pycharm/">PyCharm</a>, <a class="reference external" href="https://www.ansible.com/">Ansible</a>
+and <a class="reference external" href="https://poetry.eustace.io">Poetry</a>!</p>
+<p>The following guide assume that you have that you have <em>PyCharm</em> installed and
+are using <em>macOS</em>, although it should pretty much be platform agnostic.</p>
+<p class="more"><a href="../posts/pycharm-vagrant-ansible-poetry/">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/numfocus-colour-0314-and-colour-datasets-010/" class="u-url">NumFOCUS, Colour 0.3.14 and Colour - Datasets 0.1.0!</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Colour Developers
@@ -385,29 +451,6 @@ and <a class="reference external" href="https://github.com/colour-science/colour
 were released today and last week, concluding a major collaborative effort, the ACES
 community addressed an important feedback paper to the Academy leadership.</p>
 <p class="more"><a href="../posts/colour-039-colour-hdri-012-aces/">Read more…</a></p>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/colour-038-is-available/" class="u-url">Colour 0.3.8 is available!</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Colour Developers
-            </span></p>
-            <p class="dateline">
-            <a href="../posts/colour-038-is-available/" rel="bookmark">
-            <time class="published dt-published" datetime="2016-07-09T11:33:29+01:00" itemprop="datePublished" title="2016-07-09 11:33">2016-07-09 11:33</time></a>
-            </p>
-                <p class="commentline">
-        
-    <a href="../posts/colour-038-is-available/#disqus_thread" data-disqus-identifier="cache/posts/colour-038-is-available.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p><a class="reference external" href="https://github.com/colour-science/colour/releases/tag/v0.3.8">Colour 0.3.8</a>
-is available!</p>
-<p class="more"><a href="../posts/colour-038-is-available/">Read more…</a></p>
 </div>
     </div>
     </article>

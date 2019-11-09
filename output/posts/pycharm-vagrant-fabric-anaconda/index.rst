@@ -11,8 +11,8 @@
 
     | *Warning*
     |
-    | Our *Vagrant* setup is now using *Ansible*, thus this guide is out-of-date
-        but will receive an update soon.
+    | Our *Vagrant* setup is now using *Ansible* and *Poetry*, please refer to the
+        `PyCharm, Vagrant, Ansible & Poetry </posts/pycharm-vagrant-ansible-poetry/>`_ post.
 
 Installing the whole development toolchain for **Colour** roughly means
 deploying:
@@ -48,7 +48,7 @@ That's where `Vagrant <https://www.vagrantup.com/>`__ kicks in along
 `Anaconda <https://store.continuum.io/cshop/anaconda/>`__!
 
 The following guide assume that you have that you have *PyCharm* installed and
-are using *macOs*, although it should pretty much be platform agnostic.
+are using *macOS*, although it should pretty much be platform agnostic.
 
 .. TEASER_END
 
@@ -104,7 +104,7 @@ We will loosely follow
         `switch to the fork <https://pypi.org/project/Fabric3/>`__.
 
 -   Install `XQuartz <http://xquartz.macosforge.org/>`__: This is the X11 display
-    server for *macOs*. The virtual machine will export the display to it
+    server for *macOS*. The virtual machine will export the display to it
     so that you can see the figures from `Matplotlib <http://matplotlib.org/>`__.
 
 -   *VirtualBox* directories syncing performance degrades quickly with large
@@ -112,13 +112,13 @@ We will loosely follow
 
     As a result the directories syncing is done with *NFS*.
 
-    You will however be asked for your *macOs* password at each virtual
+    You will however be asked for your *macOS* password at each virtual
     machine spin up because *Vagrant* needs to modify configuration files on
-    the *macOs* host.
+    the *macOS* host.
 
     In order to avoid that and following the
     `Vagrant Documentation <https://docs.vagrantup.com/v2/synced-folders/nfs.html>`__,
-    you can edit your *macOs* :code:`/etc/sudoers` file and append the
+    you can edit your *macOS* :code:`/etc/sudoers` file and append the
     following content:
 
     ::
@@ -136,7 +136,7 @@ The canonical way is to use *Vagrant* from the command line as described in
 here we will leverage the *PyCharm* integration.
 
 -   Set the :code:`Vagrant Executable` field to your *Vagrant* executable, e.g.
-    :code:`/usr/local/bin/vagrant`. This should not be needed as
+    :code:`/usr/local/bin/vagrant`. This should not be required as
     :code:`vagrant` should be enough, but
     `I encountered issues lately <https://youtrack.jetbrains.com/issue/PY-29806#comment=27-2846352>`__.
 
@@ -160,7 +160,7 @@ Your configuration screen should be approximately as follows:
 Vagrant Up
 ----------
 
-With everything setup, hit the :code:`PyCharm ---> Tools ---> Vagrant ---> Up`
+With everything setup, hit the :code:`PyCharm --> Tools --> Vagrant --> Up`
 menu item to spin up the virtual machine.
 
 You can go grab a coffee, the initial provisioning will take roughly
@@ -169,12 +169,12 @@ You can go grab a coffee, the initial provisioning will take roughly
 If the provisioning ended smoothly, you should have the following
 elements available:
 
--  **colour**, **colour-notebooks** and **colour-science.org** repositories
-   cloned into the :code:`colour-science` directory right next to the
-   :code:`colour-vagrant` one.
+-   **colour**, **colour-notebooks** and **colour-science.org** repositories
+    cloned into the :code:`colour-science` directory right next to the
+    :code:`colour-vagrant` one.
 
--  Remote Python environments installed into the virtual machine at the
-   following location with all the dependencies needed:
+-   Remote Python environments installed into the virtual machine at the
+    following location with all the dependencies needed:
 
 .. code:: shell
 
@@ -192,21 +192,18 @@ elements available:
 PyCharm Environment Configuration
 ---------------------------------
 
--  Add the various remote Python interpreters to
-   `PyCharm <http://www.jetbrains.com/pycharm/>`__ following the
-   quickstart guide: `Remote interpreter via virtual box:
-   2 <http://www.jetbrains.com/pycharm/quickstart/configuring_interpreter.html>`__
+-   Add the various remote Python interpreters to
+    `PyCharm <http://www.jetbrains.com/pycharm/>`__ the
+    `Configure a remote interpreter using Vagrant <https://www.jetbrains.com/help/pycharm/configuring-remote-interpreters-via-virtual-boxes.html>`__ guide:
 
-   The remote Python interpreters paths are as follows:
+    -   /home/vagrant/miniconda/envs/python2.7/bin/python
+    -   /home/vagrant/miniconda/envs/python3.5/bin/python
 
-   -  /home/vagrant/miniconda/envs/python2.7/bin/python
-   -  /home/vagrant/miniconda/envs/python3.5/bin/python
+-   Add the paths mappings from the *macOS* host to the virtual
+    machine in the :code:`Defaults` configurations, in my case the mappings
+    are as follows:
 
--  Add the paths mappings from the *macOs* host to the virtual
-   machine in the :code:`Defaults` configurations, in my case the mappings
-   are as follows:
-
-   ``/Users/KelSolaar/Documents/Developement/colour-science = /colour-science``
+    ``/Users/KelSolaar/Documents/Development/colour-science = /colour-science``
 
 Your Run/Debug configuration screen should be approximately looking like that:
 
@@ -220,7 +217,7 @@ SSH Connection & Display
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Accessing the virtual machine is done by using
-:code:`PyCharm ---> Tools Start SSH session...` menu item.
+:code:`PyCharm --> Tools Start SSH session...` menu item.
 
 However if you want to be able to export the display and see the figures you
 will have to manually :code:`ssh` into the virtual machine:
@@ -232,7 +229,7 @@ will have to manually :code:`ssh` into the virtual machine:
 Password is :code:`vagrant`.
 
 You will also need to add the virtual machine to the X11 hosts by issuing the
-following command on the *macOs* host:
+following command on the *macOS* host:
 
 .. code:: shell
 
@@ -249,7 +246,7 @@ as follows:
     $ cd /colour-science/colour-notebooks/notebooks
     $ ipython notebook --pylab=inline --ip=0.0.0.0
 
-Then you can access it on the *macOs* host at the following url:
+Then you can access it on the *macOS* host at the following url:
 `http://localhost:8888/ <http://localhost:8888/>`__
 
 Remote Python Environments & Interpreters
