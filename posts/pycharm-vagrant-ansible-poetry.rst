@@ -11,7 +11,7 @@
 
     | *Note*
     |
-    | This post is an updated version of the
+    | This post is an update to the
         `PyCharm, Vagrant, Fabric & Anaconda </posts/pycharm-vagrant-fabric-anaconda/>`_ post.
 
 Installing the whole development toolchain for **Colour** roughly means
