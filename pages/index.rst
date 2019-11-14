@@ -64,6 +64,51 @@
         </div>
     </div>
 
+Sponsors
+--------
+
+We are grateful 💖 for the support of our
+`sponsors <https://github.com/colour-science/colour/blob/develop/SPONSORS.rst>`__.
+If you'd like to join them, please consider
+`becoming a sponsor on OpenCollective <https://opencollective.com/colour-science>`__.
+
+Special Sponsors
+^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <td align="center" valign="middle">
+                    <a href="https://www.jetbrains.com/" target="_blank">
+                        <img width="176px" src="https://i.imgur.com/nN1VDUG.png">
+                    </a>
+                </td>
+                <td align="center" valign="middle">
+                    <a href="https://github.com/sobotka" target="_blank">
+                        <img width="176px" src="https://avatars2.githubusercontent.com/u/59577">
+                    </a>
+                </td>
+                <td align="center" valign="middle">
+                    <a href="https://dummyimage.com/176x176/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
+                        <img width="176px" src="https://dummyimage.com/176x176/f9f9fc/000000.png&text=Your+Logo+Here">
+                    </a>
+                </td>
+                <td align="center" valign="middle">
+                    <a href="https://dummyimage.com/176x176/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
+                        <img width="176px" src="https://dummyimage.com/176x176/f9f9fc/000000.png&text=Your+Logo+Here">
+                    </a>
+                </td>
+                <td align="center" valign="middle">
+                    <a href="https://dummyimage.com/176x176/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
+                        <img width="176px" src="https://dummyimage.com/176x176/f9f9fc/000000.png&text=Your+Logo+Here">
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
     <h1 class="p-name entry-title mt-3"
         itemprop="headline name"><a href="."
         class="u-url">Overview</a></h1>
