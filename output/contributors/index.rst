@@ -430,6 +430,19 @@
             </div>
         </div>
         <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>Olli Niemitalo</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Krystek (1985) implementation fixes.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/OlliNiemitalo" class="card-link">Github</a>
+                </div>
+            </div>
         </div>
         <div class="col">
         </div>
