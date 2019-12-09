@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="h-100" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 " lang="en">
 <head>
 <meta charset="utf-8">
@@ -39,12 +39,14 @@ SciPy
 <meta property="article:tag" content="pycharm">
 <meta property="article:tag" content="vagrant">
 </head>
-<body class="d-flex flex-column h-100">
+<body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
-<!-- Navbar -->
+<!-- Menubar -->
 
-<nav class="navbar navbar-expand-xl navbar-light bg-white static-top p-3"><div class="container">
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-light bg-light
+"><div class="container">
 <!-- This keeps the margins nice -->
         <a class="navbar-brand" href="https://www.colour-science.org/">
 
@@ -55,7 +57,7 @@ SciPy
         </button>
 
         <div class="collapse navbar-collapse" id="bs-navbar">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav mr-auto">
 <li class="nav-item dropdown">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Development</a>
             <div class="dropdown-menu shadow">
@@ -130,9 +132,10 @@ SciPy
 <!-- /.navbar-collapse -->
     </div>
 <!-- /.container -->
-</nav><!-- End of Navbar --><!-- Main --><div class="container" id="content" role="main">
+</nav><!-- End of Menubar --><!-- Main --><div class="container" id="content" role="main">
     <div class="body-content">
         <!--Body content-->
+        
         
         
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">PyCharm, Vagrant, Ansible &amp; Poetry</a></h1>
@@ -210,14 +213,14 @@ are using <em>macOS</em>, although it should pretty much be platform agnostic.</
 <li><p>On your local filesystem, in your development workspace, create a
 directory <code>colour-science</code> and <code>cd</code> into it:</p></li>
 </ul>
-<pre class="code shell"><a name="rest_code_b812395dee964c899952847835081a71-1"></a>$ mkdir colour-science
-<a name="rest_code_b812395dee964c899952847835081a71-2"></a>$ <span class="nb">cd</span> colour-science
+<pre class="code shell"><a name="rest_code_19fd33e4f2d94c0ab8edf8e79e03bccc-1"></a>$ mkdir colour-science
+<a name="rest_code_19fd33e4f2d94c0ab8edf8e79e03bccc-2"></a>$ <span class="nb">cd</span> colour-science
 </pre>
 <ul class="simple">
 <li><p>Clone the <a class="reference external" href="https://github.com/colour-science/colour-vagrant">colour-vagrant</a>
 repository:</p></li>
 </ul>
-<pre class="code shell"><a name="rest_code_3a0ba287e3254540ae6aed7b5ee38a00-1"></a>$ git clone git://github.com/colour-science/colour-vagrant.git
+<pre class="code shell"><a name="rest_code_2fe05960c8b24fc0bc97c6ea7fa425ce-1"></a>$ git clone git://github.com/colour-science/colour-vagrant.git
 </pre>
 <ul>
 <li>
@@ -309,19 +312,19 @@ right next to the <code>colour-vagrant</code> one:</p>
 <li><p>Remote Python environments installed into the virtual machine at the
 following location with all the dependencies needed:</p></li>
 </ul>
-<pre class="code shell"><a name="rest_code_3e0791d20c2240fa8b6ab0a4a1a7529f-1"></a>$ <span class="nb">cd</span> /home/vagrant/.cache/pypoetry/virtualenvs
-<a name="rest_code_3e0791d20c2240fa8b6ab0a4a1a7529f-2"></a>$ ls -l
-<a name="rest_code_3e0791d20c2240fa8b6ab0a4a1a7529f-3"></a>total <span class="m">40</span>
-<a name="rest_code_3e0791d20c2240fa8b6ab0a4a1a7529f-4"></a>drwxrwxr-x <span class="m">6</span> vagrant vagrant <span class="m">4096</span> Nov  <span class="m">3</span> <span class="m">09</span>:45 awesome-colour-xc1lGgeX-py3.6
-<a name="rest_code_3e0791d20c2240fa8b6ab0a4a1a7529f-5"></a>drwxrwxr-x <span class="m">8</span> vagrant vagrant <span class="m">4096</span> Nov  <span class="m">3</span> <span class="m">09</span>:58 colour-analysis-ztt4I_b6-py3.6
-<a name="rest_code_3e0791d20c2240fa8b6ab0a4a1a7529f-6"></a>drwxrwxr-x <span class="m">7</span> vagrant vagrant <span class="m">4096</span> Nov  <span class="m">3</span> <span class="m">09</span>:55 colour-checker-detection-LJan8R0H-py3.6
-<a name="rest_code_3e0791d20c2240fa8b6ab0a4a1a7529f-7"></a>drwxrwxr-x <span class="m">8</span> vagrant vagrant <span class="m">4096</span> Nov  <span class="m">3</span> <span class="m">10</span>:07 colour-dash-yRMdyS1F-py3.6
-<a name="rest_code_3e0791d20c2240fa8b6ab0a4a1a7529f-8"></a>drwxrwxr-x <span class="m">7</span> vagrant vagrant <span class="m">4096</span> Nov  <span class="m">3</span> <span class="m">10</span>:01 colour-datasets-68eTMDT3-py3.6
-<a name="rest_code_3e0791d20c2240fa8b6ab0a4a1a7529f-9"></a>drwxrwxr-x <span class="m">8</span> vagrant vagrant <span class="m">4096</span> Nov  <span class="m">3</span> <span class="m">10</span>:05 colour-demosaicing-Me5Z4P5l-py3.6
-<a name="rest_code_3e0791d20c2240fa8b6ab0a4a1a7529f-10"></a>drwxrwxr-x <span class="m">8</span> vagrant vagrant <span class="m">4096</span> Nov  <span class="m">3</span> <span class="m">10</span>:11 colour-hdri--Cpkjfr--py3.6
-<a name="rest_code_3e0791d20c2240fa8b6ab0a4a1a7529f-11"></a>drwxrwxr-x <span class="m">8</span> vagrant vagrant <span class="m">4096</span> Nov  <span class="m">3</span> <span class="m">09</span>:52 colour-O_tqvl_6-py3.6
-<a name="rest_code_3e0791d20c2240fa8b6ab0a4a1a7529f-12"></a>drwxrwxr-x <span class="m">6</span> vagrant vagrant <span class="m">4096</span> Nov  <span class="m">3</span> <span class="m">10</span>:12 colour-science.org-k8ouBR-B-py3.6
-<a name="rest_code_3e0791d20c2240fa8b6ab0a4a1a7529f-13"></a>-rw-rw-r-- <span class="m">1</span> vagrant vagrant  <span class="m">520</span> Nov  <span class="m">3</span> <span class="m">10</span>:12 envs.toml
+<pre class="code shell"><a name="rest_code_65edf76d7a9943b3a275a631c3f1a71b-1"></a>$ <span class="nb">cd</span> /home/vagrant/.cache/pypoetry/virtualenvs
+<a name="rest_code_65edf76d7a9943b3a275a631c3f1a71b-2"></a>$ ls -l
+<a name="rest_code_65edf76d7a9943b3a275a631c3f1a71b-3"></a>total <span class="m">40</span>
+<a name="rest_code_65edf76d7a9943b3a275a631c3f1a71b-4"></a>drwxrwxr-x <span class="m">6</span> vagrant vagrant <span class="m">4096</span> Nov  <span class="m">3</span> <span class="m">09</span>:45 awesome-colour-xc1lGgeX-py3.6
+<a name="rest_code_65edf76d7a9943b3a275a631c3f1a71b-5"></a>drwxrwxr-x <span class="m">8</span> vagrant vagrant <span class="m">4096</span> Nov  <span class="m">3</span> <span class="m">09</span>:58 colour-analysis-ztt4I_b6-py3.6
+<a name="rest_code_65edf76d7a9943b3a275a631c3f1a71b-6"></a>drwxrwxr-x <span class="m">7</span> vagrant vagrant <span class="m">4096</span> Nov  <span class="m">3</span> <span class="m">09</span>:55 colour-checker-detection-LJan8R0H-py3.6
+<a name="rest_code_65edf76d7a9943b3a275a631c3f1a71b-7"></a>drwxrwxr-x <span class="m">8</span> vagrant vagrant <span class="m">4096</span> Nov  <span class="m">3</span> <span class="m">10</span>:07 colour-dash-yRMdyS1F-py3.6
+<a name="rest_code_65edf76d7a9943b3a275a631c3f1a71b-8"></a>drwxrwxr-x <span class="m">7</span> vagrant vagrant <span class="m">4096</span> Nov  <span class="m">3</span> <span class="m">10</span>:01 colour-datasets-68eTMDT3-py3.6
+<a name="rest_code_65edf76d7a9943b3a275a631c3f1a71b-9"></a>drwxrwxr-x <span class="m">8</span> vagrant vagrant <span class="m">4096</span> Nov  <span class="m">3</span> <span class="m">10</span>:05 colour-demosaicing-Me5Z4P5l-py3.6
+<a name="rest_code_65edf76d7a9943b3a275a631c3f1a71b-10"></a>drwxrwxr-x <span class="m">8</span> vagrant vagrant <span class="m">4096</span> Nov  <span class="m">3</span> <span class="m">10</span>:11 colour-hdri--Cpkjfr--py3.6
+<a name="rest_code_65edf76d7a9943b3a275a631c3f1a71b-11"></a>drwxrwxr-x <span class="m">8</span> vagrant vagrant <span class="m">4096</span> Nov  <span class="m">3</span> <span class="m">09</span>:52 colour-O_tqvl_6-py3.6
+<a name="rest_code_65edf76d7a9943b3a275a631c3f1a71b-12"></a>drwxrwxr-x <span class="m">6</span> vagrant vagrant <span class="m">4096</span> Nov  <span class="m">3</span> <span class="m">10</span>:12 colour-science.org-k8ouBR-B-py3.6
+<a name="rest_code_65edf76d7a9943b3a275a631c3f1a71b-13"></a>-rw-rw-r-- <span class="m">1</span> vagrant vagrant  <span class="m">520</span> Nov  <span class="m">3</span> <span class="m">10</span>:12 envs.toml
 </pre>
 </div>
 <div class="section" id="pycharm-environment-configuration">
@@ -355,20 +358,20 @@ are as follows:</p>
 <code>PyCharm --&gt; Tools Start SSH session...</code> menu item.</p>
 <p>However if you want to be able to export the display and see the figures you
 will have to manually <code>ssh</code> into the virtual machine:</p>
-<pre class="code shell"><a name="rest_code_0bcb7fa98b7f4f6088724f272de09570-1"></a>$ ssh -X vagrant@192.168.32.64
+<pre class="code shell"><a name="rest_code_f83e54abe59242a6b57b704a6ac31d3e-1"></a>$ ssh -X vagrant@192.168.32.64
 </pre>
 <p>Password is <code>vagrant</code>.</p>
 <p>You will also need to add the virtual machine to the X11 hosts by issuing the
 following command on the <em>macOS</em> host:</p>
-<pre class="code shell"><a name="rest_code_27e4933ab77a43ccb29bcd8b3cbbb127-1"></a>$ xhost + <span class="m">192</span>.168.32.64
+<pre class="code shell"><a name="rest_code_11d0d6f378e24982846c0d7a886da299-1"></a>$ xhost + <span class="m">192</span>.168.32.64
 </pre>
 </div>
 <div class="section" id="jupyter-notebooks">
 <h3>Jupyter Notebooks</h3>
 <p>The <a class="reference external" href="http://ipython.org/notebook.html">Jupyter Notebooks</a> server is started
 as follows:</p>
-<pre class="code shell"><a name="rest_code_3505023d235249ed90da0f81d5ef3ed3-1"></a>$ <span class="nb">cd</span> /colour-science/colour-notebooks/notebooks
-<a name="rest_code_3505023d235249ed90da0f81d5ef3ed3-2"></a>$ jupyter notebook --pylab<span class="o">=</span>inline --ip<span class="o">=</span><span class="m">0</span>.0.0.0
+<pre class="code shell"><a name="rest_code_de684305993b45de8b4b46279edcb3dd-1"></a>$ <span class="nb">cd</span> /colour-science/colour-notebooks/notebooks
+<a name="rest_code_de684305993b45de8b4b46279edcb3dd-2"></a>$ jupyter notebook --pylab<span class="o">=</span>inline --ip<span class="o">=</span><span class="m">0</span>.0.0.0
 </pre>
 <p>Then you can access it on the <em>macOS</em> host at the following url:
 <a class="reference external" href="http://localhost:8888/">http://localhost:8888/</a></p>
@@ -378,25 +381,25 @@ as follows:</p>
 <p>You can activate the remote Python environments in the virtual machine by
 issuing those commands:</p>
 <p>For <strong>Colour</strong>:</p>
-<pre class="code shell"><a name="rest_code_dbcdd71b16cb40bdbc68c97b910daf2a-1"></a>$ colour
-<a name="rest_code_dbcdd71b16cb40bdbc68c97b910daf2a-2"></a>Using virtualenv: /home/vagrant/.cache/pypoetry/virtualenvs/colour-O_tqvl_6-py3.6
+<pre class="code shell"><a name="rest_code_3bb94d1187e74517b927c2dd9da1d040-1"></a>$ colour
+<a name="rest_code_3bb94d1187e74517b927c2dd9da1d040-2"></a>Using virtualenv: /home/vagrant/.cache/pypoetry/virtualenvs/colour-O_tqvl_6-py3.6
 </pre>
 <p>For <strong>Colour - Demosaicing</strong>:</p>
-<pre class="code shell"><a name="rest_code_79f5ce89e42c4b01bcae4c8b31048af7-1"></a>$ colour-demosaicing
-<a name="rest_code_79f5ce89e42c4b01bcae4c8b31048af7-2"></a>Using virtualenv: /home/vagrant/.cache/pypoetry/virtualenvs/colour-demosaicing-Me5Z4P5l-py3.6
+<pre class="code shell"><a name="rest_code_c6b8ad67aaed476db6b9af19311e1536-1"></a>$ colour-demosaicing
+<a name="rest_code_c6b8ad67aaed476db6b9af19311e1536-2"></a>Using virtualenv: /home/vagrant/.cache/pypoetry/virtualenvs/colour-demosaicing-Me5Z4P5l-py3.6
 </pre>
 <p>A full list is available as follows:</p>
-<pre class="code shell"><a name="rest_code_0b5b83116820416496a2492019c79630-1"></a>$ <span class="nb">alias</span> <span class="p">|</span> grep colour-science
-<a name="rest_code_0b5b83116820416496a2492019c79630-2"></a><span class="nb">alias</span> awesome-colour<span class="o">=</span><span class="s1">'cd /colour-science/awesome-colour &amp;&amp; poem'</span>
-<a name="rest_code_0b5b83116820416496a2492019c79630-3"></a><span class="nb">alias</span> <span class="nv">colour</span><span class="o">=</span><span class="s1">'cd /colour-science/colour &amp;&amp; poem'</span>
-<a name="rest_code_0b5b83116820416496a2492019c79630-4"></a><span class="nb">alias</span> colour-analysis-three.js<span class="o">=</span><span class="s1">'cd /colour-science/colour-analysis-three.js &amp;&amp; poem'</span>
-<a name="rest_code_0b5b83116820416496a2492019c79630-5"></a><span class="nb">alias</span> colour-checker-detection<span class="o">=</span><span class="s1">'cd /colour-science/colour-checker-detection &amp;&amp; poem'</span>
-<a name="rest_code_0b5b83116820416496a2492019c79630-6"></a><span class="nb">alias</span> colour-dash<span class="o">=</span><span class="s1">'cd /colour-science/colour-dash &amp;&amp; poem'</span>
-<a name="rest_code_0b5b83116820416496a2492019c79630-7"></a><span class="nb">alias</span> colour-datasets<span class="o">=</span><span class="s1">'cd /colour-science/colour-datasets &amp;&amp; poem'</span>
-<a name="rest_code_0b5b83116820416496a2492019c79630-8"></a><span class="nb">alias</span> colour-demosaicing<span class="o">=</span><span class="s1">'cd /colour-science/colour-demosaicing &amp;&amp; poem'</span>
-<a name="rest_code_0b5b83116820416496a2492019c79630-9"></a><span class="nb">alias</span> colour-hdri<span class="o">=</span><span class="s1">'cd /colour-science/colour-hdri &amp;&amp; poem'</span>
-<a name="rest_code_0b5b83116820416496a2492019c79630-10"></a><span class="nb">alias</span> colour-notebooks<span class="o">=</span><span class="s1">'cd /colour-science/colour &amp;&amp; poem &amp;&amp; cd /colour-science/colour-notebooks &amp;&amp; jupyter notebook --ip=0.0.0.0'</span>
-<a name="rest_code_0b5b83116820416496a2492019c79630-11"></a><span class="nb">alias</span> colour-science.org<span class="o">=</span><span class="s1">'cd /colour-science/colour-science.org &amp;&amp; poem'</span>
+<pre class="code shell"><a name="rest_code_0ca32f48a95a495f8c39a4ec9b2015d2-1"></a>$ <span class="nb">alias</span> <span class="p">|</span> grep colour-science
+<a name="rest_code_0ca32f48a95a495f8c39a4ec9b2015d2-2"></a><span class="nb">alias</span> awesome-colour<span class="o">=</span><span class="s1">'cd /colour-science/awesome-colour &amp;&amp; poem'</span>
+<a name="rest_code_0ca32f48a95a495f8c39a4ec9b2015d2-3"></a><span class="nb">alias</span> <span class="nv">colour</span><span class="o">=</span><span class="s1">'cd /colour-science/colour &amp;&amp; poem'</span>
+<a name="rest_code_0ca32f48a95a495f8c39a4ec9b2015d2-4"></a><span class="nb">alias</span> colour-analysis-three.js<span class="o">=</span><span class="s1">'cd /colour-science/colour-analysis-three.js &amp;&amp; poem'</span>
+<a name="rest_code_0ca32f48a95a495f8c39a4ec9b2015d2-5"></a><span class="nb">alias</span> colour-checker-detection<span class="o">=</span><span class="s1">'cd /colour-science/colour-checker-detection &amp;&amp; poem'</span>
+<a name="rest_code_0ca32f48a95a495f8c39a4ec9b2015d2-6"></a><span class="nb">alias</span> colour-dash<span class="o">=</span><span class="s1">'cd /colour-science/colour-dash &amp;&amp; poem'</span>
+<a name="rest_code_0ca32f48a95a495f8c39a4ec9b2015d2-7"></a><span class="nb">alias</span> colour-datasets<span class="o">=</span><span class="s1">'cd /colour-science/colour-datasets &amp;&amp; poem'</span>
+<a name="rest_code_0ca32f48a95a495f8c39a4ec9b2015d2-8"></a><span class="nb">alias</span> colour-demosaicing<span class="o">=</span><span class="s1">'cd /colour-science/colour-demosaicing &amp;&amp; poem'</span>
+<a name="rest_code_0ca32f48a95a495f8c39a4ec9b2015d2-9"></a><span class="nb">alias</span> colour-hdri<span class="o">=</span><span class="s1">'cd /colour-science/colour-hdri &amp;&amp; poem'</span>
+<a name="rest_code_0ca32f48a95a495f8c39a4ec9b2015d2-10"></a><span class="nb">alias</span> colour-notebooks<span class="o">=</span><span class="s1">'cd /colour-science/colour &amp;&amp; poem &amp;&amp; cd /colour-science/colour-notebooks &amp;&amp; jupyter notebook --ip=0.0.0.0'</span>
+<a name="rest_code_0ca32f48a95a495f8c39a4ec9b2015d2-11"></a><span class="nb">alias</span> colour-science.org<span class="o">=</span><span class="s1">'cd /colour-science/colour-science.org &amp;&amp; poem'</span>
 </pre>
 </div>
 </div>
@@ -477,10 +480,7 @@ issuing those commands:</p>
 <div class="text-center text-light py-3"><span>Copyright © 2013-2019 – Colour Developers</span></div>
 
     
-</footer><!-- End of Footer --><script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
-    moment.locale("en");
-    fancydates(0, "YYYY-MM-DD HH:mm");
-    </script><!-- end fancy dates --><script>
+</footer><!-- End of Footer --><script src="../../assets/js/all-nocdn.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {

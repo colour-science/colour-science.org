@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="h-100" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 " lang="en">
 <head>
 <meta charset="utf-8">
@@ -42,12 +42,14 @@ back about the missing descri">
 <meta property="article:tag" content="transfer function">
 <meta property="article:tag" content="whitepoint">
 </head>
-<body class="d-flex flex-column h-100">
+<body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
-<!-- Navbar -->
+<!-- Menubar -->
 
-<nav class="navbar navbar-expand-xl navbar-light bg-white static-top p-3"><div class="container">
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-light bg-light
+"><div class="container">
 <!-- This keeps the margins nice -->
         <a class="navbar-brand" href="https://www.colour-science.org/">
 
@@ -58,7 +60,7 @@ back about the missing descri">
         </button>
 
         <div class="collapse navbar-collapse" id="bs-navbar">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav mr-auto">
 <li class="nav-item dropdown">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Development</a>
             <div class="dropdown-menu shadow">
@@ -133,9 +135,10 @@ back about the missing descri">
 <!-- /.navbar-collapse -->
     </div>
 <!-- /.container -->
-</nav><!-- End of Navbar --><!-- Main --><div class="container" id="content" role="main">
+</nav><!-- End of Menubar --><!-- Main --><div class="container" id="content" role="main">
     <div class="body-content">
         <!--Body content-->
+        
         
         
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">The Importance of Terminology and sRGB Uncertainty</a></h1>
@@ -172,7 +175,7 @@ back about the missing description of <em>sRGB</em> as being an <em>RGB</em> col
 set of <strong>primaries</strong>, <strong>whitepoint</strong> and <strong>transfer functions</strong> components.</p>
 <p>The article first description of <em>sRGB</em> is as follows:</p>
 <blockquote>
-<em>sRGB is a slight tweaking of the simple gamma 2.2 curve.</em>
+<p><em>sRGB is a slight tweaking of the simple gamma 2.2 curve.</em></p>
 </blockquote>
 <p>While this depiction of <em>sRGB</em> colourspace <strong>Electro-Optical Transfer Function</strong>
 (<strong>EOTF</strong>) is exact, it may be confusing for non experts by omitting an explicit
@@ -196,9 +199,9 @@ is an extensive reference on <em>Gamma</em> correction.</div>
 </div>
 <p>Tom confirms that intuition a few paragraph later:</p>
 <blockquote>
-<em>(the broader sRGB standard also has a bunch of gamut and colour-transform
+<p><em>(the broader sRGB standard also has a bunch of gamut and colour-transform
 specifications, but we’ll ignore those and just focus on the gamma-curve
-part for now, since that is what concerns us for graphics rendering)</em>
+part for now, since that is what concerns us for graphics rendering)</em></p>
 </blockquote>
 <div class="alert alert-dismissible alert-info line-block">
 <div class="line"><em>Note</em></div>
@@ -215,12 +218,12 @@ is especially true in colour science. Everybody knows what colour is but yet
 only a few can define it correctly, in this regard, we often cite
 <a class="reference external" href="https://twitter.com/MDFairchild">Mark D. Fairchild</a>:</p>
 <blockquote>
-<em>Why should it be particularly difficult to agree upon consistent
+<p><em>Why should it be particularly difficult to agree upon consistent
 terminology in the field of color appearance? Perhaps the answer lies in
 the very nature of the subject. Almost everyone knows what color is.
 After all, they have had firsthand experience of it since shortly after
 birth. However, very few can precisely describe their color experiences or
-even precisely define color.</em> <a class="footnote-reference" href="#id3" id="id1">[1]</a>
+even precisely define color.</em> <a class="footnote-reference brackets" href="#id3" id="id1">1</a></p>
 </blockquote>
 <p><em>sRGB</em> is not a bunch of <strong>transfer functions</strong>, it is an actual
 <a class="reference external" href="https://en.wikipedia.org/wiki/RGB_color_space">RGB colourspace</a>, specified by
@@ -228,9 +231,9 @@ even precisely define color.</em> <a class="footnote-reference" href="#id3" id="
 standard. As per <a class="reference external" href="http://www.iso.org/iso/catalogue_detail.htm?csnumber=37161">ISO 22028-1 Standard</a>,
 an <em>RGB</em> colourspace is defined by those mandatory 3 components:</p>
 <ul class="simple">
-<li><a class="reference internal" href="#primaries">Primaries</a></li>
-<li><a class="reference internal" href="#whitepoint">Whitepoint</a></li>
-<li><a class="reference internal" href="#transfer-functions-oetf-and-eotf">Transfer Functions (OETF and EOTF)</a></li>
+<li><p><a class="reference internal" href="#primaries">Primaries</a></p></li>
+<li><p><a class="reference internal" href="#whitepoint">Whitepoint</a></p></li>
+<li><p><a class="reference internal" href="#transfer-functions-oetf-and-eotf">Transfer Functions (OETF and EOTF)</a></p></li>
 </ul>
 <p>The <em>ISO 22028-1 Standard</em> definition of an additive <em>RGB</em> colourspace is
 quoted in its entirety for reference:</p>
@@ -281,8 +284,9 @@ projection of the <em>CIE xyY colourspace</em> in the left view.
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/White_point">whitepoint</a>  is defined by the
 <a class="reference external" href="http://eilv.cie.co.at/term/1430">CIE</a> as:</p>
 <blockquote>
-Achromatic reference stimulus in a chromaticity diagram that corresponds to
-the stimulus that produces an image area that has the perception of white.</blockquote>
+<p>Achromatic reference stimulus in a chromaticity diagram that corresponds to
+the stimulus that produces an image area that has the perception of white.</p>
+</blockquote>
 <p>Any set of colours lying on the <em>neutral axis</em> passing through the <strong>whitepoint</strong>,
 no matter their <em>Luminance</em>, will be neutral to that <em>RGB colourspace</em>.</p>
 <div class="figure">
@@ -306,10 +310,10 @@ as <strong>whitepoint</strong> but an <a class="reference external" href="https:
 <h3>Transfer Functions (OETF and EOTF)</h3>
 <p>The transfer functions perform the mapping between the <em>linear</em> light
 components (tristimulus values) and a <em>non-linear</em> R'G'B' video signal (most
-of the time for coding optimisation and bandwidth performance). <a class="footnote-reference" href="#id4" id="id2">[2]</a></p>
+of the time for coding optimisation and bandwidth performance). <a class="footnote-reference brackets" href="#id4" id="id2">2</a></p>
 <ul>
 <li>
-<p class="first">The <strong>Opto-Electronic Transfer Function</strong> (<strong>OETF</strong>) maps estimated
+<p>The <strong>Opto-Electronic Transfer Function</strong> (<strong>OETF</strong>) maps estimated
 tristimulus values in a scene to a <em>non-linear</em> R'G'B' video component signal
 value. Typical <strong>OETFs</strong> are expressed by a power function with an exponent
 between 0.4 and 0.5. They can also be defined as piece-wise functions,
@@ -319,7 +323,7 @@ between 0.4 and 0.5. They can also be defined as piece-wise functions,
 </div>
 </li>
 <li>
-<p class="first">The <strong>Electro-Optical Transfer Function</strong> (<strong>EOTF</strong>) maps a <em>non-linear</em>
+<p>The <strong>Electro-Optical Transfer Function</strong> (<strong>EOTF</strong>) maps a <em>non-linear</em>
 R'G'B' video component signal to a tristimulus value at the display.
 Typical <strong>EOTFs</strong> are expressed by a power function with an exponent
 between 2.2 and 2.6 or a piece-wise function.</p>
@@ -389,20 +393,18 @@ not just cherry picked components. Unfortunately it is not the case thus in orde
 to lessen the uncertainty and improve the <strong>terminology</strong> used, we suggest that:</p>
 <ul>
 <li>
-<p class="first">One remembers that a given <em>RGB</em> colourspace is defined by the following
+<p>One remembers that a given <em>RGB</em> colourspace is defined by the following
 essential three components:</p>
 <ul class="simple">
-<li><a class="reference internal" href="#primaries">Primaries</a></li>
-<li><a class="reference internal" href="#whitepoint">Whitepoint</a></li>
-<li><a class="reference internal" href="#transfer-functions-oetf-and-eotf">Transfer Functions (OETF and EOTF)</a></li>
+<li><p><a class="reference internal" href="#primaries">Primaries</a></p></li>
+<li><p><a class="reference internal" href="#whitepoint">Whitepoint</a></p></li>
+<li><p><a class="reference internal" href="#transfer-functions-oetf-and-eotf">Transfer Functions (OETF and EOTF)</a></p></li>
 </ul>
 </li>
+<li><p>When writing on the <em>RGB</em> colourspace topic, one should ideally mention the
+previous point, it will help people getting the grasp on the theory.</p></li>
 <li>
-<p class="first">When writing on the <em>RGB</em> colourspace topic, one should ideally mention the
-previous point, it will help people getting the grasp on the theory.</p>
-</li>
-<li>
-<p class="first">When discussing about a given <em>RGB</em> colourspace component, one should make a
+<p>When discussing about a given <em>RGB</em> colourspace component, one should make a
 point of describing which specification's component he is referring to:</p>
 <blockquote>
 <p><em>sRGB is a slight tweaking of the simple gamma 2.2 curve.</em></p>
@@ -419,18 +421,16 @@ of the simple Gamma 2.2 function.</em></p>
 </blockquote>
 </li>
 <li>
-<p class="first">When describing an <em>RGB</em> colourspace not supported by an official specification
+<p>When describing an <em>RGB</em> colourspace not supported by an official specification
 or standard, one should probably use a name that explicitly defines the complete
 specification:</p>
 <ul class="simple">
-<li>
-<cite>sRGB-D60-Linear</cite>: an <em>RGB</em> colourspace using <em>sRGB</em> <strong>primaries</strong>
+<li><p><cite>sRGB-D60-Linear</cite>: an <em>RGB</em> colourspace using <em>sRGB</em> <strong>primaries</strong>
 chromatically adapted to <em>CIE Standard Illuminant D60</em> <strong>whitepoint</strong>
-and linear <strong>transfer functions</strong>.</li>
-<li>
-<cite>Adobe 1998 RGB-D65-Gamma1.8</cite>: an <em>RGB</em> colourspace using <em>Adobe 1998 RGB</em>
+and linear <strong>transfer functions</strong>.</p></li>
+<li><p><cite>Adobe 1998 RGB-D65-Gamma1.8</cite>: an <em>RGB</em> colourspace using <em>Adobe 1998 RGB</em>
 <strong>primaries</strong>, <em>CIE Standard Illuminant D65</em> <strong>whitepoint</strong> and Gamma
-1.8 <strong>transfer functions</strong>.</li>
+1.8 <strong>transfer functions</strong>.</p></li>
 </ul>
 </li>
 </ul>
@@ -441,28 +441,18 @@ become mainstream.</p>
 </div>
 <div class="section" id="bibliography">
 <h3>Bibliography</h3>
-<table class="docutils footnote" frame="void" id="id3" rules="none">
-<colgroup>
-<col class="label">
-<col>
-</colgroup>
-<tbody valign="top"><tr>
-<td class="label"><a class="fn-backref" href="#id1">[1]</a></td>
-<td>Fairchild, M. D. (2013). Color Appearance Models (3rd ed., pp. 1–10831).
-Wiley. ISBN:B00DAYO8E2</td>
-</tr></tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
-<colgroup>
-<col class="label">
-<col>
-</colgroup>
-<tbody valign="top"><tr>
-<td class="label"><a class="fn-backref" href="#id2">[2]</a></td>
-<td>Poynton, C. (2012). Digital Video and HDTV - Algorithms and Interfaces
-- Second Edition (2nd ed.). Morgan Kaufmann. ISBN:9780123919267</td>
-</tr></tbody>
-</table>
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd>
+<p>Fairchild, M. D. (2013). Color Appearance Models (3rd ed., pp. 1–10831).
+Wiley. ISBN:B00DAYO8E2</p>
+</dd>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd>
+<p>Poynton, C. (2012). Digital Video and HDTV - Algorithms and Interfaces
+- Second Edition (2nd ed.). Morgan Kaufmann. ISBN:9780123919267</p>
+</dd>
+</dl>
 </div>
 </div>
 </div>
@@ -552,10 +542,7 @@ Wiley. ISBN:B00DAYO8E2</td>
 <div class="text-center text-light py-3"><span>Copyright © 2013-2019 – Colour Developers</span></div>
 
     
-</footer><!-- End of Footer --><script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
-    moment.locale("en");
-    fancydates(0, "YYYY-MM-DD HH:mm");
-    </script><!-- end fancy dates --><script>
+</footer><!-- End of Footer --><script src="../../assets/js/all-nocdn.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="h-100" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 " lang="en">
 <head>
 <meta charset="utf-8">
@@ -33,12 +33,14 @@ Spectral computations are adopting practise ASTM E2022–11 and ASTM E30">
 <meta property="article:tag" content="colour science">
 <meta property="article:tag" content="release">
 </head>
-<body class="d-flex flex-column h-100">
+<body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
-<!-- Navbar -->
+<!-- Menubar -->
 
-<nav class="navbar navbar-expand-xl navbar-light bg-white static-top p-3"><div class="container">
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-light bg-light
+"><div class="container">
 <!-- This keeps the margins nice -->
         <a class="navbar-brand" href="https://www.colour-science.org/">
 
@@ -49,7 +51,7 @@ Spectral computations are adopting practise ASTM E2022–11 and ASTM E30">
         </button>
 
         <div class="collapse navbar-collapse" id="bs-navbar">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav mr-auto">
 <li class="nav-item dropdown">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Development</a>
             <div class="dropdown-menu shadow">
@@ -124,9 +126,10 @@ Spectral computations are adopting practise ASTM E2022–11 and ASTM E30">
 <!-- /.navbar-collapse -->
     </div>
 <!-- /.container -->
-</nav><!-- End of Navbar --><!-- Main --><div class="container" id="content" role="main">
+</nav><!-- End of Menubar --><!-- Main --><div class="container" id="content" role="main">
     <div class="body-content">
         <!--Body content-->
+        
         
         
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Colour 0.3.8 is available!</a></h1>
@@ -158,29 +161,28 @@ is available!</p>
 <p>More than 7 months in the making, this release introduces substantial backward
 incompatible changes:</p>
 <ul class="simple">
-<li>Spectral computations are adopting practise ASTM E2022–11 and ASTM E308–15
-methods to compute tristimulus values from spectral data.</li>
-<li>D50 and D65 illuminants chromaticity coordinates have been rounded to 4
+<li><p>Spectral computations are adopting practise ASTM E2022–11 and ASTM E308–15
+methods to compute tristimulus values from spectral data.</p></li>
+<li><p>D50 and D65 illuminants chromaticity coordinates have been rounded to 4
 decimals to conform better with what most RGB colourspace specifications
-adopt.</li>
-<li>The RGB colourspace transfer functions implementation has been overhauled in
-order to be easily extended in the future.</li>
-<li>
-<a class="reference external" href="https://www.scipy.org/">SciPy</a> is now a requirement.</li>
+adopt.</p></li>
+<li><p>The RGB colourspace transfer functions implementation has been overhauled in
+order to be easily extended in the future.</p></li>
+<li><p><a class="reference external" href="https://www.scipy.org/">SciPy</a> is now a requirement.</p></li>
 </ul>
 <p>Please carefully refer to the
 <a class="reference external" href="https://github.com/colour-science/colour/releases/tag/v0.3.8">releases page</a>
 <em>Changes</em> section.</p>
 <p>Highlights of this release are:</p>
 <ul class="simple">
-<li>Spectral to tristimulus values computations using ASTM E2022–11 and ASTM E308–15
-methods.</li>
-<li>Dominant and complementary wavelengths along colour and excitation purity
-computations.</li>
-<li>Support for YCbCr and YcCbcCrc colour encodings.</li>
-<li>Support for Hunter Lab and Hunter Rdab colour scales.</li>
-<li>Support for BT.1886 EOTF and ST 2084 OETF / EOTF.</li>
-<li>Support for RIMM, ROMM and ERIMM colour encodings.</li>
+<li><p>Spectral to tristimulus values computations using ASTM E2022–11 and ASTM E308–15
+methods.</p></li>
+<li><p>Dominant and complementary wavelengths along colour and excitation purity
+computations.</p></li>
+<li><p>Support for YCbCr and YcCbcCrc colour encodings.</p></li>
+<li><p>Support for Hunter Lab and Hunter Rdab colour scales.</p></li>
+<li><p>Support for BT.1886 EOTF and ST 2084 OETF / EOTF.</p></li>
+<li><p>Support for RIMM, ROMM and ERIMM colour encodings.</p></li>
 </ul>
 <p>A <a class="reference external" href="https://github.com/colour-science/colour-ramblings/blob/master/colour_0_3_8_computational_changes.ipynb">Jupyter Notebook</a>
 is available to illustrate the expected computational differences. They should
@@ -191,12 +193,12 @@ packages have been updated accordingly.</p>
 <p>Michael and I would like to thanks all the contributors for that release
 whether they contribute to the code or participate in discussions.</p>
 <ul class="simple">
-<li>David Bourgeois</li>
-<li>Luke Canavan</li>
-<li>Sean Cooper</li>
-<li>Nick Shaw</li>
-<li>Ron024</li>
-<li>Kevin Wheatley</li>
+<li><p>David Bourgeois</p></li>
+<li><p>Luke Canavan</p></li>
+<li><p>Sean Cooper</p></li>
+<li><p>Nick Shaw</p></li>
+<li><p>Ron024</p></li>
+<li><p>Kevin Wheatley</p></li>
 </ul>
 <p>Visit the <a class="reference external" href="https://github.com/colour-science/colour/releases/tag/v0.3.8">releases page</a>
 for complete details.</p>
@@ -279,10 +281,7 @@ for complete details.</p>
 <div class="text-center text-light py-3"><span>Copyright © 2013-2019 – Colour Developers</span></div>
 
     
-</footer><!-- End of Footer --><script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
-    moment.locale("en");
-    fancydates(0, "YYYY-MM-DD HH:mm");
-    </script><!-- end fancy dates --><script>
+</footer><!-- End of Footer --><script src="../../assets/js/all-nocdn.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {

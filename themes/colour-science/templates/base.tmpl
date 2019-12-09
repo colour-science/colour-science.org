@@ -8,12 +8,18 @@ ${base.html_headstart()}
 </%block>
 ${template_hooks['extra_head']()}
 </head>
-<body class="d-flex flex-column h-100">
+<body>
 <a href="#content" class="sr-only sr-only-focusable">${messages("Skip to main content")}</a>
 
-<!-- Navbar -->
+<!-- Menubar -->
 
-<nav class="navbar navbar-expand-xl navbar-light bg-white static-top p-3">
+<nav class="navbar navbar-expand-md static-top mb-4
+% if theme_config.get('navbar_light'):
+navbar-light bg-light
+% else:
+navbar-dark bg-dark
+% endif
+">
     <div class="container"><!-- This keeps the margins nice -->
         <a class="navbar-brand" href="${abs_link(_link("root", None, lang))}">
         %if logo_url:
@@ -29,7 +35,7 @@ ${template_hooks['extra_head']()}
         </button>
 
         <div class="collapse navbar-collapse" id="bs-navbar">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav mr-auto">
                 ${base.html_navigation_links_entries(navigation_links)}
                 ${template_hooks['menu']()}
             </ul>
@@ -53,7 +59,7 @@ ${template_hooks['extra_head']()}
     </div><!-- /.container -->
 </nav>
 
-<!-- End of Navbar -->
+<!-- End of Menubar -->
 
 <!-- Main -->
 
@@ -61,6 +67,7 @@ ${template_hooks['extra_head']()}
     <div class="body-content">
         <!--Body content-->
         ${template_hooks['page_header']()}
+        <%block name="extra_header"></%block>
         <%block name="content"></%block>
         <!--End of body content-->
     </div>
@@ -78,12 +85,14 @@ ${template_hooks['extra_head']()}
 <!-- End of Footer -->
 
 ${base.late_load_js()}
-    <!-- fancy dates -->
-    <script>
-    moment.locale("${momentjs_locales[lang]}");
-    fancydates(${date_fanciness}, ${js_date_format});
-    </script>
-    <!-- end fancy dates -->
+    %if date_fanciness != 0:
+        <!-- fancy dates -->
+        <script>
+        moment.locale("${momentjs_locales[lang]}");
+        fancydates(${date_fanciness}, ${js_date_format});
+        </script>
+        <!-- end fancy dates -->
+    %endif
     <%block name="extra_js"></%block>
     <script>
     baguetteBox.run('div#content', {

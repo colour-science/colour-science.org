@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="h-100" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 " lang="en">
 <head>
 <meta charset="utf-8">
@@ -32,12 +32,14 @@ were released today and last week, concluding a major collaborative effor">
 <meta property="article:tag" content="colour science">
 <meta property="article:tag" content="release">
 </head>
-<body class="d-flex flex-column h-100">
+<body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
-<!-- Navbar -->
+<!-- Menubar -->
 
-<nav class="navbar navbar-expand-xl navbar-light bg-white static-top p-3"><div class="container">
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-light bg-light
+"><div class="container">
 <!-- This keeps the margins nice -->
         <a class="navbar-brand" href="https://www.colour-science.org/">
 
@@ -48,7 +50,7 @@ were released today and last week, concluding a major collaborative effor">
         </button>
 
         <div class="collapse navbar-collapse" id="bs-navbar">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav mr-auto">
 <li class="nav-item dropdown">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Development</a>
             <div class="dropdown-menu shadow">
@@ -123,9 +125,10 @@ were released today and last week, concluding a major collaborative effor">
 <!-- /.navbar-collapse -->
     </div>
 <!-- /.container -->
-</nav><!-- End of Navbar --><!-- Main --><div class="container" id="content" role="main">
+</nav><!-- End of Menubar --><!-- Main --><div class="container" id="content" role="main">
     <div class="body-content">
         <!--Body content-->
+        
         
         
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Colour 0.3.9, Colour - HDRI 0.1.2 and ACES!</a></h1>
@@ -162,35 +165,32 @@ community addressed an important feedback paper to the Academy leadership.</p>
 <p>This release introduces some significant spectral computations performance
 improvements and various new objects:</p>
 <ul class="simple">
-<li>Spectral code optimisations resulting in increased computations performance:<ul>
 <li>
-<cite>colour.SpectralPowerDistribution</cite> and <cite>colour.TriSpectralPowerDistribution</cite>
-classes are now <strong>6.5</strong> times faster.</li>
-<li>
-<cite>colour.colour_quality_scale</cite> definition is now <strong>10.5</strong> times faster.</li>
-<li>
-<cite>colour.colour_rendering_index</cite> definition is now <strong>13.1</strong> times faster.</li>
-<li>
-<cite>colour.uv_to_CCT_Ohno2013</cite> definition is now <strong>15.7</strong> times faster.</li>
+<p>Spectral code optimisations resulting in increased computations performance:</p>
+<ul>
+<li><p><cite>colour.SpectralPowerDistribution</cite> and <cite>colour.TriSpectralPowerDistribution</cite>
+classes are now <strong>6.5</strong> times faster.</p></li>
+<li><p><cite>colour.colour_quality_scale</cite> definition is now <strong>10.5</strong> times faster.</p></li>
+<li><p><cite>colour.colour_rendering_index</cite> definition is now <strong>13.1</strong> times faster.</p></li>
+<li><p><cite>colour.uv_to_CCT_Ohno2013</cite> definition is now <strong>15.7</strong> times faster.</p></li>
 </ul>
 </li>
-<li>Correlated colour temperature to chromaticity coordinates uv computation
-accordingly to Krystek (1985) method.</li>
-<li>Support for Luo et al. (2006) CIECAM02 based uniform colourspaces and colour differences.</li>
-<li>Support for Dolby ICTCP colourspace.</li>
-<li>Support for Canon Log 2 and Canon Log 3 log curves.</li>
-<li>
-<cite>colour.RGB_Colourspace</cite> class can now either use instantiation time
+<li><p>Correlated colour temperature to chromaticity coordinates uv computation
+accordingly to Krystek (1985) method.</p></li>
+<li><p>Support for Luo et al. (2006) CIECAM02 based uniform colourspaces and colour differences.</p></li>
+<li><p>Support for Dolby ICTCP colourspace.</p></li>
+<li><p>Support for Canon Log 2 and Canon Log 3 log curves.</p></li>
+<li><p><cite>colour.RGB_Colourspace</cite> class can now either use instantiation time
 transformations matrices or derived ones. Consequently, the following RGB
 colourspaces Normalised Primary Matrices were replaced with the literature
 ones: <em>ACES Primaries 0</em>, <em>Adobe RGB (1998)</em>, <em>ALEXA Wide Gamut RGB</em>, <em>CIE RGB</em>,
-<em>ROMM RGB</em>, <em>sRGB</em>, <em>V-Gamut</em>. It introduces small computation discrepancies compared to Colour 0.3.8.</li>
-<li>Implement support for Canon Log 2 and Canon Log 3 log curves.</li>
-<li>Implement support for RedWideGamut RGB colourspace and Log3G10, Log3G12 log curves.</li>
-<li>Implement support for ACEScct colourspace and ACEScct log curves.</li>
+<em>ROMM RGB</em>, <em>sRGB</em>, <em>V-Gamut</em>. It introduces small computation discrepancies compared to Colour 0.3.8.</p></li>
+<li><p>Implement support for Canon Log 2 and Canon Log 3 log curves.</p></li>
+<li><p>Implement support for RedWideGamut RGB colourspace and Log3G10, Log3G12 log curves.</p></li>
+<li><p>Implement support for ACEScct colourspace and ACEScct log curves.</p></li>
 </ul>
 <p>Colour can now be installed from <a class="reference external" href="https://conda-forge.github.io/">conda-forge</a>:</p>
-<pre class="code shell"><a name="rest_code_0ce0698a69c2417d9bc6431c170c783e-1"></a>conda install -c conda-forge colour-science
+<pre class="code shell"><a name="rest_code_49d9706769474c7aa1baf04ea5e00f5f-1"></a>conda install -c conda-forge colour-science
 </pre>
 <p>Visit the <a class="reference external" href="https://github.com/colour-science/colour/releases/tag/v0.3.9">Colour's releases page</a>
 for complete details.</p>
@@ -199,8 +199,8 @@ for complete details.</p>
 <h2>Colour - HDRI 0.1.2</h2>
 <p>This release introduces some new capabilities:</p>
 <ul class="simple">
-<li>Support for Adobe DNG SDK colour processing for improved white balancing.</li>
-<li>Custom CIE LCHab highlights recovery definition.</li>
+<li><p>Support for Adobe DNG SDK colour processing for improved white balancing.</p></li>
+<li><p>Custom CIE LCHab highlights recovery definition.</p></li>
 </ul>
 <p>Visit the <a class="reference external" href="https://github.com/colour-science/colour-hdri/releases/tag/v0.1.2">Colour - HDRI's releases page</a>
 for complete details.</p>
@@ -215,79 +215,37 @@ users and summarizes decades of cumulated experience using the system.</p>
 <div class="section" id="authors">
 <h3>Authors</h3>
 <ul class="simple">
-<li>
-<strong>Sean Cooper</strong>, <em>Sony Pictures Imageworks</em>
-</li>
-<li>
-<strong>Thomas Mansencal</strong>, <em>Wingnut Films Production Ltd.</em>
-</li>
-<li>
-<strong>Kevin Wheatley</strong>, <em>Framestore</em>
-</li>
+<li><p><strong>Sean Cooper</strong>, <em>Sony Pictures Imageworks</em></p></li>
+<li><p><strong>Thomas Mansencal</strong>, <em>Wingnut Films Production Ltd.</em></p></li>
+<li><p><strong>Kevin Wheatley</strong>, <em>Framestore</em></p></li>
 </ul>
 </div>
 <div class="section" id="contributors">
 <h3>Contributors</h3>
 <ul class="simple">
-<li>
-<strong>Remi Achard</strong>, <em>Eclair</em>
-</li>
-<li>
-<strong>Steve Agland</strong>, <em>Animal Logic</em>
-</li>
-<li>
-<strong>Haarm-Pieter Duiker</strong>, <em>Duiker Research</em>
-</li>
-<li>
-<strong>Alex Fry</strong>, <em>Animal Logic</em>
-</li>
-<li>
-<strong>Brian Karis</strong>, <em>Epic Games</em>
-</li>
-<li>
-<strong>Sebastien Lagarde</strong>, <em>Unity Technologies</em>
-</li>
-<li>
-<strong>Robert Molholm</strong>, <em>Industrial Light and Magic</em>
-</li>
-<li>
-<strong>Michael Parsons</strong>, <em>The Moving Picture Company</em>
-</li>
-<li>
-<strong>Nick Shaw</strong>, <em>Antler Post</em>
-</li>
+<li><p><strong>Remi Achard</strong>, <em>Eclair</em></p></li>
+<li><p><strong>Steve Agland</strong>, <em>Animal Logic</em></p></li>
+<li><p><strong>Haarm-Pieter Duiker</strong>, <em>Duiker Research</em></p></li>
+<li><p><strong>Alex Fry</strong>, <em>Animal Logic</em></p></li>
+<li><p><strong>Brian Karis</strong>, <em>Epic Games</em></p></li>
+<li><p><strong>Sebastien Lagarde</strong>, <em>Unity Technologies</em></p></li>
+<li><p><strong>Robert Molholm</strong>, <em>Industrial Light and Magic</em></p></li>
+<li><p><strong>Michael Parsons</strong>, <em>The Moving Picture Company</em></p></li>
+<li><p><strong>Nick Shaw</strong>, <em>Antler Post</em></p></li>
 </ul>
 </div>
 <div class="section" id="reviewers">
 <h3>Reviewers</h3>
 <ul class="simple">
-<li>
-<strong>Lars Borg</strong>, <em>Adobe</em>
-</li>
-<li>
-<strong>Alasdair Coull</strong>, <em>Wingnut Films Production Ltd.</em>
-</li>
-<li>
-<strong>Marie Fetiveau</strong>, <em>Rodeo FX</em>
-</li>
-<li>
-<strong>Lucien Fostier</strong>, <em>Image Engine Design</em>
-</li>
-<li>
-<strong>Alex Fry</strong>, <em>Electronic Arts</em>
-</li>
-<li>
-<strong>Thomas Hourdel</strong>, <em>Unity Technologies</em>
-</li>
-<li>
-<strong>Anders Langlands</strong>, <em>Weta Digital</em>
-</li>
-<li>
-<strong>Jasmin Patry</strong>, <em>Sucker Punch</em>
-</li>
-<li>
-<strong>Troy James Sobotka</strong>, <em>Freelancer</em>
-</li>
+<li><p><strong>Lars Borg</strong>, <em>Adobe</em></p></li>
+<li><p><strong>Alasdair Coull</strong>, <em>Wingnut Films Production Ltd.</em></p></li>
+<li><p><strong>Marie Fetiveau</strong>, <em>Rodeo FX</em></p></li>
+<li><p><strong>Lucien Fostier</strong>, <em>Image Engine Design</em></p></li>
+<li><p><strong>Alex Fry</strong>, <em>Electronic Arts</em></p></li>
+<li><p><strong>Thomas Hourdel</strong>, <em>Unity Technologies</em></p></li>
+<li><p><strong>Anders Langlands</strong>, <em>Weta Digital</em></p></li>
+<li><p><strong>Jasmin Patry</strong>, <em>Sucker Punch</em></p></li>
+<li><p><strong>Troy James Sobotka</strong>, <em>Freelancer</em></p></li>
 </ul>
 <p>The document can be found at this URL: <a class="reference external" href="https://doi.org/10.5281/zenodo.345624">https://doi.org/10.5281/zenodo.345624</a>
 and the LaTex code is hosted on <a class="reference external" href="https://github.com/colour-science/aces-retrospective-and-enhancements">Github</a>.</p>
@@ -374,10 +332,7 @@ and the LaTex code is hosted on <a class="reference external" href="https://gith
 <div class="text-center text-light py-3"><span>Copyright © 2013-2019 – Colour Developers</span></div>
 
     
-</footer><!-- End of Footer --><script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
-    moment.locale("en");
-    fancydates(0, "YYYY-MM-DD HH:mm");
-    </script><!-- end fancy dates --><script>
+</footer><!-- End of Footer --><script src="../../assets/js/all-nocdn.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {

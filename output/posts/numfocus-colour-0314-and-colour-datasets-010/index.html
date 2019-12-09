@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="h-100" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 " lang="en">
 <head>
 <meta charset="utf-8">
@@ -29,12 +29,14 @@ a new Python package">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2019-10-27T08:39:18Z">
 </head>
-<body class="d-flex flex-column h-100">
+<body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
-<!-- Navbar -->
+<!-- Menubar -->
 
-<nav class="navbar navbar-expand-xl navbar-light bg-white static-top p-3"><div class="container">
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-light bg-light
+"><div class="container">
 <!-- This keeps the margins nice -->
         <a class="navbar-brand" href="https://www.colour-science.org/">
 
@@ -45,7 +47,7 @@ a new Python package">
         </button>
 
         <div class="collapse navbar-collapse" id="bs-navbar">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav mr-auto">
 <li class="nav-item dropdown">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Development</a>
             <div class="dropdown-menu shadow">
@@ -120,9 +122,10 @@ a new Python package">
 <!-- /.navbar-collapse -->
     </div>
 <!-- /.container -->
-</nav><!-- End of Navbar --><!-- Main --><div class="container" id="content" role="main">
+</nav><!-- End of Menubar --><!-- Main --><div class="container" id="content" role="main">
     <div class="body-content">
         <!--Body content-->
+        
         
         
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">NumFOCUS, Colour 0.3.14 and Colour - Datasets 0.1.0!</a></h1>
@@ -187,11 +190,11 @@ Python 2.x.</div>
 <a class="reference external" href="https://github.com/colour-science/colour/issues/507">Hacktoberfest</a>.</p>
 <p>Thanks to:</p>
 <ul class="simple">
-<li><a class="reference external" href="https://github.com/Chinmayrane16">@Chinmayrane16</a></li>
-<li><a class="reference external" href="https://github.com/evalevanto">@evalevanto</a></li>
-<li><a class="reference external" href="https://github.com/feralpoosum">@feralpoosum</a></li>
-<li><a class="reference external" href="https://github.com/BPearlstine">@BPearlstine</a></li>
-<li><a class="reference external" href="https://github.com/pavithraes">@pavithraes</a></li>
+<li><p><a class="reference external" href="https://github.com/Chinmayrane16">@Chinmayrane16</a></p></li>
+<li><p><a class="reference external" href="https://github.com/evalevanto">@evalevanto</a></p></li>
+<li><p><a class="reference external" href="https://github.com/feralpoosum">@feralpoosum</a></p></li>
+<li><p><a class="reference external" href="https://github.com/BPearlstine">@BPearlstine</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pavithraes">@pavithraes</a></p></li>
 </ul>
 <p>for their contributions! This was a good opportunity for us to revise and
 update both the <a class="reference external" href="https://www.colour-science.org/contributing/">Contributing</a>
@@ -203,19 +206,17 @@ guides.</p>
 <p><em>Colour</em> now implements an automatic colour conversion graph based on
 <a class="reference external" href="https://networkx.github.io">NetworkX</a> and enabling easier colour
 conversions:</p>
-<pre class="code python"><a name="rest_code_11a0fffa47454f17affd3c2af1e26cbf-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">sd</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">COLOURCHECKERS_SDS</span><span class="p">[</span><span class="s1">'ColorChecker N Ohta'</span><span class="p">][</span><span class="s1">'dark skin'</span><span class="p">]</span>
-<a name="rest_code_11a0fffa47454f17affd3c2af1e26cbf-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">convert</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="s1">'Spectral Distribution'</span><span class="p">,</span> <span class="s1">'sRGB'</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="p">{</span><span class="s1">'mode'</span><span class="p">:</span> <span class="s1">'Short'</span><span class="p">})</span>
+<pre class="code python"><a name="rest_code_738bac2c30234d02bf82b3baca3ae85a-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">sd</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">COLOURCHECKERS_SDS</span><span class="p">[</span><span class="s1">'ColorChecker N Ohta'</span><span class="p">][</span><span class="s1">'dark skin'</span><span class="p">]</span>
+<a name="rest_code_738bac2c30234d02bf82b3baca3ae85a-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">convert</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="s1">'Spectral Distribution'</span><span class="p">,</span> <span class="s1">'sRGB'</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="p">{</span><span class="s1">'mode'</span><span class="p">:</span> <span class="s1">'Short'</span><span class="p">})</span>
 </pre>
-<pre class="literal-block">
-===============================================================================
+<pre class="literal-block">===============================================================================
 *                                                                             *
 *   [ Conversion Path ]                                                       *
 *                                                                             *
 *   "sd_to_XYZ" --&gt; "XYZ_to_sRGB"                                             *
 *                                                                             *
 ===============================================================================
-array([ 0.45675795,  0.30986982,  0.24861924])
-</pre>
+array([ 0.45675795,  0.30986982,  0.24861924])</pre>
 <img alt="https://colour.readthedocs.io/en/develop/_images/Examples_Colour_Automatic_Conversion_Graph.png" src="https://colour.readthedocs.io/en/develop/_images/Examples_Colour_Automatic_Conversion_Graph.png">
 </div>
 <div class="section" id="image-input-and-output">
@@ -224,7 +225,7 @@ array([ 0.45675795,  0.30986982,  0.24861924])
 writing images, it will be used if <a class="reference external" href="https://github.com/OpenImageIO/oiio">OpenImageIO</a>
 is not available. If you wish to read <em>OpenEXR</em> files or develop <em>Colour</em>, you
 will need to install the FreeImage plugin as follows:</p>
-<pre class="code shell"><a name="rest_code_71f7d48b5c8b4349b9f3d047c9bb5619-1"></a>$ python -c <span class="s2">"import imageio;imageio.plugins.freeimage.download()"</span>
+<pre class="code shell"><a name="rest_code_5d37d03e3c864bd9bf0aa445e90a5490-1"></a>$ python -c <span class="s2">"import imageio;imageio.plugins.freeimage.download()"</span>
 </pre>
 <p>Support for <a class="reference external" href="https://github.com/OpenImageIO/oiio/releases/tag/Release-2.0.3">OpenImageIO 2.x</a>
 has also been implemented.</p>
@@ -275,11 +276,10 @@ science datasets management.</p>
 <a class="reference external" href="https://zenodo.org/">Zenodo</a> under the
 <a class="reference external" href="https://zenodo.org/communities/colour-science-datasets/">Colour Science - Datasets</a>
 community:</p>
-<pre class="code python"><a name="rest_code_5f67a918f0dc48dbb9aba5fcedc0d9e8-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_datasets</span>
-<a name="rest_code_5f67a918f0dc48dbb9aba5fcedc0d9e8-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">colour_datasets</span><span class="o">.</span><span class="n">datasets</span><span class="p">())</span>
+<pre class="code python"><a name="rest_code_a9f64bd0275142a7b199696f181502e5-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_datasets</span>
+<a name="rest_code_a9f64bd0275142a7b199696f181502e5-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">colour_datasets</span><span class="o">.</span><span class="n">datasets</span><span class="p">())</span>
 </pre>
-<pre class="literal-block">
-colour-science-datasets
+<pre class="literal-block">colour-science-datasets
 =======================
 
 Datasets : 16
@@ -304,26 +304,25 @@ Datasets
 [ ] 3245895 : New Color Specifications for ColorChecker SG and Classic Charts
 [ ] 3252742 : Observer Function Database
 [ ] 3269922 : Paper Spectra
-[ ] 3372171 : RAW to ACES Utility Data
-</pre>
+[ ] 3372171 : RAW to ACES Utility Data</pre>
 <p><strong>Colour - Datasets</strong> was created to overcome issues encountered frequently
 when trying to access or use colour science datasets:</p>
 <ul class="simple">
-<li>No straightforward ingestion path for dataset content.</li>
-<li>No simple loading mechanism for dataset content.</li>
-<li>Unavailability of the dataset, e.g. download url is down, dataset content is passed directly from hand to hand.</li>
-<li>No information regarding the definitive origination of the dataset.</li>
+<li><p>No straightforward ingestion path for dataset content.</p></li>
+<li><p>No simple loading mechanism for dataset content.</p></li>
+<li><p>Unavailability of the dataset, e.g. download url is down, dataset content is passed directly from hand to hand.</p></li>
+<li><p>No information regarding the definitive origination of the dataset.</p></li>
 </ul>
 <p><strong>Colour - Datasets</strong> offers all the above: it allows users to ingest and load
 colour science datasets with a single function call. The datasets information
 is hosted on <a class="reference external" href="https://zenodo.org/">Zenodo</a> where the record for a dataset typically contain:</p>
 <ul class="simple">
-<li>An urls.txt file describing the urls to source the dataset files from.</li>
-<li>A copy of those files in the eventuality where the source files are not
+<li><p>An urls.txt file describing the urls to source the dataset files from.</p></li>
+<li><p>A copy of those files in the eventuality where the source files are not
 available or the content has changed without notice. This actually happened
 to the <em>Camera Spectral Sensitivity Database</em> dataset during the project
-incubation.</li>
-<li>Information about the authors, content and licensing.</li>
+incubation.</p></li>
+<li><p>Information about the authors, content and licensing.</p></li>
 </ul>
 </div>
 <div class="section" id="other-projects">
@@ -409,10 +408,7 @@ will follow in the coming days.</p>
 <div class="text-center text-light py-3"><span>Copyright © 2013-2019 – Colour Developers</span></div>
 
     
-</footer><!-- End of Footer --><script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
-    moment.locale("en");
-    fancydates(0, "YYYY-MM-DD HH:mm");
-    </script><!-- end fancy dates --><script>
+</footer><!-- End of Footer --><script src="../../assets/js/all-nocdn.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {
