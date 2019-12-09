@@ -99,9 +99,10 @@ Special Sponsors
                     <p><a href="https://github.com/remia" target="_blank">Remi Achard</a></p>
                 </td>
                 <td align="center" valign="middle">
-                    <a href="https://dummyimage.com/176x176/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
-                        <img class="img-fluid" style="max-width:176px;" src="https://dummyimage.com/176x176/f9f9fc/000000.png&text=Your+Logo+Here">
+                    <a href="http://virtualmatter.org/" target="_blank">
+                        <img class="img-fluid" style="max-width:176px;" src="https://images.opencollective.com/kevin-whitfield/bc24569/avatar.png">
                     </a>
+                    <p><a href="http://virtualmatter.org/" target="_blank">Kevin Whitfield</a></p>
                 </td>
                 <td align="center" valign="middle">
                     <a href="https://dummyimage.com/176x176/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
