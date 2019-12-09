@@ -77,41 +77,43 @@ Special Sponsors
 
 .. raw:: html
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <td align="center" valign="middle">
-                    <a href="https://www.jetbrains.com/" target="_blank">
-                        <img class="img-fluid" style="max-height:176px;" src="https://i.imgur.com/nN1VDUG.png">
-                    </a>
-                    <p><a href="https://www.jetbrains.com/" target="_blank">JetBrains</a></p>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://github.com/sobotka" target="_blank">
-                        <img class="img-fluid" style="max-width:176px;" src="https://avatars2.githubusercontent.com/u/59577">
-                    </a>
-                    <p><a href="https://github.com/sobotka" target="_blank">Troy James Sobotka</a></p>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://github.com/remia" target="_blank">
-                        <img class="img-fluid" style="max-width:176px;" src="https://avatars3.githubusercontent.com/u/1922806">
-                    </a>
-                    <p><a href="https://github.com/remia" target="_blank">Remi Achard</a></p>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="http://virtualmatter.org/" target="_blank">
-                        <img class="img-fluid" style="max-width:176px;" src="https://ca.slack-edge.com/T02KH93GH-UCFD09UUT-g2f156f5e08e-512">
-                    </a>
-                    <p><a href="http://virtualmatter.org/" target="_blank">Kevin Whitfield</a></p>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://dummyimage.com/176x176/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
-                        <img class="img-fluid" style="max-width:176px;" src="https://dummyimage.com/176x176/f9f9fc/000000.png&text=Your+Logo+Here">
-                    </a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="table-responsive">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td align="center" valign="middle">
+                        <a href="https://www.jetbrains.com/" target="_blank">
+                            <img class="img-fluid" style="max-height:176px;" src="https://i.imgur.com/nN1VDUG.png">
+                        </a>
+                        <p><a href="https://www.jetbrains.com/" target="_blank">JetBrains</a></p>
+                    </td>
+                    <td align="center" valign="middle">
+                        <a href="https://github.com/sobotka" target="_blank">
+                            <img class="img-fluid" style="max-width:176px;" src="https://avatars2.githubusercontent.com/u/59577">
+                        </a>
+                        <p><a href="https://github.com/sobotka" target="_blank">Troy James Sobotka</a></p>
+                    </td>
+                    <td align="center" valign="middle">
+                        <a href="https://github.com/remia" target="_blank">
+                            <img class="img-fluid" style="max-width:176px;" src="https://avatars3.githubusercontent.com/u/1922806">
+                        </a>
+                        <p><a href="https://github.com/remia" target="_blank">Remi Achard</a></p>
+                    </td>
+                    <td align="center" valign="middle">
+                        <a href="http://virtualmatter.org/" target="_blank">
+                            <img class="img-fluid" style="max-width:176px;" src="https://ca.slack-edge.com/T02KH93GH-UCFD09UUT-g2f156f5e08e-512">
+                        </a>
+                        <p><a href="http://virtualmatter.org/" target="_blank">Kevin Whitfield</a></p>
+                    </td>
+                    <td align="center" valign="middle">
+                        <a href="https://dummyimage.com/176x176/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img class="img-fluid" style="max-width:176px;" src="https://dummyimage.com/176x176/f9f9fc/000000.png&text=Your+Logo+Here">
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <h1 class="p-name entry-title mt-3"
         itemprop="headline name"><a href="."
