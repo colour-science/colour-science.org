@@ -23,7 +23,7 @@ SITE_URL = "https://www.colour-science.org/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 BASE_URL = "https://www.colour-science.org/"
-BLOG_EMAIL = "colour-science@googlegroups.com"
+BLOG_EMAIL = "colour-developers@colour-science.org"
 BLOG_DESCRIPTION = "Colour: Colour Science for Python"  # (translatable)
 
 # Nikola is multilingual!
@@ -205,7 +205,7 @@ NAVIGATION_LINKS = {
         ),
         (
             (
-                ('mailto:colour-science@googlegroups.com',
+                ('mailto:colour-developers@colour-science.org',
                  '<span class="font-weight-bold">Contact Us</span>'),
                 ('https://gitter.im/colour-science/colour', 'Gitter'),
                 ('https://groups.google.com/forum/#!forum/colour-science',
@@ -1016,7 +1016,7 @@ LICENSE = ""
 CONTENT_FOOTER = """
 <ul class="nav justify-content-center">
     <li class="nav-item mx-3">
-        <a href="mailto:colour-science@googlegroups.com">
+        <a href="mailto:colour-developers@colour-science.org">
             <span class="fa fa-envelope fa-2x text-light"></span>
         </a>
     </li>

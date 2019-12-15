@@ -756,7 +756,7 @@ submitting a *pull request*. It is perfectly fine to modify your local branch
 as you wish.
 
 However, if you need to change history on a public and used **feature**
-branch, please inform the `Colour developers <mailto:colour-science@googlegroups.com>`__
+branch, please inform the `Colour Developers <mailto:colour-developers@colour-science.org>`__
 in order to avoid commit losses or a merging disaster.
 
 Releasing Colour
