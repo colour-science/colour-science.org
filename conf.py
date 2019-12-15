@@ -237,13 +237,12 @@ THEME = "colour-science"
 
 # Primary color of your theme. This will be used to customize your theme.
 # Must be a HEX value.
-THEME_COLOR = '#19191d'
+THEME_COLOR = '#191920'
 
 # Theme configuration. Fully theme-dependent. (translatable)
 # Examples below are for bootblog4.
 THEME_CONFIG = {
     DEFAULT_LANG: {
-        'navbar_light': True,
         # Show the latest featured post in a large box, with the previewimage as its background.
         # 'featured_large': False,
         # Show the first (remaining) two featured posts in small boxes.

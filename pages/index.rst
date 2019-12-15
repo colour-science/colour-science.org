@@ -11,54 +11,60 @@
 .. raw:: html
 
     <div class="container px-0">
-        <div class="row">
-            <div class="col">
-                <div class="jumbotron mb-0">
-                    <img src="/images/Colour_Logo_Medium_Tight_001.png"
-                    class="img-responsive" alt="Colour - Logo">
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col">
+                        <img src="/images/Colour_Logo_Medium_Tight_001.png"
+                        class="img-responsive" alt="Colour - Logo">
+                </div>
 
-                    <p class="pt-5">
-                        <strong><span class="text-primary">Colour</span></strong>
-                        is an open-source <a href="https://www.python.org/">Python</a>
-                        package providing a comprehensive number of algorithms and datasets
-                        for colour science.
-                    </p>
-                    <p>
-                        It is freely available under the
-                        <a href="https://opensource.org/licenses/BSD-3-Clause">New BSD License</a>
-                        terms.
-                    </p>
-                    <p>
-                        Developed with <a href="https://www.jetbrains.com/pycharm/">
-                        <img src="/images/PyCharm_Logo.svg" width="48" alt=""> JetBrains PyCharm</a>.
-                    </p>
+                <div class="col">
+                        <p class="pt-3">
+                            <strong><span class="text-primary">Colour</span></strong>
+                            is an open-source <a href="https://www.python.org/">Python</a>
+                            package providing a comprehensive number of algorithms and datasets
+                            for colour science.
+                        </p>
+                        <p>
+                            It is freely available under the
+                            <a href="https://opensource.org/licenses/BSD-3-Clause">New BSD License</a>
+                            terms.
+                        </p>
+                        <p>
+                            Developed with <a href="https://www.jetbrains.com/pycharm/">
+                            <img src="/images/PyCharm_Logo.svg" width="48" alt=""> JetBrains PyCharm</a>.
+                        </p>
+                        <div class="pt-3">
+                            <a class="btn btn-primary btn-block mt-3"
+                                href="/installation-guide/"
+                                role="button">
+                                <h4 class="text-light my-0">Get Started</h4>
+                            </a>
+                            <a class="btn btn-secondary bg-white btn-block mt-3"
+                                href="https://github.com/colour-science/colour/archive/v0.3.14.zip"
+                                role="button">
+                                <h4 class="my-0"><span class="fa fa-download">&nbsp;</span> 0.3.14 Alpha</h4>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="jumbotron">
-                    <a class="btn btn-primary btn-lg btn-block"
-                        href="/installation-guide/"
-                        role="button">
-                        <h4 class="text-light my-0">Get Started</h4>
-                    </a>
-                    <a class="btn btn-secondary bg-white btn-lg btn-block"
-                        href="https://github.com/colour-science/colour/archive/v0.3.14.zip"
-                        role="button">
-                        <h4 class="my-0"><span class="fa fa-download">&nbsp;</span> 0.3.14 Alpha</h4>
-                    </a>
-                </div>
-                <div class="jumbotron">
-                    <a href="https://numfocus.org/">
-                        <img src="/images/AffiliatedProject-LRG-transparent.png"
-                        class="img-responsive" alt="NumFOCUS Affiliated Project">
-                    </a>
-
-                    <p class="pt-5">
+        </div>
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col">
+                    <p class="pt-3">
                         <strong><span class="text-primary">Colour</span></strong> is
                         an affiliated project of
                         <a href="https://numfocus.org/">NumFOCUS</a>, a 501(c)(3)
                         nonprofit in the United States.
                     </p>
+                </div>
+                <div class="col">
+                    <a href="https://numfocus.org/">
+                        <img src="/images/AffiliatedProject-LRG-transparent.png"
+                        class="img-responsive" alt="NumFOCUS Affiliated Project">
+                    </a>
                 </div>
             </div>
         </div>
