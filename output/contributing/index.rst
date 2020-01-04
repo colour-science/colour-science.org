@@ -207,7 +207,7 @@ Here is a succinct overview of the steps you will most likely go through:
 
 .. code:: shell
 
-    $ poetry install
+    $ poetry install --extras "optional plotting"
 
 .. class:: alert alert-dismissible alert-warning
 
@@ -222,7 +222,7 @@ Here is a succinct overview of the steps you will most likely go through:
 
     | *Note*
     |
-    | At the time of this writing, the preview version of *Poetry*, i.e. 1.0.0b1,
+    | At the time of this writing, the preview version of *Poetry*, i.e. 1.0.0b3,
         is recommended to be used. Poetry can be updated to the latest preview
         version by issuing `poetry self:update --preview`.
 
