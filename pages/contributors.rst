@@ -479,7 +479,7 @@
                 <div class="card-footer">
                     <a href="https://github.com/MaxSchambach" class="card-link">Github</a>
                 </div>
-            </div
+            </div>
         </div>
         <div class="col">
         </div>
