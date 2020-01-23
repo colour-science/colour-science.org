@@ -38,7 +38,7 @@
     <ul class="list-inline">
         <li class="list-inline-item">
             <a href="https://github.com/colour-science/colour/actions">
-                <img src="https://github.com/colour-science/colour/workflows/Continuous%20Integration/badge.svg" alt="Develop Build Status">
+                <img src="https://img.shields.io/github/workflow/status/colour-science/colour/Continuous%20Integration?label=actions&logo=github&style=flat-square" alt="Develop Build Status">
             </a>
         </li>
         <li class="list-inline-item">
