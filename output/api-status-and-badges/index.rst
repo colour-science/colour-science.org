@@ -60,8 +60,8 @@
 
     <ul class="list-inline">
         <li class="list-inline-item">
-            <a href="https://doi.org/10.5281/zenodo.3519603">
-                <img src="https://img.shields.io/badge/DOI-10.5281/zenodo.3519603-blue.svg?style=flat-square" alt="10.5281/zenodo.3519603">
+            <a href="https://doi.org/10.5281/zenodo.3627408">
+                <img src="https://img.shields.io/badge/DOI-10.5281/zenodo.3627408-blue.svg?style=flat-square" alt="10.5281/zenodo.3627408">
             </a>
         </li>
     </ul>
