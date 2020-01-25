@@ -161,7 +161,7 @@ development:
 
     $ git clone git://github.com/colour-science/colour.git
     $ cd colour
-    $ poetry install --extras "optional plotting"
+    $ poetry install --extras "graphviz optional plotting"
 
 .. class:: alert alert-dismissible alert-info
 

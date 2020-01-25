@@ -206,6 +206,17 @@ Illuminant Spectral Dataset
 - FL3.13
 - FL3.14
 - FL3.15
+- ID50
+- ID65
+- LED-B1
+- LED-B2
+- LED-B3
+- LED-B4
+- LED-B5
+- LED-BH1
+- LED-RGB1
+- LED-V1
+- LED-V2
 - HP1
 - HP2
 - HP3
@@ -627,8 +638,9 @@ Optical Phenomena
 Light Quality
 -------------
 
-- Colour Rendering Index computation
-- Colour Quality Scale computation
+- Colour Rendering Index (CRI) computation
+- Colour Quality Scale (CQS) computation
+- Academy Spectral Similarity Index (SSI) computation
 
 Spectral Up-sampling & Reflectance Recovery
 -------------------------------------------

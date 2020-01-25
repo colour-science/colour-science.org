@@ -207,7 +207,7 @@ Here is a succinct overview of the steps you will most likely go through:
 
 .. code:: shell
 
-    $ poetry install --extras "optional plotting"
+    $ poetry install --extras "graphviz optional plotting"
 
 .. class:: alert alert-dismissible alert-warning
 
@@ -784,7 +784,8 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                         <li>
                             <div class="checkbox">
                                 <input type="checkbox" value="" />
-                                <label class="strikethrough">Check open issues on current
+                                <label class="strikethrough">Check open issues
+                                    on the current
                                     <a class="reference external" href="https://github.com/colour-science/colour/milestones">milestone</a>
                                 </label>
                             </div>
@@ -801,8 +802,8 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                         <li>
                             <div class="checkbox">
                                 <input type="checkbox" value="" />
-                                <label class="strikethrough">Run the Jupyter notebooks in
-                                    <a class="reference external" href="https://github.com/colour-science/colour-notebooks">colour-notebooks</a>
+                                <label class="strikethrough">Run the Jupyter
+                                    notebooks in <a class="reference external" href="https://github.com/colour-science/colour-notebooks">colour-notebooks</a>
                                 </label>
                             </div>
                         </li>
@@ -818,7 +819,7 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                         <li>
                             <div class="checkbox">
                                 <input type="checkbox" value="" />
-                                <label class="strikethrough">Reserve
+                                <label class="strikethrough">Reserve the
                                     <a class="reference external" href="https://zenodo.org/record/376790">Zenodo DOI
                                     </a>
                                 </label>
@@ -842,13 +843,36 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                             </div>
                         </li>
                         <li>
+                            <dt>Rebuild a clean Virtual Environment</dt>
+                            <dd>
+                                <ul style="list-style-type: none;">
+                                    <li>
+                                        <div class="checkbox">
+                                            <input type="checkbox" value="" />
+                                            <label class="strikethrough"> Remove the current virtual environment:
+                                            </label>
+                                        </div>
+                                        <pre class="code shell">$ poetry env info -p | xargs rm -r</pre>
+                                    </li>
+                                    <li>
+                                        <div class="checkbox">
+                                            <input type="checkbox" value="" />
+                                            <label class="strikethrough"> Create a pristine virtual environment:
+                                            </label>
+                                        </div>
+                                        <pre class="code shell">$ rm poetry.lock && poem 3 && poetry install --extras "graphviz optional plotting"</pre>
+                                    </li>
+                                </ul>
+                            </dd>
+                        </li>
+                        <li>
                             <div class="checkbox">
                                 <input type="checkbox" value="" />
                                 <label class="strikethrough">Run the
                                     <em>formatting</em> task with
-                                    <a class="reference external" href="https://github.com/google/yapf">Yapf</a>, it is very slow on
-                                    <em>Colour</em> and is currently not run by default.
-
+                                    <a class="reference external" href="https://github.com/google/yapf">Yapf</a>,
+                                    it is very slow on <em>Colour</em> and is
+                                    currently not run by default:
                                 </label>
                             </div>
                             <pre class="code shell">$ invoke formatting --yapf</pre>
@@ -857,8 +881,9 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                             <div class="checkbox">
                                 <input type="checkbox" value="" />
                                 <label class="strikethrough">Run the
-                                    <em>examples</em> task with
-                                    <em>figures</em>: They currently need to be visually assessed for correctness.
+                                    <em>examples</em> task with <em>figures</em>:
+                                    They need to be visually assessed for
+                                    correctness.
                                 </label>
                             </div>
                             <pre class="code shell">$ invoke examples --plots</pre>
@@ -867,11 +892,11 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                             <div class="checkbox">
                                 <input type="checkbox" value="" />
                                 <label class="strikethrough">Run the
-                                    <em>preflight</em> task: It runs various unit tests, code formatting, code quality tasks and
-                                    also run the examples.
+                                    <em>build</em> task: It cleans the project,
+                                    runs the unit tests, etc...
                                 </label>
                             </div>
-                            <pre class="code shell">$ invoke preflight</pre>
+                            <pre class="code shell">$ invoke build</pre>
                         </li>
                     </ul>
                 </dd>
@@ -887,7 +912,8 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                             <div class="checkbox">
                                 <input type="checkbox" value="" />
                                 <label class="strikethrough">Run the
-                                    <em>virtualise</em> task: It builds the project, deploy it to a virtual environment and run the
+                                    <em>virtualise</em> task: It deploys the
+                                    project to a virtual environment and run the
                                     unit tests.
                                 </label>
                             </div>
@@ -911,6 +937,14 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                                             <div class="checkbox">
                                                 <input type="checkbox" value="" />
                                                 <label class="strikethrough">
+                                                    <a class="reference external" href="https://github.com/colour-science/colour/blob/develop/colour/__init__.py">__init__.py</a>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkbox">
+                                                <input type="checkbox" value="" />
+                                                <label class="strikethrough">
                                                     <a class="reference external" href="https://github.com/colour-science/colour/blob/develop/pyproject.toml">pyproject.toml</a>
                                                 </label>
                                             </div>
@@ -919,13 +953,14 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                                             <div class="checkbox">
                                                 <input type="checkbox" value="" />
                                                 <label class="strikethrough">
-                                                    <a class="reference external" href="https://github.com/colour-science/colour/blob/develop/colour/__init__.py">__init__.py</a>
+                                                    <a class="reference external" href="https://github.com/colour-science/colour/blob/develop/colour/setup.py">setup.py</a>
                                                 </label>
                                             </div>
                                         </li>
                                     </ul>
-                                    <p>A typical commit message for version raise is as follows:</p>
-                                    <pre class="literal-block">Raise package version to 0.3.11.</pre>
+                                    <p>A typical commit message for version
+                                    raise is as follows:</p>
+                                    <pre class="literal-block">Raise package version to 0.3.15.</pre>
                                 </dd>
                             </dl>
                         </li>
@@ -961,15 +996,18 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                             <div class="checkbox">
                                 <input type="checkbox" value="" />
                                 <label class="strikethrough">Run the
-                                    <em>tag</em> task: It should prompt for tagging the repository accordingly to the defined version using
+                                    <em>tag</em> task: It should prompt for
+                                    tagging the repository accordingly to the
+                                    defined version using
                                     <a class="reference external" href="https://danielkummer.github.io/git-flow-cheatsheet/">git-flow</a>.
                                 </label>
                             </div>
                             <pre class="code shell">$ invoke tag</pre>
-                            <p>A typical tag message for a <em>Colour</em> version is as follows:</p>
-                            <pre class="literal-block">Create Colour v0.3.11 version.</pre>
+                            <p>A typical tag message for a <em>Colour</em>
+                            version is as follows:</p>
+                            <pre class="literal-block">Create Colour v0.3.15 version.</pre>
                             In the eventuality where the tag creation failed, it might be created manually as follows:
-                            <pre class="code shell">$ git tag -a -m "Create Colour v0.3.11 version." v0.3.11</pre>
+                            <pre class="code shell">$ git tag -a -m "Create Colour v0.3.15 version." v0.3.15</pre>
                         </li>
                     </ul>
                 </dd>
@@ -1004,7 +1042,8 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                         <li>
                             <div class="checkbox">
                                 <input type="checkbox" value="" />
-                                <label class="strikethrough">Upload Pypi package and create new version in
+                                <label class="strikethrough">Upload the Pypi
+                                    package and create new version in
                                     <a class="reference external" href="https://zenodo.org/record/376790">Zenodo</a>
                                 </label>
                             </div>
@@ -1025,7 +1064,8 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                                     <a class="reference external" href="https://github.com/conda-forge/colour-science-feedstock/blob/master/recipe/meta.yaml#L2">conda-forge</a>
                                     version. The
                                     <a class="reference external" href="https://github.com/conda-forge/colour-science-feedstock/blob/master/recipe/meta.yaml#L3">sha256</a>
-                                    attribute must be updated and can be computed with the
+                                    attribute must be updated and can be
+                                    computed with the
                                     <em>sha256</em> task:
                                 </label>
                             </div>

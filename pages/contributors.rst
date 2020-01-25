@@ -760,6 +760,7 @@
                             <li><a href="https://github.com/brandondube">brandondube</a></li>
                             <li><a href="https://github.com/briend">briend</a></li>
                             <li><a href="https://github.com/cclauss">cclauss</a></li>
+                            <li><a href="https://github.com/Chandler">Chandler</a></li>
                         </ul>
                     </p>
                 </div>
@@ -770,7 +771,6 @@
                 <div class="card-body">
                     <p class="card-text">
                         <ul class="list-unstyled text-center">
-                            <li><a href="https://github.com/Chandler">Chandler</a></li>
                             <li><a href="https://github.com/chesschi">chesschi</a></li>
                             <li><a href="https://github.com/codycuellar">codycuellar</a></li>
                             <li><a href="https://github.com/dtbulmerJRs">dtbulmerJRs</a></li>
@@ -792,6 +792,7 @@
                             <li><a href="https://github.com/lensz">lensz</a></li>
                             <li><a href="https://github.com/MarcusCalhoun-Lopez">MarcusCalhoun-Lopez</a></li>
                             <li><a href="https://github.com/matthiasbirkich">matthiasbirkich</a></li>
+                            <li><a href="https://github.com/meshing">meshing</a></li>
                         </ul>
                     </p>
                 </div>
@@ -802,7 +803,7 @@
                 <div class="card-body">
                     <p class="card-text">
                         <ul class="list-unstyled text-center">
-                            <li><a href="https://github.com/meshing">meshing</a></li>
+                            <li><a href="https://github.com/mokincha">mokincha</a></li>
                             <li><a href="https://github.com/monkeywithacupcake">monkeywithacupcake</a></li>
                             <li><a href="https://github.com/Myndex">Myndex</a></li>
                             <li><a href="https://github.com/naavis">naavis</a></li>

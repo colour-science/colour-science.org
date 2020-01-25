@@ -8,6 +8,7 @@
 .. type: text
 
 -   `Latest <https://colour.readthedocs.io/en/latest/manual.html>`__
+-   `0.3.15 <https://colour.readthedocs.io/en/v0.3.15/manual.html>`__
 -   `0.3.14 <https://colour.readthedocs.io/en/v0.3.14/manual.html>`__
 -   `0.3.13 <https://colour.readthedocs.io/en/v0.3.13/manual.html>`__
 -   `0.3.12 <https://colour.readthedocs.io/en/v0.3.12/manual.html>`__
