@@ -15,7 +15,7 @@ is available!
 This is mainly a maintenance release implementing support for
 `Python 3.8 <https://www.python.org/downloads/release/python-380/>`__,
 `Numpy 1.18 <https://numpy.org/devdocs/release/1.18.0-notes.html>`__ and fixing
-a major issue in Krystek (1985) correlated colour temperature implementation.
+a major issue in Krystek (1985) correlated colour temperature computation.
 
 Besides the various fixes, the highlights of that release are:
 
