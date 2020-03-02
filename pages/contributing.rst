@@ -1169,7 +1169,7 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                             <div class="checkbox">
                                 <input type="checkbox" value="" />
                                 <label class="strikethrough">
-                                    <a class="reference external" href="https://groups.google.com/forum/#!forum/colour-science/">colour-science - Google Groups</a>
+                                    <a class="reference external" href="https://colour-science.discourse.group/c/releases/">colour-science - Discourse Group</a>
                                 </label>
                             </div>
                         </li>

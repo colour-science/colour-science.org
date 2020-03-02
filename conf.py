@@ -208,8 +208,7 @@ NAVIGATION_LINKS = {
                 ('mailto:colour-developers@colour-science.org',
                  '<span class="font-weight-bold">Contact Us</span>'),
                 ('https://gitter.im/colour-science/colour', 'Gitter'),
-                ('https://groups.google.com/forum/#!forum/colour-science',
-                 'Mailing List'),
+                ('https://colour-science.discourse.group/', 'Discourse Group'),
                 ('https://twitter.com/colour_science', 'Twitter'),
                 ('https://www.facebook.com/python.colour.science', 'Facebook'),
                 ('/rss.xml', 'RSS Feed'),
@@ -1026,8 +1025,8 @@ CONTENT_FOOTER = """
         </a>
     </li>
     <li class="nav-item mx-3">
-        <a href="https://groups.google.com/forum/#!forum/colour-science">
-            <span class="fas fa-users fa-2x text-light"></span>
+        <a href="https://colour-science.discourse.group/">
+            <span class="fab fa-discourse fa-2x text-light"></span>
         </a>
     </li>
     <li class="nav-item mx-3">
