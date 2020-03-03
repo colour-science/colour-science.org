@@ -208,7 +208,7 @@ NAVIGATION_LINKS = {
                 ('mailto:colour-developers@colour-science.org',
                  '<span class="font-weight-bold">Contact Us</span>'),
                 ('https://gitter.im/colour-science/colour', 'Gitter'),
-                ('https://colour-science.discourse.group/', 'Discourse Group'),
+                ('https://colour-science.discourse.group/', 'Discourse'),
                 ('https://twitter.com/colour_science', 'Twitter'),
                 ('https://www.facebook.com/python.colour.science', 'Facebook'),
                 ('/rss.xml', 'RSS Feed'),
