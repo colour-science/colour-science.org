@@ -79,8 +79,8 @@ only a few can define it correctly, in this regard, we often cite
 
 *sRGB* is not a bunch of **transfer functions**, it is an actual
 `RGB colourspace <https://en.wikipedia.org/wiki/RGB_color_space>`__, specified by
-`IEC 61966-2-1:1999 Standard <https://webstore.iec.ch/publication/6169>`__
-standard. As per `ISO 22028-1 Standard <http://www.iso.org/iso/catalogue_detail.htm?csnumber=37161>`__,
+the `IEC 61966-2-1:1999 Standard <https://webstore.iec.ch/publication/6169>`__.
+As per `ISO 22028-1 Standard <http://www.iso.org/iso/catalogue_detail.htm?csnumber=37161>`__,
 an *RGB* colourspace is defined by those mandatory 3 components:
 
 - `Primaries`_
