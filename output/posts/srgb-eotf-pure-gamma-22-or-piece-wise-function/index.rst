@@ -71,7 +71,7 @@ standard states what follows in **2.1 Reference Display Conditions**:
 
     *Relative to this methodology, the reference display is characterised by the
     equation below where* :math:`V\prime{sRGB}` *is the input data signal and*
-    :math:`V{sRGB}` *is the output normalized lumiance.*
+    :math:`V{sRGB}` *is the output normalized luminance.*
 
     :math:`V{sRGB} = (V\prime{sRGB} + 0.0)^{2.2}`
 
