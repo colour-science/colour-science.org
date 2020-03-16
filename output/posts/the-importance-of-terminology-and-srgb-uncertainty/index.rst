@@ -85,7 +85,7 @@ an *RGB* colourspace is defined by those mandatory 3 components:
 
 - `Primaries`_
 - `Whitepoint`_
-- `Transfer Functions (OETF and EOTF)`_
+- `Transfer Functions`_
 
 The *ISO 22028-1 Standard* definition of an additive *RGB* colourspace is
 quoted in its entirety for reference:
@@ -172,12 +172,14 @@ as **whitepoint** but an `ICC <https://en.wikipedia.org/wiki/International_Color
     Various *CIE Illuminants D Series* *illuminants* in the
     *CIE 1960 UCS Chromaticity Diagram*.
 
-Transfer Functions (OETF and EOTF)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Transfer Functions
+^^^^^^^^^^^^^^^^^^
 
 The transfer functions perform the mapping between the *linear* light
 components (tristimulus values) and a *non-linear* R'G'B' video signal (most
 of the time for coding optimisation and bandwidth performance). [2]_
+
+The two common types and their inverses are defined as follows:
 
 -   The **Opto-Electronic Transfer Function** (**OETF**) maps estimated
     tristimulus values in a scene to a *non-linear* R'G'B' video component signal
@@ -270,7 +272,7 @@ to lessen the uncertainty and improve the **terminology** used, we suggest that:
 
     - `Primaries`_
     - `Whitepoint`_
-    - `Transfer Functions (OETF and EOTF)`_
+    - `Transfer Functions`_
 -   When writing on the *RGB* colourspace topic, one should ideally mention the
     previous point, it will help people getting the grasp on the theory.
 -   When discussing about a given *RGB* colourspace component, one should make a
