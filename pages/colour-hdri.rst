@@ -20,7 +20,11 @@ The following features are available:
 -   HDRI / Radiance Image Generation
 -   Debevec (1997) Camera Response Function Computation
 -   Grossberg (2003) Histogram Based Image Sampling
+-   Variance Minimization Light Probe Sampling
 -   Global Tonemapping Operators
+-   Adobe DNG SDK Colour Processing
+-   Absolute Luminance Calibration
+-   Digital Still Camera (DSC) Exposure Model
 -   Raw Processing Helpers
 
 API
