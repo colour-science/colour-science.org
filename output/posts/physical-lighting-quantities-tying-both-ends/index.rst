@@ -12,7 +12,8 @@ Validation against ground truth data is an important step when implementing
 support for physical lighting quantities in a realtime or offline renderer.
 
 In this post, a simple but effective method to assess that the physical camera
-model behaves as expected against ground truth data will be presented.
+model behaves as expected against ground truth data (or conversely) will be
+presented.
 
 .. TEASER_END
 
@@ -225,8 +226,8 @@ Conclusion
 ^^^^^^^^^^
 
 With Treasure Island, the HDRI scaled to absolute luminance is about 14%
-brighter than the .CR2 file. This is not perfect but considering the scaling
-factors involved, it is reasonably satisfactory.
+brighter (clipped luminance) than the .CR2 file. This is not perfect but
+considering the scaling factors involved, it is reasonably satisfactory.
 
 Some potential source of discrepancies are:
 

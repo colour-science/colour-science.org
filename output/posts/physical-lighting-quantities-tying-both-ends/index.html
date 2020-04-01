@@ -155,7 +155,8 @@ navbar-dark bg-dark bg-primary
 <p>Validation against ground truth data is an important step when implementing
 support for physical lighting quantities in a realtime or offline renderer.</p>
 <p>In this post, a simple but effective method to assess that the physical camera
-model behaves as expected against ground truth data will be presented.</p>
+model behaves as expected against ground truth data (or conversely) will be
+presented.</p>
 <!-- TEASER_END -->
 <div class="section" id="digital-still-camera-exposure-model">
 <h2>Digital Still Camera Exposure Model</h2>
@@ -229,9 +230,9 @@ scaling by the ISO arithmetic speed <span class="math">\(S\)</span>:</p>
 </blockquote>
 <p><a class="reference external" href="https://github.com/colour-science/colour-hdri/blob/develop/colour_hdri/exposure/dsc.py">Colour - HDRI</a>
 implements the aforementioned model with Python:</p>
-<pre class="code python"><a name="rest_code_500f767110c54348a226ad98b74fc29c-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_hdri</span>
-<a name="rest_code_500f767110c54348a226ad98b74fc29c-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">saturation_based_speed_focal_plane_exposure</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
-<a name="rest_code_500f767110c54348a226ad98b74fc29c-3"></a><span class="mf">0.46993364546604555</span>
+<pre class="code python"><a name="rest_code_8dd9c9e7c31e4f689af93058159cb432-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_hdri</span>
+<a name="rest_code_8dd9c9e7c31e4f689af93058159cb432-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">saturation_based_speed_focal_plane_exposure</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<a name="rest_code_8dd9c9e7c31e4f689af93058159cb432-3"></a><span class="mf">0.46993364546604555</span>
 </pre>
 <p><a class="reference external" href="https://github.com/colour-science/colour-nuke/blob/master/colour_nuke/scripts/digital_still_camera_exposure.nk">Colour - Nuke</a>
 offers a Gizmo/Group implementation also available on
@@ -269,14 +270,14 @@ as follows:</p>
 respectively.</p>
 <p><a class="reference external" href="https://github.com/colour-science/colour-hdri/blob/develop/colour_hdri/calibration/absolute_luminance.py">Colour - HDRI</a>
 implements support for absolute luminance calibration with Python:</p>
-<pre class="code python"><a name="rest_code_993443eecf074cfa9ed591db18cb87ec-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_hdri</span>
-<a name="rest_code_993443eecf074cfa9ed591db18cb87ec-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<a name="rest_code_993443eecf074cfa9ed591db18cb87ec-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">RGB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">2048</span><span class="p">,</span> <span class="mi">1024</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<a name="rest_code_993443eecf074cfa9ed591db18cb87ec-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">upper_hemisphere_illuminance_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
-<a name="rest_code_993443eecf074cfa9ed591db18cb87ec-5"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">absolute_luminance_calibration_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span> <span class="mi">120000</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-<a name="rest_code_993443eecf074cfa9ed591db18cb87ec-6"></a><span class="n">array</span><span class="p">([</span> <span class="mf">38215.85392444</span><span class="p">,</span>  <span class="mf">38215.85392444</span><span class="p">,</span>  <span class="mf">38215.85392444</span><span class="p">])</span>
-<a name="rest_code_993443eecf074cfa9ed591db18cb87ec-7"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">calibration</span><span class="o">.</span><span class="n">absolute_luminance</span><span class="o">.</span><span class="n">upper_hemisphere_illuminance_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
-<a name="rest_code_993443eecf074cfa9ed591db18cb87ec-8"></a><span class="mf">3.1400580564615663</span>
+<pre class="code python"><a name="rest_code_8b5f9482f3644a9db279a815259b18eb-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_hdri</span>
+<a name="rest_code_8b5f9482f3644a9db279a815259b18eb-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<a name="rest_code_8b5f9482f3644a9db279a815259b18eb-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">RGB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">2048</span><span class="p">,</span> <span class="mi">1024</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<a name="rest_code_8b5f9482f3644a9db279a815259b18eb-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">upper_hemisphere_illuminance_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
+<a name="rest_code_8b5f9482f3644a9db279a815259b18eb-5"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">absolute_luminance_calibration_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span> <span class="mi">120000</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<a name="rest_code_8b5f9482f3644a9db279a815259b18eb-6"></a><span class="n">array</span><span class="p">([</span> <span class="mf">38215.85392444</span><span class="p">,</span>  <span class="mf">38215.85392444</span><span class="p">,</span>  <span class="mf">38215.85392444</span><span class="p">])</span>
+<a name="rest_code_8b5f9482f3644a9db279a815259b18eb-7"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">calibration</span><span class="o">.</span><span class="n">absolute_luminance</span><span class="o">.</span><span class="n">upper_hemisphere_illuminance_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
+<a name="rest_code_8b5f9482f3644a9db279a815259b18eb-8"></a><span class="mf">3.1400580564615663</span>
 </pre>
 <div class="alert alert-dismissible alert-info line-block">
 <div class="line"><em>Note</em></div>
@@ -339,8 +340,8 @@ imaged with the DSC Exposure Model.</p>
 <div class="section" id="conclusion">
 <h2>Conclusion</h2>
 <p>With Treasure Island, the HDRI scaled to absolute luminance is about 14%
-brighter than the .CR2 file. This is not perfect but considering the scaling
-factors involved, it is reasonably satisfactory.</p>
+brighter (clipped luminance) than the .CR2 file. This is not perfect but
+considering the scaling factors involved, it is reasonably satisfactory.</p>
 <p>Some potential source of discrepancies are:</p>
 <ul class="simple">
 <li><p>Lack of flat-fields to correct the neutral density filter attenuation and
