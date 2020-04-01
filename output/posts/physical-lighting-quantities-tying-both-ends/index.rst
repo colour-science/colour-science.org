@@ -1,6 +1,6 @@
 .. title: Physical Lighting Quantities: Tying Both Ends
 .. slug: physical-lighting-quantities-tying-both-ends
-.. date: 2020-03-16 07:28:05 UTC
+.. date: 2020-04-01 07:28:05 UTC
 .. tags: absolute luminance calibration, colour science, digital still camera exposure model, physical quantities
 .. category: 
 .. link: 
@@ -237,9 +237,9 @@ Some potential source of discrepancies are:
 -   Unknown parameters for the focal plane exposure equation that were left at
     their default values, e.g. lens attenuation values.
 
-Other tests performed with various non-public HDRI imaged similarly have
+Other tests performed with various non-public HDRI but imaged similarly have
 yielded better results with less error. Importantly though, the technique is
-dependent on good metering of the scene upper hemisphere illuminance and the
+dependent on good metering of the scene upper hemisphere illuminance along with
 non-clipped capture and correct processing of HDR imagery.
 
 Finally, I would like to thanks Sebastien Lagarde, Sebastien Lachambre and

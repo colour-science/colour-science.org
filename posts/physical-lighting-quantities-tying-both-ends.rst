@@ -1,6 +1,6 @@
 .. title: Physical Lighting Quantities: Tying Both Ends
 .. slug: physical-lighting-quantities-tying-both-ends
-.. date: 2020-03-16 07:28:05 UTC
+.. date: 2020-04-01 07:28:05 UTC
 .. tags: absolute luminance calibration, colour science, digital still camera exposure model, physical quantities
 .. category: 
 .. link: 
