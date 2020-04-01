@@ -242,5 +242,9 @@ yielded better results with less error. Importantly though, the technique is
 dependent on good metering of the scene upper hemisphere illuminance along with
 non-clipped capture and correct processing of HDR imagery.
 
+Conversely and assuming a correctly implemented (DSC) Exposure Model, this
+method also allows to check if the panoramic HDRI is correctly captured and
+processed.
+
 Finally, I would like to thanks Sebastien Lagarde, Sebastien Lachambre and
 Cyril Jover for the recurring conversations on that topic the past few years.
