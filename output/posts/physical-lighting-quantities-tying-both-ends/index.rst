@@ -248,4 +248,5 @@ method also allows to check if the panoramic HDRI is correctly captured and
 processed.
 
 Finally, I would like to thanks Sebastien Lagarde, Sebastien Lachambre and
-Cyril Jover for the recurring conversations on that topic the past few years.
+Cyril Jover for the recurring conversations on that topic during the past few
+years.
