@@ -33,13 +33,11 @@ for this post is the mention of
         `Moving Frostbite to Physically Based Rendering 3.0 <https://seblagarde.files.wordpress.com/2015/07/course_notes_moving_frostbite_to_pbr_v32.pdf>`__
         by Lagarde and de Rousiers (2013). 7 years ago, they analytically
         derived the 1.2 scaling factor while citing the aforementioned ISO
-        Standard.
-
-Lagarde and de Rousiers (2013) describe a plausible Digital Still Camera (DSC)
-Exposure Model based on the Saturation-Based Speed (SBS) method.
+        Standard: 12232:2006. They describe a plausible Digital Still Camera
+        (DSC) Exposure Model based on the Saturation-Based Speed (SBS) method.
 
 The saturation based speed :math:`S_{sat}` of an electronic still picture
-camera is defined as:
+camera as given in ISO Standard: 12232:2019 is defined as:
 
     :math:`S_{sat}=\cfrac{78}{H_{sat}}`
 
@@ -81,8 +79,8 @@ where
     |
     | `Doug A. Kerr <http://dougkerr.net/>`__ hosts a
         `series of articles <http://dougkerr.net/Pumpkin/index.htm>`__ on
-        photography and optics, of interest for the discussed topic are:
-        `Average Scene Reflectance in Photographic Exposure Metering <http://dougkerr.net/Pumpkin/articles/Scene_Reflectance.pdf>`__
+        photography and optics. The following article are of interest for the
+        discussed topic: `Average Scene Reflectance in Photographic Exposure Metering <http://dougkerr.net/Pumpkin/articles/Scene_Reflectance.pdf>`__
         and `Derivation of the "Cosine Fourth" Law for Falloff of Illuminance Across a Camera Image <http://dougkerr.net/Pumpkin/articles/Cosine_Fourth_Falloff.pdf>`__
 
 The adjusted focal plane exposure :math:`H_{SBS}` is obtained by scaling
@@ -120,14 +118,14 @@ to measuring the scene illuminance with a light meter during the HDRI capture.
 The major advantage of this approach is that it is independent of the imaging
 device and thus does not require knowledge of its calibration constant :math:`K`.
 
-The multiplying factor :math:`S_L` used to convert the Panoramic HDRI relative
+The multiplying factor :math:`S_L` used to convert the panoramic HDRI relative
 luminance values to absolute luminance values is obtained as follows:
 
     :math:`S_L=\cfrac{E_{vm}}{E_{vi}}`
 
 where :math:`E_{vm}` is the metered scene upper hemisphere illuminance in
 lux (:math:`lx`) and :math:`E_{vi}` is the upper hemisphere illuminance of the
-Panoramic HDRI in lux, i.e. the upper hemisphere integral of the relative
+panoramic HDRI in lux, i.e. the upper hemisphere integral of the relative
 luminance values:
 
     :math:`\int_{\Omega}{L\ cos(\theta)\omega}`
@@ -182,12 +180,12 @@ process is unknown, the data cannot be trusted for scientific applications
 requiring physical lighting quantities.
 
 Fortunately, Lagarde, Lachambre and Jover (2016) have published `a trustworthy
-Panoramic HDRI <https://blog.selfshadow.com/publications/s2016-shading-course/unity/supplemental/index.html>`__
+panoramic HDRI <https://blog.selfshadow.com/publications/s2016-shading-course/unity/supplemental/index.html>`__
 that will be used in this section.
 
 .. figure:: /images/Blog_Unity_Treasure_Island_ReStitched.png
 
-    Final Treasure Island Panoramic HDRI merged and stitched from the original
+    Final Treasure Island panoramic HDRI merged and stitched from the original
     .CR2 files.
 
 The authors have been kindly enough to send me the original .CR2 files so that
@@ -214,8 +212,8 @@ example.
 
 With the various .CR2 file batches merged, the validation process involves
 comparing a cherry picked .CR2 file from one of the exposure batches with the
-corresponding HDRI scaled to absolute luminance and imaged via the DSC
-Exposure Model using the camera settings of the .CR2 file.
+corresponding HDRI scaled to absolute luminance and imaged via the DSC Exposure
+Model using the camera settings of the .CR2 file.
 
 .. figure:: /images/Blog_Unity_Treasure_Island_Angle_Imaged.png
 

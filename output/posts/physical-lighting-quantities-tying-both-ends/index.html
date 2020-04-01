@@ -171,12 +171,11 @@ for this post is the mention of
 <a class="reference external" href="https://seblagarde.files.wordpress.com/2015/07/course_notes_moving_frostbite_to_pbr_v32.pdf">Moving Frostbite to Physically Based Rendering 3.0</a>
 by Lagarde and de Rousiers (2013). 7 years ago, they analytically
 derived the 1.2 scaling factor while citing the aforementioned ISO
-Standard.</div>
+Standard: 12232:2006. They describe a plausible Digital Still Camera
+(DSC) Exposure Model based on the Saturation-Based Speed (SBS) method.</div>
 </div>
-<p>Lagarde and de Rousiers (2013) describe a plausible Digital Still Camera (DSC)
-Exposure Model based on the Saturation-Based Speed (SBS) method.</p>
 <p>The saturation based speed <span class="math">\(S_{sat}\)</span> of an electronic still picture
-camera is defined as:</p>
+camera as given in ISO Standard: 12232:2019 is defined as:</p>
 <blockquote>
 <p><span class="math">\(S_{sat}=\cfrac{78}{H_{sat}}\)</span></p>
 </blockquote>
@@ -217,8 +216,8 @@ For a camera focused on infinity, <span class="math">\(Hf&lt;&lt;H\)</span>, <sp
 <div class="line">
 <a class="reference external" href="http://dougkerr.net/">Doug A. Kerr</a> hosts a
 <a class="reference external" href="http://dougkerr.net/Pumpkin/index.htm">series of articles</a> on
-photography and optics, of interest for the discussed topic are:
-<a class="reference external" href="http://dougkerr.net/Pumpkin/articles/Scene_Reflectance.pdf">Average Scene Reflectance in Photographic Exposure Metering</a>
+photography and optics. The following article are of interest for the
+discussed topic: <a class="reference external" href="http://dougkerr.net/Pumpkin/articles/Scene_Reflectance.pdf">Average Scene Reflectance in Photographic Exposure Metering</a>
 and <a class="reference external" href="http://dougkerr.net/Pumpkin/articles/Cosine_Fourth_Falloff.pdf">Derivation of the "Cosine Fourth" Law for Falloff of Illuminance Across a Camera Image</a>
 </div>
 </div>
@@ -230,9 +229,9 @@ scaling by the ISO arithmetic speed <span class="math">\(S\)</span>:</p>
 </blockquote>
 <p><a class="reference external" href="https://github.com/colour-science/colour-hdri/blob/develop/colour_hdri/exposure/dsc.py">Colour - HDRI</a>
 implements the aforementioned model with Python:</p>
-<pre class="code python"><a name="rest_code_13ee9ec2651a4b338b54bb8dd445e340-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_hdri</span>
-<a name="rest_code_13ee9ec2651a4b338b54bb8dd445e340-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">saturation_based_speed_focal_plane_exposure</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
-<a name="rest_code_13ee9ec2651a4b338b54bb8dd445e340-3"></a><span class="mf">0.46993364546604555</span>
+<pre class="code python"><a name="rest_code_911ea3d66e1b4e2cbd52fb3ea6e3f8ad-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_hdri</span>
+<a name="rest_code_911ea3d66e1b4e2cbd52fb3ea6e3f8ad-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">saturation_based_speed_focal_plane_exposure</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<a name="rest_code_911ea3d66e1b4e2cbd52fb3ea6e3f8ad-3"></a><span class="mf">0.46993364546604555</span>
 </pre>
 <p><a class="reference external" href="https://github.com/colour-science/colour-nuke/blob/master/colour_nuke/scripts/digital_still_camera_exposure.nk">Colour - Nuke</a>
 offers a Gizmo/Group implementation also available on
@@ -249,14 +248,14 @@ to calibrate a panoramic HDRI for absolute luminance. The only requirement is
 to measuring the scene illuminance with a light meter during the HDRI capture.</p>
 <p>The major advantage of this approach is that it is independent of the imaging
 device and thus does not require knowledge of its calibration constant <span class="math">\(K\)</span>.</p>
-<p>The multiplying factor <span class="math">\(S_L\)</span> used to convert the Panoramic HDRI relative
+<p>The multiplying factor <span class="math">\(S_L\)</span> used to convert the panoramic HDRI relative
 luminance values to absolute luminance values is obtained as follows:</p>
 <blockquote>
 <p><span class="math">\(S_L=\cfrac{E_{vm}}{E_{vi}}\)</span></p>
 </blockquote>
 <p>where <span class="math">\(E_{vm}\)</span> is the metered scene upper hemisphere illuminance in
 lux (<span class="math">\(lx\)</span>) and <span class="math">\(E_{vi}\)</span> is the upper hemisphere illuminance of the
-Panoramic HDRI in lux, i.e. the upper hemisphere integral of the relative
+panoramic HDRI in lux, i.e. the upper hemisphere integral of the relative
 luminance values:</p>
 <blockquote>
 <p><span class="math">\(\int_{\Omega}{L\ cos(\theta)\omega}\)</span></p>
@@ -270,14 +269,14 @@ as follows:</p>
 respectively.</p>
 <p><a class="reference external" href="https://github.com/colour-science/colour-hdri/blob/develop/colour_hdri/calibration/absolute_luminance.py">Colour - HDRI</a>
 implements support for absolute luminance calibration with Python:</p>
-<pre class="code python"><a name="rest_code_efc5d56580cb4c1aad198f1538f7e732-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_hdri</span>
-<a name="rest_code_efc5d56580cb4c1aad198f1538f7e732-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<a name="rest_code_efc5d56580cb4c1aad198f1538f7e732-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">RGB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">2048</span><span class="p">,</span> <span class="mi">1024</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<a name="rest_code_efc5d56580cb4c1aad198f1538f7e732-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">upper_hemisphere_illuminance_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
-<a name="rest_code_efc5d56580cb4c1aad198f1538f7e732-5"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">absolute_luminance_calibration_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span> <span class="mi">120000</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-<a name="rest_code_efc5d56580cb4c1aad198f1538f7e732-6"></a><span class="n">array</span><span class="p">([</span> <span class="mf">38215.85392444</span><span class="p">,</span>  <span class="mf">38215.85392444</span><span class="p">,</span>  <span class="mf">38215.85392444</span><span class="p">])</span>
-<a name="rest_code_efc5d56580cb4c1aad198f1538f7e732-7"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">calibration</span><span class="o">.</span><span class="n">absolute_luminance</span><span class="o">.</span><span class="n">upper_hemisphere_illuminance_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
-<a name="rest_code_efc5d56580cb4c1aad198f1538f7e732-8"></a><span class="mf">3.1400580564615663</span>
+<pre class="code python"><a name="rest_code_9379ef17b4654979ae3a69d46979c631-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_hdri</span>
+<a name="rest_code_9379ef17b4654979ae3a69d46979c631-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<a name="rest_code_9379ef17b4654979ae3a69d46979c631-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">RGB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">2048</span><span class="p">,</span> <span class="mi">1024</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<a name="rest_code_9379ef17b4654979ae3a69d46979c631-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">upper_hemisphere_illuminance_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
+<a name="rest_code_9379ef17b4654979ae3a69d46979c631-5"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">absolute_luminance_calibration_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span> <span class="mi">120000</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<a name="rest_code_9379ef17b4654979ae3a69d46979c631-6"></a><span class="n">array</span><span class="p">([</span> <span class="mf">38215.85392444</span><span class="p">,</span>  <span class="mf">38215.85392444</span><span class="p">,</span>  <span class="mf">38215.85392444</span><span class="p">])</span>
+<a name="rest_code_9379ef17b4654979ae3a69d46979c631-7"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">calibration</span><span class="o">.</span><span class="n">absolute_luminance</span><span class="o">.</span><span class="n">upper_hemisphere_illuminance_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
+<a name="rest_code_9379ef17b4654979ae3a69d46979c631-8"></a><span class="mf">3.1400580564615663</span>
 </pre>
 <div class="alert alert-dismissible alert-info line-block">
 <div class="line"><em>Note</em></div>
@@ -303,10 +302,10 @@ photometric and colorimetric information is missing and because the creation
 process is unknown, the data cannot be trusted for scientific applications
 requiring physical lighting quantities.</p>
 <p>Fortunately, Lagarde, Lachambre and Jover (2016) have published <a class="reference external" href="https://blog.selfshadow.com/publications/s2016-shading-course/unity/supplemental/index.html">a trustworthy
-Panoramic HDRI</a>
+panoramic HDRI</a>
 that will be used in this section.</p>
 <div class="figure">
-<img alt="/images/Blog_Unity_Treasure_Island_ReStitched.png" src="../../images/Blog_Unity_Treasure_Island_ReStitched.png"><p class="caption">Final Treasure Island Panoramic HDRI merged and stitched from the original
+<img alt="/images/Blog_Unity_Treasure_Island_ReStitched.png" src="../../images/Blog_Unity_Treasure_Island_ReStitched.png"><p class="caption">Final Treasure Island panoramic HDRI merged and stitched from the original
 .CR2 files.</p>
 </div>
 <p>The authors have been kindly enough to send me the original .CR2 files so that
@@ -329,8 +328,8 @@ with neutral density filters.</p>
 </div>
 <p>With the various .CR2 file batches merged, the validation process involves
 comparing a cherry picked .CR2 file from one of the exposure batches with the
-corresponding HDRI scaled to absolute luminance and imaged via the DSC
-Exposure Model using the camera settings of the .CR2 file.</p>
+corresponding HDRI scaled to absolute luminance and imaged via the DSC Exposure
+Model using the camera settings of the .CR2 file.</p>
 <div class="figure">
 <img alt="/images/Blog_Unity_Treasure_Island_Angle_Imaged.png" src="../../images/Blog_Unity_Treasure_Island_Angle_Imaged.png"><p class="caption">From left to right: The HDRI scaled to absolute luminance using 51000 lux,
 the cherry picked .CR2 file, the HDRI scaled to absolute luminance and
