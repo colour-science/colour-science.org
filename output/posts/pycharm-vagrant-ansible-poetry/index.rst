@@ -163,7 +163,6 @@ elements available:
     -   `colour-science.org <https://github.com/colour-science/colour-science.org>`_
     -   `Colour - Branding <https://github.com/colour-science/colour-branding>`_
     -   `Colour - Analysis <https://github.com/colour-science/colour-analysis>`_
-    -   `Colour - Notebooks <https://github.com/colour-science/colour-notebooks>`_
     -   `Colour - Nuke <https://github.com/colour-science/colour-nuke>`_
     -   `Colour - Ocean <https://github.com/colour-science/colour-ocean>`_
     -   `Colour - Playground <https://github.com/colour-science/colour-playground>`_
@@ -244,7 +243,7 @@ as follows:
 
 .. code:: shell
 
-    $ cd /colour-science/colour-notebooks/notebooks
+    $ cd /colour-science
     $ jupyter notebook --pylab=inline --ip=0.0.0.0
 
 Then you can access it on the *macOS* host at the following url:
@@ -283,5 +282,4 @@ A full list is available as follows:
     alias colour-datasets='cd /colour-science/colour-datasets && poem'
     alias colour-demosaicing='cd /colour-science/colour-demosaicing && poem'
     alias colour-hdri='cd /colour-science/colour-hdri && poem'
-    alias colour-notebooks='cd /colour-science/colour && poem && cd /colour-science/colour-notebooks && jupyter notebook --ip=0.0.0.0'
     alias colour-science.org='cd /colour-science/colour-science.org && poem'

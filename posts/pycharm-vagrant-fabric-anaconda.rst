@@ -169,7 +169,7 @@ You can go grab a coffee, the initial provisioning will take roughly
 If the provisioning ended smoothly, you should have the following
 elements available:
 
--   **colour**, **colour-notebooks** and **colour-science.org** repositories
+-   **colour** and **colour-science.org** repositories
     cloned into the :code:`colour-science` directory right next to the
     :code:`colour-vagrant` one.
 
@@ -243,7 +243,7 @@ as follows:
 
 .. code:: shell
 
-    $ cd /colour-science/colour-notebooks/notebooks
+    $ cd /colour-science
     $ ipython notebook --pylab=inline --ip=0.0.0.0
 
 Then you can access it on the *macOS* host at the following url:

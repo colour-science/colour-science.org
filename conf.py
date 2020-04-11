@@ -168,9 +168,6 @@ NAVIGATION_LINKS = {
                  '<span class="font-weight-bold">Contributing</span>'),
                 ('/contributors',
                  '<span class="font-weight-bold">Contributors</span>'),
-                ('https://nbviewer.jupyter.org/github/colour-science/'
-                 'colour-notebooks/blob/master/notebooks/colour.ipynb',
-                 'Jupyter Notebooks'),
                 ('/features', 'Features'),
                 ('/history', 'History'),
                 ('https://colour.readthedocs.io/en/develop/bibliography.html',

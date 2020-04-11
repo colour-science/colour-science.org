@@ -29,10 +29,6 @@ There are many ways to help:
     or
     `Enhancement <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AEnhancement>`__
     labels are a good place to start.
--   Improving the
-    `Jupyter Notebooks <http://nbviewer.jupyter.org/github/colour-science/colour-notebooks/blob/master/notebooks/colour.ipynb>`__,
-    we aim to provide a good scientific support to the API and there is still a
-    lot to do.
 -   Improving siblings packages:
 
     -   `Colour - Datasets </colour-datasets/>`__
@@ -787,23 +783,6 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                                 <label class="strikethrough">Check open issues
                                     on the current
                                     <a class="reference external" href="https://github.com/colour-science/colour/milestones">milestone</a>
-                                </label>
-                            </div>
-                        </li>
-                    </ul>
-                </dd>
-            </dl>
-        </li>
-        <li>
-            <dl>
-                <dt>Colour - Notebooks</dt>
-                <dd>
-                    <ul style="list-style-type: none;">
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value="" />
-                                <label class="strikethrough">Run the Jupyter
-                                    notebooks in <a class="reference external" href="https://github.com/colour-science/colour-notebooks">colour-notebooks</a>
                                 </label>
                             </div>
                         </li>
