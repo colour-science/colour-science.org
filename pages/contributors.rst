@@ -500,6 +500,19 @@
             </div>
         </div>
         <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>Mike Wei</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Technical support.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/mikewei" class="card-link">Github</a>
+                </div>
+            </div>
         </div>
     </div>
 
