@@ -11,7 +11,9 @@ Dependencies
 ------------
 
 **Colour** requires various dependencies in order to run. Depending your
-intended use, i.e. using or developing, you may not need to install all of them.
+intended use case, i.e. using or developing, you may not need to install all of
+them.
+
 Please refer to the `Installation Methods for Using Colour`_
 and `Installation Methods for Developing Colour`_ sections below.
 
