@@ -482,6 +482,22 @@
             </div>
         </div>
         <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>Sianyi Huang</h3>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>Display Tuning Engineer</em>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Examples fixes.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/sianyi" class="card-link">Github</a>
+                </div>
+            </div>
         </div>
         <div class="col">
         </div>
@@ -750,17 +766,19 @@
                             <li>Ryan Bass</li>
                             <li>Vishal Vashistha</li>
                             <li>Vlad Enache</li>
-                            <li><a href="https://github.com/alban-sol">alban-sol</a></li>
-                            <li><a href="https://github.com/Ampersandme">Ampersandme</a></li>
-                            <li><a href="https://github.com/AndersAtEndian">AndersAtEndian</a></li>
-                            <li><a href="https://github.com/anshulxyz">anshulxyz</a></li>
-                            <li><a href="https://github.com/Apoorva-13">Apoorva-13</a></li>
-                            <li><a href="https://github.com/awehring">awehring</a></li>
-                            <li><a href="https://github.com/bersbersbers">bersbersbers</a></li>
-                            <li><a href="https://github.com/brandondube">brandondube</a></li>
-                            <li><a href="https://github.com/briend">briend</a></li>
-                            <li><a href="https://github.com/cclauss">cclauss</a></li>
-                            <li><a href="https://github.com/Chandler">Chandler</a></li>
+                            <li><a href="https://github.com/alban-sol">@alban-sol</li>
+                            <li><a href="https://github.com/Ampersandme">@Ampersandme</li>
+                            <li><a href="https://github.com/AndersAtEndian">@AndersAtEndian</li>
+                            <li><a href="https://github.com/anshulxyz">@anshulxyz</li>
+                            <li><a href="https://github.com/Apoorva-13">@Apoorva-13</li>
+                            <li><a href="https://github.com/aurelienbl">@aurelienbl</li>
+                            <li><a href="https://github.com/awehring">@awehring</li>
+                            <li><a href="https://github.com/bersbersbers">@bersbersbers</li>
+                            <li><a href="https://github.com/brandondube">@brandondube</li>
+                            <li><a href="https://github.com/briend">@briend</li>
+                            <li><a href="https://github.com/cclauss">@cclauss</li>
+                            <li><a href="https://github.com/Chandler">@Chandler</li>
+                            <li><a href="https://github.com/chesschi">@chesschi</li>
                         </ul>
                     </p>
                 </div>
@@ -771,28 +789,30 @@
                 <div class="card-body">
                     <p class="card-text">
                         <ul class="list-unstyled text-center">
-                            <li><a href="https://github.com/chesschi">chesschi</a></li>
-                            <li><a href="https://github.com/codycuellar">codycuellar</a></li>
-                            <li><a href="https://github.com/dtbulmerJRs">dtbulmerJRs</a></li>
-                            <li><a href="https://github.com/Edwardlin-zlt">Edwardlin-zlt</a></li>
-                            <li><a href="https://github.com/eyeforcolor">eyeforcolor</a></li>
-                            <li><a href="https://github.com/fangjy88">fangjy88</a></li>
-                            <li><a href="https://github.com/Floschoe">Floschoe</a></li>
-                            <li><a href="https://github.com/foutoucour">foutoucour</a></li>
-                            <li><a href="https://github.com/habemus-papadum">habemus-papadum</a></li>
-                            <li><a href="https://github.com/hajimen">hajimen</a></li>
-                            <li><a href="https://github.com/henczati">henczati</a></li>
-                            <li><a href="https://github.com/iCagarro">iCagarro</a></li>
-                            <li><a href="https://github.com/iinnovations">iinnovations</a></li>
-                            <li><a href="https://github.com/jaguarondi">jaguarondi</a></li>
-                            <li><a href="https://github.com/KOLANICH">KOLANICH</a></li>
-                            <li><a href="https://github.com/Kunkka1988">Kunkka1988</a></li>
-                            <li><a href="https://github.com/Legendin">Legendin</a></li>
-                            <li><a href="https://github.com/leklbk">leklbk</a></li>
-                            <li><a href="https://github.com/lensz">lensz</a></li>
-                            <li><a href="https://github.com/MarcusCalhoun-Lopez">MarcusCalhoun-Lopez</a></li>
-                            <li><a href="https://github.com/matthiasbirkich">matthiasbirkich</a></li>
-                            <li><a href="https://github.com/meshing">meshing</a></li>
+                            <li><a href="https://github.com/codycuellar">@codycuellar</li>
+                            <li><a href="https://github.com/dtbulmerJRs">@dtbulmerJRs</li>
+                            <li><a href="https://github.com/Edwardlin-zlt">@Edwardlin-zlt</li>
+                            <li><a href="https://github.com/eyeforcolor">@eyeforcolor</li>
+                            <li><a href="https://github.com/fangjy88">@fangjy88</li>
+                            <li><a href="https://github.com/Floschoe">@Floschoe</li>
+                            <li><a href="https://github.com/foutoucour">@foutoucour</li>
+                            <li><a href="https://github.com/habemus-papadum">@habemus-papadum</li>
+                            <li><a href="https://github.com/hajimen">@hajimen</li>
+                            <li><a href="https://github.com/henczati">@henczati</li>
+                            <li><a href="https://github.com/hminle">@hminle</li>
+                            <li><a href="https://github.com/iCagarro">@iCagarro</li>
+                            <li><a href="https://github.com/iinnovations">@iinnovations</li>
+                            <li><a href="https://github.com/jaguarondi">@jaguarondi</li>
+                            <li><a href="https://github.com/KOLANICH">@KOLANICH</li>
+                            <li><a href="https://github.com/Kunkka1988">@Kunkka1988</li>
+                            <li><a href="https://github.com/lavrovd">@lavrovd</li>
+                            <li><a href="https://github.com/Legendin">@Legendin</li>
+                            <li><a href="https://github.com/leklbk">@leklbk</li>
+                            <li><a href="https://github.com/lensz">@lensz</li>
+                            <li><a href="https://github.com/MarcusCalhoun-Lopez">@MarcusCalhoun-Lopez</li>
+                            <li><a href="https://github.com/matthiasbirkich">@matthiasbirkich</li>
+                            <li><a href="https://github.com/meshing">@meshing</li>
+                            <li><a href="https://github.com/mokincha">@mokincha</li>
                         </ul>
                     </p>
                 </div>
@@ -803,29 +823,30 @@
                 <div class="card-body">
                     <p class="card-text">
                         <ul class="list-unstyled text-center">
-                            <li><a href="https://github.com/mokincha">mokincha</a></li>
-                            <li><a href="https://github.com/monkeywithacupcake">monkeywithacupcake</a></li>
-                            <li><a href="https://github.com/Myndex">Myndex</a></li>
-                            <li><a href="https://github.com/naavis">naavis</a></li>
-                            <li><a href="https://github.com/NoRoKr">NoRoKr</a></li>
-                            <li><a href="https://github.com/nschloe">nschloe</a></li>
-                            <li><a href="https://github.com/peteroupc">peteroupc</a></li>
-                            <li><a href="https://github.com/pfk-beta">pfk-beta</a></li>
-                            <li><a href="https://github.com/Queuecumber">Queuecumber</a></li>
-                            <li><a href="https://github.com/Rob-Welch">Rob-Welch</a></li>
-                            <li><a href="https://github.com/robbuckley">robbuckley</a></li>
-                            <li><a href="https://github.com/Ron024">Ron024</a></li>
-                            <li><a href="https://github.com/senyai">senyai</a></li>
-                            <li><a href="https://github.com/shanest">shanest</a></li>
-                            <li><a href="https://github.com/stakemura">stakemura</a></li>
-                            <li><a href="https://github.com/tashdor">tashdor</a></li>
-                            <li><a href="https://github.com/TFiFiE">TFiFiE</a></li>
-                            <li><a href="https://github.com/thunders82">thunders82</a></li>
-                            <li><a href="https://github.com/tingeman">tingeman</a></li>
-                            <li><a href="https://github.com/totyped">totyped</a></li>
-                            <li><a href="https://github.com/vidakDK">vidakDK</a></li>
-                            <li><a href="https://github.com/Willingo">Willingo</a></li>
-                            <li><a href="https://github.com/zachlewis">zachlewis</a></li>
+                            <li><a href="https://github.com/monkeywithacupcake">@monkeywithacupcake</li>
+                            <li><a href="https://github.com/Myndex">@Myndex</li>
+                            <li><a href="https://github.com/naavis">@naavis</li>
+                            <li><a href="https://github.com/NoRoKr">@NoRoKr</li>
+                            <li><a href="https://github.com/nschloe">@nschloe</li>
+                            <li><a href="https://github.com/peteroupc">@peteroupc</li>
+                            <li><a href="https://github.com/pfk-beta">@pfk-beta</li>
+                            <li><a href="https://github.com/Queuecumber">@Queuecumber</li>
+                            <li><a href="https://github.com/Rob-Welch">@Rob-Welch</li>
+                            <li><a href="https://github.com/robbuckley">@robbuckley</li>
+                            <li><a href="https://github.com/Ron024">@Ron024</li>
+                            <li><a href="https://github.com/senyai">@senyai</li>
+                            <li><a href="https://github.com/shanest">@shanest</li>
+                            <li><a href="https://github.com/stakemura">@stakemura</li>
+                            <li><a href="https://github.com/tashdor">@tashdor</li>
+                            <li><a href="https://github.com/TFiFiE">@TFiFiE</li>
+                            <li><a href="https://github.com/thunders82">@thunders82</li>
+                            <li><a href="https://github.com/tingeman">@tingeman</li>
+                            <li><a href="https://github.com/totyped">@totyped</li>
+                            <li><a href="https://github.com/ValZapod">@ValZapod</li>
+                            <li><a href="https://github.com/vidakDK">@vidakDK</li>
+                            <li><a href="https://github.com/Wagyx">@Wagyx</li>
+                            <li><a href="https://github.com/Willingo">@Willingo</li>
+                            <li><a href="https://github.com/zachlewis">@zachlewis</li>
                         </ul>
                     </p>
                 </div>
