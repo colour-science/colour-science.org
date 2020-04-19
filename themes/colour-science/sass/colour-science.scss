@@ -1,8 +1,29 @@
-/*** https://bootstrap.build/ (Lux) ***/
+/*** colour-science ***/
+
+/*** Overrides ***/
+$gray-100: #f9f9fd !default;
+$gray-200: #e1e1e4 !default;
+$gray-300: #c8c8cb !default;
+$gray-400: #adadb1 !default;
+$gray-500: #929295 !default;
+$gray-600: #757578 !default;
+$gray-700: #565659 !default;
+$gray-800: #343438 !default;
+$gray-900: #191920 !default;
+
+$font-size-base: 1rem !default;
+$font-size-sm: 0.85rem !default;
+
+$jumbotron-bg: $gray-100 !default;
+
+/*** Bootstrap & Bootswatch ***/
+@import "bootswatch/variables";
+@import "bootstrap/bootstrap.scss";
+@import "bootswatch/bootswatch";
 
 /*** Navbar ***/
 .navbar-light .navbar-nav .nav-link {
-    color: #646467;
+    color: $gray-600;
     outline: none;
 }
 
@@ -13,7 +34,7 @@
 
 /*** Footer ***/
 #footer {
-    background-color: #191920;
+    background-color: $gray-900;
     border: none;
 }
 
@@ -30,7 +51,7 @@ blockquote p, blockquote {
 
 /*** Code ***/
 pre.code, pre.literal-block, .highlight pre {
-    background-color: #f9f9fe;
+    background-color: $gray-100;
     border: 0;
     border-radius: 0;
     margin-left: 0 !important;
@@ -53,7 +74,7 @@ section.comments {
 }
 
 div.text_cell_render {
-    color: #646467 !important;
+    color: $gray-600 !important;
 }
 
 div.prompt {
@@ -61,12 +82,12 @@ div.prompt {
 }
 
 div.input_area pre {
-    padding: 0.875rem !important;
+    padding: $font-size-sm !important;
 
 }
 
 div.output_area pre {
-    padding: 0.875rem !important;
+    padding: $font-size-sm;
 }
 
 div.output_subarea {
@@ -75,8 +96,8 @@ div.output_subarea {
 }
 
 div.output_subarea pre {
-    background-color: #f9f9fe !important;
-    border-top: 0.2rem #f3f3f9 !important;
+    background-color: $gray-100 !important;
+    border-top: 0.2rem $gray-200 !important;
 }
 
 /*** Release Stages ***/
@@ -112,13 +133,13 @@ a.app-link:hover {
 
 /*** Gitter ***/
 .gitter-open-chat-button {
-    background-color: #191920;
+    background-color: $gray-900 !important;
     border-radius: 0;
 }
 
 .gitter-open-chat-button:focus,
 .gitter-open-chat-button:hover {
-    background-color: #191920;
+    background-color: $gray-900 !important;
 }
 
 .gitter-chat-embed {

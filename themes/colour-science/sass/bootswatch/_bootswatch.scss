@@ -1,16 +1,16 @@
-// Lux 4.1.1
+// Lux 4.3.1
 // Bootswatch
 
 
 // Variables ===================================================================
 
-$web-font-path: "https://fonts.googleapis.com/css?family=Nunito+Sans:400,600" !default;
+$web-font-path: "https://fonts.googleapis.com/css?family=Nunito+Sans:400,600&display=swap" !default;
 @import url($web-font-path);
 
 // Navbar ======================================================================
 
 .navbar {
-  font-size: $font-size-sm;
+  font-size: $font-size-base;
   text-transform: uppercase;
   font-weight: 600;
 
@@ -27,7 +27,7 @@ $web-font-path: "https://fonts.googleapis.com/css?family=Nunito+Sans:400,600" !d
 }
 
 .bg-primary {
-  background-color: $gray-900 !important;
+  background-color: theme-color("primary") !important;
 }
 
 .bg-light {
@@ -118,9 +118,28 @@ th {
   th, td {
     padding: 1.5rem;
   }
+
+  &-sm {
+    th, td {
+      padding: 0.75rem;
+    }
+  }
 }
 
 // Forms =======================================================================
+
+
+.custom-switch {
+
+  .custom-control-label {
+    &::after {
+      top: calc(0.15625rem + 2px);
+      left: calc(-2.25rem + 2px);
+      width: calc(1rem - 4px);
+      height: calc(1rem - 4px);
+    }
+  }
+}
 
 // Navs ========================================================================
 
@@ -130,6 +149,14 @@ th {
 }
 
 // Indicators ==================================================================
+
+.badge {
+  padding-top: 0.28rem;
+
+  &-pill {
+    border-radius: 10rem;
+  }
+}
 
 // Progress bars ===============================================================
 

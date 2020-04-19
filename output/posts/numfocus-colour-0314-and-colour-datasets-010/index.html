@@ -5,7 +5,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NumFOCUS, Colour 0.3.14 and Colour - Datasets 0.1.0! | Colour Science</title>
-<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/colour-science.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#191920">
@@ -206,8 +211,8 @@ guides.</p>
 <p><em>Colour</em> now implements an automatic colour conversion graph based on
 <a class="reference external" href="https://networkx.github.io">NetworkX</a> and enabling easier colour
 conversions:</p>
-<pre class="code python"><a name="rest_code_828f1b99079b4e0aaca29c25366a0535-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">sd</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">COLOURCHECKERS_SDS</span><span class="p">[</span><span class="s1">'ColorChecker N Ohta'</span><span class="p">][</span><span class="s1">'dark skin'</span><span class="p">]</span>
-<a name="rest_code_828f1b99079b4e0aaca29c25366a0535-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">convert</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="s1">'Spectral Distribution'</span><span class="p">,</span> <span class="s1">'sRGB'</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="p">{</span><span class="s1">'mode'</span><span class="p">:</span> <span class="s1">'Short'</span><span class="p">})</span>
+<pre class="code python"><a name="rest_code_79c3b381b7794c4fb15ac556a17ac3c5-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">sd</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">COLOURCHECKERS_SDS</span><span class="p">[</span><span class="s1">'ColorChecker N Ohta'</span><span class="p">][</span><span class="s1">'dark skin'</span><span class="p">]</span>
+<a name="rest_code_79c3b381b7794c4fb15ac556a17ac3c5-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">convert</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="s1">'Spectral Distribution'</span><span class="p">,</span> <span class="s1">'sRGB'</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="p">{</span><span class="s1">'mode'</span><span class="p">:</span> <span class="s1">'Short'</span><span class="p">})</span>
 </pre>
 <pre class="literal-block">===============================================================================
 *                                                                             *
@@ -225,7 +230,7 @@ array([ 0.45675795,  0.30986982,  0.24861924])</pre>
 writing images, it will be used if <a class="reference external" href="https://github.com/OpenImageIO/oiio">OpenImageIO</a>
 is not available. If you wish to read <em>OpenEXR</em> files or develop <em>Colour</em>, you
 will need to install the FreeImage plugin as follows:</p>
-<pre class="code shell"><a name="rest_code_6b2d8221e6b148b6aea1d1ad72646f40-1"></a>$ python -c <span class="s2">"import imageio;imageio.plugins.freeimage.download()"</span>
+<pre class="code shell"><a name="rest_code_86b6290928e244e4ba76381ac245273d-1"></a>$ python -c <span class="s2">"import imageio;imageio.plugins.freeimage.download()"</span>
 </pre>
 <p>Support for <a class="reference external" href="https://github.com/OpenImageIO/oiio/releases/tag/Release-2.0.3">OpenImageIO 2.x</a>
 has also been implemented.</p>
@@ -276,8 +281,8 @@ science datasets management.</p>
 <a class="reference external" href="https://zenodo.org/">Zenodo</a> under the
 <a class="reference external" href="https://zenodo.org/communities/colour-science-datasets/">Colour Science - Datasets</a>
 community:</p>
-<pre class="code python"><a name="rest_code_71e12760889d4037b9a384acbef789b9-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_datasets</span>
-<a name="rest_code_71e12760889d4037b9a384acbef789b9-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">colour_datasets</span><span class="o">.</span><span class="n">datasets</span><span class="p">())</span>
+<pre class="code python"><a name="rest_code_7dc0b7ff9c36456ea18df0b7a1c06226-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_datasets</span>
+<a name="rest_code_7dc0b7ff9c36456ea18df0b7a1c06226-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">colour_datasets</span><span class="o">.</span><span class="n">datasets</span><span class="p">())</span>
 </pre>
 <pre class="literal-block">colour-science-datasets
 =======================
@@ -408,7 +413,7 @@ will follow in the coming days.</p>
 <div class="text-center text-light py-3"><span>Copyright © 2013-2020 – Colour Developers</span></div>
 
     
-</footer><!-- End of Footer --><script src="../../assets/js/all-nocdn.js"></script><script>
+</footer><!-- End of Footer --><script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {
