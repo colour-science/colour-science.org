@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col">
                         <img src="/images/Colour_Logo_Medium_Tight_001.png"
-                        class="img-responsive" alt="Colour - Logo">
+                        class="img-responsive px-2" alt="Colour - Logo">
                 </div>
 
                 <div class="col">
