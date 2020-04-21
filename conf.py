@@ -135,19 +135,6 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         (
             (
-                ('https://github.com/colour-science/colour',
-                 '<span class="font-weight-bold">Source Code</span>'),
-                ('https://github.com/colour-science/colour/archive/v0.3.14.zip',
-                 '<span class="font-weight-bold">Latest (v0.3.14)</span>'),
-                ('https://github.com/colour-science/colour/releases',
-                 'All Releases'),
-                ('https://pypi.org/project/colour-science/', 'Pypi'),
-                ('/api-status-and-badges', 'API Status and Badges'),
-            ),
-            'Development',
-        ),
-        (
-            (
                 ('/installation-guide',
                  '<span class="font-weight-bold">Installation Guide</span>'),
                 ('https://colour.readthedocs.io/en/develop/tutorial.html',
@@ -184,6 +171,7 @@ NAVIGATION_LINKS = {
               '<span class="font-weight-bold">Apps (Colour - Dash)</span>'),
              ('http://awesome-colour.org/',
               '<span class="font-weight-bold">Awesome Colour</span>'),
+             ('/colour', '<span class="font-weight-bold">Colour</span>'),
              ('/colour-datasets',
               '<span class="font-weight-bold">Colour - Datasets</span>'),
              ('/colour-demosaicing',
@@ -202,24 +190,24 @@ NAVIGATION_LINKS = {
         ),
         (
             (
-                ('mailto:colour-developers@colour-science.org',
-                 '<span class="font-weight-bold">Contact Us</span>'),
-                ('https://gitter.im/colour-science/colour', 'Gitter'),
-                ('https://colour-science.discourse.group/', 'Discourse'),
-                ('https://twitter.com/colour_science', 'Twitter'),
-                ('https://www.facebook.com/python.colour.science', 'Facebook'),
-                ('/rss.xml', 'RSS Feed'),
-            ),
-            'Social',
-        ),
-        (
-            (
                 ('/blog', '<span class="font-weight-bold">Posts</span>'),
                 ("/archive.html", "Archive"),
                 ("/categories/", "Tags"),
             ),
             'Blog',
         ),
+        ('mailto:colour-developers@colour-science.org',
+         '<i class="fas fa-envelope"></i>'),
+        ('https://github.com/colour-science/colour',
+         '<i class="fab fa-github"></i>'),
+        ('https://colour-science.discourse.group',
+         '<i class="fab fa-discourse"></i>'),
+        ('https://gitter.im/colour-science/colour',
+         '<i class="fab fa-gitter"></i>'),
+        ('https://twitter.com/colour_science',
+         '<i class="fab fa-twitter"></i>'),
+        ('https://www.facebook.com/python.colour.science',
+         '<i class="fab fa-facebook"></i>'),
     ),
 }
 
@@ -1013,32 +1001,32 @@ CONTENT_FOOTER = """
 <ul class="nav justify-content-center">
     <li class="nav-item mx-3">
         <a href="mailto:colour-developers@colour-science.org">
-            <span class="fa fa-envelope fa-2x text-light"></span>
+            <i class="fas fa-envelope text-light"></i>
         </a>
     </li>
     <li class="nav-item mx-3">
-        <a href="https://gitter.im/colour-science/colour">
-            <span class="fab fa-gitter fa-2x text-light"></span>
+        <a href="https://github.com/colour-science/colour">
+            <i class="fab fa-github text-light"></i>
         </a>
     </li>
     <li class="nav-item mx-3">
         <a href="https://colour-science.discourse.group/">
-            <span class="fab fa-discourse fa-2x text-light"></span>
+            <i class="fab fa-discourse text-light"></i>
+        </a>
+    </li>
+    <li class="nav-item mx-3">
+        <a href="https://gitter.im/colour-science/colour">
+            <i class="fab fa-gitter text-light"></i>
         </a>
     </li>
     <li class="nav-item mx-3">
         <a href="https://twitter.com/colour_science">
-            <span class="fab fa-twitter fa-2x text-light"></span>
+            <i class="fab fa-twitter text-light"></i>
         </a>
     </li>
     <li class="nav-item mx-3">
         <a href="https://www.facebook.com/python.colour.science">
-            <span class="fab fa-facebook fa-2x text-light"></span>
-        </a>
-    </li>
-    <li class="nav-item mx-3">
-        <a href="/rss.xml">
-            <span class="fas fa-rss fa-2x text-light"></span>
+            <i class="fab fa-facebook text-light"></i>
         </a>
     </li>
 </ul>

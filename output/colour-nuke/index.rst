@@ -39,4 +39,4 @@ Examples
 Downloads
 ^^^^^^^^^
 
--   `colour-nuke Github Repository <https://github.com/colour-science/colour-nuke>`__
+-   `Colour - Nuke Github Repository <https://github.com/colour-science/colour-nuke>`__

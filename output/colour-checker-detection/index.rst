@@ -33,4 +33,5 @@ Examples
 Downloads
 ^^^^^^^^^
 
--   `colour-checker-detection Github Repository <https://github.com/colour-science/colour-checker-detection>`__
+-   `Colour - Checker Detection Github Repository <https://github.com/colour-science/colour-checker-detection>`__
+-   `Colour - Checker Detection - Pypi <https://pypi.org/project/colour-checker-detection/>`__

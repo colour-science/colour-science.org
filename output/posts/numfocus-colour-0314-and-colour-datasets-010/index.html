@@ -40,7 +40,7 @@ a new Python package">
 
 <!-- Menubar -->
 
-<nav class="navbar navbar-expand-md static-top mb-4
+<nav class="navbar navbar-expand-xl static-top mb-4
 navbar-dark bg-dark bg-primary
 "><div class="container">
 <!-- This keeps the margins nice -->
@@ -54,16 +54,6 @@ navbar-dark bg-dark bg-primary
 
         <div class="collapse navbar-collapse" id="bs-navbar">
             <ul class="navbar-nav mr-auto">
-<li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Development</a>
-            <div class="dropdown-menu shadow">
-                    <a href="https://github.com/colour-science/colour" class="dropdown-item"><span class="font-weight-bold">Source Code</span></a>
-                    <a href="https://github.com/colour-science/colour/archive/v0.3.14.zip" class="dropdown-item"><span class="font-weight-bold">Latest (v0.3.14)</span></a>
-                    <a href="https://github.com/colour-science/colour/releases" class="dropdown-item">All Releases</a>
-                    <a href="https://pypi.org/project/colour-science/" class="dropdown-item">Pypi</a>
-                    <a href="../../api-status-and-badges" class="dropdown-item">API Status and Badges</a>
-            </div>
-            </li>
 <li class="nav-item dropdown">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
             <div class="dropdown-menu shadow">
@@ -89,6 +79,7 @@ navbar-dark bg-dark bg-primary
             <div class="dropdown-menu shadow">
                     <a href="../../apps" class="dropdown-item"><span class="font-weight-bold">Apps (Colour - Dash)</span></a>
                     <a href="http://awesome-colour.org/" class="dropdown-item"><span class="font-weight-bold">Awesome Colour</span></a>
+                    <a href="../../colour" class="dropdown-item"><span class="font-weight-bold">Colour</span></a>
                     <a href="../../colour-datasets" class="dropdown-item"><span class="font-weight-bold">Colour - Datasets</span></a>
                     <a href="../../colour-demosaicing" class="dropdown-item"><span class="font-weight-bold">Colour - Demosaicing</span></a>
                     <a href="../../colour-hdri" class="dropdown-item"><span class="font-weight-bold">Colour - HDRI</span></a>
@@ -101,23 +92,30 @@ navbar-dark bg-dark bg-primary
             </div>
             </li>
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Social</a>
-            <div class="dropdown-menu shadow">
-                    <a href="mailto:colour-developers@colour-science.org" class="dropdown-item"><span class="font-weight-bold">Contact Us</span></a>
-                    <a href="https://gitter.im/colour-science/colour" class="dropdown-item">Gitter</a>
-                    <a href="https://colour-science.discourse.group/" class="dropdown-item">Discourse</a>
-                    <a href="https://twitter.com/colour_science" class="dropdown-item">Twitter</a>
-                    <a href="https://www.facebook.com/python.colour.science" class="dropdown-item">Facebook</a>
-                    <a href="../../rss.xml" class="dropdown-item">RSS Feed</a>
-            </div>
-            </li>
-<li class="nav-item dropdown">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
             <div class="dropdown-menu shadow">
                     <a href="../../blog" class="dropdown-item"><span class="font-weight-bold">Posts</span></a>
                     <a href="../../archive.html" class="dropdown-item">Archive</a>
                     <a href="../../categories/" class="dropdown-item">Tags</a>
             </div>
+                </li>
+<li class="nav-item">
+<a href="mailto:colour-developers@colour-science.org" class="nav-link"><i class="fas fa-envelope"></i></a>
+                </li>
+<li class="nav-item">
+<a href="https://github.com/colour-science/colour" class="nav-link"><i class="fab fa-github"></i></a>
+                </li>
+<li class="nav-item">
+<a href="https://colour-science.discourse.group" class="nav-link"><i class="fab fa-discourse"></i></a>
+                </li>
+<li class="nav-item">
+<a href="https://gitter.im/colour-science/colour" class="nav-link"><i class="fab fa-gitter"></i></a>
+                </li>
+<li class="nav-item">
+<a href="https://twitter.com/colour_science" class="nav-link"><i class="fab fa-twitter"></i></a>
+                </li>
+<li class="nav-item">
+<a href="https://www.facebook.com/python.colour.science" class="nav-link"><i class="fab fa-facebook"></i></a>
 
                 
             </li>
@@ -211,8 +209,8 @@ guides.</p>
 <p><em>Colour</em> now implements an automatic colour conversion graph based on
 <a class="reference external" href="https://networkx.github.io">NetworkX</a> and enabling easier colour
 conversions:</p>
-<pre class="code python"><a name="rest_code_79c3b381b7794c4fb15ac556a17ac3c5-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">sd</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">COLOURCHECKERS_SDS</span><span class="p">[</span><span class="s1">'ColorChecker N Ohta'</span><span class="p">][</span><span class="s1">'dark skin'</span><span class="p">]</span>
-<a name="rest_code_79c3b381b7794c4fb15ac556a17ac3c5-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">convert</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="s1">'Spectral Distribution'</span><span class="p">,</span> <span class="s1">'sRGB'</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="p">{</span><span class="s1">'mode'</span><span class="p">:</span> <span class="s1">'Short'</span><span class="p">})</span>
+<pre class="code python"><a name="rest_code_aea635341f7d407a996b68c92e9a64f6-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">sd</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">COLOURCHECKERS_SDS</span><span class="p">[</span><span class="s1">'ColorChecker N Ohta'</span><span class="p">][</span><span class="s1">'dark skin'</span><span class="p">]</span>
+<a name="rest_code_aea635341f7d407a996b68c92e9a64f6-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">convert</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="s1">'Spectral Distribution'</span><span class="p">,</span> <span class="s1">'sRGB'</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="p">{</span><span class="s1">'mode'</span><span class="p">:</span> <span class="s1">'Short'</span><span class="p">})</span>
 </pre>
 <pre class="literal-block">===============================================================================
 *                                                                             *
@@ -230,7 +228,7 @@ array([ 0.45675795,  0.30986982,  0.24861924])</pre>
 writing images, it will be used if <a class="reference external" href="https://github.com/OpenImageIO/oiio">OpenImageIO</a>
 is not available. If you wish to read <em>OpenEXR</em> files or develop <em>Colour</em>, you
 will need to install the FreeImage plugin as follows:</p>
-<pre class="code shell"><a name="rest_code_86b6290928e244e4ba76381ac245273d-1"></a>$ python -c <span class="s2">"import imageio;imageio.plugins.freeimage.download()"</span>
+<pre class="code shell"><a name="rest_code_512d3265e31844feb14e571785696e06-1"></a>$ python -c <span class="s2">"import imageio;imageio.plugins.freeimage.download()"</span>
 </pre>
 <p>Support for <a class="reference external" href="https://github.com/OpenImageIO/oiio/releases/tag/Release-2.0.3">OpenImageIO 2.x</a>
 has also been implemented.</p>
@@ -281,8 +279,8 @@ science datasets management.</p>
 <a class="reference external" href="https://zenodo.org/">Zenodo</a> under the
 <a class="reference external" href="https://zenodo.org/communities/colour-science-datasets/">Colour Science - Datasets</a>
 community:</p>
-<pre class="code python"><a name="rest_code_7dc0b7ff9c36456ea18df0b7a1c06226-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_datasets</span>
-<a name="rest_code_7dc0b7ff9c36456ea18df0b7a1c06226-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">colour_datasets</span><span class="o">.</span><span class="n">datasets</span><span class="p">())</span>
+<pre class="code python"><a name="rest_code_ea07bca3a26d497ab3bcd522ff11718c-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_datasets</span>
+<a name="rest_code_ea07bca3a26d497ab3bcd522ff11718c-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">colour_datasets</span><span class="o">.</span><span class="n">datasets</span><span class="p">())</span>
 </pre>
 <pre class="literal-block">colour-science-datasets
 =======================
@@ -381,32 +379,32 @@ will follow in the coming days.</p>
 <footer id="footer" class="mt-auto"><ul class="nav justify-content-center">
 <li class="nav-item mx-3">
         <a href="mailto:colour-developers@colour-science.org">
-            <span class="fa fa-envelope fa-2x text-light"></span>
+            <i class="fas fa-envelope text-light"></i>
         </a>
     </li>
     <li class="nav-item mx-3">
-        <a href="https://gitter.im/colour-science/colour">
-            <span class="fab fa-gitter fa-2x text-light"></span>
+        <a href="https://github.com/colour-science/colour">
+            <i class="fab fa-github text-light"></i>
         </a>
     </li>
     <li class="nav-item mx-3">
         <a href="https://colour-science.discourse.group/">
-            <span class="fab fa-discourse fa-2x text-light"></span>
+            <i class="fab fa-discourse text-light"></i>
+        </a>
+    </li>
+    <li class="nav-item mx-3">
+        <a href="https://gitter.im/colour-science/colour">
+            <i class="fab fa-gitter text-light"></i>
         </a>
     </li>
     <li class="nav-item mx-3">
         <a href="https://twitter.com/colour_science">
-            <span class="fab fa-twitter fa-2x text-light"></span>
+            <i class="fab fa-twitter text-light"></i>
         </a>
     </li>
     <li class="nav-item mx-3">
         <a href="https://www.facebook.com/python.colour.science">
-            <span class="fab fa-facebook fa-2x text-light"></span>
-        </a>
-    </li>
-    <li class="nav-item mx-3">
-        <a href="../../rss.xml">
-            <span class="fas fa-rss fa-2x text-light"></span>
+            <i class="fab fa-facebook text-light"></i>
         </a>
     </li>
 </ul>

@@ -63,4 +63,5 @@ Examples
 Downloads
 ^^^^^^^^^
 
--   `colour-datasets Github Repository <https://github.com/colour-science/colour-datasets>`__
+-   `Colour - Datasets Github Repository <https://github.com/colour-science/colour-datasets>`__
+-   `Colour - Datasets - Pypi <https://pypi.org/project/colour-datasets/>`__

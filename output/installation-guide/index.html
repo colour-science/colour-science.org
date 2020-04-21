@@ -38,7 +38,7 @@ Please refer to the Installation">
 
 <!-- Menubar -->
 
-<nav class="navbar navbar-expand-md static-top mb-4
+<nav class="navbar navbar-expand-xl static-top mb-4
 navbar-dark bg-dark bg-primary
 "><div class="container">
 <!-- This keeps the margins nice -->
@@ -52,16 +52,6 @@ navbar-dark bg-dark bg-primary
 
         <div class="collapse navbar-collapse" id="bs-navbar">
             <ul class="navbar-nav mr-auto">
-<li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Development</a>
-            <div class="dropdown-menu shadow">
-                    <a href="https://github.com/colour-science/colour" class="dropdown-item"><span class="font-weight-bold">Source Code</span></a>
-                    <a href="https://github.com/colour-science/colour/archive/v0.3.14.zip" class="dropdown-item"><span class="font-weight-bold">Latest (v0.3.14)</span></a>
-                    <a href="https://github.com/colour-science/colour/releases" class="dropdown-item">All Releases</a>
-                    <a href="https://pypi.org/project/colour-science/" class="dropdown-item">Pypi</a>
-                    <a href="../api-status-and-badges" class="dropdown-item">API Status and Badges</a>
-            </div>
-            </li>
 <li class="nav-item dropdown">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
             <div class="dropdown-menu shadow">
@@ -87,6 +77,7 @@ navbar-dark bg-dark bg-primary
             <div class="dropdown-menu shadow">
                     <a href="../apps" class="dropdown-item"><span class="font-weight-bold">Apps (Colour - Dash)</span></a>
                     <a href="http://awesome-colour.org/" class="dropdown-item"><span class="font-weight-bold">Awesome Colour</span></a>
+                    <a href="../colour" class="dropdown-item"><span class="font-weight-bold">Colour</span></a>
                     <a href="../colour-datasets" class="dropdown-item"><span class="font-weight-bold">Colour - Datasets</span></a>
                     <a href="../colour-demosaicing" class="dropdown-item"><span class="font-weight-bold">Colour - Demosaicing</span></a>
                     <a href="../colour-hdri" class="dropdown-item"><span class="font-weight-bold">Colour - HDRI</span></a>
@@ -99,23 +90,30 @@ navbar-dark bg-dark bg-primary
             </div>
             </li>
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Social</a>
-            <div class="dropdown-menu shadow">
-                    <a href="mailto:colour-developers@colour-science.org" class="dropdown-item"><span class="font-weight-bold">Contact Us</span></a>
-                    <a href="https://gitter.im/colour-science/colour" class="dropdown-item">Gitter</a>
-                    <a href="https://colour-science.discourse.group/" class="dropdown-item">Discourse</a>
-                    <a href="https://twitter.com/colour_science" class="dropdown-item">Twitter</a>
-                    <a href="https://www.facebook.com/python.colour.science" class="dropdown-item">Facebook</a>
-                    <a href="../rss.xml" class="dropdown-item">RSS Feed</a>
-            </div>
-            </li>
-<li class="nav-item dropdown">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
             <div class="dropdown-menu shadow">
                     <a href="../blog" class="dropdown-item"><span class="font-weight-bold">Posts</span></a>
                     <a href="../archive.html" class="dropdown-item">Archive</a>
                     <a href="../categories/" class="dropdown-item">Tags</a>
             </div>
+                </li>
+<li class="nav-item">
+<a href="mailto:colour-developers@colour-science.org" class="nav-link"><i class="fas fa-envelope"></i></a>
+                </li>
+<li class="nav-item">
+<a href="https://github.com/colour-science/colour" class="nav-link"><i class="fab fa-github"></i></a>
+                </li>
+<li class="nav-item">
+<a href="https://colour-science.discourse.group" class="nav-link"><i class="fab fa-discourse"></i></a>
+                </li>
+<li class="nav-item">
+<a href="https://gitter.im/colour-science/colour" class="nav-link"><i class="fab fa-gitter"></i></a>
+                </li>
+<li class="nav-item">
+<a href="https://twitter.com/colour_science" class="nav-link"><i class="fab fa-twitter"></i></a>
+                </li>
+<li class="nav-item">
+<a href="https://www.facebook.com/python.colour.science" class="nav-link"><i class="fab fa-facebook"></i></a>
 
                 
             </li>
@@ -199,16 +197,16 @@ and <a class="reference internal" href="#installation-methods-for-developing-col
 <p><strong>Colour</strong> can be easily installed from the
 <a class="reference external" href="https://pypi.org/project/colour-science/">Python Package Index</a> by
 issuing this command in a shell:</p>
-<pre class="code shell"><a name="rest_code_159e98473d0b4b7590ec9436ad7e994a-1"></a>$ pip install colour-science
+<pre class="code shell"><a name="rest_code_6152855020df4495bb356ad5dee96ccd-1"></a>$ pip install colour-science
 </pre>
 <p>This <em>asciicast</em> demonstrates how to generate a pristine Python <em>VirtualEnv</em>
 environment for Colour:</p>
 <script type="text/javascript" src="https://asciinema.org/a/257384.js" id="asciicast-257384" async data-speed="3">
 </script><p>The optional features dependencies are installed as follows:</p>
-<pre class="code shell"><a name="rest_code_fa59a3460ea04a0a848222fe4d3e9026-1"></a>$ pip install <span class="s1">'colour-science[optional]'</span>
+<pre class="code shell"><a name="rest_code_83732dd7b5a34f4b90c2101db457b413-1"></a>$ pip install <span class="s1">'colour-science[optional]'</span>
 </pre>
 <p>The development dependencies are installed as follows:</p>
-<pre class="code shell"><a name="rest_code_4e3a044ff6eb4180a40667ab6d237e67-1"></a>$ pip install <span class="s1">'colour-science[development]'</span>
+<pre class="code shell"><a name="rest_code_d9937001a5f24646a9802540cb1dc7fd-1"></a>$ pip install <span class="s1">'colour-science[development]'</span>
 </pre>
 <p>The figures plotting dependencies are installed as follows:</p>
 <div class="alert alert-dismissible alert-info line-block">
@@ -219,18 +217,18 @@ environment for Colour:</p>
 beforehand, please refer to the specific section for your platform on
 the <a class="reference external" href="https://www.graphviz.org/download/">Graphviz download page</a>.</div>
 </div>
-<pre class="code shell"><a name="rest_code_1626005ccab64a13858d26d4a75ae0b3-1"></a>$ pip install <span class="s1">'colour-science[plotting]'</span>
+<pre class="code shell"><a name="rest_code_61fce41809b04c159954e1c7c4518f5c-1"></a>$ pip install <span class="s1">'colour-science[plotting]'</span>
 </pre>
 <p>If you wish to read <em>OpenEXR</em> files, you will need to install the <em>FreeImage</em>
 plugin for <a class="reference external" href="http://imageio.github.io/">Imageio</a> as follows:</p>
-<pre class="code shell"><a name="rest_code_4161abf6984b4c5496fb2c1cecd6b159-1"></a>$ python -c <span class="s2">"import imageio;imageio.plugins.freeimage.download()"</span>
+<pre class="code shell"><a name="rest_code_abca13fb331741989bd2261015ca99a0-1"></a>$ python -c <span class="s2">"import imageio;imageio.plugins.freeimage.download()"</span>
 </pre>
 </div>
 <div class="section" id="continuum-analytics-anaconda">
 <h3>Continuum Analytics Anaconda</h3>
 <p><strong>Colour</strong> is also available for <a class="reference external" href="https://www.continuum.io/downloads">Anaconda</a>
 from <em>Continuum Analytics</em> via <a class="reference external" href="https://conda-forge.org/">conda-forge</a>:</p>
-<pre class="code shell"><a name="rest_code_4391c2407cb0446d9f304f4f6b270e82-1"></a>$ conda install -c conda-forge colour-science
+<pre class="code shell"><a name="rest_code_ca34d5482aa448359840d8aa02128e2b-1"></a>$ conda install -c conda-forge colour-science
 </pre>
 <p>This <em>asciicast</em> demonstrates how to generate a pristine Python <em>conda</em>
 environment for Colour:</p>
@@ -241,9 +239,9 @@ environment for Colour:</p>
 <h3>Github</h3>
 <p>Alternatively, you can also install directly from
 <a class="reference external" href="https://github.com/colour-science/colour">Github</a> source repository:</p>
-<pre class="code shell"><a name="rest_code_163f452b056e4e10b36b6f954b4e1a02-1"></a>$ git clone git://github.com/colour-science/colour.git
-<a name="rest_code_163f452b056e4e10b36b6f954b4e1a02-2"></a>$ <span class="nb">cd</span> colour
-<a name="rest_code_163f452b056e4e10b36b6f954b4e1a02-3"></a>$ pip install .
+<pre class="code shell"><a name="rest_code_4a8295e3f27e421b92a55c754ae9b6a8-1"></a>$ git clone git://github.com/colour-science/colour.git
+<a name="rest_code_4a8295e3f27e421b92a55c754ae9b6a8-2"></a>$ <span class="nb">cd</span> colour
+<a name="rest_code_4a8295e3f27e421b92a55c754ae9b6a8-3"></a>$ pip install .
 </pre>
 </div>
 </div>
@@ -254,9 +252,9 @@ environment for Colour:</p>
 <p><strong>Colour</strong> adopts <a class="reference external" href="https://poetry.eustace.io">Poetry</a> to help managing its
 dependencies, this is the recommended way to get started with <strong>Colour</strong>
 development:</p>
-<pre class="code shell"><a name="rest_code_04d1f6fb19d348cbad7e87238baa1b19-1"></a>$ git clone git://github.com/colour-science/colour.git
-<a name="rest_code_04d1f6fb19d348cbad7e87238baa1b19-2"></a>$ <span class="nb">cd</span> colour
-<a name="rest_code_04d1f6fb19d348cbad7e87238baa1b19-3"></a>$ poetry install --extras <span class="s2">"graphviz optional plotting"</span>
+<pre class="code shell"><a name="rest_code_f777b6acc7c54c2fa68c3f48dba8d5e8-1"></a>$ git clone git://github.com/colour-science/colour.git
+<a name="rest_code_f777b6acc7c54c2fa68c3f48dba8d5e8-2"></a>$ <span class="nb">cd</span> colour
+<a name="rest_code_f777b6acc7c54c2fa68c3f48dba8d5e8-3"></a>$ poetry install --extras <span class="s2">"graphviz optional plotting"</span>
 </pre>
 <div class="alert alert-dismissible alert-info line-block">
 <div class="line"><em>Note</em></div>
@@ -267,11 +265,11 @@ version by issuing <cite>poetry self:update --preview</cite>.</div>
 </div>
 <p>Those commands will create a Virtual Environment in which all the required
 dependencies will be installed. Tools can then be run as follows:</p>
-<pre class="code shell"><a name="rest_code_241c4e047f2d47beb1c7764baa971851-1"></a>$ poetry run invoke -l
+<pre class="code shell"><a name="rest_code_e87972e061e8406c84925f92c21aa2a0-1"></a>$ poetry run invoke -l
 </pre>
 <p>or alternatively:</p>
-<pre class="code shell"><a name="rest_code_39b2a118fa714776ace89f52ae411062-1"></a>$ <span class="nb">source</span> <span class="k">$(</span>poetry env info -p<span class="k">)</span>/bin/activate
-<a name="rest_code_39b2a118fa714776ace89f52ae411062-2"></a>$ invoke -l
+<pre class="code shell"><a name="rest_code_9e2cfad463c542df8075b18ecbf3edaf-1"></a>$ <span class="nb">source</span> <span class="k">$(</span>poetry env info -p<span class="k">)</span>/bin/activate
+<a name="rest_code_9e2cfad463c542df8075b18ecbf3edaf-2"></a>$ invoke -l
 </pre>
 </div>
 <div class="section" id="vagrant">
@@ -298,32 +296,32 @@ environment for <a class="reference external" href="https://www.vagrantup.com/">
 <footer id="footer" class="mt-auto"><ul class="nav justify-content-center">
 <li class="nav-item mx-3">
         <a href="mailto:colour-developers@colour-science.org">
-            <span class="fa fa-envelope fa-2x text-light"></span>
+            <i class="fas fa-envelope text-light"></i>
         </a>
     </li>
     <li class="nav-item mx-3">
-        <a href="https://gitter.im/colour-science/colour">
-            <span class="fab fa-gitter fa-2x text-light"></span>
+        <a href="https://github.com/colour-science/colour">
+            <i class="fab fa-github text-light"></i>
         </a>
     </li>
     <li class="nav-item mx-3">
         <a href="https://colour-science.discourse.group/">
-            <span class="fab fa-discourse fa-2x text-light"></span>
+            <i class="fab fa-discourse text-light"></i>
+        </a>
+    </li>
+    <li class="nav-item mx-3">
+        <a href="https://gitter.im/colour-science/colour">
+            <i class="fab fa-gitter text-light"></i>
         </a>
     </li>
     <li class="nav-item mx-3">
         <a href="https://twitter.com/colour_science">
-            <span class="fab fa-twitter fa-2x text-light"></span>
+            <i class="fab fa-twitter text-light"></i>
         </a>
     </li>
     <li class="nav-item mx-3">
         <a href="https://www.facebook.com/python.colour.science">
-            <span class="fab fa-facebook fa-2x text-light"></span>
-        </a>
-    </li>
-    <li class="nav-item mx-3">
-        <a href="../rss.xml">
-            <span class="fas fa-rss fa-2x text-light"></span>
+            <i class="fab fa-facebook text-light"></i>
         </a>
     </li>
 </ul>
