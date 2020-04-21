@@ -134,6 +134,28 @@ TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         (
+            (('/apps',
+              '<span class="font-weight-bold">Apps (Colour - Dash)</span>'),
+             ('http://awesome-colour.org/',
+              '<span class="font-weight-bold">Awesome Colour</span>'),
+             ('/colour', '<span class="font-weight-bold">Colour</span>'),
+             ('/colour-datasets',
+              '<span class="font-weight-bold">Colour - Datasets</span>'),
+             ('/colour-demosaicing',
+              '<span class="font-weight-bold">Colour - Demosaicing</span>'),
+             ('/colour-hdri',
+              '<span class="font-weight-bold">Colour - HDRI</span>'),
+             ('/colour-checker-detection',
+              '<span class="font-weight-bold">Colour - Checker Detection</span>'
+              ), ('/colour-maya',
+                  'Colour - Maya'), ('/colour-nuke',
+                                     'Colour - Nuke'), ('/colour-playground',
+                                                        'Colour - Playground'),
+             ('/colour-spectroscope',
+              'Colour - Spectroscope'), ('/experiments', 'Experiments')),
+            'Projects',
+        ),
+        (
             (
                 ('/installation-guide',
                  '<span class="font-weight-bold">Installation Guide</span>'),
@@ -165,28 +187,6 @@ NAVIGATION_LINKS = {
                 ('/search', 'Search'),
             ),
             'Documentation',
-        ),
-        (
-            (('/apps',
-              '<span class="font-weight-bold">Apps (Colour - Dash)</span>'),
-             ('http://awesome-colour.org/',
-              '<span class="font-weight-bold">Awesome Colour</span>'),
-             ('/colour', '<span class="font-weight-bold">Colour</span>'),
-             ('/colour-datasets',
-              '<span class="font-weight-bold">Colour - Datasets</span>'),
-             ('/colour-demosaicing',
-              '<span class="font-weight-bold">Colour - Demosaicing</span>'),
-             ('/colour-hdri',
-              '<span class="font-weight-bold">Colour - HDRI</span>'),
-             ('/colour-checker-detection',
-              '<span class="font-weight-bold">Colour - Checker Detection</span>'
-              ), ('/colour-maya',
-                  'Colour - Maya'), ('/colour-nuke',
-                                     'Colour - Nuke'), ('/colour-playground',
-                                                        'Colour - Playground'),
-             ('/colour-spectroscope',
-              'Colour - Spectroscope'), ('/experiments', 'Experiments')),
-            'Projects',
         ),
         (
             (
