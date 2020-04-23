@@ -12,7 +12,7 @@
     | *Note*
     |
     | This post is an update to the
-        `PyCharm, Vagrant, Fabric & Anaconda </posts/pycharm-vagrant-fabric-anaconda/>`_ post.
+        `PyCharm, Vagrant, Fabric & Anaconda </posts/pycharm-vagrant-fabric-anaconda/>`__ post.
 
 Installing the whole development toolchain for **Colour** roughly means
 deploying:
@@ -152,22 +152,22 @@ elements available:
 -   The following repositories cloned into the :code:`colour-science` directory
     right next to the :code:`colour-vagrant` one:
 
-    -   `Awesome Colour <https://github.com/colour-science/awesome-colour>`_
-    -   `Colour <https://github.com/colour-science/colour>`_
-    -   `Colour - Checker Detection <https://github.com/colour-science/colour-checker-detection>`_
-    -   `Colour - Analysis - Three.js <https://github.com/colour-science/colour-analysis-three.js>`_
-    -   `Colour - Datasets <https://github.com/colour-science/colour-datasets>`_
-    -   `Colour - Demosaicing <https://github.com/colour-science/colour-demosaicing>`_
-    -   `Colour - Dash <https://github.com/colour-science/colour-dash>`_
-    -   `Colour - HDRI <https://github.com/colour-science/colour-hdri>`_
-    -   `colour-science.org <https://github.com/colour-science/colour-science.org>`_
-    -   `Colour - Branding <https://github.com/colour-science/colour-branding>`_
-    -   `Colour - Analysis <https://github.com/colour-science/colour-analysis>`_
-    -   `Colour - Nuke <https://github.com/colour-science/colour-nuke>`_
-    -   `Colour - Ocean <https://github.com/colour-science/colour-ocean>`_
-    -   `Colour - Playground <https://github.com/colour-science/colour-playground>`_
-    -   `Colour - Spectroscope <https://github.com/colour-science/colour-spectroscope>`_
-    -   `Colour - Webhook <https://github.com/colour-science/colour-webhook>`_
+    -   `Awesome Colour <https://github.com/colour-science/awesome-colour>`__
+    -   `Colour <https://github.com/colour-science/colour>`__
+    -   `Colour - Checker Detection <https://github.com/colour-science/colour-checker-detection>`__
+    -   `Colour - Analysis - Three.js <https://github.com/colour-science/colour-analysis-three.js>`__
+    -   `Colour - Datasets <https://github.com/colour-science/colour-datasets>`__
+    -   `Colour - Demosaicing <https://github.com/colour-science/colour-demosaicing>`__
+    -   `Colour - Dash <https://github.com/colour-science/colour-dash>`__
+    -   `Colour - HDRI <https://github.com/colour-science/colour-hdri>`__
+    -   `colour-science.org <https://github.com/colour-science/colour-science.org>`__
+    -   `Colour - Branding <https://github.com/colour-science/colour-branding>`__
+    -   `Colour - Analysis <https://github.com/colour-science/colour-analysis>`__
+    -   `Colour - Nuke <https://github.com/colour-science/colour-nuke>`__
+    -   `Colour - Ocean <https://github.com/colour-science/colour-ocean>`__
+    -   `Colour - Playground <https://github.com/colour-science/colour-playground>`__
+    -   `Colour - Spectroscope <https://github.com/colour-science/colour-spectroscope>`__
+    -   `Colour - Webhook <https://github.com/colour-science/colour-webhook>`__
 
 -  Remote Python environments installed into the virtual machine at the
    following location with all the dependencies needed:

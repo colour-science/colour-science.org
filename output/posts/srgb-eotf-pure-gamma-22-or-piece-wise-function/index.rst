@@ -100,7 +100,7 @@ being the *piece-wise function*:
 It should then be no surprise that the `ACES <https://www.oscars.org/science-technology/sci-tech-projects/aces>`__
 `sRGB ODT <https://github.com/ampas/aces-dev/blob/76ea982a988d278dd12b563602771f46a5da3b83/transforms/ctl/odt/sRGB/ODT.Academy.sRGB_100nits_dim.ctl#L34>`__
 also uses the *piece-wise function*. To finish and for good measure, let us
-quote `Charles Poynton <https://twitter.com/momaku/status/1170180565015900160>`_:
+quote `Charles Poynton <https://twitter.com/momaku/status/1170180565015900160>`__:
 
     *It took me 4 years to decide that the sRGB linear “toe” needs to be part
     of reference. CRTs were pure power function (GOGO if you like) all the way

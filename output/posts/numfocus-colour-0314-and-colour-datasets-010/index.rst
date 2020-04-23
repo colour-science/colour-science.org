@@ -58,7 +58,7 @@ We had a few new contributors for the 2019 edition of the
 Thanks to:
 
 -   `@Chinmayrane16 <https://github.com/Chinmayrane16>`__
--   `@evalevanto <https://github.com/evalevanto>`_
+-   `@evalevanto <https://github.com/evalevanto>`__
 -   `@feralpoosum <https://github.com/feralpoosum>`__
 -   `@BPearlstine <https://github.com/BPearlstine>`__
 -   `@pavithraes <https://github.com/pavithraes>`__

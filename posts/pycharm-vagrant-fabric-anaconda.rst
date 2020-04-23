@@ -12,7 +12,7 @@
     | *Warning*
     |
     | Our *Vagrant* setup is now using *Ansible* and *Poetry*, please refer to the
-        `PyCharm, Vagrant, Ansible & Poetry </posts/pycharm-vagrant-ansible-poetry/>`_ post.
+        `PyCharm, Vagrant, Ansible & Poetry </posts/pycharm-vagrant-ansible-poetry/>`__ post.
 
 Installing the whole development toolchain for **Colour** roughly means
 deploying:
