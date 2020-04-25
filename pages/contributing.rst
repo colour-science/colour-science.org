@@ -214,14 +214,6 @@ Here is a succinct overview of the steps you will most likely go through:
         the *FreeImage* plugin for `Imageio <http://imageio.github.io/>`__ as
         follows: `python -c "import imageio;imageio.plugins.freeimage.download()"`
 
-.. class:: alert alert-dismissible alert-info
-
-    | *Note*
-    |
-    | At the time of this writing, the preview version of *Poetry*, i.e. 1.0.0b3,
-        is recommended to be used. Poetry can be updated to the latest preview
-        version by issuing `poetry self:update --preview`.
-
 If you are in a hurry and not willing to prepend each command with `poetry run`,
 it is possible to put the following function in your `.bash_profile`:
 

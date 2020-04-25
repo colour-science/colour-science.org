@@ -165,14 +165,6 @@ development:
     $ cd colour
     $ poetry install --extras "graphviz optional plotting"
 
-.. class:: alert alert-dismissible alert-info
-
-    | *Note*
-    |
-    | At the time of this writing, the preview version of *Poetry*, i.e. 1.0.0b3,
-        is recommended to be used. Poetry can be updated to the latest preview
-        version by issuing `poetry self:update --preview`.
-
 Those commands will create a Virtual Environment in which all the required
 dependencies will be installed. Tools can then be run as follows:
 
