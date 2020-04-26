@@ -157,7 +157,11 @@ Poetry
 
 **Colour** adopts `Poetry <https://poetry.eustace.io>`__ to help managing its
 dependencies, this is the recommended way to get started with **Colour**
-development:
+development.
+
+Assuming `Python>=3.5 <https://www.python.org/download/releases/>`__, and
+`Graphviz <https://www.graphviz.org/>`__ are installed on your system, install
+the development dependencies using `Poetry <https://poetry.eustace.io>`__:
 
 .. code:: shell
 
@@ -166,7 +170,7 @@ development:
     $ poetry install --extras "graphviz optional plotting"
 
 Those commands will create a Virtual Environment in which all the required
-dependencies will be installed. Tools can then be run as follows:
+python packages will be installed. Tools can then be run as follows:
 
 .. code:: shell
 
