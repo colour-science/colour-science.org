@@ -43,7 +43,7 @@ months.
 
 .. class:: alert alert-dismissible alert-info
 
-    | *Note*
+    | **Note**
     |
     | The future beta candidate will likely be the last version to support
         Python 2.x.

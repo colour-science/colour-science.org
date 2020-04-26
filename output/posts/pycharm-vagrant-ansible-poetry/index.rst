@@ -9,7 +9,7 @@
 
 .. class:: alert alert-dismissible alert-info
 
-    | *Note*
+    | **Note**
     |
     | This post is an update to the
         `PyCharm, Vagrant, Fabric & Anaconda </posts/pycharm-vagrant-fabric-anaconda/>`__ post.

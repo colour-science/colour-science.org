@@ -28,7 +28,7 @@ for this post is the mention of
 
 .. class:: alert alert-dismissible alert-info
 
-    | *Note*
+    | **Note**
     |
     | It is unfortunate that no reference is made to
         `Moving Frostbite to Physically Based Rendering 3.0 <https://seblagarde.files.wordpress.com/2015/07/course_notes_moving_frostbite_to_pbr_v32.pdf>`__
@@ -76,7 +76,7 @@ where
 
 .. class:: alert alert-dismissible alert-info
 
-    | *Note*
+    | **Note**
     |
     | `Doug A. Kerr <http://dougkerr.net/>`__ hosts a
         `series of articles <http://dougkerr.net/Pumpkin/index.htm>`__ on
@@ -155,7 +155,7 @@ implements support for absolute luminance calibration with Python:
 
 .. class:: alert alert-dismissible alert-info
 
-    | *Note*
+    | **Note**
     |
     | Careful readers will have noticed that the last call to the
         `colour_hdri.calibration.absolute_luminance.upper_hemisphere_illuminance_Lagarde2016`
@@ -199,7 +199,7 @@ example.
 
 .. class:: alert alert-dismissible alert-warning
 
-    | *Warning*
+    | **Warning**
     |
     | The aforementioned Jupyter Notebook is an example, typical production
         usage would require multi-processing and use

@@ -22,7 +22,7 @@ To put is another way: Should a display calibrated to *sRGB* adopt the
 
 .. class:: alert alert-dismissible alert-warning
 
-    | *Warning*
+    | **Warning**
     |
     | When using the term *Gamma* at
         `colour-science.org <https://colour-science.org/>`__,
@@ -31,7 +31,7 @@ To put is another way: Should a display calibrated to *sRGB* adopt the
 
 .. class:: alert alert-dismissible alert-info
 
-    | *Note*
+    | **Note**
     |
     | *IEC 61966-2-1:1999 Standard* takes a radical stance on the term *Gamma*
         in the *Ambiguity in the Definition of the Term "Gamma"* section:

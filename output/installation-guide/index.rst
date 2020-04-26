@@ -100,7 +100,7 @@ The figures plotting dependencies are installed as follows:
 
 .. class:: alert alert-dismissible alert-info
 
-    | *Note*
+    | **Note**
     |
     | `Graphviz <https://www.graphviz.org/>`__ might need to be installed
         beforehand, please refer to the specific section for your platform on
@@ -174,7 +174,7 @@ python packages will be installed.
 
 .. class:: alert alert-dismissible alert-warning
 
-    | *Warning*
+    | **Warning**
     |
     | As of this writing, we are still supporting `Python 2.7 <https://www.python.org/download/releases/>`__ which might produce issues when resolving
         dependencies with a `Python 3.8 <https://www.python.org/download/releases/>`__

@@ -209,7 +209,7 @@ the development dependencies using `Poetry <https://poetry.eustace.io>`__:
 
 .. class:: alert alert-dismissible alert-warning
 
-    | *Warning*
+    | **Warning**
     |
     | As of this writing, we are still supporting `Python 2.7 <https://www.python.org/download/releases/>`__ which might produce issues when resolving
         dependencies with a `Python 3.8 <https://www.python.org/download/releases/>`__
@@ -339,7 +339,7 @@ or alternatively:
 
 .. class:: alert alert-dismissible alert-info
 
-    | *Note*
+    | **Note**
     |
     | The *pre-commit* hooks will run before committing, notably
         `Flake8 <https://pypi.org/project/flake8/>`__ and
