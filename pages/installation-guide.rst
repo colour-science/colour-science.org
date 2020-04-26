@@ -170,7 +170,39 @@ the development dependencies using `Poetry <https://poetry.eustace.io>`__:
     $ poetry install --extras "graphviz optional plotting"
 
 Those commands will create a Virtual Environment in which all the required
-python packages will be installed. Tools can then be run as follows:
+python packages will be installed.
+
+.. class:: alert alert-dismissible alert-warning
+
+    | *Warning*
+    |
+    | As of this writing, we are still supporting `Python 2.7 <https://www.python.org/download/releases/>`__ which might produce issues when resolving
+        dependencies with a `Python 3.8 <https://www.python.org/download/releases/>`__
+        interpreter. We are indeed effectively patching the
+        `pyproject.toml <https://github.com/colour-science/colour/blob/develop/pyproject.toml>`__
+        file on `Github Actions <https://github.com/colour-science/colour/actions>`__:
+
+        .. code:: shell
+
+                $ sed -i.bak 's/python = "~2.7 || ^3.5"/python = "^3.6"/g' pyproject.toml
+                $ sed -i.bak 's/matplotlib = { version = "\*"/matplotlib = { version = "^3.1"/g' pyproject.toml
+                $ git diff --unified=1
+                diff --git a/pyproject.toml b/pyproject.toml
+                index 93088d8c..c2b282cf 100644
+                --- a/pyproject.toml
+                +++ b/pyproject.toml
+                @@ -46,3 +46,3 @@ classifiers = [
+                 [tool.poetry.dependencies]
+                -python = "~2.7 || ^3.5"
+                +python = "^3.6"
+                 imageio = "*"
+                @@ -58,3 +58,3 @@ invoke = { version = "*", optional = true }  # Development dependency.
+                 jupyter = { version = "*", optional = true }  # Development dependency.
+                -matplotlib = { version = "*", optional = true }
+                +matplotlib = { version = "^3.1", optional = true }
+                 mock = { version = "*", optional = true }  # Development dependency.
+
+Tools can then be run as follows:
 
 .. code:: shell
 
