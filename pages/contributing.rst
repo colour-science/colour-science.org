@@ -833,7 +833,7 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                                             <label class="strikethrough"> Create a pristine virtual environment:
                                             </label>
                                         </div>
-                                        <pre class="code shell">$ rm poetry.lock && poem 3 && poetry install --extras "graphviz optional plotting"</pre>
+                                        <pre class="code shell">$ rm poetry.lock && poem && poetry install --extras "graphviz optional plotting"</pre>
                                     </li>
                                 </ul>
                             </dd>
