@@ -168,7 +168,7 @@ about auto-exposure handling in Unreal Engine 4.25. The part of most significanc
 for this post is the mention of
 <a class="reference external" href="https://www.iso.org/standard/73758.html">ISO Standard: 12232:2019</a>.</p>
 <div class="alert alert-dismissible alert-info line-block">
-<div class="line"><em>Note</em></div>
+<div class="line"><strong>Note</strong></div>
 <div class="line"><br></div>
 <div class="line">It is unfortunate that no reference is made to
 <a class="reference external" href="https://seblagarde.files.wordpress.com/2015/07/course_notes_moving_frostbite_to_pbr_v32.pdf">Moving Frostbite to Physically Based Rendering 3.0</a>
@@ -214,7 +214,7 @@ For a camera focused on infinity, <span class="math">\(Hf&lt;&lt;H\)</span>, <sp
 </li>
 </ul>
 <div class="alert alert-dismissible alert-info line-block">
-<div class="line"><em>Note</em></div>
+<div class="line"><strong>Note</strong></div>
 <div class="line"><br></div>
 <div class="line">
 <a class="reference external" href="http://dougkerr.net/">Doug A. Kerr</a> hosts a
@@ -232,9 +232,9 @@ scaling by the ISO arithmetic speed <span class="math">\(S\)</span>:</p>
 </blockquote>
 <p><a class="reference external" href="https://github.com/colour-science/colour-hdri/blob/develop/colour_hdri/exposure/dsc.py">Colour - HDRI</a>
 implements the aforementioned model with Python:</p>
-<pre class="code python"><a name="rest_code_3466a6b0a19e48a1a45d55faffb4bc4a-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_hdri</span>
-<a name="rest_code_3466a6b0a19e48a1a45d55faffb4bc4a-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">saturation_based_speed_focal_plane_exposure</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
-<a name="rest_code_3466a6b0a19e48a1a45d55faffb4bc4a-3"></a><span class="mf">0.46993364546604555</span>
+<pre class="code python"><a name="rest_code_3cf9c552dcba4f11a1a13d14612ab404-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_hdri</span>
+<a name="rest_code_3cf9c552dcba4f11a1a13d14612ab404-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">saturation_based_speed_focal_plane_exposure</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<a name="rest_code_3cf9c552dcba4f11a1a13d14612ab404-3"></a><span class="mf">0.46993364546604555</span>
 </pre>
 <p><a class="reference external" href="https://github.com/colour-science/colour-nuke/blob/master/colour_nuke/scripts/digital_still_camera_exposure.nk">Colour - Nuke</a>
 offers a Gizmo/Group implementation also available on
@@ -272,17 +272,17 @@ as follows:</p>
 respectively.</p>
 <p><a class="reference external" href="https://github.com/colour-science/colour-hdri/blob/develop/colour_hdri/calibration/absolute_luminance.py">Colour - HDRI</a>
 implements support for absolute luminance calibration with Python:</p>
-<pre class="code python"><a name="rest_code_57abe2435d434f4faf6981ba00c28cf8-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_hdri</span>
-<a name="rest_code_57abe2435d434f4faf6981ba00c28cf8-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<a name="rest_code_57abe2435d434f4faf6981ba00c28cf8-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">RGB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">2048</span><span class="p">,</span> <span class="mi">1024</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<a name="rest_code_57abe2435d434f4faf6981ba00c28cf8-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">upper_hemisphere_illuminance_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
-<a name="rest_code_57abe2435d434f4faf6981ba00c28cf8-5"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">absolute_luminance_calibration_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span> <span class="mi">120000</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-<a name="rest_code_57abe2435d434f4faf6981ba00c28cf8-6"></a><span class="n">array</span><span class="p">([</span> <span class="mf">38215.85392444</span><span class="p">,</span>  <span class="mf">38215.85392444</span><span class="p">,</span>  <span class="mf">38215.85392444</span><span class="p">])</span>
-<a name="rest_code_57abe2435d434f4faf6981ba00c28cf8-7"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">calibration</span><span class="o">.</span><span class="n">absolute_luminance</span><span class="o">.</span><span class="n">upper_hemisphere_illuminance_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
-<a name="rest_code_57abe2435d434f4faf6981ba00c28cf8-8"></a><span class="mf">3.1400580564615663</span>
+<pre class="code python"><a name="rest_code_afe4f92ac373486cb5c10180300032d3-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_hdri</span>
+<a name="rest_code_afe4f92ac373486cb5c10180300032d3-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<a name="rest_code_afe4f92ac373486cb5c10180300032d3-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">RGB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">2048</span><span class="p">,</span> <span class="mi">1024</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<a name="rest_code_afe4f92ac373486cb5c10180300032d3-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">upper_hemisphere_illuminance_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
+<a name="rest_code_afe4f92ac373486cb5c10180300032d3-5"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">absolute_luminance_calibration_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span> <span class="mi">120000</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<a name="rest_code_afe4f92ac373486cb5c10180300032d3-6"></a><span class="n">array</span><span class="p">([</span> <span class="mf">38215.85392444</span><span class="p">,</span>  <span class="mf">38215.85392444</span><span class="p">,</span>  <span class="mf">38215.85392444</span><span class="p">])</span>
+<a name="rest_code_afe4f92ac373486cb5c10180300032d3-7"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">calibration</span><span class="o">.</span><span class="n">absolute_luminance</span><span class="o">.</span><span class="n">upper_hemisphere_illuminance_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
+<a name="rest_code_afe4f92ac373486cb5c10180300032d3-8"></a><span class="mf">3.1400580564615663</span>
 </pre>
 <div class="alert alert-dismissible alert-info line-block">
-<div class="line"><em>Note</em></div>
+<div class="line"><strong>Note</strong></div>
 <div class="line"><br></div>
 <div class="line">Careful readers will have noticed that the last call to the
 <cite>colour_hdri.calibration.absolute_luminance.upper_hemisphere_illuminance_Lagarde2016</cite>
@@ -318,7 +318,7 @@ specifically, by using a modified version of the
 <a class="reference external" href="https://github.com/colour-science/colour-hdri/blob/develop/colour_hdri/examples/examples_merge_from_raw_files.ipynb">Merge from Raw Files</a>
 example.</p>
 <div class="alert alert-dismissible alert-warning line-block">
-<div class="line"><em>Warning</em></div>
+<div class="line"><strong>Warning</strong></div>
 <div class="line"><br></div>
 <div class="line">The aforementioned Jupyter Notebook is an example, typical production
 usage would require multi-processing and use
