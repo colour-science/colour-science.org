@@ -200,7 +200,7 @@ Here is a succinct overview of the steps you will most likely go through:
     $ cd colour
 
 4.  Assuming `Python>=3.5 <https://www.python.org/download/releases/>`__, and
-`Graphviz <https://www.graphviz.org/>`__ are installed on your system, install
+`Graphviz <https://www.graphviz.org/>`__ are available on your system, install
 the development dependencies using `Poetry <https://poetry.eustace.io>`__:
 
 .. code:: shell

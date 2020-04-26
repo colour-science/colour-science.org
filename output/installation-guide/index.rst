@@ -160,7 +160,7 @@ dependencies, this is the recommended way to get started with **Colour**
 development.
 
 Assuming `Python>=3.5 <https://www.python.org/download/releases/>`__, and
-`Graphviz <https://www.graphviz.org/>`__ are installed on your system, install
+`Graphviz <https://www.graphviz.org/>`__ are available on your system, install
 the development dependencies using `Poetry <https://poetry.eustace.io>`__:
 
 .. code:: shell
