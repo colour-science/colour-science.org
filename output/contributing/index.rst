@@ -713,22 +713,24 @@ Citations
 ^^^^^^^^^
 
 It's likely that the code you contribute will be based upon references, we are
-using the `APA 6th Edition <http://www.apastyle.org/>`__ citation style:
+using a slightly modified `APA 7th Edition <http://www.apastyle.org/>`__
+citation style `available for download </others/american-psychological-association-7th-edition-colour-science.csl>`__
+and generating citations as follows:
 
 ::
 
-    Davis, W., & Ohno, Y. (2010). Color quality scale. Optical Engineering, 49(3), 33602–33616. doi:10.1117/1.3360335
+    Davis, W., & Ohno, Y. (2010). Color quality scale. Optical Engineering, 49(3), 033602. doi:10.1117/1.3360335
 
 ::
 
-    Wyszecki, G., & Stiles, W. S. (2000). Table I(6.5.3) Whiteness Formulae (Whiteness Measure Denoted by W). In Color Science: Concepts and Methods, Quantitative Data and Formulae (pp. 837–839). Wiley. ISBN:978-0471399186
+    Wyszecki, G., & Stiles, W. S. (2000). Table I(6.5.3) Whiteness Formulae (Whiteness Measure Denoted by W). In Color Science: Concepts and Methods, Quantitative Data and Formulae (pp. 837–839). Wiley. ISBN:978-0-471-39918-6
 
 ::
 
     Lindbloom, B. (2014). RGB Working Space Information. Retrieved April 11, 2014, from http://www.brucelindbloom.com/WorkingSpaceInfo.html
 
 We are storing all our citations in a database maintained by
-`Mendeley <http://www.mendeley.com/>`__ and it is recommended that you are given
+`Zotero <https://www.zotero.org/>`__ and it is recommended that you are given
 a citation key by us.
 
 Commits
