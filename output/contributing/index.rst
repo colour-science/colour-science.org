@@ -713,8 +713,8 @@ Citations
 ^^^^^^^^^
 
 It's likely that the code you contribute will be based upon references, we are
-using a slightly modified `APA 7th Edition <http://www.apastyle.org/>`__
-citation style `available for download </others/american-psychological-association-7th-edition-colour-science.csl>`__
+using a slightly modified `APA 6th Edition <http://www.apastyle.org/>`__
+citation style `available for download </others/apa-6th-edition.csl>`__
 and generating citations as follows:
 
 ::
