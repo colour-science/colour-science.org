@@ -185,27 +185,40 @@ Development for Colour
 
 Here is a succinct overview of the steps you will most likely go through:
 
-1.  `Fork <https://github.com/colour-science/colour/fork>`__ the
-    `Colour <https://github.com/colour-science/colour>`__ repository.
-2.  Clone the repository locally to your workspace:
+Step 1
+******
+
+`Fork <https://github.com/colour-science/colour/fork>`__ the
+`Colour <https://github.com/colour-science/colour>`__ repository.
+
+Step 2
+******
+
+Clone the repository locally to your workspace:
 
 .. code:: shell
 
     $ git clone git@github.com:$USER/colour.git
 
-3.  Navigate to the *colour* directory:
+Step 3
+******
+
+Navigate to the *colour* directory:
 
 .. code:: shell
 
     $ cd colour
 
-4.  Assuming `Python>=3.5 <https://www.python.org/download/releases/>`__, and
-`Graphviz <https://www.graphviz.org/>`__ are available on your system, install
-the development dependencies using `Poetry <https://poetry.eustace.io>`__:
+Step 4
+******
+
+Assuming `Python>=3.5 <https://www.python.org/download/releases/>`__ is
+available on your system, the development dependencies are installed with
+`Poetry <https://poetry.eustace.io>`__ as follows:
 
 .. code:: shell
 
-    $ poetry install --extras "graphviz optional plotting"
+    $ poetry install --extras "optional plotting"
 
 .. class:: alert alert-dismissible alert-warning
 
@@ -236,6 +249,15 @@ the development dependencies using `Poetry <https://poetry.eustace.io>`__:
                 -matplotlib = { version = "*", optional = true }
                 +matplotlib = { version = "^3.1", optional = true }
                  mock = { version = "*", optional = true }  # Development dependency.
+
+If `Graphviz <https://www.graphviz.org/>`__ is available on your system, you
+might issue the following commands instead of the aforementioned ones:
+
+.. code:: shell
+
+    $ git clone git://github.com/colour-science/colour.git
+    $ cd colour
+    $ poetry install --extras "graphviz optional plotting"
 
 .. class:: alert alert-dismissible alert-warning
 
@@ -268,20 +290,29 @@ it is possible to put the following function in your `.bash_profile`:
 Then issuing `poem` will activate the appropriate virtual environment for your
 clone.
 
-5.  Install the `pre-commit <https://pre-commit.com/>`__ hooks:
+Step 5
+******
+
+Install the `pre-commit <https://pre-commit.com/>`__ hooks:
 
 .. code:: shell
 
     $ poetry run pre-commit install
 
-6.  Connect your clone to the original *upstream* repository by adding it as a
-    remote:
+Step 6
+******
+
+Connect your clone to the original *upstream* repository by adding it as a
+remote:
 
 .. code:: shell
 
     $ git remote add upstream git@github.com:colour-science/colour
 
-7.  You should now have two remotes:
+Step 7
+******
+
+You should now have two remotes:
 
 .. code:: shell
 
@@ -291,14 +322,20 @@ clone.
     upstream  https://github.com/colour-science/colour (fetch)
     upstream  https://github.com/colour-science/colour (push)
 
-8.  Pull the latest changes from *upstream*:
+Step 8
+******
+
+Pull the latest changes from *upstream*:
 
 .. code:: shell
 
     $ git checkout develop
     $ git pull upstream develop
 
-9.  Create a branch for your contribution:
+Step 9
+******
+
+Create a branch for your contribution:
 
 The core developers are using the
 `git flow branching model <http://nvie.com/posts/a-successful-git-branching-model/>`__
@@ -317,7 +354,10 @@ support:
 
     $ git checkout -b feature/mie_scattering
 
-10.  Check if the unit tests and doctests are running properly:
+Step 10
+*******
+
+Check if the unit tests and doctests are running properly:
 
 .. code:: shell
 
@@ -330,7 +370,10 @@ or alternatively:
     $ source $(poetry env info -p)/bin/activate
     $ invoke tests
 
-11. Commit your changes:
+Step 11
+*******
+
+Commit your changes:
 
 .. code:: shell
 
@@ -347,17 +390,27 @@ or alternatively:
         you might not be able to commit until you have fixed the issues they
         reported.
 
-12. Push your changes to *origin*, i.e. your own fork:
+Step 12
+*******
+
+Push your changes to *origin*, i.e. your own fork:
 
 .. code:: shell
 
     $ git push origin feature/mie_scattering
 
-13. Ensure that the `continuous integration <https://github.com/$USER/colour/actions>`__
-    suite succeeded.
-14. Visit your repository fork on `Github <https://github.com/$USER/colour>`__.
-    Your branch should have a green *Pull Request* button, this will open a
-    *pull request* and let us know that we have some code to review :)
+Step 13
+*******
+
+Visit your repository fork on `Github <https://github.com/$USER/colour>`__.
+Your branch should have a green *Pull Request* button, this will open a
+*pull request* and let us know that we have some code to review :)
+
+Step 14
+*******
+
+Check that the `continuous integration <https://github.com/colour-science/colour/actions>`__
+suite succeeded.
 
 Code Reviews
 ------------

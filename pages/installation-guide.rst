@@ -159,18 +159,15 @@ Poetry
 dependencies, this is the recommended way to get started with **Colour**
 development.
 
-Assuming `Python>=3.5 <https://www.python.org/download/releases/>`__, and
-`Graphviz <https://www.graphviz.org/>`__ are available on your system, install
-the development dependencies using `Poetry <https://poetry.eustace.io>`__:
+Assuming `Python>=3.5 <https://www.python.org/download/releases/>`__ is
+available on your system, the development dependencies are installed with
+`Poetry <https://poetry.eustace.io>`__ as follows:
 
 .. code:: shell
 
     $ git clone git://github.com/colour-science/colour.git
     $ cd colour
-    $ poetry install --extras "graphviz optional plotting"
-
-Those commands will create a Virtual Environment in which all the required
-python packages will be installed.
+    $ poetry install --extras "optional plotting"
 
 .. class:: alert alert-dismissible alert-warning
 
@@ -201,6 +198,18 @@ python packages will be installed.
                 -matplotlib = { version = "*", optional = true }
                 +matplotlib = { version = "^3.1", optional = true }
                  mock = { version = "*", optional = true }  # Development dependency.
+
+If `Graphviz <https://www.graphviz.org/>`__ is available on your system, you
+might issue the following commands instead of the aforementioned ones:
+
+.. code:: shell
+
+    $ git clone git://github.com/colour-science/colour.git
+    $ cd colour
+    $ poetry install --extras "graphviz optional plotting"
+
+Those commands will create a Virtual Environment in which all the required
+python packages will be installed.
 
 Tools can then be run as follows:
 
