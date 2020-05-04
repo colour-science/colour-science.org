@@ -70,11 +70,13 @@ Development Workspace Creation
     $ cd colour-science
 
 -   Clone the `colour-vagrant <https://github.com/colour-science/colour-vagrant>`__
-    repository:
+    repository and initialise the submodules:
 
 .. code:: shell
 
     $ git clone git://github.com/colour-science/colour-vagrant.git
+    $ cd colour-vagrant
+    $ git submodule update --init --recursive
 
 -   You should now have a :code:`colour-vagrant` directory nested into the
     :code:`colour-science` one.
