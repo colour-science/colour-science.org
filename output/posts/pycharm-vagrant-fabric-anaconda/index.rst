@@ -17,27 +17,27 @@
 Installing the whole development toolchain for **Colour** roughly means
 deploying:
 
--   `Python 2.7 <https://www.python.org/download/releases/>`__ and
-    `Python 3.5 <https://www.python.org/download/releases/>`__
--   `NumPy <http://www.numpy.org/>`__
--   `SciPy <http://www.scipy.org/>`__
--   `Six>=1.10.0 <https://pypi.org/project/six>`__
--   `OpenImageIO <http://openimageio.org>`__
--   `Pandas <https://pandas.pydata.org/>`__
--   `Matplotlib <http://matplotlib.org/>`__
--   `Sphinx <https://sphinx-doc.org>`__
--   `sphinxcontrib-bibtex <https://sphinxcontrib-bibtex.readthedocs.io/>`__
--   `sphinx_rtd_theme <https://github.com/rtfd/sphinx_rtd_theme/>`__
--   `Coverage.py <https://pypi.org/project/coverage>`__
--   `Flake8 <https://pypi.org/project/flake8>`__
+-   `python>=2.7 <https://www.python.org/download/releases/>`__ and
+    `python>=3.5 <https://www.python.org/download/releases/>`__
+-   `numpy <https://pypi.org/project/numpy/>`__
+-   `scipy <https://pypi.org/project/scipy/>`__
+-   `six <https://pypi.org/project/six/>`__
+-   `coverage <https://pypi.org/project/coverage/>`__
+-   `flake8 <https://pypi.org/project/flake8/>`__
+-   `invoke <https://pypi.org/project/invoke/>`__
+-   `matplotlib <https://pypi.org/project/matplotlib/>`__
 -   `mock <https://pypi.org/project/mock>`__
--   `nose <https://nose.readthedocs.io/en/latest>`__
--   `Invoke <http://www.pyinvoke.org/>`__
--   `restructuredtext-lint <https://github.com/twolfson/restructuredtext-lint>`__
--   `twine <https://pypi.org/project/twine>`__
--   `YAPF <https://github.com/google/yapf>`__
--   `Nikola <https://getnikola.com/>`__
--   `Apache 2.2 <http://httpd.apache.org>`__
+-   `nikola <https://pypi.org/project/Nikola/>`__
+-   `nose <https://pypi.org/project/nose/>`__
+-   `openimageio <https://github.com/OpenImageIO/oiio>`__
+-   `pandas <https://pypi.org/project/pandas/>`__
+-   `restructuredtext-lint <https://pypi.org/project/restructuredtext-lint/>`__
+-   `sphinx <https://pypi.org/project/Sphinx/>`__
+-   `sphinx-rtd-theme <https://pypi.org/project/sphinx-rtd-theme/>`__
+-   `sphinxcontrib-bibtex <https://pypi.org/project/sphinxcontrib-bibtex/>`__
+-   `twine <https://pypi.org/project/twine/>`__
+-   `yapf==0.23.0 <https://pypi.org/project/yapf/>`__
+-   `apache 2.2 <http://httpd.apache.org>`__
 -   ... and too many things I just don't remember!
 
 I decided to see how I could make that setup a bit more portable and easier to

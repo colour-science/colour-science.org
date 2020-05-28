@@ -20,45 +20,47 @@ and `Installation Methods for Developing Colour`_ sections below.
 Primary Dependencies
 ^^^^^^^^^^^^^^^^^^^^
 
--   `Python>=2.7 <https://www.python.org/download/releases/>`__ or
-    `Python>=3.5 <https://www.python.org/download/releases/>`__
--   `Imageio <http://imageio.github.io/>`__
--   `SciPy <http://www.scipy.org/>`__
--   `Six <https://pypi.org/project/six/>`__
+-   `python>=2.7 <https://www.python.org/download/releases/>`__ or
+    `python>=3.5 <https://www.python.org/download/releases/>`__
+-   `imageio <http://imageio.github.io/>`__
+-   `scipy <https://pypi.org/project/scipy/>`__
+-   `six <https://pypi.org/project/six/>`__
 
 Optional Dependencies
 ^^^^^^^^^^^^^^^^^^^^^
 
--   `NetworkX <https://networkx.github.io/>`__
--   `OpenImageIO <https://github.com/OpenImageIO/oiio>`__
--   `Pandas <https://pandas.pydata.org/>`__
+-   `networkx <https://pypi.org/project/networkx/>`__
+-   `openimageio <https://github.com/OpenImageIO/oiio>`__
+-   `pandas <https://pypi.org/project/pandas/>`__
 
 Plotting Dependencies
 ^^^^^^^^^^^^^^^^^^^^^
 
--   `Matplotlib <http://matplotlib.org/>`__
--   `Graphviz <https://www.graphviz.org/>`__
--   `PyGraphviz <https://pygraphviz.github.io/>`__
+-   `matplotlib <https://pypi.org/project/matplotlib/>`__
+-   `graphviz <https://www.graphviz.org/>`__
+-   `pygraphviz <https://pypi.org/project/pygraphviz/>`__
 
 Development Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
+-   `backports.functools_lru_cache <https://pypi.org/project/backports.functools-lru-cache/>`__
 -   `biblib-simple <https://pypi.org/project/biblib-simple/>`__
--   `Coverage.py <https://pypi.org/project/coverage/>`__
+-   `coverage <https://pypi.org/project/coverage/>`__
 -   `coveralls <https://pypi.org/project/coveralls/>`__
--   `Flake8 <https://pypi.org/project/flake8/>`__
--   `Invoke <http://www.pyinvoke.org/>`__
--   `Jupyter <https://jupyter.org/>`__
+-   `flake8 <https://pypi.org/project/flake8/>`__
+-   `invoke <https://pypi.org/project/invoke/>`__
+-   `jupyter <https://pypi.org/project/jupyter/>`__
 -   `mock <https://pypi.org/project/mock/>`__
--   `nose <https://nose.readthedocs.io/en/latest>`__
--   `pre-commit <https://pre-commit.com/>`__
--   `pytest <https://docs.pytest.org/en/latest/>`__
--   `restructuredtext-lint <https://github.com/twolfson/restructuredtext-lint>`__
--   `Sphinx <https://sphinx-doc.org>`__
--   `sphinx_rtd_theme <https://github.com/rtfd/sphinx_rtd_theme/>`__
--   `sphinxcontrib-bibtex <https://sphinxcontrib-bibtex.readthedocs.io/>`__
+-   `nbformat>=4 <https://pypi.org/project/nbformat/>`__
+-   `nose <https://pypi.org/project/nose/>`__
+-   `pre-commit <https://pypi.org/project/pre-commit/>`__
+-   `pytest <https://pypi.org/project/pytest/>`__
+-   `restructuredtext-lint <https://pypi.org/project/restructuredtext-lint/>`__
+-   `sphinx <https://pypi.org/project/Sphinx/>`__
+-   `sphinx-rtd-theme <https://pypi.org/project/sphinx-rtd-theme/>`__
+-   `sphinxcontrib-bibtex <https://pypi.org/project/sphinxcontrib-bibtex/>`__
 -   `twine <https://pypi.org/project/twine/>`__
--   `YAPF==0.23.0 <https://github.com/google/yapf>`__
+-   `yapf==0.23.0 <https://pypi.org/project/yapf/>`__
 
 Installation Methods for Using Colour
 -------------------------------------

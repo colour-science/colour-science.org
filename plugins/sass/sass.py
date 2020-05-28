@@ -60,14 +60,17 @@ class BuildSass(Task):
         if os.path.isfile(os.path.join(self.sources_folder, "targets")):
             targets_path = os.path.join(self.sources_folder, "targets")
         else:
-            targets_path = utils.get_asset_path(os.path.join(self.sources_folder, "targets"), self.site.THEMES)
+            targets_path = utils.get_asset_path(
+                os.path.join(self.sources_folder, "targets"), self.site.THEMES)
         try:
             with codecs.open(targets_path, "rb", "utf-8") as inf:
                 targets = [x.strip() for x in inf.readlines()]
         except Exception:
             targets = []
 
-        for task in utils.copy_tree(self.sources_folder, os.path.join(kw['cache_folder'], self.sources_folder)):
+        for task in utils.copy_tree(
+                self.sources_folder,
+                os.path.join(kw['cache_folder'], self.sources_folder)):
             if task['name'] in tasks:
                 continue
             task['basename'] = 'prepare_sass_sources'
@@ -75,8 +78,11 @@ class BuildSass(Task):
             yield task
 
         for theme_name in kw['themes']:
-            src = os.path.join(utils.get_theme_path(theme_name), self.sources_folder)
-            for task in utils.copy_tree(src, os.path.join(kw['cache_folder'], self.sources_folder)):
+            src = os.path.join(
+                utils.get_theme_path(theme_name), self.sources_folder)
+            for task in utils.copy_tree(
+                    src, os.path.join(kw['cache_folder'],
+                                      self.sources_folder)):
                 if task['name'] in tasks:
                     continue
                 task['basename'] = 'prepare_sass_sources'
@@ -84,7 +90,8 @@ class BuildSass(Task):
                 yield task
 
         # Build targets and write CSS files
-        dst_dir = os.path.join(self.site.config['OUTPUT_FOLDER'], 'assets', 'css')
+        dst_dir = os.path.join(self.site.config['OUTPUT_FOLDER'], 'assets',
+                               'css')
         # Make everything depend on all sources, rough but enough
         deps = []
         for task in tasks.keys():
@@ -97,7 +104,9 @@ class BuildSass(Task):
             run_in_shell = sys.platform == 'win32'
             src = os.path.join(kw['cache_folder'], self.sources_folder, target)
             try:
-                compiled = subprocess.check_output([self.compiler_name] + self.compiler_options + [src], shell=run_in_shell)
+                compiled = subprocess.check_output(
+                    [self.compiler_name] + self.compiler_options + [src],
+                    shell=run_in_shell)
             except OSError:
                 utils.req_missing([self.compiler_name],
                                   'build Sass files (and use this theme)',
@@ -121,8 +130,8 @@ class BuildSass(Task):
             if base in seennames:
                 self.logger.error(
                     'Duplicate filenames for Sass compiled files: {0} and '
-                    '{1} (both compile to {2})'.format(
-                        seennames[base], target, base + ".css"))
+                    '{1} (both compile to {2})'.format(seennames[base], target,
+                                                       base + ".css"))
             else:
                 seennames.update({base: target})
 
