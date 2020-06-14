@@ -179,6 +179,46 @@
     </div>
 
     <!-- ------------------------------------------------------------------ -->
+    <!-- Google Summer of Code                                              -->
+    <!-- ------------------------------------------------------------------ -->
+
+    <h1>Google Summer of Code</h1>
+
+    <h2>2020</h2>
+
+    <!-- ------------------------------------------------------------------ -->
+    <!-- ------------------------------------------------------------------ -->
+    <!-- ------------------------------------------------------------------ -->
+
+    <div class="row my-5">
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>Nishant Joywardhan</h3>
+                    <h4>
+                        <a href="https://ducic.ac.in/">Cluster Innovation Centre, University of Delhi</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>Student</em>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        LUT IO Improvements.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/njwardhan" class="card-link">Github</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
+    </div>
+
+    <!-- ------------------------------------------------------------------ -->
     <!-- Development & Technical Support                                    -->
     <!-- ------------------------------------------------------------------ -->
 
