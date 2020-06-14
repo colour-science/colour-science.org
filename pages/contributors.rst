@@ -845,9 +845,11 @@
                             <li><a href="https://github.com/Apoorva-13">@Apoorva-13</li>
                             <li><a href="https://github.com/aurelienbl">@aurelienbl</li>
                             <li><a href="https://github.com/awehring">@awehring</li>
+                            <li><a href="https://github.com/beckstev">@beckstev</li>
                             <li><a href="https://github.com/bersbersbers">@bersbersbers</li>
                             <li><a href="https://github.com/brandondube">@brandondube</li>
                             <li><a href="https://github.com/briend">@briend</li>
+                            <li><a href="https://github.com/bsdis">@bsdis</li>
                             <li><a href="https://github.com/cclauss">@cclauss</li>
                             <li><a href="https://github.com/Chandler">@Chandler</li>
                             <li><a href="https://github.com/chesschi">@chesschi</li>
@@ -878,6 +880,7 @@
                             <li><a href="https://github.com/KOLANICH">@KOLANICH</li>
                             <li><a href="https://github.com/Kunkka1988">@Kunkka1988</li>
                             <li><a href="https://github.com/lavrovd">@lavrovd</li>
+                            <li><a href="https://github.com/LeCyberDucky">@LeCyberDucky</li>
                             <li><a href="https://github.com/Legendin">@Legendin</li>
                             <li><a href="https://github.com/leklbk">@leklbk</li>
                             <li><a href="https://github.com/lensz">@lensz</li>
@@ -908,6 +911,7 @@
                             <li><a href="https://github.com/Ron024">@Ron024</li>
                             <li><a href="https://github.com/senyai">@senyai</li>
                             <li><a href="https://github.com/shanest">@shanest</li>
+                            <li><a href="https://github.com/spicymatt">@spicymatt</li>
                             <li><a href="https://github.com/stakemura">@stakemura</li>
                             <li><a href="https://github.com/tashdor">@tashdor</li>
                             <li><a href="https://github.com/TFiFiE">@TFiFiE</li>
