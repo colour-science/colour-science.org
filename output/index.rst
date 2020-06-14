@@ -81,6 +81,56 @@ We are grateful 💖 for the support of our
 If you'd like to join them, please consider
 `becoming a sponsor on OpenCollective <https://opencollective.com/colour-science>`__.
 
+Bronze Sponsors
+^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+    <div class="table-responsive">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td align="center" valign="middle">
+                        <a href="https://github.com/scoopxyz" target="_blank">
+                            <img class="img-fluid" style="max-height:126px" src="https://avatars0.githubusercontent.com/u/22137450">
+                        </a>
+                        <p><a href="https://github.com/scoopxyz" target="_blank">Sean Cooper</a></p>
+                    </td>
+                    <td align="center" valign="middle">
+                        <a href="https://dummyimage.com/126x126/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img width="126px" src="https://dummyimage.com/126x126/f9f9fc/000000.png&text=Your+Logo+Here">
+                        </a>
+                    </td>
+                    <td align="center" valign="middle">
+                        <a href="https://dummyimage.com/126x126/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img width="126px" src="https://dummyimage.com/126x126/f9f9fc/000000.png&text=Your+Logo+Here">
+                        </a>
+                    </td>
+                    <td align="center" valign="middle">
+                        <a href="https://dummyimage.com/126x126/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img width="126px" src="https://dummyimage.com/126x126/f9f9fc/000000.png&text=Your+Logo+Here">
+                        </a>
+                    </td>
+                    <td align="center" valign="middle">
+                        <a href="https://dummyimage.com/126x126/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img width="126px" src="https://dummyimage.com/126x126/f9f9fc/000000.png&text=Your+Logo+Here">
+                        </a>
+                    </td>
+                    <td align="center" valign="middle">
+                        <a href="https://dummyimage.com/126x126/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img width="126px" src="https://dummyimage.com/126x126/f9f9fc/000000.png&text=Your+Logo+Here">
+                        </a>
+                    </td>
+                    <td align="center" valign="middle">
+                        <a href="https://dummyimage.com/126x126/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img width="126px" src="https://dummyimage.com/126x126/f9f9fc/000000.png&text=Your+Logo+Here">
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
 Special Sponsors
 ^^^^^^^^^^^^^^^^
 
