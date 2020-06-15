@@ -131,8 +131,8 @@ Bronze Sponsors
         </table>
     </div>
 
-Special Sponsors
-^^^^^^^^^^^^^^^^
+Donations & Special Sponsors
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. raw:: html
 
@@ -165,9 +165,10 @@ Special Sponsors
                         <p><a href="http://virtualmatter.org/" target="_blank">Kevin Whitfield</a></p>
                     </td>
                     <td align="center" valign="middle">
-                        <a href="https://dummyimage.com/176x176/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
-                            <img class="img-fluid" style="max-width:176px;" src="https://dummyimage.com/176x176/f9f9fc/000000.png&text=Your+Logo+Here">
+                        <a href="https://www.richardlackey.com/" target="_blank">
+                            <img class="img-fluid" style="max-width:176px;" src="https://pbs.twimg.com/profile_images/555774739629633536/JjxFzBHy.jpeg">
                         </a>
+                        <p><a href="https://www.richardlackey.com/" target="_blank">Richard Lackey</a></p>
                     </td>
                 </tr>
             </tbody>
