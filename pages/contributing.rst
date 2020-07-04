@@ -436,7 +436,7 @@ Most of the conventions used in **Colour** are the same than
 Overview
 ^^^^^^^^
 
-We follow the `Google Python Style Guide <https://google-styleguide.googlecode.com/svn/trunk/pyguide.html>`__
+We follow the `Google Python Style Guide <https://google.github.io/styleguide/pyguide.html>`__
 and especially the *Python Language Rules* although with the main exception
 being the docstrings / documentation formatted with
 `Numpy Docstrings Style <https://github.com/numpy/numpy/blob/master/doc/example.py>`__.
