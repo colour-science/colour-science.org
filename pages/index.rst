@@ -197,9 +197,10 @@ Donations & Special Sponsors
                         <p><a href="https://twitter.com/ilia_sibiryakov" target="_blank">Ilia Sibiryakov</a></p>
                     </td>
                     <td align="center" valign="middle">
-                        <a href="https://dummyimage.com/176x176/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
-                            <img class="img-fluid img-circle" width="176px" src="https://dummyimage.com/176x176/f9f9fc/000000.png&text=Your+Logo+Here">
+                        <a href="https://github.com/zachlewis" target="_blank">
+                            <img class="img-fluid img-circle" width="176px" src="https://avatars0.githubusercontent.com/u/2228592">
                         </a>
+                        <p><a href="https://github.com/zachlewis" target="_blank">Zack Lewis</a></p>
                     </td>
                 </tr>
             </tbody>
