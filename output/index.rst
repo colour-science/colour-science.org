@@ -94,7 +94,6 @@ Gold Sponsors
                         <a href="https://makeup.land/" target="_blank">
                             <img class="img-fluid img-circle" style="max-height:288px" src="https://images.opencollective.com/makeup-land/28c2133/logo/512.png">
                         </a>
-                        <p><a href="https://makeup.land/" target="_blank">Makeup Land</a></p>
                     </td>
                     <td align="center" valign="middle">
                         <a href="https://dummyimage.com/288x288/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
