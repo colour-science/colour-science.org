@@ -81,6 +81,36 @@ We are grateful 💖 for the support of our
 If you'd like to join them, please consider
 `becoming a sponsor on OpenCollective <https://opencollective.com/colour-science>`__.
 
+Gold Sponsors
+^^^^^^^^^^^^^
+
+.. raw:: html
+
+    <div class="table-responsive">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td align="center" valign="middle">
+                        <a href="https://makeup.land/" target="_blank">
+                            <img class="img-fluid img-circle" style="max-height:288px" src="https://images.opencollective.com/makeup-land/28c2133/logo/512.png">
+                        </a>
+                        <p><a href="https://makeup.land/" target="_blank">Makeup Land</a></p>
+                    </td>
+                    <td align="center" valign="middle">
+                        <a href="https://dummyimage.com/288x288/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img class="img-fluid img-circle" width="288px" src="https://dummyimage.com/288x288/f9f9fc/000000.png&text=Your+Logo+Here">
+                        </a>
+                    </td>
+                    <td align="center" valign="middle">
+                        <a href="https://dummyimage.com/288x288/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img class="img-fluid img-circle" width="288px" src="https://dummyimage.com/288x288/f9f9fc/000000.png&text=Your+Logo+Here">
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
 Bronze Sponsors
 ^^^^^^^^^^^^^^^
 
