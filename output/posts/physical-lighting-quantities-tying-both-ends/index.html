@@ -232,9 +232,9 @@ scaling by the ISO arithmetic speed <span class="math">\(S\)</span>:</p>
 </blockquote>
 <p><a class="reference external" href="https://github.com/colour-science/colour-hdri/blob/develop/colour_hdri/exposure/dsc.py">Colour - HDRI</a>
 implements the aforementioned model with Python:</p>
-<pre class="code python"><a name="rest_code_e71761c43bd64df788d295e39a2c1f28-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_hdri</span>
-<a name="rest_code_e71761c43bd64df788d295e39a2c1f28-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">saturation_based_speed_focal_plane_exposure</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
-<a name="rest_code_e71761c43bd64df788d295e39a2c1f28-3"></a><span class="mf">0.46993364546604555</span>
+<pre class="code python"><a name="rest_code_39e1c52586774447bb36125bbb6d3e63-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_hdri</span>
+<a name="rest_code_39e1c52586774447bb36125bbb6d3e63-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">saturation_based_speed_focal_plane_exposure</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<a name="rest_code_39e1c52586774447bb36125bbb6d3e63-3"></a><span class="mf">0.46993364546604555</span>
 </pre>
 <p><a class="reference external" href="https://github.com/colour-science/colour-nuke/blob/master/colour_nuke/scripts/digital_still_camera_exposure.nk">Colour - Nuke</a>
 offers a Gizmo/Group implementation also available on
@@ -272,14 +272,14 @@ as follows:</p>
 respectively.</p>
 <p><a class="reference external" href="https://github.com/colour-science/colour-hdri/blob/develop/colour_hdri/calibration/absolute_luminance.py">Colour - HDRI</a>
 implements support for absolute luminance calibration with Python:</p>
-<pre class="code python"><a name="rest_code_c51d35d30ace4e26aa72abb551b0ac08-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_hdri</span>
-<a name="rest_code_c51d35d30ace4e26aa72abb551b0ac08-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<a name="rest_code_c51d35d30ace4e26aa72abb551b0ac08-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">RGB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">2048</span><span class="p">,</span> <span class="mi">1024</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<a name="rest_code_c51d35d30ace4e26aa72abb551b0ac08-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">upper_hemisphere_illuminance_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
-<a name="rest_code_c51d35d30ace4e26aa72abb551b0ac08-5"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">absolute_luminance_calibration_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span> <span class="mi">120000</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-<a name="rest_code_c51d35d30ace4e26aa72abb551b0ac08-6"></a><span class="n">array</span><span class="p">([</span> <span class="mf">38215.85392444</span><span class="p">,</span>  <span class="mf">38215.85392444</span><span class="p">,</span>  <span class="mf">38215.85392444</span><span class="p">])</span>
-<a name="rest_code_c51d35d30ace4e26aa72abb551b0ac08-7"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">calibration</span><span class="o">.</span><span class="n">absolute_luminance</span><span class="o">.</span><span class="n">upper_hemisphere_illuminance_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
-<a name="rest_code_c51d35d30ace4e26aa72abb551b0ac08-8"></a><span class="mf">3.1400580564615663</span>
+<pre class="code python"><a name="rest_code_53f7b1b195e44b6094a49f71dbd1ebfb-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_hdri</span>
+<a name="rest_code_53f7b1b195e44b6094a49f71dbd1ebfb-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<a name="rest_code_53f7b1b195e44b6094a49f71dbd1ebfb-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">RGB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">2048</span><span class="p">,</span> <span class="mi">1024</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<a name="rest_code_53f7b1b195e44b6094a49f71dbd1ebfb-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">upper_hemisphere_illuminance_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
+<a name="rest_code_53f7b1b195e44b6094a49f71dbd1ebfb-5"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">absolute_luminance_calibration_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span> <span class="mi">120000</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<a name="rest_code_53f7b1b195e44b6094a49f71dbd1ebfb-6"></a><span class="n">array</span><span class="p">([</span> <span class="mf">38215.85392444</span><span class="p">,</span>  <span class="mf">38215.85392444</span><span class="p">,</span>  <span class="mf">38215.85392444</span><span class="p">])</span>
+<a name="rest_code_53f7b1b195e44b6094a49f71dbd1ebfb-7"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">calibration</span><span class="o">.</span><span class="n">absolute_luminance</span><span class="o">.</span><span class="n">upper_hemisphere_illuminance_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
+<a name="rest_code_53f7b1b195e44b6094a49f71dbd1ebfb-8"></a><span class="mf">3.1400580564615663</span>
 </pre>
 <div class="alert alert-dismissible alert-info line-block">
 <div class="line"><strong>Note</strong></div>

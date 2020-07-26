@@ -415,46 +415,46 @@ is available!</p>
 <li><p>The second is support for metadata inside the API. Most of the codebase adopts definitions/functions over classes to stay clean and lean, the aforementioned spectral implementation being a notable exception. As a consequence, it is hard to implement a non-intrusive classifying mechanism, provide usable hints on functions domain/range or create an auto-conversion layer. We have considered multiple ways of providing the necessary metadata, e.g. <a class="reference external" href="https://github.com/colour-science/colour/branches/all">experimental/medatada* branches</a>, and decided that the true elegant solution was through docstrings.</p></li>
 </ul>
 <p>The following example showcases the current implementation, defining metadata for <em>parameters</em>, <em>returns</em> and the definition by using the <em>notes</em> section:</p>
-<pre class="code python"><a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-1"></a><span class="k">def</span> <span class="nf">luminance_Newhall1943</span><span class="p">(</span><span class="n">V</span><span class="p">):</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-2"></a>    <span class="sd">"""</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-3"></a><span class="sd">    Returns the *luminance* :math:`R_Y` of given *Munsell* value :math:`V`</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-4"></a><span class="sd">    using *Newhall et al. (1943)* method.</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-5"></a>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-6"></a><span class="sd">    Parameters</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-7"></a><span class="sd">    ----------</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-8"></a><span class="sd">    V : numeric or array_like</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-9"></a><span class="sd">        metadata : {'type': 'Munsell Value', 'symbol': 'V', 'extent': (0, 10)}</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-10"></a><span class="sd">        *Munsell* value :math:`V`.</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-11"></a>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-12"></a><span class="sd">    Returns</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-13"></a><span class="sd">    -------</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-14"></a><span class="sd">    numeric or array_like</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-15"></a><span class="sd">        metadata : {'type': 'Luminance', 'symbol': 'R_Y', 'extent': (0, 100)}</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-16"></a><span class="sd">        *luminance* :math:`R_Y`.</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-17"></a>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-18"></a><span class="sd">    Notes</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-19"></a><span class="sd">    -----</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-20"></a><span class="sd">    metadata : {'classifier': 'Luminance Conversion Function', 'method_name':</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-21"></a><span class="sd">        'Newhall 1943', 'method_strict_name': 'Newhall et al. (1943)'}</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-22"></a>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-23"></a><span class="sd">    References</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-24"></a><span class="sd">    ----------</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-25"></a><span class="sd">    .. [1]  Newhall, S. M., Nickerson, D., &amp; Judd, D. B. (1943). Final report</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-26"></a><span class="sd">            of the OSA subcommittee on the spacing of the munsell colors. JOSA,</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-27"></a><span class="sd">            33(7), 385. doi:10.1364/JOSA.33.000385</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-28"></a>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-29"></a><span class="sd">    Examples</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-30"></a><span class="sd">    --------</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-31"></a><span class="sd">    &gt;&gt;&gt; luminance_Newhall1943(3.74629715382)  # doctest: +ELLIPSIS</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-32"></a><span class="sd">    10.4089874...</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-33"></a><span class="sd">    """</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-34"></a>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-35"></a>    <span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-36"></a>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-37"></a>    <span class="n">R_Y</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.2219</span> <span class="o">*</span> <span class="n">V</span> <span class="o">-</span> <span class="mf">0.23111</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span> <span class="o">*</span> <span class="n">V</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.23951</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.021009</span> <span class="o">*</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-38"></a>          <span class="p">(</span><span class="n">V</span> <span class="o">**</span> <span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.0008404</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span> <span class="o">**</span> <span class="mi">5</span><span class="p">))</span>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-39"></a>
-<a name="rest_code_61bc98976e4a481c9ca5e74c9f21fa92-40"></a>    <span class="k">return</span> <span class="n">R_Y</span>
+<pre class="code python"><a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-1"></a><span class="k">def</span> <span class="nf">luminance_Newhall1943</span><span class="p">(</span><span class="n">V</span><span class="p">):</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-2"></a>    <span class="sd">"""</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-3"></a><span class="sd">    Returns the *luminance* :math:`R_Y` of given *Munsell* value :math:`V`</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-4"></a><span class="sd">    using *Newhall et al. (1943)* method.</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-5"></a>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-6"></a><span class="sd">    Parameters</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-7"></a><span class="sd">    ----------</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-8"></a><span class="sd">    V : numeric or array_like</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-9"></a><span class="sd">        metadata : {'type': 'Munsell Value', 'symbol': 'V', 'extent': (0, 10)}</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-10"></a><span class="sd">        *Munsell* value :math:`V`.</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-11"></a>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-12"></a><span class="sd">    Returns</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-13"></a><span class="sd">    -------</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-14"></a><span class="sd">    numeric or array_like</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-15"></a><span class="sd">        metadata : {'type': 'Luminance', 'symbol': 'R_Y', 'extent': (0, 100)}</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-16"></a><span class="sd">        *luminance* :math:`R_Y`.</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-17"></a>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-18"></a><span class="sd">    Notes</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-19"></a><span class="sd">    -----</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-20"></a><span class="sd">    metadata : {'classifier': 'Luminance Conversion Function', 'method_name':</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-21"></a><span class="sd">        'Newhall 1943', 'method_strict_name': 'Newhall et al. (1943)'}</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-22"></a>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-23"></a><span class="sd">    References</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-24"></a><span class="sd">    ----------</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-25"></a><span class="sd">    .. [1]  Newhall, S. M., Nickerson, D., &amp; Judd, D. B. (1943). Final report</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-26"></a><span class="sd">            of the OSA subcommittee on the spacing of the munsell colors. JOSA,</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-27"></a><span class="sd">            33(7), 385. doi:10.1364/JOSA.33.000385</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-28"></a>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-29"></a><span class="sd">    Examples</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-30"></a><span class="sd">    --------</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-31"></a><span class="sd">    &gt;&gt;&gt; luminance_Newhall1943(3.74629715382)  # doctest: +ELLIPSIS</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-32"></a><span class="sd">    10.4089874...</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-33"></a><span class="sd">    """</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-34"></a>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-35"></a>    <span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-36"></a>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-37"></a>    <span class="n">R_Y</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.2219</span> <span class="o">*</span> <span class="n">V</span> <span class="o">-</span> <span class="mf">0.23111</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span> <span class="o">*</span> <span class="n">V</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.23951</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.021009</span> <span class="o">*</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-38"></a>          <span class="p">(</span><span class="n">V</span> <span class="o">**</span> <span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.0008404</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span> <span class="o">**</span> <span class="mi">5</span><span class="p">))</span>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-39"></a>
+<a name="rest_code_91c9f9c1c67f48859f6e727e9657ba4a-40"></a>    <span class="k">return</span> <span class="n">R_Y</span>
 </pre>
 <p>There is one caveat though: running Python with <cite>-OO</cite> argument will optimize the bytecode and trim the docstrings and as a result preventing metadata usage. This is an edge case we are aware of and it will be advertised.</p>
 <p>These two features are consequential and taking a fair amount of time to implement and test. They will also introduce backward incompatible changes.</p>

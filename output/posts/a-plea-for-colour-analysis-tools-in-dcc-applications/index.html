@@ -221,7 +221,7 @@ navbar-dark bg-dark bg-primary
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pylab</span>
 <span class="kn">from</span> <span class="nn">OpenImageIO</span> <span class="kn">import</span> <span class="n">FLOAT</span><span class="p">,</span> <span class="n">ImageInput</span>
 
@@ -245,7 +245,7 @@ navbar-dark bg-dark bg-primary
     <span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">vectorised_oecf</span><span class="p">(</span><span class="n">image</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="n">pylab</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 
-    <span class="n">settings</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'no_ticks'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+    <span class="n">settings</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'no_ticks'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
                 <span class="s1">'bounding_box'</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
                 <span class="s1">'bbox_inches'</span><span class="p">:</span> <span class="s1">'tight'</span><span class="p">,</span>
                 <span class="s1">'pad_inches'</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
@@ -328,7 +328,7 @@ navbar-dark bg-dark bg-primary
 <span class="n">ACES_RGB_to_sRGB_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">sRGB_XYZ_to_RGB</span><span class="p">,</span>
                                  <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">cat</span><span class="p">,</span> <span class="n">ACES_RGB_to_XYZ</span><span class="p">))</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">ACES_RGB_to_sRGB_matrix</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ACES_RGB_to_sRGB_matrix</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -449,7 +449,7 @@ navbar-dark bg-dark bg-primary
 <span class="k">def</span> <span class="nf">image_chromaticities_plot</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">to_xy</span><span class="o">=</span><span class="n">ACES_to_xy</span><span class="p">):</span>
     <span class="n">colourspaces_CIE_1931_chromaticity_diagram_plot</span><span class="p">(</span>
         <span class="p">[</span><span class="s1">'Pointer Gamut'</span><span class="p">,</span> <span class="s1">'sRGB'</span><span class="p">,</span> <span class="s1">'Rec. 2020'</span><span class="p">,</span> <span class="s1">'ACES RGB'</span><span class="p">],</span>
-        <span class="n">standalone</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+        <span class="n">standalone</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
     <span class="n">alpha_p</span><span class="p">,</span> <span class="n">colour_p</span> <span class="o">=</span> <span class="mf">0.85</span><span class="p">,</span> <span class="s1">'black'</span>
 
@@ -457,7 +457,7 @@ navbar-dark bg-dark bg-primary
     <span class="n">pylab</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xy</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">xy</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha_p</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colour_p</span><span class="p">,</span>
                   <span class="n">marker</span><span class="o">=</span><span class="s1">'+'</span><span class="p">)</span>
 
-    <span class="n">display</span><span class="p">(</span><span class="n">standalone</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">standalone</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 
 <span class="n">image_chromaticities_plot</span><span class="p">(</span><span class="n">ACES_image</span><span class="p">)</span>
@@ -601,7 +601,7 @@ navbar-dark bg-dark bg-primary
 
 <span class="k">def</span> <span class="nf">within_boundaries</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">triangulation</span><span class="p">):</span>
     <span class="n">simplex</span> <span class="o">=</span> <span class="n">triangulation</span><span class="o">.</span><span class="n">find_simplex</span><span class="p">(</span><span class="n">point</span><span class="p">)</span>
-    <span class="k">return</span> <span class="bp">True</span> <span class="k">if</span> <span class="n">simplex</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span> <span class="k">else</span> <span class="bp">False</span>
+    <span class="k">return</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">simplex</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span> <span class="k">else</span> <span class="kc">False</span>
 
 
 <span class="k">def</span> <span class="nf">mask_legal_colours</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">to_xy</span><span class="o">=</span><span class="n">sRGB_to_xy</span><span class="p">):</span>
