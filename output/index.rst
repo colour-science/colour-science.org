@@ -241,13 +241,13 @@ Donations & Special Sponsors
                     </td>
                     <td align="center" valign="middle">
                         <a href="https://twitter.com/hdc_digital" target="_blank">
-                            <img width="176px" src="https://pbs.twimg.com/profile_images/1276879673536937985/W56dpzI1.jpg">
+                            <img class="img-fluid img-circle" width="176px" src="https://pbs.twimg.com/profile_images/1276879673536937985/W56dpzI1.jpg">
                         </a>
                         <p><a href="https://twitter.com/hdc_digital" target="_blank">Howard Colin</a></p>
                     </td>
                     <td align="center" valign="middle">
                         <a href="https://chrisbrejon.com/" target="_blank">
-                            <img width="176px" src="https://i.imgur.com/Zhs53S9.png">
+                            <img class="img-fluid img-circle" width="176px" src="https://i.imgur.com/Zhs53S9.png">
                         </a>
                         <p><a href="https://chrisbrejon.com/" target="_blank">Christophe Brejon</a></p>
                     </td>
