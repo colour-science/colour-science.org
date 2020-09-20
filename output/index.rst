@@ -261,11 +261,6 @@ Donations & Special Sponsors
                             <img width="176px" src="https://dummyimage.com/176x176/f9f9fc/000000.png&text=Your+Logo+Here">
                         </a>
                     </td>
-                    <td align="center" valign="middle">
-                        <a href="https://dummyimage.com/176x176/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
-                            <img width="176px" src="https://dummyimage.com/176x176/f9f9fc/000000.png&text=Your+Logo+Here">
-                        </a>
-                    </td>
                 </tr>
             </tbody>
         </table>
