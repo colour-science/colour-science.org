@@ -35,8 +35,8 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="http://www.thomasmansencal.com" class="card-link">Website</a>
                     <a href="http://thomasmansencal.blogspot.com" class="card-link">Blog</a>
+                    <a href="http://www.thomasmansencal.com" class="card-link">Website</a>
                 </div>
             </div>
         </div>
@@ -250,8 +250,8 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://redman.xyz/" class="card-link">Website</a>
                     <a href="https://github.com/enneract" class="card-link">Github</a>
+                    <a href="https://redman.xyz/" class="card-link">Website</a>
                 </div>
             </div>
         </div>
