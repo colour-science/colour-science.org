@@ -886,6 +886,7 @@
                             <li><a href="https://github.com/cclauss">@cclauss</li>
                             <li><a href="https://github.com/Chandler">@Chandler</li>
                             <li><a href="https://github.com/chesschi">@chesschi</li>
+                            <li><a href="https://github.com/ChunHsinWang">@ChunHsinWang</li>
                         </ul>
                     </p>
                 </div>
@@ -938,10 +939,12 @@
                             <li><a href="https://github.com/nschloe">@nschloe</li>
                             <li><a href="https://github.com/peteroupc">@peteroupc</li>
                             <li><a href="https://github.com/pfk-beta">@pfk-beta</li>
+                            <li><a href="https://github.com/priikone">@priikone</li>
                             <li><a href="https://github.com/Queuecumber">@Queuecumber</li>
                             <li><a href="https://github.com/Rob-Welch">@Rob-Welch</li>
                             <li><a href="https://github.com/robbuckley">@robbuckley</li>
                             <li><a href="https://github.com/Ron024">@Ron024</li>
+                            <li><a href="https://github.com/rsnitsch">@rsnitsch</li>
                             <li><a href="https://github.com/senyai">@senyai</li>
                             <li><a href="https://github.com/shanest">@shanest</li>
                             <li><a href="https://github.com/spicymatt">@spicymatt</li>
