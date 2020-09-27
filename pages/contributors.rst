@@ -596,6 +596,38 @@
     </div>
 
     <!-- ------------------------------------------------------------------ -->
+    <!-- ------------------------------------------------------------------ -->
+    <!-- ------------------------------------------------------------------ -->
+
+    <div class="row my-5">
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>Joseph Goldstone</h3>
+                    <h4>
+                        <a href="https://www.arri.com/">ARRI</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>Image Science Engineer</em>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Technical support and documentation improvements.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/JGoldstone" class="card-link">Github</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
+    </div>
+
+    <!-- ------------------------------------------------------------------ -->
     <!-- Acknowledgements                                                   -->
     <!-- ------------------------------------------------------------------ -->
 
@@ -746,27 +778,6 @@
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
-                    <h3>Joseph Goldstone</h3>
-                    <h4>
-                        <a href="https://www.arri.com/">ARRI</a>
-                    </h4>
-                    <h5 class="card-subtitle text-muted mt-3">
-                        <em>Image Science Engineer</em>
-                    </h5>
-                </div>
-                <div class="card-body">
-                    <p class="card-text">
-                        Technical support.
-                    </p>
-                </div>
-                <div class="card-footer">
-                    <a href="https://github.com/JGoldstone" class="card-link">Github</a>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-                <div class="card-header text-center">
                     <h3>Yoshi Ohno</h3>
                     <h5 class="card-subtitle text-muted mt-3">
                         <em>Mathematician &amp; Colour Scientist</em>
@@ -799,6 +810,8 @@
                     <a href="http://www.poynton.com/" class="card-link">Website</a>
                 </div>
             </div>
+        </div>
+        <div class="col">
         </div>
     </div>
 
