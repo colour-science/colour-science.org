@@ -886,7 +886,6 @@
                             <li><a href="https://github.com/cclauss">@cclauss</li>
                             <li><a href="https://github.com/Chandler">@Chandler</li>
                             <li><a href="https://github.com/chesschi">@chesschi</li>
-                            <li><a href="https://github.com/ChunHsinWang">@ChunHsinWang</li>
                         </ul>
                     </p>
                 </div>
@@ -897,6 +896,7 @@
                 <div class="card-body">
                     <p class="card-text">
                         <ul class="list-unstyled text-center">
+                            <li><a href="https://github.com/ChunHsinWang">@ChunHsinWang</li>
                             <li><a href="https://github.com/codycuellar">@codycuellar</li>
                             <li><a href="https://github.com/dtbulmerJRs">@dtbulmerJRs</li>
                             <li><a href="https://github.com/Edwardlin-zlt">@Edwardlin-zlt</li>
