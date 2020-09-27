@@ -234,6 +234,26 @@
             </div>
         </div>
         <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>Pawel Redman</h3>
+                    <h4>
+                        <a href=http://pwr.edu.pl/en/">Wrocław University of Science and Technology</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>Student</em>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        New Spectral Upsampling Methods.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://redman.xyz/" class="card-link">Website</a>
+                    <a href="https://github.com/enneract" class="card-link">Github</a>
+                </div>
+            </div>
         </div>
     </div>
 
