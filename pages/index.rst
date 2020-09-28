@@ -94,10 +94,11 @@ Gold Sponsors
                         <a href="https://makeup.land/" target="_blank">
                             <img class="img-fluid img-circle" style="max-height:288px" src="https://images.opencollective.com/makeup-land/28c2133/logo/512.png">
                         </a>
+                        <p><a href="https://makeup.land/" target="_blank">makeup.land</a></p>
                     </td>
                     <td align="center" valign="middle">
                         <a href="https://twitter.com/JRGoldstone" target="_blank">
-                            <img class="img-fluid img-circle" style="max-height:288px src="https://pbs.twimg.com/profile_images/2984918964/cfa02927f1c709e689b5a87ac5487c09.jpeg">
+                            <img class="img-fluid img-circle" style="max-height:288px src="https://pbs.twimg.com/profile_images/1310212058672103425/3tPPvC6m.jpg">
                         </a>
                         <p><a href="https://twitter.com/JRGoldstone" target="_blank">Joseph Goldstone</a></p>
                     </td>
