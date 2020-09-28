@@ -98,7 +98,7 @@ Gold Sponsors
                     </td>
                     <td align="center" valign="middle">
                         <a href="https://twitter.com/JRGoldstone" target="_blank">
-                            <img class="img-fluid img-circle" style="max-height:288px src="https://pbs.twimg.com/profile_images/1310212058672103425/3tPPvC6m.jpg">
+                            <img class="img-fluid img-circle" style="max-height:288px" src="https://pbs.twimg.com/profile_images/1310212058672103425/3tPPvC6m.jpg">
                         </a>
                         <p><a href="https://twitter.com/JRGoldstone" target="_blank">Joseph Goldstone</a></p>
                     </td>
