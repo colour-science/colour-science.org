@@ -13,6 +13,7 @@ the following papers, publications, articles or presentations:
 -   Akenine-Möller, T., Haines, E., Hoffman, N., Pesce, A., Hillaire, S., & Iwanicki, M. (2018). Real-Time Rendering, Fourth Edition. ISBN:9781138627000
 -   Arrighetti, W. (2017). The Academy Color Encoding System (ACES): A Professional Color-Management Framework for Production, Post-Production and Archival of Still and Motion Pictures. Journal of Imaging, 3(4), 40. doi:10.3390/jimaging3040040
 -   Baumann, O., Okell, A., & Strom, J. (2018). Characterization of Processing Artifacts in High Dynamic Range, Wide Color Gamut Video. SMPTE Motion Imaging Journal, 127(3), 1–7. doi:10.5594/JMI.2018.2792761
+-   Dherse, A. P., Everaert, M. N., & Gwizdała, J. J. (2020). Scene relighting with illumination estimation in the latent space on an encoder-decoder scheme. ArXiv:2006.02333 [Cs]. Retrieved September 29, 2020, from http://arxiv.org/abs/2006.02333
 -   Duiker, H.-P., Forsythe, A., Dyer, S., Houston, J., McCown, W., Feeney, R., … Walker, D. (2015). ACEScg: A Common Color Encoding for Visual Effects Applications - Talk. Retrieved August 15, 2015, from http://www.slideshare.net/hpduiker/acescg-a-common-color-encoding-for-visual-effects-applications
 -   Guimarães, T. L. B. (2016). Determinação da Cor do Solo Pela Carta de Munsell e por Colorimetria.
 -   Hart, E. (2016). UHD Color for Games. Retrieved from https://developer.nvidia.com/sites/default/files/akamai/gameworks/hdr/UHDColorForGames.pdf
@@ -32,3 +33,6 @@ the following papers, publications, articles or presentations:
 -   Tam, J. (2016). A Generative Model for Digital Camera Chemical Colorimetry.
 -   Uchimura, H. (2016). Color Science for Games.
 -   Uchimura, H., & Suzuki, K. (2018). Practical HDR and Wide Color Techniques in Gran Turismo SPORT. Retrieved from http://www.polyphony.co.jp/publications/sa2018/
+-   Walker, D., Dolan, M., & Hodoul, P. (2020). The ASWF Takes OpenColorIO to the Next Level. The Digital Production Symposium, 1–10. doi:10.1145/3403736.3403942
+-   Waters, M. J., Walker, J. M., Nelson, C. T., Joester, D., & Rondinelli, J. M. (2020). Exploiting Colorimetry for Fidelity in Data Visualization. ArXiv:2002.12228 [Cond-Mat]. Retrieved September 29, 2020, from http://arxiv.org/abs/2002.12228
+-   Wheatley, K. J. (2016). A retrospective on the adoption of the ACES technology at Framestore. Proceedings of the 2016 Symposium on Digital Production, 19–30. doi:10.1145/2947688.2947695
