@@ -150,7 +150,7 @@ accomplished to cherry-pick from:
 
 What's next? First, merging the remaining `GSoC <https://summerofcode.withgoogle.com/>`__
 code, especially the GPU backend if possible before releasing 0.3.16. Then, we
-will work toward dropping Python 3 support and walk through the final steps for
+will work toward dropping Python 2 support and walk through the final steps for
 the 1.0.0 release!
 
 Feel free to join us on `Discourse <https://colour-science.discourse.group/>`__,
