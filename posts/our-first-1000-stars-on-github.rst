@@ -8,7 +8,7 @@
 .. type: text
 
 Earlier this week, `Colour <https://github.com/colour-science/colour>`__
-received its 1000th star ⭐ and we are proud of the achievement!
+received its 1000th Github star ⭐ and we are proud of the achievement!
 
 We would not be here without the help of our users, `sponsors <https://github.com/colour-science/colour/blob/develop/SPONSORS.rst>`__, `contributors <https://github.com/colour-science/colour/blob/develop/CONTRIBUTORS.rst>`__ and
 `NumFOCUS <https://numfocus.org/>`__, so thank you all!
@@ -116,8 +116,7 @@ accomplished to cherry-pick from:
 -   Cited by a `growing number of publications <https://www.colour-science.org/cited-by/>`__
 -   A few `thousands of monthly downloads <https://pypistats.org/packages/colour-science>`__
 -   Trended for a few days in 2018 on Github 🚀
--   Used by a growing number of companies, studios, universities, and
-    people from those:
+-   Used by a growing number of companies, studios, universities:
 
     -   **Google**
 
