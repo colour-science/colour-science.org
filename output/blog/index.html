@@ -128,7 +128,32 @@ navbar-dark bg-dark bg-primary
 
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/physical-lighting-quantities-tying-both-ends/" class="u-url">Physical Lighting Quantities: Tying Both Ends</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/our-first-1000-stars-on-github/" class="u-url">Our First 1000 Stars on Github!</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Colour Developers
+            </span></p>
+            <p class="dateline">
+            <a href="../posts/our-first-1000-stars-on-github/" rel="bookmark">
+            <time class="published dt-published" datetime="2020-09-28T09:39:40+01:00" itemprop="datePublished" title="2020-09-28 09:39">2020-09-28 09:39</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="../posts/our-first-1000-stars-on-github/#disqus_thread" data-disqus-identifier="cache/posts/our-first-1000-stars-on-github.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>Earlier this week, <a class="reference external" href="https://github.com/colour-science/colour">Colour</a>
+received its 1000th star ⭐ and we are proud of the achievement!</p>
+<p>We would not be here without the help of our users, <a class="reference external" href="https://github.com/colour-science/colour/blob/develop/SPONSORS.rst">sponsors</a>, <a class="reference external" href="https://github.com/colour-science/colour/blob/develop/CONTRIBUTORS.rst">contributors</a> and
+<a class="reference external" href="https://numfocus.org/">NumFOCUS</a>, so thank you all!</p>
+<p class="more"><a href="../posts/our-first-1000-stars-on-github/">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/physical-lighting-quantities-tying-both-ends/" class="u-url">Physical Lighting Quantities: Tying Both Ends</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Colour Developers
@@ -390,78 +415,6 @@ that was formerly available at
 <p>We are pleased to announce that <a class="reference external" href="https://github.com/colour-science/colour/releases/tag/v0.3.11">Colour 0.3.11</a>
 is available!</p>
 <p class="more"><a href="../posts/colour-0311-is-available/">Read more…</a></p>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/the-road-to-stable/" class="u-url">The Road to Stable</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Colour Developers
-            </span></p>
-            <p class="dateline">
-            <a href="../posts/the-road-to-stable/" rel="bookmark">
-            <time class="published dt-published" datetime="2017-08-09T03:23:09+01:00" itemprop="datePublished" title="2017-08-09 03:23">2017-08-09 03:23</time></a>
-            </p>
-                <p class="commentline">
-        
-    <a href="../posts/the-road-to-stable/#disqus_thread" data-disqus-identifier="cache/posts/the-road-to-stable.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>Colour has been in public development for over 3 years. The package has grown in various directions since the initial release and offers a significant amount of <a class="reference external" href="https://www.colour-science.org/features/">features</a>.</p>
-<p>It is used in research groups such as the <a class="reference external" href="https://sachi.cs.st-andrews.ac.uk/">St Andrews HCI Research Group</a> or companies like <a class="reference external" href="https://www.google.com/">Google</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Merck_Group">Merck KGaA</a> or <a class="reference external" href="http://www.moving-picture.com/">The Moving Picture Company</a>. Even though it has reached a certain stability and maturity, it is still in alpha development status.</p>
-<p>Two important features are missing for a first feature complete stable release:</p>
-<ul class="simple">
-<li><p>The first one is that our current dictionary based spectral implementation has reached its limits when building support for Machado et al. (2010): attempting to alter the domain or range of a <cite>SpectralPowerDistribution</cite> is difficult. With that in mind, we have started to work on a new alternative implementation where data is exposed as a continuous function modeled using an interpolating function encapsulated within an extrapolating function: <a class="reference external" href="https://github.com/colour-science/colour/issues/335">#335</a>.</p></li>
-<li><p>The second is support for metadata inside the API. Most of the codebase adopts definitions/functions over classes to stay clean and lean, the aforementioned spectral implementation being a notable exception. As a consequence, it is hard to implement a non-intrusive classifying mechanism, provide usable hints on functions domain/range or create an auto-conversion layer. We have considered multiple ways of providing the necessary metadata, e.g. <a class="reference external" href="https://github.com/colour-science/colour/branches/all">experimental/medatada* branches</a>, and decided that the true elegant solution was through docstrings.</p></li>
-</ul>
-<p>The following example showcases the current implementation, defining metadata for <em>parameters</em>, <em>returns</em> and the definition by using the <em>notes</em> section:</p>
-<pre class="code python"><a name="rest_code_e283592b966949d981fa835f00c9e03f-1"></a><span class="k">def</span> <span class="nf">luminance_Newhall1943</span><span class="p">(</span><span class="n">V</span><span class="p">):</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-2"></a>    <span class="sd">"""</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-3"></a><span class="sd">    Returns the *luminance* :math:`R_Y` of given *Munsell* value :math:`V`</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-4"></a><span class="sd">    using *Newhall et al. (1943)* method.</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-5"></a>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-6"></a><span class="sd">    Parameters</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-7"></a><span class="sd">    ----------</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-8"></a><span class="sd">    V : numeric or array_like</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-9"></a><span class="sd">        metadata : {'type': 'Munsell Value', 'symbol': 'V', 'extent': (0, 10)}</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-10"></a><span class="sd">        *Munsell* value :math:`V`.</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-11"></a>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-12"></a><span class="sd">    Returns</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-13"></a><span class="sd">    -------</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-14"></a><span class="sd">    numeric or array_like</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-15"></a><span class="sd">        metadata : {'type': 'Luminance', 'symbol': 'R_Y', 'extent': (0, 100)}</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-16"></a><span class="sd">        *luminance* :math:`R_Y`.</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-17"></a>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-18"></a><span class="sd">    Notes</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-19"></a><span class="sd">    -----</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-20"></a><span class="sd">    metadata : {'classifier': 'Luminance Conversion Function', 'method_name':</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-21"></a><span class="sd">        'Newhall 1943', 'method_strict_name': 'Newhall et al. (1943)'}</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-22"></a>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-23"></a><span class="sd">    References</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-24"></a><span class="sd">    ----------</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-25"></a><span class="sd">    .. [1]  Newhall, S. M., Nickerson, D., &amp; Judd, D. B. (1943). Final report</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-26"></a><span class="sd">            of the OSA subcommittee on the spacing of the munsell colors. JOSA,</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-27"></a><span class="sd">            33(7), 385. doi:10.1364/JOSA.33.000385</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-28"></a>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-29"></a><span class="sd">    Examples</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-30"></a><span class="sd">    --------</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-31"></a><span class="sd">    &gt;&gt;&gt; luminance_Newhall1943(3.74629715382)  # doctest: +ELLIPSIS</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-32"></a><span class="sd">    10.4089874...</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-33"></a><span class="sd">    """</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-34"></a>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-35"></a>    <span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-36"></a>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-37"></a>    <span class="n">R_Y</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.2219</span> <span class="o">*</span> <span class="n">V</span> <span class="o">-</span> <span class="mf">0.23111</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span> <span class="o">*</span> <span class="n">V</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.23951</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.021009</span> <span class="o">*</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-38"></a>          <span class="p">(</span><span class="n">V</span> <span class="o">**</span> <span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.0008404</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span> <span class="o">**</span> <span class="mi">5</span><span class="p">))</span>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-39"></a>
-<a name="rest_code_e283592b966949d981fa835f00c9e03f-40"></a>    <span class="k">return</span> <span class="n">R_Y</span>
-</pre>
-<p>There is one caveat though: running Python with <cite>-OO</cite> argument will optimize the bytecode and trim the docstrings and as a result preventing metadata usage. This is an edge case we are aware of and it will be advertised.</p>
-<p>These two features are consequential and taking a fair amount of time to implement and test. They will also introduce backward incompatible changes.</p>
-<p>Stay tuned!</p>
 </div>
     </div>
     </article>
