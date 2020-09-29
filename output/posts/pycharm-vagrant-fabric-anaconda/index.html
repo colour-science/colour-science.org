@@ -61,7 +61,7 @@ navbar-dark bg-dark bg-primary
             <ul class="navbar-nav mr-auto">
 <li class="nav-item dropdown">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
-            <div class="dropdown-menu shadow">
+            <div class="dropdown-menu">
                     <a href="../../apps" class="dropdown-item"><span class="font-weight-bold">Apps (Colour - Dash)</span></a>
                     <a href="http://awesome-colour.org/" class="dropdown-item"><span class="font-weight-bold">Awesome Colour</span></a>
                     <a href="../../colour" class="dropdown-item"><span class="font-weight-bold">Colour</span></a>
@@ -78,7 +78,7 @@ navbar-dark bg-dark bg-primary
             </li>
 <li class="nav-item dropdown">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
-            <div class="dropdown-menu shadow">
+            <div class="dropdown-menu">
                     <a href="../../installation-guide" class="dropdown-item"><span class="font-weight-bold">Installation Guide</span></a>
                     <a href="https://colour.readthedocs.io/en/develop/tutorial.html" class="dropdown-item"><span class="font-weight-bold">Static Tutorial</span></a>
                     <a href="https://colab.research.google.com/notebook#fileId=1Im9J7or9qyClQCv5sPHmKdyiQbG4898K&amp;offline=true&amp;sandboxMode=true" class="dropdown-item"><span class="font-weight-bold">Interactive Tutorial</span></a>
@@ -98,7 +98,7 @@ navbar-dark bg-dark bg-primary
             </li>
 <li class="nav-item dropdown">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
-            <div class="dropdown-menu shadow">
+            <div class="dropdown-menu">
                     <a href="../../blog" class="dropdown-item"><span class="font-weight-bold">Posts</span></a>
                     <a href="../../archive.html" class="dropdown-item">Archive</a>
                     <a href="../../categories/" class="dropdown-item">Tags</a>
@@ -131,11 +131,14 @@ navbar-dark bg-dark bg-primary
     </div>
 <!-- /.container -->
 </nav><!-- End of Menubar --><!-- Main --><div class="container" id="content" role="main">
-    <div class="body-content">
-        <!--Body content-->
-        
-        
-        
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <div class="body-content">
+                <!--Body content-->
+                
+                
+                
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">PyCharm, Vagrant, Fabric &amp; Anaconda</a></h1>
 
         <div class="metadata">
@@ -205,14 +208,14 @@ are using <em>macOS</em>, although it should pretty much be platform agnostic.</
 <li><p>On your local filesystem, in your development workspace, create a
 directory <code>colour-science</code> and <code>cd</code> into it:</p></li>
 </ul>
-<pre class="code shell"><a name="rest_code_34b269010c8840ab93732c017632a89d-1"></a>$ mkdir colour-science
-<a name="rest_code_34b269010c8840ab93732c017632a89d-2"></a>$ <span class="nb">cd</span> colour-science
+<pre class="code shell"><a name="rest_code_8e82da60a8c445a3bdb7a31814d7c463-1"></a>$ mkdir colour-science
+<a name="rest_code_8e82da60a8c445a3bdb7a31814d7c463-2"></a>$ <span class="nb">cd</span> colour-science
 </pre>
 <ul class="simple">
 <li><p>Clone the <a class="reference external" href="https://github.com/colour-science/colour-vagrant">colour-vagrant</a>
 repository:</p></li>
 </ul>
-<pre class="code shell"><a name="rest_code_44a4332874064d6c83bf2bfa918eddd6-1"></a>$ git clone git://github.com/colour-science/colour-vagrant.git
+<pre class="code shell"><a name="rest_code_c3de2e9d9b69480b8e884b692ab8dfd3-1"></a>$ git clone git://github.com/colour-science/colour-vagrant.git
 </pre>
 <ul>
 <li>
@@ -236,7 +239,7 @@ environment. Initially, I was provisioning with <a class="reference external" hr
 It was cumbersome to use, so I decided to go for <a class="reference external" href="http://www.fabfile.org/">Fabric</a>
 and the <a class="reference external" href="https://github.com/wutali/vagrant-fabric">vagrant-fabric</a>
 plugin:</p>
-<pre class="code shell"><a name="rest_code_0ec69eb4a78e4db980920421d238e98b-1"></a>$ pip install fabric
+<pre class="code shell"><a name="rest_code_0e1d17f702eb4d9ca58eb329ea79e496-1"></a>$ pip install fabric
 </pre>
 </li>
 </ul>
@@ -309,13 +312,13 @@ cloned into the <code>colour-science</code> directory right next to the
 <li><p>Remote Python environments installed into the virtual machine at the
 following location with all the dependencies needed:</p></li>
 </ul>
-<pre class="code shell"><a name="rest_code_6a65e714feaa490e86058d8a4414febe-1"></a>$ <span class="nb">cd</span> /home/vagrant/miniconda/envs/
-<a name="rest_code_6a65e714feaa490e86058d8a4414febe-2"></a>$ ls -l
-<a name="rest_code_6a65e714feaa490e86058d8a4414febe-3"></a>total <span class="m">16</span>
-<a name="rest_code_6a65e714feaa490e86058d8a4414febe-4"></a>drwxrwxr-x  <span class="m">4</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:12 ./
-<a name="rest_code_6a65e714feaa490e86058d8a4414febe-5"></a>drwxrwxr-x <span class="m">13</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:02 ../
-<a name="rest_code_6a65e714feaa490e86058d8a4414febe-6"></a>drwxrwxr-x <span class="m">20</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:09 python2.7/
-<a name="rest_code_6a65e714feaa490e86058d8a4414febe-7"></a>drwxrwxr-x <span class="m">20</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:30 python3.5/
+<pre class="code shell"><a name="rest_code_c6635feb13cd4c66a6a3a498346dfcf3-1"></a>$ <span class="nb">cd</span> /home/vagrant/miniconda/envs/
+<a name="rest_code_c6635feb13cd4c66a6a3a498346dfcf3-2"></a>$ ls -l
+<a name="rest_code_c6635feb13cd4c66a6a3a498346dfcf3-3"></a>total <span class="m">16</span>
+<a name="rest_code_c6635feb13cd4c66a6a3a498346dfcf3-4"></a>drwxrwxr-x  <span class="m">4</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:12 ./
+<a name="rest_code_c6635feb13cd4c66a6a3a498346dfcf3-5"></a>drwxrwxr-x <span class="m">13</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:02 ../
+<a name="rest_code_c6635feb13cd4c66a6a3a498346dfcf3-6"></a>drwxrwxr-x <span class="m">20</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:09 python2.7/
+<a name="rest_code_c6635feb13cd4c66a6a3a498346dfcf3-7"></a>drwxrwxr-x <span class="m">20</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:30 python3.5/
 </pre>
 <ul class="simple">
 <li><p>The <strong>colour-science.org</strong> website served from the virtual machine at
@@ -352,20 +355,20 @@ are as follows:</p>
 <code>PyCharm --&gt; Tools Start SSH session...</code> menu item.</p>
 <p>However if you want to be able to export the display and see the figures you
 will have to manually <code>ssh</code> into the virtual machine:</p>
-<pre class="code shell"><a name="rest_code_cef460a5e4d841489240a27c0317ad7e-1"></a>$ ssh -X vagrant@192.168.32.64
+<pre class="code shell"><a name="rest_code_f53a7ef29281477a8e6762d793f2e5af-1"></a>$ ssh -X vagrant@192.168.32.64
 </pre>
 <p>Password is <code>vagrant</code>.</p>
 <p>You will also need to add the virtual machine to the X11 hosts by issuing the
 following command on the <em>macOS</em> host:</p>
-<pre class="code shell"><a name="rest_code_2a370416705e4599b9f76d3e00642a1b-1"></a>$ xhost + <span class="m">192</span>.168.32.64
+<pre class="code shell"><a name="rest_code_905665e9aa8245068583d05019c5881f-1"></a>$ xhost + <span class="m">192</span>.168.32.64
 </pre>
 </div>
 <div class="section" id="jupyter-notebooks">
 <h3>Jupyter Notebooks</h3>
 <p>The <a class="reference external" href="http://ipython.org/notebook.html">Jupyter Notebooks</a> server is started
 as follows:</p>
-<pre class="code shell"><a name="rest_code_4755d6114094408e9b6602a044ab2dfd-1"></a>$ <span class="nb">cd</span> /colour-science
-<a name="rest_code_4755d6114094408e9b6602a044ab2dfd-2"></a>$ ipython notebook --pylab<span class="o">=</span>inline --ip<span class="o">=</span><span class="m">0</span>.0.0.0
+<pre class="code shell"><a name="rest_code_e2b8d3f101e643b3b70c5e20416ea619-1"></a>$ <span class="nb">cd</span> /colour-science
+<a name="rest_code_e2b8d3f101e643b3b70c5e20416ea619-2"></a>$ ipython notebook --pylab<span class="o">=</span>inline --ip<span class="o">=</span><span class="m">0</span>.0.0.0
 </pre>
 <p>Then you can access it on the <em>macOS</em> host at the following url:
 <a class="reference external" href="http://localhost:8888/">http://localhost:8888/</a></p>
@@ -375,10 +378,10 @@ as follows:</p>
 <p>You can activate the remote Python environments in the virtual machine by
 issuing those commands:</p>
 <p>For <strong>python2.7</strong>:</p>
-<pre class="code shell"><a name="rest_code_682378ce97bd4cb38a5fd9aaaac8c88f-1"></a>$ <span class="nb">source</span> activate python2.7
+<pre class="code shell"><a name="rest_code_c5cd8903d06d48dfa46b72315ee8d557-1"></a>$ <span class="nb">source</span> activate python2.7
 </pre>
 <p>For <strong>python3.5</strong>:</p>
-<pre class="code shell"><a name="rest_code_5a9e87e24e3940369806dea628fdd75a-1"></a>$ <span class="nb">source</span> activate python3.5
+<pre class="code shell"><a name="rest_code_9a58f5de424645f9b0e0ba86d5db3a68-1"></a>$ <span class="nb">source</span> activate python3.5
 </pre>
 </div>
 </div>
@@ -421,6 +424,9 @@ issuing those commands:</p>
 
         </section></article><script>var disqus_shortname="colour-science";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content-->
 </div>
+        </div>
+        <div class="col-1"></div>
+    </div>
 </div>
 
 <!-- End of Main -->

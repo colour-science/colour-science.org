@@ -64,12 +64,18 @@ navbar-dark bg-dark bg-primary
 <!-- Main -->
 
 <div class="container" id="content" role="main">
-    <div class="body-content">
-        <!--Body content-->
-        ${template_hooks['page_header']()}
-        <%block name="extra_header"></%block>
-        <%block name="content"></%block>
-        <!--End of body content-->
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <div class="body-content">
+                <!--Body content-->
+                ${template_hooks['page_header']()}
+                <%block name="extra_header"></%block>
+                <%block name="content"></%block>
+                <!--End of body content-->
+            </div>
+        </div>
+        <div class="col-1"></div>
     </div>
 </div>
 

@@ -56,7 +56,7 @@ navbar-dark bg-dark bg-primary
             <ul class="navbar-nav mr-auto">
 <li class="nav-item dropdown">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
-            <div class="dropdown-menu shadow">
+            <div class="dropdown-menu">
                     <a href="../../apps" class="dropdown-item"><span class="font-weight-bold">Apps (Colour - Dash)</span></a>
                     <a href="http://awesome-colour.org/" class="dropdown-item"><span class="font-weight-bold">Awesome Colour</span></a>
                     <a href="../../colour" class="dropdown-item"><span class="font-weight-bold">Colour</span></a>
@@ -73,7 +73,7 @@ navbar-dark bg-dark bg-primary
             </li>
 <li class="nav-item dropdown">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
-            <div class="dropdown-menu shadow">
+            <div class="dropdown-menu">
                     <a href="../../installation-guide" class="dropdown-item"><span class="font-weight-bold">Installation Guide</span></a>
                     <a href="https://colour.readthedocs.io/en/develop/tutorial.html" class="dropdown-item"><span class="font-weight-bold">Static Tutorial</span></a>
                     <a href="https://colab.research.google.com/notebook#fileId=1Im9J7or9qyClQCv5sPHmKdyiQbG4898K&amp;offline=true&amp;sandboxMode=true" class="dropdown-item"><span class="font-weight-bold">Interactive Tutorial</span></a>
@@ -93,7 +93,7 @@ navbar-dark bg-dark bg-primary
             </li>
 <li class="nav-item dropdown">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
-            <div class="dropdown-menu shadow">
+            <div class="dropdown-menu">
                     <a href="../../blog" class="dropdown-item"><span class="font-weight-bold">Posts</span></a>
                     <a href="../../archive.html" class="dropdown-item">Archive</a>
                     <a href="../../categories/" class="dropdown-item">Tags</a>
@@ -126,11 +126,14 @@ navbar-dark bg-dark bg-primary
     </div>
 <!-- /.container -->
 </nav><!-- End of Menubar --><!-- Main --><div class="container" id="content" role="main">
-    <div class="body-content">
-        <!--Body content-->
-        
-        
-        
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <div class="body-content">
+                <!--Body content-->
+                
+                
+                
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">NumFOCUS, Colour 0.3.14 and Colour - Datasets 0.1.0!</a></h1>
 
         <div class="metadata">
@@ -209,8 +212,8 @@ guides.</p>
 <p><em>Colour</em> now implements an automatic colour conversion graph based on
 <a class="reference external" href="https://networkx.github.io">NetworkX</a> and enabling easier colour
 conversions:</p>
-<pre class="code python"><a name="rest_code_2782a304c8bc4bf58f2ab9f951cbdbdb-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">sd</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">COLOURCHECKERS_SDS</span><span class="p">[</span><span class="s1">'ColorChecker N Ohta'</span><span class="p">][</span><span class="s1">'dark skin'</span><span class="p">]</span>
-<a name="rest_code_2782a304c8bc4bf58f2ab9f951cbdbdb-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">convert</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="s1">'Spectral Distribution'</span><span class="p">,</span> <span class="s1">'sRGB'</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="p">{</span><span class="s1">'mode'</span><span class="p">:</span> <span class="s1">'Short'</span><span class="p">})</span>
+<pre class="code python"><a name="rest_code_affbf7a6e48941ee8237f18f2b7a1ed2-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">sd</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">COLOURCHECKERS_SDS</span><span class="p">[</span><span class="s1">'ColorChecker N Ohta'</span><span class="p">][</span><span class="s1">'dark skin'</span><span class="p">]</span>
+<a name="rest_code_affbf7a6e48941ee8237f18f2b7a1ed2-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">convert</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="s1">'Spectral Distribution'</span><span class="p">,</span> <span class="s1">'sRGB'</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="p">{</span><span class="s1">'mode'</span><span class="p">:</span> <span class="s1">'Short'</span><span class="p">})</span>
 </pre>
 <pre class="literal-block">===============================================================================
 *                                                                             *
@@ -228,7 +231,7 @@ array([ 0.45675795,  0.30986982,  0.24861924])</pre>
 writing images, it will be used if <a class="reference external" href="https://github.com/OpenImageIO/oiio">OpenImageIO</a>
 is not available. If you wish to read <em>OpenEXR</em> files or develop <em>Colour</em>, you
 will need to install the FreeImage plugin as follows:</p>
-<pre class="code shell"><a name="rest_code_adf59469f7d24192a8b3e1cdaadfa099-1"></a>$ python -c <span class="s2">"import imageio;imageio.plugins.freeimage.download()"</span>
+<pre class="code shell"><a name="rest_code_9ec4096ac3264586aa118f4931be2c30-1"></a>$ python -c <span class="s2">"import imageio;imageio.plugins.freeimage.download()"</span>
 </pre>
 <p>Support for <a class="reference external" href="https://github.com/OpenImageIO/oiio/releases/tag/Release-2.0.3">OpenImageIO 2.x</a>
 has also been implemented.</p>
@@ -279,8 +282,8 @@ science datasets management.</p>
 <a class="reference external" href="https://zenodo.org/">Zenodo</a> under the
 <a class="reference external" href="https://zenodo.org/communities/colour-science-datasets/">Colour Science - Datasets</a>
 community:</p>
-<pre class="code python"><a name="rest_code_14e3388acd8f42c4a8c053625894bc79-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_datasets</span>
-<a name="rest_code_14e3388acd8f42c4a8c053625894bc79-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">colour_datasets</span><span class="o">.</span><span class="n">datasets</span><span class="p">())</span>
+<pre class="code python"><a name="rest_code_f6c08d75b04d4ae5be297f396e839a77-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_datasets</span>
+<a name="rest_code_f6c08d75b04d4ae5be297f396e839a77-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">colour_datasets</span><span class="o">.</span><span class="n">datasets</span><span class="p">())</span>
 </pre>
 <pre class="literal-block">colour-science-datasets
 =======================
@@ -370,6 +373,9 @@ will follow in the coming days.</p>
 
         </section></article><script>var disqus_shortname="colour-science";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content-->
 </div>
+        </div>
+        <div class="col-1"></div>
+    </div>
 </div>
 
 <!-- End of Main -->

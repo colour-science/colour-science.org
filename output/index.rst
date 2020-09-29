@@ -195,14 +195,14 @@ Donations & Special Sponsors
                         </a>
                         <p><a href="http://virtualmatter.org/" target="_blank">Kevin Whitfield</a></p>
                     </td>
+                </tr>
+                <tr>
                     <td align="center" valign="middle">
                         <a href="https://www.richardlackey.com/" target="_blank">
                             <img class="img-fluid img-circle" style="max-width:176px;" src="https://pbs.twimg.com/profile_images/555774739629633536/JjxFzBHy.jpeg">
                         </a>
                         <p><a href="https://www.richardlackey.com/" target="_blank">Richard Lackey</a></p>
                     </td>
-                </tr>
-                <tr>
                     <td align="center" valign="middle">
                         <a href="https://www.artstation.com/monsieur_lixm" target="_blank">
                             <img class="img-fluid img-circle" width="176px" src="https://pbs.twimg.com/profile_images/1006611034088595462/HNQh_FZQ.jpg">
@@ -221,6 +221,8 @@ Donations & Special Sponsors
                         </a>
                         <p><a href="https://twitter.com/alexmitchellmus" target="_blank">Alex Mitchell</a></p>
                     </td>
+                </tr>
+                <tr>
                     <td align="center" valign="middle">
                         <a href="https://twitter.com/ilia_sibiryakov" target="_blank">
                             <img class="img-fluid img-circle" width="176px" src="https://pbs.twimg.com/profile_images/1072964248890998796/kAKBzCef.jpg">
@@ -233,8 +235,6 @@ Donations & Special Sponsors
                         </a>
                         <p><a href="https://github.com/zachlewis" target="_blank">Zack Lewis</a></p>
                     </td>
-                </tr>
-                <tr>
                     <td align="center" valign="middle">
                         <a href="https://twitter.com/fredsavoir" target="_blank">
                             <img class="img-fluid img-circle" width="176px" src="https://pbs.twimg.com/profile_images/363988638/FS_Portrait082009.jpg">
@@ -252,16 +252,6 @@ Donations & Special Sponsors
                             <img class="img-fluid img-circle" width="176px" src="https://i.imgur.com/Zhs53S9.png">
                         </a>
                         <p><a href="https://chrisbrejon.com/" target="_blank">Christophe Brejon</a></p>
-                    </td>
-                    <td align="center" valign="middle">
-                        <a href="https://dummyimage.com/176x176/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
-                            <img width="176px" src="https://dummyimage.com/176x176/f9f9fc/000000.png&text=Your+Logo+Here">
-                        </a>
-                    </td>
-                    <td align="center" valign="middle">
-                        <a href="https://dummyimage.com/176x176/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
-                            <img width="176px" src="https://dummyimage.com/176x176/f9f9fc/000000.png&text=Your+Logo+Here">
-                        </a>
                     </td>
                 </tr>
             </tbody>
