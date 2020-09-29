@@ -116,8 +116,7 @@ accomplished to cherry-pick from:
 -   Cited by a `growing number of publications <https://www.colour-science.org/cited-by/>`__
 -   A few `thousands of monthly downloads <https://pypistats.org/packages/colour-science>`__
 -   Trended for a few days in 2018 on Github 🚀
--   Used by a growing number of companies, studios, universities, and
-    people from those:
+-   Used by a growing number of companies, studios, universities:
 
     -   **Google**
 
@@ -151,7 +150,7 @@ accomplished to cherry-pick from:
 
 What's next? First, merging the remaining `GSoC <https://summerofcode.withgoogle.com/>`__
 code, especially the GPU backend if possible before releasing 0.3.16. Then, we
-will work toward dropping Python 3 support and walk through the final steps for
+will work toward dropping Python 2 support and walk through the final steps for
 the 1.0.0 release!
 
 Feel free to join us on `Discourse <https://colour-science.discourse.group/>`__,
