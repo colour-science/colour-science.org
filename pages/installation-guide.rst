@@ -74,7 +74,7 @@ issuing this command in a shell:
 
 .. code:: shell
 
-    $ pip install colour-science
+    $ pip install --user colour-science
 
 This *asciicast* demonstrates how to generate a pristine Python *VirtualEnv*
 environment for Colour:
@@ -90,13 +90,13 @@ The optional features dependencies are installed as follows:
 
 .. code:: shell
 
-    $ pip install 'colour-science[optional]'
+    $ pip install --user 'colour-science[optional]'
 
 The development dependencies are installed as follows:
 
 .. code:: shell
 
-    $ pip install 'colour-science[development]'
+    $ pip install --user 'colour-science[development]'
 
 The figures plotting dependencies are installed as follows:
 
@@ -110,7 +110,7 @@ The figures plotting dependencies are installed as follows:
 
 .. code:: shell
 
-    $ pip install 'colour-science[plotting]'
+    $ pip install --user 'colour-science[plotting]'
 
 If you wish to read *OpenEXR* files, you will need to install the *FreeImage*
 plugin for `Imageio <http://imageio.github.io/>`__ as follows:
@@ -149,7 +149,7 @@ Alternatively, you can also install directly from
 
     $ git clone git://github.com/colour-science/colour.git
     $ cd colour
-    $ pip install .
+    $ pip install --user .
 
 Installation Methods for Developing Colour
 ------------------------------------------

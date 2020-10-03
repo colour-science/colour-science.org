@@ -92,7 +92,7 @@ We will loosely follow
 
     .. code:: shell
 
-        $ pip install fabric
+        $ pip install --user fabric
 
 .. class:: alert alert-dismissible alert-warning
 
