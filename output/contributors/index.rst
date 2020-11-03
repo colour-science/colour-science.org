@@ -922,6 +922,7 @@
                             <li><a href="https://github.com/matthiasbirkich">@matthiasbirkich</li>
                             <li><a href="https://github.com/meshing">@meshing</li>
                             <li><a href="https://github.com/mokincha">@mokincha</li>
+                            <li><a href="https://github.com/monkeywithacupcake">@monkeywithacupcake</li>
                         </ul>
                     </p>
                 </div>
@@ -932,9 +933,9 @@
                 <div class="card-body">
                     <p class="card-text">
                         <ul class="list-unstyled text-center">
-                            <li><a href="https://github.com/monkeywithacupcake">@monkeywithacupcake</li>
                             <li><a href="https://github.com/Myndex">@Myndex</li>
                             <li><a href="https://github.com/naavis">@naavis</li>
+                            <li><a href="https://github.com/nadersadoughi">@nadersadoughi</li>
                             <li><a href="https://github.com/NoRoKr">@NoRoKr</li>
                             <li><a href="https://github.com/nschloe">@nschloe</li>
                             <li><a href="https://github.com/peteroupc">@peteroupc</li>
@@ -958,6 +959,7 @@
                             <li><a href="https://github.com/vidakDK">@vidakDK</li>
                             <li><a href="https://github.com/Wagyx">@Wagyx</li>
                             <li><a href="https://github.com/Willingo">@Willingo</li>
+                            <li><a href="https://github.com/xjossy">@xjossy</li>
                             <li><a href="https://github.com/zachlewis">@zachlewis</li>
                         </ul>
                     </p>
