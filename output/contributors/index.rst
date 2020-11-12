@@ -917,6 +917,7 @@
                         <ul class="list-unstyled text-center">
                             <li><a href="https://github.com/ChunHsinWang">@ChunHsinWang</li>
                             <li><a href="https://github.com/codycuellar">@codycuellar</li>
+                            <li><a href="https://github.com/dfoxfranke">@dfoxfranke</li>
                             <li><a href="https://github.com/dtbulmerJRs">@dtbulmerJRs</li>
                             <li><a href="https://github.com/Edwardlin-zlt">@Edwardlin-zlt</li>
                             <li><a href="https://github.com/eyeforcolor">@eyeforcolor</li>
