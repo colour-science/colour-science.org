@@ -957,6 +957,7 @@
                             <li><a href="https://github.com/totyped">@totyped</li>
                             <li><a href="https://github.com/ValZapod">@ValZapod</li>
                             <li><a href="https://github.com/vidakDK">@vidakDK</li>
+                            <li><a href="https://github.com/vvclin-git">@vvclin-git</li>
                             <li><a href="https://github.com/Wagyx">@Wagyx</li>
                             <li><a href="https://github.com/Willingo">@Willingo</li>
                             <li><a href="https://github.com/xjossy">@xjossy</li>
