@@ -212,7 +212,7 @@ Navigate to the *colour* directory:
 Step 4
 ******
 
-Assuming `Python>=3.5 <https://www.python.org/download/releases/>`__ is
+Assuming `python>=3.6 <https://www.python.org/download/releases/>`__ is
 available on your system, the development dependencies are installed with
 `Poetry <https://poetry.eustace.io>`__ as follows:
 

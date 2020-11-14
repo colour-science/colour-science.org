@@ -21,7 +21,7 @@ Primary Dependencies
 ^^^^^^^^^^^^^^^^^^^^
 
 -   `python>=2.7 <https://www.python.org/download/releases/>`__ or
-    `python>=3.5 <https://www.python.org/download/releases/>`__
+    `python>=3.6 <https://www.python.org/download/releases/>`__
 -   `imageio <http://imageio.github.io/>`__
 -   `scipy <https://pypi.org/project/scipy/>`__
 -   `six <https://pypi.org/project/six/>`__
@@ -161,7 +161,7 @@ Poetry
 dependencies, this is the recommended way to get started with **Colour**
 development.
 
-Assuming `Python>=3.5 <https://www.python.org/download/releases/>`__ is
+Assuming `python>=3.6 <https://www.python.org/download/releases/>`__ is
 available on your system, the development dependencies are installed with
 `Poetry <https://poetry.eustace.io>`__ as follows:
 

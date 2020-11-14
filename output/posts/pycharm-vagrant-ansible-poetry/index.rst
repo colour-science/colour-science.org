@@ -18,7 +18,7 @@ Installing the whole development toolchain for **Colour** roughly means
 deploying:
 
 -   `python>=2.7 <https://www.python.org/download/releases/>`__ and
-    `python>=3.5 <https://www.python.org/download/releases/>`__
+    `python>=3.6 <https://www.python.org/download/releases/>`__
 -   `imageio <http://imageio.github.io/>`__
 -   `scipy <https://pypi.org/project/scipy/>`__
 -   `six <https://pypi.org/project/six/>`__
