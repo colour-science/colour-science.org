@@ -151,7 +151,7 @@ and <a class="reference internal" href="#installation-methods-for-developing-col
 <li><p><a class="reference external" href="https://www.python.org/download/releases/">python&gt;=2.7</a> or
 <a class="reference external" href="https://www.python.org/download/releases/">python&gt;=3.6</a></p></li>
 <li><p><a class="reference external" href="http://imageio.github.io/">imageio</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/scipy/">scipy</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/scipy/">scipy&gt;=1.1.0</a></p></li>
 <li><p><a class="reference external" href="https://pypi.org/project/six/">six</a></p></li>
 </ul>
 </div>
@@ -202,16 +202,16 @@ and <a class="reference internal" href="#installation-methods-for-developing-col
 <p><strong>Colour</strong> can be easily installed from the
 <a class="reference external" href="https://pypi.org/project/colour-science/">Python Package Index</a> by
 issuing this command in a shell:</p>
-<pre class="code shell"><a name="rest_code_f1e6af675f564ddfa0b609a3b52a7f82-1"></a>$ pip install --user colour-science
+<pre class="code shell"><a name="rest_code_a1cfc9f4b31f4e5b8f933371ce3de0b0-1"></a>$ pip install --user colour-science
 </pre>
 <p>This <em>asciicast</em> demonstrates how to generate a pristine Python <em>VirtualEnv</em>
 environment for Colour:</p>
 <script type="text/javascript" src="https://asciinema.org/a/257384.js" id="asciicast-257384" async data-speed="3">
 </script><p>The optional features dependencies are installed as follows:</p>
-<pre class="code shell"><a name="rest_code_ddc7a88cb3e0428e9e32b8d6b84ce1d3-1"></a>$ pip install --user <span class="s1">'colour-science[optional]'</span>
+<pre class="code shell"><a name="rest_code_0285f4999e0e4e7b95d1f39f93d45d06-1"></a>$ pip install --user <span class="s1">'colour-science[optional]'</span>
 </pre>
 <p>The development dependencies are installed as follows:</p>
-<pre class="code shell"><a name="rest_code_340742ab0d4241f6bb950022115cf6ad-1"></a>$ pip install --user <span class="s1">'colour-science[development]'</span>
+<pre class="code shell"><a name="rest_code_e2211cd858764a1c8cb2b79506691a35-1"></a>$ pip install --user <span class="s1">'colour-science[development]'</span>
 </pre>
 <p>The figures plotting dependencies are installed as follows:</p>
 <div class="alert alert-dismissible alert-info line-block">
@@ -222,18 +222,18 @@ environment for Colour:</p>
 beforehand, please refer to the specific section for your platform on
 the <a class="reference external" href="https://www.graphviz.org/download/">Graphviz download page</a>.</div>
 </div>
-<pre class="code shell"><a name="rest_code_45198c5be8a14434bdcada8a09242457-1"></a>$ pip install --user <span class="s1">'colour-science[plotting]'</span>
+<pre class="code shell"><a name="rest_code_d81da6eb44444af19cbf9f3765e8493e-1"></a>$ pip install --user <span class="s1">'colour-science[plotting]'</span>
 </pre>
 <p>If you wish to read <em>OpenEXR</em> files, you will need to install the <em>FreeImage</em>
 plugin for <a class="reference external" href="http://imageio.github.io/">Imageio</a> as follows:</p>
-<pre class="code shell"><a name="rest_code_15163e55eeb8487fa9998c7425cbda18-1"></a>$ python -c <span class="s2">"import imageio;imageio.plugins.freeimage.download()"</span>
+<pre class="code shell"><a name="rest_code_3b70b3d0b2f2484cbe6a1ef303866369-1"></a>$ python -c <span class="s2">"import imageio;imageio.plugins.freeimage.download()"</span>
 </pre>
 </div>
 <div class="section" id="continuum-analytics-anaconda">
 <h3>Continuum Analytics Anaconda</h3>
 <p><strong>Colour</strong> is also available for <a class="reference external" href="https://www.continuum.io/downloads">Anaconda</a>
 from <em>Continuum Analytics</em> via <a class="reference external" href="https://conda-forge.org/">conda-forge</a>:</p>
-<pre class="code shell"><a name="rest_code_99fd2e38d9184502bc2132cdddee6ffb-1"></a>$ conda install -c conda-forge colour-science
+<pre class="code shell"><a name="rest_code_2684e6e7d55844ae8bdc95ce81f5de97-1"></a>$ conda install -c conda-forge colour-science
 </pre>
 <p>This <em>asciicast</em> demonstrates how to generate a pristine Python <em>conda</em>
 environment for Colour:</p>
@@ -244,9 +244,9 @@ environment for Colour:</p>
 <h3>Github</h3>
 <p>Alternatively, you can also install directly from
 <a class="reference external" href="https://github.com/colour-science/colour">Github</a> source repository:</p>
-<pre class="code shell"><a name="rest_code_8a0fc2d9318e41968828c75e66457c20-1"></a>$ git clone git://github.com/colour-science/colour.git
-<a name="rest_code_8a0fc2d9318e41968828c75e66457c20-2"></a>$ <span class="nb">cd</span> colour
-<a name="rest_code_8a0fc2d9318e41968828c75e66457c20-3"></a>$ pip install --user .
+<pre class="code shell"><a name="rest_code_d44492ca5e5d4f5c860f967127e4ebab-1"></a>$ git clone git://github.com/colour-science/colour.git
+<a name="rest_code_d44492ca5e5d4f5c860f967127e4ebab-2"></a>$ <span class="nb">cd</span> colour
+<a name="rest_code_d44492ca5e5d4f5c860f967127e4ebab-3"></a>$ pip install --user .
 </pre>
 </div>
 </div>
@@ -260,9 +260,9 @@ development.</p>
 <p>Assuming <a class="reference external" href="https://www.python.org/download/releases/">python&gt;=3.6</a> is
 available on your system, the development dependencies are installed with
 <a class="reference external" href="https://poetry.eustace.io">Poetry</a> as follows:</p>
-<pre class="code shell"><a name="rest_code_a5241302d2df49428bc89cf7064244c9-1"></a>$ git clone git://github.com/colour-science/colour.git
-<a name="rest_code_a5241302d2df49428bc89cf7064244c9-2"></a>$ <span class="nb">cd</span> colour
-<a name="rest_code_a5241302d2df49428bc89cf7064244c9-3"></a>$ poetry install --extras <span class="s2">"optional plotting"</span>
+<pre class="code shell"><a name="rest_code_67f39163178c488299b8bd35a73988d6-1"></a>$ git clone git://github.com/colour-science/colour.git
+<a name="rest_code_67f39163178c488299b8bd35a73988d6-2"></a>$ <span class="nb">cd</span> colour
+<a name="rest_code_67f39163178c488299b8bd35a73988d6-3"></a>$ poetry install --extras <span class="s2">"optional plotting"</span>
 </pre>
 <div class="alert alert-dismissible alert-warning line-block">
 <div class="line"><strong>Warning</strong></div>
@@ -274,39 +274,39 @@ interpreter. We are indeed effectively patching the
 file on <a class="reference external" href="https://github.com/colour-science/colour/actions">Github Actions</a>:</div>
 </div>
 <blockquote class="alert alert-dismissible alert-warning">
-<pre class="code shell"><a name="rest_code_84a7fd386e454eaaba3f07caacb079c7-1"></a>$ sed -i.bak <span class="s1">'s/python = "~2.7 || ^3.5"/python = "^3.6"/g'</span> pyproject.toml
-<a name="rest_code_84a7fd386e454eaaba3f07caacb079c7-2"></a>$ sed -i.bak <span class="s1">'s/matplotlib = { version = "\*"/matplotlib = { version = "^3.1"/g'</span> pyproject.toml
-<a name="rest_code_84a7fd386e454eaaba3f07caacb079c7-3"></a>$ git diff --unified<span class="o">=</span><span class="m">1</span>
-<a name="rest_code_84a7fd386e454eaaba3f07caacb079c7-4"></a>diff --git a/pyproject.toml b/pyproject.toml
-<a name="rest_code_84a7fd386e454eaaba3f07caacb079c7-5"></a>index 93088d8c..c2b282cf <span class="m">100644</span>
-<a name="rest_code_84a7fd386e454eaaba3f07caacb079c7-6"></a>--- a/pyproject.toml
-<a name="rest_code_84a7fd386e454eaaba3f07caacb079c7-7"></a>+++ b/pyproject.toml
-<a name="rest_code_84a7fd386e454eaaba3f07caacb079c7-8"></a>@@ -46,3 +46,3 @@ <span class="nv">classifiers</span> <span class="o">=</span> <span class="o">[</span>
-<a name="rest_code_84a7fd386e454eaaba3f07caacb079c7-9"></a> <span class="o">[</span>tool.poetry.dependencies<span class="o">]</span>
-<a name="rest_code_84a7fd386e454eaaba3f07caacb079c7-10"></a>-python <span class="o">=</span> <span class="s2">"~2.7 || ^3.5"</span>
-<a name="rest_code_84a7fd386e454eaaba3f07caacb079c7-11"></a>+python <span class="o">=</span> <span class="s2">"^3.6"</span>
-<a name="rest_code_84a7fd386e454eaaba3f07caacb079c7-12"></a> <span class="nv">imageio</span> <span class="o">=</span> <span class="s2">"*"</span>
-<a name="rest_code_84a7fd386e454eaaba3f07caacb079c7-13"></a>@@ -58,3 +58,3 @@ <span class="nv">invoke</span> <span class="o">=</span> <span class="o">{</span> <span class="nv">version</span> <span class="o">=</span> <span class="s2">"*"</span>, <span class="nv">optional</span> <span class="o">=</span> <span class="nb">true</span> <span class="o">}</span>  <span class="c1"># Development dependency.</span>
-<a name="rest_code_84a7fd386e454eaaba3f07caacb079c7-14"></a> <span class="nv">jupyter</span> <span class="o">=</span> <span class="o">{</span> <span class="nv">version</span> <span class="o">=</span> <span class="s2">"*"</span>, <span class="nv">optional</span> <span class="o">=</span> <span class="nb">true</span> <span class="o">}</span>  <span class="c1"># Development dependency.</span>
-<a name="rest_code_84a7fd386e454eaaba3f07caacb079c7-15"></a>-matplotlib <span class="o">=</span> <span class="o">{</span> <span class="nv">version</span> <span class="o">=</span> <span class="s2">"*"</span>, <span class="nv">optional</span> <span class="o">=</span> <span class="nb">true</span> <span class="o">}</span>
-<a name="rest_code_84a7fd386e454eaaba3f07caacb079c7-16"></a>+matplotlib <span class="o">=</span> <span class="o">{</span> <span class="nv">version</span> <span class="o">=</span> <span class="s2">"^3.1"</span>, <span class="nv">optional</span> <span class="o">=</span> <span class="nb">true</span> <span class="o">}</span>
-<a name="rest_code_84a7fd386e454eaaba3f07caacb079c7-17"></a> <span class="nv">mock</span> <span class="o">=</span> <span class="o">{</span> <span class="nv">version</span> <span class="o">=</span> <span class="s2">"*"</span>, <span class="nv">optional</span> <span class="o">=</span> <span class="nb">true</span> <span class="o">}</span>  <span class="c1"># Development dependency.</span>
+<pre class="code shell"><a name="rest_code_6cb5dcabca1e41508d7535276a78834f-1"></a>$ sed -i.bak <span class="s1">'s/python = "~2.7 || ^3.5"/python = "^3.6"/g'</span> pyproject.toml
+<a name="rest_code_6cb5dcabca1e41508d7535276a78834f-2"></a>$ sed -i.bak <span class="s1">'s/matplotlib = { version = "\*"/matplotlib = { version = "^3.1"/g'</span> pyproject.toml
+<a name="rest_code_6cb5dcabca1e41508d7535276a78834f-3"></a>$ git diff --unified<span class="o">=</span><span class="m">1</span>
+<a name="rest_code_6cb5dcabca1e41508d7535276a78834f-4"></a>diff --git a/pyproject.toml b/pyproject.toml
+<a name="rest_code_6cb5dcabca1e41508d7535276a78834f-5"></a>index 93088d8c..c2b282cf <span class="m">100644</span>
+<a name="rest_code_6cb5dcabca1e41508d7535276a78834f-6"></a>--- a/pyproject.toml
+<a name="rest_code_6cb5dcabca1e41508d7535276a78834f-7"></a>+++ b/pyproject.toml
+<a name="rest_code_6cb5dcabca1e41508d7535276a78834f-8"></a>@@ -46,3 +46,3 @@ <span class="nv">classifiers</span> <span class="o">=</span> <span class="o">[</span>
+<a name="rest_code_6cb5dcabca1e41508d7535276a78834f-9"></a> <span class="o">[</span>tool.poetry.dependencies<span class="o">]</span>
+<a name="rest_code_6cb5dcabca1e41508d7535276a78834f-10"></a>-python <span class="o">=</span> <span class="s2">"~2.7 || ^3.5"</span>
+<a name="rest_code_6cb5dcabca1e41508d7535276a78834f-11"></a>+python <span class="o">=</span> <span class="s2">"^3.6"</span>
+<a name="rest_code_6cb5dcabca1e41508d7535276a78834f-12"></a> <span class="nv">imageio</span> <span class="o">=</span> <span class="s2">"*"</span>
+<a name="rest_code_6cb5dcabca1e41508d7535276a78834f-13"></a>@@ -58,3 +58,3 @@ <span class="nv">invoke</span> <span class="o">=</span> <span class="o">{</span> <span class="nv">version</span> <span class="o">=</span> <span class="s2">"*"</span>, <span class="nv">optional</span> <span class="o">=</span> <span class="nb">true</span> <span class="o">}</span>  <span class="c1"># Development dependency.</span>
+<a name="rest_code_6cb5dcabca1e41508d7535276a78834f-14"></a> <span class="nv">jupyter</span> <span class="o">=</span> <span class="o">{</span> <span class="nv">version</span> <span class="o">=</span> <span class="s2">"*"</span>, <span class="nv">optional</span> <span class="o">=</span> <span class="nb">true</span> <span class="o">}</span>  <span class="c1"># Development dependency.</span>
+<a name="rest_code_6cb5dcabca1e41508d7535276a78834f-15"></a>-matplotlib <span class="o">=</span> <span class="o">{</span> <span class="nv">version</span> <span class="o">=</span> <span class="s2">"*"</span>, <span class="nv">optional</span> <span class="o">=</span> <span class="nb">true</span> <span class="o">}</span>
+<a name="rest_code_6cb5dcabca1e41508d7535276a78834f-16"></a>+matplotlib <span class="o">=</span> <span class="o">{</span> <span class="nv">version</span> <span class="o">=</span> <span class="s2">"^3.1"</span>, <span class="nv">optional</span> <span class="o">=</span> <span class="nb">true</span> <span class="o">}</span>
+<a name="rest_code_6cb5dcabca1e41508d7535276a78834f-17"></a> <span class="nv">mock</span> <span class="o">=</span> <span class="o">{</span> <span class="nv">version</span> <span class="o">=</span> <span class="s2">"*"</span>, <span class="nv">optional</span> <span class="o">=</span> <span class="nb">true</span> <span class="o">}</span>  <span class="c1"># Development dependency.</span>
 </pre>
 </blockquote>
 <p>If <a class="reference external" href="https://www.graphviz.org/">Graphviz</a> is available on your system, you
 might issue the following commands instead of the aforementioned ones:</p>
-<pre class="code shell"><a name="rest_code_965ba7969fe448e8bf2cc8f3cb2e156f-1"></a>$ git clone git://github.com/colour-science/colour.git
-<a name="rest_code_965ba7969fe448e8bf2cc8f3cb2e156f-2"></a>$ <span class="nb">cd</span> colour
-<a name="rest_code_965ba7969fe448e8bf2cc8f3cb2e156f-3"></a>$ poetry install --extras <span class="s2">"graphviz optional plotting"</span>
+<pre class="code shell"><a name="rest_code_d15cca6d2c1c4edca5883797a884b422-1"></a>$ git clone git://github.com/colour-science/colour.git
+<a name="rest_code_d15cca6d2c1c4edca5883797a884b422-2"></a>$ <span class="nb">cd</span> colour
+<a name="rest_code_d15cca6d2c1c4edca5883797a884b422-3"></a>$ poetry install --extras <span class="s2">"graphviz optional plotting"</span>
 </pre>
 <p>Those commands will create a Virtual Environment in which all the required
 python packages will be installed.</p>
 <p>Tools can then be run as follows:</p>
-<pre class="code shell"><a name="rest_code_a610e9b9892b4e61afda235dea2eb3df-1"></a>$ poetry run invoke -l
+<pre class="code shell"><a name="rest_code_71b5fe679332461f8ce29f177b7c8bea-1"></a>$ poetry run invoke -l
 </pre>
 <p>or alternatively:</p>
-<pre class="code shell"><a name="rest_code_045b916f47cb401fb8d40145efbb7301-1"></a>$ <span class="nb">source</span> <span class="k">$(</span>poetry env info -p<span class="k">)</span>/bin/activate
-<a name="rest_code_045b916f47cb401fb8d40145efbb7301-2"></a>$ invoke -l
+<pre class="code shell"><a name="rest_code_4bf8dd765fc7407c9e9a4483994dac77-1"></a>$ <span class="nb">source</span> <span class="k">$(</span>poetry env info -p<span class="k">)</span>/bin/activate
+<a name="rest_code_4bf8dd765fc7407c9e9a4483994dac77-2"></a>$ invoke -l
 </pre>
 </div>
 <div class="section" id="vagrant">
