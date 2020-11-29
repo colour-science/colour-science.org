@@ -18,6 +18,8 @@ from Nishant (`@njwardhan <https://github.com/njwardhan>`__) and, the
 optimizations from Omar (`@OmarWagih1 <https://github.com/OmarWagih1>`__).
 We would like to thank them again for their great contributions!
 
+.. image:: /images/Blog_Colour_Rendition_Report.png
+
 With this release, we stop testing for
 `Python 3.5 <https://www.python.org/downloads/release/python-350/>`__ and,
 `Scipy>=1.1.0 <https://docs.scipy.org/doc/scipy/reference/release.1.1.0.html>`__
