@@ -36,9 +36,9 @@
                             <h4 class="text-light my-0">Get Started</h4>
                         </a>
                         <a class="btn btn-secondary bg-white btn-block mt-3"
-                            href="https://github.com/colour-science/colour/archive/v0.3.15.zip"
+                            href="https://github.com/colour-science/colour/archive/v0.3.16.zip"
                             role="button">
-                            <h4 class="my-0"><span class="fa fa-download">&nbsp;</span> 0.3.15 Alpha</h4>
+                            <h4 class="my-0"><span class="fa fa-download">&nbsp;</span> 0.3.16 Alpha</h4>
                         </a>
                     </div>
                 </div>

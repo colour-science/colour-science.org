@@ -72,6 +72,15 @@ Colour Blindness
 Characterisation
 ----------------
 
+ACES Input Device Transform (IDT) Generation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Camera Sensitivities Dataset
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- Nikon 5100 (NPL)
+- Sigma SDMerill (NPL)
+
 Colour Rendition Charts Spectral Dataset
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -81,11 +90,27 @@ Colour Rendition Charts Spectral Dataset
 Colour Rendition Charts Chromaticity Coordinates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+- BabelColor Average
 - ColorChecker 1976
 - ColorChecker 2005
-- BabelColor Average
-- ColorChecker24 - Before November 2014
 - ColorChecker24 - After November 2014
+- ColorChecker24 - Before November 2014
+
+Display Primaries Spectral Dataset
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- Apple Studio Display
+- Typical CRT Brainard 1997
+
+Filter Transmission Spectral Dataset
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- ISO 7589 Diffuser
+
+Lens Transmission Spectral Dataset
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- ISO Standard Lens
 
 Colour Correction
 ^^^^^^^^^^^^^^^^^
@@ -180,18 +205,18 @@ Illuminant Spectral Dataset
 - D75
 - E
 - FL1
-- FL2
-- FL3
-- FL4
-- FL5
-- FL6
-- FL7
-- FL8
-- FL9
 - FL10
 - FL11
 - FL12
+- FL2
+- FL3
 - FL3.1
+- FL3.10
+- FL3.11
+- FL3.12
+- FL3.13
+- FL3.14
+- FL3.15
 - FL3.2
 - FL3.3
 - FL3.4
@@ -200,14 +225,26 @@ Illuminant Spectral Dataset
 - FL3.7
 - FL3.8
 - FL3.9
-- FL3.10
-- FL3.11
-- FL3.12
-- FL3.13
-- FL3.14
-- FL3.15
+- FL4
+- FL5
+- FL6
+- FL7
+- FL8
+- FL9
+- HP1
+- HP2
+- HP3
+- HP4
+- HP5
 - ID50
 - ID65
+- ISO 7589 Photoflood
+- ISO 7589 Photographic Daylight
+- ISO 7589 Sensitometric Daylight
+- ISO 7589 Sensitometric Photoflood
+- ISO 7589 Sensitometric Printer
+- ISO 7589 Sensitometric Studio Tungsten
+- ISO 7589 Studio Tungsten
 - LED-B1
 - LED-B2
 - LED-B3
@@ -217,11 +254,6 @@ Illuminant Spectral Dataset
 - LED-RGB1
 - LED-V1
 - LED-V2
-- HP1
-- HP2
-- HP3
-- HP4
-- HP5
 
 Illuminant Chromaticity Coordinates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -398,6 +430,7 @@ Colourspaces Transformations
 - CIE XYZ to CIE xyY
 - CIE XYZ to Hunter Lab
 - CIE XYZ to Hunter Rdab
+- CIE XYZ to IGPGTG
 - CIE XYZ to IPT
 - CIE XYZ to JzAzBz
 - CIE XYZ to OSA UCS
@@ -465,6 +498,8 @@ RGB Colourspaces
 - DJI D-Gamut
 - DRAGONcolor
 - DRAGONcolor2
+- DaVinci Wide Gamut
+- Display P3
 - Don RGB 4
 - ECI RGB v2
 - ERIMM RGB
@@ -497,6 +532,8 @@ RGB Colourspaces
 - SMPTE C
 - Sharp RGB
 - V-Gamut
+- Venice S-Gamut3
+- Venice S-Gamut3.Cine
 - Xtreme RGB
 - sRGB
 
@@ -504,7 +541,6 @@ OETFs
 ^^^^^
 
 - ARIB STD-B67
-- ITU-R BT.2020
 - ITU-R BT.2100 HLG
 - ITU-R BT.2100 PQ
 - ITU-R BT.601
@@ -603,13 +639,13 @@ Colour Notation Systems
 Munsell Value Computation
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Priest (1920)
-- Munsell (1933)
-- Moon (1943)
-- Saunderson (1944)
+- ASTM D1535-08
 - Ladd (1955)
 - McCamy (1987)
-- ASTM D1535-08
+- Moon (1943)
+- Munsell (1933)
+- Priest (1920)
+- Saunderson (1944)
 
 Munsell Colour Transformations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -620,9 +656,9 @@ Munsell Colour Transformations
 Munsell Colours Dataset
 ^^^^^^^^^^^^^^^^^^^^^^^
 
+- Munsell Colours 1929
 - Munsell Colours All
 - Munsell Colours Real
-- Munsell Colours 1929
 
 Hexadecimal
 ^^^^^^^^^^^
@@ -638,15 +674,20 @@ Optical Phenomena
 Light Quality
 -------------
 
-- Colour Rendering Index (CRI) computation
-- Colour Quality Scale (CQS) computation
+- ANSI/IES TM-30-18 Colour Fidelity Index & ANSI/IES TM-30-18 Colour Rendition Report
 - Academy Spectral Similarity Index (SSI) computation
+- CIE 2017 Colour Fidelity Index
+- Colour Quality Scale (CQS) computation
+- Colour Rendering Index (CRI) computation
 
 Spectral Up-sampling & Reflectance Recovery
 -------------------------------------------
 
-- Smits (1999)
+- Jakob and Hanika (2019)
+- Mallett and Yuksel (2019)
 - Meng, Simon and Hanika (2015)
+- Otsu, Yamamoto and Hachisuka (2018)
+- Smits (1999)
 
 Colour Temperature & Correlated Colour Temperature
 --------------------------------------------------
@@ -669,4 +710,3 @@ Volume
 - Monte Carlo RGB Colourspace Volume Computation
 - Monte Carlo Pointer's Gamut Colourspace Coverage Computation
 - Monte Carlo Visible Spectrum Colourspace Coverage Computation
-

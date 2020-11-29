@@ -1018,7 +1018,7 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                                     </ul>
                                     <p>A typical commit message for version
                                     raise is as follows:</p>
-                                    <pre class="literal-block">Raise package version to 0.3.15.</pre>
+                                    <pre class="literal-block">Raise package version to 0.3.16.</pre>
                                 </dd>
                             </dl>
                         </li>
@@ -1063,9 +1063,9 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                             <pre class="code shell">$ invoke tag</pre>
                             <p>A typical tag message for a <em>Colour</em>
                             version is as follows:</p>
-                            <pre class="literal-block">Create Colour v0.3.15 version.</pre>
+                            <pre class="literal-block">Create Colour v0.3.16 version.</pre>
                             In the eventuality where the tag creation failed, it might be created manually as follows:
-                            <pre class="code shell">$ git tag -a -m "Create Colour v0.3.15 version." v0.3.15</pre>
+                            <pre class="code shell">$ git tag -a -m "Create Colour v0.3.16 version." v0.3.16</pre>
                         </li>
                     </ul>
                 </dd>

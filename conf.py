@@ -181,7 +181,7 @@ NAVIGATION_LINKS = {
                 ('/history', 'History'),
                 ('https://colour.readthedocs.io/en/develop/bibliography.html',
                  'Bibliography'),
-                ('https://doi.org/10.5281/zenodo.3627408', 'Cite Us'),
+                ('https://doi.org/10.5281/zenodo.3757045', 'Cite Us'),
                 ('/cited-by', 'Cited By'),
                 ('https://opensource.org/licenses/BSD-3-Clause', 'License'),
                 ('/search', 'Search'),
