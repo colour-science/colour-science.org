@@ -26,12 +26,12 @@
                         <a href="http://wetafx.co.nz">Weta Digital</a>
                     </h4>
                     <h5 class="card-subtitle text-muted mt-3">
-                        <em>Visual Effects Artist</em>
+                        <em>Lead Pipeline Developer</em>
                     </h5>
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        <span class="font-weight-bold">Maintainer</span>, Project coordination, overall development.
+                        <span class="font-weight-bold">Maintainer</span>, Project coordination, overall development
                     </p>
                 </div>
                 <div class="card-footer">
@@ -44,14 +44,70 @@
             <div class="card h-100">
                 <div class="card-header text-center">
                     <h3>Michael Mauderer</h3>
+                    <h4>
+                        <a href="https://luna-lang.org/">Enso</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>Researcher & Senior Developer</em>
+                    </h5>
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        <span class="font-weight-bold">Maintainer</span>, Colour appearance models, overall development.
+                        <span class="font-weight-bold">Maintainer</span>, Colour appearance models, overall development
                     </p>
                 </div>
                 <div class="card-footer">
                     <a href="http://michaelmauderer.com/" class="card-link">Website</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>Nick Shaw</h3>
+                    <h4>
+                        <a href="http://antlerpost.com/">Antler Post</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>Workflow Consultant</em>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        <span class="font-weight-bold">Maintainer</span>, YCbCr Colour Encoding, RED Colourspaces Derivation,
+                        LUT IO, continuous technical support
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="http://antlerpost.com/" class="card-link">Website</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ------------------------------------------------------------------ -->
+    <!-- ------------------------------------------------------------------ -->
+    <!-- ------------------------------------------------------------------ -->
+
+    <div class="row my-5">
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>Zach Lewis</h3>
+                    <h4>
+                        <a href="https://www.methodstudios.com/">Method Studios</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>Technical Director</em>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        <span class="font-weight-bold">Maintainer</span>, CLF, technical support
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/zachlewis" class="card-link">Github</a>
                 </div>
             </div>
         </div>
@@ -68,37 +124,8 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        <span class="font-weight-bold">Maintainer</span>, Continuous technical support.
+                        <span class="font-weight-bold">Maintainer</span>, technical support
                     </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ------------------------------------------------------------------ -->
-    <!-- ------------------------------------------------------------------ -->
-    <!-- ------------------------------------------------------------------ -->
-
-    <div class="row my-5">
-        <div class="col">
-            <div class="card h-100">
-                <div class="card-header text-center">
-                    <h3>Nick Shaw</h3>
-                    <h4>
-                        <a href="http://antlerpost.com/">Antler Post</a>
-                    </h4>
-                    <h5 class="card-subtitle text-muted mt-3">
-                        <em>Workflow Consultant</em>
-                    </h5>
-                </div>
-                <div class="card-body">
-                    <p class="card-text">
-                        <span class="font-weight-bold">Maintainer</span>, YCbCr Colour Encoding, RED Colourspaces Derivation,
-                        LUT IO, continuous technical support.
-                    </p>
-                </div>
-                <div class="card-footer">
-                    <a href="http://antlerpost.com/" class="card-link">Website</a>
                 </div>
             </div>
         </div>
@@ -115,32 +142,11 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Technical support.
+                        Technical support
                     </p>
                 </div>
                 <div class="card-footer">
                     <a href="https://www.linkedin.com/in/kevin-wheatley-6551401a" class="card-link">Linkedin</a>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-                <div class="card-header text-center">
-                    <h3>Sean Cooper</h3>
-                    <h4>
-                        <a href="https://www.dneg.com/">Double Negative</a>
-                    </h4>
-                    <h5 class="card-subtitle text-muted mt-3">
-                        <em>Colour Scientist</em>
-                    </h5>
-                </div>
-                <div class="card-body">
-                    <p class="card-text">
-                        Technical Support.
-                    </p>
-                </div>
-                <div class="card-footer">
-                    <a href="https://github.com/scoopxyz" class="card-link">Github</a>
                 </div>
             </div>
         </div>
@@ -154,6 +160,27 @@
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
+                    <h3>Sean Cooper</h3>
+                    <h4>
+                        <a href="https://www.dneg.com/">Double Negative</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>Colour Scientist</em>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Technical support
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/scoopxyz" class="card-link">Github</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
                     <h3>Jean D. Vandenberg</h3>
                     <h4>
                         <a href="https://www.waltdisneystudios.com/">The Walt Disney Studios</a>
@@ -164,15 +191,13 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Technical support.
+                        Technical support
                     </p>
                 </div>
                 <div class="card-footer">
                     <a href="https://github.com/jdvandenberg" class="card-link">Github</a>
                 </div>
             </div>
-        </div>
-        <div class="col">
         </div>
         <div class="col">
         </div>
@@ -204,7 +229,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        LUT IO Improvements.
+                        <a href="https://github.com/colour-science/GSoC/blob/master/2020/GSoC-2020-Project-Ideas.md#lut-io-improvements">LUT IO Improvements</a>
                     </p>
                 </div>
                 <div class="card-footer">
@@ -225,7 +250,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        The Need for Speed.
+                        <a href="https://github.com/colour-science/GSoC/blob/master/2020/GSoC-2020-Project-Ideas.md#the-need-for-speed">The Need for Speed</a>
                     </p>
                 </div>
                 <div class="card-footer">
@@ -246,7 +271,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        New Spectral Upsampling Methods.
+                        <a href="https://github.com/colour-science/GSoC/blob/master/2020/GSoC-2020-Project-Ideas.md#new-spectral-upsampling-methods">New Spectral Upsampling Methods</a>, <a href="https://github.com/colour-science/GSoC/blob/master/2020/GSoC-2020-Project-Ideas.md#new-colour-quality-metrics">New Colour Quality Metrics</a>
                     </p>
                 </div>
                 <div class="card-footer">
@@ -273,7 +298,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Colour Quality Scale, Luminous Flux.
+                        Colour Quality Scale, luminous flux
                     </p>
                 </div>
                 <div class="card-footer">
@@ -288,7 +313,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        CIECAM02 improvements, technical support.
+                        CIECAM02 improvements, technical support
                     </p>
                 </div>
                 <div class="card-footer">
@@ -303,7 +328,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Documentation improvements.
+                        Documentation improvements
                     </p>
                 </div>
                 <div class="card-footer">
@@ -325,7 +350,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Documentation improvements.
+                        Documentation improvements
                     </p>
                 </div>
                 <div class="card-footer">
@@ -340,7 +365,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Documentation improvements.
+                        Documentation improvements
                     </p>
                 </div>
                 <div class="card-footer">
@@ -358,7 +383,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        F-Gamut and Fuji F-Log support.
+                        F-Gamut and Fuji F-Log support
                     </p>
                 </div>
                 <div class="card-footer">
@@ -386,7 +411,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Documentation improvements.
+                        Documentation improvements
                     </p>
                 </div>
                 <div class="card-footer">
@@ -402,7 +427,7 @@
                 <div class="card-body">
                     <p class="card-text">
                         <a href="https://github.com/colour-science/colour/issues/507">Hacktoberfest 2019</a>
-                        technical support.
+                        technical support
                     </p>
                 </div>
                 <div class="card-footer">
@@ -418,7 +443,7 @@
                 <div class="card-body">
                     <p class="card-text">
                         <a href="https://github.com/colour-science/colour/issues/511">Hacktoberfest 2019</a>
-                        technical support.
+                        technical support
                     </p>
                 </div>
                 <div class="card-footer">
@@ -441,7 +466,7 @@
                 <div class="card-body">
                     <p class="card-text">
                         <a href="https://github.com/colour-science/colour/issues/505">Hacktoberfest 2019</a>
-                        technical support.
+                        technical support
                     </p>
                 </div>
                 <div class="card-footer">
@@ -456,7 +481,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        License discovery improvements.
+                        License discovery improvements
                     </p>
                 </div>
                 <div class="card-footer">
@@ -472,7 +497,7 @@
                 <div class="card-body">
                     <p class="card-text">
                         <a href="https://github.com/colour-science/colour/issues/513">Hacktoberfest 2019</a>
-                        technical support.
+                        technical support
                     </p>
                 </div>
                 <div class="card-footer">
@@ -500,7 +525,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Documentation improvements.
+                        Documentation improvements
                     </p>
                 </div>
                 <div class="card-footer">
@@ -515,7 +540,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Krystek (1985) implementation fixes.
+                        Krystek (1985) implementation fixes
                     </p>
                 </div>
                 <div class="card-footer">
@@ -530,7 +555,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Numpy 1.18 compatibility.
+                        Numpy 1.18 compatibility
                     </p>
                 </div>
                 <div class="card-footer">
@@ -552,7 +577,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Python 3.8 compatibility.
+                        Python 3.8 compatibility
                     </p>
                 </div>
                 <div class="card-footer">
@@ -570,7 +595,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Examples fixes.
+                        Examples fixes
                     </p>
                 </div>
                 <div class="card-footer">
@@ -585,7 +610,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Technical support.
+                        Technical support
                     </p>
                 </div>
                 <div class="card-footer">
@@ -613,7 +638,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Technical support and documentation improvements.
+                        Technical support and documentation improvements
                     </p>
                 </div>
                 <div class="card-footer">
@@ -634,7 +659,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Documentation improvements.
+                        Documentation improvements
                     </p>
                 </div>
                 <div class="card-footer">
@@ -981,7 +1006,6 @@
                             <li><a href="https://github.com/Wagyx">@Wagyx</li>
                             <li><a href="https://github.com/Willingo">@Willingo</li>
                             <li><a href="https://github.com/xjossy">@xjossy</li>
-                            <li><a href="https://github.com/zachlewis">@zachlewis</li>
                         </ul>
                     </p>
                 </div>
