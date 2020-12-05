@@ -20,8 +20,7 @@ and `Installation Methods for Developing Colour`_ sections below.
 Primary Dependencies
 ^^^^^^^^^^^^^^^^^^^^
 
--   `python>=2.7 <https://www.python.org/download/releases/>`__ or
-    `python>=3.6 <https://www.python.org/download/releases/>`__
+-   `python>=3.6 <https://www.python.org/download/releases/>`__
 -   `imageio <http://imageio.github.io/>`__
 -   `scipy>=1.1.0 <https://pypi.org/project/scipy/>`__
 -   `six <https://pypi.org/project/six/>`__
