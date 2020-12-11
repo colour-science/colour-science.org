@@ -39,7 +39,7 @@ There are many ways to help:
     -   `Colour - Nuke </colour-nuke/>`__
     -   `Colour - Spectroscope </colour-spectroscope/>`__
 
--   Participating in discussions on the `Mailing List <colour-science@googlegroups.com>`__.
+-   Participating in discussions on `Discourse <https://colour-science.discourse.group/>`__.
 
 **Github** hosts a `First Contributions <https://github.com/firstcontributions/first-contributions>`__
 repository with good information for new comers.

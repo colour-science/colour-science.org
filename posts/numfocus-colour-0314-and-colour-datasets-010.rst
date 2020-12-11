@@ -91,7 +91,7 @@ conversions:
     ===============================================================================
     array([ 0.45675795,  0.30986982,  0.24861924])
 
-.. image:: https://colour.readthedocs.io/en/develop/_images/Examples_Colour_Automatic_Conversion_Graph.png
+.. image:: https://colour.readthedocs.io/en/develop/_static/Examples_Colour_Automatic_Conversion_Graph.png
 
 Image Input and Output
 ======================
