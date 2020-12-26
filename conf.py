@@ -202,12 +202,12 @@ NAVIGATION_LINKS = {
          '<i class="fab fa-github"></i>'),
         ('https://colour-science.discourse.group',
          '<i class="fab fa-discourse"></i>'),
+        ('https://www.facebook.com/python.colour.science',
+         '<i class="fab fa-facebook"></i>'),
         ('https://gitter.im/colour-science/colour',
          '<i class="fab fa-gitter"></i>'),
         ('https://twitter.com/colour_science',
          '<i class="fab fa-twitter"></i>'),
-        ('https://www.facebook.com/python.colour.science',
-         '<i class="fab fa-facebook"></i>'),
     ),
 }
 
