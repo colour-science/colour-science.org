@@ -121,7 +121,7 @@ plugin for `Imageio <http://imageio.github.io/>`__ as follows:
 Continuum Analytics Anaconda
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Colour** is also available for `Anaconda <https://www.continuum.io/downloads>`__
+**Colour** is also available for `Anaconda <https://www.anaconda.com/>`__
 from *Continuum Analytics* via `conda-forge <https://conda-forge.org/>`__:
 
 .. code:: shell
