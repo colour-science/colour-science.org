@@ -74,7 +74,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        <span class="font-weight-bold">Maintainer</span>, YCbCr Colour Encoding, RED Colourspaces Derivation,
+                        <span class="font-weight-bold">Maintainer</span>, Y'CbCr Colour Encoding, RED Colourspaces Derivation,
                         LUT IO, continuous technical support
                     </p>
                 </div>
