@@ -668,6 +668,25 @@
             </div>
         </div>
         <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>Jedediah Smith</h3>
+                    <h4>
+                        <a href="https://www.methodstudios.com/">Method Studios</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>VFX Supervisor</em>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        RED Log3G10 improvements
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/jedypod" class="card-link">Github</a>
+                </div>
+            </div>
         </div>
     </div>
 
