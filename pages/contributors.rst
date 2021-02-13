@@ -966,6 +966,7 @@
                             <li>Ryan Bass</li>
                             <li>Vishal Vashistha</li>
                             <li>Vlad Enache</li>
+                            <li><a href="https://github.com/aarondemolder">@aarondemolder</li>
                             <li><a href="https://github.com/alban-sol">@alban-sol</li>
                             <li><a href="https://github.com/Ampersandme">@Ampersandme</li>
                             <li><a href="https://github.com/AndersAtEndian">@AndersAtEndian</li>
@@ -981,6 +982,7 @@
                             <li><a href="https://github.com/cclauss">@cclauss</li>
                             <li><a href="https://github.com/Chandler">@Chandler</li>
                             <li><a href="https://github.com/chesschi">@chesschi</li>
+                            <li><a href="https://github.com/ChunHsinWang">@ChunHsinWang</li>
                         </ul>
                     </p>
                 </div>
@@ -991,7 +993,6 @@
                 <div class="card-body">
                     <p class="card-text">
                         <ul class="list-unstyled text-center">
-                            <li><a href="https://github.com/ChunHsinWang">@ChunHsinWang</li>
                             <li><a href="https://github.com/codycuellar">@codycuellar</li>
                             <li><a href="https://github.com/dfoxfranke">@dfoxfranke</li>
                             <li><a href="https://github.com/dtbulmerJRs">@dtbulmerJRs</li>
@@ -1000,6 +1001,7 @@
                             <li><a href="https://github.com/fangjy88">@fangjy88</li>
                             <li><a href="https://github.com/Floschoe">@Floschoe</li>
                             <li><a href="https://github.com/foutoucour">@foutoucour</li>
+                            <li><a href="https://github.com/goofy2k">@goofy2k</li>
                             <li><a href="https://github.com/habemus-papadum">@habemus-papadum</li>
                             <li><a href="https://github.com/hajimen">@hajimen</li>
                             <li><a href="https://github.com/henczati">@henczati</li>
@@ -1019,6 +1021,7 @@
                             <li><a href="https://github.com/meshing">@meshing</li>
                             <li><a href="https://github.com/mokincha">@mokincha</li>
                             <li><a href="https://github.com/monkeywithacupcake">@monkeywithacupcake</li>
+                            <li><a href="https://github.com/Myndex">@Myndex</li>
                         </ul>
                     </p>
                 </div>
@@ -1029,9 +1032,9 @@
                 <div class="card-body">
                     <p class="card-text">
                         <ul class="list-unstyled text-center">
-                            <li><a href="https://github.com/Myndex">@Myndex</li>
                             <li><a href="https://github.com/naavis">@naavis</li>
                             <li><a href="https://github.com/nadersadoughi">@nadersadoughi</li>
+                            <li><a href="https://github.com/NekoAlosama">@NekoAlosama</li>
                             <li><a href="https://github.com/NoRoKr">@NoRoKr</li>
                             <li><a href="https://github.com/nschloe">@nschloe</li>
                             <li><a href="https://github.com/peteroupc">@peteroupc</li>
@@ -1040,10 +1043,12 @@
                             <li><a href="https://github.com/Queuecumber">@Queuecumber</li>
                             <li><a href="https://github.com/Rob-Welch">@Rob-Welch</li>
                             <li><a href="https://github.com/robbuckley">@robbuckley</li>
+                            <li><a href="https://github.com/romanovar">@romanovar</li>
                             <li><a href="https://github.com/Ron024">@Ron024</li>
                             <li><a href="https://github.com/rsnitsch">@rsnitsch</li>
                             <li><a href="https://github.com/senyai">@senyai</li>
                             <li><a href="https://github.com/shanest">@shanest</li>
+                            <li><a href="https://github.com/shirubana">@shirubana</li>
                             <li><a href="https://github.com/spicymatt">@spicymatt</li>
                             <li><a href="https://github.com/stakemura">@stakemura</li>
                             <li><a href="https://github.com/tashdor">@tashdor</li>
