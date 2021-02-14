@@ -717,6 +717,25 @@
             </div>
         </div>
         <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>Geetansh Saxena</h3>
+                    <h4>
+                        <a href="https://ducic.ac.in/">Cluster Innovation Centre, University of Delhi</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>Student</em>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Technical support.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/SGeetansh" class="card-link">Github</a>
+                </div>
+            </div>
         </div>
         <div class="col">
         </div>
