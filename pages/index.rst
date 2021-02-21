@@ -163,6 +163,66 @@ Bronze Sponsors
         </table>
     </div>
 
+Recurring Donations
+^^^^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+    <div class="table-responsive">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td align="center" valign="middle">
+                        <a href="https://twitter.com/Pablo_g_soriano" target="_blank">
+                            <img class="img-fluid img-circle" style="max-height:98px" src="https://images.opencollective.com/cromorama-sp-z-oo/67460ce/avatar/256.png">
+                        </a>
+                        <p><a href="https://twitter.com/Pablo_g_soriano" target="_blank">Pablo Garcia Soriano</a></p>
+                    </td>
+                    <td align="center" valign="middle">
+                        <a href="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here">
+                        </a>
+                    </td>
+                    <td align="center" valign="middle">
+                        <a href="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here">
+                        </a>
+                    </td>
+                    <td align="center" valign="middle">
+                        <a href="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here">
+                        </a>
+                    </td>
+                    <td align="center" valign="middle">
+                        <a href="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here">
+                        </a>
+                    </td>
+                    <td align="center" valign="middle">
+                        <a href="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here">
+                        </a>
+                    </td>
+                    <td align="center" valign="middle">
+                        <a href="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here">
+                        </a>
+                    </td>
+                    <td align="center" valign="middle">
+                        <a href="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here">
+                        </a>
+                    </td>
+                    <td align="center" valign="middle">
+                        <a href="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here">
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
 Donations & Special Sponsors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
