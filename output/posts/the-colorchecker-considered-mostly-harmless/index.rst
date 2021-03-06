@@ -30,8 +30,8 @@ photographers and colourists out there.
 Postulate: Light Does Not Matter
 ---------------------------------
 
-There is an overabundance of `Youtube videos <https://www.youtube.com/results?search_query=perfect+colorchecker+davinci>`__ explaining how to
-get perfect colours with the help of a colour rendition chart.
+There is an overabundance of `Youtube videos <https://www.youtube.com/results?search_query=perfect+colorchecker+davinci>`__
+explaining how to get perfect colours with the help of a colour rendition chart.
 
 Yesterday, an
 `Unreal Engine: Virtual Production Facebook <https://www.facebook.com/groups/virtualproduction/>`__
