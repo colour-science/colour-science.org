@@ -14,9 +14,9 @@ and do not want to read the entire post, the *TLDR* is as follows:
 
 .. class:: alert alert-dismissible alert-warning
 
-    *Unless you have all the relevant spectral data*, a colour rendition chart
-    should not be used to perform colour-correction of camera imagery but only
-    for white balancing and relative exposure adjustments.
+    *Unless you have all the relevant spectral measurements*, a colour
+    rendition chart should not be used to perform colour-correction of camera
+    imagery but only for white balancing and relative exposure adjustments.
 
 There is granularity in everything, and we will present, in the conclusion,
 some contexts when performing colour-correction is a good idea.
@@ -39,8 +39,8 @@ Is a Colour Rendition Chart the Safest Way to Calibrate a Camera?
 -----------------------------------------------------------------
 
 Simply put, this statement is not only incorrect but **the worst way possible
-to calibrate a camera and should be avoided unless you have all the relevant
-spectral data**.
+to calibrate a camera and should be avoided, unless you have all the relevant
+spectral measurements.**.
 
 Using a colour rendition chart for colour-correction might dramatically
 increase error if the scene light source spectrum is different from the
