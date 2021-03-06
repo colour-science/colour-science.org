@@ -14,9 +14,9 @@ and do not want to read the entire post, the *TLDR* is as follows:
 
 .. class:: alert alert-dismissible alert-warning
 
-    A colour rendition chart should not be used to perform colour-correction of
-    camera imagery but only for white balancing and relative exposure
-    adjustments.
+    *Unless you have all the relevant spectral data*, a colour rendition chart
+    should not be used to perform colour-correction of camera imagery but only
+    for white balancing and relative exposure adjustments.
 
 There is granularity in everything, and we will present, in the conclusion,
 some contexts when performing colour-correction is a good idea.
@@ -38,16 +38,17 @@ calibrate a camera for Virtual Production and also, quite oddly, that
 Is a Colour Rendition Chart the Safest Way to Calibrate a Camera?
 -----------------------------------------------------------------
 
-Simply put, this statement is not only incorrect but **a colour rendition chart
-is the worst way possible to calibrate a camera and should be avoided**.
+Simply put, this statement is not only incorrect but **the worst way possible
+to calibrate a camera and should be avoided unless you have all the relevant
+spectral data**.
 
 Using a colour rendition chart for colour-correction might dramatically
 increase error if the scene light source spectrum is different from the
 illuminant used to compute the colour rendition chart's reference values. The
 reference values are given (or calculated) for a particular illuminant. In the
 context of the *Youtube*'s videos, the scene light source spectral power
-distribution is never measured and thus always unknown. Many other factors make
-using a colour rendition chart unsuitable for camera calibration:
+distribution is never measured and thus always unknown. In this context, other
+factors make using a colour rendition chart unsuitable for camera calibration:
 
 -   Uncontrolled geometry of the colour rendition chart with the incident
     illumination and the camera.
@@ -151,8 +152,9 @@ Then, when is it a good idea to use one for colour-correction? When working
 with a camera that does not have a proper input transformation, e.g. machine
 vision camera or an old camera, and that you do not have access to hardware to
 measure the camera sensitivities, then a colour rendition chart such as the
-*X-Rite ColorChecker Digital SG* and a quality illumination source might save
-the day. Similarly, it can be useful to help to narrow down differences between
+*X-Rite ColorChecker Digital SG* with known reflectances and a quality
+illumination source with known spectral irradiance might save the day.
+Similarly, it can be useful to help to narrow down differences between
 some cameras under controlled lighting conditions.
 
 Further reading is available in `Procedure P-2013-01: Recommended Procedures for the Creation and Use of Digital Camera System Input Device Transforms (IDTs) <http://j.mp/P-2013-001>`__.
