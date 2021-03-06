@@ -21,6 +21,10 @@ and do not want to read the entire post, the *TLDR* is as follows:
 There is granularity in everything, and we will present, in the conclusion,
 some contexts when performing colour-correction is a good idea.
 
+We are also hoping that researchers having an understanding of colourimetry
+will be able to read through the lines. This post is not for them but for the
+photographers and colourists out there.
+
 .. TEASER_END
 
 Postulate: Light Does Not Matter
