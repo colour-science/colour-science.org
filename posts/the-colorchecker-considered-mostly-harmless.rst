@@ -24,7 +24,7 @@ some contexts when performing colour-correction is a good idea.
 .. TEASER_END
 
 Postulate: Light Does Not Matter
----------------------------------
+--------------------------------
 
 There is an overabundance of `Youtube videos <https://www.youtube.com/results?search_query=perfect+colorchecker+davinci>`__
 explaining how to get perfect colours with the help of a colour rendition chart.
