@@ -1012,6 +1012,7 @@
                             <li><a href="https://github.com/Apoorva-13">@Apoorva-13</li>
                             <li><a href="https://github.com/aurelienbl">@aurelienbl</li>
                             <li><a href="https://github.com/awehring">@awehring</li>
+                            <li><a href="https://github.com/baileyji">@baileyji</li>
                             <li><a href="https://github.com/beckstev">@beckstev</li>
                             <li><a href="https://github.com/bersbersbers">@bersbersbers</li>
                             <li><a href="https://github.com/brandondube">@brandondube</li>
@@ -1021,6 +1022,7 @@
                             <li><a href="https://github.com/Chandler">@Chandler</li>
                             <li><a href="https://github.com/chesschi">@chesschi</li>
                             <li><a href="https://github.com/ChunHsinWang">@ChunHsinWang</li>
+                            <li><a href="https://github.com/codycuellar">@codycuellar</li>
                         </ul>
                     </p>
                 </div>
@@ -1031,7 +1033,6 @@
                 <div class="card-body">
                     <p class="card-text">
                         <ul class="list-unstyled text-center">
-                            <li><a href="https://github.com/codycuellar">@codycuellar</li>
                             <li><a href="https://github.com/dfoxfranke">@dfoxfranke</li>
                             <li><a href="https://github.com/dtbulmerJRs">@dtbulmerJRs</li>
                             <li><a href="https://github.com/Edwardlin-zlt">@Edwardlin-zlt</li>
@@ -1047,7 +1048,9 @@
                             <li><a href="https://github.com/iCagarro">@iCagarro</li>
                             <li><a href="https://github.com/iinnovations">@iinnovations</li>
                             <li><a href="https://github.com/jaguarondi">@jaguarondi</li>
+                            <li><a href="https://github.com/JoshuaEbenezer">@JoshuaEbenezer</li>
                             <li><a href="https://github.com/KOLANICH">@KOLANICH</li>
+                            <li><a href="https://github.com/kunal9922">@kunal9922</li>
                             <li><a href="https://github.com/Kunkka1988">@Kunkka1988</li>
                             <li><a href="https://github.com/lavrovd">@lavrovd</li>
                             <li><a href="https://github.com/LeCyberDucky">@LeCyberDucky</li>
@@ -1060,6 +1063,7 @@
                             <li><a href="https://github.com/mokincha">@mokincha</li>
                             <li><a href="https://github.com/monkeywithacupcake">@monkeywithacupcake</li>
                             <li><a href="https://github.com/Myndex">@Myndex</li>
+                            <li><a href="https://github.com/naavis">@naavis</li>
                         </ul>
                     </p>
                 </div>
@@ -1070,7 +1074,6 @@
                 <div class="card-body">
                     <p class="card-text">
                         <ul class="list-unstyled text-center">
-                            <li><a href="https://github.com/naavis">@naavis</li>
                             <li><a href="https://github.com/nadersadoughi">@nadersadoughi</li>
                             <li><a href="https://github.com/NekoAlosama">@NekoAlosama</li>
                             <li><a href="https://github.com/NoRoKr">@NoRoKr</li>
@@ -1096,9 +1099,11 @@
                             <li><a href="https://github.com/totyped">@totyped</li>
                             <li><a href="https://github.com/ValZapod">@ValZapod</li>
                             <li><a href="https://github.com/vidakDK">@vidakDK</li>
+                            <li><a href="https://github.com/volkerjaenisch">@volkerjaenisch</li>
                             <li><a href="https://github.com/vvclin-git">@vvclin-git</li>
                             <li><a href="https://github.com/Wagyx">@Wagyx</li>
                             <li><a href="https://github.com/Willingo">@Willingo</li>
+                            <li><a href="https://github.com/willSmallHD">@willSmallHD</li>
                             <li><a href="https://github.com/xjossy">@xjossy</li>
                         </ul>
                     </p>
