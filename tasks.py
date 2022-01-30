@@ -1,71 +1,118 @@
-# -*- coding: utf-8 -*-
 """
 Invoke - Tasks
 ==============
 """
 
-from __future__ import unicode_literals
+from __future__ import annotations
 
-from invoke import task
+from invoke import Context, task
 
-__author__ = 'Colour Developers'
-__copyright__ = 'Copyright (C) 2013-2021 - Colour Developers'
-__license__ = 'New BSD License - https://opensource.org/licenses/BSD-3-Clause'
-__maintainer__ = 'Colour Developers'
-__email__ = 'colour-developers@colour-science.org'
-__status__ = 'Production'
+__author__ = "Colour Developers"
+__copyright__ = "Copyright (C) 2013-2021 - Colour Developers"
+__license__ = "New BSD License - https://opensource.org/licenses/BSD-3-Clause"
+__maintainer__ = "Colour Developers"
+__email__ = "colour-developers@colour-science.org"
+__status__ = "Production"
 
-__all__ = ['formatting', 'quality', 'build']
+__all__ = ["upgrade", "formatting", "quality", "build"]
+
+
+def _patch_invoke_annotations_support():
+    """
+    See https://github.com/pyinvoke/invoke/issues/357
+    """
+
+    import invoke
+    from unittest.mock import patch
+    from inspect import getfullargspec, ArgSpec
+
+    def patched_inspect_getargspec(function):
+        spec = getfullargspec(function)
+        return ArgSpec(*spec[0:4])
+
+    org_task_argspec = invoke.tasks.Task.argspec
+
+    def patched_task_argspec(*args, **kwargs):
+        with patch(
+            target="inspect.getargspec", new=patched_inspect_getargspec
+        ):
+            return org_task_argspec(*args, **kwargs)
+
+    invoke.tasks.Task.argspec = patched_task_argspec
+
+
+_patch_invoke_annotations_support()
 
 
 @task
-def formatting(ctx, yapf=True):
+def upgrade(
+    ctx: Context,
+    pyupgrade: bool = True,
+    flynt: bool = True,
+):
     """
-    Formats the codebase with *Yapf*.
+    Upgrade the codebase with *pyupgrade* and *flynt*.
 
     Parameters
     ----------
-    ctx : invoke.context.Context
+    ctx
         Context.
-    yapf : bool, optional
-        Whether to format the codebase with *Yapf*.
-
-    Returns
-    -------
-    bool
-        Task success.
+    pyupgrade
+        Whether to upgrade the codebase with *pyupgrade*.
+    flynt
+        Whether to upgrade the codebase with *flynt*.
     """
 
-    if yapf:
-        print('Formatting codebase with "Yapf"...')
-        ctx.run('yapf -p -i -r --exclude \'.git\' --exclude \'cache\' .')
+    if pyupgrade:
+        print('Upgrading codebase with "pyupgrade"...')
+        ctx.run("pre-commit run pyupgrade --all-files")
+
+    if flynt:
+        print('Upgrading codebase with "flynt"...')
+        ctx.run("flynt .")
 
 
 @task
-def quality(ctx, flake8=True):
+def formatting(
+    ctx: Context,
+    black: bool = True,
+):
+    """
+    Formats the codebase with *Black*.
+
+    Parameters
+    ----------
+    ctx
+        Context.
+    black
+        Whether to format the codebase with *Black*.
+    """
+
+    if black:
+        print('Formatting codebase with "Black"...')
+        ctx.run("black .")
+
+
+@task
+def quality(ctx, flake8: bool = True):
     """
     Checks the codebase with *Flake8* and lints various *restructuredText*
     files with *rst-lint*.
 
     Parameters
     ----------
-    ctx : invoke.context.Context
+    ctx
         Context.
-    flake8 : bool, optional
+    flake8
         Whether to check the codebase with *Flake8*.
-
-    Returns
-    -------
-    bool
-        Task success.
     """
 
     if flake8:
         print('Checking codebase with "Flake8"...')
-        ctx.run('flake8 --max-line-length=120 --exclude \'cache\'')
+        ctx.run("flake8 .")
 
 
-@task(formatting, quality)
+@task(upgrade, formatting, quality)
 def build(ctx):
     """
     Builds the project.
@@ -74,12 +121,7 @@ def build(ctx):
     ----------
     ctx : invoke.context.Context
         Context.
-
-    Returns
-    -------
-    bool
-        Task success.
     """
 
-    print('Building...')
-    ctx.run('nikola build')
+    print("Building...")
+    ctx.run("nikola build")

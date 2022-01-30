@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-from __future__ import unicode_literals
 import time
 
 # !! This is the configuration of Nikola. !! #
@@ -134,80 +131,123 @@ TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         (
-            (('/apps',
-              '<span class="font-weight-bold">Apps (Colour - Dash)</span>'),
-             ('http://awesome-colour.org/',
-              '<span class="font-weight-bold">Awesome Colour</span>'),
-             ('/colour', '<span class="font-weight-bold">Colour</span>'),
-             ('/colour-datasets',
-              '<span class="font-weight-bold">Colour - Datasets</span>'),
-             ('/colour-demosaicing',
-              '<span class="font-weight-bold">Colour - Demosaicing</span>'),
-             ('/colour-hdri',
-              '<span class="font-weight-bold">Colour - HDRI</span>'),
-             ('/colour-checker-detection',
-              '<span class="font-weight-bold">Colour - Checker Detection</span>'
-              ), ('/colour-maya',
-                  'Colour - Maya'), ('/colour-nuke',
-                                     'Colour - Nuke'), ('/colour-playground',
-                                                        'Colour - Playground'),
-             ('/colour-spectroscope',
-              'Colour - Spectroscope'), ('/experiments', 'Experiments')),
-            'Projects',
-        ),
-        (
             (
-                ('/installation-guide',
-                 '<span class="font-weight-bold">Installation Guide</span>'),
-                ('https://colour.readthedocs.io/en/develop/tutorial.html',
-                 '<span class="font-weight-bold">Static Tutorial</span>'),
-                ('https://colab.research.google.com/notebook#fileId='
-                 '1Im9J7or9qyClQCv5sPHmKdyiQbG4898K&'
-                 'offline=true&sandboxMode=true',
-                 '<span class="font-weight-bold">Interactive Tutorial</span>'),
-                ('https://colab.research.google.com/notebook#fileId='
-                 '1NRcdXSCshivkwoU2nieCvC3y14fx1X4X&'
-                 'offline=true&sandboxMode=true',
-                 '<span class="font-weight-bold">How-To Guide</span>'),
-                ('/api-reference',
-                 '<span class="font-weight-bold">API Reference</span>'),
-                ('/code-of-conduct',
-                 '<span class="font-weight-bold">Code of Conduct</span>'),
-                ('/contributing',
-                 '<span class="font-weight-bold">Contributing</span>'),
-                ('/contributors',
-                 '<span class="font-weight-bold">Contributors</span>'),
-                ('/features', 'Features'),
-                ('/history', 'History'),
-                ('https://colour.readthedocs.io/en/develop/bibliography.html',
-                 'Bibliography'),
-                ('https://doi.org/10.5281/zenodo.3757045', 'Cite Us'),
-                ('/cited-by', 'Cited By'),
-                ('https://opensource.org/licenses/BSD-3-Clause', 'License'),
-                ('/search', 'Search'),
+                (
+                    "/apps",
+                    '<span class="font-weight-bold">Apps (Colour - Dash)</span>',
+                ),
+                (
+                    "http://awesome-colour.org/",
+                    '<span class="font-weight-bold">Awesome Colour</span>',
+                ),
+                ("/colour", '<span class="font-weight-bold">Colour</span>'),
+                (
+                    "/colour-datasets",
+                    '<span class="font-weight-bold">Colour - Datasets</span>',
+                ),
+                (
+                    "/colour-demosaicing",
+                    '<span class="font-weight-bold">Colour - Demosaicing</span>',
+                ),
+                (
+                    "/colour-hdri",
+                    '<span class="font-weight-bold">Colour - HDRI</span>',
+                ),
+                (
+                    "/colour-checker-detection",
+                    '<span class="font-weight-bold">Colour - Checker Detection</span>',
+                ),
+                ("/colour-maya", "Colour - Maya"),
+                ("/colour-nuke", "Colour - Nuke"),
+                ("/colour-playground", "Colour - Playground"),
+                ("/colour-spectroscope", "Colour - Spectroscope"),
+                ("/experiments", "Experiments"),
             ),
-            'Documentation',
+            "Projects",
         ),
         (
             (
-                ('/blog', '<span class="font-weight-bold">Posts</span>'),
+                (
+                    "/installation-guide",
+                    '<span class="font-weight-bold">Installation Guide</span>',
+                ),
+                (
+                    "https://colour.readthedocs.io/en/develop/tutorial.html",
+                    '<span class="font-weight-bold">Static Tutorial</span>',
+                ),
+                (
+                    "https://colab.research.google.com/notebook#fileId="
+                    "1Im9J7or9qyClQCv5sPHmKdyiQbG4898K&"
+                    "offline=true&sandboxMode=true",
+                    '<span class="font-weight-bold">Interactive Tutorial</span>',
+                ),
+                (
+                    "https://colab.research.google.com/notebook#fileId="
+                    "1NRcdXSCshivkwoU2nieCvC3y14fx1X4X&"
+                    "offline=true&sandboxMode=true",
+                    '<span class="font-weight-bold">How-To Guide</span>',
+                ),
+                (
+                    "/api-reference",
+                    '<span class="font-weight-bold">API Reference</span>',
+                ),
+                (
+                    "/code-of-conduct",
+                    '<span class="font-weight-bold">Code of Conduct</span>',
+                ),
+                (
+                    "/contributing",
+                    '<span class="font-weight-bold">Contributing</span>',
+                ),
+                (
+                    "/contributors",
+                    '<span class="font-weight-bold">Contributors</span>',
+                ),
+                ("/features", "Features"),
+                ("/history", "History"),
+                (
+                    "https://colour.readthedocs.io/en/develop/bibliography.html",
+                    "Bibliography",
+                ),
+                ("https://doi.org/10.5281/zenodo.3757045", "Cite Us"),
+                ("/cited-by", "Cited By"),
+                ("https://opensource.org/licenses/BSD-3-Clause", "License"),
+                ("/search", "Search"),
+            ),
+            "Documentation",
+        ),
+        (
+            (
+                ("/blog", '<span class="font-weight-bold">Posts</span>'),
                 ("/archive.html", "Archive"),
                 ("/categories/", "Tags"),
             ),
-            'Blog',
+            "Blog",
         ),
-        ('mailto:colour-developers@colour-science.org',
-         '<i class="fas fa-envelope"></i>'),
-        ('https://github.com/colour-science/colour',
-         '<i class="fab fa-github"></i>'),
-        ('https://colour-science.discourse.group',
-         '<i class="fab fa-discourse"></i>'),
-        ('https://www.facebook.com/python.colour.science',
-         '<i class="fab fa-facebook"></i>'),
-        ('https://gitter.im/colour-science/colour',
-         '<i class="fab fa-gitter"></i>'),
-        ('https://twitter.com/colour_science',
-         '<i class="fab fa-twitter"></i>'),
+        (
+            "mailto:colour-developers@colour-science.org",
+            '<i class="fas fa-envelope"></i>',
+        ),
+        (
+            "https://github.com/colour-science/colour",
+            '<i class="fab fa-github"></i>',
+        ),
+        (
+            "https://colour-science.discourse.group",
+            '<i class="fab fa-discourse"></i>',
+        ),
+        (
+            "https://www.facebook.com/python.colour.science",
+            '<i class="fab fa-facebook"></i>',
+        ),
+        (
+            "https://gitter.im/colour-science/colour",
+            '<i class="fab fa-gitter"></i>',
+        ),
+        (
+            "https://twitter.com/colour_science",
+            '<i class="fab fa-twitter"></i>',
+        ),
     ),
 }
 
@@ -221,7 +261,7 @@ THEME = "colour-science"
 
 # Primary color of your theme. This will be used to customize your theme.
 # Must be a HEX value.
-THEME_COLOR = '#191920'
+THEME_COLOR = "#191920"
 
 # Theme configuration. Fully theme-dependent. (translatable)
 # Examples below are for bootblog4.
@@ -360,18 +400,18 @@ TIMEZONE = "Europe/London"
 # 'markdown' is Markdown
 # 'html' assumes the file is HTML and just copies it
 COMPILERS = {
-    "rest": ('.rst', '.txt'),
-    "markdown": ('.md', '.mdown', '.markdown'),
-    "textile": ('.textile', ),
-    "txt2tags": ('.t2t', ),
-    "bbcode": ('.bb', ),
-    "wiki": ('.wiki', ),
-    "ipynb": ('.ipynb', ),
-    "html": ('.html', '.htm'),
+    "rest": (".rst", ".txt"),
+    "markdown": (".md", ".mdown", ".markdown"),
+    "textile": (".textile",),
+    "txt2tags": (".t2t",),
+    "bbcode": (".bb",),
+    "wiki": (".wiki",),
+    "ipynb": (".ipynb",),
+    "html": (".html", ".htm"),
     # PHP files are rendered the usual way (i.e. with the full templates).
     # The resulting files have .php extensions, making it possible to run
     # them without reconfiguring your server to recognize them.
-    "php": ('.php', ),
+    "php": (".php",),
     # Pandoc detects the input from the source filename
     # but is disabled by default as it would conflict
     # with many of the others.
@@ -459,7 +499,7 @@ WRITE_TAG_CLOUD = False
 # If you do not want to display a tag publicly, you can mark it as hidden.
 # The tag will not be displayed on the tag list page, the tag cloud and posts.
 # Tag pages will still be generated.
-HIDDEN_TAGS = ['mathjax']
+HIDDEN_TAGS = ["mathjax"]
 
 # Only include tags on the tag list/overview page if there are at least
 # TAGLIST_MINIMUM_POSTS number of posts or more with every tag. Every tag
@@ -603,7 +643,7 @@ HIDDEN_CATEGORIES = []
 # If you do not want to display an author publicly, you can mark it as hidden.
 # The author will not be displayed on the author list page and posts.
 # Tag pages will still be generated.
-HIDDEN_AUTHORS = ['Guest']
+HIDDEN_AUTHORS = ["Guest"]
 
 # Final location for the main blog page and sibling paginated pages is
 # output / TRANSLATION[lang] / INDEX_PATH / index-*.html
@@ -612,7 +652,7 @@ INDEX_PATH = "blog"
 
 # Optional HTML that displayed on “main” blog index.html files.
 # May be used for a greeting. (translatable)
-FRONT_INDEX_HEADER = {DEFAULT_LANG: ''}
+FRONT_INDEX_HEADER = {DEFAULT_LANG: ""}
 
 # Create per-month archives instead of per-year
 # CREATE_MONTHLY_ARCHIVE = False
@@ -705,11 +745,11 @@ REDIRECTIONS = []
 # For more details, read the manual:
 # https://getnikola.com/handbook.html#deploying-to-github
 # You will need to configure the deployment branch on GitHub.
-GITHUB_SOURCE_BRANCH = 'src'
-GITHUB_DEPLOY_BRANCH = 'master'
+GITHUB_SOURCE_BRANCH = "src"
+GITHUB_DEPLOY_BRANCH = "master"
 
 # The name of the remote where you wish to push to, using github_deploy.
-GITHUB_REMOTE_NAME = 'origin'
+GITHUB_REMOTE_NAME = "origin"
 
 # Whether or not github_deploy should commit to the source branch automatically
 # before deploying.
@@ -748,6 +788,7 @@ GITHUB_COMMIT_SOURCE = True
 # <https://getnikola.com/handbook.html#post-processing-filters>
 #
 from nikola import filters  # noqa
+
 FILTERS = {  # noqa
     # ".html": [filters.add_header_permalinks],
     # ".js": [filters.closure_compiler],
@@ -874,7 +915,7 @@ FILTERS = {  # noqa
 # (the thumbnail has ``.thumbnail`` added before the file extension by default,
 # but a different naming template can be configured with IMAGE_THUMBNAIL_FORMAT).
 
-IMAGE_FOLDERS = {'images': 'images'}
+IMAGE_FOLDERS = {"images": "images"}
 # IMAGE_THUMBNAIL_SIZE = 400
 # IMAGE_THUMBNAIL_FORMAT = '{name}.thumbnail{ext}'
 
@@ -972,7 +1013,9 @@ INDEX_TEASERS = True
 # 'Read more...' for the index page, if INDEX_TEASERS is True (translatable)
 INDEX_READ_MORE_LINK = '<p class="more"><a href="{link}">{read_more}…</a></p>'
 # 'Read more...' for the feeds, if FEED_TEASERS is True (translatable)
-FEED_READ_MORE_LINK = '<p><a href="{link}">{read_more}…</a> ({min_remaining_read})</p>'
+FEED_READ_MORE_LINK = (
+    '<p><a href="{link}">{read_more}…</a> ({min_remaining_read})</p>'
+)
 
 # Append a URL query to the FEED_READ_MORE_LINK in Atom and RSS feeds. Advanced
 # option used for traffic source tracking.
@@ -1047,18 +1090,23 @@ CONTENT_FOOTER = """
 #          do not need formatting)
 # (translatable)
 CONTENT_FOOTER_FORMATS = {
-    DEFAULT_LANG: ((), {
-        "email": BLOG_EMAIL,
-        "author": BLOG_AUTHOR,
-        "date": time.gmtime().tm_year,
-        "license": LICENSE
-    })
+    DEFAULT_LANG: (
+        (),
+        {
+            "email": BLOG_EMAIL,
+            "author": BLOG_AUTHOR,
+            "date": time.gmtime().tm_year,
+            "license": LICENSE,
+        },
+    )
 }
 
 # A simple copyright tag for inclusion in RSS feeds that works just
 # like CONTENT_FOOTER and CONTENT_FOOTER_FORMATS
-RSS_COPYRIGHT = 'Contents © {date} <a href="mailto:{email}">{author}</a> {license}'
-RSS_COPYRIGHT_PLAIN = 'Contents © {date} {author} {license}'
+RSS_COPYRIGHT = (
+    'Contents © {date} <a href="mailto:{email}">{author}</a> {license}'
+)
+RSS_COPYRIGHT_PLAIN = "Contents © {date} {author} {license}"
 RSS_COPYRIGHT_FORMATS = CONTENT_FOOTER_FORMATS
 
 # To use comments, you can choose between different third party comment
@@ -1173,8 +1221,9 @@ PRETTY_URLS = True
 #       with the MarkdownExtension class and should not be added here.
 # The default is ['fenced_code', 'codehilite']
 MARKDOWN_EXTENSIONS = [
-    'markdown.extensions.fenced_code', 'markdown.extensions.codehilite',
-    'markdown.extensions.extra'
+    "markdown.extensions.fenced_code",
+    "markdown.extensions.codehilite",
+    "markdown.extensions.extra",
 ]
 
 # Options to be passed to markdown extensions (See https://python-markdown.github.io/reference/)
@@ -1479,8 +1528,8 @@ GLOBAL_CONTEXT = {}
 GLOBAL_CONTEXT_FILLER = []
 
 # Compiler to process Sass files.
-SASS_COMPILER = 'sass'
+SASS_COMPILER = "sass"
 
 # A list of options to pass to the Sass compiler.
 # Final command is: SASS_COMPILER SASS_OPTIONS file.s(a|c)ss
-SASS_OPTIONS = ['--style', 'compressed']
+SASS_OPTIONS = ["--style", "compressed"]
