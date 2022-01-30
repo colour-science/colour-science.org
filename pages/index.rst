@@ -273,7 +273,7 @@ Donations & Special Sponsors
                 <tr>
                     <td align="center" valign="middle">
                         <a href="https://www.artstation.com/monsieur_lixm" target="_blank">
-                            <img class="img-fluid img-circle" style="max-height:176px;" src="https://pbs.twimg.com/profile_images/1006611034088595462/HNQh_FZQ.jpg">
+                            <img class="img-fluid img-circle" style="max-height:176px;" src="https://pbs.twimg.com/profile_images/1469781977280786433/NncWAxCW.jpg">
                         </a>
                         <p><a href="https://www.artstation.com/monsieur_lixm" target="_blank">Liam Collod</a></p>
                     </td>
@@ -291,7 +291,7 @@ Donations & Special Sponsors
                     </td>
                     <td align="center" valign="middle">
                         <a href="https://twitter.com/ilia_sibiryakov" target="_blank">
-                            <img class="img-fluid img-circle" style="max-height:176px;" src="https://pbs.twimg.com/profile_images/1072964248890998796/kAKBzCef.jpg">
+                            <img class="img-fluid img-circle" style="max-height:176px;" src="https://avatars.githubusercontent.com/u/23642861">
                         </a>
                         <p><a href="https://twitter.com/ilia_sibiryakov" target="_blank">Ilia Sibiryakov</a></p>
                     </td>
