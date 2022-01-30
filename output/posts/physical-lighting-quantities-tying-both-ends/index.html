@@ -146,7 +146,7 @@ navbar-dark bg-dark bg-primary
             <time class="published dt-published" datetime="2020-04-01T07:28:05Z" itemprop="datePublished" title="2020-04-01 07:28">2020-04-01 07:28</time></a>
             </p>
                 <p class="commentline">
-        
+    
     <a href="#disqus_thread" data-disqus-identifier="cache/posts/physical-lighting-quantities-tying-both-ends.html">Comments</a>
 
 
@@ -157,15 +157,13 @@ navbar-dark bg-dark bg-primary
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p>Validation against ground truth data is an important step when implementing
+    <p>Validation against ground truth data is an important step when implementing
 support for physical lighting quantities in a realtime or offline renderer.</p>
 <p>In this post, a simple but effective method to assess that the physical camera
 model behaves as expected against ground truth data (or conversely) will be
 presented.</p>
 <!-- TEASER_END -->
-<div class="section" id="digital-still-camera-exposure-model">
-<h2>Digital Still Camera Exposure Model</h2>
+<section id="digital-still-camera-exposure-model"><h2>Digital Still Camera Exposure Model</h2>
 <p><a class="reference external" href="https://www.epicgames.com/site/en-US/about">Epic Games</a> recently published
 a <a class="reference external" href="https://www.unrealengine.com/en-US/tech-blog/how-epic-games-is-handling-auto-exposure-in-4-25">comprehensive blog post</a>
 about auto-exposure handling in Unreal Engine 4.25. The part of most significance
@@ -236,17 +234,14 @@ scaling by the ISO arithmetic speed <span class="math">\(S\)</span>:</p>
 </blockquote>
 <p><a class="reference external" href="https://github.com/colour-science/colour-hdri/blob/develop/colour_hdri/exposure/dsc.py">Colour - HDRI</a>
 implements the aforementioned model with Python:</p>
-<pre class="code python"><a name="rest_code_cd9accd02d764993a33837d56fd4cee5-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_hdri</span>
-<a name="rest_code_cd9accd02d764993a33837d56fd4cee5-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">saturation_based_speed_focal_plane_exposure</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
-<a name="rest_code_cd9accd02d764993a33837d56fd4cee5-3"></a><span class="mf">0.46993364546604555</span>
+<pre class="code python"><a id="rest_code_8243dfb24c9048519b0a5962ed78811f-1" name="rest_code_8243dfb24c9048519b0a5962ed78811f-1" href="#rest_code_8243dfb24c9048519b0a5962ed78811f-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_hdri</span>
+<a id="rest_code_8243dfb24c9048519b0a5962ed78811f-2" name="rest_code_8243dfb24c9048519b0a5962ed78811f-2" href="#rest_code_8243dfb24c9048519b0a5962ed78811f-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">saturation_based_speed_focal_plane_exposure</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<a id="rest_code_8243dfb24c9048519b0a5962ed78811f-3" name="rest_code_8243dfb24c9048519b0a5962ed78811f-3" href="#rest_code_8243dfb24c9048519b0a5962ed78811f-3"></a><span class="mf">0.46993364546604555</span>
 </pre>
 <p><a class="reference external" href="https://github.com/colour-science/colour-nuke/blob/master/colour_nuke/scripts/digital_still_camera_exposure.nk">Colour - Nuke</a>
 offers a Gizmo/Group implementation also available on
 <a class="reference external" href="http://www.nukepedia.com/gizmos/image/digital_still_camera_exposure">Nukepedia</a>.</p>
-<img alt="/images/Blog_Saturation_Based_Speed_Focal_Plane_Exposure_in_Nuke.png" src="../../images/Blog_Saturation_Based_Speed_Focal_Plane_Exposure_in_Nuke.png">
-</div>
-<div class="section" id="panoramic-hdri-calibration">
-<h2>Panoramic HDRI Calibration</h2>
+<img alt="/images/Blog_Saturation_Based_Speed_Focal_Plane_Exposure_in_Nuke.png" src="../../images/Blog_Saturation_Based_Speed_Focal_Plane_Exposure_in_Nuke.png"></section><section id="panoramic-hdri-calibration"><h2>Panoramic HDRI Calibration</h2>
 <p>With a plausible DSC Exposure Model implemented, calibrated ground truth data
 can be imaged for verification purposes.</p>
 <p><a class="reference external" href="http://blog.selfshadow.com/publications/s2016-shading-course/unity/s2016_pbs_unity_hdri_notes.pdf">An Artist-Friendly Workflow for Panoramic HDRI</a>
@@ -276,14 +271,14 @@ as follows:</p>
 respectively.</p>
 <p><a class="reference external" href="https://github.com/colour-science/colour-hdri/blob/develop/colour_hdri/calibration/absolute_luminance.py">Colour - HDRI</a>
 implements support for absolute luminance calibration with Python:</p>
-<pre class="code python"><a name="rest_code_de27b3f5e5e2440d8238e54d8b25504f-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_hdri</span>
-<a name="rest_code_de27b3f5e5e2440d8238e54d8b25504f-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<a name="rest_code_de27b3f5e5e2440d8238e54d8b25504f-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">RGB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">2048</span><span class="p">,</span> <span class="mi">1024</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<a name="rest_code_de27b3f5e5e2440d8238e54d8b25504f-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">upper_hemisphere_illuminance_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
-<a name="rest_code_de27b3f5e5e2440d8238e54d8b25504f-5"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">absolute_luminance_calibration_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span> <span class="mi">120000</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-<a name="rest_code_de27b3f5e5e2440d8238e54d8b25504f-6"></a><span class="n">array</span><span class="p">([</span> <span class="mf">38215.85392444</span><span class="p">,</span>  <span class="mf">38215.85392444</span><span class="p">,</span>  <span class="mf">38215.85392444</span><span class="p">])</span>
-<a name="rest_code_de27b3f5e5e2440d8238e54d8b25504f-7"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">calibration</span><span class="o">.</span><span class="n">absolute_luminance</span><span class="o">.</span><span class="n">upper_hemisphere_illuminance_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
-<a name="rest_code_de27b3f5e5e2440d8238e54d8b25504f-8"></a><span class="mf">3.1400580564615663</span>
+<pre class="code python"><a id="rest_code_75fd051c90ad4a82ae2ccc0be52c9e32-1" name="rest_code_75fd051c90ad4a82ae2ccc0be52c9e32-1" href="#rest_code_75fd051c90ad4a82ae2ccc0be52c9e32-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_hdri</span>
+<a id="rest_code_75fd051c90ad4a82ae2ccc0be52c9e32-2" name="rest_code_75fd051c90ad4a82ae2ccc0be52c9e32-2" href="#rest_code_75fd051c90ad4a82ae2ccc0be52c9e32-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<a id="rest_code_75fd051c90ad4a82ae2ccc0be52c9e32-3" name="rest_code_75fd051c90ad4a82ae2ccc0be52c9e32-3" href="#rest_code_75fd051c90ad4a82ae2ccc0be52c9e32-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">RGB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">2048</span><span class="p">,</span> <span class="mi">1024</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<a id="rest_code_75fd051c90ad4a82ae2ccc0be52c9e32-4" name="rest_code_75fd051c90ad4a82ae2ccc0be52c9e32-4" href="#rest_code_75fd051c90ad4a82ae2ccc0be52c9e32-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">upper_hemisphere_illuminance_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
+<a id="rest_code_75fd051c90ad4a82ae2ccc0be52c9e32-5" name="rest_code_75fd051c90ad4a82ae2ccc0be52c9e32-5" href="#rest_code_75fd051c90ad4a82ae2ccc0be52c9e32-5"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">absolute_luminance_calibration_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span> <span class="mi">120000</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<a id="rest_code_75fd051c90ad4a82ae2ccc0be52c9e32-6" name="rest_code_75fd051c90ad4a82ae2ccc0be52c9e32-6" href="#rest_code_75fd051c90ad4a82ae2ccc0be52c9e32-6"></a><span class="n">array</span><span class="p">([</span> <span class="mf">38215.85392444</span><span class="p">,</span>  <span class="mf">38215.85392444</span><span class="p">,</span>  <span class="mf">38215.85392444</span><span class="p">])</span>
+<a id="rest_code_75fd051c90ad4a82ae2ccc0be52c9e32-7" name="rest_code_75fd051c90ad4a82ae2ccc0be52c9e32-7" href="#rest_code_75fd051c90ad4a82ae2ccc0be52c9e32-7"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colour_hdri</span><span class="o">.</span><span class="n">calibration</span><span class="o">.</span><span class="n">absolute_luminance</span><span class="o">.</span><span class="n">upper_hemisphere_illuminance_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
+<a id="rest_code_75fd051c90ad4a82ae2ccc0be52c9e32-8" name="rest_code_75fd051c90ad4a82ae2ccc0be52c9e32-8" href="#rest_code_75fd051c90ad4a82ae2ccc0be52c9e32-8"></a><span class="mf">3.1400580564615663</span>
 </pre>
 <div class="alert alert-dismissible alert-info line-block">
 <div class="line"><strong>Note</strong></div>
@@ -299,10 +294,7 @@ sized images respectively.</div>
 <p>Likewise, <a class="reference external" href="https://github.com/colour-science/colour-nuke/blob/master/colour_nuke/scripts/panoramic_hdri_absolute_luminance_calibration.nk">Colour - Nuke</a>
 offers a Gizmo/Group implementation also available on
 <a class="reference external" href="http://www.nukepedia.com/gizmos/colour/panoramic-hdri-absolute-luminance-calibration">Nukepedia</a>.</p>
-<img alt="/images/Blog_Absolute_Luminance_Calibration_in_Nuke.png" src="../../images/Blog_Absolute_Luminance_Calibration_in_Nuke.png">
-</div>
-<div class="section" id="imaging-the-panoramic-hdri-with-the-digital-still-camera-exposure-model">
-<h2>Imaging the Panoramic HDRI with the Digital Still Camera Exposure Model</h2>
+<img alt="/images/Blog_Absolute_Luminance_Calibration_in_Nuke.png" src="../../images/Blog_Absolute_Luminance_Calibration_in_Nuke.png"></section><section id="imaging-the-panoramic-hdri-with-the-digital-still-camera-exposure-model"><h2>Imaging the Panoramic HDRI with the Digital Still Camera Exposure Model</h2>
 <p>A free panoramic HDRI processed accurately is a rarity online. Most vendors
 sell either non-linear or clipped imagery, and when it is not clipped,
 photometric and colorimetric information is missing and because the creation
@@ -311,11 +303,9 @@ requiring physical lighting quantities.</p>
 <p>Fortunately, Lagarde, Lachambre and Jover (2016) have published <a class="reference external" href="https://blog.selfshadow.com/publications/s2016-shading-course/unity/supplemental/index.html">a trustworthy
 panoramic HDRI</a>
 that will be used in this section.</p>
-<div class="figure">
-<img alt="/images/Blog_Unity_Treasure_Island_ReStitched.png" src="../../images/Blog_Unity_Treasure_Island_ReStitched.png"><p class="caption">Final Treasure Island panoramic HDRI merged and stitched from the original
+<figure><img alt="/images/Blog_Unity_Treasure_Island_ReStitched.png" src="../../images/Blog_Unity_Treasure_Island_ReStitched.png"><figcaption><p>Final Treasure Island panoramic HDRI merged and stitched from the original
 .CR2 files.</p>
-</div>
-<p>The authors have been kindly enough to send me the original .CR2 files so that
+</figcaption></figure><p>The authors have been kindly enough to send me the original .CR2 files so that
 I could merge and stitch them.</p>
 <p>Merging was performed with <a class="reference external" href="https://github.com/colour-science/colour-hdri/blob/develop/colour_hdri/generation/radiance.py">Colour - HDRI</a>,
 specifically, by using a modified version of the
@@ -329,22 +319,16 @@ usage would require multi-processing and use
 <a class="reference external" href="https://pypi.org/project/rawpy/">rawpy</a> or
 <a class="reference external" href="https://github.com/ampas/rawtoaces">rawtoaces</a>.</div>
 </div>
-<div class="figure">
-<img alt="/images/Blog_Unity_Treasure_Island_ReStitched_Angles.png" src="../../images/Blog_Unity_Treasure_Island_ReStitched_Angles.png"><p class="caption">.CR2 file batches merged to HDRI. Note that the bottom row was captured
+<figure><img alt="/images/Blog_Unity_Treasure_Island_ReStitched_Angles.png" src="../../images/Blog_Unity_Treasure_Island_ReStitched_Angles.png"><figcaption><p>.CR2 file batches merged to HDRI. Note that the bottom row was captured
 with neutral density filters.</p>
-</div>
-<p>With the various .CR2 file batches merged, the validation process involves
+</figcaption></figure><p>With the various .CR2 file batches merged, the validation process involves
 comparing a cherry picked .CR2 file from one of the exposure batches with the
 corresponding HDRI scaled to absolute luminance and imaged via the DSC Exposure
 Model using the camera settings of the .CR2 file.</p>
-<div class="figure">
-<img alt="/images/Blog_Unity_Treasure_Island_Angle_Imaged.png" src="../../images/Blog_Unity_Treasure_Island_Angle_Imaged.png"><p class="caption">From left to right: The HDRI scaled to absolute luminance using 51000 lux,
+<figure><img alt="/images/Blog_Unity_Treasure_Island_Angle_Imaged.png" src="../../images/Blog_Unity_Treasure_Island_Angle_Imaged.png"><figcaption><p>From left to right: The HDRI scaled to absolute luminance using 51000 lux,
 the cherry picked .CR2 file, the HDRI scaled to absolute luminance and
 imaged with the DSC Exposure Model.</p>
-</div>
-</div>
-<div class="section" id="conclusion">
-<h2>Conclusion</h2>
+</figcaption></figure></section><section id="conclusion"><h2>Conclusion</h2>
 <p>With Treasure Island, the HDRI scaled to absolute luminance is about 14%
 brighter (clipped luminance) than the .CR2 file. This is not perfect but
 considering the scaling factors involved, it is reasonably satisfactory.</p>
@@ -367,9 +351,8 @@ processed.</p>
 <p>Finally, I would like to thanks Sebastien Lagarde, Sebastien Lachambre and
 Cyril Jover for the recurring conversations on that topic during the past few
 years.</p>
+</section>
 </div>
-</div>
-    </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../categories/absolute-luminance-calibration/" rel="tag">absolute luminance calibration</a></li>
             <li><a class="tag p-category" href="../../categories/colour-science/" rel="tag">colour science</a></li>
@@ -385,7 +368,7 @@ years.</p>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
-        
+    
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="colour-science",
@@ -450,7 +433,7 @@ years.</p>
         </a>
     </li>
 </ul>
-<div class="text-center text-light py-3"><span>Copyright © 2013-2021 – Colour Developers</span></div>
+<div class="text-center text-light py-3"><span>Copyright © 2013-2022 – Colour Developers</span></div>
 
     
 </footer><!-- End of Footer --><script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>

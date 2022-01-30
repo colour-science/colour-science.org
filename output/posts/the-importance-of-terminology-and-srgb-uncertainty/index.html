@@ -158,7 +158,7 @@ navbar-dark bg-dark bg-primary
             <time class="published dt-published" datetime="2015-12-05T00:17:30Z" itemprop="datePublished" title="2015-12-05 00:17">2015-12-05 00:17</time></a>
             </p>
                 <p class="commentline">
-        
+    
     <a href="#disqus_thread" data-disqus-identifier="cache/posts/the-importance-of-terminology-and-srgb-uncertainty.html">Comments</a>
 
 
@@ -169,8 +169,7 @@ navbar-dark bg-dark bg-primary
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p>We were meant to write that entry since a while, and a
+    <p>We were meant to write that entry since a while, and a
 <a class="reference external" href="https://gamedevdaily.io/the-srgb-learning-curve-773b7f68cf7a#">great post</a> by
 <a class="reference external" href="https://twitter.com/tom_forsyth">Tom Forsyth</a> from
 <a class="reference external" href="https://www.oculus.com/en-us/">Oculus VR</a> triggered us in doing so.</p>
@@ -217,8 +216,7 @@ concern if one tries to achieve photo-realistic rendering as shown by
 <a class="reference external" href="http://nbviewer.jupyter.org/gist/sagland/3c791e79353673fd24fa">Steve Agland</a>
 and <a class="reference external" href="https://www.colour-science.org/posts/about-rendering-engines-colourspaces-agnosticism/">us</a>.</div>
 </div>
-<div class="section" id="what-is-srgb">
-<h2>What is sRGB?</h2>
+<section id="what-is-srgb"><h2>What is sRGB?</h2>
 <p>Terminology in a given scientific domain is key to its understanding, and this
 is especially true in colour science. Everybody knows what colour is but yet
 only a few can define it correctly, in this regard, we often cite
@@ -229,7 +227,7 @@ terminology in the field of color appearance? Perhaps the answer lies in
 the very nature of the subject. Almost everyone knows what color is.
 After all, they have had firsthand experience of it since shortly after
 birth. However, very few can precisely describe their color experiences or
-even precisely define color.</em> <a class="footnote-reference brackets" href="#id3" id="id1">1</a></p>
+even precisely define color.</em> <a class="footnote-reference brackets" href="#footnote-1" id="footnote-reference-1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
 </blockquote>
 <p><em>sRGB</em> is not a bunch of <strong>transfer functions</strong>, it is an actual
 <a class="reference external" href="https://en.wikipedia.org/wiki/RGB_color_space">RGB colourspace</a>, specified by
@@ -259,8 +257,7 @@ colour space values for an additive RGB colour space.</p>
 CIE chromaticity values for a set of additive RGB primaries and a colour
 space white point, together with a colour component transfer function.</p>
 </blockquote>
-<div class="section" id="primaries">
-<h3>Primaries</h3>
+<section id="primaries"><h3>Primaries</h3>
 <p>The <strong>primaries</strong> <em>chromaticity coordinates</em> define the <strong>gamut</strong> (the triangle
 of colours) that can be encoded by a given <em>RGB colourspace</em>.</p>
 <div class="alert alert-dismissible alert-info line-block">
@@ -276,17 +273,11 @@ Colours exceeding its gamut are simply represented with negative values.</div>
 <a class="reference external" href="https://en.wikipedia.org/wiki/CIE_1931_color_space#CIE_xy_chromaticity_diagram_and_the_CIE_xyY_color_space">CIE xyY colourspace</a>:
 The <em>Chromaticity Diagram</em> is a 2D projection of the <em>CIE xyY colourspace</em> volume
 along its <em>Y</em> <em>Luminance</em> axis.</p>
-<div class="figure">
-<img alt="/images/ACES2065-1_ACEScg_DCI-P3_ITU-R_BT__709_ITU-R_BT__2020_CIE_1931_Chromaticity_Diagram.png" src="../../images/ACES2065-1_ACEScg_DCI-P3_ITU-R_BT__709_ITU-R_BT__2020_CIE_1931_Chromaticity_Diagram.png"><p class="caption">Various <em>RGB colourspace</em> <strong>gamuts</strong> compared in the <em>CIE 1931 Chromaticity Diagram</em>.</p>
-</div>
-<div class="figure">
-<img alt="/images/Colour_-_Analysis_CIE_xyY.gif" src="../../images/Colour_-_Analysis_CIE_xyY.gif"><p class="caption">The <em>CIE 1931 Chromaticity Diagram</em> in the bottom right view is a 2D
+<figure><img alt="/images/ACES2065-1_ACEScg_DCI-P3_ITU-R_BT__709_ITU-R_BT__2020_CIE_1931_Chromaticity_Diagram.png" src="../../images/ACES2065-1_ACEScg_DCI-P3_ITU-R_BT__709_ITU-R_BT__2020_CIE_1931_Chromaticity_Diagram.png"><figcaption><p>Various <em>RGB colourspace</em> <strong>gamuts</strong> compared in the <em>CIE 1931 Chromaticity Diagram</em>.</p>
+</figcaption></figure><figure><img alt="/images/Colour_-_Analysis_CIE_xyY.gif" src="../../images/Colour_-_Analysis_CIE_xyY.gif"><figcaption><p>The <em>CIE 1931 Chromaticity Diagram</em> in the bottom right view is a 2D
 projection of the <em>CIE xyY colourspace</em> in the left view.
 (<a class="reference external" href="https://github.com/colour-science/colour-analysis">Colour - Analysis</a>)</p>
-</div>
-</div>
-<div class="section" id="whitepoint">
-<h3>Whitepoint</h3>
+</figcaption></figure></section><section id="whitepoint"><h3>Whitepoint</h3>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/White_point">whitepoint</a>  is defined by the
 <a class="reference external" href="http://eilv.cie.co.at/term/1430">CIE</a> as:</p>
 <blockquote>
@@ -295,28 +286,22 @@ the stimulus that produces an image area that has the perception of white.</p>
 </blockquote>
 <p>Any set of colours lying on the <em>neutral axis</em> passing through the <strong>whitepoint</strong>,
 no matter their <em>Luminance</em>, will be neutral to that <em>RGB colourspace</em>.</p>
-<div class="figure">
-<img alt="/images/CIE_xyY_sRGB.png" src="../../images/CIE_xyY_sRGB.png"><p class="caption"><em>CIE Standard Illuminant D65</em> is located at the apex of <em>sRGB</em> colourspace
+<figure><img alt="/images/CIE_xyY_sRGB.png" src="../../images/CIE_xyY_sRGB.png"><figcaption><p><em>CIE Standard Illuminant D65</em> is located at the apex of <em>sRGB</em> colourspace
 volume.
 (<a class="reference external" href="https://github.com/colour-science/colour-analysis">Colour - Analysis</a>)</p>
-</div>
-<p>An <em>RGB colourspace</em> can have
+</figcaption></figure><p>An <em>RGB colourspace</em> can have
 <a class="reference external" href="https://github.com/colour-science/colour-notebooks/blob/master/notebooks/colorimetry/illuminants.ipynb">different whitepoints</a>
 depending its context usage, <em>sRGB colourspace</em> <em>IEC 61966-2-1:1999 Standard</em>
 adopts <a class="reference external" href="https://en.wikipedia.org/wiki/Illuminant_D65">CIE Standard Illuminant D65</a>
 as <strong>whitepoint</strong> but an <a class="reference external" href="https://en.wikipedia.org/wiki/International_Color_Consortium">ICC</a>
 <em>sRGB colourspace</em> profile would likely have been chromatically adapted to
 <em>CIE Standard Illuminant D50</em>.</p>
-<div class="figure">
-<img alt="/images/CIE_Illuminants_D_Series.png" src="../../images/CIE_Illuminants_D_Series.png"><p class="caption">Various <em>CIE Illuminants D Series</em> <em>illuminants</em> in the
+<figure><img alt="/images/CIE_Illuminants_D_Series.png" src="../../images/CIE_Illuminants_D_Series.png"><figcaption><p>Various <em>CIE Illuminants D Series</em> <em>illuminants</em> in the
 <em>CIE 1960 UCS Chromaticity Diagram</em>.</p>
-</div>
-</div>
-<div class="section" id="transfer-functions">
-<h3>Transfer Functions</h3>
+</figcaption></figure></section><section id="transfer-functions"><h3>Transfer Functions</h3>
 <p>The transfer functions perform the mapping between the <em>linear</em> light
 components (tristimulus values) and a <em>non-linear</em> R'G'B' video signal (most
-of the time for coding optimisation and bandwidth performance). <a class="footnote-reference brackets" href="#id4" id="id2">2</a></p>
+of the time for coding optimisation and bandwidth performance). <a class="footnote-reference brackets" href="#footnote-2" id="footnote-reference-2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
 <p>The two common types and their inverses are defined as follows:</p>
 <ul>
 <li>
@@ -325,18 +310,16 @@ tristimulus values in a scene to a <em>non-linear</em> R'G'B' video component si
 value. Typical <strong>OETFs</strong> are expressed by a power function with an exponent
 between 0.4 and 0.5. They can also be defined as piece-wise functions,
 <em>SMPTE 240M</em> or <em>BT.709</em> OETFs are such examples.</p>
-<div class="figure">
-<img alt="/images/ITU-R_BT709_SMPTE_240M_OETFs.png" src="../../images/ITU-R_BT709_SMPTE_240M_OETFs.png"><p class="caption">Various <strong>Opto-Electronic Transfer Functions</strong>.</p>
-</div>
+<figure><img alt="/images/ITU-R_BT709_SMPTE_240M_OETFs.png" src="../../images/ITU-R_BT709_SMPTE_240M_OETFs.png"><figcaption><p>Various <strong>Opto-Electronic Transfer Functions</strong>.</p>
+</figcaption></figure>
 </li>
 <li>
 <p>The <strong>Electro-Optical Transfer Function</strong> (<strong>EOTF</strong>) maps a <em>non-linear</em>
 R'G'B' video component signal to a tristimulus value at the display.
 Typical <strong>EOTFs</strong> are expressed by a power function with an exponent
 between 2.2 and 2.6 or a piece-wise function.</p>
-<div class="figure">
-<img alt="/images/ITU-R_BT1886_sRGB_EOTFs.png" src="../../images/ITU-R_BT1886_sRGB_EOTFs.png"><p class="caption">Various <strong>Electro-Optical Transfer Functions</strong>.</p>
-</div>
+<figure><img alt="/images/ITU-R_BT1886_sRGB_EOTFs.png" src="../../images/ITU-R_BT1886_sRGB_EOTFs.png"><figcaption><p>Various <strong>Electro-Optical Transfer Functions</strong>.</p>
+</figcaption></figure>
 </li>
 </ul>
 <div class="alert alert-dismissible alert-info line-block">
@@ -348,13 +331,10 @@ being piece-wise, i.e. not a <em>Gamma 2.2</em> approximation and that the
 <em>IEC 61966-2-1:1999 Standard</em> does not define an <strong>OETF</strong>.</div>
 </div>
 <blockquote class="alert alert-dismissible alert-info">
-<div class="figure">
-<img alt="/images/Jack-Holm_on_the_sRGB-EOTF.png" src="../../images/Jack-Holm_on_the_sRGB-EOTF.png"><p class="caption">Message from Jack Holm, addressed the 1st February 2016 to the <a class="reference external" href="https://groups.google.com/forum/#!forum/academyaces">Academy ACES Google Group</a>.</p>
-</div>
+<figure><img alt="/images/Jack-Holm_on_the_sRGB-EOTF.png" src="../../images/Jack-Holm_on_the_sRGB-EOTF.png"><figcaption><p>Message from Jack Holm, addressed the 1st February 2016 to the <a class="reference external" href="https://groups.google.com/forum/#!forum/academyaces">Academy ACES Google Group</a>.</p>
+</figcaption></figure>
 </blockquote>
-</div>
-<div class="section" id="the-importance-of-terminology">
-<h3>The Importance of Terminology</h3>
+</section><section id="the-importance-of-terminology"><h3>The Importance of Terminology</h3>
 <p>With the <em>RGB colourspace</em> specification components outlined, it should now make
 more sense why not being specific and using a clear <strong>terminology</strong> can lead to
 confusion and uncertainty: colour science vocabulary is complex.</p>
@@ -391,9 +371,7 @@ proprietary colourspace specification along <em>sRGB</em> colourspace <strong>tr
 functions</strong>: those <strong>transfer functions</strong> being commonly implemented in
 various DCC packages, the various colour transformation operations between
 those packages are simplified.</p>
-</div>
-<div class="section" id="conclusion">
-<h3>Conclusion</h3>
+</section><section id="conclusion"><h3>Conclusion</h3>
 <p>When one talks about <em>sRGB</em> alone, it should be safe to assume that he is
 referring to the <em>sRGB</em> colourspace as per <em>IEC 61966-2-1:1999 Standard</em>,
 not just cherry picked components. Unfortunately it is not the case thus in order
@@ -445,25 +423,15 @@ and linear <strong>transfer functions</strong>.</p></li>
 new <em>RGB</em> colourspaces such as <a class="reference external" href="https://en.wikipedia.org/wiki/Rec._2020">BT.2020</a>
 or the <a class="reference external" href="http://www.oscars.org/science-technology/sci-tech-projects/aces">ACES encodings</a>
 become mainstream.</p>
-</div>
-<div class="section" id="bibliography">
-<h3>Bibliography</h3>
-<dl class="footnote brackets">
-<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd>
+</section><section id="bibliography"><h3>Bibliography</h3>
+<aside class="footnote brackets" id="footnote-1" role="note"><span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#footnote-reference-1">1</a><span class="fn-bracket">]</span></span>
 <p>Fairchild, M. D. (2013). Color Appearance Models (3rd ed., pp. 1–10831).
 Wiley. ISBN:B00DAYO8E2</p>
-</dd>
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd>
+</aside><aside class="footnote brackets" id="footnote-2" role="note"><span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#footnote-reference-2">2</a><span class="fn-bracket">]</span></span>
 <p>Poynton, C. (2012). Digital Video and HDTV - Algorithms and Interfaces
 - Second Edition (2nd ed.). Morgan Kaufmann. ISBN:9780123919267</p>
-</dd>
-</dl>
+</aside></section></section>
 </div>
-</div>
-</div>
-    </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../categories/chromaticity-diagram/" rel="tag">chromaticity diagram</a></li>
             <li><a class="tag p-category" href="../../categories/colour/" rel="tag">colour</a></li>
@@ -486,7 +454,7 @@ Wiley. ISBN:B00DAYO8E2</p>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
-        
+    
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="colour-science",
@@ -549,7 +517,7 @@ Wiley. ISBN:B00DAYO8E2</p>
         </a>
     </li>
 </ul>
-<div class="text-center text-light py-3"><span>Copyright © 2013-2021 – Colour Developers</span></div>
+<div class="text-center text-light py-3"><span>Copyright © 2013-2022 – Colour Developers</span></div>
 
     
 </footer><!-- End of Footer --><script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>

@@ -150,7 +150,7 @@ navbar-dark bg-dark bg-primary
             <time class="published dt-published" datetime="2014-09-06T02:45:00-12:00" itemprop="datePublished" title="2014-09-06 02:45">2014-09-06 02:45</time></a>
             </p>
                 <p class="commentline">
-        
+    
     <a href="#disqus_thread" data-disqus-identifier="cache/posts/pycharm-vagrant-fabric-anaconda.html">Comments</a>
 
 
@@ -161,8 +161,7 @@ navbar-dark bg-dark bg-primary
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<div class="alert alert-dismissible alert-warning line-block">
+    <div class="alert alert-dismissible alert-warning line-block">
 <div class="line"><strong>Warning</strong></div>
 <div class="line"><br></div>
 <div class="line">Our <em>Vagrant</em> setup is now using <em>Ansible</em> and <em>Poetry</em>, please refer to the
@@ -202,20 +201,19 @@ deploy.</p>
 <p>The following guide assume that you have that you have <em>PyCharm</em> installed and
 are using <em>macOS</em>, although it should pretty much be platform agnostic.</p>
 <!-- TEASER_END -->
-<div class="section" id="development-workspace-creation">
-<h2>Development Workspace Creation</h2>
+<section id="development-workspace-creation"><h2>Development Workspace Creation</h2>
 <ul class="simple">
 <li><p>On your local filesystem, in your development workspace, create a
 directory <code>colour-science</code> and <code>cd</code> into it:</p></li>
 </ul>
-<pre class="code shell"><a name="rest_code_3336cbdaec2340bb9de27865dadb5934-1"></a>$ mkdir colour-science
-<a name="rest_code_3336cbdaec2340bb9de27865dadb5934-2"></a>$ <span class="nb">cd</span> colour-science
+<pre class="code shell"><a id="rest_code_af28487f7f6d4af19355c8126fa0d1ec-1" name="rest_code_af28487f7f6d4af19355c8126fa0d1ec-1" href="#rest_code_af28487f7f6d4af19355c8126fa0d1ec-1"></a>$ mkdir colour-science
+<a id="rest_code_af28487f7f6d4af19355c8126fa0d1ec-2" name="rest_code_af28487f7f6d4af19355c8126fa0d1ec-2" href="#rest_code_af28487f7f6d4af19355c8126fa0d1ec-2"></a>$ <span class="nb">cd</span> colour-science
 </pre>
 <ul class="simple">
 <li><p>Clone the <a class="reference external" href="https://github.com/colour-science/colour-vagrant">colour-vagrant</a>
 repository:</p></li>
 </ul>
-<pre class="code shell"><a name="rest_code_15eb4f9dec124f388cb8135a1446e285-1"></a>$ git clone git://github.com/colour-science/colour-vagrant.git
+<pre class="code shell"><a id="rest_code_875ada7739eb40768fe5fe27258f2ebe-1" name="rest_code_875ada7739eb40768fe5fe27258f2ebe-1" href="#rest_code_875ada7739eb40768fe5fe27258f2ebe-1"></a>$ git clone git://github.com/colour-science/colour-vagrant.git
 </pre>
 <ul>
 <li>
@@ -223,10 +221,7 @@ repository:</p></li>
 <code>colour-science</code> one.</p>
 <p>Let's open the <code>colour-vagrant</code> directory into <em>PyCharm</em>.</p>
 </li>
-</ul>
-</div>
-<div class="section" id="vagrant-installation">
-<h2>Vagrant Installation</h2>
+</ul></section><section id="vagrant-installation"><h2>Vagrant Installation</h2>
 <p>We will loosely follow
 <a class="reference external" href="http://www.jetbrains.com/pycharm/quickstart/configuring_for_vm.html">Jetbrain's PyCharm Documentation</a>.</p>
 <ul>
@@ -239,7 +234,7 @@ environment. Initially, I was provisioning with <a class="reference external" hr
 It was cumbersome to use, so I decided to go for <a class="reference external" href="http://www.fabfile.org/">Fabric</a>
 and the <a class="reference external" href="https://github.com/wutali/vagrant-fabric">vagrant-fabric</a>
 plugin:</p>
-<pre class="code shell"><a name="rest_code_ac2b9a7620ec4726be17c737604dab70-1"></a>$ pip install --user fabric
+<pre class="code shell"><a id="rest_code_377f994e1029463e84c2d52bc2e87563-1" name="rest_code_377f994e1029463e84c2d52bc2e87563-1" href="#rest_code_377f994e1029463e84c2d52bc2e87563-1"></a>$ pip install --user fabric
 </pre>
 </li>
 </ul>
@@ -272,10 +267,7 @@ Cmnd_Alias VAGRANT_NFSD = /sbin/nfsd restart
 Cmnd_Alias VAGRANT_EXPORTS_REMOVE = /usr/bin/sed -E -e /*/ d -ibak /etc/exports
 %admin ALL=(root) NOPASSWD: VAGRANT_EXPORTS_ADD, VAGRANT_NFSD, VAGRANT_EXPORTS_REMOVE</pre>
 </li>
-</ul>
-</div>
-<div class="section" id="pycharm-vagrant-configuration">
-<h2>PyCharm Vagrant Configuration</h2>
+</ul></section><section id="pycharm-vagrant-configuration"><h2>PyCharm Vagrant Configuration</h2>
 <p>The canonical way is to use <em>Vagrant</em> from the command line as described in
 <a class="reference external" href="https://docs.vagrantup.com/v2/getting-started/">Vagrant Documentation</a>, but
 here we will leverage the <em>PyCharm</em> integration.</p>
@@ -295,10 +287,7 @@ plugin to <a class="reference external" href="http://www.jetbrains.com/pycharm/"
 <code>Plugins</code> tab.</p></li>
 </ul>
 <p>Your configuration screen should be approximately as follows:</p>
-<img alt="/images/Blog_PyCharm_Vagrant_001.png" src="../../images/Blog_PyCharm_Vagrant_001.png"><img alt="/images/Blog_PyCharm_Vagrant_002.png" src="../../images/Blog_PyCharm_Vagrant_002.png">
-</div>
-<div class="section" id="vagrant-up">
-<h2>Vagrant Up</h2>
+<img alt="/images/Blog_PyCharm_Vagrant_001.png" src="../../images/Blog_PyCharm_Vagrant_001.png"><img alt="/images/Blog_PyCharm_Vagrant_002.png" src="../../images/Blog_PyCharm_Vagrant_002.png"></section><section id="vagrant-up"><h2>Vagrant Up</h2>
 <p>With everything setup, hit the <code>PyCharm --&gt; Tools --&gt; Vagrant --&gt; Up</code>
 menu item to spin up the virtual machine.</p>
 <p>You can go grab a coffee, the initial provisioning will take roughly
@@ -312,21 +301,18 @@ cloned into the <code>colour-science</code> directory right next to the
 <li><p>Remote Python environments installed into the virtual machine at the
 following location with all the dependencies needed:</p></li>
 </ul>
-<pre class="code shell"><a name="rest_code_6a97e93782a84a68b7cbe6c06721143f-1"></a>$ <span class="nb">cd</span> /home/vagrant/miniconda/envs/
-<a name="rest_code_6a97e93782a84a68b7cbe6c06721143f-2"></a>$ ls -l
-<a name="rest_code_6a97e93782a84a68b7cbe6c06721143f-3"></a>total <span class="m">16</span>
-<a name="rest_code_6a97e93782a84a68b7cbe6c06721143f-4"></a>drwxrwxr-x  <span class="m">4</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:12 ./
-<a name="rest_code_6a97e93782a84a68b7cbe6c06721143f-5"></a>drwxrwxr-x <span class="m">13</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:02 ../
-<a name="rest_code_6a97e93782a84a68b7cbe6c06721143f-6"></a>drwxrwxr-x <span class="m">20</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:09 python2.7/
-<a name="rest_code_6a97e93782a84a68b7cbe6c06721143f-7"></a>drwxrwxr-x <span class="m">20</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:30 python3.5/
+<pre class="code shell"><a id="rest_code_2afd35bad7aa47f796e7fed3473ad82c-1" name="rest_code_2afd35bad7aa47f796e7fed3473ad82c-1" href="#rest_code_2afd35bad7aa47f796e7fed3473ad82c-1"></a>$ <span class="nb">cd</span> /home/vagrant/miniconda/envs/
+<a id="rest_code_2afd35bad7aa47f796e7fed3473ad82c-2" name="rest_code_2afd35bad7aa47f796e7fed3473ad82c-2" href="#rest_code_2afd35bad7aa47f796e7fed3473ad82c-2"></a>$ ls -l
+<a id="rest_code_2afd35bad7aa47f796e7fed3473ad82c-3" name="rest_code_2afd35bad7aa47f796e7fed3473ad82c-3" href="#rest_code_2afd35bad7aa47f796e7fed3473ad82c-3"></a>total <span class="m">16</span>
+<a id="rest_code_2afd35bad7aa47f796e7fed3473ad82c-4" name="rest_code_2afd35bad7aa47f796e7fed3473ad82c-4" href="#rest_code_2afd35bad7aa47f796e7fed3473ad82c-4"></a>drwxrwxr-x  <span class="m">4</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:12 ./
+<a id="rest_code_2afd35bad7aa47f796e7fed3473ad82c-5" name="rest_code_2afd35bad7aa47f796e7fed3473ad82c-5" href="#rest_code_2afd35bad7aa47f796e7fed3473ad82c-5"></a>drwxrwxr-x <span class="m">13</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:02 ../
+<a id="rest_code_2afd35bad7aa47f796e7fed3473ad82c-6" name="rest_code_2afd35bad7aa47f796e7fed3473ad82c-6" href="#rest_code_2afd35bad7aa47f796e7fed3473ad82c-6"></a>drwxrwxr-x <span class="m">20</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:09 python2.7/
+<a id="rest_code_2afd35bad7aa47f796e7fed3473ad82c-7" name="rest_code_2afd35bad7aa47f796e7fed3473ad82c-7" href="#rest_code_2afd35bad7aa47f796e7fed3473ad82c-7"></a>drwxrwxr-x <span class="m">20</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:30 python3.5/
 </pre>
 <ul class="simple">
 <li><p>The <strong>colour-science.org</strong> website served from the virtual machine at
 the following address: <a class="reference external" href="http://localhost:8080/">http://localhost:8080/</a></p></li>
-</ul>
-</div>
-<div class="section" id="pycharm-environment-configuration">
-<h2>PyCharm Environment Configuration</h2>
+</ul></section><section id="pycharm-environment-configuration"><h2>PyCharm Environment Configuration</h2>
 <ul>
 <li>
 <p>Add the various remote Python interpreters to
@@ -345,48 +331,36 @@ are as follows:</p>
 </li>
 </ul>
 <p>Your Run/Debug configuration screen should be approximately looking like that:</p>
-<img alt="/images/Blog_PyCharm_Configurations_001.png" src="../../images/Blog_PyCharm_Configurations_001.png"><img alt="/images/Blog_PyCharm_Configurations_002.png" src="../../images/Blog_PyCharm_Configurations_002.png">
-</div>
-<div class="section" id="usage">
-<h2>Usage</h2>
-<div class="section" id="ssh-connection-display">
-<h3>SSH Connection &amp; Display</h3>
+<img alt="/images/Blog_PyCharm_Configurations_001.png" src="../../images/Blog_PyCharm_Configurations_001.png"><img alt="/images/Blog_PyCharm_Configurations_002.png" src="../../images/Blog_PyCharm_Configurations_002.png"></section><section id="usage"><h2>Usage</h2>
+<section id="ssh-connection-display"><h3>SSH Connection &amp; Display</h3>
 <p>Accessing the virtual machine is done by using
 <code>PyCharm --&gt; Tools Start SSH session...</code> menu item.</p>
 <p>However if you want to be able to export the display and see the figures you
 will have to manually <code>ssh</code> into the virtual machine:</p>
-<pre class="code shell"><a name="rest_code_b685178f743846d39e8393dcc14c89d7-1"></a>$ ssh -X vagrant@192.168.32.64
+<pre class="code shell"><a id="rest_code_9077fcc47e7e40fe967be10df791a251-1" name="rest_code_9077fcc47e7e40fe967be10df791a251-1" href="#rest_code_9077fcc47e7e40fe967be10df791a251-1"></a>$ ssh -X vagrant@192.168.32.64
 </pre>
 <p>Password is <code>vagrant</code>.</p>
 <p>You will also need to add the virtual machine to the X11 hosts by issuing the
 following command on the <em>macOS</em> host:</p>
-<pre class="code shell"><a name="rest_code_cc8b3e5f41304fdc976ff3f3485754c8-1"></a>$ xhost + <span class="m">192</span>.168.32.64
-</pre>
-</div>
-<div class="section" id="jupyter-notebooks">
-<h3>Jupyter Notebooks</h3>
+<pre class="code shell"><a id="rest_code_f21ae997d12f41f593ad3e159ee1e520-1" name="rest_code_f21ae997d12f41f593ad3e159ee1e520-1" href="#rest_code_f21ae997d12f41f593ad3e159ee1e520-1"></a>$ xhost + <span class="m">192</span>.168.32.64
+</pre></section><section id="jupyter-notebooks"><h3>Jupyter Notebooks</h3>
 <p>The <a class="reference external" href="http://ipython.org/notebook.html">Jupyter Notebooks</a> server is started
 as follows:</p>
-<pre class="code shell"><a name="rest_code_bfe4a2823bb34efc87c0ba68eb115cb7-1"></a>$ <span class="nb">cd</span> /colour-science
-<a name="rest_code_bfe4a2823bb34efc87c0ba68eb115cb7-2"></a>$ ipython notebook --pylab<span class="o">=</span>inline --ip<span class="o">=</span><span class="m">0</span>.0.0.0
+<pre class="code shell"><a id="rest_code_126e55ab522748eea742b6388b77089c-1" name="rest_code_126e55ab522748eea742b6388b77089c-1" href="#rest_code_126e55ab522748eea742b6388b77089c-1"></a>$ <span class="nb">cd</span> /colour-science
+<a id="rest_code_126e55ab522748eea742b6388b77089c-2" name="rest_code_126e55ab522748eea742b6388b77089c-2" href="#rest_code_126e55ab522748eea742b6388b77089c-2"></a>$ ipython notebook --pylab<span class="o">=</span>inline --ip<span class="o">=</span><span class="m">0</span>.0.0.0
 </pre>
 <p>Then you can access it on the <em>macOS</em> host at the following url:
 <a class="reference external" href="http://localhost:8888/">http://localhost:8888/</a></p>
-</div>
-<div class="section" id="remote-python-environments-interpreters">
-<h3>Remote Python Environments &amp; Interpreters</h3>
+</section><section id="remote-python-environments-interpreters"><h3>Remote Python Environments &amp; Interpreters</h3>
 <p>You can activate the remote Python environments in the virtual machine by
 issuing those commands:</p>
 <p>For <strong>python2.7</strong>:</p>
-<pre class="code shell"><a name="rest_code_8ea2ffb34cde47319cfc933f28be423d-1"></a>$ <span class="nb">source</span> activate python2.7
+<pre class="code shell"><a id="rest_code_e32ceba5bdbe4c40bdc2428796fbe5d6-1" name="rest_code_e32ceba5bdbe4c40bdc2428796fbe5d6-1" href="#rest_code_e32ceba5bdbe4c40bdc2428796fbe5d6-1"></a>$ <span class="nb">source</span> activate python2.7
 </pre>
 <p>For <strong>python3.5</strong>:</p>
-<pre class="code shell"><a name="rest_code_4b7684ad46c74b3e929e4e8f152ff11f-1"></a>$ <span class="nb">source</span> activate python3.5
-</pre>
+<pre class="code shell"><a id="rest_code_da1fd41929804572a8d6d93c984ddb0b-1" name="rest_code_da1fd41929804572a8d6d93c984ddb0b-1" href="#rest_code_da1fd41929804572a8d6d93c984ddb0b-1"></a>$ <span class="nb">source</span> activate python3.5
+</pre></section></section>
 </div>
-</div>
-</div>
-    </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../categories/anaconda/" rel="tag">anaconda</a></li>
             <li><a class="tag p-category" href="../../categories/fabric/" rel="tag">fabric</a></li>
@@ -402,7 +376,7 @@ issuing those commands:</p>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
-        
+    
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="colour-science",
@@ -465,7 +439,7 @@ issuing those commands:</p>
         </a>
     </li>
 </ul>
-<div class="text-center text-light py-3"><span>Copyright © 2013-2021 – Colour Developers</span></div>
+<div class="text-center text-light py-3"><span>Copyright © 2013-2022 – Colour Developers</span></div>
 
     
 </footer><!-- End of Footer --><script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>
