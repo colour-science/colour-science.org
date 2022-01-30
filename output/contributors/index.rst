@@ -31,7 +31,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        <span class="font-weight-bold">Maintainer</span>, Project coordination, overall development.
+                        <span class="font-weight-bold">Maintainer</span>, project coordination, overall development.
                     </p>
                 </div>
                 <div class="card-footer">
@@ -53,7 +53,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        <span class="font-weight-bold">Maintainer</span>, Colour appearance models, overall development.
+                        <span class="font-weight-bold">Maintainer</span>, colour appearance models, overall development.
                     </p>
                 </div>
                 <div class="card-footer">
@@ -74,7 +74,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        <span class="font-weight-bold">Maintainer</span>, Y'CbCr Colour Encoding, RED Colourspaces Derivation,
+                        <span class="font-weight-bold">Maintainer</span>, Y'CbCr colour encoding, RED colourspaces derivation,
                         LUT IO, continuous technical support.
                     </p>
                 </div>
