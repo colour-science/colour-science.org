@@ -35,11 +35,8 @@ There are many ways to help:
     -   `Colour - Demosaicing </colour-demosaicing/>`__
     -   `Colour - HDRI </colour-hdri/>`__
     -   `Colour - Checker Detection </colour-checker-detection/>`__
-    -   `Colour - Maya </colour-maya/>`__
-    -   `Colour - Nuke </colour-nuke/>`__
-    -   `Colour - Spectroscope </colour-spectroscope/>`__
 
--   Participating in discussions on `Discourse <https://colour-science.discourse.group/>`__.
+-   Participating in discussions on `Github <https://github.com/colour-science/colour/discussions>`__.
 
 **Github** hosts a `First Contributions <https://github.com/firstcontributions/first-contributions>`__
 repository with good information for new comers.
@@ -111,8 +108,6 @@ We currently use a large set of labels to categorise issues:
 -   `Help Wanted <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3A"Help+Wanted">`__:
     Used for an issue appropriate for a first time contribution but likely harder than a
     `Good First Issue <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3A"Good+First+Issue">`__ one.
--   `Hacktoberfest <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3A"Hacktoberfest">`__:
-    Used for an issue relevant to `Digital Ocean's Hacktoberfest <https://hacktoberfest.digitalocean.com>`__.
 
 Defects
 ^^^^^^^
@@ -141,18 +136,24 @@ The typical output is something along those lines:
     ===============================================================================
     *                                                                             *
     *   Interpreter :                                                             *
-    *       python : 3.7.4 (default, Sep  7 2019, 18:27:02)                       *
-    *                [Clang 10.0.1 (clang-1001.0.46.4)]                           *
+    *       python : 3.9.9 (main, Nov 21 2021, 03:16:13)                          *
+    *                [Clang 13.0.0 (clang-1300.0.29.3)]                           *
     *                                                                             *
     *   colour-science.org :                                                      *
-    *       colour : v0.3.13-236-g476410d4                                        *
+    *       colour : v0.3.16-632-g630647772                                       *
     *                                                                             *
     *   Runtime :                                                                 *
-    *       numpy : 1.16.5                                                        *
-    *       scipy : 1.2.2                                                         *
-    *       pandas : 0.24.2                                                       *
-    *       matplotlib : 2.2.4                                                    *
-    *       OpenImageIO : 2.0.9                                                   *
+    *       imageio : 2.14.1                                                      *
+    *       matplotlib : 3.4.3                                                    *
+    *       networkx : 2.6.3                                                      *
+    *       numpy : 1.22.1                                                        *
+    *       pandas : 1.4.0                                                        *
+    *       pygraphviz : 1.8                                                      *
+    *       PyOpenColorIO : 2.1.2                                                 *
+    *       scipy : 1.7.3                                                         *
+    *       sklearn : 1.0.2                                                       *
+    *       tqdm : 4.62.3                                                         *
+    *       trimesh : 3.9.43                                                      *
     *                                                                             *
     ===============================================================================
 
@@ -212,43 +213,13 @@ Navigate to the *colour* directory:
 Step 4
 ******
 
-Assuming `python>=3.6 <https://www.python.org/download/releases/>`__ is
-available on your system, the development dependencies are installed with
+Assuming `python >= 3.8, < 3.11 <https://www.python.org/download/releases/>`__
+is available on your system, the development dependencies are installed with
 `Poetry <https://poetry.eustace.io>`__ as follows:
 
 .. code:: shell
 
-    $ poetry install --extras "optional plotting"
-
-.. class:: alert alert-dismissible alert-warning
-
-    | **Warning**
-    |
-    | As of this writing, we are still supporting `Python 2.7 <https://www.python.org/download/releases/>`__ which might produce issues when resolving
-        dependencies with a `Python 3.8 <https://www.python.org/download/releases/>`__
-        interpreter. We are indeed effectively patching the
-        `pyproject.toml <https://github.com/colour-science/colour/blob/develop/pyproject.toml>`__
-        file on `Github Actions <https://github.com/colour-science/colour/actions>`__:
-
-        .. code:: shell
-
-                $ sed -i.bak 's/python = "~2.7 || ^3.5"/python = "^3.6"/g' pyproject.toml
-                $ sed -i.bak 's/matplotlib = { version = "\*"/matplotlib = { version = "^3.1"/g' pyproject.toml
-                $ git diff --unified=1
-                diff --git a/pyproject.toml b/pyproject.toml
-                index 93088d8c..c2b282cf 100644
-                --- a/pyproject.toml
-                +++ b/pyproject.toml
-                @@ -46,3 +46,3 @@ classifiers = [
-                 [tool.poetry.dependencies]
-                -python = "~2.7 || ^3.5"
-                +python = "^3.6"
-                 imageio = "*"
-                @@ -58,3 +58,3 @@ invoke = { version = "*", optional = true }  # Development dependency.
-                 jupyter = { version = "*", optional = true }  # Development dependency.
-                -matplotlib = { version = "*", optional = true }
-                +matplotlib = { version = "^3.1", optional = true }
-                 mock = { version = "*", optional = true }  # Development dependency.
+    $ poetry install --extras "meshing optional plotting"
 
 If `Graphviz <https://www.graphviz.org/>`__ is available on your system, you
 might issue the following commands instead of the aforementioned ones:
@@ -257,7 +228,7 @@ might issue the following commands instead of the aforementioned ones:
 
     $ git clone git://github.com/colour-science/colour.git
     $ cd colour
-    $ poetry install --extras "graphviz optional plotting"
+    $ poetry install --extras "graphviz meshing optional plotting"
 
 .. class:: alert alert-dismissible alert-warning
 
@@ -385,10 +356,12 @@ Commit your changes:
     | **Note**
     |
     | The *pre-commit* hooks will run before committing, notably
-        `Flake8 <https://pypi.org/project/flake8/>`__ and
-        `YAPF <https://github.com/google/yapf>`__ thus depending their status,
-        you might not be able to commit until you have fixed the issues they
-        reported.
+        `black <https://pypi.org/project/black/>`__,
+        `flake8 <https://pypi.org/project/flake8/>`__,
+        `flynt <https://pypi.org/project/flynt/>`__ and
+        `pyupgrade <https://pypi.org/project/pyupgrade/>`__ thus depending on
+        their status, you might not be able to commit until you have fixed the
+        issues reported.
 
 Step 12
 *******
@@ -418,8 +391,8 @@ Code Reviews
 Your *pull request* will be reviewed by the maintainers and any other developer
 interested by the project.
 
-Every single developer has his code reviewed, this is a natural process helping
-to raise the codebase quality around a friendly and constructive discussion.
+We review all the code submitted, this is a natural process helping to raise
+the codebase quality around a friendly and constructive discussion.
 Comments will be made on various aspects such as the documentation and
 references, the code style and its implementation. Those can be discouraging,
 although they are not meant to criticize but aim at improving the quality of
@@ -441,6 +414,10 @@ and especially the *Python Language Rules* although with the main exception
 being the docstrings / documentation formatted with
 `Numpy Docstrings Style <https://github.com/numpy/numpy/blob/master/doc/example.py>`__.
 
+We use `type hints <https://docs.python.org/3.8/library/typing.html>`__  to
+statically indicate and verify the type of objects in the codebase with
+`mypy <http://mypy-lang.org>`__.
+
 The code has to be `PEP 8 <http://legacy.python.org/dev/peps/pep-0008/>`__
 compliant although but before anything else, it needs to be consistent with the
 Colour Science litterature:
@@ -453,9 +430,10 @@ would have written a conversion definition as follows:
 
 .. code:: python
 
-    def xyz_to_xy(xyz):
+    def xyz_to_xy(xyz: ArrayLike) -> Tuple:
         x, y, z = np.ravel(xyz)
         x, y = x / (x + y + z), y / (x + y + z)
+
         return x, y
 
 Abstracting the fact that the above definition is totally undocumented, it can
@@ -468,9 +446,10 @@ names:
 
 .. code:: python
 
-    def XYZ_to_xy(XYZ):
+    def XYZ_to_xy(XYZ: ArrayLike) -> Tuple:
         X, Y, Z = np.ravel(XYZ)
         x, y = X / (X + Y + Z), Y / (X + Y + Z)
+
         return x, y
 
 When the reference is using upper case named variables, we try to follow
@@ -484,6 +463,7 @@ We suggest that contributors follow the same rule.
 Python Language Rules
 ^^^^^^^^^^^^^^^^^^^^^
 
+-   All the code must be annotated with type hints.
 -   All the code must be covered by unit tests and doctests.
 -   All the code must be documented to the same standard than
     `NumPy <http://www.numpy.org/>`__, `SciPy <http://www.scipy.org/>`__
@@ -492,8 +472,8 @@ Python Language Rules
     e.g. `PyCharm <http://www.jetbrains.com/pycharm/>`__ ,
     `Flake8 <https://pypi.org/project/flake8>`__, or
     `Codacy <https://www.codacy.com/>`__.
--   No *pull request* should be merged without being reviewed and ensuring that
-    the `Github Actions <https://github.com/colour-science/colour/actions>`__
+-   *Pull requests* should not be merged without being reviewed and ensuring
+    that the `Github Actions <https://github.com/colour-science/colour/actions>`__
     continuous integration suite succeeded.
 -   Examples should be provided for new features.
 
@@ -739,19 +719,19 @@ Python Style Rules
     we have already too much of them.
 -   Avoid **/** to wrap lines, prefer using the parenthesis **()**.
 -   The code formatting is performed using
-    `Yapf <https://github.com/google/yapf>`__. You can invoke it recursively on
-    a directory as follows:
+    `black <https://pypi.org/project/black/>`__. You can invoke it recursively
+    on a directory as follows:
 
 .. code:: shell
 
-    $ poetry run yapf -ri colour/my_feature
+    $ poetry run black colour
 
 or alternatively:
 
 .. code:: shell
 
     $ source $(poetry env info -p)/bin/activate
-    $ yapf -ri colour/my_feature
+    $ black colour
 
 -   Inline comments must have two spaces.
 -   Ensure that you have blank line at the end of the files.

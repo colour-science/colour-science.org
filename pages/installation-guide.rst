@@ -10,9 +10,11 @@
 Dependencies
 ------------
 
-**Colour** requires various dependencies in order to run. Depending your
-intended use case, i.e. using or developing, you may not need to install all of
-them.
+**Colour** requires various dependencies in order to run and follows the
+`minimum supported versions <https://scientific-python.org/specs/spec-0000/>`__
+as given by `Scientific Python <https://scientific-python.org>`__. Depending on
+your intended use case, i.e. using or developing, you may not need to install
+all of them.
 
 Please refer to the `Installation Methods for Using Colour`_
 and `Installation Methods for Developing Colour`_ sections below.
@@ -20,46 +22,47 @@ and `Installation Methods for Developing Colour`_ sections below.
 Primary Dependencies
 ^^^^^^^^^^^^^^^^^^^^
 
--   `python>=3.6 <https://www.python.org/download/releases/>`__
--   `imageio <http://imageio.github.io/>`__
--   `scipy>=1.1.0 <https://pypi.org/project/scipy/>`__
--   `six <https://pypi.org/project/six/>`__
+-   `python >= 3.8, < 3.11 <https://www.python.org/download/releases/>`__
+-   `imageio >= 2, < 3 <http://imageio.github.io/>`__
+-   `numpy >= 1.19, < 2 <https://pypi.org/project/numpy/>`__
+-   `scipy >= 1.5, < 2 <https://pypi.org/project/scipy/>`__
 
-Optional Dependencies
-^^^^^^^^^^^^^^^^^^^^^
+Optional, Meshing and Plotting Dependencies
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--   `networkx <https://pypi.org/project/networkx/>`__
--   `openimageio <https://github.com/OpenImageIO/oiio>`__
--   `pandas <https://pypi.org/project/pandas/>`__
-
-Plotting Dependencies
-^^^^^^^^^^^^^^^^^^^^^
-
--   `matplotlib <https://pypi.org/project/matplotlib/>`__
--   `graphviz <https://www.graphviz.org/>`__
--   `pygraphviz <https://pypi.org/project/pygraphviz/>`__
+-   `graphviz >= 2, < 3 <https://www.graphviz.org/>`__
+-   `matplotlib >= 3.2, != 3.5.0, != 3.5.1 <https://pypi.org/project/matplotlib/>`__
+-   `networkx >= 2, < 3 <https://pypi.org/project/networkx/>`__
+-   `opencolorio >= 2, < 3 <https://pypi.org/project/opencolorio/>`__
+-   `openimageio >= 2, < 3 <https://github.com/OpenImageIO/oiio>`__
+-   `pandas >= 1, < 2 <https://pypi.org/project/pandas/>`__
+-   `pygraphviz >= 1, < 2 <https://pypi.org/project/pygraphviz/>`__
+-   `scikit-learn >= 1, < 2 <https://pypi.org/project/scikit-learn/>`__
+-   `tqdm >= 4, < 5 <https://pypi.org/project/tqdm/>`__
+-   `trimesh >= 3, < 4 <https://pypi.org/project/tqdm/>`__
 
 Development Dependencies
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
--   `backports.functools_lru_cache <https://pypi.org/project/backports.functools-lru-cache/>`__
 -   `biblib-simple <https://pypi.org/project/biblib-simple/>`__
+-   `black <https://pypi.org/project/black/>`__
 -   `coverage <https://pypi.org/project/coverage/>`__
 -   `coveralls <https://pypi.org/project/coveralls/>`__
 -   `flake8 <https://pypi.org/project/flake8/>`__
+-   `flynt <https://pypi.org/project/flynt/>`__
 -   `invoke <https://pypi.org/project/invoke/>`__
 -   `jupyter <https://pypi.org/project/jupyter/>`__
--   `mock <https://pypi.org/project/mock/>`__
--   `nbformat>=4 <https://pypi.org/project/nbformat/>`__
--   `nose <https://pypi.org/project/nose/>`__
+-   `mypy <https://pypi.org/project/mypy/>`__
 -   `pre-commit <https://pypi.org/project/pre-commit/>`__
 -   `pytest <https://pypi.org/project/pytest/>`__
+-   `pytest-cov <https://pypi.org/project/pytest-cov/>`__
+-   `pyupgrade <https://pypi.org/project/pyupgrade/>`__
 -   `restructuredtext-lint <https://pypi.org/project/restructuredtext-lint/>`__
 -   `sphinx <https://pypi.org/project/Sphinx/>`__
 -   `sphinx-rtd-theme <https://pypi.org/project/sphinx-rtd-theme/>`__
 -   `sphinxcontrib-bibtex <https://pypi.org/project/sphinxcontrib-bibtex/>`__
+-   `toml <https://pypi.org/project/toml/>`__
 -   `twine <https://pypi.org/project/twine/>`__
--   `yapf==0.23.0 <https://pypi.org/project/yapf/>`__
 
 Installation Methods for Using Colour
 -------------------------------------
@@ -97,7 +100,7 @@ The development dependencies are installed as follows:
 
     $ pip install --user 'colour-science[development]'
 
-The figures plotting dependencies are installed as follows:
+The figure plotting dependencies are installed as follows:
 
 .. class:: alert alert-dismissible alert-info
 
@@ -109,7 +112,13 @@ The figures plotting dependencies are installed as follows:
 
 .. code:: shell
 
-    $ pip install --user 'colour-science[plotting]'
+    $ pip install --user 'colour-science[graphviz, plotting]'
+
+The meshing dependencies for gamut computations are installed as follows:
+
+.. code:: shell
+
+    $ pip install --user 'colour-science[meshing]'
 
 If you wish to read *OpenEXR* files, you will need to install the *FreeImage*
 plugin for `Imageio <http://imageio.github.io/>`__ as follows:
@@ -160,7 +169,7 @@ Poetry
 dependencies, this is the recommended way to get started with **Colour**
 development.
 
-Assuming `python>=3.6 <https://www.python.org/download/releases/>`__ is
+Assuming `python >= 3.8, < 3.11 <https://www.python.org/download/releases/>`__ is
 available on your system, the development dependencies are installed with
 `Poetry <https://poetry.eustace.io>`__ as follows:
 
@@ -168,37 +177,7 @@ available on your system, the development dependencies are installed with
 
     $ git clone git://github.com/colour-science/colour.git
     $ cd colour
-    $ poetry install --extras "optional plotting"
-
-.. class:: alert alert-dismissible alert-warning
-
-    | **Warning**
-    |
-    | As of this writing, we are still supporting `Python 2.7 <https://www.python.org/download/releases/>`__ which might produce issues when resolving
-        dependencies with a `Python 3.8 <https://www.python.org/download/releases/>`__
-        interpreter. We are indeed effectively patching the
-        `pyproject.toml <https://github.com/colour-science/colour/blob/develop/pyproject.toml>`__
-        file on `Github Actions <https://github.com/colour-science/colour/actions>`__:
-
-        .. code:: shell
-
-                $ sed -i.bak 's/python = "~2.7 || ^3.5"/python = "^3.6"/g' pyproject.toml
-                $ sed -i.bak 's/matplotlib = { version = "\*"/matplotlib = { version = "^3.1"/g' pyproject.toml
-                $ git diff --unified=1
-                diff --git a/pyproject.toml b/pyproject.toml
-                index 93088d8c..c2b282cf 100644
-                --- a/pyproject.toml
-                +++ b/pyproject.toml
-                @@ -46,3 +46,3 @@ classifiers = [
-                 [tool.poetry.dependencies]
-                -python = "~2.7 || ^3.5"
-                +python = "^3.6"
-                 imageio = "*"
-                @@ -58,3 +58,3 @@ invoke = { version = "*", optional = true }  # Development dependency.
-                 jupyter = { version = "*", optional = true }  # Development dependency.
-                -matplotlib = { version = "*", optional = true }
-                +matplotlib = { version = "^3.1", optional = true }
-                 mock = { version = "*", optional = true }  # Development dependency.
+    $ poetry install --extras "meshing optional plotting"
 
 If `Graphviz <https://www.graphviz.org/>`__ is available on your system, you
 might issue the following commands instead of the aforementioned ones:
@@ -207,7 +186,7 @@ might issue the following commands instead of the aforementioned ones:
 
     $ git clone git://github.com/colour-science/colour.git
     $ cd colour
-    $ poetry install --extras "graphviz optional plotting"
+    $ poetry install --extras "graphviz meshing optional plotting"
 
 Those commands will create a Virtual Environment in which all the required
 python packages will be installed.
