@@ -325,10 +325,16 @@ support:
 
     $ git checkout -b feature/mie_scattering
 
-Step 10
+Step 11
 *******
 
-Check if the unit tests and doctests are running properly:
+Implement your changes while making sure examples and relevant documentation
+are written.
+
+Step 12
+*******
+
+Check whether the unit tests and doctests are passing:
 
 .. code:: shell
 
@@ -341,7 +347,16 @@ or alternatively:
     $ source $(poetry env info -p)/bin/activate
     $ invoke tests
 
-Step 11
+Step 13
+*******
+
+Verify that the static checking from `mypy <http://mypy-lang.org>`__ is passing:
+
+.. code:: shell
+
+    $ dmypy run -- --show-error-codes --warn-unused-ignores --warn-redundant-casts --install-types --non-interactive -p colour
+
+Step 14
 *******
 
 Commit your changes:
@@ -363,7 +378,7 @@ Commit your changes:
         their status, you might not be able to commit until you have fixed the
         issues reported.
 
-Step 12
+Step 15
 *******
 
 Push your changes to *origin*, i.e. your own fork:
@@ -372,21 +387,21 @@ Push your changes to *origin*, i.e. your own fork:
 
     $ git push origin feature/mie_scattering
 
-Step 13
+Step 16
 *******
 
 Visit your repository fork on `Github <https://github.com/$USER/colour>`__.
 Your branch should have a green *Pull Request* button, this will open a
 *pull request* and let us know that we have some code to review :)
 
-Step 14
+Step 17
 *******
 
 Check that the `continuous integration <https://github.com/colour-science/colour/actions>`__
 suite succeeded.
 
-Code Reviews
-------------
+Code Review
+-----------
 
 Your *pull request* will be reviewed by the maintainers and any other developer
 interested by the project.
