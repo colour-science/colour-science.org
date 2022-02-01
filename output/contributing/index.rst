@@ -354,6 +354,13 @@ Verify that the static checking from `mypy <http://mypy-lang.org>`__ is passing:
 
 .. code:: shell
 
+    $ poetry run dmypy run -- --show-error-codes --warn-unused-ignores --warn-redundant-casts --install-types --non-interactive -p colour
+
+or alternatively:
+
+.. code:: shell
+
+    $ source $(poetry env info -p)/bin/activate
     $ dmypy run -- --show-error-codes --warn-unused-ignores --warn-redundant-casts --install-types --non-interactive -p colour
 
 Step 14
