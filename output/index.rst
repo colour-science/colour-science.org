@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="col my-auto">
-                    <img src="/images/Colour_Logo_Trimmed_001.png"
+                    <img src="/images/Colour_Logo_001.svg"
                     class="img-responsive px-3" alt="Colour - Logo">
                 </div>
             </div>
