@@ -29,6 +29,12 @@ $jumbotron-bg: $gray-100 !default;
 @import "bootstrap/bootstrap.scss";
 @import "bootswatch/bootswatch";
 
+/*** Navbar ***/
+.dropdown-menu {
+    border: none;
+    font-size: 1rem;
+}
+
 /*** Footer ***/
 #footer {
     background-color: $gray-900;
@@ -74,8 +80,8 @@ section.comments {
 
 /*** Jupyter Notebooks ***/
 #notebook-container {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 div.text_cell_render {
@@ -83,7 +89,7 @@ div.text_cell_render {
 }
 
 div.prompt {
-    display: none;
+    display: none !important;
 }
 
 div.input_area pre {
@@ -92,7 +98,7 @@ div.input_area pre {
 }
 
 div.output_area pre {
-    padding: $font-size-sm;
+    padding: $font-size-sm !important;
 }
 
 div.output_subarea {
@@ -101,8 +107,7 @@ div.output_subarea {
 }
 
 div.output_subarea pre {
-    background-color: $gray-100 !important;
-    border-top: 0.2rem $gray-200 !important;
+    background-color: $gray-200 !important;
 }
 
 /*** Release Stages ***/
