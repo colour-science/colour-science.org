@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="col my-auto">
-                    <img src="/images/Colour_Logo_Medium_Tight_001.png"
+                    <img src="/images/Colour_Logo_Trimmed_001.png"
                     class="img-responsive px-3" alt="Colour - Logo">
                 </div>
             </div>
@@ -103,8 +103,8 @@ Gold Sponsors
                         <p><a href="https://twitter.com/JRGoldstone" target="_blank">Joseph Goldstone</a></p>
                     </td>
                     <td align="center" valign="middle">
-                        <a href="https://dummyimage.com/288x288/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
-                            <img class="img-fluid img-circle" style="max-height:288px" src="https://dummyimage.com/288x288/f9f9fc/000000.png&text=Your+Logo+Here">
+                        <a href="https://dummyimage.com/288x288/f9f9f9/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img class="img-fluid img-circle" style="max-height:288px" src="https://dummyimage.com/288x288/f9f9f9/000000.png&text=Your+Logo+Here">
                         </a>
                     </td>
                 </tr>
@@ -134,28 +134,28 @@ Bronze Sponsors
                         <p><a href="https://caveacademy.com" target="_blank">CAVE Academy</a></p>
                     </td>
                     <td align="center" valign="middle">
-                        <a href="https://dummyimage.com/126x126/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
-                            <img class="img-fluid img-circle" style="max-height:126px" src="https://dummyimage.com/126x126/f9f9fc/000000.png&text=Your+Logo+Here">
+                        <a href="https://dummyimage.com/126x126/f9f9f9/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img class="img-fluid img-circle" style="max-height:126px" src="https://dummyimage.com/126x126/f9f9f9/000000.png&text=Your+Logo+Here">
                         </a>
                     </td>
                     <td align="center" valign="middle">
-                        <a href="https://dummyimage.com/126x126/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
-                            <img class="img-fluid img-circle" style="max-height:126px" src="https://dummyimage.com/126x126/f9f9fc/000000.png&text=Your+Logo+Here">
+                        <a href="https://dummyimage.com/126x126/f9f9f9/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img class="img-fluid img-circle" style="max-height:126px" src="https://dummyimage.com/126x126/f9f9f9/000000.png&text=Your+Logo+Here">
                         </a>
                     </td>
                     <td align="center" valign="middle">
-                        <a href="https://dummyimage.com/126x126/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
-                            <img class="img-fluid img-circle" style="max-height:126px" src="https://dummyimage.com/126x126/f9f9fc/000000.png&text=Your+Logo+Here">
+                        <a href="https://dummyimage.com/126x126/f9f9f9/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img class="img-fluid img-circle" style="max-height:126px" src="https://dummyimage.com/126x126/f9f9f9/000000.png&text=Your+Logo+Here">
                         </a>
                     </td>
                     <td align="center" valign="middle">
-                        <a href="https://dummyimage.com/126x126/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
-                            <img class="img-fluid img-circle" style="max-height:126px" src="https://dummyimage.com/126x126/f9f9fc/000000.png&text=Your+Logo+Here">
+                        <a href="https://dummyimage.com/126x126/f9f9f9/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img class="img-fluid img-circle" style="max-height:126px" src="https://dummyimage.com/126x126/f9f9f9/000000.png&text=Your+Logo+Here">
                         </a>
                     </td>
                     <td align="center" valign="middle">
-                        <a href="https://dummyimage.com/126x126/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
-                            <img class="img-fluid img-circle" style="max-height:126px" src="https://dummyimage.com/126x126/f9f9fc/000000.png&text=Your+Logo+Here">
+                        <a href="https://dummyimage.com/126x126/f9f9f9/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img class="img-fluid img-circle" style="max-height:126px" src="https://dummyimage.com/126x126/f9f9f9/000000.png&text=Your+Logo+Here">
                         </a>
                     </td>
                 </tr>
@@ -179,43 +179,43 @@ Recurring Donations
                         <p><a href="https://twitter.com/Pablo_g_soriano" target="_blank">Pablo Garcia Soriano</a></p>
                     </td>
                     <td align="center" valign="middle">
-                        <a href="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
-                            <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here">
+                        <a href="https://dummyimage.com/98x98/f9f9f9/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9f9/000000.png&text=Your+Logo+Here">
                         </a>
                     </td>
                     <td align="center" valign="middle">
-                        <a href="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
-                            <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here">
+                        <a href="https://dummyimage.com/98x98/f9f9f9/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9f9/000000.png&text=Your+Logo+Here">
                         </a>
                     </td>
                     <td align="center" valign="middle">
-                        <a href="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
-                            <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here">
+                        <a href="https://dummyimage.com/98x98/f9f9f9/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9f9/000000.png&text=Your+Logo+Here">
                         </a>
                     </td>
                     <td align="center" valign="middle">
-                        <a href="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
-                            <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here">
+                        <a href="https://dummyimage.com/98x98/f9f9f9/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9f9/000000.png&text=Your+Logo+Here">
                         </a>
                     </td>
                     <td align="center" valign="middle">
-                        <a href="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
-                            <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here">
+                        <a href="https://dummyimage.com/98x98/f9f9f9/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9f9/000000.png&text=Your+Logo+Here">
                         </a>
                     </td>
                     <td align="center" valign="middle">
-                        <a href="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
-                            <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here">
+                        <a href="https://dummyimage.com/98x98/f9f9f9/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9f9/000000.png&text=Your+Logo+Here">
                         </a>
                     </td>
                     <td align="center" valign="middle">
-                        <a href="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
-                            <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here">
+                        <a href="https://dummyimage.com/98x98/f9f9f9/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9f9/000000.png&text=Your+Logo+Here">
                         </a>
                     </td>
                     <td align="center" valign="middle">
-                        <a href="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
-                            <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9fc/000000.png&text=Your+Logo+Here">
+                        <a href="https://dummyimage.com/98x98/f9f9f9/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9f9/000000.png&text=Your+Logo+Here">
                         </a>
                     </td>
                 </tr>
@@ -332,8 +332,8 @@ Donations & Special Sponsors
                         <p><a href="https://twitter.com/MarioRokicki" target="_blank">Mario Rokicki</a></p>
                     </td>
                     <td align="center" valign="middle">
-                        <a href="https://dummyimage.com/176x176/f9f9fc/000000.png&text=Your+Logo+Here" target="_blank">
-                            <img class="img-fluid img-circle" style="max-height:176px;" src="https://dummyimage.com/176x176/f9f9fc/000000.png&text=Your+Logo+Here">
+                        <a href="https://dummyimage.com/176x176/f9f9f9/000000.png&text=Your+Logo+Here" target="_blank">
+                            <img class="img-fluid img-circle" style="max-height:176px;" src="https://dummyimage.com/176x176/f9f9f9/000000.png&text=Your+Logo+Here">
                         </a>
                     </td>
                 </tr>

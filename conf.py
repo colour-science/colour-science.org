@@ -233,10 +233,6 @@ NAVIGATION_LINKS = {
             '<i class="fab fa-github"></i>',
         ),
         (
-            "https://colour-science.discourse.group",
-            '<i class="fab fa-discourse"></i>',
-        ),
-        (
             "https://www.facebook.com/python.colour.science",
             '<i class="fab fa-facebook"></i>',
         ),
@@ -1050,11 +1046,6 @@ CONTENT_FOOTER = """
     <li class="nav-item mx-3">
         <a href="https://github.com/colour-science/colour">
             <i class="fab fa-github text-light"></i>
-        </a>
-    </li>
-    <li class="nav-item mx-3">
-        <a href="https://colour-science.discourse.group/">
-            <i class="fab fa-discourse text-light"></i>
         </a>
     </li>
     <li class="nav-item mx-3">

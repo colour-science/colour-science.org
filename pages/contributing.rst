@@ -1228,14 +1228,6 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                         <li>
                             <div class="checkbox">
                                 <input type="checkbox" value="" />
-                                <label class="strikethrough">
-                                    <a class="reference external" href="https://colour-science.discourse.group/c/releases/">colour-science - Discourse</a>
-                                </label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value="" />
                                 <label class="strikethrough">3D-Pro</label>
                             </div>
                         </li>
