@@ -114,7 +114,7 @@ can be imaged for verification purposes.
 `An Artist-Friendly Workflow for Panoramic HDRI <http://blog.selfshadow.com/publications/s2016-shading-course/unity/s2016_pbs_unity_hdri_notes.pdf>`__
 by Lagarde, Lachambre and Jover (2016) describes a simple but effective process
 to calibrate a panoramic HDRI for absolute luminance. The only requirement is
-to measuring the scene illuminance with a light meter during the HDRI capture.
+to measure the scene illuminance with a light meter during the HDRI capture.
 
 The major advantage of this approach is that it is independent of the imaging
 device and thus does not require knowledge of its calibration constant :math:`K`.
