@@ -4,7 +4,7 @@ Contributors
 colour-science.org
 ------------------
 
--   **Thomas Mansencal**, *Visual Effects Artist @ WetaFX*
+-   **Thomas Mansencal**, *Lead Pipeline Developer @ WetaFX*
 
     Project coordination, website.
 

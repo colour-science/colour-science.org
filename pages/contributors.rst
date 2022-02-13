@@ -1097,7 +1097,7 @@
                 <div class="card-header text-center">
                     <h3>Aurélia Sellier</h3>
                     <h4>
-                        <a href="http://wetafx.co.nz">Weta Digital</a>
+                        <a href="http://wetafx.co.nz">WetaFX</a>
                     </h4>
                     <h5 class="card-subtitle text-muted mt-3">
                         <em>FX Production Coordinator</em>
