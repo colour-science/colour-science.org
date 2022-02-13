@@ -54,6 +54,7 @@ Development Dependencies
 -   `jupyter <https://pypi.org/project/jupyter/>`__
 -   `mypy <https://pypi.org/project/mypy/>`__
 -   `pre-commit <https://pypi.org/project/pre-commit/>`__
+-   `pydocstyle <https://pypi.org/project/pydocstyle/>`__
 -   `pytest <https://pypi.org/project/pytest/>`__
 -   `pytest-cov <https://pypi.org/project/pytest-cov/>`__
 -   `pyupgrade <https://pypi.org/project/pyupgrade/>`__

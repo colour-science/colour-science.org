@@ -170,6 +170,7 @@ and <a class="reference internal" href="#installation-methods-for-developing-col
 <li><p><a class="reference external" href="https://pypi.org/project/jupyter/">jupyter</a></p></li>
 <li><p><a class="reference external" href="https://pypi.org/project/mypy/">mypy</a></p></li>
 <li><p><a class="reference external" href="https://pypi.org/project/pre-commit/">pre-commit</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/pydocstyle/">pydocstyle</a></p></li>
 <li><p><a class="reference external" href="https://pypi.org/project/pytest/">pytest</a></p></li>
 <li><p><a class="reference external" href="https://pypi.org/project/pytest-cov/">pytest-cov</a></p></li>
 <li><p><a class="reference external" href="https://pypi.org/project/pyupgrade/">pyupgrade</a></p></li>
@@ -184,16 +185,16 @@ and <a class="reference internal" href="#installation-methods-for-developing-col
 <p><strong>Colour</strong> can be easily installed from the
 <a class="reference external" href="https://pypi.org/project/colour-science/">Python Package Index</a> by
 issuing this command in a shell:</p>
-<pre class="code shell"><a id="rest_code_2660d0774e244ff1843e89c677ddcb7d-1" name="rest_code_2660d0774e244ff1843e89c677ddcb7d-1" href="#rest_code_2660d0774e244ff1843e89c677ddcb7d-1"></a>$ pip install --user colour-science
+<pre class="code shell"><a id="rest_code_aa10f5bb4a174f7eb1679f7a6b3fd2ae-1" name="rest_code_aa10f5bb4a174f7eb1679f7a6b3fd2ae-1" href="#rest_code_aa10f5bb4a174f7eb1679f7a6b3fd2ae-1"></a>$ pip install --user colour-science
 </pre>
 <p>This <em>asciicast</em> demonstrates how to generate a pristine Python <em>VirtualEnv</em>
 environment for Colour:</p>
 <script type="text/javascript" src="https://asciinema.org/a/257384.js" id="asciicast-257384" async data-speed="3">
 </script><p>The optional features dependencies are installed as follows:</p>
-<pre class="code shell"><a id="rest_code_690c20d4fb2a4179a7038aa0671a8ce6-1" name="rest_code_690c20d4fb2a4179a7038aa0671a8ce6-1" href="#rest_code_690c20d4fb2a4179a7038aa0671a8ce6-1"></a>$ pip install --user <span class="s1">'colour-science[optional]'</span>
+<pre class="code shell"><a id="rest_code_115f3496587d4867962be9abf0e7ecdb-1" name="rest_code_115f3496587d4867962be9abf0e7ecdb-1" href="#rest_code_115f3496587d4867962be9abf0e7ecdb-1"></a>$ pip install --user <span class="s1">'colour-science[optional]'</span>
 </pre>
 <p>The development dependencies are installed as follows:</p>
-<pre class="code shell"><a id="rest_code_6cede066b7394fe3a64a5978ed3a1a79-1" name="rest_code_6cede066b7394fe3a64a5978ed3a1a79-1" href="#rest_code_6cede066b7394fe3a64a5978ed3a1a79-1"></a>$ pip install --user <span class="s1">'colour-science[development]'</span>
+<pre class="code shell"><a id="rest_code_09ed7facfaca48eb9a85cc7b44120f48-1" name="rest_code_09ed7facfaca48eb9a85cc7b44120f48-1" href="#rest_code_09ed7facfaca48eb9a85cc7b44120f48-1"></a>$ pip install --user <span class="s1">'colour-science[development]'</span>
 </pre>
 <p>The figure plotting dependencies are installed as follows:</p>
 <div class="alert alert-dismissible alert-info line-block">
@@ -204,18 +205,18 @@ environment for Colour:</p>
 beforehand, please refer to the specific section for your platform on
 the <a class="reference external" href="https://www.graphviz.org/download/">Graphviz download page</a>.</div>
 </div>
-<pre class="code shell"><a id="rest_code_ddf8d5eedb2c489fbc9447cf25d68196-1" name="rest_code_ddf8d5eedb2c489fbc9447cf25d68196-1" href="#rest_code_ddf8d5eedb2c489fbc9447cf25d68196-1"></a>$ pip install --user <span class="s1">'colour-science[graphviz, plotting]'</span>
+<pre class="code shell"><a id="rest_code_9b4fee534f294bc0b3e60d33df4f7062-1" name="rest_code_9b4fee534f294bc0b3e60d33df4f7062-1" href="#rest_code_9b4fee534f294bc0b3e60d33df4f7062-1"></a>$ pip install --user <span class="s1">'colour-science[graphviz, plotting]'</span>
 </pre>
 <p>The meshing dependencies for gamut computations are installed as follows:</p>
-<pre class="code shell"><a id="rest_code_d39565f95a79453b87af07797353f6f7-1" name="rest_code_d39565f95a79453b87af07797353f6f7-1" href="#rest_code_d39565f95a79453b87af07797353f6f7-1"></a>$ pip install --user <span class="s1">'colour-science[meshing]'</span>
+<pre class="code shell"><a id="rest_code_fa01ab0d08cd44b4895b4ff04e4632f3-1" name="rest_code_fa01ab0d08cd44b4895b4ff04e4632f3-1" href="#rest_code_fa01ab0d08cd44b4895b4ff04e4632f3-1"></a>$ pip install --user <span class="s1">'colour-science[meshing]'</span>
 </pre>
 <p>If you wish to read <em>OpenEXR</em> files, you will need to install the <em>FreeImage</em>
 plugin for <a class="reference external" href="http://imageio.github.io/">Imageio</a> as follows:</p>
-<pre class="code shell"><a id="rest_code_75a0a008e36e4b878c8878b0298c86a9-1" name="rest_code_75a0a008e36e4b878c8878b0298c86a9-1" href="#rest_code_75a0a008e36e4b878c8878b0298c86a9-1"></a>$ python -c <span class="s2">"import imageio;imageio.plugins.freeimage.download()"</span>
+<pre class="code shell"><a id="rest_code_9ffc2d449beb40ef85ad9af260b33527-1" name="rest_code_9ffc2d449beb40ef85ad9af260b33527-1" href="#rest_code_9ffc2d449beb40ef85ad9af260b33527-1"></a>$ python -c <span class="s2">"import imageio;imageio.plugins.freeimage.download()"</span>
 </pre></section><section id="continuum-analytics-anaconda"><h3>Continuum Analytics Anaconda</h3>
 <p><strong>Colour</strong> is also available for <a class="reference external" href="https://www.anaconda.com/">Anaconda</a>
 from <em>Continuum Analytics</em> via <a class="reference external" href="https://conda-forge.org/">conda-forge</a>:</p>
-<pre class="code shell"><a id="rest_code_de9685d0ddd0487da10e34f8336d44ab-1" name="rest_code_de9685d0ddd0487da10e34f8336d44ab-1" href="#rest_code_de9685d0ddd0487da10e34f8336d44ab-1"></a>$ conda install -c conda-forge colour-science
+<pre class="code shell"><a id="rest_code_5e1a965f9ee5407b9e381b3a4f6da579-1" name="rest_code_5e1a965f9ee5407b9e381b3a4f6da579-1" href="#rest_code_5e1a965f9ee5407b9e381b3a4f6da579-1"></a>$ conda install -c conda-forge colour-science
 </pre>
 <p>This <em>asciicast</em> demonstrates how to generate a pristine Python <em>conda</em>
 environment for Colour:</p>
@@ -223,9 +224,9 @@ environment for Colour:</p>
 </script></section><section id="github"><h3>Github</h3>
 <p>Alternatively, you can also install directly from
 <a class="reference external" href="https://github.com/colour-science/colour">Github</a> source repository:</p>
-<pre class="code shell"><a id="rest_code_4e29c20963aa4a4c868f85c891e92188-1" name="rest_code_4e29c20963aa4a4c868f85c891e92188-1" href="#rest_code_4e29c20963aa4a4c868f85c891e92188-1"></a>$ git clone git://github.com/colour-science/colour.git
-<a id="rest_code_4e29c20963aa4a4c868f85c891e92188-2" name="rest_code_4e29c20963aa4a4c868f85c891e92188-2" href="#rest_code_4e29c20963aa4a4c868f85c891e92188-2"></a>$ <span class="nb">cd</span> colour
-<a id="rest_code_4e29c20963aa4a4c868f85c891e92188-3" name="rest_code_4e29c20963aa4a4c868f85c891e92188-3" href="#rest_code_4e29c20963aa4a4c868f85c891e92188-3"></a>$ pip install --user .
+<pre class="code shell"><a id="rest_code_33df196a7d204cb49ade727e62c1f507-1" name="rest_code_33df196a7d204cb49ade727e62c1f507-1" href="#rest_code_33df196a7d204cb49ade727e62c1f507-1"></a>$ git clone git://github.com/colour-science/colour.git
+<a id="rest_code_33df196a7d204cb49ade727e62c1f507-2" name="rest_code_33df196a7d204cb49ade727e62c1f507-2" href="#rest_code_33df196a7d204cb49ade727e62c1f507-2"></a>$ <span class="nb">cd</span> colour
+<a id="rest_code_33df196a7d204cb49ade727e62c1f507-3" name="rest_code_33df196a7d204cb49ade727e62c1f507-3" href="#rest_code_33df196a7d204cb49ade727e62c1f507-3"></a>$ pip install --user .
 </pre></section></section><section id="installation-methods-for-developing-colour"><h2>Installation Methods for Developing Colour</h2>
 <section id="poetry"><h3>Poetry</h3>
 <p><strong>Colour</strong> adopts <a class="reference external" href="https://poetry.eustace.io">Poetry</a> to help managing its
@@ -234,24 +235,24 @@ development.</p>
 <p>Assuming <a class="reference external" href="https://www.python.org/download/releases/">python &gt;= 3.8, &lt; 3.11</a> is
 available on your system, the development dependencies are installed with
 <a class="reference external" href="https://poetry.eustace.io">Poetry</a> as follows:</p>
-<pre class="code shell"><a id="rest_code_e5d0d1c41ff0468396a26b80ed531fca-1" name="rest_code_e5d0d1c41ff0468396a26b80ed531fca-1" href="#rest_code_e5d0d1c41ff0468396a26b80ed531fca-1"></a>$ git clone git://github.com/colour-science/colour.git
-<a id="rest_code_e5d0d1c41ff0468396a26b80ed531fca-2" name="rest_code_e5d0d1c41ff0468396a26b80ed531fca-2" href="#rest_code_e5d0d1c41ff0468396a26b80ed531fca-2"></a>$ <span class="nb">cd</span> colour
-<a id="rest_code_e5d0d1c41ff0468396a26b80ed531fca-3" name="rest_code_e5d0d1c41ff0468396a26b80ed531fca-3" href="#rest_code_e5d0d1c41ff0468396a26b80ed531fca-3"></a>$ poetry install --extras <span class="s2">"meshing optional plotting"</span>
+<pre class="code shell"><a id="rest_code_74b5fc3a89834f6fb8054285296e0729-1" name="rest_code_74b5fc3a89834f6fb8054285296e0729-1" href="#rest_code_74b5fc3a89834f6fb8054285296e0729-1"></a>$ git clone git://github.com/colour-science/colour.git
+<a id="rest_code_74b5fc3a89834f6fb8054285296e0729-2" name="rest_code_74b5fc3a89834f6fb8054285296e0729-2" href="#rest_code_74b5fc3a89834f6fb8054285296e0729-2"></a>$ <span class="nb">cd</span> colour
+<a id="rest_code_74b5fc3a89834f6fb8054285296e0729-3" name="rest_code_74b5fc3a89834f6fb8054285296e0729-3" href="#rest_code_74b5fc3a89834f6fb8054285296e0729-3"></a>$ poetry install --extras <span class="s2">"meshing optional plotting"</span>
 </pre>
 <p>If <a class="reference external" href="https://www.graphviz.org/">Graphviz</a> is available on your system, you
 might issue the following commands instead of the aforementioned ones:</p>
-<pre class="code shell"><a id="rest_code_723daf6a261249a7879cf1c647abc0a5-1" name="rest_code_723daf6a261249a7879cf1c647abc0a5-1" href="#rest_code_723daf6a261249a7879cf1c647abc0a5-1"></a>$ git clone git://github.com/colour-science/colour.git
-<a id="rest_code_723daf6a261249a7879cf1c647abc0a5-2" name="rest_code_723daf6a261249a7879cf1c647abc0a5-2" href="#rest_code_723daf6a261249a7879cf1c647abc0a5-2"></a>$ <span class="nb">cd</span> colour
-<a id="rest_code_723daf6a261249a7879cf1c647abc0a5-3" name="rest_code_723daf6a261249a7879cf1c647abc0a5-3" href="#rest_code_723daf6a261249a7879cf1c647abc0a5-3"></a>$ poetry install --extras <span class="s2">"graphviz meshing optional plotting"</span>
+<pre class="code shell"><a id="rest_code_894cafc00a754d72959ec9e65000fdcb-1" name="rest_code_894cafc00a754d72959ec9e65000fdcb-1" href="#rest_code_894cafc00a754d72959ec9e65000fdcb-1"></a>$ git clone git://github.com/colour-science/colour.git
+<a id="rest_code_894cafc00a754d72959ec9e65000fdcb-2" name="rest_code_894cafc00a754d72959ec9e65000fdcb-2" href="#rest_code_894cafc00a754d72959ec9e65000fdcb-2"></a>$ <span class="nb">cd</span> colour
+<a id="rest_code_894cafc00a754d72959ec9e65000fdcb-3" name="rest_code_894cafc00a754d72959ec9e65000fdcb-3" href="#rest_code_894cafc00a754d72959ec9e65000fdcb-3"></a>$ poetry install --extras <span class="s2">"graphviz meshing optional plotting"</span>
 </pre>
 <p>Those commands will create a Virtual Environment in which all the required
 python packages will be installed.</p>
 <p>Tools can then be run as follows:</p>
-<pre class="code shell"><a id="rest_code_2e63dacdf9e848599e7dbad3cdcfb56c-1" name="rest_code_2e63dacdf9e848599e7dbad3cdcfb56c-1" href="#rest_code_2e63dacdf9e848599e7dbad3cdcfb56c-1"></a>$ poetry run invoke -l
+<pre class="code shell"><a id="rest_code_f2eb01d270a1459db81fb0cbf2111fb3-1" name="rest_code_f2eb01d270a1459db81fb0cbf2111fb3-1" href="#rest_code_f2eb01d270a1459db81fb0cbf2111fb3-1"></a>$ poetry run invoke -l
 </pre>
 <p>or alternatively:</p>
-<pre class="code shell"><a id="rest_code_8a82ea966d2e4b5a8b55a25716b5ff39-1" name="rest_code_8a82ea966d2e4b5a8b55a25716b5ff39-1" href="#rest_code_8a82ea966d2e4b5a8b55a25716b5ff39-1"></a>$ <span class="nb">source</span> <span class="k">$(</span>poetry env info -p<span class="k">)</span>/bin/activate
-<a id="rest_code_8a82ea966d2e4b5a8b55a25716b5ff39-2" name="rest_code_8a82ea966d2e4b5a8b55a25716b5ff39-2" href="#rest_code_8a82ea966d2e4b5a8b55a25716b5ff39-2"></a>$ invoke -l
+<pre class="code shell"><a id="rest_code_9fd699afa29e41b1b5c82a139d393189-1" name="rest_code_9fd699afa29e41b1b5c82a139d393189-1" href="#rest_code_9fd699afa29e41b1b5c82a139d393189-1"></a>$ <span class="nb">source</span> <span class="k">$(</span>poetry env info -p<span class="k">)</span>/bin/activate
+<a id="rest_code_9fd699afa29e41b1b5c82a139d393189-2" name="rest_code_9fd699afa29e41b1b5c82a139d393189-2" href="#rest_code_9fd699afa29e41b1b5c82a139d393189-2"></a>$ invoke -l
 </pre></section><section id="vagrant"><h3>Vagrant</h3>
 <p>An easy way to get all the pre-requisites at once is to use our
 <a class="reference external" href="https://github.com/colour-science/colour-vagrant">colour-vagrant</a>
