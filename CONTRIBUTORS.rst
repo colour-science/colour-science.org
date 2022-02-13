@@ -4,7 +4,7 @@ Contributors
 colour-science.org
 ------------------
 
--   **Thomas Mansencal**, *Visual Effects Artist @ Weta Digital*
+-   **Thomas Mansencal**, *Visual Effects Artist @ WetaFX*
 
     Project coordination, website.
 
