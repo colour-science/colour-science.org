@@ -894,7 +894,27 @@
                 </div>
             </div>
         </div>
-        <div class="col"></div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>Aurélien Pierre</h3>
+                    <h4>
+                        <a href="https://github.com/darktable-org">darktable-org</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>Core Developer</em>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Documentation improvements.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/ntessore" class="card-link">Github</a>
+                </div>
+            </div>
+        </div>
         <div class="col"></div>
     </div>
 
