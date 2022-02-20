@@ -7,7 +7,7 @@
 .. description: 
 .. type: text
 
-We are pleased to announce that after over a year of work
+We are pleased to announce that after over a year of work,
 `Colour 0.4.0 <https://github.com/colour-science/colour/releases/tag/v0.4.0>`__
 has been released!
 
@@ -26,7 +26,7 @@ support and the minimal version is now `Python
 3.8 <https://www.python.org/downloads/release/python-380/>`__ as per
 `https://scientific-python.org/ <https://scientific-python.org/specs/spec-0000/>`__.
 
-The following minimal versions are also required:
+The following minimal dependency versions are also required:
 
 -   `imageio >= 2, < 3 <https://imageio.github.io/>`__
 -   `numpy >= 1.19, < 2 <https://pypi.org/project/numpy/>`__
