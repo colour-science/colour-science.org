@@ -93,7 +93,7 @@ accomplished to cherry-pick from:
     -   `awesome-colour.org <http://awesome-colour.org/>`__
 -   A decently maintained `Twitter account <https://twitter.com/colour_science>`__
 -   Affiliated project of `NumFOCUS <https://numfocus.org/>`__
--   `First successful Google Summer of Code <https://i.imgur.com/PDwex2j.png>`__ 🎊
+-   `First successful Google Summer of Code <https://i.imgur.com/PDwex2j.png>`__
 -   A `collective <https://opencollective.com/colour-science>`__ to openly
     track our expenses
 -   Active participation to other Open Source projects:
@@ -115,7 +115,7 @@ accomplished to cherry-pick from:
 -   Growing number of `contributors <https://www.colour-science.org/contributors/>`__
 -   Cited by a `growing number of publications <https://www.colour-science.org/cited-by/>`__
 -   A few `thousands of monthly downloads <https://pypistats.org/packages/colour-science>`__
--   Trended for a few days in 2018 on Github 🚀
+-   Trended for a few days in 2018 on Github
 -   Used by a growing number of companies, studios, universities:
 
     -   **Google**
