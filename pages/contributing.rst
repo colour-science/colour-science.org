@@ -127,7 +127,7 @@ possible, and if it makes sense to do so:
 
 .. code:: shell
 
-    $ python -c "import colour;colour.utilities.describe_environment()"
+    python -c "import colour;colour.utilities.describe_environment()"
 
 The typical output is something along those lines:
 
@@ -199,7 +199,7 @@ Clone the repository locally to your workspace:
 
 .. code:: shell
 
-    $ git clone git@github.com:$USER/colour.git
+    git clone git@github.com:$USER/colour.git
 
 Step 3
 ******
@@ -208,7 +208,7 @@ Navigate to the *colour* directory:
 
 .. code:: shell
 
-    $ cd colour
+    cd colour
 
 Step 4
 ******
@@ -219,16 +219,16 @@ is available on your system, the development dependencies are installed with
 
 .. code:: shell
 
-    $ poetry install --extras "meshing optional plotting"
+    poetry install --extras "meshing optional plotting"
 
 If `Graphviz <https://www.graphviz.org/>`__ is available on your system, you
 might issue the following commands instead of the aforementioned ones:
 
 .. code:: shell
 
-    $ git clone git://github.com/colour-science/colour.git
-    $ cd colour
-    $ poetry install --extras "graphviz meshing optional plotting"
+    git clone git://github.com/colour-science/colour.git
+    cd colour
+    poetry install --extras "graphviz meshing optional plotting"
 
 .. class:: alert alert-dismissible alert-warning
 
@@ -268,7 +268,7 @@ Install the `pre-commit <https://pre-commit.com/>`__ hooks:
 
 .. code:: shell
 
-    $ poetry run pre-commit install
+    poetry run pre-commit install
 
 Step 6
 ******
@@ -278,7 +278,7 @@ remote:
 
 .. code:: shell
 
-    $ git remote add upstream git@github.com:colour-science/colour
+    git remote add upstream git@github.com:colour-science/colour
 
 Step 7
 ******
@@ -287,7 +287,7 @@ You should now have two remotes:
 
 .. code:: shell
 
-    $ git remote -v
+    git remote -v
     origin  https://github.com/$USER/colour (fetch)
     origin  https://github.com/$USER/colour (push)
     upstream  https://github.com/colour-science/colour (fetch)
@@ -300,8 +300,8 @@ Pull the latest changes from *upstream*:
 
 .. code:: shell
 
-    $ git checkout develop
-    $ git pull upstream develop
+    git checkout develop
+    git pull upstream develop
 
 Step 9
 ******
@@ -323,7 +323,7 @@ support:
 
 .. code:: shell
 
-    $ git checkout -b feature/mie_scattering
+    git checkout -b feature/mie_scattering
 
 Step 11
 *******
@@ -338,14 +338,14 @@ Check whether the unit tests and doctests are passing:
 
 .. code:: shell
 
-    $ poetry run invoke tests
+    poetry run invoke tests
 
 or alternatively:
 
 .. code:: shell
 
-    $ source $(poetry env info -p)/bin/activate
-    $ invoke tests
+    source $(poetry env info -p)/bin/activate
+    invoke tests
 
 Step 13
 *******
@@ -354,14 +354,14 @@ Verify that the static checking from `mypy <http://mypy-lang.org>`__ is passing:
 
 .. code:: shell
 
-    $ poetry run dmypy run -- --show-error-codes --warn-unused-ignores --warn-redundant-casts --install-types --non-interactive -p colour
+    poetry run dmypy run -- --show-error-codes --warn-unused-ignores --warn-redundant-casts --install-types --non-interactive -p colour
 
 or alternatively:
 
 .. code:: shell
 
-    $ source $(poetry env info -p)/bin/activate
-    $ dmypy run -- --show-error-codes --warn-unused-ignores --warn-redundant-casts --install-types --non-interactive -p colour
+    source $(poetry env info -p)/bin/activate
+    dmypy run -- --show-error-codes --warn-unused-ignores --warn-redundant-casts --install-types --non-interactive -p colour
 
 Step 14
 *******
@@ -370,8 +370,8 @@ Commit your changes:
 
 .. code:: shell
 
-    $ git add mie_scattering.py
-    $ git commit -m 'Implement "Mie Scattering" support.'
+    git add mie_scattering.py
+    git commit -m 'Implement "Mie Scattering" support.'
 
 .. class:: alert alert-dismissible alert-info
 
@@ -392,7 +392,7 @@ Push your changes to *origin*, i.e. your own fork:
 
 .. code:: shell
 
-    $ git push origin feature/mie_scattering
+    git push origin feature/mie_scattering
 
 Step 16
 *******
@@ -746,14 +746,14 @@ Python Style Rules
 
 .. code:: shell
 
-    $ poetry run black colour
+    poetry run black colour
 
 or alternatively:
 
 .. code:: shell
 
-    $ source $(poetry env info -p)/bin/activate
-    $ black colour
+    source $(poetry env info -p)/bin/activate
+    black colour
 
 -   Inline comments must have two spaces.
 -   Ensure that you have blank line at the end of the files.
@@ -844,421 +844,194 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
 
 .. raw:: html
 
-    <ul>
+    <!-- directives: [] -->
+    <div id="content">
+      <ul>
         <li>
-            <dl>
-                <dt>Github</dt>
-                <dd>
-                    <ul style="list-style-type: none;">
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value="" />
-                                <label class="strikethrough">Review the
-                                    <a class="reference external" href="https://github.com/colour-science/colour/releases">releases</a>
-                                    page</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value="" />
-                                <label class="strikethrough">Check open issues
-                                    on the current
-                                    <a class="reference external" href="https://github.com/colour-science/colour/milestones">milestone</a>
-                                </label>
-                            </div>
-                        </li>
-                    </ul>
-                </dd>
-            </dl>
+          <h3>Github</h3>
+          <ul>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Review the <a href="https:github.com/colour-science/colour/releases">releases</a> page.</li>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Check open issues on the current <a href="https:github.com/colour-science/colour/milestones">milestone</a>.</li>
+          </ul>
         </li>
         <li>
-            <dl>
-                <dt>Zenodo - Stage 1</dt>
-                <dd>
-                    <ul style="list-style-type: none;">
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value="" />
-                                <label class="strikethrough">Reserve the
-                                    <a class="reference external" href="https://zenodo.org/record/376790">Zenodo DOI
-                                    </a>
-                                </label>
-                            </div>
-                        </li>
-                    </ul>
-                </dd>
-            </dl>
+          <h3>Zenodo - Stage 1</h3>
+          <ul>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Reserve the <a href="https:zenodo.org/record/3757045">Zenodo DOI</a>.</li>
+          </ul>
         </li>
         <li>
-            <dl>
-                <dt>Colour - Stage 1</dt>
-                <dd>
-                    <ul style="list-style-type: none;">
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value="" />
-                                <label class="strikethrough">Check
-                                    <a class="reference external" href="https://app.codacy.com/app/colour-science/colour/dashboard">codacy</a>
-                                </label>
-                            </div>
-                        </li>
-                        <li>
-                            <dt>Rebuild a clean Virtual Environment</dt>
-                            <dd>
-                                <ul style="list-style-type: none;">
-                                    <li>
-                                        <div class="checkbox">
-                                            <input type="checkbox" value="" />
-                                            <label class="strikethrough"> Remove the current virtual environment:
-                                            </label>
-                                        </div>
-                                        <pre class="code shell">$ poetry env info -p | xargs rm -r</pre>
-                                    </li>
-                                    <li>
-                                        <div class="checkbox">
-                                            <input type="checkbox" value="" />
-                                            <label class="strikethrough"> Create a pristine virtual environment:
-                                            </label>
-                                        </div>
-                                        <pre class="code shell">$ rm poetry.lock && poem && poetry install --extras "graphviz optional plotting"</pre>
-                                    </li>
-                                </ul>
-                            </dd>
-                        </li>
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value="" />
-                                <label class="strikethrough">Run the
-                                    <em>formatting</em> task with
-                                    <a class="reference external" href="https://github.com/google/yapf">Yapf</a>,
-                                    it is very slow on <em>Colour</em> and is
-                                    currently not run by default:
-                                </label>
-                            </div>
-                            <pre class="code shell">$ invoke formatting --yapf</pre>
-                        </li>
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value="" />
-                                <label class="strikethrough">Run the
-                                    <em>examples</em> task with <em>figures</em>:
-                                    They need to be visually assessed for
-                                    correctness.
-                                </label>
-                            </div>
-                            <pre class="code shell">$ invoke examples --plots</pre>
-                        </li>
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value="" />
-                                <label class="strikethrough">Run the
-                                    <em>build</em> task: It cleans the project,
-                                    runs the unit tests, etc...
-                                </label>
-                            </div>
-                            <pre class="code shell">$ invoke build</pre>
-                        </li>
-                    </ul>
-                </dd>
-            </dl>
+          <h3>Colour - Stage 1</h3>
+          <ul>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Check <a href="https:app.codacy.com/gh/colour-science/colour/dashboard">codacy</a> status.</li>
+            <li>Rebuild a clean <i>Poetry</i> environment.
+              <ul>
+                <li><span class="task-status todo" style="margin-right:6px">TODO</span>Remove the current <i>Poetry</i> environment.
+                  <ul>
+                    <li>
+                      <pre><code data-lang="bash" class="bash">	poetry env info -p | xargs rm -r</code></pre>
+                    </li>
+                  </ul>
+                </li>
+                <li><span class="task-status todo" style="margin-right:6px">TODO</span>Create a pristine <i>Poetry</i> environment.
+                  <ul>
+                    <li>
+                      <pre><code data-lang="bash" class="bash">	rm poetry.lock &amp;&amp; poem &amp;&amp; poetry install --extras &quot;graphviz meshing optional plotting&quot;</code></pre>
+                    </li>
+                  </ul>
+                </li>
+                <li><span class="task-status todo" style="margin-right:6px">TODO</span>Run the examples task with figures: They need to be visually assessed for correctness.
+                  <ul>
+                    <li>
+                      <pre><code>invoke examples --plots</code></pre>
+                    </li>
+                  </ul>
+                </li>
+                <li><span class="task-status todo" style="margin-right:6px">TODO</span>Run the build task: It cleans the project, runs the pre-commit hooks, the examples, the unit tests, etc...
+                  <ul>
+                    <li>
+                      <pre><code data-lang="bash" class="bash">	invoke build</code></pre>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </li>
+        <li>
+          <h3>Pypi - Stage 1</h3>
+          <ul>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Run the virtualise task: It deploys the project to a virtual environment and run the unit tests.
+              <ul>
+                <li>
+                  <pre><code data-lang="bash" class="bash">invoke virtualise</code></pre>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h3>Colour - Stage 2</h3>
+          <ul>
+            <li>Raise the package version.
+              <ul>
+                <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>__init__.py</code></li>
+                <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>pyproject.toml</code></li>
+                <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>setup.py</code></li>
+                <li>A typical commit message for version raise is as follows:
+                  <ul>
+                    <li>
+                      <blockquote>
+                        <p>Raise package version to 0.3.16.<br /></p>
+                      </blockquote>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>Update the Zenodo DOI.
+              <ul>
+                <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>README.rst</code></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h3>Git</h3>
+          <ul>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Run the tag task: It should prompt for tagging the repository accordingly to the defined version using <i>git-flow</i>.
+              <ul>
+                <li>
+                  <pre><code data-lang="bash" class="bash">invoke tag</code></pre>
+                </li>
+              </ul>
+            </li>
+            <li>A typical tag message for a Colour version is as follows:
+              <ul>
+                <li>
+                  <blockquote>
+                    <p>Create Colour v0.3.16 version.<br /></p>
+                  </blockquote>
+                </li>
+              </ul>
+            </li>
+            <li>In the eventuality where the tag creation failed, it might be created manually as follows:
+              <ul>
+                <li>
+                  <pre><code data-lang="bash" class="bash">git tag -a -m &quot;Create Colour v0.3.16 version.&quot; v0.3.16</code></pre>
+                </li>
+              </ul>
+            </li>
+            <li>Push the <code>master</code> and <code>develop</code> branches along with the newly created tag:
+              <ul>
+                <li>
+                  <pre><code data-lang="bash" class="bash">git push upstream master develop --tags</code></pre>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h3>Pypi - Stage 2</h3>
+          <ul>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Run the release task: It releases the project to Pypi with Twine.
+              <ul>
+                <li>
+                  <pre><code data-lang="bash" class="bash">invoke release</code></pre>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h3>Zenodo - Stage 2</h3>
+          <ul>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Upload the Pypi package and create new version in Zenodo.</li>
+          </ul>
+        </li>
+        <li>
+          <h3>Conda-Forge</h3>
+          <ul>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Create new conda-forge version. The sha256 attribute must be updated and can be computed with the sha256 task:
+              <ul>
+                <li>
+                  <pre><code data-lang="bash" class="bash">invoke sha256</code></pre>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h3>colour-science.org</h3>
+          <ul>
+            <li>Update the release links.
+              <ul>
+                <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>conf.py</code></li>
+                <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>index.rst</code></li>
+              </ul>
+            </li>
+            <li>Update the documentation links.
+              <ul>
+                <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>api-reference.rst</code></li>
+              </ul>
+            </li>
+            <li>Update the Zenodo badge.
+              <ul>
+                <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>conf.py</code></li>
+                <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>api-status-and-badges.rst</code></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h3>Propaganda &amp; Announcement</h3>
+          <ul>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>3D-Pro</li>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Buffer (Facebook / Linkedin / Twitter)</li>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Hacker News</li>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Reddit</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
 
-        <li>
-            <dl>
-                <dt>Pypi - Stage 1</dt>
-                <dd>
-                    <ul style="list-style-type: none;">
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value="" />
-                                <label class="strikethrough">Run the
-                                    <em>virtualise</em> task: It deploys the
-                                    project to a virtual environment and run the
-                                    unit tests.
-                                </label>
-                            </div>
-                            <pre class="code shell">$ invoke virtualise</pre>
-                        </li>
-                    </ul>
-                </dd>
-            </dl>
-        </li>
-        <li>
-            <dl>
-                <dt>Colour - Stage 2</dt>
-                <dd>
-                    <ul>
-                        <li>
-                            <dl>
-                                <dt>Raise Package Version</dt>
-                                <dd>
-                                    <ul style="list-style-type: none;">
-                                        <li>
-                                            <div class="checkbox">
-                                                <input type="checkbox" value="" />
-                                                <label class="strikethrough">
-                                                    <a class="reference external" href="https://github.com/colour-science/colour/blob/develop/colour/__init__.py">__init__.py</a>
-                                                </label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="checkbox">
-                                                <input type="checkbox" value="" />
-                                                <label class="strikethrough">
-                                                    <a class="reference external" href="https://github.com/colour-science/colour/blob/develop/pyproject.toml">pyproject.toml</a>
-                                                </label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="checkbox">
-                                                <input type="checkbox" value="" />
-                                                <label class="strikethrough">
-                                                    <a class="reference external" href="https://github.com/colour-science/colour/blob/develop/colour/setup.py">setup.py</a>
-                                                </label>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <p>A typical commit message for version
-                                    raise is as follows:</p>
-                                    <pre class="literal-block">Raise package version to 0.3.16.</pre>
-                                </dd>
-                            </dl>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <dl>
-                                <dt>Update Zenodo DOI</dt>
-                                <dd>
-                                    <ul style="list-style-type: none;">
-                                        <li>
-                                            <div class="checkbox">
-                                                <input type="checkbox" value="" />
-                                                <label class="strikethrough">
-                                                    <a class="reference external" href="https://github.com/colour-science/colour/blob/develop/README.rst">README.rst</a>
-                                                </label>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </dd>
-                            </dl>
-                        </li>
-                    </ul>
-                </dd>
-            </dl>
-        </li>
-        <li>
-            <dl>
-                <dt>Git</dt>
-                <dd>
-                    <ul style="list-style-type: none;">
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value="" />
-                                <label class="strikethrough">Run the
-                                    <em>tag</em> task: It should prompt for
-                                    tagging the repository accordingly to the
-                                    defined version using
-                                    <a class="reference external" href="https://danielkummer.github.io/git-flow-cheatsheet/">git-flow</a>.
-                                </label>
-                            </div>
-                            <pre class="code shell">$ invoke tag</pre>
-                            <p>A typical tag message for a <em>Colour</em>
-                            version is as follows:</p>
-                            <pre class="literal-block">Create Colour v0.3.16 version.</pre>
-                            In the eventuality where the tag creation failed, it might be created manually as follows:
-                            <pre class="code shell">$ git tag -a -m "Create Colour v0.3.16 version." v0.3.16</pre>
-                        </li>
-                    </ul>
-                </dd>
-            </dl>
-        </li>
-        <li>
-            <dl>
-                <dt>Pypi - Stage 2</dt>
-                <dd>
-                    <ul style="list-style-type: none;">
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value="" />
-                                <label class="strikethrough">Run the
-                                    <em>release</em>
-                                    task: It releases the project to
-                                    <a class="reference external" href="https://pypi.org/project/colour-science">Pypi</a> with
-                                    <a class="reference external" href="https://pypi.org/project/twine">Twine</a>.
-                                </label>
-                            </div>
-                            <pre class="code shell">$ invoke release</pre>
-                        </li>
-                    </ul>
-                </dd>
-            </dl>
-        </li>
-        <li>
-            <dl>
-                <dt>Zenodo - Stage 2</dt>
-                <dd>
-                    <ul style="list-style-type: none;">
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value="" />
-                                <label class="strikethrough">Upload the Pypi
-                                    package and create new version in
-                                    <a class="reference external" href="https://zenodo.org/record/376790">Zenodo</a>
-                                </label>
-                            </div>
-                        </li>
-                    </ul>
-                </dd>
-            </dl>
-        </li>
-        <li>
-            <dl>
-                <dt>Conda-Forge</dt>
-                <dd>
-                    <ul style="list-style-type: none;">
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value="" />
-                                <label class="strikethrough">Create new
-                                    <a class="reference external" href="https://github.com/conda-forge/colour-science-feedstock/blob/master/recipe/meta.yaml#L2">conda-forge</a>
-                                    version. The
-                                    <a class="reference external" href="https://github.com/conda-forge/colour-science-feedstock/blob/master/recipe/meta.yaml#L3">sha256</a>
-                                    attribute must be updated and can be
-                                    computed with the
-                                    <em>sha256</em> task:
-                                </label>
-                            </div>
-                            <pre class="code shell">$ invoke sha256</pre>
-                        </li>
-                    </ul>
-                </dd>
-            </dl>
-        </li>
-        <li>
-            <dl>
-                <dt>colour-science.org</dt>
-                <dd>
-                    <ul style="list-style-type: none;">
-                        <dl>
-                            <dt>Update Release Links</dt>
-                            <dd>
-                                <ul style="list-style-type: none;">
-                                    <li>
-                                        <div class="checkbox">
-                                            <input type="checkbox" value="" />
-                                            <label class="strikethrough">
-                                                <a class="reference external" href="https://github.com/colour-science/colour-science.org/blob/master/conf.py">conf.py</a>
-                                            </label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="checkbox">
-                                            <input type="checkbox" value="" />
-                                            <label class="strikethrough">
-                                                <a class="reference external" href="https://github.com/colour-science/colour-science.org/blob/master/pages/index.rst">index.rst</a>
-                                            </label>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </dd>
-                        </dl>
-                    </ul>
-                    <ul style="list-style-type: none;">
-                        <dl>
-                            <dt>Update Documentation Links</dt>
-                            <dd>
-                                <ul style="list-style-type: none;">
-                                    <li>
-                                        <div class="checkbox">
-                                            <input type="checkbox" value="" />
-                                            <label class="strikethrough">
-                                                <a class="reference external" href="https://github.com/colour-science/colour-science.org/blob/master/pages/api-reference.rst">api-reference.rst</a>
-                                            </label>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </dd>
-                        </dl>
-                    </ul>
-                    <ul>
-                        <dl>
-                            <dt>Update Zenodo Badge</dt>
-                            <dd>
-                                <ul style="list-style-type: none;">
-                                    <li>
-                                        <div class="checkbox">
-                                            <input type="checkbox" value="" />
-                                            <label class="strikethrough">
-                                                <a class="reference external" href="https://github.com/colour-science/colour-science.org/blob/master/conf.py">conf.py</a>
-                                            </label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="checkbox">
-                                            <input type="checkbox" value="" />
-                                            <label class="strikethrough">
-                                                <a class="reference external" href="https://github.com/colour-science/colour-science.org/blob/master/pages/api-status-and-badges.rst">api-status-and-badges.rst</a>
-                                            </label>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </dd>
-                        </dl>
-                    </ul>
-                    <ul style="list-style-type: none;">
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value="" />
-                                <label class="strikethrough">Update
-                                    <a class="reference external" href="https://github.com/colour-science/colour-science.org/blob/master/pages/features.rst">features.rst</a>
-                                    page
-                                </label>
-                            </div>
-                        </li>
-                    </ul>
-                </dd>
-            </dl>
-        </li>
-        <li>
-            <dl>
-                <dt>Propaganda & Announcement</dt>
-                <dd>
-                    <ul style="list-style-type: none;">
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value="" />
-                                <label class="strikethrough">3D-Pro</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value="" />
-                                <label class="strikethrough">
-                                    <a class="reference external" href="https://buffer.com/">Buffer (Facebook/Linkedin/Twitter)
-                                    </a>
-                                </label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value="" />
-                                <label class="strikethrough">
-                                    <a class="reference external" href="https://news.ycombinator.com/">Hacker News
-                                    </a>
-                                </label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="checkbox">
-                                <input type="checkbox" value="" />
-                                <label class="strikethrough">
-                                    <a class="reference external" href="https://www.reddit.com/r/Python/">Reddit</a>
-                                </label>
-                            </div>
-                        </li>
-                    </ul>
-                </dd>
-            </dl>
-        </li>
-    </ul>

@@ -23,7 +23,7 @@ Primary Dependencies
 ^^^^^^^^^^^^^^^^^^^^
 
 -   `python >= 3.8, < 3.11 <https://www.python.org/download/releases/>`__
--   `imageio >= 2, < 3 <http://imageio.github.io/>`__
+-   `imageio >= 2, < 3 <https://imageio.github.io/>`__
 -   `numpy >= 1.19, < 2 <https://pypi.org/project/numpy/>`__
 -   `scipy >= 1.5, < 2 <https://pypi.org/project/scipy/>`__
 
@@ -54,13 +54,13 @@ Development Dependencies
 -   `jupyter <https://pypi.org/project/jupyter/>`__
 -   `mypy <https://pypi.org/project/mypy/>`__
 -   `pre-commit <https://pypi.org/project/pre-commit/>`__
+-   `pydata-sphinx-theme <https://pypi.org/project/pydata-sphinx-theme/>`__
 -   `pydocstyle <https://pypi.org/project/pydocstyle/>`__
 -   `pytest <https://pypi.org/project/pytest/>`__
 -   `pytest-cov <https://pypi.org/project/pytest-cov/>`__
 -   `pyupgrade <https://pypi.org/project/pyupgrade/>`__
 -   `restructuredtext-lint <https://pypi.org/project/restructuredtext-lint/>`__
 -   `sphinx <https://pypi.org/project/Sphinx/>`__
--   `sphinx-rtd-theme <https://pypi.org/project/sphinx-rtd-theme/>`__
 -   `sphinxcontrib-bibtex <https://pypi.org/project/sphinxcontrib-bibtex/>`__
 -   `toml <https://pypi.org/project/toml/>`__
 -   `twine <https://pypi.org/project/twine/>`__
@@ -77,7 +77,7 @@ issuing this command in a shell:
 
 .. code:: shell
 
-    $ pip install --user colour-science
+    pip install --user colour-science
 
 This *asciicast* demonstrates how to generate a pristine Python *VirtualEnv*
 environment for Colour:
@@ -93,13 +93,13 @@ The optional features dependencies are installed as follows:
 
 .. code:: shell
 
-    $ pip install --user 'colour-science[optional]'
+    pip install --user 'colour-science[optional]'
 
 The development dependencies are installed as follows:
 
 .. code:: shell
 
-    $ pip install --user 'colour-science[development]'
+    pip install --user 'colour-science[development]'
 
 The figure plotting dependencies are installed as follows:
 
@@ -113,20 +113,20 @@ The figure plotting dependencies are installed as follows:
 
 .. code:: shell
 
-    $ pip install --user 'colour-science[graphviz, plotting]'
+    pip install --user 'colour-science[graphviz, plotting]'
 
 The meshing dependencies for gamut computations are installed as follows:
 
 .. code:: shell
 
-    $ pip install --user 'colour-science[meshing]'
+    pip install --user 'colour-science[meshing]'
 
 If you wish to read *OpenEXR* files, you will need to install the *FreeImage*
-plugin for `Imageio <http://imageio.github.io/>`__ as follows:
+plugin for `Imageio <https://imageio.github.io/>`__ as follows:
 
 .. code:: shell
 
-    $ python -c "import imageio;imageio.plugins.freeimage.download()"
+    python -c "import imageio;imageio.plugins.freeimage.download()"
 
 Continuum Analytics Anaconda
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -136,7 +136,7 @@ from *Continuum Analytics* via `conda-forge <https://conda-forge.org/>`__:
 
 .. code:: shell
 
-    $ conda install -c conda-forge colour-science
+    conda install -c conda-forge colour-science
 
 This *asciicast* demonstrates how to generate a pristine Python *conda*
 environment for Colour:
@@ -156,9 +156,9 @@ Alternatively, you can also install directly from
 
 .. code:: shell
 
-    $ git clone git://github.com/colour-science/colour.git
-    $ cd colour
-    $ pip install --user .
+    git clone git://github.com/colour-science/colour.git
+    cd colour
+    pip install --user .
 
 Installation Methods for Developing Colour
 ------------------------------------------
@@ -176,18 +176,18 @@ available on your system, the development dependencies are installed with
 
 .. code:: shell
 
-    $ git clone git://github.com/colour-science/colour.git
-    $ cd colour
-    $ poetry install --extras "meshing optional plotting"
+    git clone git://github.com/colour-science/colour.git
+    cd colour
+    poetry install --extras "meshing optional plotting"
 
 If `Graphviz <https://www.graphviz.org/>`__ is available on your system, you
 might issue the following commands instead of the aforementioned ones:
 
 .. code:: shell
 
-    $ git clone git://github.com/colour-science/colour.git
-    $ cd colour
-    $ poetry install --extras "graphviz meshing optional plotting"
+    git clone git://github.com/colour-science/colour.git
+    cd colour
+    poetry install --extras "graphviz meshing optional plotting"
 
 Those commands will create a Virtual Environment in which all the required
 python packages will be installed.
@@ -196,14 +196,14 @@ Tools can then be run as follows:
 
 .. code:: shell
 
-    $ poetry run invoke -l
+    poetry run invoke -l
 
 or alternatively:
 
 .. code:: shell
 
-    $ source $(poetry env info -p)/bin/activate
-    $ invoke -l
+    source $(poetry env info -p)/bin/activate
+    invoke -l
 
 Vagrant
 ^^^^^^^

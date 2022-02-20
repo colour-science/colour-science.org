@@ -59,7 +59,7 @@ Besides the various minor changes and fixes, the highlights of this release are:
     -   ISO 7589 Sensitometric Photoflood
     -   ISO 7589 Sensitometric Printer
 
--   Support for IGPGTG colourspace by *Hellwig and Fairchild (2020)*.
+-   Support for *IGPGTG* colourspace by *Hellwig and Fairchild (2020)*.
 -   The `colour.SpectralDistribution.interpolate` and
     `colour.MultiSpectralDistributions.interpolate` methods now honour class
     instantiation time interpolation parameters instead of blindly applying

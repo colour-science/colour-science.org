@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Colour 0.4.0 is available! | Colour Science</title>
+<link href="../../assets/css/colour-science.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#191919">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://www.colour-science.org/posts/colour-040-is-available/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+</script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<meta name="google-site-verification" content="CeWflIcbu-x7Ur7qbzTYJiRFvoGF5RljJyGZMg7H9co">
+<meta name="author" content="Colour Developers">
+<link rel="prev" href="../the-colorchecker-considered-mostly-harmless/" title="The ColorChecker Considered Mostly Harmless" type="text/html">
+<meta property="og:site_name" content="Colour Science">
+<meta property="og:title" content="Colour 0.4.0 is available!">
+<meta property="og:url" content="https://www.colour-science.org/posts/colour-040-is-available/">
+<meta property="og:description" content="We are pleased to announce that after over a year of work
+Colour 0.4.0
+has been released!
+
+This release integrates most of the
+GSoC 2021
+work from Cédric (@villirion), all the code
+from Geetansh (@SGe">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2022-02-20T08:22:06Z">
+<meta property="article:tag" content="colour">
+<meta property="article:tag" content="colour science">
+<meta property="article:tag" content="release">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-xl static-top mb-4
+navbar-dark bg-dark bg-primary
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="https://www.colour-science.org/">
+
+            <span id="blog-title">Colour Science</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
+            <div class="dropdown-menu">
+                    <a href="../../apps" class="dropdown-item"><span class="font-weight-bold">Apps (Colour - Dash)</span></a>
+                    <a href="http://awesome-colour.org/" class="dropdown-item"><span class="font-weight-bold">Awesome Colour</span></a>
+                    <a href="../../colour" class="dropdown-item"><span class="font-weight-bold">Colour</span></a>
+                    <a href="../../colour-datasets" class="dropdown-item"><span class="font-weight-bold">Colour - Datasets</span></a>
+                    <a href="../../colour-demosaicing" class="dropdown-item"><span class="font-weight-bold">Colour - Demosaicing</span></a>
+                    <a href="../../colour-hdri" class="dropdown-item"><span class="font-weight-bold">Colour - HDRI</span></a>
+                    <a href="../../colour-checker-detection" class="dropdown-item"><span class="font-weight-bold">Colour - Checker Detection</span></a>
+                    <a href="../../colour-maya" class="dropdown-item">Colour - Maya</a>
+                    <a href="../../colour-nuke" class="dropdown-item">Colour - Nuke</a>
+                    <a href="../../colour-playground" class="dropdown-item">Colour - Playground</a>
+                    <a href="../../colour-spectroscope" class="dropdown-item">Colour - Spectroscope</a>
+                    <a href="../../experiments" class="dropdown-item">Experiments</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu">
+                    <a href="../../installation-guide" class="dropdown-item"><span class="font-weight-bold">Installation Guide</span></a>
+                    <a href="https://colour.readthedocs.io/en/develop/tutorial.html" class="dropdown-item"><span class="font-weight-bold">Static Tutorial</span></a>
+                    <a href="https://colab.research.google.com/notebook#fileId=1Im9J7or9qyClQCv5sPHmKdyiQbG4898K&amp;offline=true&amp;sandboxMode=true" class="dropdown-item"><span class="font-weight-bold">Interactive Tutorial</span></a>
+                    <a href="https://colab.research.google.com/notebook#fileId=1NRcdXSCshivkwoU2nieCvC3y14fx1X4X&amp;offline=true&amp;sandboxMode=true" class="dropdown-item"><span class="font-weight-bold">How-To Guide</span></a>
+                    <a href="../../api-reference" class="dropdown-item"><span class="font-weight-bold">API Reference</span></a>
+                    <a href="../../code-of-conduct" class="dropdown-item"><span class="font-weight-bold">Code of Conduct</span></a>
+                    <a href="../../contributing" class="dropdown-item"><span class="font-weight-bold">Contributing</span></a>
+                    <a href="../../contributors" class="dropdown-item"><span class="font-weight-bold">Contributors</span></a>
+                    <a href="../../features" class="dropdown-item">Features</a>
+                    <a href="../../history" class="dropdown-item">History</a>
+                    <a href="https://colour.readthedocs.io/en/develop/bibliography.html" class="dropdown-item">Bibliography</a>
+                    <a href="https://doi.org/10.5281/zenodo.4445350" class="dropdown-item">Cite Us</a>
+                    <a href="../../cited-by" class="dropdown-item">Cited By</a>
+                    <a href="https://opensource.org/licenses/BSD-3-Clause" class="dropdown-item">License</a>
+                    <a href="../../search" class="dropdown-item">Search</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+            <div class="dropdown-menu">
+                    <a href="../../blog" class="dropdown-item"><span class="font-weight-bold">Posts</span></a>
+                    <a href="../../archive.html" class="dropdown-item">Archive</a>
+                    <a href="../../categories/" class="dropdown-item">Tags</a>
+            </div>
+                </li>
+<li class="nav-item">
+<a href="mailto:colour-developers@colour-science.org" class="nav-link"><i class="fas fa-envelope"></i></a>
+                </li>
+<li class="nav-item">
+<a href="https://github.com/colour-science/colour" class="nav-link"><i class="fab fa-github"></i></a>
+                </li>
+<li class="nav-item">
+<a href="https://www.facebook.com/python.colour.science" class="nav-link"><i class="fab fa-facebook"></i></a>
+                </li>
+<li class="nav-item">
+<a href="https://gitter.im/colour-science/colour" class="nav-link"><i class="fab fa-gitter"></i></a>
+                </li>
+<li class="nav-item">
+<a href="https://twitter.com/colour_science" class="nav-link"><i class="fab fa-twitter"></i></a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><!-- Main --><div class="container" id="content" role="main">
+    <div class="row">
+        <div class="col-12">
+            <div class="body-content">
+                <!--Body content-->
+                
+                
+                
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Colour 0.4.0 is available!</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Colour Developers
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2022-02-20T08:22:06Z" itemprop="datePublished" title="2022-02-20 08:22">2022-02-20 08:22</time></a>
+            </p>
+                <p class="commentline">
+    
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/colour-040-is-available.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>We are pleased to announce that after over a year of work
+<a class="reference external" href="https://github.com/colour-science/colour/releases/tag/v0.4.0">Colour 0.4.0</a>
+has been released!</p>
+<!-- TEASER_END -->
+<p>This release integrates most of the
+<a class="reference external" href="https://github.com/colour-science/GSoC/blob/master/2020/GSoC-2021-Project-Ideas.md">GSoC 2021</a>
+work from Cédric (<a class="reference external" href="https://github.com/villirion">@villirion</a>), all the code
+from Geetansh (<a class="reference external" href="https://github.com/SGeetansh">@SGeetansh</a>) and the remaining
+<a class="reference external" href="https://github.com/colour-science/GSoC/blob/master/2020/GSoC-2020-Project-Ideas.md">GSoC 2020</a>
+code from Nishant (<a class="reference external" href="https://github.com/@njwardhan">@SGeetansh</a>). We would
+like to thank them again for their excellent contributions!</p>
+<p>We are finally dropping <a class="reference external" href="https://www.python.org/downloads/release/python-270/">Python 2.7</a>
+support and the minimal version is now <a class="reference external" href="https://www.python.org/downloads/release/python-380/">Python
+3.8</a> as per
+<a class="reference external" href="https://scientific-python.org/specs/spec-0000/">https://scientific-python.org/</a>.</p>
+<p>The following minimal versions are also required:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://imageio.github.io/">imageio &gt;= 2, &lt; 3</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/numpy/">numpy &gt;= 1.19, &lt; 2</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/scipy/">scipy &gt;= 1.5, &lt; 2</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/typing-extensions/">typing-extensions &gt;= 4, &lt; 5</a></p></li>
+</ul>
+<figure><img alt="/images/Blog_Chromaticity_Diagram_CIE1976UCS_Advanced_Customisation.png" src="../../images/Blog_Chromaticity_Diagram_CIE1976UCS_Advanced_Customisation.png"></figure><p>The highlights of this release are as follows:</p>
+<ul>
+<li><p><strong>Colour</strong> can on iOS and iPadOS with <a class="reference external" href="https://pyto.app">Pyto</a>.</p></li>
+<li><p>The import of <cite>colour</cite> is now 3.6 times faster.</p></li>
+<li><p>Typing annotations have been added and the codebase is checked with
+<a class="reference external" href="https://pypi.org/project/mypy/">Mypy</a>.</p></li>
+<li><p>The documentation has been updated and uses the
+<a class="reference external" href="https://pypi.org/project/pydata-sphinx-theme/">pydata-sphinx-theme</a>
+and has better compliance with
+<a class="reference external" href="https://www.python.org/dev/peps/pep-0257/">PEP257</a>.</p></li>
+<li><p>The code formatter is now
+<a class="reference external" href="https://pypi.org/project/black/">Black</a>.</p></li>
+<li><p>Many Python 3 features such as <em>f-Strings</em> or the <cite>dataclass</cite> decorator
+have been adopted.</p></li>
+<li><p>The plotting API has been improved to be more consistent when setting the colours of some figures, e.g. spectral or planckian locus.</p></li>
+<li>
+<p>New colour appearance models:</p>
+<ul class="simple">
+<li><p><em>Zhai and Luo (2018)</em> chromatic adaptation model.</p></li>
+<li><p><em>Kim, Weyrich and Kautz (2009)</em> colour appearance model.</p></li>
+<li><p><em>ZCAM</em> colour appearance model.</p></li>
+<li><p><em>Helmholtz-Kohlrausch</em> effect estimation.</p></li>
+</ul>
+</li>
+<li>
+<p>New colour models:</p>
+<ul class="simple">
+<li><p><em>Oklab</em> colour model.</p></li>
+<li><p><em>Hanbury (2003)</em> <em>IHLS</em> (Improved HLS) colourspace.</p></li>
+<li><p><em>DIN99b</em>, <em>DIN99c</em>, and <em>DIN99d</em> refined formulas.</p></li>
+<li><p><em>ProLab</em> colourspace.</p></li>
+<li><p><em>Sarifuddin and Missaoui (2005)</em> <em>HCL</em> colourspace.</p></li>
+</ul>
+</li>
+<li>
+<p>New RGB colourspaces and transfer functions:</p>
+<ul class="simple">
+<li><p><em>Nikon</em> <em>N-Gamut</em> colourspace and the <em>N-Log</em> log encoding.</p></li>
+<li><p><em>Blackmagic Wide Gamut</em> colourspace and the associated
+<em>Blackmagic Film Generation 5</em> OETF.</p></li>
+<li><p><em>DaVinci Intermediate</em> OETF.</p></li>
+<li><p><em>RED Log3G10</em> encoding and decoding curves with linear extension.</p></li>
+</ul>
+</li>
+<li>
+<p>Other notable features:</p>
+<ul class="simple">
+<li><p><em>R’G’B’</em> to <em>Y’CbCr</em> matrices computation.</p></li>
+<li><p>Gamut ring/section plotting.</p></li>
+<li><p><em>Rösch-MacAdam</em> colour solid hue lines.</p></li>
+<li><p><em>Huang et al. (2015)</em> power-functions.</p></li>
+<li><p><em>LUT 1D</em>, <em>LUT 3x1D</em> and <em>LUT 3D</em> inversion.</p></li>
+<li><p><em>UPRTek</em> and <em>Sekonic</em> spectral data parsers.</p></li>
+<li><p><em>SPImtx</em> LUT input and output.</p></li>
+<li><p>Support for the <a class="reference external" href="https://opencolorio.org/">OpenColorIO</a> processor.</p></li>
+</ul>
+<blockquote>
+<ul class="simple">
+<li><p>Note that the optional dependency is not specified in the
+<cite>pyproject.toml</cite>, see AcademySoftwareFoundation/OpenColorIO#1573
+for more information.</p></li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p>Thanks again to all the contributors to this release!</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/aforsythe">@aforsythe</a></p></li>
+<li><p><a class="reference external" href="https://github.com/fredsavoir">@fredsavoir</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ilia3101">@ilia3101</a></p></li>
+<li><p><a class="reference external" href="https://github.com/jedypod">@jedypod</a></p></li>
+<li><p><a class="reference external" href="https://github.com/JGoldstone">@JGoldstone</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Nick-Shaw">@Nick-Shaw</a></p></li>
+<li><p><a class="reference external" href="https://github.com/njwardhan">@njwardhan</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Paul-Sims">@Paul-Sims</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ramparvathaneni">@ramparvathaneni</a></p></li>
+<li><p><a class="reference external" href="https://github.com/romanovar">@romanovar</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Saransh">@Saransh</a></p></li>
+<li><p><a class="reference external" href="https://github.com/SGeetansh">@SGeetansh</a></p></li>
+<li><p><a class="reference external" href="https://github.com/sobotka">@sobotka</a></p></li>
+<li><p><a class="reference external" href="https://github.com/villirion">@villirion</a></p></li>
+<li><p><a class="reference external" href="https://github.com/zachlewis">@zachlewis</a></p></li>
+</ul>
+<p>Please take a look at the
+<a class="reference external" href="https://github.com/colour-science/colour/releases/tag/v0.4.0">releases</a>
+page more information.</p>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/colour/" rel="tag">colour</a></li>
+            <li><a class="tag p-category" href="../../categories/colour-science/" rel="tag">colour science</a></li>
+            <li><a class="tag p-category" href="../../categories/release/" rel="tag">release</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../the-colorchecker-considered-mostly-harmless/" rel="prev" title="The ColorChecker Considered Mostly Harmless">Previous post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+    
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="colour-science",
+            disqus_url="https://www.colour-science.org/posts/colour-040-is-available/",
+        disqus_title="Colour 0.4.0 is available!",
+        disqus_identifier="cache/posts/colour-040-is-available.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="colour-science";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content-->
+</div>
+        </div>
+    </div>
+</div>
+
+<!-- End of Main -->
+
+<!-- Footer -->
+
+<footer id="footer" class="mt-auto"><ul class="nav justify-content-center">
+<li class="nav-item mx-3">
+        <a href="mailto:colour-developers@colour-science.org">
+            <i class="fas fa-envelope text-light"></i>
+        </a>
+    </li>
+    <li class="nav-item mx-3">
+        <a href="https://github.com/colour-science/colour">
+            <i class="fab fa-github text-light"></i>
+        </a>
+    </li>
+    <li class="nav-item mx-3">
+        <a href="https://gitter.im/colour-science/colour">
+            <i class="fab fa-gitter text-light"></i>
+        </a>
+    </li>
+    <li class="nav-item mx-3">
+        <a href="https://twitter.com/colour_science">
+            <i class="fab fa-twitter text-light"></i>
+        </a>
+    </li>
+    <li class="nav-item mx-3">
+        <a href="https://www.facebook.com/python.colour.science">
+            <i class="fab fa-facebook text-light"></i>
+        </a>
+    </li>
+</ul>
+<div class="text-center text-light py-3"><span>Copyright © 2013-2022 – Colour Developers</span></div>
+
+    
+</footer><!-- End of Footer --><script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><!-- >>> Gitter --><script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'colour-science/colour'
+  };
+</script><script async src="https://sidecar.gitter.im/dist/sidecar.v1.js"></script><!-- <<< Gitter --><!-- >>> Google Analytics --><script async src="https://www.colour-science.org/assets/js/analytics.js"></script><!-- <<< Google Analytics -->
+</body>
+</html>
