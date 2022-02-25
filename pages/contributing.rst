@@ -848,9 +848,9 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
     <div id="content">
       <ul>
         <li>
-          <h3>Github</h3>
+          <h3>Github - Stage 1</h3>
           <ul>
-            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Review the <a href="https:github.com/colour-science/colour/releases">releases</a> page.</li>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Review the <a href="https://gist.github.com/KelSolaar/4a6ebe9ec3d389f0934b154fec8df51d">release notes</a>.</li>
             <li><span class="task-status todo" style="margin-right:6px">TODO</span>Check open issues on the current <a href="https:github.com/colour-science/colour/milestones">milestone</a>.</li>
           </ul>
         </li>
@@ -969,6 +969,12 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                 </li>
               </ul>
             </li>
+          </ul>
+        </li>
+        <li>
+          <h3>Github - Stage 2</h3>
+          <ul>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Publish the <a href="https:gist.github.com/KelSolaar/4a6ebe9ec3d389f0934b154fec8df51d">release notes</a> on the <a href="https:github.com/colour-science/colour/releases">releases</a> page using the new tag.</li>
           </ul>
         </li>
         <li>
