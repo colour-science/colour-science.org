@@ -7,15 +7,15 @@
 .. description:
 .. type: text
 
--   `Latest <https://colour.readthedocs.io/en/latest/manual.html>`__
--   `0.4.1 <https://colour.readthedocs.io/en/v0.4.1/manual.html>`__
--   `0.4.0 <https://colour.readthedocs.io/en/v0.4.0/manual.html>`__
--   `0.3.16 <https://colour.readthedocs.io/en/v0.3.16/manual.html>`__
--   `0.3.15 <https://colour.readthedocs.io/en/v0.3.15/manual.html>`__
--   `0.3.14 <https://colour.readthedocs.io/en/v0.3.14/manual.html>`__
--   `0.3.13 <https://colour.readthedocs.io/en/v0.3.13/manual.html>`__
--   `0.3.12 <https://colour.readthedocs.io/en/v0.3.12/manual.html>`__
--   `0.3.11 <https://colour.readthedocs.io/en/v0.3.11/manual.html>`__
+-   `Latest <https://colour.readthedocs.io/en/latest/reference.html>`__
+-   `0.4.1 <https://colour.readthedocs.io/en/v0.4.1/reference.html>`__
+-   `0.4.0 <https://colour.readthedocs.io/en/v0.4.0/reference.html>`__
+-   `0.3.16 <https://colour.readthedocs.io/en/v0.3.16/reference.html>`__
+-   `0.3.15 <https://colour.readthedocs.io/en/v0.3.15/reference.html>`__
+-   `0.3.14 <https://colour.readthedocs.io/en/v0.3.14/reference.html>`__
+-   `0.3.13 <https://colour.readthedocs.io/en/v0.3.13/reference.html>`__
+-   `0.3.12 <https://colour.readthedocs.io/en/v0.3.12/reference.html>`__
+-   `0.3.11 <https://colour.readthedocs.io/en/v0.3.11/reference.html>`__
 -   `0.3.10 <https://colour.readthedocs.io/en/v0.3.10/api.html>`__
 -   `0.3.9 <https://colour.readthedocs.io/en/v0.3.9/api.html>`__
 -   `0.3.8 <https://colour.readthedocs.io/en/v0.3.8/api.html>`__
