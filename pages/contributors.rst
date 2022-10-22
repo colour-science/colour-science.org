@@ -915,6 +915,77 @@
                 </div>
             </div>
         </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>François-Xavier Thomas</h3>
+                    <h4>
+                        <a href="https://www.dxomark.com">DXOMARK</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>Senior Image Science Engineer</em>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Support for Recommendation ITU-T H.273 / INTERNATIONAL STANDARD ISO/IEC 23091-2.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/fxthomas" class="card-link">Github</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ------------------------------------------------------------------ -->
+    <!-- ------------------------------------------------------------------ -->
+    <!-- ------------------------------------------------------------------ -->
+
+    <div class="row my-5">
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>Sabarish Srinivasan</h3>
+                    <h4>
+                        <a href="https://smallhd.com">SmallHD</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>SWE Intern</em>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Support for Recommendation ITU-R BT.2124-0.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/sabarish-srinivasan" class="card-link">Github</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>Tucker Downs</h3>
+                    <h4>
+                        <a href="https://www.roevisual.com/">ROE Visual</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>R&D Manager & Color Scientist</em>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Technical support.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/tjdcs" class="card-link">Github</a>
+                </div>
+            </div>
+        </div>
         <div class="col"></div>
     </div>
 
