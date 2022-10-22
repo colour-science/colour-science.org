@@ -12,7 +12,7 @@ packages:
 
 -   `Colour - Demosaicing </colour-demosaicing>`__ which implements various CFA
     (Colour Filter Array) demosaicing algorithms and related utilities.
--   `Colour - HDRI </colour-hdri>`__ which implements various HDRI / Radiance image
+-   `Colour - HDRI </colour-hdri>`__ which implements various HDRI
     processing algorithms.
 
 .. TEASER_END

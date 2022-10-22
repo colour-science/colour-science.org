@@ -8,7 +8,7 @@
 .. type: text
 
 **Colour - HDRI** is a `Python <https://www.python.org/>`__ package implementing
-various HDRI / Radiance image processing algorithms.
+various HDRI processing algorithms.
 
 .. image:: https://raw.githubusercontent.com/colour-science/colour-hdri/master/docs/_static/Radiance_001.png
 
@@ -17,7 +17,7 @@ Features
 
 The following features are available:
 
--   HDRI / Radiance Image Generation
+-   HDRI Generation
 -   Debevec (1997) Camera Response Function Computation
 -   Grossberg (2003) Histogram Based Image Sampling
 -   Variance Minimization Light Probe Sampling
