@@ -13,11 +13,14 @@ the following papers, publications, articles or presentations:
 - Akenine-Möller, T., Haines, E., Hoffman, N., Pesce, A., Hillaire, S., & Iwanicki, M. (2018). Real-Time Rendering, Fourth Edition. ISBN:978-1-138-62700-0
 - Arrighetti, W. (2017). The Academy Color Encoding System (ACES): A Professional Color-Management Framework for Production, Post-Production and Archival of Still and Motion Pictures. Journal of Imaging, 3(4), 40. doi:10.3390/jimaging3040040
 - Baumann, O., Okell, A., & Strom, J. (2018). Characterization of Processing Artifacts in High Dynamic Range, Wide Color Gamut Video. SMPTE Motion Imaging Journal, 127(3), 1–7. doi:10.5594/JMI.2018.2792761
+- Blair, S., & Gruev, V. (2022). Interpolant-based demosaicing routines for dual-mode visible/near-infrared imaging systems. Optics Express, 30(19), 34201. doi:10.1364/OE.458101
 - Conley, K., Moosakhani, S., Thakore, V., Ge, Y., Lehtonen, J., Karttunen, M., Hannula, S.-P., & Ala-Nissila, T. (2021). Silica-silicon composites for near-infrared reflection: A comprehensive computational and experimental study. Ceramics International, 47(12), 16833–16840. doi:10.1016/j.ceramint.2021.02.257
 - Dherse, A. P., Everaert, M. N., & Gwizdała, J. J. (2020). Scene relighting with illumination estimation in the latent space on an encoder-decoder scheme. ArXiv:2006.02333 [Cs]. Retrieved September 29, 2020, from http://arxiv.org/abs/2006.02333
 - Duiker, H.-P., Forsythe, A., Dyer, S., Houston, J., McCown, W., Feeney, R., Maltz, A., & Walker, D. (2015). ACEScg: A Common Color Encoding for Visual Effects Applications - Talk. Retrieved August 15, 2015, from http://www.slideshare.net/hpduiker/acescg-a-common-color-encoding-for-visual-effects-applications
+- Funatomi, T., Ogawa, T., Tanaka, K., Kubo, H., Caron, G., Mouaddib, E. M., Matsushita, Y., & Mukaigawa, Y. (2022). Eliminating Temporal Illumination Variations in Whisk-broom Hyperspectral Imaging. International Journal of Computer Vision, 130(5), 1310–1324. doi:10.1007/s11263-022-01587-8
 - Godfroy, M., Liotier, J., Mwalukuku, V. M., Joly, D., Huaulmé, Q., Cabau, L., Aumaitre, C., Kervella, Y., Narbey, S., Oswald, F., & others. (2020). Benzothiadiazole-based photosensitizers for efficient and stable dye-sensitized solar cells and 8.7% efficiency semi-transparent mini-modules. Sustainable Energy & Fuels.
 - Guimarães, T. L. B. (2016). Determinação da Cor do Solo Pela Carta de Munsell e por Colorimetria.
+- Guo, J., Ju, S., Lee, Y., Gunay, A. A., & Shiomi, J. (2022). Photonic design for color compatible radiative cooling accelerated by materials informatics. International Journal of Heat and Mass Transfer, 195, 123193. doi:10.1016/j.ijheatmasstransfer.2022.123193
 - Hart, E. (2016). UHD Color for Games.
 - Hoffman, N. (2015). Physics and Math of Shading.
 - Hoffman, N. (2014). Background: Physics and Math of Shading. 1–96.
@@ -35,6 +38,7 @@ the following papers, publications, articles or presentations:
 - Stoliaroff, A., Rio, J., & Latouche, C. (2019). Accurate computations to simulate the phosphorescence spectra of large transition complexes: simulated colors match experiment. New Journal of Chemistry, 43(30), 11903–11911. doi:10.1039/C9NJ02388G
 - Stratmann, L. (2017). Conceptualization and Prototypical Implementation in WebGL of an Exercise in Color Theory.
 - Tam, J. (2016). A Generative Model for Digital Camera Chemical Colorimetry.
+- Teutoburg-Weiss, S., Soldera, M., Bouchard, F., Kreß, J., Vaynzof, Y., & Lasagni, A. F. (2022). Structural colors with embedded anti-counterfeit features fabricated by laser-based methods. Optics & Laser Technology, 151, 108012. doi:10.1016/j.optlastec.2022.108012
 - Uchimura, H. (2016). Color Science for Games.
 - Uchimura, H., & Suzuki, K. (2018). Practical HDR and Wide Color Techniques in Gran Turismo SPORT. http://www.polyphony.co.jp/publications/sa2018/
 - Walker, D., Dolan, M., & Hodoul, P. (2020). The ASWF Takes OpenColorIO to the Next Level. The Digital Production Symposium, 1–10. doi:10.1145/3403736.3403942
