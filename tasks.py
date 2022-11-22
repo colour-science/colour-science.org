@@ -5,6 +5,11 @@ Invoke - Tasks
 
 from __future__ import annotations
 
+import inspect
+
+if not hasattr(inspect, "getargspec"):
+    inspect.getargspec = inspect.getfullargspec
+
 from invoke import Context, task
 
 __author__ = "Colour Developers"
@@ -14,34 +19,28 @@ __maintainer__ = "Colour Developers"
 __email__ = "colour-developers@colour-science.org"
 __status__ = "Production"
 
-__all__ = ["upgrade", "formatting", "quality", "build"]
+__all__ = ["clean", "upgrade", "formatting", "quality", "build"]
 
 
-def _patch_invoke_annotations_support():
+@task
+def clean(
+    ctx: Context,
+):
     """
-    See https://github.com/pyinvoke/invoke/issues/357
+    Clean the project.
+
+    Parameters
+    ----------
+    ctx
+        Context.
     """
 
-    import invoke
-    from unittest.mock import patch
-    from inspect import getfullargspec, ArgSpec
+    print("Cleaning project...")
 
-    def patched_inspect_getargspec(function):
-        spec = getfullargspec(function)
-        return ArgSpec(*spec[0:4])
+    patterns = ["output", ".doit.db"]
 
-    org_task_argspec = invoke.tasks.Task.argspec
-
-    def patched_task_argspec(*args, **kwargs):
-        with patch(
-            target="inspect.getargspec", new=patched_inspect_getargspec
-        ):
-            return org_task_argspec(*args, **kwargs)
-
-    invoke.tasks.Task.argspec = patched_task_argspec
-
-
-_patch_invoke_annotations_support()
+    for pattern in patterns:
+        ctx.run(f"rm -rf {pattern}")
 
 
 @task
@@ -78,7 +77,7 @@ def formatting(
     black: bool = True,
 ):
     """
-    Formats the codebase with *Black*.
+    Format the codebase with *Black*.
 
     Parameters
     ----------
@@ -96,7 +95,7 @@ def formatting(
 @task
 def quality(ctx, flake8: bool = True):
     """
-    Checks the codebase with *Flake8* and lints various *restructuredText*
+    Check the codebase with *Flake8* and lint various *restructuredText*
     files with *rst-lint*.
 
     Parameters
@@ -115,7 +114,7 @@ def quality(ctx, flake8: bool = True):
 @task(upgrade, formatting, quality)
 def build(ctx):
     """
-    Builds the project.
+    Build the project.
 
     Parameters
     ----------

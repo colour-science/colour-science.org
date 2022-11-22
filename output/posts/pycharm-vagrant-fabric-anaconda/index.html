@@ -201,15 +201,15 @@ are using <em>macOS</em>, although it should pretty much be platform agnostic.</
 <li><p>On your local filesystem, in your development workspace, create a
 directory <code>colour-science</code> and <code>cd</code> into it:</p></li>
 </ul>
-<pre class="code shell"><a id="rest_code_af28487f7f6d4af19355c8126fa0d1ec-1" name="rest_code_af28487f7f6d4af19355c8126fa0d1ec-1" href="#rest_code_af28487f7f6d4af19355c8126fa0d1ec-1"></a>$ mkdir colour-science
-<a id="rest_code_af28487f7f6d4af19355c8126fa0d1ec-2" name="rest_code_af28487f7f6d4af19355c8126fa0d1ec-2" href="#rest_code_af28487f7f6d4af19355c8126fa0d1ec-2"></a>$ <span class="nb">cd</span> colour-science
-</pre>
+<div class="code"><pre class="code shell"><a id="rest_code_d0134b9e17a641b984d30fa299538460-1" name="rest_code_d0134b9e17a641b984d30fa299538460-1" href="#rest_code_d0134b9e17a641b984d30fa299538460-1"></a>$ mkdir colour-science
+<a id="rest_code_d0134b9e17a641b984d30fa299538460-2" name="rest_code_d0134b9e17a641b984d30fa299538460-2" href="#rest_code_d0134b9e17a641b984d30fa299538460-2"></a>$ <span class="nb">cd</span> colour-science
+</pre></div>
 <ul class="simple">
 <li><p>Clone the <a class="reference external" href="https://github.com/colour-science/colour-vagrant">colour-vagrant</a>
 repository:</p></li>
 </ul>
-<pre class="code shell"><a id="rest_code_875ada7739eb40768fe5fe27258f2ebe-1" name="rest_code_875ada7739eb40768fe5fe27258f2ebe-1" href="#rest_code_875ada7739eb40768fe5fe27258f2ebe-1"></a>$ git clone git://github.com/colour-science/colour-vagrant.git
-</pre>
+<div class="code"><pre class="code shell"><a id="rest_code_7809fb7ee30b4da9889d9152160471d3-1" name="rest_code_7809fb7ee30b4da9889d9152160471d3-1" href="#rest_code_7809fb7ee30b4da9889d9152160471d3-1"></a>$ git clone git://github.com/colour-science/colour-vagrant.git
+</pre></div>
 <ul>
 <li>
 <p>You should now have a <code>colour-vagrant</code> directory nested into the
@@ -229,8 +229,8 @@ environment. Initially, I was provisioning with <a class="reference external" hr
 It was cumbersome to use, so I decided to go for <a class="reference external" href="http://www.fabfile.org/">Fabric</a>
 and the <a class="reference external" href="https://github.com/wutali/vagrant-fabric">vagrant-fabric</a>
 plugin:</p>
-<pre class="code shell"><a id="rest_code_377f994e1029463e84c2d52bc2e87563-1" name="rest_code_377f994e1029463e84c2d52bc2e87563-1" href="#rest_code_377f994e1029463e84c2d52bc2e87563-1"></a>$ pip install --user fabric
-</pre>
+<div class="code"><pre class="code shell"><a id="rest_code_4e5b447a6aaf4d5fb23de3677ad70584-1" name="rest_code_4e5b447a6aaf4d5fb23de3677ad70584-1" href="#rest_code_4e5b447a6aaf4d5fb23de3677ad70584-1"></a>$ pip install --user fabric
+</pre></div>
 </li>
 </ul>
 <div class="alert alert-dismissible alert-warning line-block">
@@ -296,14 +296,14 @@ cloned into the <code>colour-science</code> directory right next to the
 <li><p>Remote Python environments installed into the virtual machine at the
 following location with all the dependencies needed:</p></li>
 </ul>
-<pre class="code shell"><a id="rest_code_2afd35bad7aa47f796e7fed3473ad82c-1" name="rest_code_2afd35bad7aa47f796e7fed3473ad82c-1" href="#rest_code_2afd35bad7aa47f796e7fed3473ad82c-1"></a>$ <span class="nb">cd</span> /home/vagrant/miniconda/envs/
-<a id="rest_code_2afd35bad7aa47f796e7fed3473ad82c-2" name="rest_code_2afd35bad7aa47f796e7fed3473ad82c-2" href="#rest_code_2afd35bad7aa47f796e7fed3473ad82c-2"></a>$ ls -l
-<a id="rest_code_2afd35bad7aa47f796e7fed3473ad82c-3" name="rest_code_2afd35bad7aa47f796e7fed3473ad82c-3" href="#rest_code_2afd35bad7aa47f796e7fed3473ad82c-3"></a>total <span class="m">16</span>
-<a id="rest_code_2afd35bad7aa47f796e7fed3473ad82c-4" name="rest_code_2afd35bad7aa47f796e7fed3473ad82c-4" href="#rest_code_2afd35bad7aa47f796e7fed3473ad82c-4"></a>drwxrwxr-x  <span class="m">4</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:12 ./
-<a id="rest_code_2afd35bad7aa47f796e7fed3473ad82c-5" name="rest_code_2afd35bad7aa47f796e7fed3473ad82c-5" href="#rest_code_2afd35bad7aa47f796e7fed3473ad82c-5"></a>drwxrwxr-x <span class="m">13</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:02 ../
-<a id="rest_code_2afd35bad7aa47f796e7fed3473ad82c-6" name="rest_code_2afd35bad7aa47f796e7fed3473ad82c-6" href="#rest_code_2afd35bad7aa47f796e7fed3473ad82c-6"></a>drwxrwxr-x <span class="m">20</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:09 python2.7/
-<a id="rest_code_2afd35bad7aa47f796e7fed3473ad82c-7" name="rest_code_2afd35bad7aa47f796e7fed3473ad82c-7" href="#rest_code_2afd35bad7aa47f796e7fed3473ad82c-7"></a>drwxrwxr-x <span class="m">20</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:30 python3.5/
-</pre>
+<div class="code"><pre class="code shell"><a id="rest_code_f2bcc6c51aa34538992c288d3b078c99-1" name="rest_code_f2bcc6c51aa34538992c288d3b078c99-1" href="#rest_code_f2bcc6c51aa34538992c288d3b078c99-1"></a>$ <span class="nb">cd</span> /home/vagrant/miniconda/envs/
+<a id="rest_code_f2bcc6c51aa34538992c288d3b078c99-2" name="rest_code_f2bcc6c51aa34538992c288d3b078c99-2" href="#rest_code_f2bcc6c51aa34538992c288d3b078c99-2"></a>$ ls -l
+<a id="rest_code_f2bcc6c51aa34538992c288d3b078c99-3" name="rest_code_f2bcc6c51aa34538992c288d3b078c99-3" href="#rest_code_f2bcc6c51aa34538992c288d3b078c99-3"></a>total <span class="m">16</span>
+<a id="rest_code_f2bcc6c51aa34538992c288d3b078c99-4" name="rest_code_f2bcc6c51aa34538992c288d3b078c99-4" href="#rest_code_f2bcc6c51aa34538992c288d3b078c99-4"></a>drwxrwxr-x  <span class="m">4</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:12 ./
+<a id="rest_code_f2bcc6c51aa34538992c288d3b078c99-5" name="rest_code_f2bcc6c51aa34538992c288d3b078c99-5" href="#rest_code_f2bcc6c51aa34538992c288d3b078c99-5"></a>drwxrwxr-x <span class="m">13</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:02 ../
+<a id="rest_code_f2bcc6c51aa34538992c288d3b078c99-6" name="rest_code_f2bcc6c51aa34538992c288d3b078c99-6" href="#rest_code_f2bcc6c51aa34538992c288d3b078c99-6"></a>drwxrwxr-x <span class="m">20</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:09 python2.7/
+<a id="rest_code_f2bcc6c51aa34538992c288d3b078c99-7" name="rest_code_f2bcc6c51aa34538992c288d3b078c99-7" href="#rest_code_f2bcc6c51aa34538992c288d3b078c99-7"></a>drwxrwxr-x <span class="m">20</span> vagrant vagrant <span class="m">4096</span> Apr <span class="m">29</span> <span class="m">03</span>:30 python3.5/
+</pre></div>
 <ul class="simple">
 <li><p>The <strong>colour-science.org</strong> website served from the virtual machine at
 the following address: <a class="reference external" href="http://localhost:8080/">http://localhost:8080/</a></p></li>
@@ -332,29 +332,31 @@ are as follows:</p>
 <code>PyCharm --&gt; Tools Start SSH session...</code> menu item.</p>
 <p>However if you want to be able to export the display and see the figures you
 will have to manually <code>ssh</code> into the virtual machine:</p>
-<pre class="code shell"><a id="rest_code_9077fcc47e7e40fe967be10df791a251-1" name="rest_code_9077fcc47e7e40fe967be10df791a251-1" href="#rest_code_9077fcc47e7e40fe967be10df791a251-1"></a>$ ssh -X vagrant@192.168.32.64
-</pre>
+<div class="code"><pre class="code shell"><a id="rest_code_76e9428211004e158b7e9e1217e99322-1" name="rest_code_76e9428211004e158b7e9e1217e99322-1" href="#rest_code_76e9428211004e158b7e9e1217e99322-1"></a>$ ssh -X vagrant@192.168.32.64
+</pre></div>
 <p>Password is <code>vagrant</code>.</p>
 <p>You will also need to add the virtual machine to the X11 hosts by issuing the
 following command on the <em>macOS</em> host:</p>
-<pre class="code shell"><a id="rest_code_f21ae997d12f41f593ad3e159ee1e520-1" name="rest_code_f21ae997d12f41f593ad3e159ee1e520-1" href="#rest_code_f21ae997d12f41f593ad3e159ee1e520-1"></a>$ xhost + <span class="m">192</span>.168.32.64
-</pre></section><section id="jupyter-notebooks"><h3>Jupyter Notebooks</h3>
+<div class="code"><pre class="code shell"><a id="rest_code_c62a9585c4cf4df59f1d633ee39fec25-1" name="rest_code_c62a9585c4cf4df59f1d633ee39fec25-1" href="#rest_code_c62a9585c4cf4df59f1d633ee39fec25-1"></a>$ xhost + <span class="m">192</span>.168.32.64
+</pre></div>
+</section><section id="jupyter-notebooks"><h3>Jupyter Notebooks</h3>
 <p>The <a class="reference external" href="http://ipython.org/notebook.html">Jupyter Notebooks</a> server is started
 as follows:</p>
-<pre class="code shell"><a id="rest_code_126e55ab522748eea742b6388b77089c-1" name="rest_code_126e55ab522748eea742b6388b77089c-1" href="#rest_code_126e55ab522748eea742b6388b77089c-1"></a>$ <span class="nb">cd</span> /colour-science
-<a id="rest_code_126e55ab522748eea742b6388b77089c-2" name="rest_code_126e55ab522748eea742b6388b77089c-2" href="#rest_code_126e55ab522748eea742b6388b77089c-2"></a>$ ipython notebook --pylab<span class="o">=</span>inline --ip<span class="o">=</span><span class="m">0</span>.0.0.0
-</pre>
+<div class="code"><pre class="code shell"><a id="rest_code_e4c127e766114be59514e10507ce70be-1" name="rest_code_e4c127e766114be59514e10507ce70be-1" href="#rest_code_e4c127e766114be59514e10507ce70be-1"></a>$ <span class="nb">cd</span> /colour-science
+<a id="rest_code_e4c127e766114be59514e10507ce70be-2" name="rest_code_e4c127e766114be59514e10507ce70be-2" href="#rest_code_e4c127e766114be59514e10507ce70be-2"></a>$ ipython notebook --pylab<span class="o">=</span>inline --ip<span class="o">=</span><span class="m">0</span>.0.0.0
+</pre></div>
 <p>Then you can access it on the <em>macOS</em> host at the following url:
 <a class="reference external" href="http://localhost:8888/">http://localhost:8888/</a></p>
 </section><section id="remote-python-environments-interpreters"><h3>Remote Python Environments &amp; Interpreters</h3>
 <p>You can activate the remote Python environments in the virtual machine by
 issuing those commands:</p>
 <p>For <strong>python2.7</strong>:</p>
-<pre class="code shell"><a id="rest_code_e32ceba5bdbe4c40bdc2428796fbe5d6-1" name="rest_code_e32ceba5bdbe4c40bdc2428796fbe5d6-1" href="#rest_code_e32ceba5bdbe4c40bdc2428796fbe5d6-1"></a>$ <span class="nb">source</span> activate python2.7
-</pre>
+<div class="code"><pre class="code shell"><a id="rest_code_2c22a810200243a89b71502ed10be766-1" name="rest_code_2c22a810200243a89b71502ed10be766-1" href="#rest_code_2c22a810200243a89b71502ed10be766-1"></a>$ <span class="nb">source</span> activate python2.7
+</pre></div>
 <p>For <strong>python3.5</strong>:</p>
-<pre class="code shell"><a id="rest_code_da1fd41929804572a8d6d93c984ddb0b-1" name="rest_code_da1fd41929804572a8d6d93c984ddb0b-1" href="#rest_code_da1fd41929804572a8d6d93c984ddb0b-1"></a>$ <span class="nb">source</span> activate python3.5
-</pre></section></section>
+<div class="code"><pre class="code shell"><a id="rest_code_814d97d5ec3e4894a780f393c4cd2a6f-1" name="rest_code_814d97d5ec3e4894a780f393c4cd2a6f-1" href="#rest_code_814d97d5ec3e4894a780f393c4cd2a6f-1"></a>$ <span class="nb">source</span> activate python3.5
+</pre></div>
+</section></section>
 </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../categories/anaconda/" rel="tag">anaconda</a></li>

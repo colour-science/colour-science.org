@@ -199,9 +199,9 @@ guides.</p>
 <p><em>Colour</em> now implements an automatic colour conversion graph based on
 <a class="reference external" href="https://networkx.github.io">NetworkX</a> and enabling easier colour
 conversions:</p>
-<pre class="code python"><a id="rest_code_a3030e6950914f449e98a4fd163667b6-1" name="rest_code_a3030e6950914f449e98a4fd163667b6-1" href="#rest_code_a3030e6950914f449e98a4fd163667b6-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">sd</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">COLOURCHECKERS_SDS</span><span class="p">[</span><span class="s1">'ColorChecker N Ohta'</span><span class="p">][</span><span class="s1">'dark skin'</span><span class="p">]</span>
-<a id="rest_code_a3030e6950914f449e98a4fd163667b6-2" name="rest_code_a3030e6950914f449e98a4fd163667b6-2" href="#rest_code_a3030e6950914f449e98a4fd163667b6-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">convert</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="s1">'Spectral Distribution'</span><span class="p">,</span> <span class="s1">'sRGB'</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="p">{</span><span class="s1">'mode'</span><span class="p">:</span> <span class="s1">'Short'</span><span class="p">})</span>
-</pre>
+<div class="code"><pre class="code python"><a id="rest_code_69221655fdf040b783ae5df544b36235-1" name="rest_code_69221655fdf040b783ae5df544b36235-1" href="#rest_code_69221655fdf040b783ae5df544b36235-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">sd</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">COLOURCHECKERS_SDS</span><span class="p">[</span><span class="s1">'ColorChecker N Ohta'</span><span class="p">][</span><span class="s1">'dark skin'</span><span class="p">]</span>
+<a id="rest_code_69221655fdf040b783ae5df544b36235-2" name="rest_code_69221655fdf040b783ae5df544b36235-2" href="#rest_code_69221655fdf040b783ae5df544b36235-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">convert</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="s1">'Spectral Distribution'</span><span class="p">,</span> <span class="s1">'sRGB'</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="p">{</span><span class="s1">'mode'</span><span class="p">:</span> <span class="s1">'Short'</span><span class="p">})</span>
+</pre></div>
 <pre class="literal-block">===============================================================================
 *                                                                             *
 *   [ Conversion Path ]                                                       *
@@ -215,8 +215,8 @@ array([ 0.45675795,  0.30986982,  0.24861924])</pre>
 writing images, it will be used if <a class="reference external" href="https://github.com/OpenImageIO/oiio">OpenImageIO</a>
 is not available. If you wish to read <em>OpenEXR</em> files or develop <em>Colour</em>, you
 will need to install the FreeImage plugin as follows:</p>
-<pre class="code shell"><a id="rest_code_de7cce7dd4d64cf29296e8531edc6b25-1" name="rest_code_de7cce7dd4d64cf29296e8531edc6b25-1" href="#rest_code_de7cce7dd4d64cf29296e8531edc6b25-1"></a>$ python -c <span class="s2">"import imageio;imageio.plugins.freeimage.download()"</span>
-</pre>
+<div class="code"><pre class="code shell"><a id="rest_code_2349a30c9c34470bbe47a3bc83836432-1" name="rest_code_2349a30c9c34470bbe47a3bc83836432-1" href="#rest_code_2349a30c9c34470bbe47a3bc83836432-1"></a>$ python -c <span class="s2">"import imageio;imageio.plugins.freeimage.download()"</span>
+</pre></div>
 <p>Support for <a class="reference external" href="https://github.com/OpenImageIO/oiio/releases/tag/Release-2.0.3">OpenImageIO 2.x</a>
 has also been implemented.</p>
 </section><section id="name-and-signature-changes"><h3>Name and Signature Changes</h3>
@@ -253,9 +253,9 @@ science datasets management.</p>
 <a class="reference external" href="https://zenodo.org/">Zenodo</a> under the
 <a class="reference external" href="https://zenodo.org/communities/colour-science-datasets/">Colour Science - Datasets</a>
 community:</p>
-<pre class="code python"><a id="rest_code_43c9075a7d924a538e224b8b64b8f36f-1" name="rest_code_43c9075a7d924a538e224b8b64b8f36f-1" href="#rest_code_43c9075a7d924a538e224b8b64b8f36f-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_datasets</span>
-<a id="rest_code_43c9075a7d924a538e224b8b64b8f36f-2" name="rest_code_43c9075a7d924a538e224b8b64b8f36f-2" href="#rest_code_43c9075a7d924a538e224b8b64b8f36f-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">colour_datasets</span><span class="o">.</span><span class="n">datasets</span><span class="p">())</span>
-</pre>
+<div class="code"><pre class="code python"><a id="rest_code_96c1c712b0924b59b928188d42864a27-1" name="rest_code_96c1c712b0924b59b928188d42864a27-1" href="#rest_code_96c1c712b0924b59b928188d42864a27-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">colour_datasets</span>
+<a id="rest_code_96c1c712b0924b59b928188d42864a27-2" name="rest_code_96c1c712b0924b59b928188d42864a27-2" href="#rest_code_96c1c712b0924b59b928188d42864a27-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">colour_datasets</span><span class="o">.</span><span class="n">datasets</span><span class="p">())</span>
+</pre></div>
 <pre class="literal-block">colour-science-datasets
 =======================
 

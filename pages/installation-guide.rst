@@ -46,6 +46,7 @@ Development Dependencies
 
 -   `biblib-simple <https://pypi.org/project/biblib-simple/>`__
 -   `black <https://pypi.org/project/black/>`__
+-   `blackdoc <https://pypi.org/project/blackdoc/>`__
 -   `coverage <https://pypi.org/project/coverage/>`__
 -   `coveralls <https://pypi.org/project/coveralls/>`__
 -   `flake8 <https://pypi.org/project/flake8/>`__

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Colour Science (Posts about RGB colourspace)</title><link>https://www.colour-science.org/</link><description></description><atom:link href="https://www.colour-science.org/categories/rgb-colourspace.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2022 &lt;a href="mailto:colour-developers@colour-science.org"&gt;Colour Developers&lt;/a&gt; </copyright><lastBuildDate>Sun, 06 Feb 2022 05:48:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The Importance of Terminology and sRGB Uncertainty</title><link>https://www.colour-science.org/posts/the-importance-of-terminology-and-srgb-uncertainty/</link><dc:creator>Colour Developers</dc:creator><description>&lt;div&gt;&lt;p&gt;We were meant to write that entry since a while, and a
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Colour Science (Posts about RGB colourspace)</title><link>https://www.colour-science.org/</link><description></description><atom:link href="https://www.colour-science.org/categories/rgb-colourspace.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2022 &lt;a href="mailto:colour-developers@colour-science.org"&gt;Colour Developers&lt;/a&gt; </copyright><lastBuildDate>Tue, 22 Nov 2022 07:55:13 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The Importance of Terminology and sRGB Uncertainty</title><link>https://www.colour-science.org/posts/the-importance-of-terminology-and-srgb-uncertainty/</link><dc:creator>Colour Developers</dc:creator><description>&lt;div&gt;&lt;p&gt;We were meant to write that entry since a while, and a
 &lt;a class="reference external" href="https://gamedevdaily.io/the-srgb-learning-curve-773b7f68cf7a#"&gt;great post&lt;/a&gt; by
 &lt;a class="reference external" href="https://twitter.com/tom_forsyth"&gt;Tom Forsyth&lt;/a&gt; from
 &lt;a class="reference external" href="https://www.oculus.com/en-us/"&gt;Oculus VR&lt;/a&gt; triggered us in doing so.&lt;/p&gt;
@@ -36,7 +36,8 @@
 &lt;p&gt;The purpose of this document is to compare &lt;em&gt;RGB&lt;/em&gt; colourspaces operations performance against spectral reference.&lt;/p&gt;
 &lt;p&gt;In a &lt;em&gt;RGB&lt;/em&gt; colourspace, the basis vectors are defined by the primaries. Mathematical operations are dependent on the chosen basis vectors. As an example, a triplet of &lt;em&gt;tristimulus values&lt;/em&gt;, converted to three different &lt;em&gt;RGB&lt;/em&gt; colourspaces value, subsequently &lt;em&gt;exponentiated&lt;/em&gt;, and converted back to &lt;em&gt;CIE XYZ&lt;/em&gt; colourpace will produce different &lt;em&gt;tristimulus values&lt;/em&gt; triplets, one for each of the three &lt;em&gt;RGB&lt;/em&gt; colourspaces. In this context, the result of the &lt;em&gt;multiplication&lt;/em&gt;, &lt;em&gt;division&lt;/em&gt; and &lt;em&gt;power&lt;/em&gt; operations is dependent on the &lt;em&gt;RGB&lt;/em&gt; colourspace primaries, producing three different final &lt;em&gt;tristimulus values&lt;/em&gt; while &lt;em&gt;addition&lt;/em&gt; and &lt;em&gt;subtraction&lt;/em&gt; operations would produce three equal &lt;em&gt;tristimulus values&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;The &lt;em&gt;rgb_colourspace_primaries_dependency&lt;/em&gt; definition below demonstrates this behaviour: Two colours are selected from the colour rendition chart, they are then used as operands for different operations happening respectively in &lt;em&gt;sRGB&lt;/em&gt; and &lt;em&gt;Rec. 2020&lt;/em&gt; colourspaces. The two resulting colours are then converted back to &lt;em&gt;CIE XYZ&lt;/em&gt; colourspace and compared.&lt;/p&gt;
-&lt;blockquote&gt;&lt;p&gt;Note: A companion spreadsheet is available at the following url: &lt;a href="http://goo.gl/akrH5m"&gt;http://goo.gl/akrH5m&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note: A companion spreadsheet is available at the following url: &lt;a href="http://goo.gl/akrH5m"&gt;http://goo.gl/akrH5m&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;/div&gt;
@@ -83,9 +84,10 @@
 &lt;p&gt;He was describing issues while rendering in ACES RGB colourspace where the rendering equation could generate some very saturated colours, colour clipping and loss of details. Since we have started this notebook, Steve has written a post illustrating those issues, I suggest that you take a look at his &lt;a href="http://nbviewer.jupyter.org/gist/sagland/3c791e79353673fd24fa"&gt;notebook&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;As we were discussing, &lt;a href="http://mentalraytips.blogspot.fr/"&gt;Zap 'Master' Anderson&lt;/a&gt; pointed that he was assuming primaries wouldn't matter but that it was wrong.&lt;/p&gt;
 &lt;p&gt;The &lt;a href="https://groups.google.com/d/msg/academyaces/9b4VuqPcOHQ/Hg8c9V6flOYJ"&gt;TL;DR; version&lt;/a&gt; of &lt;em&gt;Rick Sayre&lt;/em&gt; from &lt;a href="http://www.pixar.com/"&gt;Pixar&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;&lt;p&gt;The RGB basis vectors typically become non-orthogonal when transformed to XYZ, and definitely so in this case. 
-Thus there should be no surprise that component-wise multiply does not yield a proper transform between two non-orthogonal spaces.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The RGB basis vectors typically become non-orthogonal when transformed to XYZ, and definitely so in this case.&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;p&gt;Thus there should be no surprise that component-wise multiply does not yield a proper transform between two non-orthogonal spaces.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1153,7 +1155,8 @@ B_1
 \end{vmatrix}
 \end{equation}
 $$&lt;p&gt;where $\textbf{M}_{RGB_2}$ is the $3x3$ matrix transforming from &lt;em&gt;CIE XYZ&lt;/em&gt; colourspace to $RGB_2$ colourspace and $\textbf{M}_{XYZ_1}$ is the $3x3$ matrix transforming from $RGB_1$ colourspace to &lt;em&gt;CIE XYZ&lt;/em&gt; colourspace.&lt;/p&gt;
-&lt;blockquote&gt;&lt;p&gt;Note: We have discounted chromatic adaptation to makes things easier.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note: We have discounted chromatic adaptation to makes things easier.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Here are such $\textbf{M}_{XYZ_1}$ matrices for respectively &lt;em&gt;sRGB&lt;/em&gt; and &lt;em&gt;ACES RGB&lt;/em&gt; colourspaces:&lt;/p&gt;
 $$
