@@ -23,10 +23,10 @@
                 <div class="card-header text-center">
                     <h3>Thomas Mansencal</h3>
                     <h4>
-                        <a href="http://wetafx.co.nz">WetaFX</a>
+                        <a href="http://wetafx.co.nz">Wētā FX</a>
                     </h4>
                     <h5 class="card-subtitle text-muted mt-3">
-                        <em>Lead Pipeline Developer</em>
+                        <em>Technology Supervisor</em>
                     </h5>
                 </div>
                 <div class="card-body">
@@ -1188,10 +1188,10 @@
                 <div class="card-header text-center">
                     <h3>Aurélia Sellier</h3>
                     <h4>
-                        <a href="http://wetafx.co.nz">WetaFX</a>
+                        <a href="http://wetafx.co.nz">Wētā FX</a>
                     </h4>
                     <h5 class="card-subtitle text-muted mt-3">
-                        <em>FX Production Coordinator</em>
+                        <em>Production Manager</em>
                     </h5>
                 </div>
                 <div class="card-body">

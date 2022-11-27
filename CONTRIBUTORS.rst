@@ -4,7 +4,7 @@ Contributors
 colour-science.org
 ------------------
 
--   **Thomas Mansencal**, *Lead Pipeline Developer @ WetaFX*
+-   **Thomas Mansencal**, *Technology Supervisor @ Wētā FX*
 
     Project coordination, website.
 
