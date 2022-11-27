@@ -1259,12 +1259,14 @@
                             <li><a href="https://github.com/chesschi">@chesschi</a></li>
                             <li><a href="https://github.com/ChunHsinWang">@ChunHsinWang</a></li>
                             <li><a href="https://github.com/codycuellar">@codycuellar</a></li>
+                            <li><a href="https://github.com/cuixiaofei">@cuixiaofei</a></li>
                             <li><a href="https://github.com/daviesj">@daviesj</a></li>
                             <li><a href="https://github.com/dfoxfranke">@dfoxfranke</a></li>
                             <li><a href="https://github.com/digital-prepress">@digital-prepress</a></li>
                             <li><a href="https://github.com/diuming">@diuming</a></li>
                             <li><a href="https://github.com/dtbulmerJRs">@dtbulmerJRs</a></li>
                             <li><a href="https://github.com/Edwardlin-zlt">@Edwardlin-zlt</a></li>
+                            <li><a href="https://github.com/ema2159">@ema2159</a></li>
                             <li><a href="https://github.com/ems1111">@ems1111</a></li>
                             <li><a href="https://github.com/eyeforcolor">@eyeforcolor</a></li>
                             <li><a href="https://github.com/fangjy88">@fangjy88</a></li>
@@ -1293,9 +1295,11 @@
                             <li><a href="https://github.com/iinnovations">@iinnovations</a></li>
                             <li><a href="https://github.com/jaguarondi">@jaguarondi</a></li>
                             <li><a href="https://github.com/JarrettR">@JarrettR</a></li>
+                            <li><a href="https://github.com/JayPalm">@JayPalm</a></li>
                             <li><a href="https://github.com/Jerry2001">@Jerry2001</a></li>
                             <li><a href="https://github.com/JopdeBoo">@JopdeBoo</a></li>
                             <li><a href="https://github.com/JoshuaEbenezer">@JoshuaEbenezer</a></li>
+                            <li><a href="https://github.com/kaihagseth">@kaihagseth</a></li>
                             <li><a href="https://github.com/kljumat">@kljumat</a></li>
                             <li><a href="https://github.com/KOLANICH">@KOLANICH</a></li>
                             <li><a href="https://github.com/KrisKennaway">@KrisKennaway</a></li>
@@ -1343,6 +1347,7 @@
                             <li><a href="https://github.com/pfk-beta">@pfk-beta</a></li>
                             <li><a href="https://github.com/pjaesung2">@pjaesung2</a></li>
                             <li><a href="https://github.com/priikone">@priikone</a></li>
+                            <li><a href="https://github.com/qiuboujun">@qiuboujun</a></li>
                             <li><a href="https://github.com/Queuecumber">@Queuecumber</a></li>
                             <li><a href="https://github.com/ramparvathaneni">@ramparvathaneni</a></li>
                             <li><a href="https://github.com/richardstardust">@richardstardust</a></li>
