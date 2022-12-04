@@ -23,9 +23,8 @@ models have been added. Various performance improvements have been implemented.
 We would like to especially thanks Tucker Downs (`@tjdcs <https://github.com/tjdcs>`__)
 for his recent contributions.
 
-With this release, the minimum Python version is `3.9
-3.8 <https://www.python.org/downloads/release/python-390/>`__ and the following
-scientific packages minimum versions are required:
+With this release, the minimum Python version is `3.9 <https://www.python.org/downloads/release/python-390/>`__
+and the following scientific packages minimum versions are required:
 
 -   `numpy >= 1.20, < 2 <https://pypi.org/project/numpy/>`__
 -   `scipy >= 1.7, < 2 <https://pypi.org/project/scipy/>`__
