@@ -77,8 +77,8 @@ conversions:
 
 .. code-block:: python
 
-    >>> sd = colour.COLOURCHECKERS_SDS['ColorChecker N Ohta']['dark skin']
-    >>> convert(sd, 'Spectral Distribution', 'sRGB', verbose={'mode': 'Short'})
+    >>> sd = colour.COLOURCHECKERS_SDS["ColorChecker N Ohta"]["dark skin"]
+    >>> convert(sd, "Spectral Distribution", "sRGB", verbose={"mode": "Short"})
 
 ::
 
@@ -91,7 +91,7 @@ conversions:
     ===============================================================================
     array([ 0.45675795,  0.30986982,  0.24861924])
 
-.. image:: https://colour.readthedocs.io/en/develop/_static/Examples_Colour_Automatic_Conversion_Graph.png
+.. image:: https://colour.readthedocs.io/en/develop/_static/Examples_Colour_Automatic_Conversion_Graph.svg
 
 Image Input and Output
 ======================

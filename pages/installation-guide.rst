@@ -22,22 +22,21 @@ and `Installation Methods for Developing Colour`_ sections below.
 Primary Dependencies
 ^^^^^^^^^^^^^^^^^^^^
 
--   `python >= 3.8, < 3.11 <https://www.python.org/download/releases/>`__
+-   `python >= 3.9, < 3.12 <https://www.python.org/download/releases/>`__
 -   `imageio >= 2, < 3 <https://imageio.github.io/>`__
--   `numpy >= 1.19, < 2 <https://pypi.org/project/numpy/>`__
--   `scipy >= 1.5, < 2 <https://pypi.org/project/scipy/>`__
+-   `numpy >= 1.20, < 2 <https://pypi.org/project/numpy/>`__
+-   `scipy >= 1.7, < 2 <https://pypi.org/project/scipy/>`__
 
 Optional, Meshing and Plotting Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -   `graphviz >= 2, < 3 <https://www.graphviz.org/>`__
--   `matplotlib >= 3.2, != 3.5.0, != 3.5.1 <https://pypi.org/project/matplotlib/>`__
--   `networkx >= 2, < 3 <https://pypi.org/project/networkx/>`__
+-   `matplotlib >= 3.4, != 3.5.0, != 3.5.1 <https://pypi.org/project/matplotlib/>`__
+-   `networkx >= 2.6, < 3 <https://pypi.org/project/networkx/>`__
 -   `opencolorio >= 2, < 3 <https://pypi.org/project/opencolorio/>`__
 -   `openimageio >= 2, < 3 <https://github.com/OpenImageIO/oiio>`__
--   `pandas >= 1, < 2 <https://pypi.org/project/pandas/>`__
+-   `pandas >= 1.3, < 2 <https://pypi.org/project/pandas/>`__
 -   `pygraphviz >= 1, < 2 <https://pypi.org/project/pygraphviz/>`__
--   `scikit-learn >= 1, < 2 <https://pypi.org/project/scikit-learn/>`__
 -   `tqdm >= 4, < 5 <https://pypi.org/project/tqdm/>`__
 -   `trimesh >= 3, < 4 <https://pypi.org/project/tqdm/>`__
 

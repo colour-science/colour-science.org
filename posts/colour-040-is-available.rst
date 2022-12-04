@@ -18,7 +18,7 @@ This release integrates most of the
 work from Cédric (`@villirion <https://github.com/villirion>`__), all the code
 from Geetansh (`@SGeetansh <https://github.com/SGeetansh>`__) and the remaining
 `GSoC 2020 <https://github.com/colour-science/GSoC/blob/master/2020/GSoC-2020-Project-Ideas.md>`__
-code from Nishant (`@SGeetansh <https://github.com/@njwardhan>`__). We would
+code from Nishant (`@SGeetansh <https://github.com/njwardhan>`__). We would
 like to thank them again for their excellent contributions!
 
 We are finally dropping `Python 2.7 <https://www.python.org/downloads/release/python-270/>`__
