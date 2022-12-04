@@ -26,8 +26,8 @@ for his recent contributions.
 With this release, the minimum Python version is `3.9 <https://www.python.org/downloads/release/python-390/>`__
 and the following scientific packages minimum versions are required:
 
--   `numpy >= 1.20, < 2 <https://pypi.org/project/numpy/>`__
--   `scipy >= 1.7, < 2 <https://pypi.org/project/scipy/>`__
+-   `numpy >= 1.20 <https://pypi.org/project/numpy/>`__
+-   `scipy >= 1.7 <https://pypi.org/project/scipy/>`__
 -   `matplotlib >= 3.4 <https://pypi.org/project/matplotlib/>`__
 -   `networkx >= 2.6 <https://pypi.org/project/networkx/>`__
 -   `pandas >= 1.3 <https://pypi.org/project/pandas/>`__
