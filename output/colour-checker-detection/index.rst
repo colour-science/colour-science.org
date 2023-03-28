@@ -22,8 +22,8 @@ The following colour checker detection algorithms are implemented:
 API
 ^^^
 
-The main reference for `Colour - Checker Detection <https://github.com/colour-science/colour-checker-detection>`__
-is the `Colour - Checker Detection Manual <https://colour-checker-detection.readthedocs.io/en/latest/manual.html>`__.
+The main technical reference for `Colour - Checker Detection <https://github.com/colour-science/colour-checker-detection>`__
+is the `API Reference <https://colour-checker-detection.readthedocs.io/en/latest/reference.html>`__.
 
 Examples
 ^^^^^^^^

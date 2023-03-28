@@ -37,7 +37,7 @@ API
 ^^^
 
 The main technical reference for **Colour** and its API is the
-`Colour API Reference <https://colour.readthedocs.io/en/latest/reference.html>`__.
+`API Reference <https://colour.readthedocs.io/en/latest/reference.html>`__.
 
 Examples
 ^^^^^^^^

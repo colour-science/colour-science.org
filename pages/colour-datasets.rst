@@ -52,8 +52,8 @@ community:
 API
 ^^^
 
-The main reference for `Colour - Datasets <https://github.com/colour-science/colour-datasets>`__
-is the `Colour - Datasets Manual <https://colour-datasets.readthedocs.io/en/latest/manual.html>`__.
+The main technical reference for `Colour - Datasets <https://github.com/colour-science/colour-datasets>`__
+is the `API Reference <https://colour-datasets.readthedocs.io/en/latest/reference.html>`__.
 
 Examples
 ^^^^^^^^

@@ -30,8 +30,8 @@ The following features are available:
 API
 ^^^
 
-The main reference for `Colour - HDRI <https://github.com/colour-science/colour-hdri>`__
-is the `Colour - HDRI Manual <https://colour-hdri.readthedocs.io/en/latest/manual.html>`__.
+The main technical reference for `Colour - HDRI <https://github.com/colour-science/colour-hdri>`__
+is the `API Reference <https://colour-hdri.readthedocs.io/en/latest/reference.html>`__.
 
 Examples
 ^^^^^^^^

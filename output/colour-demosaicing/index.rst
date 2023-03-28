@@ -25,8 +25,8 @@ The following CFA (Colour Filter Array) demosaicing algorithms are implemented:
 API
 ^^^
 
-The main reference for `Colour - Demosaicing <https://github.com/colour-science/colour-demosaicing>`__
-is the `Colour - Demosaicing Manual <https://colour-demosaicing.readthedocs.io/en/latest/manual.html>`__.
+The main technical reference for `Colour - Demosaicing <https://github.com/colour-science/colour-demosaicing>`__
+is the `API Reference <https://colour-demosaicing.readthedocs.io/en/latest/reference.html>`__.
 
 Examples
 ^^^^^^^^
