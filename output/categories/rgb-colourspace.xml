@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Colour Science (Posts about RGB colourspace)</title><link>https://www.colour-science.org/</link><description></description><atom:link href="https://www.colour-science.org/categories/rgb-colourspace.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2022 &lt;a href="mailto:colour-developers@colour-science.org"&gt;Colour Developers&lt;/a&gt; </copyright><lastBuildDate>Tue, 22 Nov 2022 07:55:13 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The Importance of Terminology and sRGB Uncertainty</title><link>https://www.colour-science.org/posts/the-importance-of-terminology-and-srgb-uncertainty/</link><dc:creator>Colour Developers</dc:creator><description>&lt;div&gt;&lt;p&gt;We were meant to write that entry since a while, and a
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Colour Science (Posts about RGB colourspace)</title><link>https://www.colour-science.org/</link><description></description><atom:link href="https://www.colour-science.org/categories/rgb-colourspace.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2023 &lt;a href="mailto:colour-developers@colour-science.org"&gt;Colour Developers&lt;/a&gt; </copyright><lastBuildDate>Fri, 07 Jul 2023 09:03:21 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The Importance of Terminology and sRGB Uncertainty</title><link>https://www.colour-science.org/posts/the-importance-of-terminology-and-srgb-uncertainty/</link><dc:creator>Colour Developers</dc:creator><description>&lt;div&gt;&lt;p&gt;We were meant to write that entry since a while, and a
 &lt;a class="reference external" href="https://gamedevdaily.io/the-srgb-learning-curve-773b7f68cf7a#"&gt;great post&lt;/a&gt; by
 &lt;a class="reference external" href="https://twitter.com/tom_forsyth"&gt;Tom Forsyth&lt;/a&gt; from
 &lt;a class="reference external" href="https://www.oculus.com/en-us/"&gt;Oculus VR&lt;/a&gt; triggered us in doing so.&lt;/p&gt;
@@ -85,9 +85,9 @@
 &lt;p&gt;As we were discussing, &lt;a href="http://mentalraytips.blogspot.fr/"&gt;Zap 'Master' Anderson&lt;/a&gt; pointed that he was assuming primaries wouldn't matter but that it was wrong.&lt;/p&gt;
 &lt;p&gt;The &lt;a href="https://groups.google.com/d/msg/academyaces/9b4VuqPcOHQ/Hg8c9V6flOYJ"&gt;TL;DR; version&lt;/a&gt; of &lt;em&gt;Rick Sayre&lt;/em&gt; from &lt;a href="http://www.pixar.com/"&gt;Pixar&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;The RGB basis vectors typically become non-orthogonal when transformed to XYZ, and definitely so in this case.&lt;/p&gt;
+&lt;p&gt;The RGB basis vectors typically become non-orthogonal when transformed to XYZ, and definitely so in this case.
+Thus there should be no surprise that component-wise multiply does not yield a proper transform between two non-orthogonal spaces.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Thus there should be no surprise that component-wise multiply does not yield a proper transform between two non-orthogonal spaces.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -347,15 +347,16 @@
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;We multiply &lt;em&gt;dark skin&lt;/em&gt; colour by &lt;em&gt;green&lt;/em&gt; $n$ times and scale the result to obtain displayable values:&lt;/p&gt;
-$$
+&lt;p&gt;$$
 \begin{equation}
 \begin{aligned}
 sRGB_m&amp;amp;= sRGB_{r1}\cdot sRGB_{r2}\cdot sRGB_{r2}\cdot sRGB_{r2}\cdot sRGB_k\\
 adobe98_m&amp;amp;= adobe98_{r1}\cdot adobe98_{r2}\cdot adobe98_{r2}\cdot adobe98_{r2}\cdot adobe98_k
 \end{aligned}
 \end{equation}
-$$&lt;p&gt;Where&lt;/p&gt;
-$$
+$$&lt;/p&gt;
+&lt;p&gt;Where&lt;/p&gt;
+&lt;p&gt;$$
 \begin{equation}
 \begin{aligned}
 sRGB_{r1}&amp;amp;=\ 'dark\ skin'\\
@@ -364,7 +365,8 @@ adobe98_{r1}&amp;amp;=\ 'dark\ skin'\\
 adobe98_{r2}&amp;amp;=\ 'green'
 \end{aligned}
 \end{equation}
-$$&lt;p&gt;With $sRGB_k$ and $adobe98_k$ being equivalent arbitrary scaling factors for each colourspace.&lt;/p&gt;
+$$&lt;/p&gt;
+&lt;p&gt;With $sRGB_k$ and $adobe98_k$ being equivalent arbitrary scaling factors for each colourspace.&lt;/p&gt;
 &lt;p&gt;We then convert everything back to &lt;em&gt;CIE XYZ&lt;/em&gt; colourspace:&lt;/p&gt;
 
 &lt;/div&gt;
@@ -1140,7 +1142,7 @@ $$&lt;p&gt;With $sRGB_k$ and $adobe98_k$ being equivalent arbitrary scaling fact
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Converting from a colourspace $RGB_1$ to another colourspace $RGB_2$ is done by applying a series of linear transformations (matrices) as follows:&lt;/p&gt;
-$$
+&lt;p&gt;$$
 \begin{equation}
 \begin{vmatrix}
 R_2\\
@@ -1154,12 +1156,13 @@ G_1\\
 B_1
 \end{vmatrix}
 \end{equation}
-$$&lt;p&gt;where $\textbf{M}_{RGB_2}$ is the $3x3$ matrix transforming from &lt;em&gt;CIE XYZ&lt;/em&gt; colourspace to $RGB_2$ colourspace and $\textbf{M}_{XYZ_1}$ is the $3x3$ matrix transforming from $RGB_1$ colourspace to &lt;em&gt;CIE XYZ&lt;/em&gt; colourspace.&lt;/p&gt;
+$$&lt;/p&gt;
+&lt;p&gt;where $\textbf{M}_{RGB_2}$ is the $3x3$ matrix transforming from &lt;em&gt;CIE XYZ&lt;/em&gt; colourspace to $RGB_2$ colourspace and $\textbf{M}_{XYZ_1}$ is the $3x3$ matrix transforming from $RGB_1$ colourspace to &lt;em&gt;CIE XYZ&lt;/em&gt; colourspace.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Note: We have discounted chromatic adaptation to makes things easier.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Here are such $\textbf{M}_{XYZ_1}$ matrices for respectively &lt;em&gt;sRGB&lt;/em&gt; and &lt;em&gt;ACES RGB&lt;/em&gt; colourspaces:&lt;/p&gt;
-$$
+&lt;p&gt;$$
 \begin{equation}
 \textbf{M}_{XYZ_{sRGB}}=
 \begin{vmatrix}
@@ -1174,8 +1177,9 @@ $$
 0&amp;amp;0&amp;amp;1.00882518\\
 \end{vmatrix}\\
 \end{equation}
-$$&lt;p&gt;Matrices are really just a system of multiple linear equations, thus we can express $\textbf{M}_{XYZ_{sRGB}}$ as follows:&lt;/p&gt;
-$$
+$$&lt;/p&gt;
+&lt;p&gt;Matrices are really just a system of multiple linear equations, thus we can express $\textbf{M}_{XYZ_{sRGB}}$ as follows:&lt;/p&gt;
+&lt;p&gt;$$
 \begin{equation}
 \begin{aligned}
 X&amp;amp;=\ 0.41238656R+0.35759149G+0.18045049B\\
@@ -1183,15 +1187,17 @@ Y&amp;amp;=\ 0.21263682R+0.71518298G+0.0721802B\\
 Z&amp;amp;=\ 0.01933062R+0.11919716G+0.95037259B\\
 \end{aligned}
 \end{equation}
-$$&lt;p&gt;We will simplify the problem again by just considering the first equation of each system, the first row of each matrix:&lt;/p&gt;
-$$
+$$&lt;/p&gt;
+&lt;p&gt;We will simplify the problem again by just considering the first equation of each system, the first row of each matrix:&lt;/p&gt;
+&lt;p&gt;$$
 \begin{equation}
 \begin{aligned}
 X_{sRGB}&amp;amp;=\ 0.41238656R+0.35759149G+0.18045049B\\
 X_{ACES}&amp;amp;=\ 0.9525524R+0.0G+0.00009368B\\
 \end{aligned}
 \end{equation}
-$$&lt;p&gt;We plot the functions by using a uniformly spaced incrementing $k$ variable in place of $RGB$:&lt;/p&gt;
+$$&lt;/p&gt;
+&lt;p&gt;We plot the functions by using a uniformly spaced incrementing $k$ variable in place of $RGB$:&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1530,7 +1536,7 @@ $$&lt;p&gt;We plot the functions by using a uniformly spaced incrementing $k$ va
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;As a result, we were chromatically adapting to &lt;em&gt;CIE Illuminant C&lt;/em&gt; instead of the &lt;em&gt;CIE Illuminant D Series D65&lt;/em&gt;. 
+&lt;p&gt;As a result, we were chromatically adapting to &lt;em&gt;CIE Illuminant C&lt;/em&gt; instead of the &lt;em&gt;CIE Illuminant D Series D65&lt;/em&gt;.
 In the current context, the correct conversion to tristimulus values should entirely bypass chromatic adaptation since the source and target whitepoints are the same.&lt;/p&gt;
 &lt;p&gt;Incorrect instances of the code have been fixed and figures updated accordingly.&lt;/p&gt;
 

@@ -24,7 +24,7 @@ Features
 `features <https://www.colour-science.org/features/>`__ page for more
 information.
 
-.. image:: https://colour.readthedocs.io/en/develop/_static/Examples_Colour_Automatic_Conversion_Graph.svg
+.. image:: https://colour.readthedocs.io/en/develop/_static/Examples_Colour_Automatic_Conversion_Graph.png
 
 How-To Guide
 ^^^^^^^^^^^^
