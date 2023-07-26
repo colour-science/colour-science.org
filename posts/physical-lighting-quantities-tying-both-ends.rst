@@ -96,7 +96,9 @@ implements the aforementioned model with Python:
 .. code:: python
 
     >>> import colour_hdri
-    >>> colour_hdri.saturation_based_speed_focal_plane_exposure(18, 5.6, 0.25, 400)
+    >>> colour_hdri.saturation_based_speed_focal_plane_exposure(
+    ...     18, 5.6, 0.25, 400
+    ... )
     0.46993364546604555
 
 `Colour - Nuke <https://github.com/colour-science/colour-nuke/blob/master/colour_nuke/scripts/digital_still_camera_exposure.nk>`__
@@ -148,9 +150,13 @@ implements support for absolute luminance calibration with Python:
     >>> import numpy as np
     >>> RGB = np.ones([2048, 1024, 3])
     >>> colour_hdri.upper_hemisphere_illuminance_Lagarde2016(RGB)
-    >>> colour_hdri.absolute_luminance_calibration_Lagarde2016(RGB, 120000)[0, 0]
+    >>> colour_hdri.absolute_luminance_calibration_Lagarde2016(RGB, 120000)[
+    ...     0, 0
+    ... ]
     array([ 38215.85392444,  38215.85392444,  38215.85392444])
-    >>> colour_hdri.calibration.absolute_luminance.upper_hemisphere_illuminance_Lagarde2016(RGB)
+    >>> colour_hdri.calibration.absolute_luminance.upper_hemisphere_illuminance_Lagarde2016(
+    ...     RGB
+    ... )
     3.1400580564615663
 
 .. class:: alert alert-dismissible alert-info

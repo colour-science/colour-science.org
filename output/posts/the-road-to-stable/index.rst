@@ -56,8 +56,13 @@ The following example showcases the current implementation, defining metadata fo
 
         V = np.asarray(V)
 
-        R_Y = (1.2219 * V - 0.23111 * (V * V) + 0.23951 * (V ** 3) - 0.021009 *
-              (V ** 4) + 0.0008404 * (V ** 5))
+        R_Y = (
+            1.2219 * V
+            - 0.23111 * (V * V)
+            + 0.23951 * (V**3)
+            - 0.021009 * (V**4)
+            + 0.0008404 * (V**5)
+        )
 
         return R_Y
 
