@@ -22,7 +22,7 @@
                     </p>
                     <p>
                         It is freely available under the
-                        <a href="https://opensource.org/licenses/BSD-3-Clause">New BSD License</a>
+                        <a href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a>
                         terms.
                     </p>
                     <p>

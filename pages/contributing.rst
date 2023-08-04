@@ -169,7 +169,7 @@ like would help its implementation: publications, wikipedia article, etc...
 
 If there is an implementation existing in another language, we will be most
 likely be able to port it although the licence must be compatible with the
-`New BSD License <https://opensource.org/licenses/BSD-3-Clause>`__ terms.
+`BSD-3-Clause <https://opensource.org/licenses/BSD-3-Clause>`__ terms.
 
 We are also running `Matlab <http://www.mathworks.fr/products/matlab/>`__, so
 don't hesitate to provide snippets for it if you have functions you would like
@@ -515,6 +515,7 @@ Python Style Rules
 .. code:: python
 
     def CCT_to_xy_Kang2002(CCT):
+        ...
 
 -   Please use *British English* words instead of *American English* ones as
     the **CIE** does, the most important of all being **colour** instead of
