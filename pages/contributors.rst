@@ -45,7 +45,7 @@
                 <div class="card-header text-center">
                     <h3>Michael Mauderer</h3>
                     <h4>
-                        <a href="https://luna-lang.org/">Enso</a>
+                        <a href="https://luna-lang.org">Enso</a>
                     </h4>
                     <h5 class="card-subtitle text-muted mt-3">
                         <em>Researcher & Senior Developer</em>
@@ -57,7 +57,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="http://michaelmauderer.com/" class="card-link">Website</a>
+                    <a href="http://michaelmauderer.com" class="card-link">Website</a>
                 </div>
             </div>
         </div>
@@ -66,7 +66,7 @@
                 <div class="card-header text-center">
                     <h3>Nick Shaw</h3>
                     <h4>
-                        <a href="http://antlerpost.com/">Antler Post</a>
+                        <a href="http://antlerpost.com">Antler Post</a>
                     </h4>
                     <h5 class="card-subtitle text-muted mt-3">
                         <em>Workflow Consultant</em>
@@ -79,7 +79,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="http://antlerpost.com/" class="card-link">Website</a>
+                    <a href="http://antlerpost.com" class="card-link">Website</a>
                 </div>
             </div>
         </div>
@@ -95,7 +95,7 @@
                 <div class="card-header text-center">
                     <h3>Zach Lewis</h3>
                     <h4>
-                        <a href="https://www.methodstudios.com/">Method Studios</a>
+                        <a href="https://www.methodstudios.com">Method Studios</a>
                     </h4>
                     <h5 class="card-subtitle text-muted mt-3">
                         <em>Technical Director</em>
@@ -116,7 +116,7 @@
                 <div class="card-header text-center">
                     <h3>Michael Parsons</h3>
                     <h4>
-                        <a href="http://www.moving-picture.com/">The Moving Picture Company</a>
+                        <a href="https://www.dneg.com">DNEG</a>
                     </h4>
                     <h5 class="card-subtitle text-muted mt-3">
                         <em>Colour Scientist</em>
@@ -134,7 +134,7 @@
                 <div class="card-header text-center">
                     <h3>Kevin Wheatley</h3>
                     <h4>
-                        <a href="http://www.framestore.com/">Framestore</a>
+                        <a href="http://www.framestore.com">Framestore</a>
                     </h4>
                     <h5 class="card-subtitle text-muted mt-3">
                         <em>Head of Imaging</em>
@@ -162,7 +162,7 @@
                 <div class="card-header text-center">
                     <h3>Sean Cooper</h3>
                     <h4>
-                        <a href="https://www.dneg.com/">Double Negative</a>
+                        <a href="https://www.arri.com">ARRI</a>
                     </h4>
                     <h5 class="card-subtitle text-muted mt-3">
                         <em>Colour Scientist</em>
@@ -183,10 +183,10 @@
                 <div class="card-header text-center">
                     <h3>Jean D. Vandenberg</h3>
                     <h4>
-                        <a href="https://www.waltdisneystudios.com/">The Walt Disney Studios</a>
+                        <a href="https://pictureshop.com">Picture Shop</a>
                     </h4>
                     <h5 class="card-subtitle text-muted mt-3">
-                        <em>Colour Scientist</em>
+                        <em>Director of Engineering</em>
                     </h5>
                 </div>
                 <div class="card-body">
@@ -204,7 +204,7 @@
                 <div class="card-header text-center">
                     <h3>Tucker Downs</h3>
                     <h4>
-                        <a href="https://www.roevisual.com/">ROE Visual</a>
+                        <a href="https://www.roevisual.com">ROE Visual</a>
                     </h4>
                     <h5 class="card-subtitle text-muted mt-3">
                         <em>R&D Manager & Color Scientist</em>
@@ -594,7 +594,7 @@
                 <div class="card-header text-center">
                     <h3>Manuel Leonhardt</h3>
                     <h4>
-                        <a href="https://www.arri.com/">ARRI</a>
+                        <a href="https://www.arri.com">ARRI</a>
                     </h4>
                     <h5 class="card-subtitle text-muted mt-3">
                         <em>Software Engineer and Image Scientist</em>
@@ -707,7 +707,7 @@
                 <div class="card-header text-center">
                     <h3>Joseph Goldstone</h3>
                     <h4>
-                        <a href="https://www.arri.com/">ARRI</a>
+                        <a href="https://www.arri.com">ARRI</a>
                     </h4>
                     <h5 class="card-subtitle text-muted mt-3">
                         <em>Image Science Engineer</em>
@@ -728,7 +728,7 @@
                 <div class="card-header text-center">
                     <h3>Stephen Hill</h3>
                     <h4>
-                        <a href="https://www.lucasfilm.com/">Lucasfilm</a>
+                        <a href="https://www.lucasfilm.com">Lucasfilm</a>
                     </h4>
                     <h5 class="card-subtitle text-muted mt-3">
                         <em>Principal Rendering Engineer</em>
@@ -749,7 +749,7 @@
                 <div class="card-header text-center">
                     <h3>Jedediah Smith</h3>
                     <h4>
-                        <a href="https://www.methodstudios.com/">Method Studios</a>
+                        <a href="https://www.methodstudios.com">Method Studios</a>
                     </h4>
                     <h5 class="card-subtitle text-muted mt-3">
                         <em>VFX Supervisor</em>
@@ -1058,7 +1058,7 @@
                 <div class="card-header text-center">
                     <h3>Steve Agland</h3>
                     <h4>
-                        <a href="http://www.animallogic.com/">Animal Logic</a>
+                        <a href="http://www.animallogic.com">Animal Logic</a>
                     </h4>
                     <h5 class="card-subtitle text-muted mt-3">
                         <em>Supervising Lighting Technical Director</em>
@@ -1224,7 +1224,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="http://www.poynton.com/" class="card-link">Website</a>
+                    <a href="http://www.poynton.com" class="card-link">Website</a>
                 </div>
             </div>
         </div>
@@ -1284,7 +1284,7 @@
                             <li>Marie Meyer</li>
                             <li>Max Marrone</li>
                             <li>Michal Krompiec</li>
-                            <li><a href="https://nickporcino.com/">Nick Porcino</a></li>
+                            <li><a href="https://nickporcino.com">Nick Porcino</a></li>
                             <li><a href="https://www.facebook.com/invisiblelightimages">Nick Spiker</a></li>
                             <li>Ryan Bass</li>
                             <li>Vishal Vashistha</li>
