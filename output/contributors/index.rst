@@ -170,7 +170,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Technical support/
+                        Technical support
                     </p>
                 </div>
                 <div class="card-footer">
@@ -200,7 +200,29 @@
             </div>
         </div>
         <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>Tucker Downs</h3>
+                    <h4>
+                        <a href="https://www.roevisual.com/">ROE Visual</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>R&D Manager & Color Scientist</em>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Technical support.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/tjdcs" class="card-link">Github</a>
+                </div>
+            </div>
         </div>
+
+        <div class="col"></div>
+
     </div>
 
     <!-- ------------------------------------------------------------------ -->
@@ -335,7 +357,9 @@
                 </div>
             </div>
         </div>
+
         <div class="col"></div>
+
     </div>
 
     <!-- ------------------------------------------------------------------ -->
@@ -968,27 +992,61 @@
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
-                    <h3>Tucker Downs</h3>
-                    <h4>
-                        <a href="https://www.roevisual.com/">ROE Visual</a>
-                    </h4>
-                    <h5 class="card-subtitle text-muted mt-3">
-                        <em>R&D Manager & Color Scientist</em>
-                    </h5>
+                    <h3>Kiliansas (@Rusching)</h3>
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Technical support.
+                        TE226 v2 colour checker reference values.
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/tjdcs" class="card-link">Github</a>
+                    <a href="https://github.com/Rusching" class="card-link">Github</a>
                 </div>
             </div>
         </div>
-        <div class="col"></div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>Xiaohan Chen (@chnmasta05)</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Cheung et al. (2004) polynomial correction improvements.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/chnmasta05" class="card-link">Github</a>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!-- ------------------------------------------------------------------ -->
+    <!-- ------------------------------------------------------------------ -->
+    <!-- ------------------------------------------------------------------ -->
+
+    <div class="row my-5">
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>Benjamin Herb</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Spectral Similarity Index computation improvements.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/benjaminherb" class="card-link">Github</a>
+                    <a href="https://benjaminherb.de" class="card-link">benjaminherb.de</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col"></div>
+        <div class="col"></div>
+
+    </div>
     <!-- ------------------------------------------------------------------ -->
     <!-- Acknowledgements                                                   -->
     <!-- ------------------------------------------------------------------ -->
@@ -1173,8 +1231,9 @@
                 </div>
             </div>
         </div>
-        <div class="col">
-        </div>
+
+        <div class="col"></div>
+
     </div>
 
     <!-- ------------------------------------------------------------------ -->
@@ -1201,10 +1260,10 @@
                 </div>
             </div>
         </div>
-        <div class="col">
-        </div>
-        <div class="col">
-        </div>
+
+        <div class="col"></div>
+        <div class="col"></div>
+
     </div>
 
     <!-- ------------------------------------------------------------------ -->
@@ -1221,57 +1280,65 @@
                 <div class="card-body">
                     <p class="card-text">
                         <ul class="list-unstyled text-center">
-                           <li>Albert Szostkiewicz</li>
+                            <li>Albert Szostkiewicz</li>
                             <li>Christophe Go</li>
                             <li>Giuseppe Di Guglielmo</li>
                             <li>Iman Sajedian</li>
                             <li>Marie Meyer</li>
                             <li>Max Marrone</li>
                             <li>Michal Krompiec</li>
-                            <li><a href="http://nickporcino.com/">Nick Porcino</a></li>
+                            <li><a href="https://nickporcino.com/">Nick Porcino</a></li>
                             <li><a href="https://www.facebook.com/invisiblelightimages">Nick Spiker</a></li>
                             <li>Ryan Bass</li>
                             <li>Vishal Vashistha</li>
                             <li>Vlad Enache</li>
-                            <li><a href="https://github.com/aarondemolder">@aarondemolder</a></li>
-                            <li><a href="https://github.com/abnormally-distributed">@abnormally-distributed</a></li>
-                            <li><a href="https://github.com/ademmler">@ademmler</a></li>
-                            <li><a href="https://github.com/ahemberger">@ahemberger</a></li>
-                            <li><a href="https://github.com/alban-sol">@alban-sol</a></li>
-                            <li><a href="https://github.com/alianoroozi">@alianoroozi</a></li>
-                            <li><a href="https://github.com/Alt-Shivam">@Alt-Shivam</a></li>
-                            <li><a href="https://github.com/Ampersandme">@Ampersandme</a></li>
-                            <li><a href="https://github.com/AndersAtEndian">@AndersAtEndian</a></li>
-                            <li><a href="https://github.com/andurilhuang">@andurilhuang</a></li>
-                            <li><a href="https://github.com/anshulxyz">@anshulxyz</a></li>
-                            <li><a href="https://github.com/Apoorva-13">@Apoorva-13</a></li>
-                            <li><a href="https://github.com/aurelienbl">@aurelienbl</a></li>
-                            <li><a href="https://github.com/awehring">@awehring</a></li>
-                            <li><a href="https://github.com/baileyji">@baileyji</a></li>
-                            <li><a href="https://github.com/beckstev">@beckstev</a></li>
-                            <li><a href="https://github.com/bersbersbers">@bersbersbers</a></li>
-                            <li><a href="https://github.com/blue-j">@blue-j</a></li>
-                            <li><a href="https://github.com/brandondube">@brandondube</a></li>
-                            <li><a href="https://github.com/briend">@briend</a></li>
-                            <li><a href="https://github.com/bsdis">@bsdis</a></li>
-                            <li><a href="https://github.com/cclauss">@cclauss</a></li>
-                            <li><a href="https://github.com/Chandler">@Chandler</a></li>
-                            <li><a href="https://github.com/chesschi">@chesschi</a></li>
-                            <li><a href="https://github.com/ChunHsinWang">@ChunHsinWang</a></li>
-                            <li><a href="https://github.com/codycuellar">@codycuellar</a></li>
-                            <li><a href="https://github.com/cuixiaofei">@cuixiaofei</a></li>
-                            <li><a href="https://github.com/daviesj">@daviesj</a></li>
-                            <li><a href="https://github.com/dfoxfranke">@dfoxfranke</a></li>
-                            <li><a href="https://github.com/digital-prepress">@digital-prepress</a></li>
-                            <li><a href="https://github.com/diuming">@diuming</a></li>
-                            <li><a href="https://github.com/dtbulmerJRs">@dtbulmerJRs</a></li>
-                            <li><a href="https://github.com/Edwardlin-zlt">@Edwardlin-zlt</a></li>
-                            <li><a href="https://github.com/ema2159">@ema2159</a></li>
-                            <li><a href="https://github.com/ems1111">@ems1111</a></li>
-                            <li><a href="https://github.com/eyeforcolor">@eyeforcolor</a></li>
-                            <li><a href="https://github.com/fangjy88">@fangjy88</a></li>
-                            <li><a href="https://github.com/Floschoe">@Floschoe</a></li>
-                            <li><a href="https://github.com/foutoucour">@foutoucour</a></li>
+                            <li><a href="https://github.com/Alt-Shivam">Alt-Shivam</a></li>
+                            <li><a href="https://github.com/Ampersandme">Ampersandme</a></li>
+                            <li><a href="https://github.com/AndersAtEndian">AndersAtEndian</a></li>
+                            <li><a href="https://github.com/Apoorva-13">Apoorva-13</a></li>
+                            <li><a href="https://github.com/Artoria2e5">Artoria2e5</a></li>
+                            <li><a href="https://github.com/CHRIBUR0309">CHRIBUR0309</a></li>
+                            <li><a href="https://github.com/Chandler">Chandler</a></li>
+                            <li><a href="https://github.com/ChunHsinWang">ChunHsinWang</a></li>
+                            <li><a href="https://github.com/Edwardlin-zlt">Edwardlin-zlt</a></li>
+                            <li><a href="https://github.com/EricFlyMeToTheMoon">EricFlyMeToTheMoon</a></li>
+                            <li><a href="https://github.com/Floschoe">Floschoe</a></li>
+                            <li><a href="https://github.com/JarrettR">JarrettR</a></li>
+                            <li><a href="https://github.com/JayPalm">JayPalm</a></li>
+                            <li><a href="https://github.com/Jerry2001">Jerry2001</a></li>
+                            <li><a href="https://github.com/JopdeBoo">JopdeBoo</a></li>
+                            <li><a href="https://github.com/JoshuaEbenezer">JoshuaEbenezer</a></li>
+                            <li><a href="https://github.com/KOLANICH">KOLANICH</a></li>
+                            <li><a href="https://github.com/KrisKennaway">KrisKennaway</a></li>
+                            <li><a href="https://github.com/Kunkka1988">Kunkka1988</a></li>
+                            <li><a href="https://github.com/LandonSwartz">LandonSwartz</a></li>
+                            <li><a href="https://github.com/LaughingMaann">LaughingMaann</a></li>
+                            <li><a href="https://github.com/LeCyberDucky">LeCyberDucky</a></li>
+                            <li><a href="https://github.com/Legendin">Legendin</a></li>
+                            <li><a href="https://github.com/MMehdiMousavi">MMehdiMousavi</a></li>
+                            <li><a href="https://github.com/MadhuSN">MadhuSN</a></li>
+                            <li><a href="https://github.com/MarcusCalhoun-Lopez">MarcusCalhoun-Lopez</a></li>
+                            <li><a href="https://github.com/MrColourBlind">MrColourBlind</a></li>
+                            <li><a href="https://github.com/Myndex">Myndex</a></li>
+                            <li><a href="https://github.com/Naughty-Monkey">Naughty-Monkey</a></li>
+                            <li><a href="https://github.com/NekoAlosama">NekoAlosama</a></li>
+                            <li><a href="https://github.com/NoRoKr">NoRoKr</a></li>
+                            <li><a href="https://github.com/Patil2099">Patil2099</a></li>
+                            <li><a href="https://github.com/Paul-Sims">Paul-Sims</a></li>
+                            <li><a href="https://github.com/Queuecumber">Queuecumber</a></li>
+                            <li><a href="https://github.com/Rob-Welch">Rob-Welch</a></li>
+                            <li><a href="https://github.com/Ron024">Ron024</a></li>
+                            <li><a href="https://github.com/RutNij">RutNij</a></li>
+                            <li><a href="https://github.com/TFiFiE">TFiFiE</a></li>
+                            <li><a href="https://github.com/TomFryers">TomFryers</a></li>
+                            <li><a href="https://github.com/ValZapod">ValZapod</a></li>
+                            <li><a href="https://github.com/Wagyx">Wagyx</a></li>
+                            <li><a href="https://github.com/Wangld5">Wangld5</a></li>
+                            <li><a href="https://github.com/Willingo">Willingo</a></li>
+                            <li><a href="https://github.com/aarondemolder">aarondemolder</a></li>
+                            <li><a href="https://github.com/abnormally-distributed">abnormally-distributed</a></li>
+                            <li><a href="https://github.com/ademmler">ademmler</a></li>
+                            <li><a href="https://github.com/ahemberger">ahemberger</a></li>
                         </ul>
                     </p>
                 </div>
@@ -1282,57 +1349,65 @@
                 <div class="card-body">
                     <p class="card-text">
                         <ul class="list-unstyled text-center">
-                            <li><a href="https://github.com/fxthomas">@fxthomas</a></li>
-                            <li><a href="https://github.com/goofy2k">@goofy2k</a></li>
-                            <li><a href="https://github.com/gutenzwerg">@gutenzwerg</a></li>
-                            <li><a href="https://github.com/habemus-papadum">@habemus-papadum</a></li>
-                            <li><a href="https://github.com/hajimen">@hajimen</a></li>
-                            <li><a href="https://github.com/hakanai">@hakanai</a></li>
-                            <li><a href="https://github.com/heinemannj">@heinemannj</a></li>
-                            <li><a href="https://github.com/henczati">@henczati</a></li>
-                            <li><a href="https://github.com/hminle">@hminle</a></li>
-                            <li><a href="https://github.com/iCagarro">@iCagarro</a></li>
-                            <li><a href="https://github.com/iinnovations">@iinnovations</a></li>
-                            <li><a href="https://github.com/jaguarondi">@jaguarondi</a></li>
-                            <li><a href="https://github.com/JarrettR">@JarrettR</a></li>
-                            <li><a href="https://github.com/JayPalm">@JayPalm</a></li>
-                            <li><a href="https://github.com/Jerry2001">@Jerry2001</a></li>
-                            <li><a href="https://github.com/JopdeBoo">@JopdeBoo</a></li>
-                            <li><a href="https://github.com/JoshuaEbenezer">@JoshuaEbenezer</a></li>
-                            <li><a href="https://github.com/kaihagseth">@kaihagseth</a></li>
-                            <li><a href="https://github.com/kljumat">@kljumat</a></li>
-                            <li><a href="https://github.com/KOLANICH">@KOLANICH</a></li>
-                            <li><a href="https://github.com/KrisKennaway">@KrisKennaway</a></li>
-                            <li><a href="https://github.com/kunal9922">@kunal9922</a></li>
-                            <li><a href="https://github.com/Kunkka1988">@Kunkka1988</a></li>
-                            <li><a href="https://github.com/LandonSwartz">@LandonSwartz</a></li>
-                            <li><a href="https://github.com/LaughingMaann">@LaughingMaann</a></li>
-                            <li><a href="https://github.com/lavrovd">@lavrovd</a></li>
-                            <li><a href="https://github.com/LeCyberDucky">@LeCyberDucky</a></li>
-                            <li><a href="https://github.com/Legendin">@Legendin</a></li>
-                            <li><a href="https://github.com/leklbk">@leklbk</a></li>
-                            <li><a href="https://github.com/lensz">@lensz</a></li>
-                            <li><a href="https://github.com/lishichengyan">@lishichengyan</a></li>
-                            <li><a href="https://github.com/luoww1992">@luoww1992</a></li>
-                            <li><a href="https://github.com/MarcusCalhoun-Lopez">@MarcusCalhoun-Lopez</a></li>
-                            <li><a href="https://github.com/matt-roberts">@matt-roberts</a></li>
-                            <li><a href="https://github.com/matthiasbirkich">@matthiasbirkich</a></li>
-                            <li><a href="https://github.com/meshing">@meshing</a></li>
-                            <li><a href="https://github.com/mforbes">@mforbes</a></li>
-                            <li><a href="https://github.com/MMehdiMousavi">@MMehdiMousavi</a></li>
-                            <li><a href="https://github.com/mokincha">@mokincha</a></li>
-                            <li><a href="https://github.com/monkeywithacupcake">@monkeywithacupcake</a></li>
-                            <li><a href="https://github.com/MrColourBlind">@MrColourBlind</a></li>
-                            <li><a href="https://github.com/Myndex">@Myndex</a></li>
-                            <li><a href="https://github.com/naavis">@naavis</a></li>
-                            <li><a href="https://github.com/nadersadoughi">@nadersadoughi</a></li>
-                            <li><a href="https://github.com/Naughty-Monkey">@Naughty-Monkey</a></li>
-                            <li><a href="https://github.com/NekoAlosama">@NekoAlosama</a></li>
-                            <li><a href="https://github.com/NoRoKr">@NoRoKr</a></li>
-                            <li><a href="https://github.com/nschloe">@nschloe</a></li>
-                            <li><a href="https://github.com/parthxtripathi">@parthxtripathi</a></li>
-                            <li><a href="https://github.com/Patil2099">@Patil2099</a></li>
-                            <li><a href="https://github.com/Paul-Sims">@Paul-Sims</a></li>
+                            <li><a href="https://github.com/alban-sol">alban-sol</a></li>
+                            <li><a href="https://github.com/alianoroozi">alianoroozi</a></li>
+                            <li><a href="https://github.com/altert">altert</a></li>
+                            <li><a href="https://github.com/am-ac">am-ac</a></li>
+                            <li><a href="https://github.com/andurilhuang">andurilhuang</a></li>
+                            <li><a href="https://github.com/anshulxyz">anshulxyz</a></li>
+                            <li><a href="https://github.com/aurelienbl">aurelienbl</a></li>
+                            <li><a href="https://github.com/awehring">awehring</a></li>
+                            <li><a href="https://github.com/baileyji">baileyji</a></li>
+                            <li><a href="https://github.com/barisduzenli">barisduzenli</a></li>
+                            <li><a href="https://github.com/beckstev">beckstev</a></li>
+                            <li><a href="https://github.com/bersbersbers">bersbersbers</a></li>
+                            <li><a href="https://github.com/bhive01">bhive01</a></li>
+                            <li><a href="https://github.com/blue-j">blue-j</a></li>
+                            <li><a href="https://github.com/brandondube">brandondube</a></li>
+                            <li><a href="https://github.com/briend">briend</a></li>
+                            <li><a href="https://github.com/bsdis">bsdis</a></li>
+                            <li><a href="https://github.com/camilo1704">camilo1704</a></li>
+                            <li><a href="https://github.com/cclauss">cclauss</a></li>
+                            <li><a href="https://github.com/chesschi">chesschi</a></li>
+                            <li><a href="https://github.com/codycuellar">codycuellar</a></li>
+                            <li><a href="https://github.com/cuixiaofei">cuixiaofei</a></li>
+                            <li><a href="https://github.com/da5nsy">da5nsy</a></li>
+                            <li><a href="https://github.com/daviesj">daviesj</a></li>
+                            <li><a href="https://github.com/dfoxfranke">dfoxfranke</a></li>
+                            <li><a href="https://github.com/digital-prepress">digital-prepress</a></li>
+                            <li><a href="https://github.com/diuming">diuming</a></li>
+                            <li><a href="https://github.com/dofuuz">dofuuz</a></li>
+                            <li><a href="https://github.com/dtbulmerJRs">dtbulmerJRs</a></li>
+                            <li><a href="https://github.com/eitanlees">eitanlees</a></li>
+                            <li><a href="https://github.com/ema2159">ema2159</a></li>
+                            <li><a href="https://github.com/ems1111">ems1111</a></li>
+                            <li><a href="https://github.com/eyeforcolor">eyeforcolor</a></li>
+                            <li><a href="https://github.com/fangjy88">fangjy88</a></li>
+                            <li><a href="https://github.com/foutoucour">foutoucour</a></li>
+                            <li><a href="https://github.com/fxthomas">fxthomas</a></li>
+                            <li><a href="https://github.com/goofy2k">goofy2k</a></li>
+                            <li><a href="https://github.com/gutenzwerg">gutenzwerg</a></li>
+                            <li><a href="https://github.com/habemus-papadum">habemus-papadum</a></li>
+                            <li><a href="https://github.com/hajimen">hajimen</a></li>
+                            <li><a href="https://github.com/hakanai">hakanai</a></li>
+                            <li><a href="https://github.com/harshjain30">harshjain30</a></li>
+                            <li><a href="https://github.com/heinemannj">heinemannj</a></li>
+                            <li><a href="https://github.com/henczati">henczati</a></li>
+                            <li><a href="https://github.com/hminle">hminle</a></li>
+                            <li><a href="https://github.com/iCagarro">iCagarro</a></li>
+                            <li><a href="https://github.com/iinnovations">iinnovations</a></li>
+                            <li><a href="https://github.com/jaguarondi">jaguarondi</a></li>
+                            <li><a href="https://github.com/jamesmyatt">jamesmyatt</a></li>
+                            <li><a href="https://github.com/kaihagseth">kaihagseth</a></li>
+                            <li><a href="https://github.com/kamikaze">kamikaze</a></li>
+                            <li><a href="https://github.com/kljumat">kljumat</a></li>
+                            <li><a href="https://github.com/kunal9922">kunal9922</a></li>
+                            <li><a href="https://github.com/lavrovd">lavrovd</a></li>
+                            <li><a href="https://github.com/leklbk">leklbk</a></li>
+                            <li><a href="https://github.com/lensz">lensz</a></li>
+                            <li><a href="https://github.com/lishichengyan">lishichengyan</a></li>
+                            <li><a href="https://github.com/lulunac27a">lulunac27a</a></li>
+                            <li><a href="https://github.com/luoww1992">luoww1992</a></li>
                         </ul>
                     </p>
                 </div>
@@ -1343,56 +1418,65 @@
                 <div class="card-body">
                     <p class="card-text">
                         <ul class="list-unstyled text-center">
-                            <li><a href="https://github.com/peteroupc">@peteroupc</a></li>
-                            <li><a href="https://github.com/pfk-beta">@pfk-beta</a></li>
-                            <li><a href="https://github.com/pjaesung2">@pjaesung2</a></li>
-                            <li><a href="https://github.com/priikone">@priikone</a></li>
-                            <li><a href="https://github.com/qiuboujun">@qiuboujun</a></li>
-                            <li><a href="https://github.com/Queuecumber">@Queuecumber</a></li>
-                            <li><a href="https://github.com/ramparvathaneni">@ramparvathaneni</a></li>
-                            <li><a href="https://github.com/richardstardust">@richardstardust</a></li>
-                            <li><a href="https://github.com/Rob-Welch">@Rob-Welch</a></li>
-                            <li><a href="https://github.com/robbuckley">@robbuckley</a></li>
-                            <li><a href="https://github.com/romanovar">@romanovar</a></li>
-                            <li><a href="https://github.com/Ron024">@Ron024</a></li>
-                            <li><a href="https://github.com/rsnitsch">@rsnitsch</a></li>
-                            <li><a href="https://github.com/RutNij">@RutNij</a></li>
-                            <li><a href="https://github.com/sdbbs">@sdbbs</a></li>
-                            <li><a href="https://github.com/senyai">@senyai</a></li>
-                            <li><a href="https://github.com/shanest">@shanest</a></li>
-                            <li><a href="https://github.com/sherlockedlee">@sherlockedlee</a></li>
-                            <li><a href="https://github.com/shirubana">@shirubana</a></li>
-                            <li><a href="https://github.com/shpurdikhub">@shpurdikhub</a></li>
-                            <li><a href="https://github.com/sliedes">@sliedes</a></li>
-                            <li><a href="https://github.com/soldivelot">@soldivelot</a></li>
-                            <li><a href="https://github.com/spicymatt">@spicymatt</a></li>
-                            <li><a href="https://github.com/ssh4net">@ssh4net</a></li>
-                            <li><a href="https://github.com/stakemura">@stakemura</a></li>
-                            <li><a href="https://github.com/starkcolour">@starkcolour</a></li>
-                            <li><a href="https://github.com/starkfan007">@starkfan007</a></li>
-                            <li><a href="https://github.com/stereomatchingkiss">@stereomatchingkiss</a></li>
-                            <li><a href="https://github.com/tashdor">@tashdor</a></li>
-                            <li><a href="https://github.com/TFiFiE">@TFiFiE</a></li>
-                            <li><a href="https://github.com/thunders82">@thunders82</a></li>
-                            <li><a href="https://github.com/tingeman">@tingeman</a></li>
-                            <li><a href="https://github.com/TomFryers">@TomFryers</a></li>
-                            <li><a href="https://github.com/tospe">@tospe</a></li>
-                            <li><a href="https://github.com/totyped">@totyped</a></li>
-                            <li><a href="https://github.com/ujjayants">@ujjayants</a></li>
-                            <li><a href="https://github.com/ValZapod">@ValZapod</a></li>
-                            <li><a href="https://github.com/vidakDK">@vidakDK</a></li>
-                            <li><a href="https://github.com/volkerjaenisch">@volkerjaenisch</a></li>
-                            <li><a href="https://github.com/vvclin-git">@vvclin-git</a></li>
-                            <li><a href="https://github.com/Wagyx">@Wagyx</a></li>
-                            <li><a href="https://github.com/Wangld5">@Wangld5</a></li>
-                            <li><a href="https://github.com/whornsby">@whornsby</a></li>
-                            <li><a href="https://github.com/Willingo">@Willingo</a></li>
-                            <li><a href="https://github.com/willSmallHD">@willSmallHD</a></li>
-                            <li><a href="https://github.com/wuuawu">@wuuawu</a></li>
-                            <li><a href="https://github.com/xeggbee">@xeggbee</a></li>
-                            <li><a href="https://github.com/xjossy">@xjossy</a></li>
-                            <li><a href="https://github.com/yuhao">@yuhao</a></li>
-                            <li><a href="https://github.com/yulincoder">@yulincoder</a></li>
+                            <li><a href="https://github.com/materialjan">materialjan</a></li>
+                            <li><a href="https://github.com/matt-roberts">matt-roberts</a></li>
+                            <li><a href="https://github.com/matthiasbirkich">matthiasbirkich</a></li>
+                            <li><a href="https://github.com/meshing">meshing</a></li>
+                            <li><a href="https://github.com/mforbes">mforbes</a></li>
+                            <li><a href="https://github.com/mokincha">mokincha</a></li>
+                            <li><a href="https://github.com/monkeywithacupcake">monkeywithacupcake</a></li>
+                            <li><a href="https://github.com/naavis">naavis</a></li>
+                            <li><a href="https://github.com/nadersadoughi">nadersadoughi</a></li>
+                            <li><a href="https://github.com/nico">nico</a></li>
+                            <li><a href="https://github.com/nitishn23">nitishn23</a></li>
+                            <li><a href="https://github.com/nschloe">nschloe</a></li>
+                            <li><a href="https://github.com/opanyaki">opanyaki</a></li>
+                            <li><a href="https://github.com/parthxtripathi">parthxtripathi</a></li>
+                            <li><a href="https://github.com/peteroupc">peteroupc</a></li>
+                            <li><a href="https://github.com/pfk-beta">pfk-beta</a></li>
+                            <li><a href="https://github.com/physici">physici</a></li>
+                            <li><a href="https://github.com/pjaesung2">pjaesung2</a></li>
+                            <li><a href="https://github.com/priikone">priikone</a></li>
+                            <li><a href="https://github.com/qiuboujun">qiuboujun</a></li>
+                            <li><a href="https://github.com/ramparvathaneni">ramparvathaneni</a></li>
+                            <li><a href="https://github.com/richardstardust">richardstardust</a></li>
+                            <li><a href="https://github.com/robbuckley">robbuckley</a></li>
+                            <li><a href="https://github.com/romanovar">romanovar</a></li>
+                            <li><a href="https://github.com/rsnitsch">rsnitsch</a></li>
+                            <li><a href="https://github.com/sdbbs">sdbbs</a></li>
+                            <li><a href="https://github.com/senyai">senyai</a></li>
+                            <li><a href="https://github.com/shanest">shanest</a></li>
+                            <li><a href="https://github.com/sherlockedlee">sherlockedlee</a></li>
+                            <li><a href="https://github.com/shirubana">shirubana</a></li>
+                            <li><a href="https://github.com/shpurdikhub">shpurdikhub</a></li>
+                            <li><a href="https://github.com/sliedes">sliedes</a></li>
+                            <li><a href="https://github.com/soldivelot">soldivelot</a></li>
+                            <li><a href="https://github.com/spicymatt">spicymatt</a></li>
+                            <li><a href="https://github.com/ssh4net">ssh4net</a></li>
+                            <li><a href="https://github.com/stakemura">stakemura</a></li>
+                            <li><a href="https://github.com/starkcolour">starkcolour</a></li>
+                            <li><a href="https://github.com/starkfan007">starkfan007</a></li>
+                            <li><a href="https://github.com/stereomatchingkiss">stereomatchingkiss</a></li>
+                            <li><a href="https://github.com/tashdor">tashdor</a></li>
+                            <li><a href="https://github.com/teja275">teja275</a></li>
+                            <li><a href="https://github.com/thunders82">thunders82</a></li>
+                            <li><a href="https://github.com/tingeman">tingeman</a></li>
+                            <li><a href="https://github.com/tospe">tospe</a></li>
+                            <li><a href="https://github.com/totyped">totyped</a></li>
+                            <li><a href="https://github.com/ujjayants">ujjayants</a></li>
+                            <li><a href="https://github.com/vibhoothi">vibhoothi</a></li>
+                            <li><a href="https://github.com/vidakDK">vidakDK</a></li>
+                            <li><a href="https://github.com/volkerjaenisch">volkerjaenisch</a></li>
+                            <li><a href="https://github.com/vsohler">vsohler</a></li>
+                            <li><a href="https://github.com/vvclin-git">vvclin-git</a></li>
+                            <li><a href="https://github.com/whornsby">whornsby</a></li>
+                            <li><a href="https://github.com/willSmallHD">willSmallHD</a></li>
+                            <li><a href="https://github.com/wuuawu">wuuawu</a></li>
+                            <li><a href="https://github.com/xeggbee">xeggbee</a></li>
+                            <li><a href="https://github.com/xjossy">xjossy</a></li>
+                            <li><a href="https://github.com/yuhao">yuhao</a></li>
+                            <li><a href="https://github.com/yulincoder">yulincoder</a></li>
+                            <li><a href="https://github.com/zanyc-smm">zanyc-smm</a></li>
                         </ul>
                     </p>
                 </div>
