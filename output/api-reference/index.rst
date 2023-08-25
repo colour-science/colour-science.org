@@ -7,8 +7,8 @@
 .. description:
 .. type: text
 
--   `Release (0.4.2) <https://colour.readthedocs.io/en/master/>`__
--   `Develop <https://colour.readthedocs.io/en/latest/>`__
+-   `Release (0.4.2) <https://colour.readthedocs.io/en/master/reference.html>`__
+-   `Develop <https://colour.readthedocs.io/en/latest/reference.html>`__
 -   `0.4.2 <https://colour.readthedocs.io/en/v0.4.2/reference.html>`__
 -   `0.4.1 <https://colour.readthedocs.io/en/v0.4.1/reference.html>`__
 -   `0.4.0 <https://colour.readthedocs.io/en/v0.4.0/reference.html>`__
