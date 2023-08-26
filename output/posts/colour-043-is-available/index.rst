@@ -13,7 +13,7 @@ The colour-science Developers are pleased to announce the release of `Colour 0.4
 
 We worked on many optimisations around colour quality metrics that should result in overall performance increase, thanks again to Tucker Downs (`@tjdcs <https://github.com/tjdcs>`__) for the heavy lifting!
 
-@charliermarsh's [ruff](https://github.com/charliermarsh/ruff) is now used as a replacement for:
+@charliermarsh's `ruff <https://github.com/charliermarsh/ruff>`__ is now used as a replacement for:
 
 - `flake8 <https://pypi.org/project/flake8>`__
 - `pydocstyle <https://pypi.org/project/flake8>`__
@@ -46,7 +46,7 @@ The highlights of this release are as follows:
     -   *PLASA ANSI E1.54* colourspace.
 
 -    *CSS Color 3* keywords
--   New plotting definition for the *Daylight Locus* along with *Mireds* plotting support.
+-   New plotting definition for the *Daylight Locus* along with `Mireds <https://en.wikipedia.org/wiki/Mired>`__ plotting support.
 
 Please take a look at the
 `releases <https://github.com/colour-science/colour/releases/tag/v0.4.3>`__
