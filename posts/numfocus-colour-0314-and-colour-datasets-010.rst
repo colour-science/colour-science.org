@@ -8,11 +8,11 @@
 .. type: text
 
 We are delighted to announce that **Colour** has joined the
-`NumFOCUS <https://numfocus.org/>`__  affiliated projects and that
+`NumFOCUS <https://numfocus.org>`__  affiliated projects and that
 `Colour 0.3.14 <https://github.com/colour-science/colour/releases/tag/v0.3.14>`__
 has been released over the weekend along with
 `Colour - Datasets 0.1.0 <https://github.com/colour-science/colour-datasets/releases/tag/v0.1.0>`__,
-a new `Python <https://www.python.org/>`__ package dedicated to colour science
+a new `Python <https://www.python.org>`__ package dedicated to colour science
 datasets management.
 
 .. TEASER_END
@@ -20,7 +20,7 @@ datasets management.
 NumFOCUS
 --------
 
-**Colour** is now an affiliated project of `NumFOCUS <https://numfocus.org/>`__,
+**Colour** is now an affiliated project of `NumFOCUS <https://numfocus.org>`__,
 a 501(c)(3) nonprofit in the United States. This will strengthen the project
 and helps it grow and reach maturity.
 
@@ -52,7 +52,7 @@ Hacktoberfest - 2019
 ====================
 
 We had a few new contributors for the 2019 edition of the
-`Digital Ocean <https://hacktoberfest.digitalocean.com/>`__
+`Digital Ocean <https://hacktoberfest.digitalocean.com>`__
 `Hacktoberfest <https://github.com/colour-science/colour/issues/507>`__.
 
 Thanks to:
@@ -64,8 +64,8 @@ Thanks to:
 -   `@pavithraes <https://github.com/pavithraes>`__
 
 for their contributions! This was a good opportunity for us to revise and
-update both the `Contributing <https://www.colour-science.org/contributing/>`__
-and `Installation <https://www.colour-science.org/installation-guide/>`__
+update both the `Contributing <https://www.colour-science.org/contributing>`__
+and `Installation <https://www.colour-science.org/installation-guide>`__
 guides.
 
 Automatic Colour Conversion Graph
@@ -96,7 +96,7 @@ conversions:
 Image Input and Output
 ======================
 
-`Imageio <http://imageio.github.io/>`__ is now a requirement for reading and
+`Imageio <http://imageio.github.io>`__ is now a requirement for reading and
 writing images, it will be used if `OpenImageIO <https://github.com/OpenImageIO/oiio>`__
 is not available. If you wish to read *OpenEXR* files or develop *Colour*, you
 will need to install the FreeImage plugin as follows:
@@ -129,23 +129,23 @@ strengthen the API.
 Dependency Management
 =====================
 
-We have adopted `Poetry <https://poetry.eustace.io/>`__ to manage the
+We have adopted `Poetry <https://poetry.eustace.io>`__ to manage the
 development dependencies, the `setup.py` file has been replaced with a
-`standardized <https://www.python.org/dev/peps/pep-0518/>`__ `pyproject.toml`
+`standardized <https://www.python.org/dev/peps/pep-0518>`__ `pyproject.toml`
 file.
 
 Continuous Integration
 ======================
 
-`Travis-ci <https://travis-ci.com/>`__ and
-`Azure Pipelines <https://azure.microsoft.com/en-us/services/devops/pipelines/>`__
+`Travis-ci <https://travis-ci.com>`__ and
+`Azure Pipelines <https://azure.microsoft.com/en-us/services/devops/pipelines>`__
 have been replaced with `Github Actions <https://github.com/colour-science/colour/actions>`__.
 
 Documentation
 =============
 
 The `README <https://github.com/colour-science/colour/blob/develop/README.rst>`__
-and the `Manual <https://colour.readthedocs.io/en/develop/>`__ have been
+and the `Manual <https://colour.readthedocs.io/en/develop>`__ have been
 slightly reorganised to create a better separation between the tutorials, API
 reference and, the new
 `How-To Guide <https://colab.research.google.com/drive/1NRcdXSCshivkwoU2nieCvC3y14fx1X4X#offline=true&sandboxMode=true>`__.
@@ -154,12 +154,12 @@ Colour - Datasets
 -----------------
 
 `Colour - Datasets 0.1.0 <https://github.com/colour-science/colour-datasets/releases/tag/v0.1.0>`__
-is a new `Python <https://www.python.org/>`__ package dedicated to colour
+is a new `Python <https://www.python.org>`__ package dedicated to colour
 science datasets management.
 
 The existing datasets are hosted in
-`Zenodo <https://zenodo.org/>`__ under the
-`Colour Science - Datasets <https://zenodo.org/communities/colour-science-datasets/>`__
+`Zenodo <https://zenodo.org>`__ under the
+`Colour Science - Datasets <https://zenodo.org/communities/colour-science-datasets>`__
 community:
 
 .. code-block:: python
@@ -206,7 +206,7 @@ when trying to access or use colour science datasets:
 
 **Colour - Datasets** offers all the above: it allows users to ingest and load
 colour science datasets with a single function call. The datasets information
-is hosted on `Zenodo <https://zenodo.org/>`__ where the record for a dataset typically contain:
+is hosted on `Zenodo <https://zenodo.org>`__ where the record for a dataset typically contain:
 
 -   An urls.txt file describing the urls to source the dataset files from.
 -   A copy of those files in the eventuality where the source files are not

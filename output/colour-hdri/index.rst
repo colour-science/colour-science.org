@@ -7,7 +7,7 @@
 .. description: 
 .. type: text
 
-**Colour - HDRI** is a `Python <https://www.python.org/>`__ package implementing
+**Colour - HDRI** is a `Python <https://www.python.org>`__ package implementing
 various HDRI processing algorithms.
 
 .. image:: https://raw.githubusercontent.com/colour-science/colour-hdri/master/docs/_static/Radiance_001.png
@@ -42,4 +42,4 @@ Downloads
 ^^^^^^^^^
 
 -   `Colour - HDRI Github Repository <https://github.com/colour-science/colour-hdri>`__
--   `Colour - HDRI - Pypi <https://pypi.org/project/colour-hdri/>`__
+-   `Colour - HDRI - Pypi <https://pypi.org/project/colour-hdri>`__

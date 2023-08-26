@@ -8,7 +8,7 @@
 .. type: text
 
 **Colour - Maya** provides an implementation of **Colour** within
-`Autodesk Maya <http://www.autodesk.co.uk/products/maya/>`__.
+`Autodesk Maya <http://www.autodesk.co.uk/products/maya>`__.
 
 Features
 ^^^^^^^^

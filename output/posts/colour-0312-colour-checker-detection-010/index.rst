@@ -17,7 +17,7 @@ Colour 0.3.12
 -------------
 
 This release is another important 700+ commits step on
-`The Road to Stable <https://www.colour-science.org/posts/the-road-to-stable/>`__!
+`The Road to Stable <https://www.colour-science.org/posts/the-road-to-stable>`__!
 
 First and foremost, a huge thanks to all the contributors, whether they are
 contributing with code or through discussions.
@@ -25,7 +25,7 @@ contributing with code or through discussions.
 `Colour 0.3.12 <https://github.com/colour-science/colour/releases/tag/v0.3.12>`__
 was severely delayed because of the involvement of some of us in
 the authoring of the upcoming `Cinematic Color <http://cinematiccolor.org>`__
-update. `Colour <https://github.com/colour-science/colour/>`__ is used to produce
+update. `Colour <https://github.com/colour-science/colour>`__ is used to produce
 an significant amount of figures in this work and it was important to improve the
 plotting capabilities.
 
@@ -68,12 +68,12 @@ normalised scale to domain-range [0, 1] using the
 `colour.set_domain_range_scale` definition and the `colour.domain_range_scale`
 context manager. More information about
 `Domain-Range Scales <https://colour.readthedocs.io/en/develop/basics.html#domain-range-scales>`__
-is available in the `documentation <https://colour.readthedocs.io/>`__.
+is available in the `documentation <https://colour.readthedocs.io>`__.
 
 Look-Up-Tables IO
 =================
 
-With this release, `Colour <https://github.com/colour-science/colour/>`__ is now
+With this release, `Colour <https://github.com/colour-science/colour>`__ is now
 able to read and write Look-Up-Tables (LUTs) of various dimensions, i.e. LUT1D,
 LUT3x1D, LUT3D and LUT Sequences.
 
@@ -106,7 +106,7 @@ distribution related objects. Likewise, the word *spectral* has been removed
 from all the related objects and replaced with *sd*.
 
 The built documentation has been removed from the
-`PyPi package <https://pypi.org/project/colour-science/>`__ to reduce the size
+`PyPi package <https://pypi.org/project/colour-science>`__ to reduce the size
 of the downloads.
 
 Please refer to the `releases page <https://github.com/colour-science/colour/releases/tag/v0.3.12>`__
@@ -115,13 +115,13 @@ for complete details.
 Colour - Checker Detection
 --------------------------
 
-`Colour - Checker Detection <https://github.com/colour-science/colour-checker-detection/>`__
-is a `Python <https://www.python.org/>`__ package implementing various colour
+`Colour - Checker Detection <https://github.com/colour-science/colour-checker-detection>`__
+is a `Python <https://www.python.org>`__ package implementing various colour
 checker detection algorithms and related utilities.
 
 .. note::
 
-    As of this post, there is only a single `OpenCV <https://opencv.org/>`__
+    As of this post, there is only a single `OpenCV <https://opencv.org>`__
     *Segmentation* based algorithm available.
 
 .. image:: https://raw.githubusercontent.com/colour-science/colour-checker-detection/master/docs/_static/ColourCheckerDetection_001.png

@@ -9,7 +9,7 @@
 .. has_math: true
 
 A topic that caused a great deal of
-`passionate <https://www.liftgammagain.com/forum/index.php?threads/dealing-with-srgb.13239/>`__
+`passionate <https://www.liftgammagain.com/forum/index.php?threads/dealing-with-srgb.13239>`__
 `discussions <https://twitter.com/troy_s/status/1170094480080265217>`__ is that
 of the *sRGB* **Electro-Optical Transfer Function** (**EOTF**): Should it be
 the *pure Gamma 2.2 function* or the *piece-wise function* defined in
@@ -25,7 +25,7 @@ To put is another way: Should a display calibrated to *sRGB* adopt the
     | **Warning**
     |
     | When using the term *Gamma* at
-        `colour-science.org <https://colour-science.org/>`__,
+        `colour-science.org <https://colour-science.org>`__,
         we are always referring to a pure power function whose exponent is
         known as *Gamma*.
 
@@ -77,7 +77,7 @@ standard states what follows in **2.1 Reference Display Conditions**:
 
 While it is effectively common to find displays adopting the *Gamma 2.2*
 function as an **EOTF**, many, such as `EIZO <https://www.eizo.com>`__ and
-`NEC <https://www.nec-display-solutions.com/>`__ are shipping with the
+`NEC <https://www.nec-display-solutions.com>`__ are shipping with the
 *IEC 61966-2-1:1999 Standard* *piece-wise function*:
 
 .. figure:: /images/Lift-Gamma-Gain_EIZO-Colour-Navigator-7.png

@@ -7,7 +7,7 @@
 .. description: 
 .. type: text
 
-**Colour - Playground** various `Jupyter <http://jupyter.org/>`__ playground
+**Colour - Playground** various `Jupyter <http://jupyter.org>`__ playground
 notebooks for `Colour <https://github.com/colour-science/colour>`__.
 
 .. image:: /images/Colour_-_Playground.png

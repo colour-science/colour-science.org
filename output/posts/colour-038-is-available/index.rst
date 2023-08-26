@@ -22,7 +22,7 @@ incompatible changes:
     adopt.
 -   The RGB colourspace transfer functions implementation has been overhauled in
     order to be easily extended in the future.
--   `SciPy <https://www.scipy.org/>`__ is now a requirement.
+-   `SciPy <https://www.scipy.org>`__ is now a requirement.
 
 Please carefully refer to the
 `releases page <https://github.com/colour-science/colour/releases/tag/v0.3.8>`__

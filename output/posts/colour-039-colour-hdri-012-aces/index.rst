@@ -43,7 +43,7 @@ improvements and various new objects:
 -   Implement support for RedWideGamut RGB colourspace and Log3G10, Log3G12 log curves.
 -   Implement support for ACEScct colourspace and ACEScct log curves.
 
-Colour can now be installed from `conda-forge <https://conda-forge.github.io/>`__:
+Colour can now be installed from `conda-forge <https://conda-forge.github.io>`__:
 
 .. code:: shell
 

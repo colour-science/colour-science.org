@@ -7,7 +7,7 @@
 .. description: 
 .. type: text
 
-**Colour - Demosaicing** is a `Python <https://www.python.org/>`__ package
+**Colour - Demosaicing** is a `Python <https://www.python.org>`__ package
 implementing various CFA (Colour Filter Array) demosaicing algorithms and
 related utilities.
 
@@ -37,4 +37,4 @@ Downloads
 ^^^^^^^^^
 
 -   `Colour - Demosaicing Github Repository <https://github.com/colour-science/colour-demosaicing>`__
--   `Colour - Demosaicing - Pypi <https://pypi.org/project/colour-demosaicing/>`__
+-   `Colour - Demosaicing - Pypi <https://pypi.org/project/colour-demosaicing>`__

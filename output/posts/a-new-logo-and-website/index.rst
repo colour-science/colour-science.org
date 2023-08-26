@@ -16,7 +16,7 @@ The new logo, less abstract than the previous, represents the light and its
 
 .. image:: https://raw.githubusercontent.com/colour-science/colour-science.org/427b6b76805cb5a531140fae2ffc00395c37d0fb/images/Colour_Logo_Medium_001.png
 
-The website is now powered by `Nikola <https://getnikola.com/>`__, a brilliant
+The website is now powered by `Nikola <https://getnikola.com>`__, a brilliant
 static site generator.
 
 It makes blogging with Jupyter Notebooks a breeze.
@@ -35,7 +35,7 @@ itself as the next big step is the
 we started back in September.
 
 Finally we have a work in progress toy project based on
-`Vispy <https://github.com/vispy/vispy/>`__:
+`Vispy <https://github.com/vispy/vispy>`__:
 `Colour - Analysis <https://github.com/colour-science/colour-analysis>`__
 
 It provides various image and RGB colourspace analysis features. A

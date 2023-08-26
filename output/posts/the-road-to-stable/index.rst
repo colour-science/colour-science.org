@@ -7,9 +7,9 @@
 .. description: 
 .. type: text
 
-Colour has been in public development for over 3 years. The package has grown in various directions since the initial release and offers a significant amount of `features <https://www.colour-science.org/features/>`__.
+Colour has been in public development for over 3 years. The package has grown in various directions since the initial release and offers a significant amount of `features <https://www.colour-science.org/features>`__.
 
-It is used in research groups such as the `St Andrews HCI Research Group <https://sachi.cs.st-andrews.ac.uk/>`__ or companies like `Google <https://www.google.com/>`__, `Merck KGaA <https://en.wikipedia.org/wiki/Merck_Group>`__ or `The Moving Picture Company <http://www.moving-picture.com/>`__. Even though it has reached a certain stability and maturity, it is still in alpha development status.
+It is used in research groups such as the `St Andrews HCI Research Group <https://sachi.cs.st-andrews.ac.uk>`__ or companies like `Google <https://www.google.com>`__, `Merck KGaA <https://en.wikipedia.org/wiki/Merck_Group>`__ or `The Moving Picture Company <http://www.moving-picture.com>`__. Even though it has reached a certain stability and maturity, it is still in alpha development status.
 
 Two important features are missing for a first feature complete stable release:
 
@@ -56,8 +56,13 @@ The following example showcases the current implementation, defining metadata fo
 
         V = np.asarray(V)
 
-        R_Y = (1.2219 * V - 0.23111 * (V * V) + 0.23951 * (V ** 3) - 0.021009 *
-              (V ** 4) + 0.0008404 * (V ** 5))
+        R_Y = (
+            1.2219 * V
+            - 0.23111 * (V * V)
+            + 0.23951 * (V**3)
+            - 0.021009 * (V**4)
+            + 0.0008404 * (V**5)
+        )
 
         return R_Y
 

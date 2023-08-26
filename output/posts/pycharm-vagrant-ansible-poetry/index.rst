@@ -12,46 +12,46 @@
     | **Note**
     |
     | This post is an update to the
-        `PyCharm, Vagrant, Fabric & Anaconda </posts/pycharm-vagrant-fabric-anaconda/>`__ post.
+        `PyCharm, Vagrant, Fabric & Anaconda </posts/pycharm-vagrant-fabric-anaconda>`__ post.
 
 Installing the whole development toolchain for **Colour** roughly means
 deploying:
 
--   `python>=3.6 <https://www.python.org/download/releases/>`__
--   `imageio <http://imageio.github.io/>`__
--   `scipy <https://pypi.org/project/scipy/>`__
--   `six <https://pypi.org/project/six/>`__
--   `networkx <https://pypi.org/project/networkx/>`__
+-   `python>=3.6 <https://www.python.org/download/releases>`__
+-   `imageio <http://imageio.github.io>`__
+-   `scipy <https://pypi.org/project/scipy>`__
+-   `six <https://pypi.org/project/six>`__
+-   `networkx <https://pypi.org/project/networkx>`__
 -   `openimageio <https://github.com/OpenImageIO/oiio>`__
--   `pandas <https://pypi.org/project/pandas/>`__
--   `matplotlib <https://pypi.org/project/matplotlib/>`__
--   `graphviz <https://www.graphviz.org/>`__
--   `pygraphviz <https://pypi.org/project/pygraphviz/>`__
--   `backports.functools_lru_cache <https://pypi.org/project/backports.functools-lru-cache/>`__
--   `biblib-simple <https://pypi.org/project/biblib-simple/>`__
--   `coverage <https://pypi.org/project/coverage/>`__
--   `coveralls <https://pypi.org/project/coveralls/>`__
--   `flake8 <https://pypi.org/project/flake8/>`__
--   `invoke <https://pypi.org/project/invoke/>`__
--   `jupyter <https://pypi.org/project/jupyter/>`__
--   `mock <https://pypi.org/project/mock/>`__
--   `nbformat>=4 <https://pypi.org/project/nbformat/>`__
--   `nose <https://pypi.org/project/nose/>`__
--   `pre-commit <https://pypi.org/project/pre-commit/>`__
--   `pytest <https://pypi.org/project/pytest/>`__
--   `restructuredtext-lint <https://pypi.org/project/restructuredtext-lint/>`__
--   `sphinx <https://pypi.org/project/Sphinx/>`__
--   `sphinx-rtd-theme <https://pypi.org/project/sphinx-rtd-theme/>`__
--   `sphinxcontrib-bibtex <https://pypi.org/project/sphinxcontrib-bibtex/>`__
--   `twine <https://pypi.org/project/twine/>`__
--   `yapf==0.23.0 <https://pypi.org/project/yapf/>`__
+-   `pandas <https://pypi.org/project/pandas>`__
+-   `matplotlib <https://pypi.org/project/matplotlib>`__
+-   `graphviz <https://www.graphviz.org>`__
+-   `pygraphviz <https://pypi.org/project/pygraphviz>`__
+-   `backports.functools_lru_cache <https://pypi.org/project/backports.functools-lru-cache>`__
+-   `biblib-simple <https://pypi.org/project/biblib-simple>`__
+-   `coverage <https://pypi.org/project/coverage>`__
+-   `coveralls <https://pypi.org/project/coveralls>`__
+-   `flake8 <https://pypi.org/project/flake8>`__
+-   `invoke <https://pypi.org/project/invoke>`__
+-   `jupyter <https://pypi.org/project/jupyter>`__
+-   `mock <https://pypi.org/project/mock>`__
+-   `nbformat>=4 <https://pypi.org/project/nbformat>`__
+-   `nose <https://pypi.org/project/nose>`__
+-   `pre-commit <https://pypi.org/project/pre-commit>`__
+-   `pytest <https://pypi.org/project/pytest>`__
+-   `restructuredtext-lint <https://pypi.org/project/restructuredtext-lint>`__
+-   `sphinx <https://pypi.org/project/Sphinx>`__
+-   `sphinx-rtd-theme <https://pypi.org/project/sphinx-rtd-theme>`__
+-   `sphinxcontrib-bibtex <https://pypi.org/project/sphinxcontrib-bibtex>`__
+-   `twine <https://pypi.org/project/twine>`__
+-   `yapf==0.23.0 <https://pypi.org/project/yapf>`__
 -   ... and too many things I just don't remember!
 
 I decided to see how I could make that setup a bit more portable and easier to
 deploy.
 
-That's where `Vagrant <https://www.vagrantup.com/>`__ kicks in along
-`PyCharm <http://www.jetbrains.com/pycharm/>`__, `Ansible <https://www.ansible.com/>`__
+That's where `Vagrant <https://www.vagrantup.com>`__ kicks in along
+`PyCharm <http://www.jetbrains.com/pycharm>`__, `Ansible <https://www.ansible.com>`__
 and `Poetry <https://poetry.eustace.io>`__!
 
 The following guide assume that you have that you have *PyCharm* installed and
@@ -90,11 +90,11 @@ Vagrant Installation
 We will loosely follow
 `Jetbrain's PyCharm Documentation <http://www.jetbrains.com/pycharm/quickstart/configuring_for_vm.html>`__.
 
--   Install `VirtualBox <https://www.virtualbox.org/>`__.
--   Install `Vagrant <https://www.vagrantup.com/>`__.
--   Install `XQuartz <http://xquartz.macosforge.org/>`__: This is the X11 display
+-   Install `VirtualBox <https://www.virtualbox.org>`__.
+-   Install `Vagrant <https://www.vagrantup.com>`__.
+-   Install `XQuartz <http://xquartz.macosforge.org>`__: This is the X11 display
     server for *macOS*. The virtual machine will export the display to it
-    so that you can see the figures from `Matplotlib <http://matplotlib.org/>`__.
+    so that you can see the figures from `Matplotlib <http://matplotlib.org>`__.
 
 -   *VirtualBox* directories syncing performance degrades quickly with large
     number of files.
@@ -121,7 +121,7 @@ PyCharm Vagrant Configuration
 -----------------------------
 
 The canonical way is to use *Vagrant* from the command line as described in
-`Vagrant Documentation <https://docs.vagrantup.com/v2/getting-started/>`__, but
+`Vagrant Documentation <https://docs.vagrantup.com/v2/getting-started>`__, but
 here we will leverage the *PyCharm* integration.
 
 -   Set the :code:`Vagrant Executable` field to your *Vagrant* executable, e.g.
@@ -132,8 +132,8 @@ here we will leverage the *PyCharm* integration.
 -   Set the :code:`Instance Folder` field to your :code:`colour-vagrant`
     directory.
 
--   Add a new `Vagrant <https://www.vagrantup.com/>`__ box to
-    `PyCharm <http://www.jetbrains.com/pycharm/>`__ in the :code:`Boxes` tab
+-   Add a new `Vagrant <https://www.vagrantup.com>`__ box to
+    `PyCharm <http://www.jetbrains.com/pycharm>`__ in the :code:`Boxes` tab
     and use the following image:
     `bento/ubuntu-18.04 <https://app.vagrantup.com/bento/boxes/ubuntu-18.04/versions/201910.20.0>`__
 
@@ -195,7 +195,7 @@ PyCharm Environment Configuration
 ---------------------------------
 
 -   Add the various remote Python interpreters you intend to use to
-    `PyCharm <http://www.jetbrains.com/pycharm/>`__ the
+    `PyCharm <http://www.jetbrains.com/pycharm>`__ the
     `Configure a remote interpreter using Vagrant <https://www.jetbrains.com/help/pycharm/configuring-remote-interpreters-via-virtual-boxes.html>`__ guide:
 
     -   /home/vagrant/.cache/pypoetry/virtualenvs/colour-O_tqvl_6-py3.6/bin/python
@@ -250,7 +250,7 @@ as follows:
     $ jupyter notebook --pylab=inline --ip=0.0.0.0
 
 Then you can access it on the *macOS* host at the following url:
-`http://localhost:8888/ <http://localhost:8888/>`__
+`http://localhost:8888/ <http://localhost:8888>`__
 
 Remote Python Environments & Interpreters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
