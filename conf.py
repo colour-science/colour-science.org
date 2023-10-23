@@ -166,11 +166,26 @@ NAVIGATION_LINKS = {
                     "/colour-visuals",
                     '<span class="font-weight-bold">Colour - Visuals</span>',
                 ),
-                ("/colour-maya", "Colour - Maya"),
-                ("/colour-nuke", "Colour - Nuke"),
-                ("/colour-playground", "Colour - Playground"),
-                ("/colour-spectroscope", "Colour - Spectroscope"),
-                ("/experiments", "Experiments"),
+                (
+                    "/colour-maya",
+                    '<span class="font-weight-normal">Colour - Maya</span>',
+                ),
+                (
+                    "/colour-nuke",
+                    '<span class="font-weight-normal">Colour - Nuke</span>',
+                ),
+                (
+                    "/colour-playground",
+                    '<span class="font-weight-normal">Colour - Playground</span>',
+                ),
+                (
+                    "/colour-spectroscope",
+                    '<span class="font-weight-normal">Colour - Spectroscope</span>',
+                ),
+                (
+                    "/experiments",
+                    '<span class="font-weight-normal">Experiments</span>',
+                ),
             ),
             "Projects",
         ),
@@ -212,24 +227,45 @@ NAVIGATION_LINKS = {
                     "/contributors",
                     '<span class="font-weight-bold">Contributors</span>',
                 ),
-                ("/features", "Features"),
-                ("/history", "History"),
+                (
+                    "/features",
+                    '<span class="font-weight-normal">Features</span>',
+                ),
+                (
+                    "/history",
+                    '<span class="font-weight-normal">History</span>',
+                ),
                 (
                     "https://colour.readthedocs.io/en/develop/bibliography.html",
-                    "Bibliography",
+                    '<span class="font-weight-normal">Bibliography</span>',
                 ),
-                ("https://doi.org/10.5281/zenodo.8284953", "Cite Us"),
-                ("/cited-by", "Cited By"),
-                ("https://opensource.org/licenses/BSD-3-Clause", "License"),
-                ("/search", "Search"),
+                (
+                    "https://doi.org/10.5281/zenodo.8284953",
+                    '<span class="font-weight-normal">Cite Us</span>',
+                ),
+                (
+                    "/cited-by",
+                    '<span class="font-weight-normal">Cited By</span>',
+                ),
+                (
+                    "https://opensource.org/licenses/BSD-3-Clause",
+                    '<span class="font-weight-normal">License</span>',
+                ),
+                ("/search", '<span class="font-weight-normal">Search</span>'),
             ),
             "Documentation",
         ),
         (
             (
                 ("/blog", '<span class="font-weight-bold">Posts</span>'),
-                ("/archive.html", "Archive"),
-                ("/categories/", "Tags"),
+                (
+                    "/archive.html",
+                    '<span class="font-weight-normal">Archive</span>',
+                ),
+                (
+                    "/categories/",
+                    '<span class="font-weight-normal">Tags</span>',
+                ),
             ),
             "Blog",
         ),
