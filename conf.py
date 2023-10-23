@@ -162,6 +162,10 @@ NAVIGATION_LINKS = {
                     "/colour-checker-detection",
                     '<span class="font-weight-bold">Colour - Checker Detection</span>',
                 ),
+                (
+                    "/colour-visuals",
+                    '<span class="font-weight-bold">Colour - Visuals</span>',
+                ),
                 ("/colour-maya", "Colour - Maya"),
                 ("/colour-nuke", "Colour - Nuke"),
                 ("/colour-playground", "Colour - Playground"),
