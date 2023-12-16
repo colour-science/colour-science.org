@@ -1039,9 +1039,48 @@
                 </div>
             </div>
         </div>
-
-        <div class="col"></div>
-        <div class="col"></div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>Thomas A Caswell</h3>
+                    <h4>
+                        <a href="https://www.bnl.gov">Brookhaven National Laboratory</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>Computational Scientist</em>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Typing annotations improvements.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/tacaswell" class="card-link">Github</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>Liam Collod</h3>
+                    <h4>
+                        <a href="https://www.mikrosanimation.com">Mikros Animation</a>
+                    </h4>
+                    <h5 class="card-subtitle text-muted mt-3">
+                        <em>VFX Software Developer</em>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Documentation improvements.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/MrLixm" class="card-link">Github</a>
+                </div>
+            </div>
+        </div>
 
     </div>
     <!-- ------------------------------------------------------------------ -->
@@ -1294,12 +1333,14 @@
                             <li><a href="https://github.com/AndersAtEndian">AndersAtEndian</a></li>
                             <li><a href="https://github.com/Apoorva-13">Apoorva-13</a></li>
                             <li><a href="https://github.com/Artoria2e5">Artoria2e5</a></li>
+                            <li><a href="https://github.com/BQ-Octantis">BQ-Octantis</a></li>
                             <li><a href="https://github.com/CHRIBUR0309">CHRIBUR0309</a></li>
                             <li><a href="https://github.com/Chandler">Chandler</a></li>
                             <li><a href="https://github.com/ChunHsinWang">ChunHsinWang</a></li>
                             <li><a href="https://github.com/Edwardlin-zlt">Edwardlin-zlt</a></li>
                             <li><a href="https://github.com/EricFlyMeToTheMoon">EricFlyMeToTheMoon</a></li>
                             <li><a href="https://github.com/Floschoe">Floschoe</a></li>
+                            <li><a href="https://github.com/GuillemRamisa">GuillemRamisa</a></li>
                             <li><a href="https://github.com/JarrettR">JarrettR</a></li>
                             <li><a href="https://github.com/JayPalm">JayPalm</a></li>
                             <li><a href="https://github.com/Jerry2001">Jerry2001</a></li>
@@ -1329,6 +1370,7 @@
                             <li><a href="https://github.com/TFiFiE">TFiFiE</a></li>
                             <li><a href="https://github.com/TomFryers">TomFryers</a></li>
                             <li><a href="https://github.com/ValZapod">ValZapod</a></li>
+                            <li><a href="https://github.com/Voultapher">Voultapher</a></li>
                             <li><a href="https://github.com/Wagyx">Wagyx</a></li>
                             <li><a href="https://github.com/Wangld5">Wangld5</a></li>
                             <li><a href="https://github.com/Willingo">Willingo</a></li>
@@ -1349,6 +1391,7 @@
                             <li><a href="https://github.com/alban-sol">alban-sol</a></li>
                             <li><a href="https://github.com/alianoroozi">alianoroozi</a></li>
                             <li><a href="https://github.com/altert">altert</a></li>
+                            <li><a href="https://github.com/alyfreym">alyfreym</a></li>
                             <li><a href="https://github.com/am-ac">am-ac</a></li>
                             <li><a href="https://github.com/andurilhuang">andurilhuang</a></li>
                             <li><a href="https://github.com/anshulxyz">anshulxyz</a></li>
@@ -1374,6 +1417,7 @@
                             <li><a href="https://github.com/digital-prepress">digital-prepress</a></li>
                             <li><a href="https://github.com/diuming">diuming</a></li>
                             <li><a href="https://github.com/dofuuz">dofuuz</a></li>
+                            <li><a href="https://github.com/domisjustanumber">domisjustanumber</a></li>
                             <li><a href="https://github.com/dtbulmerJRs">dtbulmerJRs</a></li>
                             <li><a href="https://github.com/eitanlees">eitanlees</a></li>
                             <li><a href="https://github.com/ema2159">ema2159</a></li>
@@ -1395,6 +1439,8 @@
                             <li><a href="https://github.com/iinnovations">iinnovations</a></li>
                             <li><a href="https://github.com/jaguarondi">jaguarondi</a></li>
                             <li><a href="https://github.com/jamesmyatt">jamesmyatt</a></li>
+                            <li><a href="https://github.com/jamesmyatt">jamesmyatt</a></li>
+                            <li><a href="https://github.com/juneleung">juneleung</a></li>
                             <li><a href="https://github.com/kaihagseth">kaihagseth</a></li>
                             <li><a href="https://github.com/kamikaze">kamikaze</a></li>
                             <li><a href="https://github.com/kljumat">kljumat</a></li>
@@ -1404,7 +1450,6 @@
                             <li><a href="https://github.com/lensz">lensz</a></li>
                             <li><a href="https://github.com/lishichengyan">lishichengyan</a></li>
                             <li><a href="https://github.com/lulunac27a">lulunac27a</a></li>
-                            <li><a href="https://github.com/luoww1992">luoww1992</a></li>
                         </ul>
                     </p>
                 </div>
@@ -1415,10 +1460,12 @@
                 <div class="card-body">
                     <p class="card-text">
                         <ul class="list-unstyled text-center">
+                            <li><a href="https://github.com/luoww1992">luoww1992</a></li>
                             <li><a href="https://github.com/materialjan">materialjan</a></li>
                             <li><a href="https://github.com/matt-roberts">matt-roberts</a></li>
                             <li><a href="https://github.com/matthiasbirkich">matthiasbirkich</a></li>
                             <li><a href="https://github.com/meshing">meshing</a></li>
+                            <li><a href="https://github.com/mesvam">mesvam</a></li>
                             <li><a href="https://github.com/mforbes">mforbes</a></li>
                             <li><a href="https://github.com/mokincha">mokincha</a></li>
                             <li><a href="https://github.com/monkeywithacupcake">monkeywithacupcake</a></li>
@@ -1464,6 +1511,7 @@
                             <li><a href="https://github.com/vibhoothi">vibhoothi</a></li>
                             <li><a href="https://github.com/vidakDK">vidakDK</a></li>
                             <li><a href="https://github.com/volkerjaenisch">volkerjaenisch</a></li>
+                            <li><a href="https://github.com/volrak">volrak</a></li>
                             <li><a href="https://github.com/vsohler">vsohler</a></li>
                             <li><a href="https://github.com/vvclin-git">vvclin-git</a></li>
                             <li><a href="https://github.com/whornsby">whornsby</a></li>
