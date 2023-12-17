@@ -240,7 +240,7 @@ NAVIGATION_LINKS = {
                     '<span class="font-weight-normal">Bibliography</span>',
                 ),
                 (
-                    "https://doi.org/10.5281/zenodo.8284953",
+                    "https://doi.org/10.5281/zenodo.10396329",
                     '<span class="font-weight-normal">Cite Us</span>',
                 ),
                 (
