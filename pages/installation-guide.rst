@@ -22,7 +22,7 @@ and `Installation Methods for Developing Colour`_ sections below.
 Primary Dependencies
 ^^^^^^^^^^^^^^^^^^^^
 
--   `python >= 3.9, < 3.12 <https://www.python.org/download/releases>`__
+-   `python >= 3.9, < 3.13 <https://www.python.org/download/releases>`__
 -   `imageio >= 2, < 3 <https://imageio.github.io>`__
 -   `numpy >= 1.22, < 2 <https://pypi.org/project/numpy>`__
 -   `scipy >= 1.8, < 2 <https://pypi.org/project/scipy>`__
@@ -46,11 +46,8 @@ Development Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 -   `biblib-simple <https://pypi.org/project/biblib-simple>`__
--   `black <https://pypi.org/project/black>`__
--   `blackdoc <https://pypi.org/project/blackdoc>`__
 -   `coverage <https://pypi.org/project/coverage>`__
 -   `coveralls <https://pypi.org/project/coveralls>`__
--   `flynt <https://pypi.org/project/flynt>`__
 -   `invoke <https://pypi.org/project/invoke>`__
 -   `jupyter <https://pypi.org/project/jupyter>`__
 -   `pre-commit <https://pypi.org/project/pre-commit>`__
@@ -60,8 +57,7 @@ Development Dependencies
 -   `pytest-cov <https://pypi.org/project/pytest-cov>`__
 -   `pytest-xdist <https://pypi.org/project/pytest-xdist>`__
 -   `restructuredtext-lint <https://pypi.org/project/restructuredtext-lint>`__
--   `ruff <https://pypi.org/project/ruff>`__
--   `sphinx >= 4, < 5 <https://pypi.org/project/sphinx>`__
+-   `sphinx <https://pypi.org/project/sphinx>`__
 -   `sphinxcontrib-bibtex <https://pypi.org/project/sphinxcontrib-bibtex>`__
 -   `toml <https://pypi.org/project/toml>`__
 -   `twine <https://pypi.org/project/twine>`__
