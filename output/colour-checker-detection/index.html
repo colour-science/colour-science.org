@@ -42,7 +42,7 @@ The following colour checker detection algorithms are implemen">
 
 <!-- Menubar -->
 
-<nav class="navbar navbar-expand-xl static-top mb-4
+<nav class="navbar navbar-expand-xl static-top
 navbar-dark bg-dark bg-primary
 "><div class="container">
 <!-- This keeps the margins nice -->
@@ -144,6 +144,19 @@ implementing various colour checker detection algorithms and related utilities.<
 <p>The following colour checker detection algorithms are implemented:</p>
 <ul class="simple">
 <li><p>Segmentation</p></li>
+<li>
+<p>Machine learning inference via <a class="reference external" href="https://github.com/ultralytics/ultralytics">Ultralytics YOLOv8</a></p>
+<ul>
+<li><p>The model is published on <a class="reference external" href="https://huggingface.co/colour-science/colour-checker-detection-models">HuggingFace</a>,
+and was trained on a purposely constructed <a class="reference external" href="https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset">dataset</a>.</p></li>
+<li><p>The model has only been trained on <em>ColorChecker Classic 24</em> images and
+will not work with <em>ColorChecker Nano</em> or <em>ColorChecker SG</em> images.</p></li>
+<li><p>Inference is performed by a script licensed under the terms of the
+<em>GNU Affero General Public License v3.0</em> as it uses the
+<em>Ultralytics YOLOv8</em> API which is incompatible with the
+<em>BSD-3-Clause</em>.</p></li>
+</ul>
+</li>
 </ul></section><section id="api"><h2>API</h2>
 <p>The main technical reference for <a class="reference external" href="https://github.com/colour-science/colour-checker-detection">Colour - Checker Detection</a>
 is the <a class="reference external" href="https://colour-checker-detection.readthedocs.io/en/latest/reference.html">API Reference</a>.</p>
