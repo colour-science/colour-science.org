@@ -2,9 +2,9 @@
 .. slug: colour-hdri
 .. date: 2015-12-18 06:01:00 UTC
 .. tags: colour, colour science, colour - hdri, hdri, python
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 
 **Colour - HDRI** is a `Python <https://www.python.org>`__ package implementing

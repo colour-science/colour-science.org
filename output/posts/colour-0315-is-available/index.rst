@@ -2,9 +2,9 @@
 .. slug: colour-0315-is-available
 .. date: 2020-01-25 08:44:09 UTC
 .. tags: colour, colour science, release
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 
 `Colour 0.3.15 <https://github.com/colour-science/colour/releases/tag/v0.3.15>`__

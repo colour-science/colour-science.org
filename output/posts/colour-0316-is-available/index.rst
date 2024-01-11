@@ -2,9 +2,9 @@
 .. slug: colour-0316-is-available
 .. date: 2020-11-27 23:24:16 UTC
 .. tags: colour, colour science, release
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 
 `Colour 0.3.16 <https://github.com/colour-science/colour/releases/tag/v0.3.16>`__
@@ -60,8 +60,8 @@ Besides the various minor changes and fixes, the highlights of this release are:
     -   ISO 7589 Sensitometric Printer
 
 -   Support for *IGPGTG* colourspace by *Hellwig and Fairchild (2020)*.
--   The `colour.SpectralDistribution.interpolate` and
-    `colour.MultiSpectralDistributions.interpolate` methods now honour class
+-   The ``colour.SpectralDistribution.interpolate`` and
+    ``colour.MultiSpectralDistributions.interpolate`` methods now honour class
     instantiation time interpolation parameters instead of blindly applying
     *CIE 167:2005* recommendation, this introduces minor numerical changes.
 -   Many definitions, methods and module attributes have been renamed to

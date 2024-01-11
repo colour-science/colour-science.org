@@ -2,9 +2,9 @@
 .. slug: colour-040-is-available
 .. date: 2022-02-20 08:22:06 UTC
 .. tags: colour, colour science, release
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 
 We are pleased to announce that after over a year of work,
@@ -38,7 +38,7 @@ The following minimal dependency versions are also required:
 The highlights of this release are as follows:
 
 -   **Colour** can on iOS and iPadOS with `Pyto <https://pyto.app>`__.
--   The import of `colour` is now 3.6 times faster.
+-   The import of ``colour`` is now 3.6 times faster.
 -   Typing annotations have been added and the codebase is checked with
     `Mypy <https://pypi.org/project/mypy>`__.
 -   The documentation has been updated and uses the
@@ -47,7 +47,7 @@ The highlights of this release are as follows:
     `PEP257 <https://www.python.org/dev/peps/pep-0257>`__.
 -   The code formatter is now
     `Black <https://pypi.org/project/black>`__.
--   Many Python 3 features such as *f-Strings* or the `dataclass` decorator
+-   Many Python 3 features such as *f-Strings* or the ``dataclass`` decorator
     have been adopted.
 -   The plotting API has been improved to be more consistent when setting the colours of some figures, e.g. spectral or planckian locus.
 -   New colour appearance models:

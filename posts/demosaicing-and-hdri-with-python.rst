@@ -2,9 +2,9 @@
 .. slug: demosaicing-and-hdri-with-python
 .. date: 2015-12-18 06:15:31 UTC
 .. tags: colour, colour science, colour - demosaicing, colour - hdri, release
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 
 We have released two complementary image processing  `Python <https://www.python.org>`__

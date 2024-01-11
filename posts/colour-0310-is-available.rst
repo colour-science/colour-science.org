@@ -2,9 +2,9 @@
 .. slug: colour-0310-is-available
 .. date: 2017-07-12 10:47:36 UTC+01:00
 .. tags: colour, colour science, release
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 
 We are pleased to announce that `Colour 0.3.10 <https://github.com/colour-science/colour/releases/tag/v0.3.10>`__
@@ -15,9 +15,9 @@ is available!
 The highlights of this release are:
 
 -   Michaelis–Menten kinetics, a model of enzyme kinetics used by the new Fairchild and Wyble (2010) Lightness and Luminance computation definitions.
--   Implementation of ASTM D1925 and ASTM E313 yellowness computation. 
--   Support for ARIB STD-B67 (Hybrid Log-Gamma) OETF and EOTF. 
--   Support for DICOM - Grayscale Standard Display Function OETF and EOTF. 
+-   Implementation of ASTM D1925 and ASTM E313 yellowness computation.
+-   Support for ARIB STD-B67 (Hybrid Log-Gamma) OETF and EOTF.
+-   Support for DICOM - Grayscale Standard Display Function OETF and EOTF.
 -   Support for Protune Colourspace and Protune Log encoding and decoding curves.
 -   Support for Prismatic colourspace.
 -   Support for hdr-CIELab and hdr-IPT colourspaces.

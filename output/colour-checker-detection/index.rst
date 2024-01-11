@@ -2,9 +2,9 @@
 .. slug: colour-checker-detection
 .. date: 2019-03-24 10:45:00 UTC
 .. tags: colour, colour science, colour - checker detection, colour rendition chart, python
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 
 **Colour - Checker Detection** is a `Python <https://www.python.org>`__ package

@@ -1,10 +1,10 @@
 .. title: Code of Conduct
 .. slug: code-of-conduct
 .. date: 2019-08-12 19:07:53 UTC+01:00
-.. tags: 
-.. category: 
-.. link: 
-.. description: 
+.. tags:
+.. category:
+.. link:
+.. description:
 .. type: text
 
 Our Pledge

@@ -2,9 +2,9 @@
 .. slug: colour-demosaicing
 .. date: 2015-12-18 06:00:51 UTC
 .. tags: colour, colour science, colour - demosaicing, demosaicing
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 
 **Colour - Demosaicing** is a `Python <https://www.python.org>`__ package

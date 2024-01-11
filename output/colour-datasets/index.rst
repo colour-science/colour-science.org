@@ -3,8 +3,8 @@
 .. date: 2019-10-06 00:14:27 UTC+01:00
 .. tags: colour, colour science, colour - datasets, datasets
 .. category:
-.. link: 
-.. description: 
+.. link:
+.. description:
 .. type: text
 
 **Colour - Datasets** is a `Python <https://www.python.org>`__ package
@@ -17,8 +17,9 @@ community:
 
 .. code-block:: python
 
-    >>> import colour_datasets
-    >>> print(colour_datasets.datasets())
+    import colour_datasets
+
+    print(colour_datasets.datasets())
 
 ::
 

@@ -2,9 +2,9 @@
 .. slug: our-first-1000-stars-on-github
 .. date: 2020-09-28 09:39:40 UTC+01:00
 .. tags: colour, colour science, github
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 
 Earlier this week, `Colour <https://github.com/colour-science/colour>`__

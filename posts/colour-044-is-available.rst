@@ -2,9 +2,9 @@
 .. slug: colour-044-is-available
 .. date: 2023-12-17 04:26:42 UTC
 .. tags: colour, colour science, release
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 
 The colour-science Developers are pleased to announce the release of

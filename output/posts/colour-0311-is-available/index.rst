@@ -2,9 +2,9 @@
 .. slug: colour-0311-is-available
 .. date: 2018-02-18 10:28:42 UTC
 .. tags: colour, colour science, release
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 
 We are pleased to announce that `Colour 0.3.11 <https://github.com/colour-science/colour/releases/tag/v0.3.11>`__

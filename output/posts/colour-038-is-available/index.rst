@@ -2,9 +2,9 @@
 .. slug: colour-038-is-available
 .. date: 2016-07-09 11:33:29 UTC+01:00
 .. tags: colour, colour science, release
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 
 `Colour 0.3.8 <https://github.com/colour-science/colour/releases/tag/v0.3.8>`__
@@ -59,4 +59,3 @@ whether they contribute to the code or participate in discussions.
 
 Visit the `releases page <https://github.com/colour-science/colour/releases/tag/v0.3.8>`__
 for complete details.
-

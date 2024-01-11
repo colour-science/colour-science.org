@@ -2,9 +2,9 @@
 .. slug: colour-039-colour-hdri-012-aces
 .. date: 2017-03-12 05:29:15 UTC
 .. tags: aces, colour, colour science, colour - hdri, release
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 
 `colour-science.org <https://www.colour-science.org>`__ has been quiet for a while
@@ -23,18 +23,18 @@ improvements and various new objects:
 
 -   Spectral code optimisations resulting in increased computations performance:
 
-    -   `colour.SpectralPowerDistribution` and `colour.TriSpectralPowerDistribution`
+    -   ``colour.SpectralPowerDistribution`` and ``colour.TriSpectralPowerDistribution``
         classes are now **6.5** times faster.
-    -   `colour.colour_quality_scale` definition is now **10.5** times faster.
-    -   `colour.colour_rendering_index` definition is now **13.1** times faster.
-    -   `colour.uv_to_CCT_Ohno2013` definition is now **15.7** times faster.
+    -   ``colour.colour_quality_scale`` definition is now **10.5** times faster.
+    -   ``colour.colour_rendering_index`` definition is now **13.1** times faster.
+    -   ``colour.uv_to_CCT_Ohno2013`` definition is now **15.7** times faster.
 
 -   Correlated colour temperature to chromaticity coordinates uv computation
     accordingly to Krystek (1985) method.
 -   Support for Luo et al. (2006) CIECAM02 based uniform colourspaces and colour differences.
 -   Support for Dolby ICTCP colourspace.
 -   Support for Canon Log 2 and Canon Log 3 log curves.
--   `colour.RGB_Colourspace` class can now either use instantiation time
+-   ``colour.RGB_Colourspace`` class can now either use instantiation time
     transformations matrices or derived ones. Consequently, the following RGB
     colourspaces Normalised Primary Matrices were replaced with the literature
     ones: *ACES Primaries 0*, *Adobe RGB (1998)*, *ALEXA Wide Gamut RGB*, *CIE RGB*,

@@ -2,9 +2,9 @@
 .. slug: colour-037-is-available
 .. date: 2015-12-13 06:14:07 UTC
 .. tags: colour, colour science, release
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 
 `Colour 0.3.7 <https://github.com/colour-science/colour/releases/tag/v0.3.7>`__

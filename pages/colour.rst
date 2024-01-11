@@ -2,9 +2,9 @@
 .. slug: colour
 .. date: 2020-04-21 10:48:26 UTC+01:00
 .. tags: colour, colour science, python
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 
 `Colour <https://github.com/colour-science/colour>`__ is an open-source

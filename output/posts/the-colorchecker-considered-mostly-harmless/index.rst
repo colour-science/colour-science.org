@@ -2,9 +2,9 @@
 .. slug: the-colorchecker-considered-mostly-harmless
 .. date: 2021-03-06 01:16:33 UTC
 .. tags: camera, colour rendition chart, colour science
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 
 This post will be about colour rendition charts, e.g.

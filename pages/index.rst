@@ -2,9 +2,9 @@
 .. slug: index
 .. date: 2015-12-01 09:37:13 UTC
 .. tags: colour, colour science, python
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 .. hidetitle: True
 

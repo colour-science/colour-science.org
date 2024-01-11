@@ -2,9 +2,9 @@
 .. slug: colour-043-is-available
 .. date: 2023-08-26 23:51:27 UTC+01:00
 .. tags: colour, colour science, release
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 
 The colour-science Developers are pleased to announce the release of `Colour 0.4.3 <https://github.com/colour-science/colour/releases/tag/v0.4.3>`__!
@@ -21,7 +21,7 @@ We worked on many optimisations around colour quality metrics that should result
 
 We also replaced `mypy <https://mypy.readthedocs.io>`__ with `pyright <https://github.com/microsoft/pyright>`__ for performance reasons. We took that opportunity to simplify our type annotations.
 
-The `colour.XYZ_to_RGB` and `colour.RGB_to_XYZ` definition signatures have been changed to be easier to use, please update any code using them. See `#1127 <https://github.com/colour-science/colour/issues/1127>`__ for more information.
+The ``colour.XYZ_to_RGB`` and ``colour.RGB_to_XYZ`` definition signatures have been changed to be easier to use, please update any code using them. See `#1127 <https://github.com/colour-science/colour/issues/1127>`__ for more information.
 
 With this release, the following scientific packages minimum versions are required:
 
@@ -33,7 +33,7 @@ With this release, the following scientific packages minimum versions are requir
 
 The highlights of this release are as follows:
 
--   The *Colour Fidelity Index (2017)*, i.e. `colour.quality.colour_fidelity_index_CIE2017` definition, and *TM 30-18*, i.e. `colour.quality.colour_fidelity_index_ANSIIESTM3018` definition, metrics performance has been improved by x100 thanks to overall optimizations, e.g. `colour.temperature.uv_to_CCT_Ohno2013` definition is x5 faster.
+-   The *Colour Fidelity Index (2017)*, i.e. ``colour.quality.colour_fidelity_index_CIE2017`` definition, and *TM 30-18*, i.e. ``colour.quality.colour_fidelity_index_ANSIIESTM3018`` definition, metrics performance has been improved by x100 thanks to overall optimizations, e.g. ``colour.temperature.uv_to_CCT_Ohno2013`` definition is x5 faster.
 -   `TE226 V2 <https://www.image-engineering.de/content/products/charts/te226/downloads/TE226_D_data_sheet.pdf>`__ colour checker reference values.
 
 -   New colour models:

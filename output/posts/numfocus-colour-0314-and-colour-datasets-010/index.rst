@@ -1,10 +1,10 @@
 .. title: NumFOCUS, Colour 0.3.14 and Colour - Datasets 0.1.0!
 .. slug: numfocus-colour-0314-and-colour-datasets-010
 .. date: 2019-10-27 08:39:18 UTC
-.. tags: 
+.. tags:
 .. category: colour, colour science, release, colour - datasets, numfocus
-.. link: 
-.. description: 
+.. link:
+.. description:
 .. type: text
 
 We are delighted to announce that **Colour** has joined the
@@ -77,10 +77,10 @@ conversions:
 
 .. code-block:: python
 
-    >>> sd = colour.COLOURCHECKERS_SDS["ColorChecker N Ohta"]["dark skin"]
-    >>> convert(sd, "Spectral Distribution", "sRGB", verbose={"mode": "Short"})
+    sd = colour.COLOURCHECKERS_SDS["ColorChecker N Ohta"]["dark skin"]
+    convert(sd, "Spectral Distribution", "sRGB", verbose={"mode": "Short"})
 
-::
+.. code:: text
 
     ===============================================================================
     *                                                                             *
@@ -130,8 +130,8 @@ Dependency Management
 =====================
 
 We have adopted `Poetry <https://poetry.eustace.io>`__ to manage the
-development dependencies, the `setup.py` file has been replaced with a
-`standardized <https://www.python.org/dev/peps/pep-0518>`__ `pyproject.toml`
+development dependencies, the ``setup.py`` file has been replaced with a
+`standardized <https://www.python.org/dev/peps/pep-0518>`__ ``pyproject.toml``
 file.
 
 Continuous Integration
@@ -164,10 +164,11 @@ community:
 
 .. code-block:: python
 
-    >>> import colour_datasets
-    >>> print(colour_datasets.datasets())
+    import colour_datasets
 
-::
+    print(colour_datasets.datasets())
+
+.. code-block:: text
 
     colour-science-datasets
     =======================

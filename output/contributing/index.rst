@@ -132,7 +132,7 @@ possible, and if it makes sense to do so:
 
 The typical output is something along those lines:
 
-::
+.. code:: text
 
     ===============================================================================
     *                                                                             *
@@ -238,10 +238,10 @@ might issue the following commands instead of the aforementioned ones:
     | Various **Colour** unit tests require being able to perform IO with
         `OpenEXR <https://www.openexr.com>`__ images. You will need to install
         the *FreeImage* plugin for `Imageio <http://imageio.github.io>`__ as
-        follows: `python -c "import imageio;imageio.plugins.freeimage.download()"`
+        follows: ``python -c "import imageio;imageio.plugins.freeimage.download()"``
 
-If you are in a hurry and not willing to prepend each command with `poetry run`,
-it is possible to put the following function in your `.bash_profile`:
+If you are in a hurry and not willing to prepend each command with ``poetry run``,
+it is possible to put the following function in your ``.bash_profile``:
 
 .. code:: shell
 
@@ -259,7 +259,7 @@ it is possible to put the following function in your `.bash_profile`:
         fi;
     }
 
-Then issuing `poem` will activate the appropriate virtual environment for your
+Then issuing ``poem`` will activate the appropriate virtual environment for your
 clone.
 
 Step 5
@@ -437,7 +437,7 @@ statically indicate and verify the type of objects in the codebase with
 
 The code has to be `PEP 8 <https://peps.python.org/pep-0008>`__
 compliant although but before anything else, it needs to be consistent with the
-Colour Science litterature:
+Colour Science literature:
 
 For example, the base **CIE** colourspace is **CIE XYZ** with upper case
 notation. It can be converted to chromaticity coordinates **xy** with lower
@@ -524,8 +524,11 @@ Python Style Rules
 
 .. code:: python
 
-    >>> Lab = np.array([100.00000000, -7.41787844, -15.85742105])
-    >>> Lab_to_LCHab(Lab)  # doctest: +ELLIPSIS
+    Lab = np.array([100.00000000, -7.41787844, -15.85742105])
+    Lab_to_LCHab(Lab)  # doctest: +ELLIPSIS
+
+.. code:: text
+
     array([ 100.        ,   17.5066479...,  244.9304684...])
 
 -   Numbers in the API are usually rounded as follows:

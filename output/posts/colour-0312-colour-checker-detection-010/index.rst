@@ -2,9 +2,9 @@
 .. slug: colour-0312-colour-checker-detection-010
 .. date: 2019-03-24 03:47:21 UTC
 .. tags: colour, colour science, release, colour - checker detection
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 
 After over a year of work, `Colour 0.3.12 <https://github.com/colour-science/colour/releases/tag/v0.3.12>`__
@@ -34,9 +34,9 @@ The highlights of this release are:
 Plotting Package Overhaul
 =========================
 
-The `colour.plotting` sub-package was extensively overhauled. It is less
+The ``colour.plotting`` sub-package was extensively overhauled. It is less
 opinionated and more flexible. The plotting definitions have been renamed and
-start with *plot_*, they return the `figure` and `axes` instances. The
+start with *plot_*, they return the ``figure`` and ``axes`` instances. The
 `Cinematic Color 2 - Figures Google Colab <https://colab.research.google.com/drive/1bmVU8fI1Rv3GLXK8kVDovc2K2roGjW9G#scrollTo=Uu08qHeDc11C>`__
 document is a good example highlighting the greatest and latest changes and
 capabilities.
@@ -65,7 +65,7 @@ other software.
 domain-range scales of the publications it implements while recognizing the
 need for a unique domain-range scale. The API can be switched to use a soft
 normalised scale to domain-range [0, 1] using the
-`colour.set_domain_range_scale` definition and the `colour.domain_range_scale`
+``colour.set_domain_range_scale`` definition and the ``colour.domain_range_scale``
 context manager. More information about
 `Domain-Range Scales <https://colour.readthedocs.io/en/develop/basics.html#domain-range-scales>`__
 is available in the `documentation <https://colour.readthedocs.io>`__.

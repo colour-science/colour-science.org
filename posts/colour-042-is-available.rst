@@ -2,9 +2,9 @@
 .. slug: colour-042-is-available
 .. date: 2022-12-04 09:01:51 UTC
 .. tags: colour, colour science, release
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 
 We are pleased to announce that `Colour 0.4.2 <https://github.com/colour-science/colour/releases/tag/v0.4.2>`__
@@ -51,8 +51,8 @@ The highlights of this release are as follows:
     -   *ARRI Wide Gamut 4* colourspace and *ARRI LogC4* log encodings.
     -   *Recommendation ITU-T H.273* code points for video signal type identification.
 
--   `colour.temperature.uv_to_CCT_Ohno2013` definition is ~100x faster.
--   `colour.temperature.CCT_to_uv_Ohno2013` definition is ~425x faster.
+-   ``colour.temperature.uv_to_CCT_Ohno2013`` definition is ~100x faster.
+-   ``colour.temperature.CCT_to_uv_Ohno2013`` definition is ~425x faster.
 
 Please take a look at the
 `releases <https://github.com/colour-science/colour/releases/tag/v0.4.2>`__

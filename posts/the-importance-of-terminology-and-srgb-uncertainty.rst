@@ -2,9 +2,9 @@
 .. slug: the-importance-of-terminology-and-srgb-uncertainty
 .. date: 2015-12-05 00:17:30 UTC
 .. tags: chromaticity diagram, colour, colour science, EOTF, gamut, OETF, primaries, RGB colourspace, sRGB, transfer function, whitepoint
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 
 We were meant to write that entry since a while, and a
