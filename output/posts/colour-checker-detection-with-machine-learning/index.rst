@@ -2,9 +2,9 @@
 .. slug: colour-checker-detection-with-machine-learning
 .. date: 2024-01-11 04:48:50 UTC
 .. tags: colour, colour science, colorchecker classic 24, cvat, hugging face, inference, machine learning, roboflow, yolo
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 
 We have released a new version of `Colour - Checker Detection <https://github.com/colour-science/colour-checker-detection/releases/tag/v0.2.0>`__
@@ -367,7 +367,7 @@ definitions:
                 shutil.copyfile(image_path, images_directory / image_path.name)
 
         with open(ROOT_DATASET_TARGET / "data.yml", "w") as yaml_file:
-            categories = [categorie["name"] for categorie in annotations["categories"]]
+            categories = [category["name"] for category in annotations["categories"]]
             yaml_content = template_data_yaml.format(
                 categories="\n".join([f"- {category}" for category in categories]),
                 category_count=len(categories),
@@ -403,11 +403,12 @@ and an A100 GPU.
 
     # SPDX-License-Identifier: AGPL-3.0
 
-    !pip install ultralytics
+    # !pip install ultralytics
 
-    !git clone https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/
+    # !git clone https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/
 
     import os
+
     os.chdir("/content/colour-checker-detection-dataset")
 
     from ultralytics import YOLO
@@ -443,7 +444,7 @@ and an A100 GPU.
         shear=11.25,
         flipud=0.25,
         fliplr=0.25,
-        mosaic=0
+        mosaic=0,
     )
     print(results)
 
@@ -495,11 +496,11 @@ is available in the repository.
 .. code:: python
 
     COLOUR_CHECKER_IMAGE_PATHS = glob.glob(
-        os.path.join(ROOT_RESOURCES_EXAMPLES, 'detection', '*.png'))
+        os.path.join(ROOT_RESOURCES_EXAMPLES, "detection", "*.png")
+    )
 
     for path in COLOUR_CHECKER_IMAGE_PATHS:
-        for colour_checker_data in detect_colour_checkers_inference(
-                path, show=True):
+        for colour_checker_data in detect_colour_checkers_inference(path, show=True):
             pass
 
 It is also possible to pass an ``np.ndarray`` instance directly. However, something
@@ -565,9 +566,11 @@ if the *AGPL-3.0* license is not a concern:
 
         return data
 
+
     for path in COLOUR_CHECKER_IMAGE_PATHS:
         for colour_checker_data in detect_colour_checkers_inference(
-                path, inferencer=inferencer_agpl, show=True):
+            path, inferencer=inferencer_agpl, show=True
+        ):
             pass
 
 This should be 5 to 10 times faster!
