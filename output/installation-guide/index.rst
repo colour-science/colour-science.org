@@ -158,6 +158,13 @@ Alternatively, you can also install directly from
 Installation Methods for Developing Colour
 ------------------------------------------
 
+.. class:: alert alert-dismissible alert-info
+
+    | **Note**
+    |
+    | If you are on macOS, a dedicated guide on how to setup your environment
+        is available here: `Setting Up the Development Environment on macOS <../setting-up-the-development-environment-on-macos/index.html>`__
+
 Poetry
 ^^^^^^
 
