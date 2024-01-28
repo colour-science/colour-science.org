@@ -20,7 +20,7 @@ __maintainer__ = "Colour Developers"
 __email__ = "colour-developers@colour-science.org"
 __status__ = "Production"
 
-__all__ = ["clean", "precommit", "formatting", "quality", "build"]
+__all__ = ["clean", "precommit", "build"]
 
 
 @task
@@ -59,47 +59,7 @@ def precommit(ctx: Context):
     ctx.run("pre-commit run --all-files")
 
 
-@task
-def formatting(
-    ctx: Context,
-    black: bool = True,
-):
-    """
-    Format the codebase with *Black*.
-
-    Parameters
-    ----------
-    ctx
-        Context.
-    black
-        Whether to format the codebase with *Black*.
-    """
-
-    if black:
-        print('Formatting codebase with "Black"...')
-        ctx.run("black .")
-
-
-@task
-def quality(ctx, flake8: bool = True):
-    """
-    Check the codebase with *Flake8* and lint various *restructuredText*
-    files with *rst-lint*.
-
-    Parameters
-    ----------
-    ctx
-        Context.
-    flake8
-        Whether to check the codebase with *Flake8*.
-    """
-
-    if flake8:
-        print('Checking codebase with "Flake8"...')
-        ctx.run("flake8 .")
-
-
-@task(precommit, formatting, quality)
+@task(precommit)
 def build(ctx):
     """
     Build the project.
