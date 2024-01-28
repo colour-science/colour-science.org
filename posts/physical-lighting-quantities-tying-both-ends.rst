@@ -95,9 +95,10 @@ implements the aforementioned model with Python:
 
 .. code:: python
 
-    import colour_hdri
-
-    colour_hdri.saturation_based_speed_focal_plane_exposure(18, 5.6, 0.25, 400)
+    >>> import colour_hdri
+    >>> colour_hdri.saturation_based_speed_focal_plane_exposure(
+    ...     18, 5.6, 0.25, 400
+    ... )
 
 .. code:: text
 
@@ -148,12 +149,13 @@ implements support for absolute luminance calibration with Python:
 
 .. code:: python
 
-    import colour_hdri
-    import numpy as np
-
-    RGB = np.ones([2048, 1024, 3])
-    colour_hdri.upper_hemisphere_illuminance_Lagarde2016(RGB)
-    colour_hdri.absolute_luminance_calibration_Lagarde2016(RGB, 120000)[0, 0]
+    >>> import colour_hdri
+    >>> import numpy as np
+    >>> RGB = np.ones([2048, 1024, 3])
+    >>> colour_hdri.upper_hemisphere_illuminance_Lagarde2016(RGB)
+    >>> colour_hdri.absolute_luminance_calibration_Lagarde2016(RGB, 120000)[
+    ...     0, 0
+    ... ]
 
 .. code-block:: text
 
