@@ -2,9 +2,9 @@
 .. slug: the-colorchecker-considered-mostly-harmless
 .. date: 2021-03-06 01:16:33 UTC
 .. tags: camera, colour rendition chart, colour science
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 
 This post will be about colour rendition charts, e.g.
@@ -30,7 +30,7 @@ There is an overabundance of `Youtube videos <https://www.youtube.com/results?se
 explaining how to get perfect colours with the help of a colour rendition chart.
 
 Yesterday, an
-`Unreal Engine: Virtual Production Facebook <https://www.facebook.com/groups/virtualproduction/>`__
+`Unreal Engine: Virtual Production Facebook <https://www.facebook.com/groups/virtualproduction>`__
 group member linked one of them, claiming that this was the safest way to
 calibrate a camera for Virtual Production and also, quite oddly, that
 *light does not matter*.

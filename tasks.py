@@ -10,17 +10,17 @@ import inspect
 if not hasattr(inspect, "getargspec"):
     inspect.getargspec = inspect.getfullargspec
 
-from invoke.tasks import task
 from invoke.context import Context
+from invoke.tasks import task
 
 __author__ = "Colour Developers"
 __copyright__ = "Copyright 2013 Colour Developers"
-__license__ = "New BSD License - https://opensource.org/licenses/BSD-3-Clause"
+__license__ = "BSD-3-Clause - https://opensource.org/licenses/BSD-3-Clause"
 __maintainer__ = "Colour Developers"
 __email__ = "colour-developers@colour-science.org"
 __status__ = "Production"
 
-__all__ = ["clean", "upgrade", "formatting", "quality", "build"]
+__all__ = ["clean", "precommit", "formatting", "quality", "build"]
 
 
 @task
@@ -45,31 +45,18 @@ def clean(
 
 
 @task
-def upgrade(
-    ctx: Context,
-    pyupgrade: bool = True,
-    flynt: bool = True,
-):
+def precommit(ctx: Context):
     """
-    Upgrade the codebase with *pyupgrade* and *flynt*.
+    Run the "pre-commit" hooks on the codebase.
 
     Parameters
     ----------
     ctx
         Context.
-    pyupgrade
-        Whether to upgrade the codebase with *pyupgrade*.
-    flynt
-        Whether to upgrade the codebase with *flynt*.
     """
 
-    if pyupgrade:
-        print('Upgrading codebase with "pyupgrade"...')
-        ctx.run("pre-commit run pyupgrade --all-files")
-
-    if flynt:
-        print('Upgrading codebase with "flynt"...')
-        ctx.run("flynt .")
+    print('Running "pre-commit" hooks on the codebase...')
+    ctx.run("pre-commit run --all-files")
 
 
 @task
@@ -112,7 +99,7 @@ def quality(ctx, flake8: bool = True):
         ctx.run("flake8 .")
 
 
-@task(upgrade, formatting, quality)
+@task(precommit, formatting, quality)
 def build(ctx):
     """
     Build the project.

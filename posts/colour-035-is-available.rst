@@ -23,7 +23,7 @@ optimisations and speed, we have also maintained almost complete backward
 compatibility.
 
 Another key feature is our recent derivation of
-`RED colourspaces </posts/red-colourspaces-derivation/>`__.
+`RED colourspaces </posts/red-colourspaces-derivation>`__.
 
 Feel free to take a look at the `releases page <https://github.com/colour-science/colour/releases/tag/v0.3.5>`__
 for complete details.

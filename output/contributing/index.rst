@@ -31,10 +31,11 @@ There are many ways to help:
     labels are a good place to start.
 -   Improving siblings packages:
 
-    -   `Colour - Datasets </colour-datasets/>`__
-    -   `Colour - Demosaicing </colour-demosaicing/>`__
-    -   `Colour - HDRI </colour-hdri/>`__
-    -   `Colour - Checker Detection </colour-checker-detection/>`__
+    -   `Colour - Datasets </colour-datasets>`__
+    -   `Colour - Demosaicing </colour-demosaicing>`__
+    -   `Colour - HDRI </colour-hdri>`__
+    -   `Colour - Checker Detection </colour-checker-detection>`__
+    -   `Colour - Visuals </colour-visuals>`__
 
 -   Participating in discussions on `Github <https://github.com/colour-science/colour/discussions>`__.
 
@@ -131,34 +132,34 @@ possible, and if it makes sense to do so:
 
 The typical output is something along those lines:
 
-::
+.. code:: text
 
     ===============================================================================
     *                                                                             *
     *   Interpreter :                                                             *
-    *       python : 3.9.9 (main, Nov 21 2021, 03:16:13)                          *
-    *                [Clang 13.0.0 (clang-1300.0.29.3)]                           *
+    *       python : 3.11.6 (main, Oct  2 2023, 20:46:14) [Clang 14.0.3           *
+    *   (clang-1403.0.22.14.1)]                                                   *
     *                                                                             *
     *   colour-science.org :                                                      *
-    *       colour : v0.3.16-632-g630647772                                       *
+    *       colour : v0.4.3-61-gbfc42ac2e                                         *
     *                                                                             *
     *   Runtime :                                                                 *
-    *       imageio : 2.14.1                                                      *
-    *       matplotlib : 3.4.3                                                    *
-    *       networkx : 2.6.3                                                      *
-    *       numpy : 1.22.1                                                        *
-    *       pandas : 1.4.0                                                        *
-    *       pygraphviz : 1.8                                                      *
-    *       PyOpenColorIO : 2.1.2                                                 *
-    *       scipy : 1.7.3                                                         *
-    *       sklearn : 1.0.2                                                       *
-    *       tqdm : 4.62.3                                                         *
-    *       trimesh : 3.9.43                                                      *
+    *       imageio : 2.31.5                                                      *
+    *       matplotlib : 3.8.0                                                    *
+    *       networkx : 2.8.8                                                      *
+    *       numpy : 1.26.1                                                        *
+    *       pandas : 1.5.3                                                        *
+    *       pygraphviz : 1.11                                                     *
+    *       PyOpenColorIO : 2.3.0                                                 *
+    *       scipy : 1.11.3                                                        *
+    *       tqdm : 4.66.1                                                         *
+    *       trimesh : 3.23.5                                                      *
+    *       xxhash : 3.4.1                                                        *
     *                                                                             *
     ===============================================================================
 
 If you are reporting an exception, please provide the complete traceback, it
-will help us tremendously understand what happened.
+will help us understand what happened.
 
 Features & Enhancements
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -169,9 +170,9 @@ like would help its implementation: publications, wikipedia article, etc...
 
 If there is an implementation existing in another language, we will be most
 likely be able to port it although the licence must be compatible with the
-`New BSD License <https://opensource.org/licenses/BSD-3-Clause>`__ terms.
+`BSD-3-Clause <https://opensource.org/licenses/BSD-3-Clause>`__ terms.
 
-We are also running `Matlab <http://www.mathworks.fr/products/matlab/>`__, so
+We are also running `Matlab <http://www.mathworks.fr/products/matlab>`__, so
 don't hesitate to provide snippets for it if you have functions you would like
 to be ported.
 
@@ -213,34 +214,34 @@ Navigate to the *colour* directory:
 Step 4
 ******
 
-Assuming `python >= 3.8, < 3.11 <https://www.python.org/download/releases/>`__
+Assuming `python >= 3.9, < 3.11 <https://www.python.org/download/releases>`__
 is available on your system, the development dependencies are installed with
 `Poetry <https://poetry.eustace.io>`__ as follows:
 
 .. code:: shell
 
-    poetry install --extras "meshing optional plotting"
+    poetry install --with dev,docs,meshing,optional
 
-If `Graphviz <https://www.graphviz.org/>`__ is available on your system, you
+If `Graphviz <https://www.graphviz.org>`__ is available on your system, you
 might issue the following commands instead of the aforementioned ones:
 
 .. code:: shell
 
     git clone git://github.com/colour-science/colour.git
     cd colour
-    poetry install --extras "graphviz meshing optional plotting"
+    poetry install --with dev,docs,graphviz,meshing,optional
 
 .. class:: alert alert-dismissible alert-warning
 
     | **Warning**
     |
     | Various **Colour** unit tests require being able to perform IO with
-        `OpenEXR <https://www.openexr.com/>`__ images. You will need to install
-        the *FreeImage* plugin for `Imageio <http://imageio.github.io/>`__ as
-        follows: `python -c "import imageio;imageio.plugins.freeimage.download()"`
+        `OpenEXR <https://www.openexr.com>`__ images. You will need to install
+        the *FreeImage* plugin for `Imageio <http://imageio.github.io>`__ as
+        follows: ``python -c "import imageio;imageio.plugins.freeimage.download()"``
 
-If you are in a hurry and not willing to prepend each command with `poetry run`,
-it is possible to put the following function in your `.bash_profile`:
+If you are in a hurry and not willing to prepend each command with ``poetry run``,
+it is possible to put the following function in your ``.bash_profile``:
 
 .. code:: shell
 
@@ -258,13 +259,13 @@ it is possible to put the following function in your `.bash_profile`:
         fi;
     }
 
-Then issuing `poem` will activate the appropriate virtual environment for your
+Then issuing ``poem`` will activate the appropriate virtual environment for your
 clone.
 
 Step 5
 ******
 
-Install the `pre-commit <https://pre-commit.com/>`__ hooks:
+Install the `pre-commit <https://pre-commit.com>`__ hooks:
 
 .. code:: shell
 
@@ -309,7 +310,7 @@ Step 9
 Create a branch for your contribution:
 
 The core developers are using the
-`git flow branching model <http://nvie.com/posts/a-successful-git-branching-model/>`__
+`git flow branching model <http://nvie.com/posts/a-successful-git-branching-model>`__
 for most of the development tasks and since the branch name appears in the
 commit message and for consistency, please use the following branch
 prefixes:
@@ -350,18 +351,11 @@ or alternatively:
 Step 13
 *******
 
-Verify that the static checking from `mypy <http://mypy-lang.org>`__ is passing:
+Verify that the static checking from `pyright <https://pypi.org/project/pyright>`__ is passing:
 
 .. code:: shell
 
-    poetry run dmypy run -- --show-error-codes --warn-unused-ignores --warn-redundant-casts --install-types --non-interactive -p colour
-
-or alternatively:
-
-.. code:: shell
-
-    source $(poetry env info -p)/bin/activate
-    dmypy run -- --show-error-codes --warn-unused-ignores --warn-redundant-casts --install-types --non-interactive -p colour
+    poetry run invoke quality
 
 Step 14
 *******
@@ -378,10 +372,11 @@ Commit your changes:
     | **Note**
     |
     | The *pre-commit* hooks will run before committing, notably
-        `black <https://pypi.org/project/black/>`__,
-        `flake8 <https://pypi.org/project/flake8/>`__,
-        `flynt <https://pypi.org/project/flynt/>`__ and
-        `pyupgrade <https://pypi.org/project/pyupgrade/>`__ thus depending on
+        `flynt <https://pypi.org/project/flynt>`__,
+        `isort <https://pypi.org/project/isort>`__,
+        `ruff <https://pypi.org/project/ruff>`__,
+        `black <https://pypi.org/project/black>`__ and
+        `blackdoc <https://pypi.org/project/blackdoc>`__ thus depending on
         their status, you might not be able to commit until you have fixed the
         issues reported.
 
@@ -425,8 +420,8 @@ Guidelines
 ----------
 
 Most of the conventions used in **Colour** are the same than
-`NumPy <http://www.numpy.org/>`__, `SciPy <http://www.scipy.org/>`__ and
-`scikit-image <http://scikit-image.org/>`__.
+`NumPy <http://www.numpy.org>`__, `SciPy <http://www.scipy.org>`__ and
+`scikit-image <http://scikit-image.org>`__.
 
 Overview
 ^^^^^^^^
@@ -436,18 +431,18 @@ and especially the *Python Language Rules* although with the main exception
 being the docstrings / documentation formatted with
 `Numpy Docstrings Style <https://github.com/numpy/numpy/blob/master/doc/example.py>`__.
 
-We use `type hints <https://docs.python.org/3.8/library/typing.html>`__  to
+We use `type hints <https://docs.python.org/3/library/typing.html>`__  to
 statically indicate and verify the type of objects in the codebase with
 `mypy <http://mypy-lang.org>`__.
 
-The code has to be `PEP 8 <http://legacy.python.org/dev/peps/pep-0008/>`__
+The code has to be `PEP 8 <https://peps.python.org/pep-0008>`__
 compliant although but before anything else, it needs to be consistent with the
-Colour Science litterature:
+Colour Science literature:
 
 For example, the base **CIE** colourspace is **CIE XYZ** with upper case
 notation. It can be converted to chromaticity coordinates **xy** with lower
 case notation. If we were to fully abide by the
-`PEP 8 <http://legacy.python.org/dev/peps/pep-0008/>`__ recommendations, we
+`PEP 8 <https://peps.python.org/pep-0008>`__ recommendations, we
 would have written a conversion definition as follows:
 
 .. code:: python
@@ -476,8 +471,8 @@ names:
 
 When the reference is using upper case named variables, we try to follow
 the same convention, it is unfortunately not
-`PEP 8 <http://legacy.python.org/dev/peps/pep-0008/>`__ compliant but has the
-benefit of a much easier comparison between the implementation and the
+`PEP 8 <https://peps.python.org/pep-0008>`__ compliant but has the benefit of a
+much easier comparison between the implementation and the
 reference.
 
 We suggest that contributors follow the same rule.
@@ -488,12 +483,9 @@ Python Language Rules
 -   All the code must be annotated with type hints.
 -   All the code must be covered by unit tests and doctests.
 -   All the code must be documented to the same standard than
-    `NumPy <http://www.numpy.org/>`__, `SciPy <http://www.scipy.org/>`__
-    and `scikit-image <http://scikit-image.org/>`__.
--   All the code must be checked with the static analysis tool of your choice,
-    e.g. `PyCharm <http://www.jetbrains.com/pycharm/>`__ ,
-    `Flake8 <https://pypi.org/project/flake8>`__, or
-    `Codacy <https://www.codacy.com/>`__.
+    `NumPy <http://www.numpy.org>`__, `SciPy <http://www.scipy.org>`__
+    and `scikit-image <http://scikit-image.org>`__.
+-   All the code must be checked with the *pre-commit* hooks.
 -   *Pull requests* should not be merged without being reviewed and ensuring
     that the `Github Actions <https://github.com/colour-science/colour/actions>`__
     continuous integration suite succeeded.
@@ -503,24 +495,25 @@ Python Style Rules
 ^^^^^^^^^^^^^^^^^^
 
 -   Ensure consistency with Colour Science literature first.
--   Ensure `PEP 8 <http://legacy.python.org/dev/peps/pep-0008/>`__ compliance.
+-   Ensure `PEP 8 <https://peps.python.org/pep-0008>`__ compliance.
 -   Try using a close to *LaTeX* syntax for variables names so that they are
     easier to compare to the reference.
 
-    For instance, a variable defined \\(D\_{uv}\\) in a paper would be defined
-    as *D\_uv* in the code, \\(L^\*\\) as *Lstar* and \\(X\_{ab}^{\\prime}\\)
-    as *Xp\_ab*.
+    For instance, a variable defined $$D\_{uv}$$ in a paper would be defined
+    as `D\_uv` in the code, $$L^\*$$ as `Lstar` and $$X\_{ab}^{\\prime}$$
+    as `Xp\_ab`.
 -   Try using uppercase for author names in definitions:
 
 .. code:: python
 
     def CCT_to_xy_Kang2002(CCT):
+        ...
 
 -   Please use *British English* words instead of *American English* ones as
     the **CIE** does, the most important of all being **colour** instead of
-    **color**. You can consult the `CIE Termlist <http://eilv.cie.co.at/>`__ if
+    **color**. You can consult the `CIE Termlist <https://cie.co.at/e-ilv>`__ if
     any doubts.
--   Import `NumPy <http://www.numpy.org/>`__ as follows:
+-   Import `NumPy <http://www.numpy.org>`__ as follows:
 
 .. code:: python
 
@@ -531,8 +524,11 @@ Python Style Rules
 
 .. code:: python
 
-    >>> Lab = np.array([100.00000000, -7.41787844, -15.85742105])
-    >>> Lab_to_LCHab(Lab)  # doctest: +ELLIPSIS
+    Lab = np.array([100.00000000, -7.41787844, -15.85742105])
+    Lab_to_LCHab(Lab)  # doctest: +ELLIPSIS
+
+.. code:: text
+
     array([ 100.        ,   17.5066479...,  244.9304684...])
 
 -   Numbers in the API are usually rounded as follows:
@@ -741,7 +737,7 @@ Python Style Rules
     we have already too much of them.
 -   Avoid **/** to wrap lines, prefer using the parenthesis **()**.
 -   The code formatting is performed using
-    `black <https://pypi.org/project/black/>`__. You can invoke it recursively
+    `black <https://pypi.org/project/black>`__. You can invoke it recursively
     on a directory as follows:
 
 .. code:: shell
@@ -768,7 +764,7 @@ Citations
 ^^^^^^^^^
 
 It's likely that the code you contribute will be based upon references, we are
-using a slightly modified `APA 7th Edition <http://www.apastyle.org/>`__
+using a slightly modified `APA 7th Edition <http://www.apastyle.org>`__
 citation style `available for download </others/american-psychological-association-7th-edition-colour-science.csl>`__
 and generating citations as follows:
 
@@ -785,7 +781,7 @@ and generating citations as follows:
     Lindbloom, B. (2014). RGB Working Space Information. Retrieved April 11, 2014, from http://www.brucelindbloom.com/WorkingSpaceInfo.html
 
 We are storing all our citations in a database maintained by
-`Zotero <https://www.zotero.org/>`__ and it is recommended that you are given
+`Zotero <https://www.zotero.org>`__ and it is recommended that you are given
 a citation key by us.
 
 Commits
@@ -840,7 +836,7 @@ Releasing Colour
 ----------------
 
 The following stages help maintainers navigate through the release of a new
-version of **Colour**, some automation is provided by `Invoke <http://www.pyinvoke.org/>`__:
+version of **Colour**, some automation is provided by `Invoke <http://www.pyinvoke.org>`__:
 
 .. raw:: html
 
@@ -876,7 +872,7 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                 <li><span class="task-status todo" style="margin-right:6px">TODO</span>Create a pristine <i>Poetry</i> environment.
                   <ul>
                     <li>
-                      <pre><code data-lang="bash" class="bash">	rm poetry.lock &amp;&amp; poem &amp;&amp; poetry install --extras &quot;graphviz meshing optional plotting&quot;</code></pre>
+                      <pre><code data-lang="bash" class="bash">	rm poetry.lock &amp;&amp; poem &amp;&amp; poetry install --with dev,docs,graphviz,meshing,optional</code></pre>
                     </li>
                   </ul>
                 </li>
@@ -917,7 +913,6 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
               <ul>
                 <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>__init__.py</code></li>
                 <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>pyproject.toml</code></li>
-                <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>setup.py</code></li>
                 <li>A typical commit message for version raise is as follows:
                   <ul>
                     <li>
@@ -1040,4 +1035,3 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
         </li>
       </ul>
     </div>
-

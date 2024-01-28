@@ -37,7 +37,7 @@ your intended use case, i.e. using or developin">
 
 <!-- Menubar -->
 
-<nav class="navbar navbar-expand-xl static-top mb-4
+<nav class="navbar navbar-expand-xl static-top
 navbar-dark bg-dark bg-primary
 "><div class="container">
 <!-- This keeps the margins nice -->
@@ -61,11 +61,12 @@ navbar-dark bg-dark bg-primary
                     <a href="../colour-demosaicing" class="dropdown-item"><span class="font-weight-bold">Colour - Demosaicing</span></a>
                     <a href="../colour-hdri" class="dropdown-item"><span class="font-weight-bold">Colour - HDRI</span></a>
                     <a href="../colour-checker-detection" class="dropdown-item"><span class="font-weight-bold">Colour - Checker Detection</span></a>
-                    <a href="../colour-maya" class="dropdown-item">Colour - Maya</a>
-                    <a href="../colour-nuke" class="dropdown-item">Colour - Nuke</a>
-                    <a href="../colour-playground" class="dropdown-item">Colour - Playground</a>
-                    <a href="../colour-spectroscope" class="dropdown-item">Colour - Spectroscope</a>
-                    <a href="../experiments" class="dropdown-item">Experiments</a>
+                    <a href="../colour-visuals" class="dropdown-item"><span class="font-weight-bold">Colour - Visuals</span></a>
+                    <a href="../colour-maya" class="dropdown-item"><span class="font-weight-normal">Colour - Maya</span></a>
+                    <a href="../colour-nuke" class="dropdown-item"><span class="font-weight-normal">Colour - Nuke</span></a>
+                    <a href="../colour-playground" class="dropdown-item"><span class="font-weight-normal">Colour - Playground</span></a>
+                    <a href="../colour-spectroscope" class="dropdown-item"><span class="font-weight-normal">Colour - Spectroscope</span></a>
+                    <a href="../experiments" class="dropdown-item"><span class="font-weight-normal">Experiments</span></a>
             </div>
             </li>
 <li class="nav-item dropdown">
@@ -79,21 +80,21 @@ navbar-dark bg-dark bg-primary
                     <a href="../code-of-conduct" class="dropdown-item"><span class="font-weight-bold">Code of Conduct</span></a>
                     <a href="../contributing" class="dropdown-item"><span class="font-weight-bold">Contributing</span></a>
                     <a href="../contributors" class="dropdown-item"><span class="font-weight-bold">Contributors</span></a>
-                    <a href="../features" class="dropdown-item">Features</a>
-                    <a href="../history" class="dropdown-item">History</a>
-                    <a href="https://colour.readthedocs.io/en/develop/bibliography.html" class="dropdown-item">Bibliography</a>
-                    <a href="https://doi.org/10.5281/zenodo.7367239" class="dropdown-item">Cite Us</a>
-                    <a href="../cited-by" class="dropdown-item">Cited By</a>
-                    <a href="https://opensource.org/licenses/BSD-3-Clause" class="dropdown-item">License</a>
-                    <a href="../search" class="dropdown-item">Search</a>
+                    <a href="../features" class="dropdown-item"><span class="font-weight-normal">Features</span></a>
+                    <a href="../history" class="dropdown-item"><span class="font-weight-normal">History</span></a>
+                    <a href="https://colour.readthedocs.io/en/develop/bibliography.html" class="dropdown-item"><span class="font-weight-normal">Bibliography</span></a>
+                    <a href="https://doi.org/10.5281/zenodo.10396329" class="dropdown-item"><span class="font-weight-normal">Cite Us</span></a>
+                    <a href="../cited-by" class="dropdown-item"><span class="font-weight-normal">Cited By</span></a>
+                    <a href="https://opensource.org/licenses/BSD-3-Clause" class="dropdown-item"><span class="font-weight-normal">License</span></a>
+                    <a href="../search" class="dropdown-item"><span class="font-weight-normal">Search</span></a>
             </div>
             </li>
 <li class="nav-item dropdown">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
             <div class="dropdown-menu">
                     <a href="../blog" class="dropdown-item"><span class="font-weight-bold">Posts</span></a>
-                    <a href="../archive.html" class="dropdown-item">Archive</a>
-                    <a href="../categories/" class="dropdown-item">Tags</a>
+                    <a href="../archive.html" class="dropdown-item"><span class="font-weight-normal">Archive</span></a>
+                    <a href="../categories/" class="dropdown-item"><span class="font-weight-normal">Tags</span></a>
             </div>
                 </li>
 <li class="nav-item">
@@ -134,7 +135,7 @@ navbar-dark bg-dark bg-primary
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <section id="dependencies"><h2>Dependencies</h2>
 <p><strong>Colour</strong> requires various dependencies in order to run and follows the
-<a class="reference external" href="https://scientific-python.org/specs/spec-0000/">minimum supported versions</a>
+<a class="reference external" href="https://scientific-python.org/specs/spec-0000">minimum supported versions</a>
 as given by <a class="reference external" href="https://scientific-python.org">Scientific Python</a>. Depending on
 your intended use case, i.e. using or developing, you may not need to install
 all of them.</p>
@@ -142,82 +143,78 @@ all of them.</p>
 and <a class="reference internal" href="#installation-methods-for-developing-colour">Installation Methods for Developing Colour</a> sections below.</p>
 <section id="primary-dependencies"><h3>Primary Dependencies</h3>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.python.org/download/releases/">python &gt;= 3.9, &lt; 3.12</a></p></li>
-<li><p><a class="reference external" href="https://imageio.github.io/">imageio &gt;= 2, &lt; 3</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/numpy/">numpy &gt;= 1.20, &lt; 2</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/scipy/">scipy &gt;= 1.7, &lt; 2</a></p></li>
+<li><p><a class="reference external" href="https://www.python.org/download/releases">python &gt;= 3.9, &lt; 3.13</a></p></li>
+<li><p><a class="reference external" href="https://imageio.github.io">imageio &gt;= 2, &lt; 3</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/numpy">numpy &gt;= 1.22, &lt; 2</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/scipy">scipy &gt;= 1.8, &lt; 2</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/typing-extensions">typing-extensions &gt;= 4, &lt; 5</a></p></li>
 </ul></section><section id="optional-meshing-and-plotting-dependencies"><h3>Optional, Meshing and Plotting Dependencies</h3>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.graphviz.org/">graphviz &gt;= 2, &lt; 3</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/matplotlib/">matplotlib &gt;= 3.4, != 3.5.0, != 3.5.1</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/networkx/">networkx &gt;= 2.6, &lt; 3</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/opencolorio/">opencolorio &gt;= 2, &lt; 3</a></p></li>
+<li><p><a class="reference external" href="https://www.graphviz.org">graphviz &gt;= 2, &lt; 3</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/matplotlib">matplotlib &gt;= 3.5, != 3.5.0, != 3.5.1</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/networkx">networkx &gt;= 2.7, &lt; 3</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/opencolorio">opencolorio &gt;= 2, &lt; 3</a></p></li>
 <li><p><a class="reference external" href="https://github.com/OpenImageIO/oiio">openimageio &gt;= 2, &lt; 3</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/pandas/">pandas &gt;= 1.3, &lt; 2</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/pygraphviz/">pygraphviz &gt;= 1, &lt; 2</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/tqdm/">tqdm &gt;= 4, &lt; 5</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/tqdm/">trimesh &gt;= 3, &lt; 4</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/pandas">pandas &gt;= 1.4, &lt; 2</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/pygraphviz">pygraphviz &gt;= 1, &lt; 2</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/tqdm">tqdm &gt;= 4, &lt; 5</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/tqdm">trimesh &gt;= 3, &lt; 4</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/xxhash">xxhash &gt;= 3.2, &lt; 4</a></p></li>
 </ul></section><section id="development-dependencies"><h3>Development Dependencies</h3>
 <ul class="simple">
-<li><p><a class="reference external" href="https://pypi.org/project/biblib-simple/">biblib-simple</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/black/">black</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/blackdoc/">blackdoc</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/coverage/">coverage</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/coveralls/">coveralls</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/flake8/">flake8</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/flynt/">flynt</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/invoke/">invoke</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/jupyter/">jupyter</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/mypy/">mypy</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/pre-commit/">pre-commit</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/pydata-sphinx-theme/">pydata-sphinx-theme</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/pydocstyle/">pydocstyle</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/pytest/">pytest</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/pytest-cov/">pytest-cov</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/pyupgrade/">pyupgrade</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/restructuredtext-lint/">restructuredtext-lint</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/Sphinx/">sphinx</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/sphinxcontrib-bibtex/">sphinxcontrib-bibtex</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/toml/">toml</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/twine/">twine</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/biblib-simple">biblib-simple</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/coverage">coverage</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/coveralls">coveralls</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/invoke">invoke</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/jupyter">jupyter</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/pre-commit">pre-commit</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/pyright">pyright</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/pydata-sphinx-theme">pydata-sphinx-theme</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/pytest">pytest</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/pytest-cov">pytest-cov</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/pytest-xdist">pytest-xdist</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/restructuredtext-lint">restructuredtext-lint</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/sphinx">sphinx</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/sphinxcontrib-bibtex">sphinxcontrib-bibtex</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/toml">toml</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/twine">twine</a></p></li>
 </ul></section></section><section id="installation-methods-for-using-colour"><h2>Installation Methods for Using Colour</h2>
 <section id="pypi"><h3>Pypi</h3>
 <p><strong>Colour</strong> can be easily installed from the
-<a class="reference external" href="https://pypi.org/project/colour-science/">Python Package Index</a> by
+<a class="reference external" href="https://pypi.org/project/colour-science">Python Package Index</a> by
 issuing this command in a shell:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_d52e9e459a8b417c880ae1aad8f04650-1" name="rest_code_d52e9e459a8b417c880ae1aad8f04650-1" href="#rest_code_d52e9e459a8b417c880ae1aad8f04650-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>colour-science
+<div class="code"><pre class="code shell"><a id="rest_code_7839acc3905c41fdba8b53d5ef47ee25-1" name="rest_code_7839acc3905c41fdba8b53d5ef47ee25-1" href="#rest_code_7839acc3905c41fdba8b53d5ef47ee25-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>colour-science
 </pre></div>
 <p>This <em>asciicast</em> demonstrates how to generate a pristine Python <em>VirtualEnv</em>
 environment for Colour:</p>
 <script type="text/javascript" src="https://asciinema.org/a/257384.js" id="asciicast-257384" async data-speed="3">
 </script><p>The optional features dependencies are installed as follows:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_c8cb858891c44522a35ee6fa39daea94-1" name="rest_code_c8cb858891c44522a35ee6fa39daea94-1" href="#rest_code_c8cb858891c44522a35ee6fa39daea94-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span><span class="s1">'colour-science[optional]'</span>
+<div class="code"><pre class="code shell"><a id="rest_code_5c5a074ef05f4520a623afecd3a05c83-1" name="rest_code_5c5a074ef05f4520a623afecd3a05c83-1" href="#rest_code_5c5a074ef05f4520a623afecd3a05c83-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span><span class="s1">'colour-science[optional]'</span>
 </pre></div>
 <p>The development dependencies are installed as follows:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_6ee186abd0fe4907b275b02b42f2a707-1" name="rest_code_6ee186abd0fe4907b275b02b42f2a707-1" href="#rest_code_6ee186abd0fe4907b275b02b42f2a707-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span><span class="s1">'colour-science[development]'</span>
+<div class="code"><pre class="code shell"><a id="rest_code_2ba52b88cd3b4675bb6dc0fe251de2b2-1" name="rest_code_2ba52b88cd3b4675bb6dc0fe251de2b2-1" href="#rest_code_2ba52b88cd3b4675bb6dc0fe251de2b2-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span><span class="s1">'colour-science[development]'</span>
 </pre></div>
-<p>The figure plotting dependencies are installed as follows:</p>
+<p>The graphviz figure plotting dependencies are installed as follows:</p>
 <div class="alert alert-dismissible alert-info line-block">
 <div class="line"><strong>Note</strong></div>
 <div class="line"><br></div>
 <div class="line">
-<a class="reference external" href="https://www.graphviz.org/">Graphviz</a> might need to be installed
+<a class="reference external" href="https://www.graphviz.org">Graphviz</a> might need to be installed
 beforehand, please refer to the specific section for your platform on
-the <a class="reference external" href="https://www.graphviz.org/download/">Graphviz download page</a>.</div>
+the <a class="reference external" href="https://www.graphviz.org/download">Graphviz download page</a>.</div>
 </div>
-<div class="code"><pre class="code shell"><a id="rest_code_e10cebaba2f84338be79cfca951d7de2-1" name="rest_code_e10cebaba2f84338be79cfca951d7de2-1" href="#rest_code_e10cebaba2f84338be79cfca951d7de2-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span><span class="s1">'colour-science[graphviz, plotting]'</span>
-</pre></div>
+<p class="alert alert-dismissible alert-info">pip install --user 'colour-science[graphviz]'</p>
 <p>The meshing dependencies for gamut computations are installed as follows:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_68718a15d7d94fc78b4093e300858961-1" name="rest_code_68718a15d7d94fc78b4093e300858961-1" href="#rest_code_68718a15d7d94fc78b4093e300858961-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span><span class="s1">'colour-science[meshing]'</span>
+<div class="code"><pre class="code shell"><a id="rest_code_20b3d723ae0844088afc9028d2e0d1bf-1" name="rest_code_20b3d723ae0844088afc9028d2e0d1bf-1" href="#rest_code_20b3d723ae0844088afc9028d2e0d1bf-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span><span class="s1">'colour-science[meshing]'</span>
 </pre></div>
 <p>If you wish to read <em>OpenEXR</em> files, you will need to install the <em>FreeImage</em>
-plugin for <a class="reference external" href="https://imageio.github.io/">Imageio</a> as follows:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_53e3b9c208a445fe835a06a238200552-1" name="rest_code_53e3b9c208a445fe835a06a238200552-1" href="#rest_code_53e3b9c208a445fe835a06a238200552-1"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import imageio;imageio.plugins.freeimage.download()"</span>
+plugin for <a class="reference external" href="https://imageio.github.io">Imageio</a> as follows:</p>
+<div class="code"><pre class="code shell"><a id="rest_code_88b4145506c149eba8b6dab6045f9f23-1" name="rest_code_88b4145506c149eba8b6dab6045f9f23-1" href="#rest_code_88b4145506c149eba8b6dab6045f9f23-1"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import imageio;imageio.plugins.freeimage.download()"</span>
 </pre></div>
 </section><section id="continuum-analytics-anaconda"><h3>Continuum Analytics Anaconda</h3>
-<p><strong>Colour</strong> is also available for <a class="reference external" href="https://www.anaconda.com/">Anaconda</a>
-from <em>Continuum Analytics</em> via <a class="reference external" href="https://conda-forge.org/">conda-forge</a>:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_a5e5bff0ca604672b9d3a7ffb1531859-1" name="rest_code_a5e5bff0ca604672b9d3a7ffb1531859-1" href="#rest_code_a5e5bff0ca604672b9d3a7ffb1531859-1"></a>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>colour-science
+<p><strong>Colour</strong> is also available for <a class="reference external" href="https://www.anaconda.com">Anaconda</a>
+from <em>Continuum Analytics</em> via <a class="reference external" href="https://conda-forge.org">conda-forge</a>:</p>
+<div class="code"><pre class="code shell"><a id="rest_code_fd0676b4dce94d2db7068109a47b3cbe-1" name="rest_code_fd0676b4dce94d2db7068109a47b3cbe-1" href="#rest_code_fd0676b4dce94d2db7068109a47b3cbe-1"></a>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>colour-science
 </pre></div>
 <p>This <em>asciicast</em> demonstrates how to generate a pristine Python <em>conda</em>
 environment for Colour:</p>
@@ -225,43 +222,43 @@ environment for Colour:</p>
 </script></section><section id="github"><h3>Github</h3>
 <p>Alternatively, you can also install directly from
 <a class="reference external" href="https://github.com/colour-science/colour">Github</a> source repository:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_05688fac1a61438caff4a38e80558d00-1" name="rest_code_05688fac1a61438caff4a38e80558d00-1" href="#rest_code_05688fac1a61438caff4a38e80558d00-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git://github.com/colour-science/colour.git
-<a id="rest_code_05688fac1a61438caff4a38e80558d00-2" name="rest_code_05688fac1a61438caff4a38e80558d00-2" href="#rest_code_05688fac1a61438caff4a38e80558d00-2"></a><span class="nb">cd</span><span class="w"> </span>colour
-<a id="rest_code_05688fac1a61438caff4a38e80558d00-3" name="rest_code_05688fac1a61438caff4a38e80558d00-3" href="#rest_code_05688fac1a61438caff4a38e80558d00-3"></a>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>.
+<div class="code"><pre class="code shell"><a id="rest_code_94e243d497224cf4af94d995dd6d9413-1" name="rest_code_94e243d497224cf4af94d995dd6d9413-1" href="#rest_code_94e243d497224cf4af94d995dd6d9413-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git://github.com/colour-science/colour.git
+<a id="rest_code_94e243d497224cf4af94d995dd6d9413-2" name="rest_code_94e243d497224cf4af94d995dd6d9413-2" href="#rest_code_94e243d497224cf4af94d995dd6d9413-2"></a><span class="nb">cd</span><span class="w"> </span>colour
+<a id="rest_code_94e243d497224cf4af94d995dd6d9413-3" name="rest_code_94e243d497224cf4af94d995dd6d9413-3" href="#rest_code_94e243d497224cf4af94d995dd6d9413-3"></a>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>.
 </pre></div>
 </section></section><section id="installation-methods-for-developing-colour"><h2>Installation Methods for Developing Colour</h2>
 <section id="poetry"><h3>Poetry</h3>
 <p><strong>Colour</strong> adopts <a class="reference external" href="https://poetry.eustace.io">Poetry</a> to help managing its
 dependencies, this is the recommended way to get started with <strong>Colour</strong>
 development.</p>
-<p>Assuming <a class="reference external" href="https://www.python.org/download/releases/">python &gt;= 3.8, &lt; 3.11</a> is
+<p>Assuming <a class="reference external" href="https://www.python.org/download/releases">python &gt;= 3.8, &lt; 3.11</a> is
 available on your system, the development dependencies are installed with
 <a class="reference external" href="https://poetry.eustace.io">Poetry</a> as follows:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_53fd53caee1f4cd8abf4343202511c2e-1" name="rest_code_53fd53caee1f4cd8abf4343202511c2e-1" href="#rest_code_53fd53caee1f4cd8abf4343202511c2e-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git://github.com/colour-science/colour.git
-<a id="rest_code_53fd53caee1f4cd8abf4343202511c2e-2" name="rest_code_53fd53caee1f4cd8abf4343202511c2e-2" href="#rest_code_53fd53caee1f4cd8abf4343202511c2e-2"></a><span class="nb">cd</span><span class="w"> </span>colour
-<a id="rest_code_53fd53caee1f4cd8abf4343202511c2e-3" name="rest_code_53fd53caee1f4cd8abf4343202511c2e-3" href="#rest_code_53fd53caee1f4cd8abf4343202511c2e-3"></a>poetry<span class="w"> </span>install<span class="w"> </span>--extras<span class="w"> </span><span class="s2">"meshing optional plotting"</span>
+<div class="code"><pre class="code shell"><a id="rest_code_f7c38f20254a4d9394119e9490b5f2bd-1" name="rest_code_f7c38f20254a4d9394119e9490b5f2bd-1" href="#rest_code_f7c38f20254a4d9394119e9490b5f2bd-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git://github.com/colour-science/colour.git
+<a id="rest_code_f7c38f20254a4d9394119e9490b5f2bd-2" name="rest_code_f7c38f20254a4d9394119e9490b5f2bd-2" href="#rest_code_f7c38f20254a4d9394119e9490b5f2bd-2"></a><span class="nb">cd</span><span class="w"> </span>colour
+<a id="rest_code_f7c38f20254a4d9394119e9490b5f2bd-3" name="rest_code_f7c38f20254a4d9394119e9490b5f2bd-3" href="#rest_code_f7c38f20254a4d9394119e9490b5f2bd-3"></a>poetry<span class="w"> </span>install<span class="w"> </span>--with<span class="w"> </span>dev,graphviz,meshing,optional
 </pre></div>
-<p>If <a class="reference external" href="https://www.graphviz.org/">Graphviz</a> is available on your system, you
+<p>If <a class="reference external" href="https://www.graphviz.org">Graphviz</a> is available on your system, you
 might issue the following commands instead of the aforementioned ones:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_56d764d4ef234ca2aae564c57ffdb0a5-1" name="rest_code_56d764d4ef234ca2aae564c57ffdb0a5-1" href="#rest_code_56d764d4ef234ca2aae564c57ffdb0a5-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git://github.com/colour-science/colour.git
-<a id="rest_code_56d764d4ef234ca2aae564c57ffdb0a5-2" name="rest_code_56d764d4ef234ca2aae564c57ffdb0a5-2" href="#rest_code_56d764d4ef234ca2aae564c57ffdb0a5-2"></a><span class="nb">cd</span><span class="w"> </span>colour
-<a id="rest_code_56d764d4ef234ca2aae564c57ffdb0a5-3" name="rest_code_56d764d4ef234ca2aae564c57ffdb0a5-3" href="#rest_code_56d764d4ef234ca2aae564c57ffdb0a5-3"></a>poetry<span class="w"> </span>install<span class="w"> </span>--extras<span class="w"> </span><span class="s2">"graphviz meshing optional plotting"</span>
+<div class="code"><pre class="code shell"><a id="rest_code_3c9fa1b1bfa344fe8a1c5c8518fc0fe1-1" name="rest_code_3c9fa1b1bfa344fe8a1c5c8518fc0fe1-1" href="#rest_code_3c9fa1b1bfa344fe8a1c5c8518fc0fe1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git://github.com/colour-science/colour.git
+<a id="rest_code_3c9fa1b1bfa344fe8a1c5c8518fc0fe1-2" name="rest_code_3c9fa1b1bfa344fe8a1c5c8518fc0fe1-2" href="#rest_code_3c9fa1b1bfa344fe8a1c5c8518fc0fe1-2"></a><span class="nb">cd</span><span class="w"> </span>colour
+<a id="rest_code_3c9fa1b1bfa344fe8a1c5c8518fc0fe1-3" name="rest_code_3c9fa1b1bfa344fe8a1c5c8518fc0fe1-3" href="#rest_code_3c9fa1b1bfa344fe8a1c5c8518fc0fe1-3"></a>poetry<span class="w"> </span>install<span class="w"> </span>--with<span class="w"> </span>dev,graphviz,meshing,optional
 </pre></div>
 <p>Those commands will create a Virtual Environment in which all the required
 python packages will be installed.</p>
 <p>Tools can then be run as follows:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_77cf79ae91704e0d9f943525460bc34c-1" name="rest_code_77cf79ae91704e0d9f943525460bc34c-1" href="#rest_code_77cf79ae91704e0d9f943525460bc34c-1"></a>poetry<span class="w"> </span>run<span class="w"> </span>invoke<span class="w"> </span>-l
+<div class="code"><pre class="code shell"><a id="rest_code_bfa8eba0602e4e859b6c170cccb49bc0-1" name="rest_code_bfa8eba0602e4e859b6c170cccb49bc0-1" href="#rest_code_bfa8eba0602e4e859b6c170cccb49bc0-1"></a>poetry<span class="w"> </span>run<span class="w"> </span>invoke<span class="w"> </span>-l
 </pre></div>
 <p>or alternatively:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_2ada9cb4ee3743d49f19bf584a604d29-1" name="rest_code_2ada9cb4ee3743d49f19bf584a604d29-1" href="#rest_code_2ada9cb4ee3743d49f19bf584a604d29-1"></a><span class="nb">source</span><span class="w"> </span><span class="k">$(</span>poetry<span class="w"> </span>env<span class="w"> </span>info<span class="w"> </span>-p<span class="k">)</span>/bin/activate
-<a id="rest_code_2ada9cb4ee3743d49f19bf584a604d29-2" name="rest_code_2ada9cb4ee3743d49f19bf584a604d29-2" href="#rest_code_2ada9cb4ee3743d49f19bf584a604d29-2"></a>invoke<span class="w"> </span>-l
+<div class="code"><pre class="code shell"><a id="rest_code_0a025bc78d804a7ea8fabfdb192a47fd-1" name="rest_code_0a025bc78d804a7ea8fabfdb192a47fd-1" href="#rest_code_0a025bc78d804a7ea8fabfdb192a47fd-1"></a><span class="nb">source</span><span class="w"> </span><span class="k">$(</span>poetry<span class="w"> </span>env<span class="w"> </span>info<span class="w"> </span>-p<span class="k">)</span>/bin/activate
+<a id="rest_code_0a025bc78d804a7ea8fabfdb192a47fd-2" name="rest_code_0a025bc78d804a7ea8fabfdb192a47fd-2" href="#rest_code_0a025bc78d804a7ea8fabfdb192a47fd-2"></a>invoke<span class="w"> </span>-l
 </pre></div>
 </section><section id="vagrant"><h3>Vagrant</h3>
 <p>An easy way to get all the pre-requisites at once is to use our
 <a class="reference external" href="https://github.com/colour-science/colour-vagrant">colour-vagrant</a>
-environment for <a class="reference external" href="https://www.vagrantup.com/">Vagrant</a>.</p>
+environment for <a class="reference external" href="https://www.vagrantup.com">Vagrant</a>.</p>
 <p>Please refer to the dedicated blog post for more details about its deployment:
-<a class="reference external" href="../posts/pycharm-vagrant-ansible-poetry/">PyCharm, Vagrant, Ansible &amp; Poetry</a></p>
+<a class="reference external" href="../posts/pycharm-vagrant-ansible-poetry">PyCharm, Vagrant, Ansible &amp; Poetry</a></p>
 </section></section>
 </div>
     
@@ -303,7 +300,7 @@ environment for <a class="reference external" href="https://www.vagrantup.com/">
         </a>
     </li>
 </ul>
-<div class="text-center text-light py-3"><span>Copyright © 2013-2023 – Colour Developers</span></div>
+<div class="text-center text-light py-3"><span>Copyright © 2013-2024 – Colour Developers</span></div>
 
     
 </footer><!-- End of Footer --><script src="../assets/js/jquery.min.js"></script><script src="../assets/js/popper.min.js"></script><script src="../assets/js/bootstrap.min.js"></script><script src="../assets/js/baguetteBox.min.js"></script><script>

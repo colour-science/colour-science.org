@@ -1,10 +1,10 @@
 .. title: Anders Langlands - Render Color Spaces
 .. slug: anders-langlands-render-color-spaces
 .. date: 2018-08-22 09:55:53 UTC+01:00
-.. tags: 
+.. tags:
 .. category: arnold, colour, colour science, rendering, spectral rendering
-.. link: 
-.. description: 
+.. link:
+.. description:
 .. type: text
 
 Courtesy of Anders Langlands, we are hosting the

@@ -2,9 +2,9 @@
 .. slug: colour-040-is-available
 .. date: 2022-02-20 08:22:06 UTC
 .. tags: colour, colour science, release
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 
 We are pleased to announce that after over a year of work,
@@ -21,33 +21,33 @@ from Geetansh (`@SGeetansh <https://github.com/SGeetansh>`__) and the remaining
 code from Nishant (`@SGeetansh <https://github.com/njwardhan>`__). We would
 like to thank them again for their excellent contributions!
 
-We are finally dropping `Python 2.7 <https://www.python.org/downloads/release/python-270/>`__
+We are finally dropping `Python 2.7 <https://www.python.org/downloads/release/python-270>`__
 support and the minimal version is now `Python
-3.8 <https://www.python.org/downloads/release/python-380/>`__ as per
-`https://scientific-python.org/ <https://scientific-python.org/specs/spec-0000/>`__.
+3.8 <https://www.python.org/downloads/release/python-380>`__ as per
+`https://scientific-python.org/ <https://scientific-python.org/specs/spec-0000>`__.
 
 The following minimal dependency versions are also required:
 
--   `imageio >= 2, < 3 <https://imageio.github.io/>`__
--   `numpy >= 1.19, < 2 <https://pypi.org/project/numpy/>`__
--   `scipy >= 1.5, < 2 <https://pypi.org/project/scipy/>`__
--   `typing-extensions >= 4, < 5 <https://pypi.org/project/typing-extensions/>`__
+-   `imageio >= 2, < 3 <https://imageio.github.io>`__
+-   `numpy >= 1.19, < 2 <https://pypi.org/project/numpy>`__
+-   `scipy >= 1.5, < 2 <https://pypi.org/project/scipy>`__
+-   `typing-extensions >= 4, < 5 <https://pypi.org/project/typing-extensions>`__
 
 .. figure:: /images/Blog_Chromaticity_Diagram_CIE1976UCS_Advanced_Customisation.png
 
 The highlights of this release are as follows:
 
 -   **Colour** can on iOS and iPadOS with `Pyto <https://pyto.app>`__.
--   The import of `colour` is now 3.6 times faster.
+-   The import of ``colour`` is now 3.6 times faster.
 -   Typing annotations have been added and the codebase is checked with
-    `Mypy <https://pypi.org/project/mypy/>`__.
+    `Mypy <https://pypi.org/project/mypy>`__.
 -   The documentation has been updated and uses the
-    `pydata-sphinx-theme <https://pypi.org/project/pydata-sphinx-theme/>`__
+    `pydata-sphinx-theme <https://pypi.org/project/pydata-sphinx-theme>`__
     and has better compliance with
-    `PEP257 <https://www.python.org/dev/peps/pep-0257/>`__.
+    `PEP257 <https://www.python.org/dev/peps/pep-0257>`__.
 -   The code formatter is now
-    `Black <https://pypi.org/project/black/>`__.
--   Many Python 3 features such as *f-Strings* or the `dataclass` decorator
+    `Black <https://pypi.org/project/black>`__.
+-   Many Python 3 features such as *f-Strings* or the ``dataclass`` decorator
     have been adopted.
 -   The plotting API has been improved to be more consistent when setting the colours of some figures, e.g. spectral or planckian locus.
 -   New colour appearance models:
@@ -82,7 +82,7 @@ The highlights of this release are as follows:
     -   *LUT 1D*, *LUT 3x1D* and *LUT 3D* inversion.
     -   *UPRTek* and *Sekonic* spectral data parsers.
     -   *SPImtx* LUT input and output.
-    -   Support for the `OpenColorIO <https://opencolorio.org/>`__ processor.
+    -   Support for the `OpenColorIO <https://opencolorio.org>`__ processor.
 
        -    Note that the optional dependency is not specified in the
             `pyproject.toml`, see AcademySoftwareFoundation/OpenColorIO#1573

@@ -2,9 +2,9 @@
 .. slug: colour-0311-is-available
 .. date: 2018-02-18 10:28:42 UTC
 .. tags: colour, colour science, release
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 
 We are pleased to announce that `Colour 0.3.11 <https://github.com/colour-science/colour/releases/tag/v0.3.11>`__
@@ -16,7 +16,7 @@ Colour 0.3.11
 -------------
 
 This was a release long in the making. It is an an important milestone on
-`The Road to Stable <https://www.colour-science.org/posts/the-road-to-stable/>`__ and
+`The Road to Stable <https://www.colour-science.org/posts/the-road-to-stable>`__ and
 it introduces many new features, changes and fixes. The highlights of this
 release are:
 

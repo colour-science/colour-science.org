@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Colour Checker Detection with Machine Learning | Colour Science</title>
+<link href="../../assets/css/colour-science.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#191919">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://www.colour-science.org/posts/colour-checker-detection-with-machine-learning/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+</script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<meta name="google-site-verification" content="CeWflIcbu-x7Ur7qbzTYJiRFvoGF5RljJyGZMg7H9co">
+<meta name="author" content="Colour Developers">
+<link rel="prev" href="../colour-044-is-available/" title="Colour 0.4.4 is available!" type="text/html">
+<meta property="og:site_name" content="Colour Science">
+<meta property="og:title" content="Colour Checker Detection with Machine Learning">
+<meta property="og:url" content="https://www.colour-science.org/posts/colour-checker-detection-with-machine-learning/">
+<meta property="og:description" content="We have released a new version of Colour - Checker Detection
+that implements a new machine learning inference method to detect colour
+rendition charts, specifically the ColorChecker Classic 24 from
+X-">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2024-01-11T04:48:50Z">
+<meta property="article:tag" content="colorchecker classic 24">
+<meta property="article:tag" content="colour">
+<meta property="article:tag" content="colour science">
+<meta property="article:tag" content="cvat">
+<meta property="article:tag" content="hugging face">
+<meta property="article:tag" content="inference">
+<meta property="article:tag" content="machine learning">
+<meta property="article:tag" content="roboflow">
+<meta property="article:tag" content="yolo">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-xl static-top
+navbar-dark bg-dark bg-primary
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="https://www.colour-science.org/">
+
+            <span id="blog-title">Colour Science</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
+            <div class="dropdown-menu">
+                    <a href="../../apps" class="dropdown-item"><span class="font-weight-bold">Apps (Colour - Dash)</span></a>
+                    <a href="http://awesome-colour.org/" class="dropdown-item"><span class="font-weight-bold">Awesome Colour</span></a>
+                    <a href="../../colour" class="dropdown-item"><span class="font-weight-bold">Colour</span></a>
+                    <a href="../../colour-datasets" class="dropdown-item"><span class="font-weight-bold">Colour - Datasets</span></a>
+                    <a href="../../colour-demosaicing" class="dropdown-item"><span class="font-weight-bold">Colour - Demosaicing</span></a>
+                    <a href="../../colour-hdri" class="dropdown-item"><span class="font-weight-bold">Colour - HDRI</span></a>
+                    <a href="../../colour-checker-detection" class="dropdown-item"><span class="font-weight-bold">Colour - Checker Detection</span></a>
+                    <a href="../../colour-visuals" class="dropdown-item"><span class="font-weight-bold">Colour - Visuals</span></a>
+                    <a href="../../colour-maya" class="dropdown-item"><span class="font-weight-normal">Colour - Maya</span></a>
+                    <a href="../../colour-nuke" class="dropdown-item"><span class="font-weight-normal">Colour - Nuke</span></a>
+                    <a href="../../colour-playground" class="dropdown-item"><span class="font-weight-normal">Colour - Playground</span></a>
+                    <a href="../../colour-spectroscope" class="dropdown-item"><span class="font-weight-normal">Colour - Spectroscope</span></a>
+                    <a href="../../experiments" class="dropdown-item"><span class="font-weight-normal">Experiments</span></a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu">
+                    <a href="../../installation-guide" class="dropdown-item"><span class="font-weight-bold">Installation Guide</span></a>
+                    <a href="https://colour.readthedocs.io/en/develop/tutorial.html" class="dropdown-item"><span class="font-weight-bold">Static Tutorial</span></a>
+                    <a href="https://colab.research.google.com/notebook#fileId=1Im9J7or9qyClQCv5sPHmKdyiQbG4898K&amp;offline=true&amp;sandboxMode=true" class="dropdown-item"><span class="font-weight-bold">Interactive Tutorial</span></a>
+                    <a href="https://colab.research.google.com/notebook#fileId=1NRcdXSCshivkwoU2nieCvC3y14fx1X4X&amp;offline=true&amp;sandboxMode=true" class="dropdown-item"><span class="font-weight-bold">How-To Guide</span></a>
+                    <a href="../../api-reference" class="dropdown-item"><span class="font-weight-bold">API Reference</span></a>
+                    <a href="../../code-of-conduct" class="dropdown-item"><span class="font-weight-bold">Code of Conduct</span></a>
+                    <a href="../../contributing" class="dropdown-item"><span class="font-weight-bold">Contributing</span></a>
+                    <a href="../../contributors" class="dropdown-item"><span class="font-weight-bold">Contributors</span></a>
+                    <a href="../../features" class="dropdown-item"><span class="font-weight-normal">Features</span></a>
+                    <a href="../../history" class="dropdown-item"><span class="font-weight-normal">History</span></a>
+                    <a href="https://colour.readthedocs.io/en/develop/bibliography.html" class="dropdown-item"><span class="font-weight-normal">Bibliography</span></a>
+                    <a href="https://doi.org/10.5281/zenodo.10396329" class="dropdown-item"><span class="font-weight-normal">Cite Us</span></a>
+                    <a href="../../cited-by" class="dropdown-item"><span class="font-weight-normal">Cited By</span></a>
+                    <a href="https://opensource.org/licenses/BSD-3-Clause" class="dropdown-item"><span class="font-weight-normal">License</span></a>
+                    <a href="../../search" class="dropdown-item"><span class="font-weight-normal">Search</span></a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+            <div class="dropdown-menu">
+                    <a href="../../blog" class="dropdown-item"><span class="font-weight-bold">Posts</span></a>
+                    <a href="../../archive.html" class="dropdown-item"><span class="font-weight-normal">Archive</span></a>
+                    <a href="../../categories/" class="dropdown-item"><span class="font-weight-normal">Tags</span></a>
+            </div>
+                </li>
+<li class="nav-item">
+<a href="mailto:colour-developers@colour-science.org" class="nav-link"><i class="fas fa-envelope"></i></a>
+                </li>
+<li class="nav-item">
+<a href="https://github.com/colour-science/colour" class="nav-link"><i class="fab fa-github"></i></a>
+                </li>
+<li class="nav-item">
+<a href="https://www.facebook.com/python.colour.science" class="nav-link"><i class="fab fa-facebook"></i></a>
+                </li>
+<li class="nav-item">
+<a href="https://gitter.im/colour-science/colour" class="nav-link"><i class="fab fa-gitter"></i></a>
+                </li>
+<li class="nav-item">
+<a href="https://twitter.com/colour_science" class="nav-link"><i class="fab fa-twitter"></i></a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><!-- Main --><div class="container" id="content" role="main">
+    <div class="row">
+        <div class="col-12">
+            <div class="body-content">
+                <!--Body content-->
+                
+                
+                
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Colour Checker Detection with Machine Learning</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Colour Developers
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2024-01-11T04:48:50Z" itemprop="datePublished" title="2024-01-11 04:48">2024-01-11 04:48</time></a>
+            </p>
+                <p class="commentline">
+    
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/colour-checker-detection-with-machine-learning.html">Comments</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>We have released a new version of <a class="reference external" href="https://github.com/colour-science/colour-checker-detection/releases/tag/v0.2.0">Colour - Checker Detection</a>
+that implements a new machine learning inference method to detect colour
+rendition charts, specifically the <em>ColorChecker Classic 24</em> from
+<em>X-Rite</em> / <em>Calibrite</em>.</p>
+<p>This post describes the journey to produce the model and package it with
+<strong>Colour - Checker Detection</strong>.</p>
+<!-- TEASER_END -->
+<section id="proof-of-concept"><h2>Proof of Concept</h2>
+<p>There have been a few <a class="reference external" href="https://github.com/colour-science/colour-checker-detection/issues/60">requests</a>
+to support detection of charts that are not parallel to the image path, i.e.
+with perspective distortion.</p>
+<p>Whilst looking at Tim Walter's <a class="reference external" href="https://github.com/colour-science/colour-checker-detection/issues/60#issuecomment-1497592888">implementation</a>,
+and considering the added dependency to <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html">sklearn.DBSCAN</a>
+for more robust clustering, departing from image processing based segmentation
+and trying machine learning instead seemed appealing.</p>
+<p><a class="reference external" href="https://github.com/OlafenwaMoses/ImageAI">Imageai</a> and <a class="reference external" href="https://github.com/ultralytics/ultralytics/tree/main/ultralytics">Ultralytics YOLO</a>
+are popular machine learning object detection models that can trained to detect
+new object classes.</p>
+<section id="dataset"><h3>Dataset</h3>
+<p>To proof the idea, a series of 100 <em>ColorChecker Classic 24</em> images was captured
+with a Canon 5D Mark II. The original <code class="docutils literal">*.CR2</code> raw images were processed with
+<a class="reference external" href="https://dechifro.org/dcraw">dcraw</a>
+as follows:</p>
+<div class="code"><pre class="code shell"><a id="rest_code_65b6592b6d6a461886cc8f0168824820-1" name="rest_code_65b6592b6d6a461886cc8f0168824820-1" href="#rest_code_65b6592b6d6a461886cc8f0168824820-1"></a>$<span class="w"> </span>dcraw<span class="w"> </span>-T<span class="w"> </span>-g<span class="w"> </span><span class="m">2</span>.4<span class="w"> </span><span class="m">12</span>.92<span class="w"> </span>*.CR2
+</pre></div>
+<p>Then, the output <code class="docutils literal">*.tiff</code> files were resized to half-resolution and converted
+to <code class="docutils literal">*.png</code> using <a class="reference external" href="https://imagemagick.org">Image Magick</a>:</p>
+<div class="code"><pre class="code shell"><a id="rest_code_3792f0dc85ca425ba781a03b91ca4f46-1" name="rest_code_3792f0dc85ca425ba781a03b91ca4f46-1" href="#rest_code_3792f0dc85ca425ba781a03b91ca4f46-1"></a>$<span class="w"> </span>mogrify<span class="w"> </span>-resize<span class="w"> </span><span class="m">50</span>%<span class="w"> </span>-format<span class="w"> </span>png<span class="w"> </span>*.tiff
+</pre></div>
+<div class="alert alert-dismissible alert-info line-block">
+<div class="line"><strong>Note</strong></div>
+<div class="line"><br></div>
+<div class="line">In a future update of the dataset, the long edge of the images will be
+constrained to a specific resolution, e.g. 2560, rather than half that
+of the source image.</div>
+</div>
+</section><section id="cvat-and-roboflow"><h3>CVAT and Roboflow</h3>
+<p>The <code class="docutils literal">*.png</code> files were uploaded to <a class="reference external" href="https://app.cvat.ai">CVAT</a>. The
+<em>ColorChecker Classic 24</em> were annotated by drawing a bounding box around the
+swatches (which will have important consequence later) and the annotations
+exported to <em>Microsoft COCO 1.0</em> format.</p>
+<p>Then, the <code class="docutils literal">*.png</code> files and <em>COCO 1.0</em> annotations were uploaded to
+<a class="reference external" href="https://roboflow.com">Roboflow</a>, and a model was trained with that dataset.</p>
+<figure><img alt="/images/Blog_Colour_Checker_Detection_Roboflow.png" src="../../images/Blog_Colour_Checker_Detection_Roboflow.png"><figcaption><p><em>Roboflow</em> resulting model</p>
+</figcaption></figure><p>The inference results were promising! The <a class="reference external" href="https://universe.roboflow.com/colourscience/colour-checker-detection">model can be tested online with a webcam</a>.</p>
+<div class="youtube-video align-center">
+<iframe width="1110" height="624" src="https://www.youtube-nocookie.com/embed/gz_moN01Xtk?rel=0&amp;wmode=transparent" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+</div>
+<div class="alert alert-dismissible alert-info line-block">
+<div class="line"><strong>Note</strong></div>
+<div class="line"><br></div>
+<div class="line">
+<em>CVAT</em> was used for annotation because of concerns of being unable to
+export the annotations with the free <em>Roboflow</em> account.</div>
+</div>
+</section><section id="ultralytics-yolo-v8"><h3>Ultralytics YOLO v8</h3>
+<p><em>Roboflow</em> is fantastic and everything is made really easy for users but the
+free credits melted rapidly. Ultimately, more control was required over the
+entire process.</p>
+<p>Using the augmented <em>Roboflow</em> dataset, a <em>YOLO v8</em> <em>nano</em> <strong>detection</strong> model
+was trained locally on a Macbook Pro M1.</p>
+<div class="code"><pre class="code python"><a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-1" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-1" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-1"></a><span class="c1"># SPDX-License-Identifier: AGPL-3.0</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-2" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-2" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-2"></a>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-3" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-3" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-3"></a><span class="kn">import</span> <span class="nn">os</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-4" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-4" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-4"></a><span class="kn">from</span> <span class="nn">roboflow</span> <span class="kn">import</span> <span class="n">Roboflow</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-5" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-5" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-5"></a><span class="kn">from</span> <span class="nn">ultralytics</span> <span class="kn">import</span> <span class="n">YOLO</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-6" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-6" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-6"></a>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-7" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-7" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-7"></a>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-8" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-8" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-8"></a><span class="k">def</span> <span class="nf">load_dataset</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-9" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-9" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-9"></a>    <span class="n">roboflow</span> <span class="o">=</span> <span class="n">Roboflow</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">"ROBOFLOW_API_KEY"</span><span class="p">])</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-10" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-10" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-10"></a>    <span class="n">project</span> <span class="o">=</span> <span class="n">roboflow</span><span class="o">.</span><span class="n">workspace</span><span class="p">(</span><span class="s2">"colourscience"</span><span class="p">)</span><span class="o">.</span><span class="n">project</span><span class="p">(</span><span class="s2">"colour-checker-detection"</span><span class="p">)</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-11" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-11" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-11"></a>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-12" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-12" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-12"></a>    <span class="n">dataset</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">version</span><span class="p">(</span><span class="n">version</span><span class="p">)</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s2">"yolov8"</span><span class="p">)</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-13" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-13" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-13"></a>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-14" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-14" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-14"></a>    <span class="c1"># The yaml file is incorrectly formatted and needs to be updated:</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-15" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-15" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-15"></a>    <span class="c1"># test: ../test/images</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-16" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-16" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-16"></a>    <span class="c1"># train: train/images</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-17" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-17" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-17"></a>    <span class="c1"># val: valid/images</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-18" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-18" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-18"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">location</span><span class="p">,</span> <span class="s2">"data.yaml"</span><span class="p">),</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">yaml_file</span><span class="p">:</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-19" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-19" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-19"></a>        <span class="n">lines</span> <span class="o">=</span> <span class="n">yaml_file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-20" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-20" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-20"></a>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-21" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-21" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-21"></a>    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lines</span><span class="p">):</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-22" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-22" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-22"></a>        <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"tests:"</span><span class="p">):</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-23" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-23" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-23"></a>            <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"test: test/images</span><span class="se">\n</span><span class="s2">"</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-24" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-24" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-24"></a>        <span class="k">elif</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"train:"</span><span class="p">):</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-25" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-25" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-25"></a>            <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"train: train/images</span><span class="se">\n</span><span class="s2">"</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-26" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-26" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-26"></a>        <span class="k">elif</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"val:"</span><span class="p">):</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-27" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-27" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-27"></a>            <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"val: valid/images</span><span class="se">\n</span><span class="s2">"</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-28" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-28" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-28"></a>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-29" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-29" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-29"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">location</span><span class="p">,</span> <span class="s2">"data.yaml"</span><span class="p">),</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">yaml_file</span><span class="p">:</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-30" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-30" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-30"></a>        <span class="n">yaml_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">))</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-31" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-31" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-31"></a>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-32" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-32" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-32"></a>    <span class="k">return</span> <span class="n">dataset</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-33" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-33" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-33"></a>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-34" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-34" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-34"></a>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-35" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-35" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-35"></a><span class="k">def</span> <span class="nf">train_model</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">"yolov8n.pt"</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s2">"mps"</span><span class="p">,</span> <span class="n">resume</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-36" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-36" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-36"></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-37" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-37" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-37"></a>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-38" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-38" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-38"></a>    <span class="k">return</span> <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-39" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-39" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-39"></a>        <span class="n">data</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">location</span><span class="p">,</span> <span class="s2">"data.yaml"</span><span class="p">),</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-40" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-40" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-40"></a>        <span class="n">epochs</span><span class="o">=</span><span class="n">epochs</span><span class="p">,</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-41" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-41" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-41"></a>        <span class="n">imgsz</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-42" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-42" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-42"></a>        <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-43" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-43" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-43"></a>        <span class="n">resume</span><span class="o">=</span><span class="n">resume</span><span class="p">,</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-44" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-44" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-44"></a>    <span class="p">)</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-45" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-45" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-45"></a>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-46" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-46" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-46"></a>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-47" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-47" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-47"></a><span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-48" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-48" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-48"></a>    <span class="n">metrics</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">val</span><span class="p">()</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-49" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-49" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-49"></a>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-50" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-50" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-50"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">box</span><span class="o">.</span><span class="n">map</span><span class="p">)</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-51" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-51" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-51"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">box</span><span class="o">.</span><span class="n">map50</span><span class="p">)</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-52" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-52" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-52"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">box</span><span class="o">.</span><span class="n">map75</span><span class="p">)</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-53" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-53" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-53"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">box</span><span class="o">.</span><span class="n">maps</span><span class="p">)</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-54" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-54" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-54"></a>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-55" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-55" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-55"></a>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-56" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-56" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-56"></a><span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">image</span><span class="p">):</span>
+<a id="rest_code_3e823e89527b43bb891c66ad46bd8f7e-57" name="rest_code_3e823e89527b43bb891c66ad46bd8f7e-57" href="#rest_code_3e823e89527b43bb891c66ad46bd8f7e-57"></a>    <span class="k">return</span> <span class="n">model</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+</pre></div>
+<p>The predictions were really good and this model served as the basis to develop
+the new inference method.</p>
+</section></section><section id="development"><h2>Development</h2>
+<blockquote>
+<p><em>The only real mistake is the one from which we learn nothing.</em></p>
+<p class="attribution">—Henry Ford</p>
+</blockquote>
+<section id="going-in-circles"><h3>Going in Circles</h3>
+<p>An issue that quickly surfaced is that whilst the prediction returned a bounding
+box for the <em>ColorChecker Classic 24</em> swatches, it was not oriented.</p>
+<figure><img alt="/images/Blog_Colour_Checker_Detection_YOLO_Bounding_Box.png" src="../../images/Blog_Colour_Checker_Detection_YOLO_Bounding_Box.png"><figcaption><p>Detected <em>ColorChecker Classic 24</em> with non-oriented bounding box.</p>
+</figcaption></figure><p>Correcting the perspective distortion of the swatches within the bounding box
+involved segmenting the region-of-interest, finding the principal lines using
+<a class="reference external" href="https://docs.opencv.org/3.4/d9/db0/tutorial_hough_lines.html">Hough Line Transform</a>,
+partitioning them by angle using K-means clustering, etc..</p>
+<p>Development stalled and reached a point where the new approach was becoming
+complex, required fine tuned numbers for segmentation. Ultimately, the
+objective was to departing from image processing based segmentation and the
+current development state was heading back right to it!</p>
+</section><section id="taking-a-step-back"><h3>Taking a Step Back</h3>
+<p>After pausing for a few days, the solution came. In a hindsight it was obvious:
+Using a <em>YOLO v8</em> <strong>segmentation</strong> model instead of the <strong>detection</strong> one.</p>
+<p>Indeed, the result contour can be simplified to a quadrilateral and perspective
+warped to an appropriate target rectangle.</p>
+<p>As the original annotation bounding boxes were made around the swatches, the
+newly trained <em>nano</em> <strong>segmentation</strong> model was not working properly, cutting the
+swatches at times.</p>
+<p>The annotations were redone, and, this time, polygons were drawn around the
+entire <em>ColorChecker Classic 24</em>.</p>
+<figure><img alt="/images/Blog_Colour_Checker_Detection_CVAT_Annotations.png" src="../../images/Blog_Colour_Checker_Detection_CVAT_Annotations.png"><figcaption><p>Annotating in <em>CVAT</em>, see the turquoise bounding box on the <em>ColorChecker Classic 24</em>.</p>
+</figcaption></figure></section><section id="dataset-conversion"><h3>Dataset Conversion</h3>
+<p>The next issue was converting the <em>CVAT</em> annotations to a format appropriate to
+<em>YOLO v8</em>. Unfortunately, the <em>CVAT</em> export to <em>YOLO v8</em> format only supports
+bounding boxes and not polygons. A conversion script, <a class="reference external" href="https://colab.research.google.com/drive/19fjvI60kt53sxD4auyinkTrnutsQTSvH?usp=sharing">available on Google Colab</a>,
+was written to convert the dataset, it uses two <em>Ultralytics</em> conversion
+definitions:</p>
+<div class="code"><pre class="code python"><a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-1" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-1" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-1"></a><span class="c1"># SPDX-License-Identifier: AGPL-3.0</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-2" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-2" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-2"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-3" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-3" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-3"></a><span class="kn">import</span> <span class="nn">json</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-4" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-4" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-4"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-5" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-5" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-5"></a><span class="kn">import</span> <span class="nn">random</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-6" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-6" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-6"></a><span class="kn">import</span> <span class="nn">shutil</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-7" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-7" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-7"></a><span class="kn">import</span> <span class="nn">warnings</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-8" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-8" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-8"></a><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-9" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-9" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-9"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-10" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-10" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-10"></a><span class="n">ROOT_DATASET_SOURCE</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-11" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-11" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-11"></a>    <span class="s2">"/content/drive/MyDrive/Documents/Development/colour-science/Private/Color-Checker-Detection-Dataset-COCO"</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-12" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-12" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-12"></a><span class="p">)</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-13" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-13" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-13"></a><span class="n">ROOT_DATASET_TARGET</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-14" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-14" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-14"></a>    <span class="s2">"/content/drive/MyDrive/Documents/Development/colour-science/Private/Color-Checker-Detection-Dataset-YOLO"</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-15" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-15" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-15"></a><span class="p">)</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-16" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-16" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-16"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-17" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-17" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-17"></a><span class="n">TEMPLATE_DATA_YAML</span> <span class="o">=</span> <span class="s2">"""</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-18" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-18" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-18"></a><span class="s2">names:</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-19" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-19" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-19"></a><span class="si">{categories}</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-20" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-20" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-20"></a><span class="s2">nc: </span><span class="si">{category_count}</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-21" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-21" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-21"></a><span class="s2">test: ./test/images</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-22" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-22" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-22"></a><span class="s2">train: ./train/images</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-23" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-23" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-23"></a><span class="s2">val: ./valid/images</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-24" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-24" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-24"></a><span class="s2">"""</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-25" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-25" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-25"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-26" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-26" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-26"></a><span class="n">PARTITIONS</span> <span class="o">=</span> <span class="p">{</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-27" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-27" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-27"></a>    <span class="s2">"train"</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-28" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-28" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-28"></a>    <span class="s2">"valid"</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-29" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-29" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-29"></a>    <span class="s2">"test"</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-30" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-30" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-30"></a><span class="p">}</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-31" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-31" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-31"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-32" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-32" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-32"></a><span class="c1"># https://github.com/ultralytics/JSON2YOLO/blob/master/general_json2yolo.py</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-33" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-33" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-33"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-34" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-34" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-34"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-35" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-35" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-35"></a><span class="k">def</span> <span class="nf">min_index</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">):</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-36" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-36" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-36"></a>    <span class="n">dis</span> <span class="o">=</span> <span class="p">((</span><span class="n">arr1</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">:]</span> <span class="o">-</span> <span class="n">arr2</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:])</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-37" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-37" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-37"></a>    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">dis</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span> <span class="n">dis</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-38" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-38" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-38"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-39" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-39" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-39"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-40" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-40" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-40"></a><span class="k">def</span> <span class="nf">merge_multi_segment</span><span class="p">(</span><span class="n">segments</span><span class="p">):</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-41" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-41" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-41"></a>    <span class="n">merged</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-42" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-42" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-42"></a>    <span class="n">segments</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">segments</span><span class="p">]</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-43" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-43" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-43"></a>    <span class="n">idx_list</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">segments</span><span class="p">))]</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-44" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-44" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-44"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-45" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-45" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-45"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">segments</span><span class="p">)):</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-46" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-46" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-46"></a>        <span class="n">idx1</span><span class="p">,</span> <span class="n">idx2</span> <span class="o">=</span> <span class="n">min_index</span><span class="p">(</span><span class="n">segments</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">segments</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-47" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-47" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-47"></a>        <span class="n">idx_list</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">idx1</span><span class="p">)</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-48" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-48" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-48"></a>        <span class="n">idx_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">idx2</span><span class="p">)</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-49" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-49" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-49"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-50" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-50" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-50"></a>    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-51" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-51" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-51"></a>        <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-52" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-52" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-52"></a>            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">idx_list</span><span class="p">):</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-53" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-53" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-53"></a>                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">idx</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">idx</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-54" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-54" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-54"></a>                    <span class="n">idx</span> <span class="o">=</span> <span class="n">idx</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-55" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-55" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-55"></a>                    <span class="n">segments</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">segments</span><span class="p">[</span><span class="n">i</span><span class="p">][::</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-56" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-56" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-56"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-57" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-57" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-57"></a>                <span class="n">segments</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">segments</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="o">-</span><span class="n">idx</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-58" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-58" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-58"></a>                <span class="n">segments</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">segments</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">segments</span><span class="p">[</span><span class="n">i</span><span class="p">][:</span><span class="mi">1</span><span class="p">]])</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-59" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-59" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-59"></a>                <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">idx_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]:</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-60" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-60" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-60"></a>                    <span class="n">merged</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">segments</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-61" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-61" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-61"></a>                <span class="k">else</span><span class="p">:</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-62" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-62" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-62"></a>                    <span class="n">idx</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">idx</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">idx</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-63" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-63" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-63"></a>                    <span class="n">merged</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">segments</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">idx</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">:</span> <span class="n">idx</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-64" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-64" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-64"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-65" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-65" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-65"></a>        <span class="k">else</span><span class="p">:</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-66" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-66" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-66"></a>            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">idx_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-67" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-67" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-67"></a>                <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">idx_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]:</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-68" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-68" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-68"></a>                    <span class="n">idx</span> <span class="o">=</span> <span class="n">idx_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-69" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-69" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-69"></a>                    <span class="n">nidx</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">idx</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">idx</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-70" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-70" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-70"></a>                    <span class="n">merged</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">segments</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">nidx</span><span class="p">:])</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-71" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-71" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-71"></a>    <span class="k">return</span> <span class="n">merged</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-72" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-72" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-72"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-73" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-73" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-73"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-74" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-74" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-74"></a><span class="k">def</span> <span class="nf">annotation_data_from_image</span><span class="p">(</span><span class="n">image_name</span><span class="p">,</span> <span class="n">annotations</span><span class="p">):</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-75" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-75" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-75"></a>    <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">annotations</span><span class="p">[</span><span class="s2">"images"</span><span class="p">]:</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-76" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-76" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-76"></a>        <span class="k">if</span> <span class="n">image_name</span> <span class="o">!=</span> <span class="n">data</span><span class="p">[</span><span class="s2">"file_name"</span><span class="p">]:</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-77" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-77" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-77"></a>            <span class="k">continue</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-78" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-78" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-78"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-79" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-79" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-79"></a>        <span class="k">for</span> <span class="n">annotation</span> <span class="ow">in</span> <span class="n">annotations</span><span class="p">[</span><span class="s2">"annotations"</span><span class="p">]:</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-80" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-80" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-80"></a>            <span class="k">if</span> <span class="n">annotation</span><span class="p">[</span><span class="s2">"image_id"</span><span class="p">]</span> <span class="o">!=</span> <span class="n">data</span><span class="p">[</span><span class="s2">"id"</span><span class="p">]:</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-81" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-81" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-81"></a>                <span class="k">continue</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-82" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-82" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-82"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-83" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-83" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-83"></a>            <span class="k">return</span> <span class="n">annotation</span><span class="p">,</span> <span class="n">data</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-84" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-84" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-84"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-85" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-85" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-85"></a>    <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-86" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-86" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-86"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-87" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-87" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-87"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-88" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-88" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-88"></a><span class="k">def</span> <span class="nf">convert_COCO_segmentation_to_YOLO</span><span class="p">(</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-89" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-89" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-89"></a>    <span class="n">source_dataset</span><span class="o">=</span><span class="n">ROOT_DATASET_SOURCE</span><span class="p">,</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-90" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-90" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-90"></a>    <span class="n">target_dataset</span><span class="o">=</span><span class="n">ROOT_DATASET_TARGET</span><span class="p">,</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-91" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-91" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-91"></a>    <span class="n">partitions</span><span class="o">=</span><span class="n">PARTITIONS</span><span class="p">,</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-92" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-92" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-92"></a>    <span class="n">template_data_yaml</span><span class="o">=</span><span class="n">TEMPLATE_DATA_YAML</span><span class="p">,</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-93" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-93" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-93"></a><span class="p">):</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-94" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-94" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-94"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">source_dataset</span> <span class="o">/</span> <span class="s2">"instances_default.json"</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-95" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-95" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-95"></a>        <span class="n">annotations</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">json_file</span><span class="p">)</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-96" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-96" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-96"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-97" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-97" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-97"></a>    <span class="n">image_paths</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">source_dataset</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">"*.png"</span><span class="p">))</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-98" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-98" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-98"></a>    <span class="n">image_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">image_paths</span><span class="p">)</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-99" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-99" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-99"></a>    <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">image_paths</span><span class="p">)</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-100" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-100" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-100"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-101" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-101" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-101"></a>    <span class="k">for</span> <span class="n">partition</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">partitions</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-102" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-102" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-102"></a>        <span class="n">images_directory</span> <span class="o">=</span> <span class="n">target_dataset</span> <span class="o">/</span> <span class="n">partition</span> <span class="o">/</span> <span class="s2">"images"</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-103" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-103" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-103"></a>        <span class="n">labels_directory</span> <span class="o">=</span> <span class="n">target_dataset</span> <span class="o">/</span> <span class="n">partition</span> <span class="o">/</span> <span class="s2">"labels"</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-104" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-104" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-104"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-105" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-105" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-105"></a>        <span class="n">images_directory</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-106" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-106" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-106"></a>        <span class="n">labels_directory</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-107" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-107" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-107"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-108" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-108" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-108"></a>        <span class="n">count</span> <span class="o">*=</span> <span class="nb">int</span><span class="p">(</span><span class="n">image_count</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-109" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-109" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-109"></a>        <span class="n">partitioned_paths</span><span class="p">,</span> <span class="n">image_paths</span> <span class="o">=</span> <span class="n">image_paths</span><span class="p">[:</span><span class="n">count</span><span class="p">],</span> <span class="n">image_paths</span><span class="p">[</span><span class="n">count</span><span class="p">:]</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-110" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-110" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-110"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-111" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-111" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-111"></a>        <span class="k">for</span> <span class="n">image_path</span> <span class="ow">in</span> <span class="n">partitioned_paths</span><span class="p">:</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-112" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-112" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-112"></a>            <span class="n">annotation</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">annotation_data_from_image</span><span class="p">(</span><span class="n">image_path</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">annotations</span><span class="p">)</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-113" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-113" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-113"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-114" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-114" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-114"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">([</span><span class="n">annotation</span><span class="p">,</span> <span class="n">data</span><span class="p">]):</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-115" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-115" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-115"></a>                <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="sa">f</span><span class="s1">'No annotation data was found for "</span><span class="si">{</span><span class="n">image_path</span><span class="si">}</span><span class="s1">" image!'</span><span class="p">)</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-116" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-116" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-116"></a>                <span class="k">continue</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-117" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-117" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-117"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-118" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-118" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-118"></a>            <span class="n">category</span> <span class="o">=</span> <span class="n">annotation</span><span class="p">[</span><span class="s2">"category_id"</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-119" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-119" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-119"></a>            <span class="n">width</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">"width"</span><span class="p">]</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-120" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-120" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-120"></a>            <span class="n">height</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">"height"</span><span class="p">]</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-121" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-121" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-121"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-122" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-122" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-122"></a>            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">annotation</span><span class="p">[</span><span class="s2">"segmentation"</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-123" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-123" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-123"></a>                <span class="n">segments</span> <span class="o">=</span> <span class="n">merge_multi_segment</span><span class="p">(</span><span class="n">annotation</span><span class="p">[</span><span class="s2">"segmentation"</span><span class="p">])</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-124" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-124" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-124"></a>                <span class="n">segments</span> <span class="o">=</span> <span class="p">(</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-125" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-125" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-125"></a>                    <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">segments</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">]))</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-126" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-126" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-126"></a>                    <span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-127" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-127" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-127"></a>                    <span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-128" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-128" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-128"></a>                <span class="p">)</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-129" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-129" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-129"></a>            <span class="k">else</span><span class="p">:</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-130" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-130" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-130"></a>                <span class="n">segments</span> <span class="o">=</span> <span class="p">[</span><span class="n">j</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">annotation</span><span class="p">[</span><span class="s2">"segmentation"</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">i</span><span class="p">]</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-131" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-131" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-131"></a>                <span class="n">segments</span> <span class="o">=</span> <span class="p">(</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-132" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-132" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-132"></a>                    <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">segments</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">]))</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-133" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-133" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-133"></a>                    <span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-134" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-134" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-134"></a>                    <span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-135" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-135" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-135"></a>                <span class="p">)</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-136" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-136" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-136"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-137" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-137" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-137"></a>            <span class="n">segments</span> <span class="o">=</span> <span class="p">[</span><span class="n">category</span><span class="p">]</span> <span class="o">+</span> <span class="n">segments</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-138" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-138" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-138"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-139" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-139" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-139"></a>            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">labels_directory</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">image_path</span><span class="o">.</span><span class="n">stem</span><span class="si">}</span><span class="s2">.txt"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">label_file</span><span class="p">:</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-140" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-140" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-140"></a>                <span class="n">label_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-141" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-141" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-141"></a>                    <span class="p">((</span><span class="s2">"</span><span class="si">%g</span><span class="s2"> "</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">segments</span><span class="p">))</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span> <span class="o">%</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">segments</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-142" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-142" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-142"></a>                <span class="p">)</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-143" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-143" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-143"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-144" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-144" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-144"></a>            <span class="n">shutil</span><span class="o">.</span><span class="n">copyfile</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="n">images_directory</span> <span class="o">/</span> <span class="n">image_path</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-145" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-145" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-145"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-146" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-146" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-146"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">ROOT_DATASET_TARGET</span> <span class="o">/</span> <span class="s2">"data.yml"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">yaml_file</span><span class="p">:</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-147" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-147" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-147"></a>        <span class="n">categories</span> <span class="o">=</span> <span class="p">[</span><span class="n">category</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]</span> <span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">annotations</span><span class="p">[</span><span class="s2">"categories"</span><span class="p">]]</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-148" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-148" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-148"></a>        <span class="n">yaml_content</span> <span class="o">=</span> <span class="n">template_data_yaml</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-149" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-149" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-149"></a>            <span class="n">categories</span><span class="o">=</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">"- </span><span class="si">{</span><span class="n">category</span><span class="si">}</span><span class="s2">"</span> <span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">categories</span><span class="p">]),</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-150" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-150" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-150"></a>            <span class="n">category_count</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">categories</span><span class="p">),</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-151" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-151" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-151"></a>        <span class="p">)</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-152" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-152" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-152"></a>        <span class="n">yaml_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">yaml_content</span><span class="p">)</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-153" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-153" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-153"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-154" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-154" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-154"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-155" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-155" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-155"></a><span class="k">if</span> <span class="n">ROOT_DATASET_TARGET</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-156" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-156" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-156"></a>    <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">ROOT_DATASET_TARGET</span><span class="p">)</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-157" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-157" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-157"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-158" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-158" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-158"></a><span class="n">ROOT_DATASET_TARGET</span><span class="o">.</span><span class="n">mkdir</span><span class="p">()</span>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-159" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-159" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-159"></a>
+<a id="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-160" name="rest_code_2c125bb7cb0245ec9751a1dcd91baf82-160" href="#rest_code_2c125bb7cb0245ec9751a1dcd91baf82-160"></a><span class="n">convert_COCO_segmentation_to_YOLO</span><span class="p">()</span>
+</pre></div>
+<div class="alert alert-dismissible alert-info line-block">
+<div class="line"><strong>Note</strong></div>
+<div class="line"><br></div>
+<div class="line">The training dataset is published under the CC-BY-4.0 license terms on
+<a class="reference external" href="https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset">Hugging Face</a>.</div>
+</div>
+</section><section id="model-training"><h3>Model Training</h3>
+<p>A new <em>YOLO v8</em> <em>nano</em> model was trained, originally at a width of 640 pixels
+but because the prediction were sometimes imprecise, it was re-trained at a larger
+1280 pixels width and using a <em>YOLO v8</em> <em>large</em> <strong>segmentation</strong> model as a
+baseline. As hinted by the previous snippet, and, because the Macbook Pro M1
+started to suffer, the training was moved <a class="reference external" href="https://colab.research.google.com/drive/1-JbVKlj8oP7HxSIM37jtcW2YZmmjoc-A?usp=sharing">to Google Colab</a>
+and an A100 GPU.</p>
+<div class="code"><pre class="code python"><a id="rest_code_6a394f89db174f86b1656be4615a8925-1" name="rest_code_6a394f89db174f86b1656be4615a8925-1" href="#rest_code_6a394f89db174f86b1656be4615a8925-1"></a><span class="c1"># SPDX-License-Identifier: AGPL-3.0</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-2" name="rest_code_6a394f89db174f86b1656be4615a8925-2" href="#rest_code_6a394f89db174f86b1656be4615a8925-2"></a>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-3" name="rest_code_6a394f89db174f86b1656be4615a8925-3" href="#rest_code_6a394f89db174f86b1656be4615a8925-3"></a><span class="c1"># !pip install ultralytics</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-4" name="rest_code_6a394f89db174f86b1656be4615a8925-4" href="#rest_code_6a394f89db174f86b1656be4615a8925-4"></a>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-5" name="rest_code_6a394f89db174f86b1656be4615a8925-5" href="#rest_code_6a394f89db174f86b1656be4615a8925-5"></a><span class="c1"># !git clone https://huggingface.co/datasets/colour-science/colour-checker-detection-dataset/</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-6" name="rest_code_6a394f89db174f86b1656be4615a8925-6" href="#rest_code_6a394f89db174f86b1656be4615a8925-6"></a>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-7" name="rest_code_6a394f89db174f86b1656be4615a8925-7" href="#rest_code_6a394f89db174f86b1656be4615a8925-7"></a><span class="kn">import</span> <span class="nn">os</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-8" name="rest_code_6a394f89db174f86b1656be4615a8925-8" href="#rest_code_6a394f89db174f86b1656be4615a8925-8"></a>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-9" name="rest_code_6a394f89db174f86b1656be4615a8925-9" href="#rest_code_6a394f89db174f86b1656be4615a8925-9"></a><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">"/content/colour-checker-detection-dataset"</span><span class="p">)</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-10" name="rest_code_6a394f89db174f86b1656be4615a8925-10" href="#rest_code_6a394f89db174f86b1656be4615a8925-10"></a>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-11" name="rest_code_6a394f89db174f86b1656be4615a8925-11" href="#rest_code_6a394f89db174f86b1656be4615a8925-11"></a><span class="kn">from</span> <span class="nn">ultralytics</span> <span class="kn">import</span> <span class="n">YOLO</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-12" name="rest_code_6a394f89db174f86b1656be4615a8925-12" href="#rest_code_6a394f89db174f86b1656be4615a8925-12"></a>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-13" name="rest_code_6a394f89db174f86b1656be4615a8925-13" href="#rest_code_6a394f89db174f86b1656be4615a8925-13"></a>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-14" name="rest_code_6a394f89db174f86b1656be4615a8925-14" href="#rest_code_6a394f89db174f86b1656be4615a8925-14"></a><span class="k">def</span> <span class="nf">train_model</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">"yolov8n.pt"</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s2">"mps"</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-15" name="rest_code_6a394f89db174f86b1656be4615a8925-15" href="#rest_code_6a394f89db174f86b1656be4615a8925-15"></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-16" name="rest_code_6a394f89db174f86b1656be4615a8925-16" href="#rest_code_6a394f89db174f86b1656be4615a8925-16"></a>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-17" name="rest_code_6a394f89db174f86b1656be4615a8925-17" href="#rest_code_6a394f89db174f86b1656be4615a8925-17"></a>    <span class="k">return</span> <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">dataset</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="n">epochs</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-18" name="rest_code_6a394f89db174f86b1656be4615a8925-18" href="#rest_code_6a394f89db174f86b1656be4615a8925-18"></a>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-19" name="rest_code_6a394f89db174f86b1656be4615a8925-19" href="#rest_code_6a394f89db174f86b1656be4615a8925-19"></a>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-20" name="rest_code_6a394f89db174f86b1656be4615a8925-20" href="#rest_code_6a394f89db174f86b1656be4615a8925-20"></a><span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-21" name="rest_code_6a394f89db174f86b1656be4615a8925-21" href="#rest_code_6a394f89db174f86b1656be4615a8925-21"></a>    <span class="n">metrics</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">val</span><span class="p">()</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-22" name="rest_code_6a394f89db174f86b1656be4615a8925-22" href="#rest_code_6a394f89db174f86b1656be4615a8925-22"></a>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-23" name="rest_code_6a394f89db174f86b1656be4615a8925-23" href="#rest_code_6a394f89db174f86b1656be4615a8925-23"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">box</span><span class="o">.</span><span class="n">map</span><span class="p">)</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-24" name="rest_code_6a394f89db174f86b1656be4615a8925-24" href="#rest_code_6a394f89db174f86b1656be4615a8925-24"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">box</span><span class="o">.</span><span class="n">map50</span><span class="p">)</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-25" name="rest_code_6a394f89db174f86b1656be4615a8925-25" href="#rest_code_6a394f89db174f86b1656be4615a8925-25"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">box</span><span class="o">.</span><span class="n">map75</span><span class="p">)</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-26" name="rest_code_6a394f89db174f86b1656be4615a8925-26" href="#rest_code_6a394f89db174f86b1656be4615a8925-26"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">box</span><span class="o">.</span><span class="n">maps</span><span class="p">)</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-27" name="rest_code_6a394f89db174f86b1656be4615a8925-27" href="#rest_code_6a394f89db174f86b1656be4615a8925-27"></a>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-28" name="rest_code_6a394f89db174f86b1656be4615a8925-28" href="#rest_code_6a394f89db174f86b1656be4615a8925-28"></a>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-29" name="rest_code_6a394f89db174f86b1656be4615a8925-29" href="#rest_code_6a394f89db174f86b1656be4615a8925-29"></a><span class="n">results</span> <span class="o">=</span> <span class="n">train_model</span><span class="p">(</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-30" name="rest_code_6a394f89db174f86b1656be4615a8925-30" href="#rest_code_6a394f89db174f86b1656be4615a8925-30"></a>    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s2">"data.yml"</span><span class="p">),</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-31" name="rest_code_6a394f89db174f86b1656be4615a8925-31" href="#rest_code_6a394f89db174f86b1656be4615a8925-31"></a>    <span class="s2">"yolov8l-seg.pt"</span><span class="p">,</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-32" name="rest_code_6a394f89db174f86b1656be4615a8925-32" href="#rest_code_6a394f89db174f86b1656be4615a8925-32"></a>    <span class="n">epochs</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-33" name="rest_code_6a394f89db174f86b1656be4615a8925-33" href="#rest_code_6a394f89db174f86b1656be4615a8925-33"></a>    <span class="n">imgsz</span><span class="o">=</span><span class="mi">1280</span><span class="p">,</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-34" name="rest_code_6a394f89db174f86b1656be4615a8925-34" href="#rest_code_6a394f89db174f86b1656be4615a8925-34"></a>    <span class="n">device</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-35" name="rest_code_6a394f89db174f86b1656be4615a8925-35" href="#rest_code_6a394f89db174f86b1656be4615a8925-35"></a>    <span class="n">hsv_h</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-36" name="rest_code_6a394f89db174f86b1656be4615a8925-36" href="#rest_code_6a394f89db174f86b1656be4615a8925-36"></a>    <span class="n">hsv_s</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-37" name="rest_code_6a394f89db174f86b1656be4615a8925-37" href="#rest_code_6a394f89db174f86b1656be4615a8925-37"></a>    <span class="n">hsv_v</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-38" name="rest_code_6a394f89db174f86b1656be4615a8925-38" href="#rest_code_6a394f89db174f86b1656be4615a8925-38"></a>    <span class="n">degrees</span><span class="o">=</span><span class="mf">22.5</span><span class="p">,</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-39" name="rest_code_6a394f89db174f86b1656be4615a8925-39" href="#rest_code_6a394f89db174f86b1656be4615a8925-39"></a>    <span class="n">translate</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-40" name="rest_code_6a394f89db174f86b1656be4615a8925-40" href="#rest_code_6a394f89db174f86b1656be4615a8925-40"></a>    <span class="n">scale</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-41" name="rest_code_6a394f89db174f86b1656be4615a8925-41" href="#rest_code_6a394f89db174f86b1656be4615a8925-41"></a>    <span class="n">shear</span><span class="o">=</span><span class="mf">11.25</span><span class="p">,</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-42" name="rest_code_6a394f89db174f86b1656be4615a8925-42" href="#rest_code_6a394f89db174f86b1656be4615a8925-42"></a>    <span class="n">flipud</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-43" name="rest_code_6a394f89db174f86b1656be4615a8925-43" href="#rest_code_6a394f89db174f86b1656be4615a8925-43"></a>    <span class="n">fliplr</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-44" name="rest_code_6a394f89db174f86b1656be4615a8925-44" href="#rest_code_6a394f89db174f86b1656be4615a8925-44"></a>    <span class="n">mosaic</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-45" name="rest_code_6a394f89db174f86b1656be4615a8925-45" href="#rest_code_6a394f89db174f86b1656be4615a8925-45"></a><span class="p">)</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-46" name="rest_code_6a394f89db174f86b1656be4615a8925-46" href="#rest_code_6a394f89db174f86b1656be4615a8925-46"></a><span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-47" name="rest_code_6a394f89db174f86b1656be4615a8925-47" href="#rest_code_6a394f89db174f86b1656be4615a8925-47"></a>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-48" name="rest_code_6a394f89db174f86b1656be4615a8925-48" href="#rest_code_6a394f89db174f86b1656be4615a8925-48"></a><span class="n">model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="s2">"runs/segment/train/weights/best.pt"</span><span class="p">)</span>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-49" name="rest_code_6a394f89db174f86b1656be4615a8925-49" href="#rest_code_6a394f89db174f86b1656be4615a8925-49"></a>
+<a id="rest_code_6a394f89db174f86b1656be4615a8925-50" name="rest_code_6a394f89db174f86b1656be4615a8925-50" href="#rest_code_6a394f89db174f86b1656be4615a8925-50"></a><span class="n">validate</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</pre></div>
+<p>Less than 600 Epochs and 1h30 were needed for training with a resulting
+<strong>mAP50</strong> and <strong>mAP50-95</strong> metric values of 0.995 and 0.992, respectively.</p>
+<figure><img alt="/images/Blog_Colour_Checker_Detection_YOLO_Segmentation_1280.png" src="../../images/Blog_Colour_Checker_Detection_YOLO_Segmentation_1280.png"><figcaption><p>Segmentation output of the <code class="docutils literal"><span class="pre">colour-checker-detection-l-seg.pt</span></code> model.</p>
+</figcaption></figure><figure><img alt="/images/Blog_Colour_Checker_Detection_YOLO_Segmentation_Contour_Approximation.png" src="../../images/Blog_Colour_Checker_Detection_YOLO_Segmentation_Contour_Approximation.png"><figcaption><p>Segmentation contour and its approximation.</p>
+</figcaption></figure><div class="alert alert-dismissible alert-info line-block">
+<div class="line"><strong>Note</strong></div>
+<div class="line"><br></div>
+<div class="line">The <code class="docutils literal"><span class="pre">colour-checker-detection-l-seg.pt</span></code> model is published under the
+CC-BY-4.0 license terms on <a class="reference external" href="https://huggingface.co/colour-science/colour-checker-detection-models">Hugging Face</a>.</div>
+</div>
+</section><section id="packaging-the-model"><h3>Packaging the Model</h3>
+<p>Following <strong>Colour</strong>, <strong>Colour - Checker Detection</strong> is freely available under
+the <a class="reference external" href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a> terms. However,
+<strong>Ultralytics YOLO</strong> is distributed under the <a class="reference external" href="https://www.gnu.org/licenses/agpl-3.0.en.html">GNU Affero General Public License v3.0</a>
+terms which is incompatible.</p>
+<p>To accommodate this incompatibility, a separate script, i.e.
+<code class="docutils literal">colour_checker_detection/scripts/inference.py</code>, was written under the
+<em>AGPL-3.0</em> license and the <strong>Colour - Checker Detection</strong> definitions access
+its inference results via <em>sub-process</em>. The <em>YOLO v8</em> code is thus never
+imported into <strong>Colour - Checker Detection</strong> except in the separate script.</p>
+<p>The model is downloaded by the script from <em>Hugging Face</em> and cached in the
+<code class="docutils literal"><span class="pre">$HOME/.colour-science/colour-checker-detection</span></code> directory.</p>
+</section><section id="using-the-inference-method"><h3>Using the Inference Method</h3>
+<p>The API is similar to the original segmentation method and an <a class="reference external" href="https://github.com/colour-science/colour-checker-detection/blob/develop/colour_checker_detection/examples/examples_detection_inference.ipynb">example notebook</a>
+is available in the repository.</p>
+<div class="code"><pre class="code python"><a id="rest_code_f6f384ac59c540bab3714f39ed93c500-1" name="rest_code_f6f384ac59c540bab3714f39ed93c500-1" href="#rest_code_f6f384ac59c540bab3714f39ed93c500-1"></a><span class="n">COLOUR_CHECKER_IMAGE_PATHS</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span>
+<a id="rest_code_f6f384ac59c540bab3714f39ed93c500-2" name="rest_code_f6f384ac59c540bab3714f39ed93c500-2" href="#rest_code_f6f384ac59c540bab3714f39ed93c500-2"></a>    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ROOT_RESOURCES_EXAMPLES</span><span class="p">,</span> <span class="s2">"detection"</span><span class="p">,</span> <span class="s2">"*.png"</span><span class="p">)</span>
+<a id="rest_code_f6f384ac59c540bab3714f39ed93c500-3" name="rest_code_f6f384ac59c540bab3714f39ed93c500-3" href="#rest_code_f6f384ac59c540bab3714f39ed93c500-3"></a><span class="p">)</span>
+<a id="rest_code_f6f384ac59c540bab3714f39ed93c500-4" name="rest_code_f6f384ac59c540bab3714f39ed93c500-4" href="#rest_code_f6f384ac59c540bab3714f39ed93c500-4"></a>
+<a id="rest_code_f6f384ac59c540bab3714f39ed93c500-5" name="rest_code_f6f384ac59c540bab3714f39ed93c500-5" href="#rest_code_f6f384ac59c540bab3714f39ed93c500-5"></a><span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">COLOUR_CHECKER_IMAGE_PATHS</span><span class="p">:</span>
+<a id="rest_code_f6f384ac59c540bab3714f39ed93c500-6" name="rest_code_f6f384ac59c540bab3714f39ed93c500-6" href="#rest_code_f6f384ac59c540bab3714f39ed93c500-6"></a>    <span class="k">for</span> <span class="n">colour_checker_data</span> <span class="ow">in</span> <span class="n">detect_colour_checkers_inference</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<a id="rest_code_f6f384ac59c540bab3714f39ed93c500-7" name="rest_code_f6f384ac59c540bab3714f39ed93c500-7" href="#rest_code_f6f384ac59c540bab3714f39ed93c500-7"></a>        <span class="k">pass</span>
+</pre></div>
+<p>It is also possible to pass an <code class="docutils literal">np.ndarray</code> instance directly. However, something
+to be aware of is that <em>YOLO v8</em> is using <a class="reference external" href="https://github.com/ultralytics/ultralytics/blob/3c277347e47a2c0f4bd46b470528d982c98f133d/ultralytics/data/loaders.py#L346">cv2.imread</a>
+definition to read images which outputs BGR data. Consistently, it is also
+expecting BGR <code class="docutils literal">np.ndarray</code>. The data is then <a class="reference external" href="https://github.com/ultralytics/ultralytics/issues/2575">converted to RGB before training</a>.</p>
+<p>As <strong>Colour</strong> uses RGB data, the default inferencer definition accounts for it
+and reverses the data to BGR before passing it to <em>YOLO v8</em>.</p>
+<div class="alert alert-dismissible alert-danger line-block">
+<div class="line"><strong>Danger</strong></div>
+<div class="line"><br></div>
+<div class="line">Please be mindful of the image channel ordering, i.e. RGB vs BGR, before
+using the new <em>inference</em> method!</div>
+</div>
+<p>The separate script slows the total inference process because of the imports
+and required IO but it is possible to change the inferencer for a new callable
+if the <em>AGPL-3.0</em> license is not a concern:</p>
+<div class="code"><pre class="code python"><a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-1" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-1" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-1"></a><span class="kn">from</span> <span class="nn">ultralytics</span> <span class="kn">import</span> <span class="n">YOLO</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-2" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-2" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-2"></a>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-3" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-3" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-3"></a>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-4" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-4" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-4"></a><span class="k">def</span> <span class="nf">inferencer_agpl</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-5" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-5" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-5"></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-6" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-6" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-6"></a>        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-7" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-7" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-7"></a>            <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s2">"~"</span><span class="p">),</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-8" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-8" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-8"></a>            <span class="s2">".colour-science"</span><span class="p">,</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-9" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-9" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-9"></a>            <span class="s2">"colour-checker-detection"</span><span class="p">,</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-10" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-10" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-10"></a>            <span class="s2">"colour-checker-detection-l-seg.pt"</span><span class="p">,</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-11" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-11" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-11"></a>        <span class="p">),</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-12" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-12" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-12"></a>    <span class="p">)</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-13" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-13" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-13"></a>    <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-14" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-14" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-14"></a>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-15" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-15" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-15"></a>    <span class="c1"># NOTE: YOLOv8 expects "BGR" arrays.</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-16" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-16" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-16"></a>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-17" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-17" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-17"></a>        <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-18" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-18" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-18"></a>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-19" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-19" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-19"></a>    <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-20" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-20" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-20"></a>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-21" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-21" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-21"></a>    <span class="c1"># `device=0` for CUDA GPU</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-22" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-22" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-22"></a>    <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">model</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s2">"mps"</span><span class="p">):</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-23" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-23" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-23"></a>        <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">boxes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-24" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-24" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-24"></a>            <span class="k">continue</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-25" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-25" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-25"></a>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-26" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-26" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-26"></a>        <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">masks</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-27" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-27" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-27"></a>            <span class="k">continue</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-28" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-28" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-28"></a>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-29" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-29" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-29"></a>        <span class="n">data_boxes</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">boxes</span><span class="o">.</span><span class="n">data</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-30" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-30" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-30"></a>        <span class="n">data_masks</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">masks</span><span class="o">.</span><span class="n">data</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-31" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-31" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-31"></a>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-32" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-32" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-32"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">data_boxes</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-33" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-33" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-33"></a>            <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-34" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-34" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-34"></a>                <span class="p">(</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-35" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-35" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-35"></a>                    <span class="n">data_boxes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-36" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-36" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-36"></a>                    <span class="n">data_boxes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-37" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-37" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-37"></a>                    <span class="n">data_masks</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-38" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-38" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-38"></a>                <span class="p">)</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-39" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-39" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-39"></a>            <span class="p">)</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-40" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-40" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-40"></a>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-41" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-41" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-41"></a>    <span class="k">return</span> <span class="n">data</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-42" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-42" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-42"></a>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-43" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-43" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-43"></a>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-44" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-44" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-44"></a><span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">COLOUR_CHECKER_IMAGE_PATHS</span><span class="p">:</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-45" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-45" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-45"></a>    <span class="k">for</span> <span class="n">colour_checker_data</span> <span class="ow">in</span> <span class="n">detect_colour_checkers_inference</span><span class="p">(</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-46" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-46" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-46"></a>        <span class="n">path</span><span class="p">,</span> <span class="n">inferencer</span><span class="o">=</span><span class="n">inferencer_agpl</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-47" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-47" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-47"></a>    <span class="p">):</span>
+<a id="rest_code_8c0bee7f5b804304ba5a894620561e1d-48" name="rest_code_8c0bee7f5b804304ba5a894620561e1d-48" href="#rest_code_8c0bee7f5b804304ba5a894620561e1d-48"></a>        <span class="k">pass</span>
+</pre></div>
+<p>This should be 5 to 10 times faster!</p>
+</section></section><section id="results-and-conclusion"><h2>Results and Conclusion</h2>
+<figure><img alt="/images/Blog_Colour_Checker_Detection_Inference_Examples.png" src="../../images/Blog_Colour_Checker_Detection_Inference_Examples.png"><figcaption><p>Some difficult examples for the existing <strong>Colour - Checker Detection</strong> <em>segmentation</em> method.</p>
+</figcaption></figure><p>We are quite happy with the outcome, the new <em>inference</em> method manages to detect
+the <em>ColorChecker Classic 24</em> where the image processing based <em>segmentation</em>
+method fails.</p>
+<p>It is much slower but this can be improved by using the aforementioned callable
+along with a smaller model at the expense of precision, <em>YOLO v8</em> serves
+realtime application after all.</p>
+<p>We are planning to expand the dataset and train for different classes such as
+the <em>ColorChecker Nano</em> and <em>ColorChecker SG</em> or even <em>ColorChecker Mini</em> and
+<em>ColorChecker Passport</em> which are currently difficult to detect.</p>
+</section>
+</div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/colorchecker-classic-24/" rel="tag">colorchecker classic 24</a></li>
+            <li><a class="tag p-category" href="../../categories/colour/" rel="tag">colour</a></li>
+            <li><a class="tag p-category" href="../../categories/colour-science/" rel="tag">colour science</a></li>
+            <li><a class="tag p-category" href="../../categories/cvat/" rel="tag">cvat</a></li>
+            <li><a class="tag p-category" href="../../categories/hugging-face/" rel="tag">hugging face</a></li>
+            <li><a class="tag p-category" href="../../categories/inference/" rel="tag">inference</a></li>
+            <li><a class="tag p-category" href="../../categories/machine-learning/" rel="tag">machine learning</a></li>
+            <li><a class="tag p-category" href="../../categories/roboflow/" rel="tag">roboflow</a></li>
+            <li><a class="tag p-category" href="../../categories/yolo/" rel="tag">yolo</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../colour-044-is-available/" rel="prev" title="Colour 0.4.4 is available!">Previous post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+    
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="colour-science",
+            disqus_url="https://www.colour-science.org/posts/colour-checker-detection-with-machine-learning/",
+        disqus_title="Colour Checker Detection with Machine Learning",
+        disqus_identifier="cache/posts/colour-checker-detection-with-machine-learning.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="colour-science";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content-->
+</div>
+        </div>
+    </div>
+</div>
+
+<!-- End of Main -->
+
+<!-- Footer -->
+
+<footer id="footer" class="mt-auto"><ul class="nav justify-content-center">
+<li class="nav-item mx-3">
+        <a href="mailto:colour-developers@colour-science.org">
+            <i class="fas fa-envelope text-light"></i>
+        </a>
+    </li>
+    <li class="nav-item mx-3">
+        <a href="https://github.com/colour-science/colour">
+            <i class="fab fa-github text-light"></i>
+        </a>
+    </li>
+    <li class="nav-item mx-3">
+        <a href="https://gitter.im/colour-science/colour">
+            <i class="fab fa-gitter text-light"></i>
+        </a>
+    </li>
+    <li class="nav-item mx-3">
+        <a href="https://twitter.com/colour_science">
+            <i class="fab fa-twitter text-light"></i>
+        </a>
+    </li>
+    <li class="nav-item mx-3">
+        <a href="https://www.facebook.com/python.colour.science">
+            <i class="fab fa-facebook text-light"></i>
+        </a>
+    </li>
+</ul>
+<div class="text-center text-light py-3"><span>Copyright © 2013-2024 – Colour Developers</span></div>
+
+    
+</footer><!-- End of Footer --><script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><!-- >>> Gitter --><script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'colour-science/colour'
+  };
+</script><script async src="https://sidecar.gitter.im/dist/sidecar.v1.js"></script><!-- <<< Gitter --><!-- >>> Google Analytics --><script async src="https://www.colour-science.org/assets/js/analytics.js"></script><!-- <<< Google Analytics -->
+</body>
+</html>

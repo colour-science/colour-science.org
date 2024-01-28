@@ -8,10 +8,10 @@
 .. type: text
 
 **Colour - Nuke** provides an implementation of **Colour** within
-`The Foundry Nuke <http://www.thefoundry.co.uk/products/nuke-product-family/nuke/>`__.
+`The Foundry Nuke <http://www.thefoundry.co.uk/products/nuke-product-family/nuke>`__.
 
 This is historically where **Colour** started as a raw images colour
-conversion plugin for `The Moving Picture Company <http://www.moving-picture.com/>`__
+conversion plugin for `The Moving Picture Company <http://www.moving-picture.com>`__
 stills ingestion pipeline.
 
 Most of the code being under NDA, it has been removed from the repository.
@@ -23,7 +23,7 @@ The following features are available:
 
 -   Lookup node from '.csv' file.
 -   Adobe Camera Raw derived and exact tone curves.
--   `dcraw <https://www.cybercom.net/~dcoffin/dcraw/>`__ highlights recovery
+-   `dcraw <https://www.cybercom.net/~dcoffin/dcraw>`__ highlights recovery
     group.
 -   Various Global Tonemapping Operators which are also available from
     `Nukepedia <http://www.nukepedia.com/gizmos/colour/global_tonemapping_operators>`__.

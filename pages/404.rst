@@ -1,10 +1,10 @@
 .. title: 404
 .. slug: 404
 .. date: 2015-12-03 09:22:34 UTC
-.. tags: 
-.. category: 
-.. link: 
-.. description: 
+.. tags:
+.. category:
+.. link:
+.. description:
 .. type: text
 .. url_type: full_path
 

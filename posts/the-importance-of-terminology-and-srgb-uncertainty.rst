@@ -2,15 +2,15 @@
 .. slug: the-importance-of-terminology-and-srgb-uncertainty
 .. date: 2015-12-05 00:17:30 UTC
 .. tags: chromaticity diagram, colour, colour science, EOTF, gamut, OETF, primaries, RGB colourspace, sRGB, transfer function, whitepoint
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 
 We were meant to write that entry since a while, and a
 `great post <https://gamedevdaily.io/the-srgb-learning-curve-773b7f68cf7a#>`__ by
 `Tom Forsyth <https://twitter.com/tom_forsyth>`__ from
-`Oculus VR <https://www.oculus.com/en-us/>`__ triggered us in doing so.
+`Oculus VR <https://www.oculus.com/en-us>`__ triggered us in doing so.
 
 .. TEASER_END
 
@@ -36,7 +36,7 @@ mention of **Gamma** indicates that the article will likely only involves the
     | **Warning**
     |
     | When using the term *Gamma* at
-        `colour-science.org <https://colour-science.org/>`__,
+        `colour-science.org <https://colour-science.org>`__,
         we are always referring to a pure power function whose exponent is
         known as *Gamma*.
 
@@ -60,7 +60,7 @@ Tom confirms that intuition a few paragraph later:
     | The *gamut* defined by *sRGB* colourspace should actually be of a
         concern if one tries to achieve photo-realistic rendering as shown by
         `Steve Agland <http://nbviewer.jupyter.org/gist/sagland/3c791e79353673fd24fa>`__
-        and `us <https://www.colour-science.org/posts/about-rendering-engines-colourspaces-agnosticism/>`__.
+        and `us <https://www.colour-science.org/posts/about-rendering-engines-colourspaces-agnosticism>`__.
 
 What is sRGB?
 -------------

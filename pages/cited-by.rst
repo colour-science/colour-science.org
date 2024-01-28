@@ -42,6 +42,6 @@ the following papers, publications, articles or presentations:
 - Uchimura, H. (2016). Color Science for Games.
 - Uchimura, H., & Suzuki, K. (2018). Practical HDR and Wide Color Techniques in Gran Turismo SPORT. http://www.polyphony.co.jp/publications/sa2018/
 - Walker, D., Dolan, M., & Hodoul, P. (2020). The ASWF Takes OpenColorIO to the Next Level. The Digital Production Symposium, 1–10. doi:10.1145/3403736.3403942
-- Waters, M. J., Walker, J. M., Nelson, C. T., Joester, D., & Rondinelli, J. M. (2020). Exploiting Colorimetry for Fidelity in Data Visualization. ArXiv:2002.12228 [Cond-Mat]. Retrieved September 29, 2020, from http://arxiv.org/abs/2002.12228
+- Waters, M. J., Walker, J. M., Nelson, C. T., Joester, D., & Rondinelli, J. M. (2020). Exploiting colorimetry for fidelity in data visualization. CoRR, abs/2002.12228. https://arxiv.org/abs/2002.12228
 - Wei, N., Tian, Y., Liao, Y., Komatsu, N., Gao, W., Lyuleeva-Husemann, A., Zhang, Q., Hussain, A., Ding, E.-X., Yao, F., & others. (2020). Colors of Single-Wall Carbon Nanotubes. Advanced Materials, 2006395.
 - Wheatley, K. J. (2016). A retrospective on the adoption of the ACES technology at Framestore. Proceedings of the 2016 Symposium on Digital Production, 19–30. doi:10.1145/2947688.2947695

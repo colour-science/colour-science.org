@@ -2,9 +2,9 @@
 .. slug: index
 .. date: 2015-12-01 09:37:13 UTC
 .. tags: colour, colour science, python
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 .. hidetitle: True
 
@@ -22,7 +22,7 @@
                     </p>
                     <p>
                         It is freely available under the
-                        <a href="https://opensource.org/licenses/BSD-3-Clause">New BSD License</a>
+                        <a href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a>
                         terms.
                     </p>
                     <p>
@@ -36,9 +36,9 @@
                             <h4 class="text-light my-0">Get Started</h4>
                         </a>
                         <a class="btn btn-secondary bg-white btn-block mt-3"
-                            href="https://github.com/colour-science/colour/archive/v0.4.2.zip"
+                            href="https://github.com/colour-science/colour/archive/v0.4.4.zip"
                             role="button">
-                            <h4 class="my-0"><span class="fa fa-download">&nbsp;</span> 0.4.2 Alpha</h4>
+                            <h4 class="my-0"><span class="fa fa-download">&nbsp;</span> 0.4.4 Alpha</h4>
                         </a>
                     </div>
                 </div>

@@ -2,9 +2,9 @@
 .. slug: colour-037-is-available
 .. date: 2015-12-13 06:14:07 UTC
 .. tags: colour, colour science, release
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 
 `Colour 0.3.7 <https://github.com/colour-science/colour/releases/tag/v0.3.7>`__
@@ -18,7 +18,7 @@ objects and *backward incompatible changes*. It provides support for
 
 The API documentation is now hosted on `readthedocs.io <https://colour.readthedocs.io/en/latest/api.html>`__
 
-Python 2.7 and 3.5 wheels are now available on `Pypi <https://pypi.org/project/colour-science/>`__.
+Python 2.7 and 3.5 wheels are now available on `Pypi <https://pypi.org/project/colour-science>`__.
 
 Head to the `releases page <https://github.com/colour-science/colour/releases/tag/v0.3.7>`__
 for complete details.

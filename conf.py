@@ -162,11 +162,30 @@ NAVIGATION_LINKS = {
                     "/colour-checker-detection",
                     '<span class="font-weight-bold">Colour - Checker Detection</span>',
                 ),
-                ("/colour-maya", "Colour - Maya"),
-                ("/colour-nuke", "Colour - Nuke"),
-                ("/colour-playground", "Colour - Playground"),
-                ("/colour-spectroscope", "Colour - Spectroscope"),
-                ("/experiments", "Experiments"),
+                (
+                    "/colour-visuals",
+                    '<span class="font-weight-bold">Colour - Visuals</span>',
+                ),
+                (
+                    "/colour-maya",
+                    '<span class="font-weight-normal">Colour - Maya</span>',
+                ),
+                (
+                    "/colour-nuke",
+                    '<span class="font-weight-normal">Colour - Nuke</span>',
+                ),
+                (
+                    "/colour-playground",
+                    '<span class="font-weight-normal">Colour - Playground</span>',
+                ),
+                (
+                    "/colour-spectroscope",
+                    '<span class="font-weight-normal">Colour - Spectroscope</span>',
+                ),
+                (
+                    "/experiments",
+                    '<span class="font-weight-normal">Experiments</span>',
+                ),
             ),
             "Projects",
         ),
@@ -208,24 +227,45 @@ NAVIGATION_LINKS = {
                     "/contributors",
                     '<span class="font-weight-bold">Contributors</span>',
                 ),
-                ("/features", "Features"),
-                ("/history", "History"),
+                (
+                    "/features",
+                    '<span class="font-weight-normal">Features</span>',
+                ),
+                (
+                    "/history",
+                    '<span class="font-weight-normal">History</span>',
+                ),
                 (
                     "https://colour.readthedocs.io/en/develop/bibliography.html",
-                    "Bibliography",
+                    '<span class="font-weight-normal">Bibliography</span>',
                 ),
-                ("https://doi.org/10.5281/zenodo.7367239", "Cite Us"),
-                ("/cited-by", "Cited By"),
-                ("https://opensource.org/licenses/BSD-3-Clause", "License"),
-                ("/search", "Search"),
+                (
+                    "https://doi.org/10.5281/zenodo.10396329",
+                    '<span class="font-weight-normal">Cite Us</span>',
+                ),
+                (
+                    "/cited-by",
+                    '<span class="font-weight-normal">Cited By</span>',
+                ),
+                (
+                    "https://opensource.org/licenses/BSD-3-Clause",
+                    '<span class="font-weight-normal">License</span>',
+                ),
+                ("/search", '<span class="font-weight-normal">Search</span>'),
             ),
             "Documentation",
         ),
         (
             (
                 ("/blog", '<span class="font-weight-bold">Posts</span>'),
-                ("/archive.html", "Archive"),
-                ("/categories/", "Tags"),
+                (
+                    "/archive.html",
+                    '<span class="font-weight-normal">Archive</span>',
+                ),
+                (
+                    "/categories/",
+                    '<span class="font-weight-normal">Tags</span>',
+                ),
             ),
             "Blog",
         ),
@@ -1192,7 +1232,7 @@ PRETTY_URLS = True
 # feature yet, it's faster and the output looks better.
 # USE_KATEX = False
 
-# KaTeX auto-render settings. If you want support for the $.$ syntax (wihch may
+# KaTeX auto-render settings. If you want support for the $.$ syntax (which may
 # conflict with running text!), just use this config:
 # KATEX_AUTO_RENDER = """
 # delimiters: [

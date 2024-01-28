@@ -2,12 +2,12 @@
 .. slug: demosaicing-and-hdri-with-python
 .. date: 2015-12-18 06:15:31 UTC
 .. tags: colour, colour science, colour - demosaicing, colour - hdri, release
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 
-We have released two complementary image processing  `Python <https://www.python.org/>`__
+We have released two complementary image processing  `Python <https://www.python.org>`__
 packages:
 
 -   `Colour - Demosaicing </colour-demosaicing>`__ which implements various CFA
@@ -53,20 +53,20 @@ Both packages provide examples notebooks:
 Some of the notebooks rely on third-party libraries or applications to run such as
 
 -   `Adobe DNG Converter <https://www.adobe.com/support/downloads/product.jsp?product=106&platform=Mac>`__
--   `dcraw <https://www.cybercom.net/~dcoffin/dcraw/>`__
--   `ExifTool <http://www.sno.phy.queensu.ca/~phil/exiftool/>`__
+-   `dcraw <https://www.cybercom.net/~dcoffin/dcraw>`__
+-   `ExifTool <http://www.sno.phy.queensu.ca/~phil/exiftool>`__
 -   `rawpy <https://github.com/neothemachine/rawpy>`__
 
 They are not mandatory and the data they provide can be acquired in various
 different ways. We don't advocate an approach or another.
 
 That work wouldn't have been possible without the excellent
-`Advanced High Dynamic Range Imaging Book <http://www.advancedhdrbook.com/>`__
+`Advanced High Dynamic Range Imaging Book <http://www.advancedhdrbook.com>`__
 and the tremendous amount of publications we gathered (over 30 publications
 related to demosaicing and 20 publications for HDRI).
 
-Finally, we recommend that you read `Posterior Sparisty-Directed Demosaicking <http://campus.udayton.edu/~ISSL/index.php/research/denoising-demosaicking/>`__
-and `Robust Patch-Based HDR Reconstruction of Dynamic Scenes <http://cvc.ucsb.edu/graphics/Papers/Sen2012_PatchHDR/>`__
+Finally, we recommend that you read `Posterior Sparisty-Directed Demosaicking <http://campus.udayton.edu/~ISSL/index.php/research/denoising-demosaicking>`__
+and `Robust Patch-Based HDR Reconstruction of Dynamic Scenes <http://cvc.ucsb.edu/graphics/Papers/Sen2012_PatchHDR>`__
 publications which are probably the state of the art although patented to various
 degrees.
 

@@ -2,9 +2,9 @@
 .. slug: physical-lighting-quantities-tying-both-ends
 .. date: 2020-04-01 07:28:05 UTC
 .. tags: absolute luminance calibration, colour science, digital still camera exposure model, physical quantities
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 .. has_math: true
 
@@ -78,7 +78,7 @@ where
 
     | **Note**
     |
-    | `Doug A. Kerr <http://dougkerr.net/>`__ hosts a
+    | `Doug A. Kerr <http://dougkerr.net>`__ hosts a
         `series of articles <http://dougkerr.net/Pumpkin/index.htm>`__ on
         photography and optics. The following article are of interest for the
         discussed topic: `Average Scene Reflectance in Photographic Exposure Metering <http://dougkerr.net/Pumpkin/articles/Scene_Reflectance.pdf>`__
@@ -99,6 +99,9 @@ implements the aforementioned model with Python:
     >>> colour_hdri.saturation_based_speed_focal_plane_exposure(
     ...     18, 5.6, 0.25, 400
     ... )
+
+.. code:: text
+
     0.46993364546604555
 
 `Colour - Nuke <https://github.com/colour-science/colour-nuke/blob/master/colour_nuke/scripts/digital_still_camera_exposure.nk>`__
@@ -153,10 +156,17 @@ implements support for absolute luminance calibration with Python:
     >>> colour_hdri.absolute_luminance_calibration_Lagarde2016(RGB, 120000)[
     ...     0, 0
     ... ]
+
+.. code-block:: text
+
     array([ 38215.85392444,  38215.85392444,  38215.85392444])
-    >>> colour_hdri.calibration.absolute_luminance.upper_hemisphere_illuminance_Lagarde2016(
-    ...     RGB
-    ... )
+
+.. code:: python
+
+    colour_hdri.calibration.absolute_luminance.upper_hemisphere_illuminance_Lagarde2016(RGB)
+
+.. code-block:: text
+
     3.1400580564615663
 
 .. class:: alert alert-dismissible alert-info
@@ -209,7 +219,7 @@ example.
     |
     | The aforementioned Jupyter Notebook is an example, typical production
         usage would require multi-processing and use
-        `rawpy <https://pypi.org/project/rawpy/>`__ or
+        `rawpy <https://pypi.org/project/rawpy>`__ or
         `rawtoaces <https://github.com/ampas/rawtoaces>`__.
 
 .. figure:: /images/Blog_Unity_Treasure_Island_ReStitched_Angles.png

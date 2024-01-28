@@ -2,9 +2,9 @@
 .. slug: colour-036-is-available
 .. date: 2015-08-09 10:31:00 PM GMT+12
 .. tags: colour, colour science, release
-.. category: 
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 
 `Colour 0.3.6 <https://github.com/colour-science/colour/releases/tag/v0.3.6>`__
