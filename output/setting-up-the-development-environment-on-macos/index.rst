@@ -20,8 +20,8 @@ Additionally, the installation of complex dependencies such as
 It was contributed by `@tjdcs <https://github.com/tjdcs>`__ and last updated on
 the 2024-01-28.
 
-Homebrew Installation
-=====================
+Homebrew
+========
 
 Install `Homebrew <https://brew.sh>`__:
 
@@ -35,8 +35,8 @@ Install the required Python versions:
 
     brew install python@3.9 python@3.10 python@3.11 python@3.12
 
-Poetry Installation
-===================
+Poetry
+======
 
 (Re)Install `Poetry <https://python-poetry.org>`__:
 
@@ -48,8 +48,8 @@ versions, it is thus recommended to reinstall it.
     curl -sSL https://install.python-poetry.org | python3 - --uninstall
     curl -sSL https://install.python-poetry.org | python3 -
 
-graphviz and OpenImageIO Installation
-=====================================
+graphviz and OpenImageIO
+========================
 
 Using Homebrew:
 
@@ -65,8 +65,8 @@ Then append the following exports to your shell dotfile, e.g. ``~/.zshrc``:
     export CPATH=$CPATH:$(brew --prefix graphviz)/include/
     export PYTHONPATH=$PYTHONPATH:$(brew --prefix OpenImageIO)/lib/python3.12/site-packages/OpenImageIO/
 
-Clone colour-science
-====================
+Cloning colour's Repository
+===========================
 
 First, `fork the colour repository <https://github.com/colour-science/colour/fork>`__,
 making sure to set or replace the environment variables in these commands.
@@ -77,8 +77,8 @@ making sure to set or replace the environment variables in these commands.
     git clone git@github.com:$GITHUB_USER/colour.git
     cd colour
 
-Working in VSCode / Terminal
-============================
+Working with Visual Studio Code from the Terminal
+=================================================
 
 The following step is optional, but helpful to store Poetry's virtual environment
 into **colour**'s directory.
@@ -131,8 +131,8 @@ or if you just want to run the tests, including the doctests:
     invoke tests
 
 
-CTL Installation (Optional)
-===========================
+CTL (Optional)
+==============
 
 **colour** provides a wrapper to the AMPAS `Color Transformation Language <https://github.com/ampas/CTL>`__ (CTL)
 If you want to be able to fully build and contribute to this part of the
