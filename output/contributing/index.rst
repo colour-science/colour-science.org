@@ -190,7 +190,7 @@ Development for Colour
     | **Note**
     |
     | If you are on macOS, a dedicated guide on how to setup your environment
-        is available here: `Setting Up the Development Environment on macOS <../setting-up-the-development-environment-on-macos/index.html>`__
+        is available here: `Setting Up the Development Environment on macOS <../setting-up-the-development-environment-on-macos/index.html>`__.
 
 Here is a succinct overview of the steps you will most likely go through:
 

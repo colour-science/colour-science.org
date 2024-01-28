@@ -130,14 +130,9 @@ or if you just want to run the tests, including the doctests:
 
     invoke tests
 
-More Information
-================
 
-Please refer to the rest of `the contributing guide <https://www.colour-science.org/contributing/>`__.
-
-
-Install CTL
-===========
+CTL Installation (Optional)
+===========================
 
 **colour** provides a wrapper to the AMPAS `Color Transformation Language <https://github.com/ampas/CTL>`__ (CTL)
 If you want to be able to fully build and contribute to this part of the
@@ -158,3 +153,9 @@ environments, thus, it must be installed from source at the moment:
     cmake .. -J 10
     make
     sudo make install
+
+See Also
+========
+
+Please refer to `the contributing guide <https://www.colour-science.org/contributing/>`__
+for more information about the contributing process.
