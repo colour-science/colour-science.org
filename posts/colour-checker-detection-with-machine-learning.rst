@@ -21,7 +21,7 @@ Proof of Concept
 ----------------
 
 There have been a few `requests <https://github.com/colour-science/colour-checker-detection/issues/60>`__
-to support detection of charts that are not parallel to the image path, i.e.
+to support detection of charts that are not parallel to the imaging plane, i.e.
 with perspective distortion.
 
 Whilst looking at Tim Walter's `implementation <https://github.com/colour-science/colour-checker-detection/issues/60#issuecomment-1497592888>`__,
