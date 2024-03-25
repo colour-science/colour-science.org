@@ -513,8 +513,7 @@ Python Style Rules
 
 .. code:: python
 
-    def CCT_to_xy_Kang2002(CCT):
-        ...
+    def CCT_to_xy_Kang2002(CCT): ...
 
 -   Please use *British English* words instead of *American English* ones as
     the **CIE** does, the most important of all being **colour** instead of
