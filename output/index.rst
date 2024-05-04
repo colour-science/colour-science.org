@@ -104,7 +104,7 @@ Gold Sponsors
                     </td>
                     <td align="center" valign="middle">
                         <a href="https://colorhythm.com" target="_blank">
-                            <img class="img-fluid img-circle" style="max-height:288px" src="https://images.opencollective.com/colorhythm/9b4667d/logo/256.png">
+                            <img class="img-fluid img-circle" style="max-height:288px" src="/images/Colorhythm_Logo.png">
                         </a>
                         <p><a href="https://colorhythm.com" target="_blank">Colorhythm</a></p>
                     </td>
