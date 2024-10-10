@@ -14,7 +14,7 @@ The colour-science Developers are pleased to announce the release of
 
 This release implements support for `Python 3.13 <https://docs.python.org/3/whatsnew/3.13.html>`__ and `Numpy 2 <https://numpy.org/devdocs/release/2.0.0-notes.html>`__.
 
-The highlights of this release are as follows:
+The highlights are as follows:
 
 - `pygraphviz <https://pygraphviz.github.io>`__ was replaced with `pydot <https://github.com/pydot/pydot>`__ so that installation is easier.
 - We switched from `Poetry <https://python-poetry.org>`__ to `uv <https://docs.astral.sh/uv>`__ and `hatch <http://hatch.pypa.io>`__ for managing the development environment and build our wheels.
