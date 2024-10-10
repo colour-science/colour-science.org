@@ -17,9 +17,15 @@ This release implements support for `Python 3.13 <https://docs.python.org/3/what
 The highlights of this release are as follows:
 
 - `pygraphviz <https://pygraphviz.github.io>`__ was replaced with `pydot <https://github.com/pydot/pydot>`__ so that installation is easier.
-- We switched from `Poetry <https://python-poetry.org`__ to `uv <https://docs.astral.sh/uv>`__ and `hatch <http://hatch.pypa.io>`__ for managing the development environment and build our wheels.
+- We switched from `Poetry <https://python-poetry.org>`__ to `uv <https://docs.astral.sh/uv>`__ and `hatch <http://hatch.pypa.io>`__ for managing the development environment and build our wheels.
 
     - *uv* is so good that it literally only requires `uv run --with colour-science my_script.py` to run a script using **Colour**.
+
+.. class:: alert alert-dismissible alert-info
+
+    | **Note**
+    |
+    | The other **colour-science** packages will be updated in the coming weeks to also use `uv <https://docs.astral.sh/uv>`__.
 
 - Our `environment variables <https://colour.readthedocs.io/en/develop/advanced.html#environment>`__ can now be loaded from a ``JEnv`` file:
 
