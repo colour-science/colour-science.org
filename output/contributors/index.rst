@@ -31,7 +31,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        <span class="font-weight-bold">Maintainer</span>, project coordination, overall development.
+                        <span class="font-weight-bold">Maintainer</span>, project coordination, overall development
                     </p>
                 </div>
                 <div class="card-footer">
@@ -53,7 +53,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        <span class="font-weight-bold">Maintainer</span>, colour appearance models, overall development.
+                        <span class="font-weight-bold">Maintainer</span>, colour appearance models, overall development
                     </p>
                 </div>
                 <div class="card-footer">
@@ -75,7 +75,7 @@
                 <div class="card-body">
                     <p class="card-text">
                         <span class="font-weight-bold">Maintainer</span>, Y'CbCr colour encoding, RED colourspaces derivation,
-                        LUT IO, continuous technical support.
+                        LUT IO, continuous technical support
                     </p>
                 </div>
                 <div class="card-footer">
@@ -103,7 +103,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        <span class="font-weight-bold">Maintainer</span>, CLF, technical support.
+                        <span class="font-weight-bold">Maintainer</span>, CLF, technical support
                     </p>
                 </div>
                 <div class="card-footer">
@@ -124,7 +124,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        <span class="font-weight-bold">Maintainer</span>, performance improvements, technical support.
+                        <span class="font-weight-bold">Maintainer</span>, performance improvements, technical support
                     </p>
                 </div>
                 <div class="card-footer">
@@ -145,7 +145,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        <span class="font-weight-bold">Maintainer</span>, technical support.
+                        <span class="font-weight-bold">Maintainer</span>, technical support
                     </p>
                 </div>
             </div>
@@ -170,7 +170,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Technical support.
+                        Technical support
                     </p>
                 </div>
                 <div class="card-footer">
@@ -212,7 +212,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Technical support.
+                        Technical support
                     </p>
                 </div>
                 <div class="card-footer">
@@ -248,7 +248,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        <a href="https://github.com/colour-science/GSoC/blob/master/2020/GSoC-2020-Project-Ideas.md#lut-io-improvements">LUT IO Improvements</a>.
+                        <a href="https://github.com/colour-science/GSoC/blob/master/2020/GSoC-2020-Project-Ideas.md#lut-io-improvements">LUT IO Improvements</a>
                     </p>
                 </div>
                 <div class="card-footer">
@@ -269,7 +269,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        <a href="https://github.com/colour-science/GSoC/blob/master/2020/GSoC-2020-Project-Ideas.md#the-need-for-speed">The Need for Speed</a>.
+                        <a href="https://github.com/colour-science/GSoC/blob/master/2020/GSoC-2020-Project-Ideas.md#the-need-for-speed">The Need for Speed</a>
                     </p>
                 </div>
                 <div class="card-footer">
@@ -290,7 +290,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        <a href="https://github.com/colour-science/GSoC/blob/master/2020/GSoC-2020-Project-Ideas.md#new-spectral-upsampling-methods">New Spectral Upsampling Methods</a>, <a href="https://github.com/colour-science/GSoC/blob/master/2020/GSoC-2020-Project-Ideas.md#new-colour-quality-metrics">New Colour Quality Metrics</a>.
+                        <a href="https://github.com/colour-science/GSoC/blob/master/2020/GSoC-2020-Project-Ideas.md#new-spectral-upsampling-methods">New Spectral Upsampling Methods</a>, <a href="https://github.com/colour-science/GSoC/blob/master/2020/GSoC-2020-Project-Ideas.md#new-colour-quality-metrics">New Colour Quality Metrics</a>
                     </p>
                 </div>
                 <div class="card-footer">
@@ -325,7 +325,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        <a href="https://github.com/colour-science/GSoC/blob/master/2021/GSoC-2021-Project-Ideas.md#new-colour-appearance-models">New Colour Appearance Models</a>.
+                        <a href="https://github.com/colour-science/GSoC/blob/master/2021/GSoC-2021-Project-Ideas.md#new-colour-appearance-models">New Colour Appearance Models</a>
                     </p>
                 </div>
                 <div class="card-footer">
@@ -346,7 +346,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        <a href="https://github.com/colour-science/GSoC/blob/master/2021/GSoC-2021-Project-Ideas.md#new-colour-models">New Colour Models</a>.
+                        <a href="https://github.com/colour-science/GSoC/blob/master/2021/GSoC-2021-Project-Ideas.md#new-colour-models">New Colour Models</a>
                     </p>
                 </div>
                 <div class="card-footer">
@@ -375,7 +375,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Colour Quality Scale, luminous flux.
+                        Colour Quality Scale, luminous flux
                     </p>
                 </div>
                 <div class="card-footer">
@@ -390,7 +390,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        CIECAM02 improvements, technical support.
+                        CIECAM02 improvements, technical support
                     </p>
                 </div>
                 <div class="card-footer">
@@ -405,7 +405,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Documentation improvements.
+                        Documentation improvements
                     </p>
                 </div>
                 <div class="card-footer">
@@ -427,7 +427,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Documentation improvements.
+                        Documentation improvements
                     </p>
                 </div>
                 <div class="card-footer">
@@ -442,7 +442,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Documentation improvements.
+                        Documentation improvements
                     </p>
                 </div>
                 <div class="card-footer">
@@ -460,7 +460,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        F-Gamut and Fuji F-Log support.
+                        F-Gamut and Fuji F-Log support
                     </p>
                 </div>
                 <div class="card-footer">
@@ -488,7 +488,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Documentation improvements.
+                        Documentation improvements
                     </p>
                 </div>
                 <div class="card-footer">
@@ -504,7 +504,7 @@
                 <div class="card-body">
                     <p class="card-text">
                         <a href="https://github.com/colour-science/colour/issues/507">Hacktoberfest 2019</a>
-                        technical support.
+                        technical support
                     </p>
                 </div>
                 <div class="card-footer">
@@ -520,7 +520,7 @@
                 <div class="card-body">
                     <p class="card-text">
                         <a href="https://github.com/colour-science/colour/issues/511">Hacktoberfest 2019</a>
-                        technical support.
+                        technical support
                     </p>
                 </div>
                 <div class="card-footer">
@@ -543,7 +543,7 @@
                 <div class="card-body">
                     <p class="card-text">
                         <a href="https://github.com/colour-science/colour/issues/505">Hacktoberfest 2019</a>
-                        technical support.
+                        technical support
                     </p>
                 </div>
                 <div class="card-footer">
@@ -558,7 +558,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        License discovery improvements.
+                        License discovery improvements
                     </p>
                 </div>
                 <div class="card-footer">
@@ -574,7 +574,7 @@
                 <div class="card-body">
                     <p class="card-text">
                         <a href="https://github.com/colour-science/colour/issues/513">Hacktoberfest 2019</a>
-                        technical support.
+                        technical support
                     </p>
                 </div>
                 <div class="card-footer">
@@ -602,7 +602,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Documentation improvements.
+                        Documentation improvements
                     </p>
                 </div>
                 <div class="card-footer">
@@ -617,7 +617,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Krystek (1985) implementation fixes.
+                        Krystek (1985) implementation fixes
                     </p>
                 </div>
                 <div class="card-footer">
@@ -632,7 +632,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Numpy 1.18 compatibility.
+                        Numpy 1.18 compatibility
                     </p>
                 </div>
                 <div class="card-footer">
@@ -654,7 +654,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Python 3.8 compatibility.
+                        Python 3.8 compatibility
                     </p>
                 </div>
                 <div class="card-footer">
@@ -672,7 +672,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Examples fixes.
+                        Examples fixes
                     </p>
                 </div>
                 <div class="card-footer">
@@ -687,7 +687,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Technical support.
+                        Technical support
                     </p>
                 </div>
                 <div class="card-footer">
@@ -715,7 +715,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Technical support and documentation improvements.
+                        Technical support and documentation improvements
                     </p>
                 </div>
                 <div class="card-footer">
@@ -736,7 +736,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Documentation improvements.
+                        Documentation improvements
                     </p>
                 </div>
                 <div class="card-footer">
@@ -757,7 +757,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        RED Log3G10 improvements.
+                        RED Log3G10 improvements
                     </p>
                 </div>
                 <div class="card-footer">
@@ -785,7 +785,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        DaVinci Intermediate OETF implementation.
+                        DaVinci Intermediate OETF implementation
                     </p>
                 </div>
                 <div class="card-footer">
@@ -806,7 +806,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Technical support.
+                        Technical support
                     </p>
                 </div>
                 <div class="card-footer">
@@ -827,7 +827,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        HCL colourspace implementation.
+                        HCL colourspace implementation
                     </p>
                 </div>
                 <div class="card-footer">
@@ -855,7 +855,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Helmholtz—Kohlrausch effect implementation.
+                        Helmholtz—Kohlrausch effect implementation
                     </p>
                 </div>
                 <div class="card-footer">
@@ -870,7 +870,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Documentation improvements.
+                        Documentation improvements
                     </p>
                 </div>
                 <div class="card-footer">
@@ -885,7 +885,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Documentation improvements.
+                        Documentation improvements
                     </p>
                 </div>
                 <div class="card-footer">
@@ -907,7 +907,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Technical support.
+                        Technical support
                     </p>
                 </div>
                 <div class="card-footer">
@@ -928,7 +928,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Documentation improvements.
+                        Documentation improvements
                     </p>
                 </div>
                 <div class="card-footer">
@@ -949,7 +949,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Support for Recommendation ITU-T H.273 / INTERNATIONAL STANDARD ISO/IEC 23091-2.
+                        Support for Recommendation ITU-T H.273 / INTERNATIONAL STANDARD ISO/IEC 23091-2
                     </p>
                 </div>
                 <div class="card-footer">
@@ -978,7 +978,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Support for Recommendation ITU-R BT.2124-0.
+                        Support for Recommendation ITU-R BT.2124-0
                     </p>
                 </div>
                 <div class="card-footer">
@@ -993,7 +993,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        TE226 v2 colour checker reference values.
+                        TE226 v2 colour checker reference values
                     </p>
                 </div>
                 <div class="card-footer">
@@ -1008,7 +1008,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Cheung et al. (2004) polynomial correction improvements.
+                        Cheung et al. (2004) polynomial correction improvements
                     </p>
                 </div>
                 <div class="card-footer">
@@ -1030,7 +1030,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Spectral Similarity Index computation improvements.
+                        Spectral Similarity Index computation improvements
                     </p>
                 </div>
                 <div class="card-footer">
@@ -1052,7 +1052,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Typing annotations improvements.
+                        Typing annotations improvements
                     </p>
                 </div>
                 <div class="card-footer">
@@ -1073,7 +1073,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Documentation improvements.
+                        Documentation improvements
                     </p>
                 </div>
                 <div class="card-footer">
@@ -1081,8 +1081,34 @@
                 </div>
             </div>
         </div>
-
     </div>
+
+    <!-- ------------------------------------------------------------------ -->
+    <!-- ------------------------------------------------------------------ -->
+    <!-- ------------------------------------------------------------------ -->
+
+    <div class="row my-5">
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>Benoit Brummer</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Numpy 2 support
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/trougnouf" class="card-link">Github</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
+    </div>
+
     <!-- ------------------------------------------------------------------ -->
     <!-- Acknowledgements                                                   -->
     <!-- ------------------------------------------------------------------ -->
@@ -1105,7 +1131,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Technical support.
+                        Technical support
                     </p>
                 </div>
                 <div class="card-footer">
@@ -1126,7 +1152,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        <em>ITU-R BT.2100</em> technical support.
+                        <em>ITU-R BT.2100</em> technical support
                     </p>
                 </div>
                 <div class="card-footer">
@@ -1144,7 +1170,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Matlab <em>Munsell Renotation System</em> implementation.
+                        Matlab <em>Munsell Renotation System</em> implementation
                     </p>
                 </div>
                 <div class="card-footer">
@@ -1172,7 +1198,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        <em>ACES RGB IDT</em> technical support.
+                        <em>ACES RGB IDT</em> technical support
                     </p>
                 </div>
                 <div class="card-footer">
@@ -1195,7 +1221,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Technical support.
+                        Technical support
                     </p>
                 </div>
                 <div class="card-footer">
@@ -1216,7 +1242,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        <em>ACES RGB IDT</em> technical support.
+                        <em>ACES RGB IDT</em> technical support
                     </p>
                 </div>
                 <div class="card-footer">
@@ -1241,7 +1267,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        <em>Ohno (2013)</em> correlated colour temperature calculation technical support.
+                        <em>Ohno (2013)</em> correlated colour temperature calculation technical support
                     </p>
                 </div>
                 <div class="card-footer">
@@ -1259,7 +1285,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Technical support.
+                        Technical support
                     </p>
                 </div>
                 <div class="card-footer">
@@ -1267,9 +1293,8 @@
                 </div>
             </div>
         </div>
-
-        <div class="col"></div>
-
+        <div class="col">
+        </div>
     </div>
 
     <!-- ------------------------------------------------------------------ -->
@@ -1286,20 +1311,20 @@
                         <a href="http://wetafx.co.nz">Wētā FX</a>
                     </h4>
                     <h5 class="card-subtitle text-muted mt-3">
-                        <em>Production Manager</em>
+                        <em>Shot Manager</em>
                     </h5>
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Infinite patience.
+                        Infinite patience
                     </p>
                 </div>
             </div>
         </div>
-
-        <div class="col"></div>
-        <div class="col"></div>
-
+        <div class="col">
+        </div>
+        <div class="col">
+        </div>
     </div>
 
     <!-- ------------------------------------------------------------------ -->
@@ -1328,28 +1353,35 @@
                             <li>Ryan Bass</li>
                             <li>Vishal Vashistha</li>
                             <li>Vlad Enache</li>
+                            <li><a href="https://github.com/Alex-Merrill">Alex-Merrill </a></li>
                             <li><a href="https://github.com/Alt-Shivam">Alt-Shivam</a></li>
                             <li><a href="https://github.com/Ampersandme">Ampersandme</a></li>
                             <li><a href="https://github.com/AndersAtEndian">AndersAtEndian</a></li>
                             <li><a href="https://github.com/Apoorva-13">Apoorva-13</a></li>
                             <li><a href="https://github.com/Artoria2e5">Artoria2e5</a></li>
+                            <li><a href="https://github.com/Artoria2e5">Artoria2e5</a></li>
+                            <li><a href="https://github.com/Aryan1Mahahjan">Aryan1Mahahjan</a></li>
                             <li><a href="https://github.com/BQ-Octantis">BQ-Octantis</a></li>
                             <li><a href="https://github.com/CHRIBUR0309">CHRIBUR0309</a></li>
                             <li><a href="https://github.com/Chandler">Chandler</a></li>
                             <li><a href="https://github.com/ChunHsinWang">ChunHsinWang</a></li>
                             <li><a href="https://github.com/Edwardlin-zlt">Edwardlin-zlt</a></li>
                             <li><a href="https://github.com/EricFlyMeToTheMoon">EricFlyMeToTheMoon</a></li>
+                            <li><a href="https://github.com/FLX90">FLX90</a></li>
                             <li><a href="https://github.com/Floschoe">Floschoe</a></li>
+                            <li><a href="https://github.com/FredeJ">FredeJ</a></li>
                             <li><a href="https://github.com/GuillemRamisa">GuillemRamisa</a></li>
                             <li><a href="https://github.com/JarrettR">JarrettR</a></li>
                             <li><a href="https://github.com/JayPalm">JayPalm</a></li>
                             <li><a href="https://github.com/Jerry2001">Jerry2001</a></li>
+                            <li><a href="https://github.com/JoniSuominen">JoniSuominen </a></li>
                             <li><a href="https://github.com/JopdeBoo">JopdeBoo</a></li>
                             <li><a href="https://github.com/JoshuaEbenezer">JoshuaEbenezer</a></li>
                             <li><a href="https://github.com/KOLANICH">KOLANICH</a></li>
                             <li><a href="https://github.com/KrisKennaway">KrisKennaway</a></li>
                             <li><a href="https://github.com/Kunkka1988">Kunkka1988</a></li>
                             <li><a href="https://github.com/LandonSwartz">LandonSwartz</a></li>
+                            <li><a href="https://github.com/LaughingMaann">LaughingMaann</a></li>
                             <li><a href="https://github.com/LaughingMaann">LaughingMaann</a></li>
                             <li><a href="https://github.com/LeCyberDucky">LeCyberDucky</a></li>
                             <li><a href="https://github.com/Legendin">Legendin</a></li>
@@ -1361,6 +1393,8 @@
                             <li><a href="https://github.com/Naughty-Monkey">Naughty-Monkey</a></li>
                             <li><a href="https://github.com/NekoAlosama">NekoAlosama</a></li>
                             <li><a href="https://github.com/NoRoKr">NoRoKr</a></li>
+                            <li><a href="https://github.com/NogginBops">NogginBops </a></li>
+                            <li><a href="https://github.com/NogginBops">NogginBops</a></li>
                             <li><a href="https://github.com/Patil2099">Patil2099</a></li>
                             <li><a href="https://github.com/Paul-Sims">Paul-Sims</a></li>
                             <li><a href="https://github.com/Queuecumber">Queuecumber</a></li>
@@ -1376,6 +1410,8 @@
                             <li><a href="https://github.com/Willingo">Willingo</a></li>
                             <li><a href="https://github.com/aarondemolder">aarondemolder</a></li>
                             <li><a href="https://github.com/abnormally-distributed">abnormally-distributed</a></li>
+                            <li><a href="https://github.com/ademmler">ademmler </a></li>
+                            <li><a href="https://github.com/ademmler">ademmler</a></li>
                             <li><a href="https://github.com/ademmler">ademmler</a></li>
                             <li><a href="https://github.com/ahemberger">ahemberger</a></li>
                         </ul>
@@ -1397,6 +1433,8 @@
                             <li><a href="https://github.com/anshulxyz">anshulxyz</a></li>
                             <li><a href="https://github.com/aurelienbl">aurelienbl</a></li>
                             <li><a href="https://github.com/awehring">awehring</a></li>
+                            <li><a href="https://github.com/b21827541">b21827541</a></li>
+                            <li><a href="https://github.com/babyta">babyta </a></li>
                             <li><a href="https://github.com/baileyji">baileyji</a></li>
                             <li><a href="https://github.com/barisduzenli">barisduzenli</a></li>
                             <li><a href="https://github.com/beckstev">beckstev</a></li>
@@ -1411,7 +1449,9 @@
                             <li><a href="https://github.com/chesschi">chesschi</a></li>
                             <li><a href="https://github.com/codycuellar">codycuellar</a></li>
                             <li><a href="https://github.com/cuixiaofei">cuixiaofei</a></li>
+                            <li><a href="https://github.com/cut-shots">cut-shots</a></li>
                             <li><a href="https://github.com/da5nsy">da5nsy</a></li>
+                            <li><a href="https://github.com/danwahl">danwahl</a></li>
                             <li><a href="https://github.com/daviesj">daviesj</a></li>
                             <li><a href="https://github.com/dfoxfranke">dfoxfranke</a></li>
                             <li><a href="https://github.com/digital-prepress">digital-prepress</a></li>
@@ -1422,10 +1462,13 @@
                             <li><a href="https://github.com/eitanlees">eitanlees</a></li>
                             <li><a href="https://github.com/ema2159">ema2159</a></li>
                             <li><a href="https://github.com/ems1111">ems1111</a></li>
+                            <li><a href="https://github.com/erictraut">erictraut</a></li>
                             <li><a href="https://github.com/eyeforcolor">eyeforcolor</a></li>
+                            <li><a href="https://github.com/fabio-ric-silva">fabio-ric-silva</a></li>
                             <li><a href="https://github.com/fangjy88">fangjy88</a></li>
                             <li><a href="https://github.com/foutoucour">foutoucour</a></li>
                             <li><a href="https://github.com/fxthomas">fxthomas</a></li>
+                            <li><a href="https://github.com/geek9012">geek9012</a></li>
                             <li><a href="https://github.com/goofy2k">goofy2k</a></li>
                             <li><a href="https://github.com/gutenzwerg">gutenzwerg</a></li>
                             <li><a href="https://github.com/habemus-papadum">habemus-papadum</a></li>
@@ -1435,11 +1478,16 @@
                             <li><a href="https://github.com/heinemannj">heinemannj</a></li>
                             <li><a href="https://github.com/henczati">henczati</a></li>
                             <li><a href="https://github.com/hminle">hminle</a></li>
+                            <li><a href="https://github.com/honhon199">honhon199</a></li>
                             <li><a href="https://github.com/iCagarro">iCagarro</a></li>
                             <li><a href="https://github.com/iinnovations">iinnovations</a></li>
+                            <li><a href="https://github.com/imh">imh</a></li>
                             <li><a href="https://github.com/jaguarondi">jaguarondi</a></li>
+                            <li><a href="https://github.com/jaimecorton">jaimecorton</a></li>
                             <li><a href="https://github.com/jamesmyatt">jamesmyatt</a></li>
                             <li><a href="https://github.com/jamesmyatt">jamesmyatt</a></li>
+                            <li><a href="https://github.com/javimixet">javimixet</a></li>
+                            <li><a href="https://github.com/jfitch12">jfitch12</a></li>
                             <li><a href="https://github.com/juneleung">juneleung</a></li>
                             <li><a href="https://github.com/kaihagseth">kaihagseth</a></li>
                             <li><a href="https://github.com/kamikaze">kamikaze</a></li>
@@ -1449,7 +1497,6 @@
                             <li><a href="https://github.com/leklbk">leklbk</a></li>
                             <li><a href="https://github.com/lensz">lensz</a></li>
                             <li><a href="https://github.com/lishichengyan">lishichengyan</a></li>
-                            <li><a href="https://github.com/lulunac27a">lulunac27a</a></li>
                         </ul>
                     </p>
                 </div>
@@ -1460,22 +1507,28 @@
                 <div class="card-body">
                     <p class="card-text">
                         <ul class="list-unstyled text-center">
+                            <li><a href="https://github.com/lulunac27a">lulunac27a</a></li>
                             <li><a href="https://github.com/luoww1992">luoww1992</a></li>
                             <li><a href="https://github.com/materialjan">materialjan</a></li>
                             <li><a href="https://github.com/matt-roberts">matt-roberts</a></li>
                             <li><a href="https://github.com/matthiasbirkich">matthiasbirkich</a></li>
+                            <li><a href="https://github.com/mbechard">mbechard</a></li>
                             <li><a href="https://github.com/meshing">meshing</a></li>
                             <li><a href="https://github.com/mesvam">mesvam</a></li>
                             <li><a href="https://github.com/mforbes">mforbes</a></li>
+                            <li><a href="https://github.com/michel-leonard">michel-leonard</a></li>
                             <li><a href="https://github.com/mokincha">mokincha</a></li>
                             <li><a href="https://github.com/monkeywithacupcake">monkeywithacupcake</a></li>
+                            <li><a href="https://github.com/n-garc">n-garc</a></li>
                             <li><a href="https://github.com/naavis">naavis</a></li>
                             <li><a href="https://github.com/nadersadoughi">nadersadoughi</a></li>
+                            <li><a href="https://github.com/nestor98">nestor98 </a></li>
                             <li><a href="https://github.com/nico">nico</a></li>
                             <li><a href="https://github.com/nitishn23">nitishn23</a></li>
                             <li><a href="https://github.com/nschloe">nschloe</a></li>
                             <li><a href="https://github.com/opanyaki">opanyaki</a></li>
                             <li><a href="https://github.com/parthxtripathi">parthxtripathi</a></li>
+                            <li><a href="https://github.com/peroveh">peroveh</a></li>
                             <li><a href="https://github.com/peteroupc">peteroupc</a></li>
                             <li><a href="https://github.com/pfk-beta">pfk-beta</a></li>
                             <li><a href="https://github.com/physici">physici</a></li>
@@ -1507,6 +1560,7 @@
                             <li><a href="https://github.com/tingeman">tingeman</a></li>
                             <li><a href="https://github.com/tospe">tospe</a></li>
                             <li><a href="https://github.com/totyped">totyped</a></li>
+                            <li><a href="https://github.com/trainee202">trainee202</a></li>
                             <li><a href="https://github.com/ujjayants">ujjayants</a></li>
                             <li><a href="https://github.com/vibhoothi">vibhoothi</a></li>
                             <li><a href="https://github.com/vidakDK">vidakDK</a></li>
@@ -1518,7 +1572,10 @@
                             <li><a href="https://github.com/willSmallHD">willSmallHD</a></li>
                             <li><a href="https://github.com/wuuawu">wuuawu</a></li>
                             <li><a href="https://github.com/xeggbee">xeggbee</a></li>
+                            <li><a href="https://github.com/xeggbee">xeggbee</a></li>
                             <li><a href="https://github.com/xjossy">xjossy</a></li>
+                            <li><a href="https://github.com/xkennyz">xkennyz</a></li>
+                            <li><a href="https://github.com/yiping-git">yiping-git</a></li>
                             <li><a href="https://github.com/yuhao">yuhao</a></li>
                             <li><a href="https://github.com/yulincoder">yulincoder</a></li>
                             <li><a href="https://github.com/zanyc-smm">zanyc-smm</a></li>
