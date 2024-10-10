@@ -23,10 +23,10 @@
                 <div class="card-header text-center">
                     <h3>Thomas Mansencal</h3>
                     <h4>
-                        <a href="http://wetafx.co.nz">Wētā FX</a>
+                        <a href="https://www.epicgames.com">Epic Games</a>
                     </h4>
                     <h5 class="card-subtitle text-muted mt-3">
-                        <em>Technology Supervisor</em>
+                        <em>Principal Pipeline Programmer</em>
                     </h5>
                 </div>
                 <div class="card-body">
@@ -35,7 +35,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="http://thomasmansencal.blogspot.com" class="card-link">Blog</a>
+                    <a href="https://thomasmansencal.substack.com" class="card-link">Blog</a>
                     <a href="http://www.thomasmansencal.com" class="card-link">Website</a>
                 </div>
             </div>

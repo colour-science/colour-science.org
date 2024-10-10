@@ -21,7 +21,7 @@ Proof of Concept
 ----------------
 
 There have been a few `requests <https://github.com/colour-science/colour-checker-detection/issues/60>`__
-to support detection of charts that are not parallel to the imaging plane, i.e.
+to support detection of charts that are not parallel to the imaging plane, i.e.,
 with perspective distortion.
 
 Whilst looking at Tim Walter's `implementation <https://github.com/colour-science/colour-checker-detection/issues/60#issuecomment-1497592888>`__,
@@ -57,7 +57,7 @@ to ``*.png`` using `Image Magick <https://imagemagick.org>`__:
     | **Note**
     |
     | In a future update of the dataset, the long edge of the images will be
-        constrained to a specific resolution, e.g. 2560, rather than half that
+        constrained to a specific resolution, e.g., 2560, rather than half that
         of the source image.
 
 CVAT and Roboflow
@@ -478,7 +478,7 @@ the `BSD-3-Clause <https://opensource.org/licenses/BSD-3-Clause>`__ terms. Howev
 **Ultralytics YOLO** is distributed under the `GNU Affero General Public License v3.0 <https://www.gnu.org/licenses/agpl-3.0.en.html>`__
 terms which is incompatible.
 
-To accommodate this incompatibility, a separate script, i.e.
+To accommodate this incompatibility, a separate script, i.e.,
 ``colour_checker_detection/scripts/inference.py``, was written under the
 *AGPL-3.0* license and the **Colour - Checker Detection** definitions access
 its inference results via *sub-process*. The *YOLO v8* code is thus never
@@ -515,7 +515,7 @@ and reverses the data to BGR before passing it to *YOLO v8*.
 
     | **Danger**
     |
-    | Please be mindful of the image channel ordering, i.e. RGB vs BGR, before
+    | Please be mindful of the image channel ordering, i.e., RGB vs BGR, before
         using the new *inference* method!
 
 The separate script slows the total inference process because of the imports

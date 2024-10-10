@@ -25,9 +25,9 @@
 <meta property="og:site_name" content="Colour Science">
 <meta property="og:title" content="The ColorChecker Considered Mostly Harmless">
 <meta property="og:url" content="https://www.colour-science.org/posts/the-colorchecker-considered-mostly-harmless/">
-<meta property="og:description" content="This post will be about colour rendition charts, e.g.
+<meta property="og:description" content="This post will be about colour rendition charts, e.g.,
 X-Rite ColorChecker Classic, their usage and its dangers. It was a long time
-coming and some discussions accelerated the authoring. If you are in ">
+coming and some discussions accelerated the authoring. If you are in">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2021-03-06T01:16:33Z">
 <meta property="article:tag" content="camera">
@@ -85,7 +85,7 @@ navbar-dark bg-dark bg-primary
                     <a href="../../features" class="dropdown-item"><span class="font-weight-normal">Features</span></a>
                     <a href="../../history" class="dropdown-item"><span class="font-weight-normal">History</span></a>
                     <a href="https://colour.readthedocs.io/en/develop/bibliography.html" class="dropdown-item"><span class="font-weight-normal">Bibliography</span></a>
-                    <a href="https://doi.org/10.5281/zenodo.10396329" class="dropdown-item"><span class="font-weight-normal">Cite Us</span></a>
+                    <a href="https://doi.org/10.5281/zenodo.13910741" class="dropdown-item"><span class="font-weight-normal">Cite Us</span></a>
                     <a href="../../cited-by" class="dropdown-item"><span class="font-weight-normal">Cited By</span></a>
                     <a href="https://opensource.org/licenses/BSD-3-Clause" class="dropdown-item"><span class="font-weight-normal">License</span></a>
                     <a href="../../search" class="dropdown-item"><span class="font-weight-normal">Search</span></a>
@@ -152,7 +152,7 @@ navbar-dark bg-dark bg-primary
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p>This post will be about colour rendition charts, e.g.
+    <p>This post will be about colour rendition charts, e.g.,
 <em>X-Rite ColorChecker Classic</em>, their usage and its dangers. It was a long time
 coming and some discussions accelerated the authoring. If you are in a hurry
 and do not want to read the entire post, the <em>TLDR</em> is as follows:</p>
@@ -194,7 +194,7 @@ with time.</p></li>
 it was lit by different lighting conditions.</p>
 <p>More importantly, it damages the camera maker's characterisation work by
 replacing it with a potentially harmful shot dependent calibration. Camera
-makers, e.g. ARRI, RED or Sony, have intimate knowledge of their camera's
+makers, e.g., ARRI, RED or Sony, have intimate knowledge of their camera's
 spectral sensitivities and lenses' transmission. They have access to
 high-precision monochromators and spectro-radiometers.</p>
 <p>Characterising a camera so that it produces faithful colours is a blend of
@@ -204,7 +204,7 @@ series of transformation matrices for various illuminants, commonly
 <em>3x3</em> shape because the regression between the training dataset for
 the human observer and the camera test dataset uses Linear Least-Squares (LLS).
 <em>3x3</em> matrices are exposure invariant and extremely performant. <em>nx3</em> matrices
-are rare and the result of polynomial regression, e.g.
+are rare and the result of polynomial regression, e.g.,
 <em>Finlayson et al. (2015)</em> with the exposure invariant Root-Polynomial Expansion
 (RPE) method.</p>
 <p>The careful distribution of the training dataset samples shapes the
@@ -242,16 +242,16 @@ working on that specific problem for over a year.</p>
 and it might create more problems than it solves.</p>
 <p>Those issues are well understood in the VFX industry, and when receiving
 plates, we almost exclusively use colour rendition charts to white balance and
-perform relative exposure adjustments, i.e. plate neutralisation.</p>
+perform relative exposure adjustments, i.e., plate neutralisation.</p>
 <p>Another technical aspect that was not discussed is that an <em>nx3</em> matrix
 introduces channel cross-correlation because it scales and rotates the colour
-space. This cross-correlation produces unwanted side effects, e.g. out-of-gamut
+space. This cross-correlation produces unwanted side effects, e.g., out-of-gamut
 colours, when VFX work has been layered on top of the plate and neutralisation
 is reverted for final delivery.</p>
 <p>We use colour rendition charts daily but responsibly, with knowledge of their
 strengths and shortcomings.</p>
 <p>Then, when is it a good idea to use one for colour-correction? When working
-with a camera that does not have a proper input transformation, e.g. machine
+with a camera that does not have a proper input transformation, e.g., machine
 vision camera or an old camera, and that you do not have access to hardware to
 measure the camera sensitivities, then a colour rendition chart such as the
 <em>X-Rite ColorChecker Digital SG</em> with known reflectances and a quality

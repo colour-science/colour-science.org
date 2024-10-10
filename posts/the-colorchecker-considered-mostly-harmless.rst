@@ -7,7 +7,7 @@
 .. description:
 .. type: text
 
-This post will be about colour rendition charts, e.g.
+This post will be about colour rendition charts, e.g.,
 *X-Rite ColorChecker Classic*, their usage and its dangers. It was a long time
 coming and some discussions accelerated the authoring. If you are in a hurry
 and do not want to read the entire post, the *TLDR* is as follows:
@@ -65,7 +65,7 @@ factors make using a colour rendition chart unsuitable for camera calibration:
 
 More importantly, it damages the camera maker's characterisation work by
 replacing it with a potentially harmful shot dependent calibration. Camera
-makers, e.g. ARRI, RED or Sony, have intimate knowledge of their camera's
+makers, e.g., ARRI, RED or Sony, have intimate knowledge of their camera's
 spectral sensitivities and lenses' transmission. They have access to
 high-precision monochromators and spectro-radiometers.
 
@@ -76,7 +76,7 @@ series of transformation matrices for various illuminants, commonly
 *3x3* shape because the regression between the training dataset for
 the human observer and the camera test dataset uses Linear Least-Squares (LLS).
 *3x3* matrices are exposure invariant and extremely performant. *nx3* matrices
-are rare and the result of polynomial regression, e.g.
+are rare and the result of polynomial regression, e.g.,
 *Finlayson et al. (2015)* with the exposure invariant Root-Polynomial Expansion
 (RPE) method.
 
@@ -137,11 +137,11 @@ and it might create more problems than it solves.
 
 Those issues are well understood in the VFX industry, and when receiving
 plates, we almost exclusively use colour rendition charts to white balance and
-perform relative exposure adjustments, i.e. plate neutralisation.
+perform relative exposure adjustments, i.e., plate neutralisation.
 
 Another technical aspect that was not discussed is that an *nx3* matrix
 introduces channel cross-correlation because it scales and rotates the colour
-space. This cross-correlation produces unwanted side effects, e.g. out-of-gamut
+space. This cross-correlation produces unwanted side effects, e.g., out-of-gamut
 colours, when VFX work has been layered on top of the plate and neutralisation
 is reverted for final delivery.
 
@@ -149,7 +149,7 @@ We use colour rendition charts daily but responsibly, with knowledge of their
 strengths and shortcomings.
 
 Then, when is it a good idea to use one for colour-correction? When working
-with a camera that does not have a proper input transformation, e.g. machine
+with a camera that does not have a proper input transformation, e.g., machine
 vision camera or an old camera, and that you do not have access to hardware to
 measure the camera sensitivities, then a colour rendition chart such as the
 *X-Rite ColorChecker Digital SG* with known reflectances and a quality

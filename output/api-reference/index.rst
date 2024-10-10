@@ -9,6 +9,7 @@
 
 -   `Release <https://colour.readthedocs.io/en/master/reference.html>`__
 -   `Develop <https://colour.readthedocs.io/en/latest/reference.html>`__
+-   `0.4.5 <https://colour.readthedocs.io/en/v0.4.5/reference.html>`__
 -   `0.4.4 <https://colour.readthedocs.io/en/v0.4.4/reference.html>`__
 -   `0.4.3 <https://colour.readthedocs.io/en/v0.4.3/reference.html>`__
 -   `0.4.2 <https://colour.readthedocs.io/en/v0.4.2/reference.html>`__

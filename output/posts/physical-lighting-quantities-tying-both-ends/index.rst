@@ -130,7 +130,7 @@ luminance values to absolute luminance values is obtained as follows:
 
 where :math:`E_{vm}` is the metered scene upper hemisphere illuminance in
 lux (:math:`lx`) and :math:`E_{vi}` is the upper hemisphere illuminance of the
-panoramic HDRI in lux, i.e. the upper hemisphere integral of the relative
+panoramic HDRI in lux, i.e., the upper hemisphere integral of the relative
 luminance values:
 
     :math:`\int_{\Omega}{L\ cos(\theta)\omega}`
@@ -176,7 +176,7 @@ implements support for absolute luminance calibration with Python:
         definition does not return :math:`\pi`. This is induced by the
         numerical discretization to raster space, however, as image dimensions
         increase toward infinity, the computed value converges toward
-        :math:`\pi`, e.g. 3.1414009 and 3.1414968 for 16384x8192 and 32768x16384
+        :math:`\pi`, e.g., 3.1414009 and 3.1414968 for 16384x8192 and 32768x16384
         sized images respectively.
 
 Likewise, `Colour - Nuke <https://github.com/colour-science/colour-nuke/blob/master/colour_nuke/scripts/panoramic_hdri_absolute_luminance_calibration.nk>`__
@@ -250,7 +250,7 @@ Some potential source of discrepancies are:
 -   Illuminance measurement precision.
 -   Sun pixel coverage is small and might introduce significant error.
 -   Unknown parameters for the focal plane exposure equation that were left at
-    their default values, e.g. lens attenuation values.
+    their default values, e.g., lens attenuation values.
 
 Other tests performed with various non-public HDRI but imaged similarly have
 yielded better results with less error. Importantly though, the technique is

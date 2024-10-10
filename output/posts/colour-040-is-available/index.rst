@@ -49,7 +49,7 @@ The highlights of this release are as follows:
     `Black <https://pypi.org/project/black>`__.
 -   Many Python 3 features such as *f-Strings* or the ``dataclass`` decorator
     have been adopted.
--   The plotting API has been improved to be more consistent when setting the colours of some figures, e.g. spectral or planckian locus.
+-   The plotting API has been improved to be more consistent when setting the colours of some figures, e.g., spectral or planckian locus.
 -   New colour appearance models:
 
     -   *Zhai and Luo (2018)* chromatic adaptation model.

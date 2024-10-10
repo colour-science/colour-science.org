@@ -85,7 +85,7 @@ navbar-dark bg-dark bg-primary
                     <a href="../../features" class="dropdown-item"><span class="font-weight-normal">Features</span></a>
                     <a href="../../history" class="dropdown-item"><span class="font-weight-normal">History</span></a>
                     <a href="https://colour.readthedocs.io/en/develop/bibliography.html" class="dropdown-item"><span class="font-weight-normal">Bibliography</span></a>
-                    <a href="https://doi.org/10.5281/zenodo.10396329" class="dropdown-item"><span class="font-weight-normal">Cite Us</span></a>
+                    <a href="https://doi.org/10.5281/zenodo.13910741" class="dropdown-item"><span class="font-weight-normal">Cite Us</span></a>
                     <a href="../../cited-by" class="dropdown-item"><span class="font-weight-normal">Cited By</span></a>
                     <a href="https://opensource.org/licenses/BSD-3-Clause" class="dropdown-item"><span class="font-weight-normal">License</span></a>
                     <a href="../../search" class="dropdown-item"><span class="font-weight-normal">Search</span></a>
@@ -200,24 +200,24 @@ guides.</p>
 <p><em>Colour</em> now implements an automatic colour conversion graph based on
 <a class="reference external" href="https://networkx.github.io">NetworkX</a> and enabling easier colour
 conversions:</p>
-<div class="code"><pre class="code python"><a id="rest_code_1f43f857f68d4b1ca41f6caddc3d123d-1" name="rest_code_1f43f857f68d4b1ca41f6caddc3d123d-1" href="#rest_code_1f43f857f68d4b1ca41f6caddc3d123d-1"></a><span class="n">sd</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">COLOURCHECKERS_SDS</span><span class="p">[</span><span class="s2">"ColorChecker N Ohta"</span><span class="p">][</span><span class="s2">"dark skin"</span><span class="p">]</span>
-<a id="rest_code_1f43f857f68d4b1ca41f6caddc3d123d-2" name="rest_code_1f43f857f68d4b1ca41f6caddc3d123d-2" href="#rest_code_1f43f857f68d4b1ca41f6caddc3d123d-2"></a><span class="n">convert</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="s2">"Spectral Distribution"</span><span class="p">,</span> <span class="s2">"sRGB"</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="p">{</span><span class="s2">"mode"</span><span class="p">:</span> <span class="s2">"Short"</span><span class="p">})</span>
+<div class="code"><pre class="code python"><a id="rest_code_76f31317a65b420d9757bc66aecf3e92-1" name="rest_code_76f31317a65b420d9757bc66aecf3e92-1" href="#rest_code_76f31317a65b420d9757bc66aecf3e92-1"></a><span class="n">sd</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">COLOURCHECKERS_SDS</span><span class="p">[</span><span class="s2">"ColorChecker N Ohta"</span><span class="p">][</span><span class="s2">"dark skin"</span><span class="p">]</span>
+<a id="rest_code_76f31317a65b420d9757bc66aecf3e92-2" name="rest_code_76f31317a65b420d9757bc66aecf3e92-2" href="#rest_code_76f31317a65b420d9757bc66aecf3e92-2"></a><span class="n">convert</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="s2">"Spectral Distribution"</span><span class="p">,</span> <span class="s2">"sRGB"</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="p">{</span><span class="s2">"mode"</span><span class="p">:</span> <span class="s2">"Short"</span><span class="p">})</span>
 </pre></div>
-<div class="code"><pre class="code text"><a id="rest_code_b3238d1156af4833b116cc0ce6e3aa20-1" name="rest_code_b3238d1156af4833b116cc0ce6e3aa20-1" href="#rest_code_b3238d1156af4833b116cc0ce6e3aa20-1"></a>===============================================================================
-<a id="rest_code_b3238d1156af4833b116cc0ce6e3aa20-2" name="rest_code_b3238d1156af4833b116cc0ce6e3aa20-2" href="#rest_code_b3238d1156af4833b116cc0ce6e3aa20-2"></a>*                                                                             *
-<a id="rest_code_b3238d1156af4833b116cc0ce6e3aa20-3" name="rest_code_b3238d1156af4833b116cc0ce6e3aa20-3" href="#rest_code_b3238d1156af4833b116cc0ce6e3aa20-3"></a>*   [ Conversion Path ]                                                       *
-<a id="rest_code_b3238d1156af4833b116cc0ce6e3aa20-4" name="rest_code_b3238d1156af4833b116cc0ce6e3aa20-4" href="#rest_code_b3238d1156af4833b116cc0ce6e3aa20-4"></a>*                                                                             *
-<a id="rest_code_b3238d1156af4833b116cc0ce6e3aa20-5" name="rest_code_b3238d1156af4833b116cc0ce6e3aa20-5" href="#rest_code_b3238d1156af4833b116cc0ce6e3aa20-5"></a>*   "sd_to_XYZ" --&gt; "XYZ_to_sRGB"                                             *
-<a id="rest_code_b3238d1156af4833b116cc0ce6e3aa20-6" name="rest_code_b3238d1156af4833b116cc0ce6e3aa20-6" href="#rest_code_b3238d1156af4833b116cc0ce6e3aa20-6"></a>*                                                                             *
-<a id="rest_code_b3238d1156af4833b116cc0ce6e3aa20-7" name="rest_code_b3238d1156af4833b116cc0ce6e3aa20-7" href="#rest_code_b3238d1156af4833b116cc0ce6e3aa20-7"></a>===============================================================================
-<a id="rest_code_b3238d1156af4833b116cc0ce6e3aa20-8" name="rest_code_b3238d1156af4833b116cc0ce6e3aa20-8" href="#rest_code_b3238d1156af4833b116cc0ce6e3aa20-8"></a>array([ 0.45675795,  0.30986982,  0.24861924])
+<div class="code"><pre class="code text"><a id="rest_code_8bfda21410634b0384afc37816824ee2-1" name="rest_code_8bfda21410634b0384afc37816824ee2-1" href="#rest_code_8bfda21410634b0384afc37816824ee2-1"></a>===============================================================================
+<a id="rest_code_8bfda21410634b0384afc37816824ee2-2" name="rest_code_8bfda21410634b0384afc37816824ee2-2" href="#rest_code_8bfda21410634b0384afc37816824ee2-2"></a>*                                                                             *
+<a id="rest_code_8bfda21410634b0384afc37816824ee2-3" name="rest_code_8bfda21410634b0384afc37816824ee2-3" href="#rest_code_8bfda21410634b0384afc37816824ee2-3"></a>*   [ Conversion Path ]                                                       *
+<a id="rest_code_8bfda21410634b0384afc37816824ee2-4" name="rest_code_8bfda21410634b0384afc37816824ee2-4" href="#rest_code_8bfda21410634b0384afc37816824ee2-4"></a>*                                                                             *
+<a id="rest_code_8bfda21410634b0384afc37816824ee2-5" name="rest_code_8bfda21410634b0384afc37816824ee2-5" href="#rest_code_8bfda21410634b0384afc37816824ee2-5"></a>*   "sd_to_XYZ" --&gt; "XYZ_to_sRGB"                                             *
+<a id="rest_code_8bfda21410634b0384afc37816824ee2-6" name="rest_code_8bfda21410634b0384afc37816824ee2-6" href="#rest_code_8bfda21410634b0384afc37816824ee2-6"></a>*                                                                             *
+<a id="rest_code_8bfda21410634b0384afc37816824ee2-7" name="rest_code_8bfda21410634b0384afc37816824ee2-7" href="#rest_code_8bfda21410634b0384afc37816824ee2-7"></a>===============================================================================
+<a id="rest_code_8bfda21410634b0384afc37816824ee2-8" name="rest_code_8bfda21410634b0384afc37816824ee2-8" href="#rest_code_8bfda21410634b0384afc37816824ee2-8"></a>array([ 0.45675795,  0.30986982,  0.24861924])
 </pre></div>
 <img alt="https://colour.readthedocs.io/en/develop/_static/Examples_Colour_Automatic_Conversion_Graph.png" src="https://colour.readthedocs.io/en/develop/_static/Examples_Colour_Automatic_Conversion_Graph.png"></section><section id="image-input-and-output"><h3>Image Input and Output</h3>
 <p><a class="reference external" href="http://imageio.github.io">Imageio</a> is now a requirement for reading and
 writing images, it will be used if <a class="reference external" href="https://github.com/OpenImageIO/oiio">OpenImageIO</a>
 is not available. If you wish to read <em>OpenEXR</em> files or develop <em>Colour</em>, you
 will need to install the FreeImage plugin as follows:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_fb46e5189095408eb8700e0c6a9cc1f4-1" name="rest_code_fb46e5189095408eb8700e0c6a9cc1f4-1" href="#rest_code_fb46e5189095408eb8700e0c6a9cc1f4-1"></a>$<span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import imageio;imageio.plugins.freeimage.download()"</span>
+<div class="code"><pre class="code shell"><a id="rest_code_e4cb6f3b227e4c36a902603e95c8a9be-1" name="rest_code_e4cb6f3b227e4c36a902603e95c8a9be-1" href="#rest_code_e4cb6f3b227e4c36a902603e95c8a9be-1"></a>$<span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import imageio;imageio.plugins.freeimage.download()"</span>
 </pre></div>
 <p>Support for <a class="reference external" href="https://github.com/OpenImageIO/oiio/releases/tag/Release-2.0.3">OpenImageIO 2.x</a>
 has also been implemented.</p>
@@ -255,43 +255,43 @@ science datasets management.</p>
 <a class="reference external" href="https://zenodo.org">Zenodo</a> under the
 <a class="reference external" href="https://zenodo.org/communities/colour-science-datasets">Colour Science - Datasets</a>
 community:</p>
-<div class="code"><pre class="code python"><a id="rest_code_dc1c5651f85244b18f2c9289cb651374-1" name="rest_code_dc1c5651f85244b18f2c9289cb651374-1" href="#rest_code_dc1c5651f85244b18f2c9289cb651374-1"></a><span class="kn">import</span> <span class="nn">colour_datasets</span>
-<a id="rest_code_dc1c5651f85244b18f2c9289cb651374-2" name="rest_code_dc1c5651f85244b18f2c9289cb651374-2" href="#rest_code_dc1c5651f85244b18f2c9289cb651374-2"></a>
-<a id="rest_code_dc1c5651f85244b18f2c9289cb651374-3" name="rest_code_dc1c5651f85244b18f2c9289cb651374-3" href="#rest_code_dc1c5651f85244b18f2c9289cb651374-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">colour_datasets</span><span class="o">.</span><span class="n">datasets</span><span class="p">())</span>
+<div class="code"><pre class="code python"><a id="rest_code_ed2ae7888007498ab0c2943f14c45ba3-1" name="rest_code_ed2ae7888007498ab0c2943f14c45ba3-1" href="#rest_code_ed2ae7888007498ab0c2943f14c45ba3-1"></a><span class="kn">import</span> <span class="nn">colour_datasets</span>
+<a id="rest_code_ed2ae7888007498ab0c2943f14c45ba3-2" name="rest_code_ed2ae7888007498ab0c2943f14c45ba3-2" href="#rest_code_ed2ae7888007498ab0c2943f14c45ba3-2"></a>
+<a id="rest_code_ed2ae7888007498ab0c2943f14c45ba3-3" name="rest_code_ed2ae7888007498ab0c2943f14c45ba3-3" href="#rest_code_ed2ae7888007498ab0c2943f14c45ba3-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">colour_datasets</span><span class="o">.</span><span class="n">datasets</span><span class="p">())</span>
 </pre></div>
-<div class="code"><pre class="code text"><a id="rest_code_b95375e33aee4b2eab39d972cbe7999a-1" name="rest_code_b95375e33aee4b2eab39d972cbe7999a-1" href="#rest_code_b95375e33aee4b2eab39d972cbe7999a-1"></a>colour-science-datasets
-<a id="rest_code_b95375e33aee4b2eab39d972cbe7999a-2" name="rest_code_b95375e33aee4b2eab39d972cbe7999a-2" href="#rest_code_b95375e33aee4b2eab39d972cbe7999a-2"></a>=======================
-<a id="rest_code_b95375e33aee4b2eab39d972cbe7999a-3" name="rest_code_b95375e33aee4b2eab39d972cbe7999a-3" href="#rest_code_b95375e33aee4b2eab39d972cbe7999a-3"></a>
-<a id="rest_code_b95375e33aee4b2eab39d972cbe7999a-4" name="rest_code_b95375e33aee4b2eab39d972cbe7999a-4" href="#rest_code_b95375e33aee4b2eab39d972cbe7999a-4"></a>Datasets : 16
-<a id="rest_code_b95375e33aee4b2eab39d972cbe7999a-5" name="rest_code_b95375e33aee4b2eab39d972cbe7999a-5" href="#rest_code_b95375e33aee4b2eab39d972cbe7999a-5"></a>Synced   : 1
-<a id="rest_code_b95375e33aee4b2eab39d972cbe7999a-6" name="rest_code_b95375e33aee4b2eab39d972cbe7999a-6" href="#rest_code_b95375e33aee4b2eab39d972cbe7999a-6"></a>URL      : https://zenodo.org/communities/colour-science-datasets/
-<a id="rest_code_b95375e33aee4b2eab39d972cbe7999a-7" name="rest_code_b95375e33aee4b2eab39d972cbe7999a-7" href="#rest_code_b95375e33aee4b2eab39d972cbe7999a-7"></a>
-<a id="rest_code_b95375e33aee4b2eab39d972cbe7999a-8" name="rest_code_b95375e33aee4b2eab39d972cbe7999a-8" href="#rest_code_b95375e33aee4b2eab39d972cbe7999a-8"></a>Datasets
-<a id="rest_code_b95375e33aee4b2eab39d972cbe7999a-9" name="rest_code_b95375e33aee4b2eab39d972cbe7999a-9" href="#rest_code_b95375e33aee4b2eab39d972cbe7999a-9"></a>--------
-<a id="rest_code_b95375e33aee4b2eab39d972cbe7999a-10" name="rest_code_b95375e33aee4b2eab39d972cbe7999a-10" href="#rest_code_b95375e33aee4b2eab39d972cbe7999a-10"></a>
-<a id="rest_code_b95375e33aee4b2eab39d972cbe7999a-11" name="rest_code_b95375e33aee4b2eab39d972cbe7999a-11" href="#rest_code_b95375e33aee4b2eab39d972cbe7999a-11"></a>[ ] 3269926 : Agfa IT8.7/2 Set
-<a id="rest_code_b95375e33aee4b2eab39d972cbe7999a-12" name="rest_code_b95375e33aee4b2eab39d972cbe7999a-12" href="#rest_code_b95375e33aee4b2eab39d972cbe7999a-12"></a>[ ] 3245883 : Camera Spectral Sensitivity Database
-<a id="rest_code_b95375e33aee4b2eab39d972cbe7999a-13" name="rest_code_b95375e33aee4b2eab39d972cbe7999a-13" href="#rest_code_b95375e33aee4b2eab39d972cbe7999a-13"></a>[ ] 3367463 : Constant Hue Loci Data
-<a id="rest_code_b95375e33aee4b2eab39d972cbe7999a-14" name="rest_code_b95375e33aee4b2eab39d972cbe7999a-14" href="#rest_code_b95375e33aee4b2eab39d972cbe7999a-14"></a>[ ] 3362536 : Constant Perceived-Hue Data
-<a id="rest_code_b95375e33aee4b2eab39d972cbe7999a-15" name="rest_code_b95375e33aee4b2eab39d972cbe7999a-15" href="#rest_code_b95375e33aee4b2eab39d972cbe7999a-15"></a>[ ] 3270903 : Corresponding-Colour Datasets
-<a id="rest_code_b95375e33aee4b2eab39d972cbe7999a-16" name="rest_code_b95375e33aee4b2eab39d972cbe7999a-16" href="#rest_code_b95375e33aee4b2eab39d972cbe7999a-16"></a>[ ] 3269920 : Forest Colors
-<a id="rest_code_b95375e33aee4b2eab39d972cbe7999a-17" name="rest_code_b95375e33aee4b2eab39d972cbe7999a-17" href="#rest_code_b95375e33aee4b2eab39d972cbe7999a-17"></a>[x] 3245875 : Labsphere SRS-99-020
-<a id="rest_code_b95375e33aee4b2eab39d972cbe7999a-18" name="rest_code_b95375e33aee4b2eab39d972cbe7999a-18" href="#rest_code_b95375e33aee4b2eab39d972cbe7999a-18"></a>[ ] 3269924 : Lumber Spectra
-<a id="rest_code_b95375e33aee4b2eab39d972cbe7999a-19" name="rest_code_b95375e33aee4b2eab39d972cbe7999a-19" href="#rest_code_b95375e33aee4b2eab39d972cbe7999a-19"></a>[ ] 3269918 : Munsell Colors Glossy (All) (Spectrofotometer Measured)
-<a id="rest_code_b95375e33aee4b2eab39d972cbe7999a-20" name="rest_code_b95375e33aee4b2eab39d972cbe7999a-20" href="#rest_code_b95375e33aee4b2eab39d972cbe7999a-20"></a>[ ] 3269916 : Munsell Colors Glossy (Spectrofotometer Measured)
-<a id="rest_code_b95375e33aee4b2eab39d972cbe7999a-21" name="rest_code_b95375e33aee4b2eab39d972cbe7999a-21" href="#rest_code_b95375e33aee4b2eab39d972cbe7999a-21"></a>[ ] 3269914 : Munsell Colors Matt (AOTF Measured)
-<a id="rest_code_b95375e33aee4b2eab39d972cbe7999a-22" name="rest_code_b95375e33aee4b2eab39d972cbe7999a-22" href="#rest_code_b95375e33aee4b2eab39d972cbe7999a-22"></a>[ ] 3269912 : Munsell Colors Matt (Spectrofotometer Measured)
-<a id="rest_code_b95375e33aee4b2eab39d972cbe7999a-23" name="rest_code_b95375e33aee4b2eab39d972cbe7999a-23" href="#rest_code_b95375e33aee4b2eab39d972cbe7999a-23"></a>[ ] 3245895 : New Color Specifications for ColorChecker SG and Classic Charts
-<a id="rest_code_b95375e33aee4b2eab39d972cbe7999a-24" name="rest_code_b95375e33aee4b2eab39d972cbe7999a-24" href="#rest_code_b95375e33aee4b2eab39d972cbe7999a-24"></a>[ ] 3252742 : Observer Function Database
-<a id="rest_code_b95375e33aee4b2eab39d972cbe7999a-25" name="rest_code_b95375e33aee4b2eab39d972cbe7999a-25" href="#rest_code_b95375e33aee4b2eab39d972cbe7999a-25"></a>[ ] 3269922 : Paper Spectra
-<a id="rest_code_b95375e33aee4b2eab39d972cbe7999a-26" name="rest_code_b95375e33aee4b2eab39d972cbe7999a-26" href="#rest_code_b95375e33aee4b2eab39d972cbe7999a-26"></a>[ ] 3372171 : RAW to ACES Utility Data
+<div class="code"><pre class="code text"><a id="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-1" name="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-1" href="#rest_code_ee5c4d2a5a954c448ba36c6d250624d9-1"></a>colour-science-datasets
+<a id="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-2" name="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-2" href="#rest_code_ee5c4d2a5a954c448ba36c6d250624d9-2"></a>=======================
+<a id="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-3" name="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-3" href="#rest_code_ee5c4d2a5a954c448ba36c6d250624d9-3"></a>
+<a id="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-4" name="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-4" href="#rest_code_ee5c4d2a5a954c448ba36c6d250624d9-4"></a>Datasets : 16
+<a id="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-5" name="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-5" href="#rest_code_ee5c4d2a5a954c448ba36c6d250624d9-5"></a>Synced   : 1
+<a id="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-6" name="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-6" href="#rest_code_ee5c4d2a5a954c448ba36c6d250624d9-6"></a>URL      : https://zenodo.org/communities/colour-science-datasets/
+<a id="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-7" name="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-7" href="#rest_code_ee5c4d2a5a954c448ba36c6d250624d9-7"></a>
+<a id="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-8" name="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-8" href="#rest_code_ee5c4d2a5a954c448ba36c6d250624d9-8"></a>Datasets
+<a id="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-9" name="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-9" href="#rest_code_ee5c4d2a5a954c448ba36c6d250624d9-9"></a>--------
+<a id="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-10" name="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-10" href="#rest_code_ee5c4d2a5a954c448ba36c6d250624d9-10"></a>
+<a id="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-11" name="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-11" href="#rest_code_ee5c4d2a5a954c448ba36c6d250624d9-11"></a>[ ] 3269926 : Agfa IT8.7/2 Set
+<a id="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-12" name="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-12" href="#rest_code_ee5c4d2a5a954c448ba36c6d250624d9-12"></a>[ ] 3245883 : Camera Spectral Sensitivity Database
+<a id="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-13" name="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-13" href="#rest_code_ee5c4d2a5a954c448ba36c6d250624d9-13"></a>[ ] 3367463 : Constant Hue Loci Data
+<a id="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-14" name="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-14" href="#rest_code_ee5c4d2a5a954c448ba36c6d250624d9-14"></a>[ ] 3362536 : Constant Perceived-Hue Data
+<a id="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-15" name="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-15" href="#rest_code_ee5c4d2a5a954c448ba36c6d250624d9-15"></a>[ ] 3270903 : Corresponding-Colour Datasets
+<a id="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-16" name="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-16" href="#rest_code_ee5c4d2a5a954c448ba36c6d250624d9-16"></a>[ ] 3269920 : Forest Colors
+<a id="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-17" name="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-17" href="#rest_code_ee5c4d2a5a954c448ba36c6d250624d9-17"></a>[x] 3245875 : Labsphere SRS-99-020
+<a id="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-18" name="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-18" href="#rest_code_ee5c4d2a5a954c448ba36c6d250624d9-18"></a>[ ] 3269924 : Lumber Spectra
+<a id="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-19" name="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-19" href="#rest_code_ee5c4d2a5a954c448ba36c6d250624d9-19"></a>[ ] 3269918 : Munsell Colors Glossy (All) (Spectrofotometer Measured)
+<a id="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-20" name="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-20" href="#rest_code_ee5c4d2a5a954c448ba36c6d250624d9-20"></a>[ ] 3269916 : Munsell Colors Glossy (Spectrofotometer Measured)
+<a id="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-21" name="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-21" href="#rest_code_ee5c4d2a5a954c448ba36c6d250624d9-21"></a>[ ] 3269914 : Munsell Colors Matt (AOTF Measured)
+<a id="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-22" name="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-22" href="#rest_code_ee5c4d2a5a954c448ba36c6d250624d9-22"></a>[ ] 3269912 : Munsell Colors Matt (Spectrofotometer Measured)
+<a id="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-23" name="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-23" href="#rest_code_ee5c4d2a5a954c448ba36c6d250624d9-23"></a>[ ] 3245895 : New Color Specifications for ColorChecker SG and Classic Charts
+<a id="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-24" name="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-24" href="#rest_code_ee5c4d2a5a954c448ba36c6d250624d9-24"></a>[ ] 3252742 : Observer Function Database
+<a id="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-25" name="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-25" href="#rest_code_ee5c4d2a5a954c448ba36c6d250624d9-25"></a>[ ] 3269922 : Paper Spectra
+<a id="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-26" name="rest_code_ee5c4d2a5a954c448ba36c6d250624d9-26" href="#rest_code_ee5c4d2a5a954c448ba36c6d250624d9-26"></a>[ ] 3372171 : RAW to ACES Utility Data
 </pre></div>
 <p><strong>Colour - Datasets</strong> was created to overcome issues encountered frequently
 when trying to access or use colour science datasets:</p>
 <ul class="simple">
 <li><p>No straightforward ingestion path for dataset content.</p></li>
 <li><p>No simple loading mechanism for dataset content.</p></li>
-<li><p>Unavailability of the dataset, e.g. download url is down, dataset content is passed directly from hand to hand.</p></li>
+<li><p>Unavailability of the dataset, e.g., download url is down, dataset content is passed directly from hand to hand.</p></li>
 <li><p>No information regarding the definitive origination of the dataset.</p></li>
 </ul>
 <p><strong>Colour - Datasets</strong> offers all the above: it allows users to ingest and load

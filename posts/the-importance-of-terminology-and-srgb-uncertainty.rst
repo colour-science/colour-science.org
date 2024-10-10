@@ -206,7 +206,7 @@ The two common types and their inverses are defined as follows:
     |
     | Jack Holm, technical secretary for IEC/TC 100/TA 2 which developed the
         *IEC 61966-2-1:1999 Standard* is unambiguous about the *sRGB* **EOTF**
-        being piece-wise, i.e. not a *Gamma 2.2* approximation and that the
+        being piece-wise, i.e., not a *Gamma 2.2* approximation and that the
         *IEC 61966-2-1:1999 Standard* does not define an **OETF**.
 
         .. figure:: /images/Jack-Holm_on_the_sRGB-EOTF.png

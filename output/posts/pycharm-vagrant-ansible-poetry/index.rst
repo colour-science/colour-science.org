@@ -124,7 +124,7 @@ The canonical way is to use *Vagrant* from the command line as described in
 `Vagrant Documentation <https://docs.vagrantup.com/v2/getting-started>`__, but
 here we will leverage the *PyCharm* integration.
 
--   Set the :code:`Vagrant Executable` field to your *Vagrant* executable, e.g.
+-   Set the :code:`Vagrant Executable` field to your *Vagrant* executable, e.g.,
     :code:`/usr/local/bin/vagrant`. This should not be required as
     :code:`vagrant` should be enough, but
     `I encountered issues lately <https://youtrack.jetbrains.com/issue/PY-29806#comment=27-2846352>`__.

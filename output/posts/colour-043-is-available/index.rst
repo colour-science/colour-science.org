@@ -33,7 +33,7 @@ With this release, the following scientific packages minimum versions are requir
 
 The highlights of this release are as follows:
 
--   The *Colour Fidelity Index (2017)*, i.e. ``colour.quality.colour_fidelity_index_CIE2017`` definition, and *TM 30-18*, i.e. ``colour.quality.colour_fidelity_index_ANSIIESTM3018`` definition, metrics performance has been improved by x100 thanks to overall optimizations, e.g. ``colour.temperature.uv_to_CCT_Ohno2013`` definition is x5 faster.
+-   The *Colour Fidelity Index (2017)*, i.e., ``colour.quality.colour_fidelity_index_CIE2017`` definition, and *TM 30-18*, i.e., ``colour.quality.colour_fidelity_index_ANSIIESTM3018`` definition, metrics performance has been improved by x100 thanks to overall optimizations, e.g., ``colour.temperature.uv_to_CCT_Ohno2013`` definition is x5 faster.
 -   `TE226 V2 <https://www.image-engineering.de/content/products/charts/te226/downloads/TE226_D_data_sheet.pdf>`__ colour checker reference values.
 
 -   New colour models:

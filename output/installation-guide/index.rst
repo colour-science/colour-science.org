@@ -13,7 +13,7 @@ Dependencies
 **Colour** requires various dependencies in order to run and follows the
 `minimum supported versions <https://scientific-python.org/specs/spec-0000>`__
 as given by `Scientific Python <https://scientific-python.org>`__. Depending on
-your intended use case, i.e. using or developing, you may not need to install
+your intended use case, i.e., using or developing, you may not need to install
 all of them.
 
 Please refer to the `Installation Methods for Using Colour`_
@@ -22,25 +22,25 @@ and `Installation Methods for Developing Colour`_ sections below.
 Primary Dependencies
 ^^^^^^^^^^^^^^^^^^^^
 
--   `python >= 3.9, < 3.13 <https://www.python.org/download/releases>`__
+-   `python >= 3.10, < 3.14 <https://www.python.org/download/releases>`__
 -   `imageio >= 2, < 3 <https://imageio.github.io>`__
--   `numpy >= 1.22, < 2 <https://pypi.org/project/numpy>`__
--   `scipy >= 1.8, < 2 <https://pypi.org/project/scipy>`__
+-   `numpy >= 1.24, < 3 <https://pypi.org/project/numpy>`__
+-   `scipy >= 1.10, < 2 <https://pypi.org/project/scipy>`__
 -   `typing-extensions >= 4, < 5 <https://pypi.org/project/typing-extensions>`__
 
 Optional, Meshing and Plotting Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -   `graphviz >= 2, < 3 <https://www.graphviz.org>`__
--   `matplotlib >= 3.5, != 3.5.0, != 3.5.1 <https://pypi.org/project/matplotlib>`__
--   `networkx >= 2.7, < 3 <https://pypi.org/project/networkx>`__
+-   `matplotlib >= 3.7 <https://pypi.org/project/matplotlib>`__
+-   `networkx >= 3, < 4 <https://pypi.org/project/networkx>`__
 -   `opencolorio >= 2, < 3 <https://pypi.org/project/opencolorio>`__
 -   `openimageio >= 2, < 3 <https://github.com/OpenImageIO/oiio>`__
--   `pandas >= 1.4, < 2 <https://pypi.org/project/pandas>`__
--   `pygraphviz >= 1, < 2 <https://pypi.org/project/pygraphviz>`__
+-   `pandas >= 2, < 3 <https://pypi.org/project/pandas>`__
+-   `pydot >= 3, < 4 <https://pypi.org/project/pydot>`__
 -   `tqdm >= 4, < 5 <https://pypi.org/project/tqdm>`__
--   `trimesh >= 3, < 4 <https://pypi.org/project/tqdm>`__
--   `xxhash >= 3.2, < 4 <https://pypi.org/project/xxhash>`__
+-   `trimesh >= 4, < 5 <https://pypi.org/project/trimesh>`__
+-   `xxhash >= 3, < 4 <https://pypi.org/project/xxhash>`__
 
 Development Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -48,6 +48,7 @@ Development Dependencies
 -   `biblib-simple <https://pypi.org/project/biblib-simple>`__
 -   `coverage <https://pypi.org/project/coverage>`__
 -   `coveralls <https://pypi.org/project/coveralls>`__
+-   `hatch <https://pypi.org/project/hatch>`__
 -   `invoke <https://pypi.org/project/invoke>`__
 -   `jupyter <https://pypi.org/project/jupyter>`__
 -   `pre-commit <https://pypi.org/project/pre-commit>`__
@@ -165,31 +166,22 @@ Installation Methods for Developing Colour
     | If you are on macOS, a dedicated guide on how to setup your environment
         is available here: `Setting Up the Development Environment on macOS <../setting-up-the-development-environment-on-macos/index.html>`__.
 
-Poetry
-^^^^^^
+uv
+^^^
 
-**Colour** adopts `Poetry <https://poetry.eustace.io>`__ to help managing its
+**Colour** adopts `uv <https://docs.astral.sh/uv>`__ to help managing its
 dependencies, this is the recommended way to get started with **Colour**
 development.
 
-Assuming `python >= 3.8, < 3.11 <https://www.python.org/download/releases>`__ is
+Assuming `python >= 3.10, < 3.13 <https://www.python.org/download/releases>`__ is
 available on your system, the development dependencies are installed with
-`Poetry <https://poetry.eustace.io>`__ as follows:
+`uv <https://docs.astral.sh/uv>`__ as follows:
 
 .. code:: shell
 
     git clone git://github.com/colour-science/colour.git
     cd colour
-    poetry install --with dev,graphviz,meshing,optional
-
-If `Graphviz <https://www.graphviz.org>`__ is available on your system, you
-might issue the following commands instead of the aforementioned ones:
-
-.. code:: shell
-
-    git clone git://github.com/colour-science/colour.git
-    cd colour
-    poetry install --with dev,graphviz,meshing,optional
+    uv sync --all-extras
 
 Those commands will create a Virtual Environment in which all the required
 python packages will be installed.
@@ -198,13 +190,13 @@ Tools can then be run as follows:
 
 .. code:: shell
 
-    poetry run invoke -l
+    uv run invoke -l
 
 or alternatively:
 
 .. code:: shell
 
-    source $(poetry env info -p)/bin/activate
+    source .venv/bin/activate
     invoke -l
 
 Vagrant

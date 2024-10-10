@@ -18,7 +18,7 @@ Additionally, the installation of complex dependencies such as
 `PyGraphviz <https://pypi.org/project/pygraphviz>`__ is described.
 
 It was contributed by `@tjdcs <https://github.com/tjdcs>`__ and last updated on
-the 2024-01-28.
+the 2024-10-10.
 
 Homebrew
 ========
@@ -35,18 +35,14 @@ Install the required Python versions:
 
     brew install python@3.9 python@3.10 python@3.11 python@3.12
 
-Poetry
-======
+uv
+==
 
-(Re)Install `Poetry <https://python-poetry.org>`__:
-
-Poetry used to introduce breaking changes to the installer between minor
-versions, it is thus recommended to reinstall it.
+(Re)Install `uv <https://docs.astral.sh/uv>`__:
 
 .. code:: shell
 
-    curl -sSL https://install.python-poetry.org | python3 - --uninstall
-    curl -sSL https://install.python-poetry.org | python3 -
+    curl -LsSf https://astral.sh/uv/install.sh | sh
 
 graphviz and OpenImageIO
 ========================
@@ -57,7 +53,7 @@ Using Homebrew:
 
     brew install graphviz OpenImageIO
 
-Then append the following exports to your shell dotfile, e.g. ``~/.zshrc``:
+Then append the following exports to your shell dotfile, e.g., ``~/.zshrc``:
 
 .. code:: shell
 
@@ -80,19 +76,11 @@ making sure to set or replace the environment variables in these commands.
 Working with Visual Studio Code from the Terminal
 =================================================
 
-The following step is optional, but helpful to store Poetry's virtual environment
-into **colour**'s directory.
+Create the virtual environment
 
 .. code:: shell
 
-    poetry config virtualenvs.in-project true
-
-Install the poetry environment
-
-.. code:: shell
-
-    poetry env use 3.12
-    poetry install --all-extras
+    uv sync --all-extras
 
 Opening Visual Studio Code
 ==========================
@@ -121,14 +109,13 @@ expose several useful preflight commands:
 .. code:: shell
 
     cd $DEVELOPMENT_DIRECTORY/colour
-    poetry shell
-    invoke formatting && invoke quality && invoke precommit && invoke tests
+    uv run invoke formatting quality precommit tests
 
 or if you just want to run the tests, including the doctests:
 
 .. code:: shell
 
-    invoke tests
+    uv run invoke tests
 
 
 CTL (Optional)

@@ -240,7 +240,7 @@ NAVIGATION_LINKS = {
                     '<span class="font-weight-normal">Bibliography</span>',
                 ),
                 (
-                    "https://doi.org/10.5281/zenodo.10396329",
+                    "https://doi.org/10.5281/zenodo.13910741",
                     '<span class="font-weight-normal">Cite Us</span>',
                 ),
                 (
@@ -351,7 +351,7 @@ THEME_CONFIG = {
 # to feeds, indexes, tag lists and archives and are considered part
 # of a blog, while PAGES are just independent HTML pages.
 #
-# Finally, note that destination can be translated, i.e. you can
+# Finally, note that destination can be translated, i.e., you can
 # specify a different translation folder per language. Example:
 #     PAGES = (
 #         ("pages/*.rst", {"en": "pages", "de": "seiten"}, "page.tmpl"),
@@ -379,7 +379,7 @@ PAGES = (
 # another time zone, please set TIMEZONE to match. Check the available
 # list from Wikipedia:
 # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-# (e.g. 'Europe/Zurich')
+# (e.g., 'Europe/Zurich')
 # Also, if you want to use a different time zone in some of your posts,
 # you can use the ISO 8601/RFC 3339 format (ex. 2012-03-30T23:00:00+02:00)
 TIMEZONE = "Europe/London"
@@ -449,7 +449,7 @@ COMPILERS = {
     "wiki": (".wiki",),
     "ipynb": (".ipynb",),
     "html": (".html", ".htm"),
-    # PHP files are rendered the usual way (i.e. with the full templates).
+    # PHP files are rendered the usual way (i.e., with the full templates).
     # The resulting files have .php extensions, making it possible to run
     # them without reconfiguring your server to recognize them.
     "php": (".php",),
@@ -581,7 +581,7 @@ HIDDEN_TAGS = ["mathjax"]
 # If CATEGORY_ALLOW_HIERARCHIES is set to True, categories can be organized in
 # hierarchies. For a post, the whole path in the hierarchy must be specified,
 # using a forward slash ('/') to separate paths. Use a backslash ('\') to escape
-# a forward slash or a backslash (i.e. '\//\\' is a path specifying the
+# a forward slash or a backslash (i.e., '\//\\' is a path specifying the
 # subcategory called '\' of the top-level category called '/').
 CATEGORY_ALLOW_HIERARCHIES = False
 # If CATEGORY_OUTPUT_FLAT_HIERARCHY is set to True, the output written to output
@@ -1157,7 +1157,7 @@ COMMENT_SYSTEM_ID = "colour-science"
 #          caused by setting slug to `index`), the PAGE_INDEX
 #          will not be generated for that directory.
 # PAGE_INDEX = False
-# Enable comments on pages (i.e. not posts)?
+# Enable comments on pages (i.e., not posts)?
 # COMMENTS_IN_PAGES = False
 # Enable comments on picture gallery pages?
 # COMMENTS_IN_GALLERIES = False

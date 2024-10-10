@@ -4,7 +4,7 @@ Contributors
 colour-science.org
 ------------------
 
--   **Thomas Mansencal**, *Technology Supervisor @ Wētā FX*
+-   **Thomas Mansencal**, *Principal Pipeline Programmer @ Epic Games*
 
     Project coordination, website.
 

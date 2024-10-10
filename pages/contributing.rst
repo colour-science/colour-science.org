@@ -221,22 +221,13 @@ Navigate to the *colour* directory:
 Step 4
 ******
 
-Assuming `python >= 3.9, < 3.11 <https://www.python.org/download/releases>`__
+Assuming `python >= 3.10, < 3.13 <https://www.python.org/download/releases>`__
 is available on your system, the development dependencies are installed with
-`Poetry <https://poetry.eustace.io>`__ as follows:
+`uv <https://docs.astral.sh/uv>`__ as follows:
 
 .. code:: shell
 
-    poetry install --with dev,docs,meshing,optional
-
-If `Graphviz <https://www.graphviz.org>`__ is available on your system, you
-might issue the following commands instead of the aforementioned ones:
-
-.. code:: shell
-
-    git clone git://github.com/colour-science/colour.git
-    cd colour
-    poetry install --with dev,docs,graphviz,meshing,optional
+    uv sync --all-extras
 
 .. class:: alert alert-dismissible alert-warning
 
@@ -247,28 +238,6 @@ might issue the following commands instead of the aforementioned ones:
         the *FreeImage* plugin for `Imageio <http://imageio.github.io>`__ as
         follows: ``python -c "import imageio;imageio.plugins.freeimage.download()"``
 
-If you are in a hurry and not willing to prepend each command with ``poetry run``,
-it is possible to put the following function in your ``.bash_profile``:
-
-.. code:: shell
-
-    function poem() {
-        if [[ -n "$@" ]]; then
-            poetry env use "$@"
-        else
-            poetry env use 3
-        fi;
-
-        if [ -f "pyproject.toml" ]; then
-            source $(poetry env info -p)/bin/activate
-        else
-            echo "The current directory has no associated \"poetry\" capability!"
-        fi;
-    }
-
-Then issuing ``poem`` will activate the appropriate virtual environment for your
-clone.
-
 Step 5
 ******
 
@@ -276,7 +245,7 @@ Install the `pre-commit <https://pre-commit.com>`__ hooks:
 
 .. code:: shell
 
-    poetry run pre-commit install
+    uv run pre-commit install
 
 Step 6
 ******
@@ -346,13 +315,13 @@ Check whether the unit tests and doctests are passing:
 
 .. code:: shell
 
-    poetry run invoke tests
+    uv run invoke tests
 
 or alternatively:
 
 .. code:: shell
 
-    source $(poetry env info -p)/bin/activate
+    source .venv/bin/activate
     invoke tests
 
 Step 13
@@ -362,7 +331,7 @@ Verify that the static checking from `pyright <https://pypi.org/project/pyright>
 
 .. code:: shell
 
-    poetry run invoke quality
+    uv run invoke quality
 
 Step 14
 *******
@@ -379,18 +348,19 @@ Commit your changes:
     | **Note**
     |
     | The *pre-commit* hooks will run before committing, notably
+        `codespell <https://pypi.org/project/codespell>`__,
         `flynt <https://pypi.org/project/flynt>`__,
         `isort <https://pypi.org/project/isort>`__,
         `ruff <https://pypi.org/project/ruff>`__,
-        `black <https://pypi.org/project/black>`__ and
-        `blackdoc <https://pypi.org/project/blackdoc>`__ thus depending on
+        `blacken-docs <https://pypi.org/project/blacken-docs>`__,
+        `prettier <https://github.com/pre-commit/mirrors-prettier>`__, thus depending on
         their status, you might not be able to commit until you have fixed the
         issues reported.
 
 Step 15
 *******
 
-Push your changes to *origin*, i.e. your own fork:
+Push your changes to *origin*, i.e., your own fork:
 
 .. code:: shell
 
@@ -742,21 +712,8 @@ Python Style Rules
     can use the **# noqa** pragma in those cases, although do it in last resort,
     we have already too much of them.
 -   Avoid **/** to wrap lines, prefer using the parenthesis **()**.
--   The code formatting is performed using
-    `black <https://pypi.org/project/black>`__. You can invoke it recursively
-    on a directory as follows:
-
-.. code:: shell
-
-    poetry run black colour
-
-or alternatively:
-
-.. code:: shell
-
-    source $(poetry env info -p)/bin/activate
-    black colour
-
+-   The code formatting is performed using `ruff <https://pypi.org/project/ruff>`__
+    via a `pre-commit <https://pre-commit.com>`__ hook.
 -   Inline comments must have two spaces.
 -   Ensure that you have blank line at the end of the files.
 -   Ensure that trailing whitespaces are stripped.
@@ -852,49 +809,36 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
         <li>
           <h3>Github - Stage 1</h3>
           <ul>
-            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Review the <a href="https://gist.github.com/KelSolaar/4a6ebe9ec3d389f0934b154fec8df51d">release notes</a>.</li>
-            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Check open issues on the current <a href="https:github.com/colour-science/colour/milestones">milestone</a>.</li>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Review the <a href="https://gist.github.com/KelSolaar/4a6ebe9ec3d389f0934b154fec8df51d">release notes</a></li>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Check open issues on the current <a href="https:github.com/colour-science/colour/milestones">milestone</a></li>
           </ul>
         </li>
         <li>
           <h3>Zenodo - Stage 1</h3>
           <ul>
-            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Reserve the <a href="https:zenodo.org/record/3757045">Zenodo DOI</a>.</li>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Reserve the <a href="https:zenodo.org/record/3757045">Zenodo DOI</a></li>
           </ul>
         </li>
         <li>
           <h3>Colour - Stage 1</h3>
           <ul>
-            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Check <a href="https:app.codacy.com/gh/colour-science/colour/dashboard">codacy</a> status.</li>
-            <li>Rebuild a clean <i>Poetry</i> environment.
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Check <a href="https:app.codacy.com/gh/colour-science/colour/dashboard">codacy</a> status</li>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Check documentation build warnings
+              <pre><code data-lang="bash" class="bash">uv run invoke docs</code></pre>
+            </li>
+            <li>Rebuild a clean <i>uv</i> environment
               <ul>
-                <li><span class="task-status todo" style="margin-right:6px">TODO</span>Remove the current <i>Poetry</i> environment.
-                  <ul>
-                    <li>
-                      <pre><code data-lang="bash" class="bash">	poetry env info -p | xargs rm -r</code></pre>
-                    </li>
-                  </ul>
+                <li><span class="task-status todo" style="margin-right:6px">TODO</span>Remove the current <i>uv</i> environment
+                  <pre><code data-lang="bash" class="bash">rm -rf .venv</code></pre>
                 </li>
-                <li><span class="task-status todo" style="margin-right:6px">TODO</span>Create a pristine <i>Poetry</i> environment.
-                  <ul>
-                    <li>
-                      <pre><code data-lang="bash" class="bash">	rm poetry.lock &amp;&amp; poem &amp;&amp; poetry install --with dev,docs,graphviz,meshing,optional</code></pre>
-                    </li>
-                  </ul>
+                <li><span class="task-status todo" style="margin-right:6px">TODO</span>Create a pristine <i>uv</i> environment
+                  <pre><code data-lang="bash" class="bash">rm uv.lock &amp;&amp; uv sync --all-extras</code></pre>
                 </li>
-                <li><span class="task-status todo" style="margin-right:6px">TODO</span>Run the examples task with figures: They need to be visually assessed for correctness.
-                  <ul>
-                    <li>
-                      <pre><code>invoke examples --plots</code></pre>
-                    </li>
-                  </ul>
+                <li><span class="task-status todo" style="margin-right:6px">TODO</span>Run the examples task with figures: They need to be visually assessed for correctness
+                  <pre><code>uv run invoke examples --plots</code></pre>
                 </li>
                 <li><span class="task-status todo" style="margin-right:6px">TODO</span>Run the build task: It cleans the project, runs the pre-commit hooks, the examples, the unit tests, etc...
-                  <ul>
-                    <li>
-                      <pre><code data-lang="bash" class="bash">	invoke build</code></pre>
-                    </li>
-                  </ul>
+                  <pre><code data-lang="bash" class="bash"> invoke build</code></pre>
                 </li>
               </ul>
             </li>
@@ -903,34 +847,24 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
         <li>
           <h3>Pypi - Stage 1</h3>
           <ul>
-            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Run the virtualise task: It deploys the project to a virtual environment and run the unit tests.
-              <ul>
-                <li>
-                  <pre><code data-lang="bash" class="bash">invoke virtualise</code></pre>
-                </li>
-              </ul>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Run the virtualise task: It deploys the project to a virtual environment and run the unit tests
+              <pre><code data-lang="bash" class="bash">uv run invoke virtualise</code></pre>
             </li>
           </ul>
         </li>
         <li>
           <h3>Colour - Stage 2</h3>
           <ul>
-            <li>Raise the package version.
+            <li>Raise the package version
               <ul>
                 <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>__init__.py</code></li>
                 <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>pyproject.toml</code></li>
                 <li>A typical commit message for version raise is as follows:
-                  <ul>
-                    <li>
-                      <blockquote>
-                        <p>Raise package version to 0.3.16.<br /></p>
-                      </blockquote>
-                    </li>
-                  </ul>
+                  <blockquote>Raise package version to 0.3.16.</blockquote>
                 </li>
               </ul>
             </li>
-            <li>Update the Zenodo DOI.
+            <li>Update the Zenodo DOI
               <ul>
                 <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>README.rst</code></li>
               </ul>
@@ -940,89 +874,67 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
         <li>
           <h3>Git</h3>
           <ul>
-            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Run the tag task: It should prompt for tagging the repository accordingly to the defined version using <i>git-flow</i>.
-              <ul>
-                <li>
-                  <pre><code data-lang="bash" class="bash">invoke tag</code></pre>
-                </li>
-              </ul>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Run the tag task: It should prompt for tagging the repository accordingly to the defined version using <i>git-flow</i>
+              <pre><code data-lang="bash" class="bash">uv run invoke tag</code></pre>
             </li>
             <li>A typical tag message for a Colour version is as follows:
               <ul>
                 <li>
-                  <blockquote>
-                    <p>Create Colour v0.3.16 version.<br /></p>
-                  </blockquote>
+                  <blockquote>Create Colour v0.3.16 version.</blockquote>
                 </li>
               </ul>
             </li>
             <li>In the eventuality where the tag creation failed, it might be created manually as follows:
-              <ul>
-                <li>
-                  <pre><code data-lang="bash" class="bash">git tag -a -m &quot;Create Colour v0.3.16 version.&quot; v0.3.16</code></pre>
-                </li>
-              </ul>
+              <pre><code data-lang="bash" class="bash">git tag -a -m &quot;Create Colour v0.3.16 version.&quot; v0.3.16</code></pre>
             </li>
             <li>Push the <code>master</code> and <code>develop</code> branches along with the newly created tag:
-              <ul>
-                <li>
-                  <pre><code data-lang="bash" class="bash">git push upstream master develop --tags</code></pre>
-                </li>
-              </ul>
+              <pre><code data-lang="bash" class="bash">git push upstream master develop --tags</code></pre>
             </li>
           </ul>
         </li>
         <li>
           <h3>Github - Stage 2</h3>
           <ul>
-            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Publish the <a href="https:gist.github.com/KelSolaar/4a6ebe9ec3d389f0934b154fec8df51d">release notes</a> on the <a href="https:github.com/colour-science/colour/releases">releases</a> page using the new tag.</li>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Publish the <a href="https:gist.github.com/KelSolaar/4a6ebe9ec3d389f0934b154fec8df51d">release notes</a> on the <a href="https:github.com/colour-science/colour/releases">releases</a> page using the new tag</li>
           </ul>
         </li>
         <li>
           <h3>Pypi - Stage 2</h3>
           <ul>
-            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Run the release task: It releases the project to Pypi with Twine.
-              <ul>
-                <li>
-                  <pre><code data-lang="bash" class="bash">invoke release</code></pre>
-                </li>
-              </ul>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Run the release task: It releases the project to Pypi with Twine
+              <pre><code data-lang="bash" class="bash">uv run invoke release</code></pre>
             </li>
           </ul>
         </li>
         <li>
           <h3>Zenodo - Stage 2</h3>
           <ul>
-            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Upload the Pypi package and create new version in Zenodo.</li>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Upload the Pypi package and create new version in Zenodo</li>
           </ul>
         </li>
         <li>
           <h3>Conda-Forge</h3>
           <ul>
             <li><span class="task-status todo" style="margin-right:6px">TODO</span>Create new conda-forge version. The sha256 attribute must be updated and can be computed with the sha256 task:
-              <ul>
-                <li>
-                  <pre><code data-lang="bash" class="bash">invoke sha256</code></pre>
-                </li>
-              </ul>
+              <pre><code data-lang="bash" class="bash">uv run invoke sha256</code></pre>
             </li>
           </ul>
         </li>
         <li>
           <h3>colour-science.org</h3>
           <ul>
-            <li>Update the release links.
+            <li>Update the release links
               <ul>
                 <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>conf.py</code></li>
                 <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>index.rst</code></li>
               </ul>
             </li>
-            <li>Update the documentation links.
+            <li>Update the documentation links
               <ul>
                 <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>api-reference.rst</code></li>
               </ul>
             </li>
-            <li>Update the Zenodo badge.
+            <li>Update the Zenodo badge
               <ul>
                 <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>conf.py</code></li>
                 <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>api-status-and-badges.rst</code></li>

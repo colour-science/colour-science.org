@@ -74,7 +74,7 @@ Look-Up-Tables IO
 =================
 
 With this release, `Colour <https://github.com/colour-science/colour>`__ is now
-able to read and write Look-Up-Tables (LUTs) of various dimensions, i.e. LUT1D,
+able to read and write Look-Up-Tables (LUTs) of various dimensions, i.e., LUT1D,
 LUT3x1D, LUT3D and LUT Sequences.
 
 Polynomial Colour Correction

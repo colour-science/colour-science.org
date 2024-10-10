@@ -81,7 +81,7 @@ navbar-dark bg-dark bg-primary
                     <a href="../features" class="dropdown-item"><span class="font-weight-normal">Features</span></a>
                     <a href="../history" class="dropdown-item"><span class="font-weight-normal">History</span></a>
                     <a href="https://colour.readthedocs.io/en/develop/bibliography.html" class="dropdown-item"><span class="font-weight-normal">Bibliography</span></a>
-                    <a href="https://doi.org/10.5281/zenodo.10396329" class="dropdown-item"><span class="font-weight-normal">Cite Us</span></a>
+                    <a href="https://doi.org/10.5281/zenodo.13910741" class="dropdown-item"><span class="font-weight-normal">Cite Us</span></a>
                     <a href="../cited-by" class="dropdown-item"><span class="font-weight-normal">Cited By</span></a>
                     <a href="https://opensource.org/licenses/BSD-3-Clause" class="dropdown-item"><span class="font-weight-normal">License</span></a>
                     <a href="../search" class="dropdown-item"><span class="font-weight-normal">Search</span></a>
@@ -140,49 +140,41 @@ as the IDE / text editor.</p>
 <a class="reference external" href="https://github.com/OpenImageIO/oiio">OpenImageIO</a> and
 <a class="reference external" href="https://pypi.org/project/pygraphviz">PyGraphviz</a> is described.</p>
 <p>It was contributed by <a class="reference external" href="https://github.com/tjdcs">@tjdcs</a> and last updated on
-the 2024-01-28.</p>
+the 2024-10-10.</p>
 <section id="homebrew"><h2>Homebrew</h2>
 <p>Install <a class="reference external" href="https://brew.sh">Homebrew</a>:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_0029c0e6d7d44c3cb526c20d35d8b1b7-1" name="rest_code_0029c0e6d7d44c3cb526c20d35d8b1b7-1" href="#rest_code_0029c0e6d7d44c3cb526c20d35d8b1b7-1"></a>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">"</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">"</span>
+<div class="code"><pre class="code shell"><a id="rest_code_cc0b208bdf9f40cea2445f190df37ffc-1" name="rest_code_cc0b208bdf9f40cea2445f190df37ffc-1" href="#rest_code_cc0b208bdf9f40cea2445f190df37ffc-1"></a>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">"</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">"</span>
 </pre></div>
 <p>Install the required Python versions:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_9082e21fe2d04e49b99d008b175a3d44-1" name="rest_code_9082e21fe2d04e49b99d008b175a3d44-1" href="#rest_code_9082e21fe2d04e49b99d008b175a3d44-1"></a>brew<span class="w"> </span>install<span class="w"> </span>python@3.9<span class="w"> </span>python@3.10<span class="w"> </span>python@3.11<span class="w"> </span>python@3.12
+<div class="code"><pre class="code shell"><a id="rest_code_cd9e78d050154492ac2d37b72641f1cb-1" name="rest_code_cd9e78d050154492ac2d37b72641f1cb-1" href="#rest_code_cd9e78d050154492ac2d37b72641f1cb-1"></a>brew<span class="w"> </span>install<span class="w"> </span>python@3.9<span class="w"> </span>python@3.10<span class="w"> </span>python@3.11<span class="w"> </span>python@3.12
 </pre></div>
-</section><section id="poetry"><h2>Poetry</h2>
-<p>(Re)Install <a class="reference external" href="https://python-poetry.org">Poetry</a>:</p>
-<p>Poetry used to introduce breaking changes to the installer between minor
-versions, it is thus recommended to reinstall it.</p>
-<div class="code"><pre class="code shell"><a id="rest_code_ca29319be6584d8ea4b3b8c8db24d55a-1" name="rest_code_ca29319be6584d8ea4b3b8c8db24d55a-1" href="#rest_code_ca29319be6584d8ea4b3b8c8db24d55a-1"></a>curl<span class="w"> </span>-sSL<span class="w"> </span>https://install.python-poetry.org<span class="w"> </span><span class="p">|</span><span class="w"> </span>python3<span class="w"> </span>-<span class="w"> </span>--uninstall
-<a id="rest_code_ca29319be6584d8ea4b3b8c8db24d55a-2" name="rest_code_ca29319be6584d8ea4b3b8c8db24d55a-2" href="#rest_code_ca29319be6584d8ea4b3b8c8db24d55a-2"></a>curl<span class="w"> </span>-sSL<span class="w"> </span>https://install.python-poetry.org<span class="w"> </span><span class="p">|</span><span class="w"> </span>python3<span class="w"> </span>-
+</section><section id="uv"><h2>uv</h2>
+<p>(Re)Install <a class="reference external" href="https://docs.astral.sh/uv">uv</a>:</p>
+<div class="code"><pre class="code shell"><a id="rest_code_f4357c55bdfb483f9d8dc2d2aaa50a40-1" name="rest_code_f4357c55bdfb483f9d8dc2d2aaa50a40-1" href="#rest_code_f4357c55bdfb483f9d8dc2d2aaa50a40-1"></a>curl<span class="w"> </span>-LsSf<span class="w"> </span>https://astral.sh/uv/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
 </pre></div>
 </section><section id="graphviz-and-openimageio"><h2>graphviz and OpenImageIO</h2>
 <p>Using Homebrew:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_fa2b30da124a4d658f4d96e7a29f1ee0-1" name="rest_code_fa2b30da124a4d658f4d96e7a29f1ee0-1" href="#rest_code_fa2b30da124a4d658f4d96e7a29f1ee0-1"></a>brew<span class="w"> </span>install<span class="w"> </span>graphviz<span class="w"> </span>OpenImageIO
+<div class="code"><pre class="code shell"><a id="rest_code_66acd44093b54c0f8f94d0edaa355a29-1" name="rest_code_66acd44093b54c0f8f94d0edaa355a29-1" href="#rest_code_66acd44093b54c0f8f94d0edaa355a29-1"></a>brew<span class="w"> </span>install<span class="w"> </span>graphviz<span class="w"> </span>OpenImageIO
 </pre></div>
-<p>Then append the following exports to your shell dotfile, e.g. <code class="docutils literal"><span class="pre">~/.zshrc</span></code>:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_199fcf465f7342ef9b715c1254ec4f68-1" name="rest_code_199fcf465f7342ef9b715c1254ec4f68-1" href="#rest_code_199fcf465f7342ef9b715c1254ec4f68-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">LIBRARY_PATH</span><span class="o">=</span><span class="nv">$LIBRARY_PATH</span>:<span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="w"> </span>graphviz<span class="k">)</span>/lib/
-<a id="rest_code_199fcf465f7342ef9b715c1254ec4f68-2" name="rest_code_199fcf465f7342ef9b715c1254ec4f68-2" href="#rest_code_199fcf465f7342ef9b715c1254ec4f68-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">CPATH</span><span class="o">=</span><span class="nv">$CPATH</span>:<span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="w"> </span>graphviz<span class="k">)</span>/include/
-<a id="rest_code_199fcf465f7342ef9b715c1254ec4f68-3" name="rest_code_199fcf465f7342ef9b715c1254ec4f68-3" href="#rest_code_199fcf465f7342ef9b715c1254ec4f68-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$PYTHONPATH</span>:<span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="w"> </span>OpenImageIO<span class="k">)</span>/lib/python3.12/site-packages/OpenImageIO/
+<p>Then append the following exports to your shell dotfile, e.g., <code class="docutils literal"><span class="pre">~/.zshrc</span></code>:</p>
+<div class="code"><pre class="code shell"><a id="rest_code_1e725204f2b74c8481ac54ba100ef25f-1" name="rest_code_1e725204f2b74c8481ac54ba100ef25f-1" href="#rest_code_1e725204f2b74c8481ac54ba100ef25f-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">LIBRARY_PATH</span><span class="o">=</span><span class="nv">$LIBRARY_PATH</span>:<span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="w"> </span>graphviz<span class="k">)</span>/lib/
+<a id="rest_code_1e725204f2b74c8481ac54ba100ef25f-2" name="rest_code_1e725204f2b74c8481ac54ba100ef25f-2" href="#rest_code_1e725204f2b74c8481ac54ba100ef25f-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">CPATH</span><span class="o">=</span><span class="nv">$CPATH</span>:<span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="w"> </span>graphviz<span class="k">)</span>/include/
+<a id="rest_code_1e725204f2b74c8481ac54ba100ef25f-3" name="rest_code_1e725204f2b74c8481ac54ba100ef25f-3" href="#rest_code_1e725204f2b74c8481ac54ba100ef25f-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$PYTHONPATH</span>:<span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="w"> </span>OpenImageIO<span class="k">)</span>/lib/python3.12/site-packages/OpenImageIO/
 </pre></div>
 </section><section id="cloning-colour-s-repository"><h2>Cloning colour's Repository</h2>
 <p>First, <a class="reference external" href="https://github.com/colour-science/colour/fork">fork the colour repository</a>,
 making sure to set or replace the environment variables in these commands.</p>
-<div class="code"><pre class="code shell"><a id="rest_code_cd685bf85c24476980ee6bb5e48c0abe-1" name="rest_code_cd685bf85c24476980ee6bb5e48c0abe-1" href="#rest_code_cd685bf85c24476980ee6bb5e48c0abe-1"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$DEVELOPMENT_DIRECTORY</span>
-<a id="rest_code_cd685bf85c24476980ee6bb5e48c0abe-2" name="rest_code_cd685bf85c24476980ee6bb5e48c0abe-2" href="#rest_code_cd685bf85c24476980ee6bb5e48c0abe-2"></a>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:<span class="nv">$GITHUB_USER</span>/colour.git
-<a id="rest_code_cd685bf85c24476980ee6bb5e48c0abe-3" name="rest_code_cd685bf85c24476980ee6bb5e48c0abe-3" href="#rest_code_cd685bf85c24476980ee6bb5e48c0abe-3"></a><span class="nb">cd</span><span class="w"> </span>colour
+<div class="code"><pre class="code shell"><a id="rest_code_c0107fe58b0347c08241a0b62ff4fe03-1" name="rest_code_c0107fe58b0347c08241a0b62ff4fe03-1" href="#rest_code_c0107fe58b0347c08241a0b62ff4fe03-1"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$DEVELOPMENT_DIRECTORY</span>
+<a id="rest_code_c0107fe58b0347c08241a0b62ff4fe03-2" name="rest_code_c0107fe58b0347c08241a0b62ff4fe03-2" href="#rest_code_c0107fe58b0347c08241a0b62ff4fe03-2"></a>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:<span class="nv">$GITHUB_USER</span>/colour.git
+<a id="rest_code_c0107fe58b0347c08241a0b62ff4fe03-3" name="rest_code_c0107fe58b0347c08241a0b62ff4fe03-3" href="#rest_code_c0107fe58b0347c08241a0b62ff4fe03-3"></a><span class="nb">cd</span><span class="w"> </span>colour
 </pre></div>
 </section><section id="working-with-visual-studio-code-from-the-terminal"><h2>Working with Visual Studio Code from the Terminal</h2>
-<p>The following step is optional, but helpful to store Poetry's virtual environment
-into <strong>colour</strong>'s directory.</p>
-<div class="code"><pre class="code shell"><a id="rest_code_815a41a2340c45ab98c00e407703fe6a-1" name="rest_code_815a41a2340c45ab98c00e407703fe6a-1" href="#rest_code_815a41a2340c45ab98c00e407703fe6a-1"></a>poetry<span class="w"> </span>config<span class="w"> </span>virtualenvs.in-project<span class="w"> </span><span class="nb">true</span>
-</pre></div>
-<p>Install the poetry environment</p>
-<div class="code"><pre class="code shell"><a id="rest_code_a19f0cb6890c4fa8b5618b83b639a8b0-1" name="rest_code_a19f0cb6890c4fa8b5618b83b639a8b0-1" href="#rest_code_a19f0cb6890c4fa8b5618b83b639a8b0-1"></a>poetry<span class="w"> </span>env<span class="w"> </span>use<span class="w"> </span><span class="m">3</span>.12
-<a id="rest_code_a19f0cb6890c4fa8b5618b83b639a8b0-2" name="rest_code_a19f0cb6890c4fa8b5618b83b639a8b0-2" href="#rest_code_a19f0cb6890c4fa8b5618b83b639a8b0-2"></a>poetry<span class="w"> </span>install<span class="w"> </span>--all-extras
+<p>Create the virtual environment</p>
+<div class="code"><pre class="code shell"><a id="rest_code_6eaa7ffef9b44f4ab5b143985d4afeee-1" name="rest_code_6eaa7ffef9b44f4ab5b143985d4afeee-1" href="#rest_code_6eaa7ffef9b44f4ab5b143985d4afeee-1"></a>uv<span class="w"> </span>sync<span class="w"> </span>--all-extras
 </pre></div>
 </section><section id="opening-visual-studio-code"><h2>Opening Visual Studio Code</h2>
 <p>In <strong>colour</strong>'s directory, issue the following command to launch Visual Studio Code:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_7b0553b8496c4fdb9a851d4f5646cb81-1" name="rest_code_7b0553b8496c4fdb9a851d4f5646cb81-1" href="#rest_code_7b0553b8496c4fdb9a851d4f5646cb81-1"></a>code<span class="w"> </span>.
+<div class="code"><pre class="code shell"><a id="rest_code_da64c743071143a7ba1af2219d328931-1" name="rest_code_da64c743071143a7ba1af2219d328931-1" href="#rest_code_da64c743071143a7ba1af2219d328931-1"></a>code<span class="w"> </span>.
 </pre></div>
 <div class="alert alert-dismissible alert-info line-block">
 <div class="line"><strong>Note</strong></div>
@@ -195,12 +187,11 @@ to bring up the <em>Command Palette</em>, then type
 </section><section id="running-the-unit-tests-preflight"><h2>Running the Unit Tests / Preflight</h2>
 <p><strong>colour</strong> uses the <a class="reference external" href="https://pypi.org/project/invoke">invoke</a> framework to
 expose several useful preflight commands:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_89b2cb2a9cf34ccfa17021690c306bdd-1" name="rest_code_89b2cb2a9cf34ccfa17021690c306bdd-1" href="#rest_code_89b2cb2a9cf34ccfa17021690c306bdd-1"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$DEVELOPMENT_DIRECTORY</span>/colour
-<a id="rest_code_89b2cb2a9cf34ccfa17021690c306bdd-2" name="rest_code_89b2cb2a9cf34ccfa17021690c306bdd-2" href="#rest_code_89b2cb2a9cf34ccfa17021690c306bdd-2"></a>poetry<span class="w"> </span>shell
-<a id="rest_code_89b2cb2a9cf34ccfa17021690c306bdd-3" name="rest_code_89b2cb2a9cf34ccfa17021690c306bdd-3" href="#rest_code_89b2cb2a9cf34ccfa17021690c306bdd-3"></a>invoke<span class="w"> </span>formatting<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>invoke<span class="w"> </span>quality<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>invoke<span class="w"> </span>precommit<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>invoke<span class="w"> </span>tests
+<div class="code"><pre class="code shell"><a id="rest_code_1398af5c26614e239a8b153e297dd220-1" name="rest_code_1398af5c26614e239a8b153e297dd220-1" href="#rest_code_1398af5c26614e239a8b153e297dd220-1"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$DEVELOPMENT_DIRECTORY</span>/colour
+<a id="rest_code_1398af5c26614e239a8b153e297dd220-2" name="rest_code_1398af5c26614e239a8b153e297dd220-2" href="#rest_code_1398af5c26614e239a8b153e297dd220-2"></a>uv<span class="w"> </span>run<span class="w"> </span>invoke<span class="w"> </span>formatting<span class="w"> </span>quality<span class="w"> </span>precommit<span class="w"> </span>tests
 </pre></div>
 <p>or if you just want to run the tests, including the doctests:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_c1b8aa2564684104a5017f7e5366749b-1" name="rest_code_c1b8aa2564684104a5017f7e5366749b-1" href="#rest_code_c1b8aa2564684104a5017f7e5366749b-1"></a>invoke<span class="w"> </span>tests
+<div class="code"><pre class="code shell"><a id="rest_code_43093453f07442acaa5fec7f93e12155-1" name="rest_code_43093453f07442acaa5fec7f93e12155-1" href="#rest_code_43093453f07442acaa5fec7f93e12155-1"></a>uv<span class="w"> </span>run<span class="w"> </span>invoke<span class="w"> </span>tests
 </pre></div>
 </section><section id="ctl-optional"><h2>CTL (Optional)</h2>
 <p><strong>colour</strong> provides a wrapper to the AMPAS <a class="reference external" href="https://github.com/ampas/CTL">Color Transformation Language</a> (CTL)
@@ -208,17 +199,17 @@ If you want to be able to fully build and contribute to this part of the
 codebase, it needs to be installed. Unfortunately, the version currently
 provided by Homebrew does not appear to work on the latest macOS and the relevant
 environments, thus, it must be installed from source at the moment:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_aae09a614e3b425ca1e659d319235db9-1" name="rest_code_aae09a614e3b425ca1e659d319235db9-1" href="#rest_code_aae09a614e3b425ca1e659d319235db9-1"></a>brew<span class="w"> </span>install<span class="w"> </span>cmake<span class="w"> </span>ilmBase<span class="w"> </span>openexr<span class="w"> </span>libtiff<span class="w"> </span>aces_container
-<a id="rest_code_aae09a614e3b425ca1e659d319235db9-2" name="rest_code_aae09a614e3b425ca1e659d319235db9-2" href="#rest_code_aae09a614e3b425ca1e659d319235db9-2"></a>
-<a id="rest_code_aae09a614e3b425ca1e659d319235db9-3" name="rest_code_aae09a614e3b425ca1e659d319235db9-3" href="#rest_code_aae09a614e3b425ca1e659d319235db9-3"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$TMPDIR</span>
-<a id="rest_code_aae09a614e3b425ca1e659d319235db9-4" name="rest_code_aae09a614e3b425ca1e659d319235db9-4" href="#rest_code_aae09a614e3b425ca1e659d319235db9-4"></a>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:ampas/CTL.git
-<a id="rest_code_aae09a614e3b425ca1e659d319235db9-5" name="rest_code_aae09a614e3b425ca1e659d319235db9-5" href="#rest_code_aae09a614e3b425ca1e659d319235db9-5"></a>
-<a id="rest_code_aae09a614e3b425ca1e659d319235db9-6" name="rest_code_aae09a614e3b425ca1e659d319235db9-6" href="#rest_code_aae09a614e3b425ca1e659d319235db9-6"></a><span class="nb">cd</span><span class="w"> </span>CTL
-<a id="rest_code_aae09a614e3b425ca1e659d319235db9-7" name="rest_code_aae09a614e3b425ca1e659d319235db9-7" href="#rest_code_aae09a614e3b425ca1e659d319235db9-7"></a>mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
-<a id="rest_code_aae09a614e3b425ca1e659d319235db9-8" name="rest_code_aae09a614e3b425ca1e659d319235db9-8" href="#rest_code_aae09a614e3b425ca1e659d319235db9-8"></a>
-<a id="rest_code_aae09a614e3b425ca1e659d319235db9-9" name="rest_code_aae09a614e3b425ca1e659d319235db9-9" href="#rest_code_aae09a614e3b425ca1e659d319235db9-9"></a>cmake<span class="w"> </span>..<span class="w"> </span>-J<span class="w"> </span><span class="m">10</span>
-<a id="rest_code_aae09a614e3b425ca1e659d319235db9-10" name="rest_code_aae09a614e3b425ca1e659d319235db9-10" href="#rest_code_aae09a614e3b425ca1e659d319235db9-10"></a>make
-<a id="rest_code_aae09a614e3b425ca1e659d319235db9-11" name="rest_code_aae09a614e3b425ca1e659d319235db9-11" href="#rest_code_aae09a614e3b425ca1e659d319235db9-11"></a>sudo<span class="w"> </span>make<span class="w"> </span>install
+<div class="code"><pre class="code shell"><a id="rest_code_a02258a4764b4d679f84c746ead32baf-1" name="rest_code_a02258a4764b4d679f84c746ead32baf-1" href="#rest_code_a02258a4764b4d679f84c746ead32baf-1"></a>brew<span class="w"> </span>install<span class="w"> </span>cmake<span class="w"> </span>ilmBase<span class="w"> </span>openexr<span class="w"> </span>libtiff<span class="w"> </span>aces_container
+<a id="rest_code_a02258a4764b4d679f84c746ead32baf-2" name="rest_code_a02258a4764b4d679f84c746ead32baf-2" href="#rest_code_a02258a4764b4d679f84c746ead32baf-2"></a>
+<a id="rest_code_a02258a4764b4d679f84c746ead32baf-3" name="rest_code_a02258a4764b4d679f84c746ead32baf-3" href="#rest_code_a02258a4764b4d679f84c746ead32baf-3"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$TMPDIR</span>
+<a id="rest_code_a02258a4764b4d679f84c746ead32baf-4" name="rest_code_a02258a4764b4d679f84c746ead32baf-4" href="#rest_code_a02258a4764b4d679f84c746ead32baf-4"></a>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:ampas/CTL.git
+<a id="rest_code_a02258a4764b4d679f84c746ead32baf-5" name="rest_code_a02258a4764b4d679f84c746ead32baf-5" href="#rest_code_a02258a4764b4d679f84c746ead32baf-5"></a>
+<a id="rest_code_a02258a4764b4d679f84c746ead32baf-6" name="rest_code_a02258a4764b4d679f84c746ead32baf-6" href="#rest_code_a02258a4764b4d679f84c746ead32baf-6"></a><span class="nb">cd</span><span class="w"> </span>CTL
+<a id="rest_code_a02258a4764b4d679f84c746ead32baf-7" name="rest_code_a02258a4764b4d679f84c746ead32baf-7" href="#rest_code_a02258a4764b4d679f84c746ead32baf-7"></a>mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
+<a id="rest_code_a02258a4764b4d679f84c746ead32baf-8" name="rest_code_a02258a4764b4d679f84c746ead32baf-8" href="#rest_code_a02258a4764b4d679f84c746ead32baf-8"></a>
+<a id="rest_code_a02258a4764b4d679f84c746ead32baf-9" name="rest_code_a02258a4764b4d679f84c746ead32baf-9" href="#rest_code_a02258a4764b4d679f84c746ead32baf-9"></a>cmake<span class="w"> </span>..<span class="w"> </span>-J<span class="w"> </span><span class="m">10</span>
+<a id="rest_code_a02258a4764b4d679f84c746ead32baf-10" name="rest_code_a02258a4764b4d679f84c746ead32baf-10" href="#rest_code_a02258a4764b4d679f84c746ead32baf-10"></a>make
+<a id="rest_code_a02258a4764b4d679f84c746ead32baf-11" name="rest_code_a02258a4764b4d679f84c746ead32baf-11" href="#rest_code_a02258a4764b4d679f84c746ead32baf-11"></a>sudo<span class="w"> </span>make<span class="w"> </span>install
 </pre></div>
 </section><section id="see-also"><h2>See Also</h2>
 <p>Please refer to <a class="reference external" href="https://www.colour-science.org/contributing/">the contributing guide</a>
