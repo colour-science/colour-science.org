@@ -271,23 +271,27 @@ NAVIGATION_LINKS = {
         ),
         (
             "mailto:colour-developers@colour-science.org",
-            '<i class="fas fa-envelope"></i>',
+            '<i class="fa-regular fa-envelope"></i>',
         ),
         (
             "https://github.com/colour-science/colour",
-            '<i class="fab fa-github"></i>',
+            '<i class="fa-brands fa-github"></i>',
         ),
         (
             "https://www.facebook.com/python.colour.science",
-            '<i class="fab fa-facebook"></i>',
+            '<i class="fa-brands fa-facebook"></i>',
         ),
         (
             "https://gitter.im/colour-science/colour",
-            '<i class="fab fa-gitter"></i>',
+            '<i class="fa-brands fa-gitter"></i>',
         ),
         (
-            "https://twitter.com/colour_science",
-            '<i class="fab fa-twitter"></i>',
+            "https://x.com/colour_science",
+            '<i class="fa-brands fa-x-twitter"></i>',
+        ),
+        (
+            "https://bsky.app/profile/colour-science.bsky.social",
+            '<i class="fa-brands fa-bluesky"></i>',
         ),
     ),
 }
@@ -1083,27 +1087,32 @@ CONTENT_FOOTER = """
 <ul class="nav justify-content-center">
     <li class="nav-item mx-3">
         <a href="mailto:colour-developers@colour-science.org">
-            <i class="fas fa-envelope text-light"></i>
+            <i class="fa-regular fa-envelope text-light"></i>
         </a>
     </li>
     <li class="nav-item mx-3">
         <a href="https://github.com/colour-science/colour">
-            <i class="fab fa-github text-light"></i>
-        </a>
-    </li>
-    <li class="nav-item mx-3">
-        <a href="https://gitter.im/colour-science/colour">
-            <i class="fab fa-gitter text-light"></i>
-        </a>
-    </li>
-    <li class="nav-item mx-3">
-        <a href="https://twitter.com/colour_science">
-            <i class="fab fa-twitter text-light"></i>
+            <i class="fa-brands fa-github text-light"></i>
         </a>
     </li>
     <li class="nav-item mx-3">
         <a href="https://www.facebook.com/python.colour.science">
-            <i class="fab fa-facebook text-light"></i>
+            <i class="fa-brands fa-facebook text-light"></i>
+        </a>
+    </li>
+    <li class="nav-item mx-3">
+        <a href="https://gitter.im/colour-science/colour">
+            <i class="fa-brands fa-gitter text-light"></i>
+        </a>
+    </li>
+    <li class="nav-item mx-3">
+        <a href="https://x.com/colour_science">
+            <i class="fa-brands fa-x-twitter text-light"></i>
+        </a>
+    </li>
+    <li class="nav-item mx-3">
+        <a href="https://bsky.app/profile/colour-science.bsky.social">
+            <i class="fa-brands fa-bluesky text-light"></i>
         </a>
     </li>
 </ul>
@@ -1388,9 +1397,8 @@ EXTRA_HEAD_DATA = """
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous">
 </script>
-<link rel="stylesheet"
-    href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
-    integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.1/css/all.css"
+    integrity="sha384-QI8z31KmtR+tk1MYi0DfgxrjYgpTpLLol3bqZA/Q1Y8BvH+6k7/Huoj38gQOaCS7"
     crossorigin="anonymous">
 <meta name="google-site-verification" content="CeWflIcbu-x7Ur7qbzTYJiRFvoGF5RljJyGZMg7H9co" />
 """
