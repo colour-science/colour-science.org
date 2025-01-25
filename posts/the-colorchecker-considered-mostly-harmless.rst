@@ -40,7 +40,7 @@ Is a Colour Rendition Chart the Safest Way to Calibrate a Camera?
 
 Simply put, this statement is not only incorrect but **the worst way possible
 to calibrate a camera and should be avoided, unless you have all the relevant
-spectral measurements.**.
+spectral measurements.**
 
 Using a colour rendition chart for colour-correction might dramatically
 increase error if the scene light source spectrum is different from the
