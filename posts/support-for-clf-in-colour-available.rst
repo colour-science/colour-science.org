@@ -36,8 +36,8 @@ Features
 --------
 The Colour - CLF IO package allows
 
-- Reading CLF files to a Python representation.
-- Writing CLF files from the Python representation.
+- Reading CLF 3.0 files to a Python representation.
+- Writing CLF files from the Python representation. Supporting both CLF 3.0 and the upcoming SMPTE ST 2136-1 standard. 
 - Executing CLF workflows and applying them to colours or images.
 
 More Information
