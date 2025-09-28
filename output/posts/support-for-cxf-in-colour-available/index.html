@@ -159,62 +159,48 @@ navbar-dark bg-dark bg-primary
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p>We are happy to announce the release of <a class="reference external" href="https://github.com/colour-science/colour-cxf">Colour - CxF</a>.
-This extension package for Colour implements reading and writing files in the Color Exchange Format (CxF).</p>
+    <p>We are happy to announce the release of <a class="reference external" href="https://github.com/colour-science/colour-cxf">Colour - CxF</a>.</p>
+<p>This extension package for <strong>Colour</strong> implements reading and writing files in the <a class="reference external" href="https://www.xrite.com/page/cxf-color-exchange-format">Color Exchange Format (CxF)</a>.</p>
 <!-- TEASER_END -->
 <section id="what-is-cxf"><h2>What is CxF?</h2>
-<p>CxF is a XML-based file format that provides a flexible way to store and exchange color data across different systems.
+<p><strong>CxF</strong> is a XML-based file format that provides a flexible way to store and exchange color data across different systems.
 It supports multiple color formats including RGB, CIELab, and spectral measurements, while providing standard ways to
 include metadata and descriptions about the color information.</p>
 </section><section id="features"><h2>Features</h2>
-<p>The Colour - CxF package allows</p>
+<p>The <a class="reference external" href="https://github.com/colour-science/colour-cxf">Colour - CxF</a> package allows</p>
 <ul class="simple">
-<li><p>Reading CxF documents from strings or files to a Python representation.</p></li>
-<li><p>Writing CxF documents from the Python representation to XML strings and files.</p></li>
-<li><p>Creating CxF objects programmatically for custom color data workflows.</p></li>
+<li><p>Reading <strong>CxF</strong> documents from strings or files to a Python representation.</p></li>
+<li><p>Writing <strong>CxF</strong> documents from the Python representation to XML strings and files.</p></li>
+<li><p>Creating <strong>CxF</strong> objects programmatically for custom color data workflows.</p></li>
 </ul></section><section id="getting-started"><h2>Getting started</h2>
-<p>Install <em>Colour - CxF</em> via pip</p>
-<aside class="system-message"><p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 26)</p>
-<p>Error in "code-block" directive:
-maximum 1 argument(s) allowed, 4 supplied.</p>
-<pre class="literal-block">.. code-block:: bash
-    pip install colour-cxf
-</pre>
-</aside><p>or via uv</p>
-<aside class="system-message"><p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 31)</p>
-<p>Error in "code-block" directive:
-maximum 1 argument(s) allowed, 3 supplied.</p>
-<pre class="literal-block">.. code-block::
-    bashuv add colour-cfx
-</pre>
-</aside><p>Then use it to read CxF data</p>
-<aside class="system-message"><p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">&lt;string&gt;</span>, line 36)</p>
-<p>Error in "code-block" directive:
-maximum 1 argument(s) allowed, 3 supplied.</p>
-<pre class="literal-block">.. code-block:: python
-    import colour_cxf
-
-    # Reading from a string
-    xml_string = """&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-    &lt;cc:CxF xmlns:cc="http://colorexchangeformat.com/CxF3-core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-        &lt;cc:FileInformation&gt;
-            &lt;cc:Creator&gt;Colour Developers&lt;/cc:Creator&gt;
-            &lt;cc:Description&gt;Simple CxF Example&lt;/cc:Description&gt;
-        &lt;/cc:FileInformation&gt;
-    &lt;/cc:CxF&gt;"""
-
-    # Parse the XML string
-    cxf = colour_cxf.read_cxf(xml_string.encode("utf-8"))
-</pre>
-</aside><p># Access file information
-print(f"Creator: {cxf.file_information.creator}")
-print(f"Description: {cxf.file_information.description}")</p>
-<p><a href="#system-message-1"><span class="problematic" id="problematic-1">``</span></a><a href="#system-message-2"><span class="problematic" id="problematic-2">`</span></a></p>
-<aside class="system-message" id="system-message-1"><p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 55); <em><a href="#problematic-1">backlink</a></em></p>
-<p>Inline literal start-string without end-string.</p>
-</aside><aside class="system-message" id="system-message-2"><p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">&lt;string&gt;</span>, line 55); <em><a href="#problematic-2">backlink</a></em></p>
-<p>Inline interpreted text or phrase reference start-string without end-string.</p>
-</aside></section><section id="more-information"><h2>More Information</h2>
+<p>Install <a class="reference external" href="https://github.com/colour-science/colour-cxf">Colour - CxF</a> via <a class="reference external" href="https://pypi.org/project/pip">pip</a>:</p>
+<div class="code"><pre class="code bash"><a id="rest_code_7ca107ea84a242bc9ec8fe4ff9bee08c-1" name="rest_code_7ca107ea84a242bc9ec8fe4ff9bee08c-1" href="#rest_code_7ca107ea84a242bc9ec8fe4ff9bee08c-1"></a>pip<span class="w"> </span>install<span class="w"> </span>colour-cxf
+</pre></div>
+<p>or via <a class="reference external" href="https://docs.astral.sh/uv">uv</a>:</p>
+<div class="code"><pre class="code bash"><a id="rest_code_6325413306a34e609e4f80bd61b4f90e-1" name="rest_code_6325413306a34e609e4f80bd61b4f90e-1" href="#rest_code_6325413306a34e609e4f80bd61b4f90e-1"></a>uv<span class="w"> </span>add<span class="w"> </span>colour-cfx
+</pre></div>
+<p>Then use it to read <strong>CxF</strong> data:</p>
+<div class="code"><pre class="code python"><a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-1" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-1" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-1"></a><span class="kn">import</span> <span class="nn">colour_cxf</span>
+<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-2" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-2" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-2"></a>
+<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-3" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-3" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-3"></a><span class="c1"># Reading from a string</span>
+<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-4" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-4" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-4"></a><span class="n">xml_string</span> <span class="o">=</span> <span class="s2">"""</span>
+<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-5" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-5" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-5"></a><span class="s2">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-6" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-6" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-6"></a><span class="s2">&lt;cc:CxF xmlns:cc="http://colorexchangeformat.com/CxF3-core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;</span>
+<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-7" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-7" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-7"></a><span class="s2">    &lt;cc:FileInformation&gt;</span>
+<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-8" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-8" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-8"></a><span class="s2">        &lt;cc:Creator&gt;Colour Developers&lt;/cc:Creator&gt;</span>
+<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-9" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-9" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-9"></a><span class="s2">        &lt;cc:Description&gt;Simple CxF Example&lt;/cc:Description&gt;</span>
+<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-10" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-10" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-10"></a><span class="s2">    &lt;/cc:FileInformation&gt;</span>
+<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-11" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-11" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-11"></a><span class="s2">&lt;/cc:CxF&gt;</span>
+<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-12" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-12" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-12"></a><span class="s2">"""</span>
+<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-13" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-13" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-13"></a>
+<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-14" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-14" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-14"></a><span class="c1"># Parse the XML string</span>
+<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-15" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-15" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-15"></a><span class="n">cxf</span> <span class="o">=</span> <span class="n">colour_cxf</span><span class="o">.</span><span class="n">read_cxf</span><span class="p">(</span><span class="n">xml_string</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">"utf-8"</span><span class="p">))</span>
+<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-16" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-16" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-16"></a>
+<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-17" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-17" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-17"></a><span class="c1"># Access file information</span>
+<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-18" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-18" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-18"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Creator: </span><span class="si">{</span><span class="n">cxf</span><span class="o">.</span><span class="n">file_information</span><span class="o">.</span><span class="n">creator</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-19" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-19" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-19"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Description: </span><span class="si">{</span><span class="n">cxf</span><span class="o">.</span><span class="n">file_information</span><span class="o">.</span><span class="n">description</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</section><section id="more-information"><h2>More Information</h2>
 <p>Visit the <a class="reference external" href="https://github.com/colour-science/colour-cxf">Colour - CxF</a> repository for more information,
 usage examples and tutorials.</p>
 </section><section id="funding"><h2>Funding</h2>
