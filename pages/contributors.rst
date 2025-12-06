@@ -1104,8 +1104,138 @@
             </div>
         </div>
         <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>mesvam</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        HyAB and HyCH colour difference
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/mesvam" class="card-link">Github</a>
+                </div>
+            </div>
         </div>
         <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>Xu Zhaozheng</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        colour.xyY_to_XYZ definition update
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/xuzhaozheng" class="card-link">Github</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ------------------------------------------------------------------ -->
+    <!-- ------------------------------------------------------------------ -->
+    <!-- ------------------------------------------------------------------ -->
+
+    <div class="row my-5">
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>Christoph Müllner</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        CRI Unit Tests, CRI 2024
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/cmuellner" class="card-link">Github</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>Joren Hammudoglu</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        scipy-stubs, faster type checking, typing improvements
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/jorenham" class="card-link">Github</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>Merlin</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        sUCS colourspace and sCAM
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/UltraMo114" class="card-link">Github</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ------------------------------------------------------------------ -->
+    <!-- ------------------------------------------------------------------ -->
+    <!-- ------------------------------------------------------------------ -->
+
+    <div class="row my-5">
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>Lara Ramona Peeters</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Documentation (Tutorial)
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/laraPPr" class="card-link">Github</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>Jackchou00</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Fix sCAM Q formula
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/Jackchou00" class="card-link">Github</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h3>Lasse Schmidt</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Metamerism Index
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/lassefschmidt" class="card-link">Github</a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1364,13 +1494,17 @@
                             <li><a href="https://github.com/BQ-Octantis">BQ-Octantis</a></li>
                             <li><a href="https://github.com/CHRIBUR0309">CHRIBUR0309</a></li>
                             <li><a href="https://github.com/Chandler">Chandler</a></li>
+                            <li><a href="https://github.com/ChthonVII">ChthonVII</a></li>
                             <li><a href="https://github.com/ChunHsinWang">ChunHsinWang</a></li>
                             <li><a href="https://github.com/Edwardlin-zlt">Edwardlin-zlt</a></li>
                             <li><a href="https://github.com/EricFlyMeToTheMoon">EricFlyMeToTheMoon</a></li>
                             <li><a href="https://github.com/FLX90">FLX90</a></li>
                             <li><a href="https://github.com/Floschoe">Floschoe</a></li>
                             <li><a href="https://github.com/FredeJ">FredeJ</a></li>
+                            <li><a href="https://github.com/GeologyAMG">GeologyAMG</a></li>
+                            <li><a href="https://github.com/Globefishp">Globefishp</a></li>
                             <li><a href="https://github.com/GuillemRamisa">GuillemRamisa</a></li>
+                            <li><a href="https://github.com/Jackchou00">Jackchou00</a></li>
                             <li><a href="https://github.com/JarrettR">JarrettR</a></li>
                             <li><a href="https://github.com/JayPalm">JayPalm</a></li>
                             <li><a href="https://github.com/Jerry2001">Jerry2001</a></li>
@@ -1388,6 +1522,7 @@
                             <li><a href="https://github.com/MMehdiMousavi">MMehdiMousavi</a></li>
                             <li><a href="https://github.com/MadhuSN">MadhuSN</a></li>
                             <li><a href="https://github.com/MarcusCalhoun-Lopez">MarcusCalhoun-Lopez</a></li>
+                            <li><a href="https://github.com/Mr-real-self">Mr-real-self</a></li>
                             <li><a href="https://github.com/MrColourBlind">MrColourBlind</a></li>
                             <li><a href="https://github.com/Myndex">Myndex</a></li>
                             <li><a href="https://github.com/Naughty-Monkey">Naughty-Monkey</a></li>
@@ -1395,6 +1530,7 @@
                             <li><a href="https://github.com/NoRoKr">NoRoKr</a></li>
                             <li><a href="https://github.com/NogginBops">NogginBops </a></li>
                             <li><a href="https://github.com/NogginBops">NogginBops</a></li>
+                            <li><a href="https://github.com/OverDriveHuang">OverDriveHuang</a></li>
                             <li><a href="https://github.com/Patil2099">Patil2099</a></li>
                             <li><a href="https://github.com/Paul-Sims">Paul-Sims</a></li>
                             <li><a href="https://github.com/Queuecumber">Queuecumber</a></li>
@@ -1448,6 +1584,7 @@
                             <li><a href="https://github.com/cclauss">cclauss</a></li>
                             <li><a href="https://github.com/chesschi">chesschi</a></li>
                             <li><a href="https://github.com/codycuellar">codycuellar</a></li>
+                            <li><a href="https://github.com/cripplePX">cripplePX</a></li>
                             <li><a href="https://github.com/cuixiaofei">cuixiaofei</a></li>
                             <li><a href="https://github.com/cut-shots">cut-shots</a></li>
                             <li><a href="https://github.com/da5nsy">da5nsy</a></li>
@@ -1469,11 +1606,15 @@
                             <li><a href="https://github.com/foutoucour">foutoucour</a></li>
                             <li><a href="https://github.com/fxthomas">fxthomas</a></li>
                             <li><a href="https://github.com/geek9012">geek9012</a></li>
+                            <li><a href="https://github.com/geniuskey">geniuskey</a></li>
                             <li><a href="https://github.com/goofy2k">goofy2k</a></li>
+                            <li><a href="https://github.com/gsuberland">gsuberland</a></li>
+                            <li><a href="https://github.com/gul916">gul916</a></li>
                             <li><a href="https://github.com/gutenzwerg">gutenzwerg</a></li>
                             <li><a href="https://github.com/habemus-papadum">habemus-papadum</a></li>
                             <li><a href="https://github.com/hajimen">hajimen</a></li>
                             <li><a href="https://github.com/hakanai">hakanai</a></li>
+                            <li><a href="https://github.com/hardikdava">hardikdava</a></li>
                             <li><a href="https://github.com/harshjain30">harshjain30</a></li>
                             <li><a href="https://github.com/heinemannj">heinemannj</a></li>
                             <li><a href="https://github.com/henczati">henczati</a></li>
@@ -1528,20 +1669,25 @@
                             <li><a href="https://github.com/nschloe">nschloe</a></li>
                             <li><a href="https://github.com/opanyaki">opanyaki</a></li>
                             <li><a href="https://github.com/parthxtripathi">parthxtripathi</a></li>
+                            <li><a href="https://github.com/pekkavaa">pekkavaa</a></li>
                             <li><a href="https://github.com/peroveh">peroveh</a></li>
                             <li><a href="https://github.com/peteroupc">peteroupc</a></li>
+                            <li><a href="https://github.com/popoyan">popoyan</a></li>
                             <li><a href="https://github.com/pfk-beta">pfk-beta</a></li>
                             <li><a href="https://github.com/physici">physici</a></li>
                             <li><a href="https://github.com/pjaesung2">pjaesung2</a></li>
                             <li><a href="https://github.com/priikone">priikone</a></li>
                             <li><a href="https://github.com/qiuboujun">qiuboujun</a></li>
                             <li><a href="https://github.com/ramparvathaneni">ramparvathaneni</a></li>
+                            <li><a href="https://github.com/ricor07">ricor07</a></li>
                             <li><a href="https://github.com/richardstardust">richardstardust</a></li>
                             <li><a href="https://github.com/robbuckley">robbuckley</a></li>
                             <li><a href="https://github.com/romanovar">romanovar</a></li>
                             <li><a href="https://github.com/rsnitsch">rsnitsch</a></li>
+                            <li><a href="https://github.com/saku123hh">saku123hh</a></li>
                             <li><a href="https://github.com/sdbbs">sdbbs</a></li>
                             <li><a href="https://github.com/senyai">senyai</a></li>
+                            <li><a href="https://github.com/simonsanchezart">simonsanchezart</a></li>
                             <li><a href="https://github.com/shanest">shanest</a></li>
                             <li><a href="https://github.com/sherlockedlee">sherlockedlee</a></li>
                             <li><a href="https://github.com/shirubana">shirubana</a></li>

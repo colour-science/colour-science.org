@@ -22,22 +22,20 @@ and `Installation Methods for Developing Colour`_ sections below.
 Primary Dependencies
 ^^^^^^^^^^^^^^^^^^^^
 
--   `python >= 3.10, < 3.14 <https://www.python.org/download/releases>`__
--   `imageio >= 2, < 3 <https://imageio.github.io>`__
--   `numpy >= 1.24, < 3 <https://pypi.org/project/numpy>`__
--   `scipy >= 1.10, < 2 <https://pypi.org/project/scipy>`__
--   `typing-extensions >= 4, < 5 <https://pypi.org/project/typing-extensions>`__
+-   `python >= 3.11, < 3.15 <https://www.python.org/download/releases>`__
+-   `numpy >= 2.0.0, < 3 <https://pypi.org/project/numpy>`__
 
 Optional, Meshing and Plotting Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--   `graphviz >= 2, < 3 <https://www.graphviz.org>`__
--   `matplotlib >= 3.7 <https://pypi.org/project/matplotlib>`__
--   `networkx >= 3, < 4 <https://pypi.org/project/networkx>`__
+-   `imageio >= 2, < 3 <https://imageio.github.io>`__
+-   `matplotlib >= 3.9 <https://pypi.org/project/matplotlib>`__
+-   `networkx >= 3.3, < 4 <https://pypi.org/project/networkx>`__
 -   `opencolorio >= 2, < 3 <https://pypi.org/project/opencolorio>`__
--   `openimageio >= 2, < 3 <https://github.com/OpenImageIO/oiio>`__
--   `pandas >= 2, < 3 <https://pypi.org/project/pandas>`__
+-   `openimageio >= 3, < 4 <https://github.com/OpenImageIO/oiio>`__
+-   `pandas >= 2.2, < 3 <https://pypi.org/project/pandas>`__
 -   `pydot >= 3, < 4 <https://pypi.org/project/pydot>`__
+-   `scipy >= 1.13.0, < 2 <https://pypi.org/project/scipy>`__
 -   `tqdm >= 4, < 5 <https://pypi.org/project/tqdm>`__
 -   `trimesh >= 4, < 5 <https://pypi.org/project/trimesh>`__
 -   `xxhash >= 3, < 4 <https://pypi.org/project/xxhash>`__
@@ -173,7 +171,7 @@ uv
 dependencies, this is the recommended way to get started with **Colour**
 development.
 
-Assuming `python >= 3.10, < 3.13 <https://www.python.org/download/releases>`__ is
+Assuming `python >= 3.11, < 3.15 <https://www.python.org/download/releases>`__ is
 available on your system, the development dependencies are installed with
 `uv <https://docs.astral.sh/uv>`__ as follows:
 
