@@ -42,9 +42,9 @@ The highlights are as follows:
 - Added *Snell's law* and polarised light calculations
 - Introduced comprehensive plotting definitions for thin film analysis
 
-.. image:: https://github.com/user-attachments/assets/a7cfa4ae-6a4c-4c2f-9527-c2706ad8ab74
+.. image:: https://colour.readthedocs.io/en/develop/_images/Plotting_Plot_Thin_Film_Iridescence.png
 
-.. image:: https://github.com/user-attachments/assets/feb5c964-bcf3-468b-a23f-7f06dbee32c3
+.. image:: https://colour.readthedocs.io/en/develop/_images/Plotting_Plot_Multi_Layer_Stack.png
 
 **Quality Metrics**
 
