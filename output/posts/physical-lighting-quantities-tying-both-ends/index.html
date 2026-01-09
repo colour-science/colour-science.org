@@ -16,7 +16,19 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://www.colour-science.org/posts/physical-lighting-quantities-tying-both-ends/">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
 </script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.1/css/all.css" integrity="sha384-QI8z31KmtR+tk1MYi0DfgxrjYgpTpLLol3bqZA/Q1Y8BvH+6k7/Huoj38gQOaCS7" crossorigin="anonymous">
 <meta name="google-site-verification" content="CeWflIcbu-x7Ur7qbzTYJiRFvoGF5RljJyGZMg7H9co">
 <meta name="author" content="Colour Developers">
@@ -233,11 +245,11 @@ scaling by the ISO arithmetic speed <span class="math">\(S\)</span>:</p>
 </blockquote>
 <p><a class="reference external" href="https://github.com/colour-science/colour-hdri/blob/develop/colour_hdri/exposure/dsc.py">Colour - HDRI</a>
 implements the aforementioned model with Python:</p>
-<div class="code"><pre class="code python"><a id="rest_code_aaf7e676b3d04b089fe24417e51c7c05-1" name="rest_code_aaf7e676b3d04b089fe24417e51c7c05-1" href="#rest_code_aaf7e676b3d04b089fe24417e51c7c05-1"></a><span class="kn">import</span> <span class="nn">colour_hdri</span>
-<a id="rest_code_aaf7e676b3d04b089fe24417e51c7c05-2" name="rest_code_aaf7e676b3d04b089fe24417e51c7c05-2" href="#rest_code_aaf7e676b3d04b089fe24417e51c7c05-2"></a>
-<a id="rest_code_aaf7e676b3d04b089fe24417e51c7c05-3" name="rest_code_aaf7e676b3d04b089fe24417e51c7c05-3" href="#rest_code_aaf7e676b3d04b089fe24417e51c7c05-3"></a><span class="n">colour_hdri</span><span class="o">.</span><span class="n">saturation_based_speed_focal_plane_exposure</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<div class="code"><pre class="code python"><a id="rest_code_be743a2611b6499a9ec0aaf76c59d2dc-1" name="rest_code_be743a2611b6499a9ec0aaf76c59d2dc-1" href="#rest_code_be743a2611b6499a9ec0aaf76c59d2dc-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">colour_hdri</span>
+<a id="rest_code_be743a2611b6499a9ec0aaf76c59d2dc-2" name="rest_code_be743a2611b6499a9ec0aaf76c59d2dc-2" href="#rest_code_be743a2611b6499a9ec0aaf76c59d2dc-2"></a>
+<a id="rest_code_be743a2611b6499a9ec0aaf76c59d2dc-3" name="rest_code_be743a2611b6499a9ec0aaf76c59d2dc-3" href="#rest_code_be743a2611b6499a9ec0aaf76c59d2dc-3"></a><span class="n">colour_hdri</span><span class="o">.</span><span class="n">saturation_based_speed_focal_plane_exposure</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
 </pre></div>
-<div class="code"><pre class="code text"><a id="rest_code_f8931d6b9ff043f6886cb5e7078c3d4a-1" name="rest_code_f8931d6b9ff043f6886cb5e7078c3d4a-1" href="#rest_code_f8931d6b9ff043f6886cb5e7078c3d4a-1"></a>0.46993364546604555
+<div class="code"><pre class="code text"><a id="rest_code_31698de7faa24db9839993cd8bdc6195-1" name="rest_code_31698de7faa24db9839993cd8bdc6195-1" href="#rest_code_31698de7faa24db9839993cd8bdc6195-1"></a>0.46993364546604555
 </pre></div>
 <p><a class="reference external" href="https://github.com/colour-science/colour-nuke/blob/master/colour_nuke/scripts/digital_still_camera_exposure.nk">Colour - Nuke</a>
 offers a Gizmo/Group implementation also available on
@@ -272,18 +284,18 @@ as follows:</p>
 respectively.</p>
 <p><a class="reference external" href="https://github.com/colour-science/colour-hdri/blob/develop/colour_hdri/calibration/absolute_luminance.py">Colour - HDRI</a>
 implements support for absolute luminance calibration with Python:</p>
-<div class="code"><pre class="code python"><a id="rest_code_36886eaef96f47f197716a22500fae5f-1" name="rest_code_36886eaef96f47f197716a22500fae5f-1" href="#rest_code_36886eaef96f47f197716a22500fae5f-1"></a><span class="kn">import</span> <span class="nn">colour_hdri</span>
-<a id="rest_code_36886eaef96f47f197716a22500fae5f-2" name="rest_code_36886eaef96f47f197716a22500fae5f-2" href="#rest_code_36886eaef96f47f197716a22500fae5f-2"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<a id="rest_code_36886eaef96f47f197716a22500fae5f-3" name="rest_code_36886eaef96f47f197716a22500fae5f-3" href="#rest_code_36886eaef96f47f197716a22500fae5f-3"></a>
-<a id="rest_code_36886eaef96f47f197716a22500fae5f-4" name="rest_code_36886eaef96f47f197716a22500fae5f-4" href="#rest_code_36886eaef96f47f197716a22500fae5f-4"></a><span class="n">RGB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">2048</span><span class="p">,</span> <span class="mi">1024</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<a id="rest_code_36886eaef96f47f197716a22500fae5f-5" name="rest_code_36886eaef96f47f197716a22500fae5f-5" href="#rest_code_36886eaef96f47f197716a22500fae5f-5"></a><span class="n">colour_hdri</span><span class="o">.</span><span class="n">upper_hemisphere_illuminance_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
-<a id="rest_code_36886eaef96f47f197716a22500fae5f-6" name="rest_code_36886eaef96f47f197716a22500fae5f-6" href="#rest_code_36886eaef96f47f197716a22500fae5f-6"></a><span class="n">colour_hdri</span><span class="o">.</span><span class="n">absolute_luminance_calibration_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span> <span class="mi">120000</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<div class="code"><pre class="code python"><a id="rest_code_abad8c75362d49ecac62305814e041e1-1" name="rest_code_abad8c75362d49ecac62305814e041e1-1" href="#rest_code_abad8c75362d49ecac62305814e041e1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">colour_hdri</span>
+<a id="rest_code_abad8c75362d49ecac62305814e041e1-2" name="rest_code_abad8c75362d49ecac62305814e041e1-2" href="#rest_code_abad8c75362d49ecac62305814e041e1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<a id="rest_code_abad8c75362d49ecac62305814e041e1-3" name="rest_code_abad8c75362d49ecac62305814e041e1-3" href="#rest_code_abad8c75362d49ecac62305814e041e1-3"></a>
+<a id="rest_code_abad8c75362d49ecac62305814e041e1-4" name="rest_code_abad8c75362d49ecac62305814e041e1-4" href="#rest_code_abad8c75362d49ecac62305814e041e1-4"></a><span class="n">RGB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">2048</span><span class="p">,</span> <span class="mi">1024</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<a id="rest_code_abad8c75362d49ecac62305814e041e1-5" name="rest_code_abad8c75362d49ecac62305814e041e1-5" href="#rest_code_abad8c75362d49ecac62305814e041e1-5"></a><span class="n">colour_hdri</span><span class="o">.</span><span class="n">upper_hemisphere_illuminance_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
+<a id="rest_code_abad8c75362d49ecac62305814e041e1-6" name="rest_code_abad8c75362d49ecac62305814e041e1-6" href="#rest_code_abad8c75362d49ecac62305814e041e1-6"></a><span class="n">colour_hdri</span><span class="o">.</span><span class="n">absolute_luminance_calibration_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span> <span class="mi">120000</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 </pre></div>
-<div class="code"><pre class="code text"><a id="rest_code_f7366ed9d5874b08be001576e85f4418-1" name="rest_code_f7366ed9d5874b08be001576e85f4418-1" href="#rest_code_f7366ed9d5874b08be001576e85f4418-1"></a>array([ 38215.85392444,  38215.85392444,  38215.85392444])
+<div class="code"><pre class="code text"><a id="rest_code_3fe4ded331534dc1a673f03ea4353cd0-1" name="rest_code_3fe4ded331534dc1a673f03ea4353cd0-1" href="#rest_code_3fe4ded331534dc1a673f03ea4353cd0-1"></a>array([ 38215.85392444,  38215.85392444,  38215.85392444])
 </pre></div>
-<div class="code"><pre class="code python"><a id="rest_code_fb6a42f6edcc42e6b2d7f6f539b5f720-1" name="rest_code_fb6a42f6edcc42e6b2d7f6f539b5f720-1" href="#rest_code_fb6a42f6edcc42e6b2d7f6f539b5f720-1"></a><span class="n">colour_hdri</span><span class="o">.</span><span class="n">calibration</span><span class="o">.</span><span class="n">absolute_luminance</span><span class="o">.</span><span class="n">upper_hemisphere_illuminance_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
+<div class="code"><pre class="code python"><a id="rest_code_1a44d372111a430cab981309353ed3a0-1" name="rest_code_1a44d372111a430cab981309353ed3a0-1" href="#rest_code_1a44d372111a430cab981309353ed3a0-1"></a><span class="n">colour_hdri</span><span class="o">.</span><span class="n">calibration</span><span class="o">.</span><span class="n">absolute_luminance</span><span class="o">.</span><span class="n">upper_hemisphere_illuminance_Lagarde2016</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
 </pre></div>
-<div class="code"><pre class="code text"><a id="rest_code_ea55f3da889741b2a97b7bccf1d4a166-1" name="rest_code_ea55f3da889741b2a97b7bccf1d4a166-1" href="#rest_code_ea55f3da889741b2a97b7bccf1d4a166-1"></a>3.1400580564615663
+<div class="code"><pre class="code text"><a id="rest_code_96b6c3beda304e2d9fd97b1be440b1cb-1" name="rest_code_96b6c3beda304e2d9fd97b1be440b1cb-1" href="#rest_code_96b6c3beda304e2d9fd97b1be440b1cb-1"></a>3.1400580564615663
 </pre></div>
 <div class="alert alert-dismissible alert-info line-block">
 <div class="line"><strong>Note</strong></div>
@@ -394,8 +406,18 @@ years.</p>
 
 
         </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
-        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
-        </script></article><script>var disqus_shortname="colour-science";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content-->
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script></article><script>var disqus_shortname="colour-science";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content-->
 </div>
         </div>
     </div>
@@ -437,7 +459,7 @@ years.</p>
         </a>
     </li>
 </ul>
-<div class="text-center text-light py-3"><span>Copyright © 2013-2025 – Colour Developers</span></div>
+<div class="text-center text-light py-3"><span>Copyright © 2013-2026 – Colour Developers</span></div>
 
     
 </footer><!-- End of Footer --><script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>

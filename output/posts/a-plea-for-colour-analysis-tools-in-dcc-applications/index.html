@@ -16,7 +16,19 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://www.colour-science.org/posts/a-plea-for-colour-analysis-tools-in-dcc-applications/">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
 </script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.1/css/all.css" integrity="sha384-QI8z31KmtR+tk1MYi0DfgxrjYgpTpLLol3bqZA/Q1Y8BvH+6k7/Huoj38gQOaCS7" crossorigin="anonymous">
 <meta name="google-site-verification" content="CeWflIcbu-x7Ur7qbzTYJiRFvoGF5RljJyGZMg7H9co">
 <meta name="author" content="Colour Developers">
@@ -220,16 +232,16 @@ navbar-dark bg-dark bg-primary
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pylab</span>
-<span class="kn">from</span> <span class="nn">OpenImageIO</span> <span class="kn">import</span> <span class="n">FLOAT</span><span class="p">,</span> <span class="n">ImageInput</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pylab</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">OpenImageIO</span><span class="w"> </span><span class="kn">import</span> <span class="n">FLOAT</span><span class="p">,</span> <span class="n">ImageInput</span>
 
-<span class="kn">import</span> <span class="nn">colour</span>
-<span class="kn">from</span> <span class="nn">colour.plotting</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">colour.utilities</span> <span class="kn">import</span> <span class="n">message_box</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">colour</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">colour.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">colour.utilities</span><span class="w"> </span><span class="kn">import</span> <span class="n">message_box</span>
 
 
-<span class="k">def</span> <span class="nf">exr_image_as_array</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">exr_image_as_array</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
     <span class="n">image</span> <span class="o">=</span> <span class="n">ImageInput</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
     <span class="n">specification</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">spec</span><span class="p">()</span>
 
@@ -238,7 +250,7 @@ navbar-dark bg-dark bg-primary
                                                       <span class="n">specification</span><span class="o">.</span><span class="n">nchannels</span><span class="p">))</span>
 
 
-<span class="k">def</span> <span class="nf">image_plot</span><span class="p">(</span><span class="n">image</span><span class="p">,</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">image_plot</span><span class="p">(</span><span class="n">image</span><span class="p">,</span>
                <span class="n">OECF</span><span class="o">=</span><span class="n">colour</span><span class="o">.</span><span class="n">sRGB_COLOURSPACE</span><span class="o">.</span><span class="n">OECF</span><span class="p">):</span>
     <span class="n">vectorised_oecf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="n">OECF</span><span class="p">)</span>
     <span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">vectorised_oecf</span><span class="p">(</span><span class="n">image</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -401,7 +413,7 @@ navbar-dark bg-dark bg-primary
 <span class="n">ACES_RGB_to_XYZ</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">ACES_RGB_COLOURSPACE</span><span class="o">.</span><span class="n">RGB_to_XYZ_matrix</span>
 
 
-<span class="k">def</span> <span class="nf">ACES_to_xy</span><span class="p">(</span><span class="n">RGB</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">ACES_to_xy</span><span class="p">(</span><span class="n">RGB</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_xy</span><span class="p">(</span>
                 <span class="n">colour</span><span class="o">.</span><span class="n">RGB_to_XYZ</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span>
                                   <span class="n">ACES_w</span><span class="p">,</span>
@@ -409,7 +421,7 @@ navbar-dark bg-dark bg-primary
                                   <span class="n">ACES_RGB_to_XYZ</span><span class="p">))</span>
 
 
-<span class="k">def</span> <span class="nf">image_chromaticities_plot</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">to_xy</span><span class="o">=</span><span class="n">ACES_to_xy</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">image_chromaticities_plot</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">to_xy</span><span class="o">=</span><span class="n">ACES_to_xy</span><span class="p">):</span>
     <span class="n">colourspaces_CIE_1931_chromaticity_diagram_plot</span><span class="p">(</span>
         <span class="p">[</span><span class="s1">'Pointer Gamut'</span><span class="p">,</span> <span class="s1">'sRGB'</span><span class="p">,</span> <span class="s1">'Rec. 2020'</span><span class="p">,</span> <span class="s1">'ACES RGB'</span><span class="p">],</span>
         <span class="n">standalone</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -464,7 +476,7 @@ navbar-dark bg-dark bg-primary
 <div class="highlight hl-ipython2"><pre><span></span><span class="n">sRGB_CHROMATICITIES_CACHE</span> <span class="o">=</span> <span class="p">{}</span>
 
 
-<span class="k">def</span> <span class="nf">sRGB_to_xy</span><span class="p">(</span><span class="n">RGB</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">sRGB_to_xy</span><span class="p">(</span><span class="n">RGB</span><span class="p">):</span>
     <span class="n">RGB_key</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">RGB_key</span> <span class="ow">in</span> <span class="n">sRGB_CHROMATICITIES_CACHE</span><span class="p">:</span>
         <span class="n">sRGB_CHROMATICITIES_CACHE</span><span class="p">[</span><span class="n">RGB_key</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
@@ -528,15 +540,15 @@ navbar-dark bg-dark bg-primary
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.spatial</span> <span class="kn">import</span> <span class="n">Delaunay</span>
+<div class="highlight hl-ipython2"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.spatial</span><span class="w"> </span><span class="kn">import</span> <span class="n">Delaunay</span>
 
 
-<span class="k">def</span> <span class="nf">within_boundaries</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">triangulation</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">within_boundaries</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">triangulation</span><span class="p">):</span>
     <span class="n">simplex</span> <span class="o">=</span> <span class="n">triangulation</span><span class="o">.</span><span class="n">find_simplex</span><span class="p">(</span><span class="n">point</span><span class="p">)</span>
     <span class="k">return</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">simplex</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span> <span class="k">else</span> <span class="kc">False</span>
 
 
-<span class="k">def</span> <span class="nf">mask_legal_colours</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">to_xy</span><span class="o">=</span><span class="n">sRGB_to_xy</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">mask_legal_colours</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">to_xy</span><span class="o">=</span><span class="n">sRGB_to_xy</span><span class="p">):</span>
     <span class="n">triangulation</span> <span class="o">=</span> <span class="n">Delaunay</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
     <span class="n">image_illegal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">image</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
     <span class="n">legal_colours_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
@@ -602,7 +614,7 @@ navbar-dark bg-dark bg-primary
            <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">cat</span><span class="p">,</span> <span class="n">sRGB_RGB_to_XYZ</span><span class="p">)))</span>
 
 
-<span class="k">def</span> <span class="nf">Rec_2020_to_xy</span><span class="p">(</span><span class="n">RGB</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">Rec_2020_to_xy</span><span class="p">(</span><span class="n">RGB</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">colour</span><span class="o">.</span><span class="n">XYZ_to_xy</span><span class="p">(</span>
         <span class="n">colour</span><span class="o">.</span><span class="n">RGB_to_XYZ</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span>
                           <span class="n">Rec_2020_w</span><span class="p">,</span>
@@ -822,8 +834,18 @@ $$</p>
 
 
         </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
-        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
-        </script></article><script>var disqus_shortname="colour-science";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content-->
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script></article><script>var disqus_shortname="colour-science";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content-->
 </div>
         </div>
     </div>
@@ -865,7 +887,7 @@ $$</p>
         </a>
     </li>
 </ul>
-<div class="text-center text-light py-3"><span>Copyright © 2013-2025 – Colour Developers</span></div>
+<div class="text-center text-light py-3"><span>Copyright © 2013-2026 – Colour Developers</span></div>
 
     
 </footer><!-- End of Footer --><script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>

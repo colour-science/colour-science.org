@@ -1,7 +1,7 @@
 .. title: Colour Checker Detection with Machine Learning
 .. slug: colour-checker-detection-with-machine-learning
 .. date: 2024-01-11 04:48:50 UTC
-.. tags: colour, colour science, colorchecker classic 24, cvat, hugging face, inference, machine learning, roboflow, yolo
+.. tags: colour, colour science, colorchecker classic, cvat, hugging face, inference, machine learning, roboflow, yolo
 .. category:
 .. link:
 .. description:

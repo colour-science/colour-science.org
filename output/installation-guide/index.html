@@ -16,7 +16,19 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="https://www.colour-science.org/installation-guide/">
-<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
 </script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.1/css/all.css" integrity="sha384-QI8z31KmtR+tk1MYi0DfgxrjYgpTpLLol3bqZA/Q1Y8BvH+6k7/Huoj38gQOaCS7" crossorigin="anonymous">
 <meta name="google-site-verification" content="CeWflIcbu-x7Ur7qbzTYJiRFvoGF5RljJyGZMg7H9co">
 <meta name="author" content="Colour Developers">
@@ -185,16 +197,16 @@ and <a class="reference internal" href="#installation-methods-for-developing-col
 <p><strong>Colour</strong> can be easily installed from the
 <a class="reference external" href="https://pypi.org/project/colour-science">Python Package Index</a> by
 issuing this command in a shell:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_d94eb8442c85465faf2dacb2b561c766-1" name="rest_code_d94eb8442c85465faf2dacb2b561c766-1" href="#rest_code_d94eb8442c85465faf2dacb2b561c766-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>colour-science
+<div class="code"><pre class="code shell"><a id="rest_code_ba4f439509b74daca46ac869f4b1773a-1" name="rest_code_ba4f439509b74daca46ac869f4b1773a-1" href="#rest_code_ba4f439509b74daca46ac869f4b1773a-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>colour-science
 </pre></div>
 <p>This <em>asciicast</em> demonstrates how to generate a pristine Python <em>VirtualEnv</em>
 environment for Colour:</p>
 <script type="text/javascript" src="https://asciinema.org/a/257384.js" id="asciicast-257384" async data-speed="3">
 </script><p>The optional features dependencies are installed as follows:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_8cebe11b6acf40638cd467f825df3090-1" name="rest_code_8cebe11b6acf40638cd467f825df3090-1" href="#rest_code_8cebe11b6acf40638cd467f825df3090-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span><span class="s1">'colour-science[optional]'</span>
+<div class="code"><pre class="code shell"><a id="rest_code_86256d58662c4c0aaa12326c0fd630b2-1" name="rest_code_86256d58662c4c0aaa12326c0fd630b2-1" href="#rest_code_86256d58662c4c0aaa12326c0fd630b2-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span><span class="s1">'colour-science[optional]'</span>
 </pre></div>
 <p>The development dependencies are installed as follows:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_c68eb295c83a473195ea20c046faba40-1" name="rest_code_c68eb295c83a473195ea20c046faba40-1" href="#rest_code_c68eb295c83a473195ea20c046faba40-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span><span class="s1">'colour-science[development]'</span>
+<div class="code"><pre class="code shell"><a id="rest_code_4321c97e07ce4d9da85476d6b92f4e27-1" name="rest_code_4321c97e07ce4d9da85476d6b92f4e27-1" href="#rest_code_4321c97e07ce4d9da85476d6b92f4e27-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span><span class="s1">'colour-science[development]'</span>
 </pre></div>
 <p>The graphviz figure plotting dependencies are installed as follows:</p>
 <div class="alert alert-dismissible alert-info line-block">
@@ -207,16 +219,16 @@ the <a class="reference external" href="https://www.graphviz.org/download">Graph
 </div>
 <p class="alert alert-dismissible alert-info">pip install --user 'colour-science[graphviz]'</p>
 <p>The meshing dependencies for gamut computations are installed as follows:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_ec03ff4da974497b98da04147504d319-1" name="rest_code_ec03ff4da974497b98da04147504d319-1" href="#rest_code_ec03ff4da974497b98da04147504d319-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span><span class="s1">'colour-science[meshing]'</span>
+<div class="code"><pre class="code shell"><a id="rest_code_3b8981f2033f44cda704d3f78594fd18-1" name="rest_code_3b8981f2033f44cda704d3f78594fd18-1" href="#rest_code_3b8981f2033f44cda704d3f78594fd18-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span><span class="s1">'colour-science[meshing]'</span>
 </pre></div>
 <p>If you wish to read <em>OpenEXR</em> files, you will need to install the <em>FreeImage</em>
 plugin for <a class="reference external" href="https://imageio.github.io">Imageio</a> as follows:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_961e81ecb490412aad0bb894ce88a327-1" name="rest_code_961e81ecb490412aad0bb894ce88a327-1" href="#rest_code_961e81ecb490412aad0bb894ce88a327-1"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import imageio;imageio.plugins.freeimage.download()"</span>
+<div class="code"><pre class="code shell"><a id="rest_code_7d8341bc8941474aa41e852b47eef364-1" name="rest_code_7d8341bc8941474aa41e852b47eef364-1" href="#rest_code_7d8341bc8941474aa41e852b47eef364-1"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import imageio;imageio.plugins.freeimage.download()"</span>
 </pre></div>
 </section><section id="continuum-analytics-anaconda"><h3>Continuum Analytics Anaconda</h3>
 <p><strong>Colour</strong> is also available for <a class="reference external" href="https://www.anaconda.com">Anaconda</a>
 from <em>Continuum Analytics</em> via <a class="reference external" href="https://conda-forge.org">conda-forge</a>:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_55257dfc35bc4bc3bc9d711472feda67-1" name="rest_code_55257dfc35bc4bc3bc9d711472feda67-1" href="#rest_code_55257dfc35bc4bc3bc9d711472feda67-1"></a>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>colour-science
+<div class="code"><pre class="code shell"><a id="rest_code_e7e9719b59734f0da3eb88929d0d2791-1" name="rest_code_e7e9719b59734f0da3eb88929d0d2791-1" href="#rest_code_e7e9719b59734f0da3eb88929d0d2791-1"></a>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>colour-science
 </pre></div>
 <p>This <em>asciicast</em> demonstrates how to generate a pristine Python <em>conda</em>
 environment for Colour:</p>
@@ -224,9 +236,9 @@ environment for Colour:</p>
 </script></section><section id="github"><h3>Github</h3>
 <p>Alternatively, you can also install directly from
 <a class="reference external" href="https://github.com/colour-science/colour">Github</a> source repository:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_2c0d1b6b1949475aa80150f231d35254-1" name="rest_code_2c0d1b6b1949475aa80150f231d35254-1" href="#rest_code_2c0d1b6b1949475aa80150f231d35254-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git://github.com/colour-science/colour.git
-<a id="rest_code_2c0d1b6b1949475aa80150f231d35254-2" name="rest_code_2c0d1b6b1949475aa80150f231d35254-2" href="#rest_code_2c0d1b6b1949475aa80150f231d35254-2"></a><span class="nb">cd</span><span class="w"> </span>colour
-<a id="rest_code_2c0d1b6b1949475aa80150f231d35254-3" name="rest_code_2c0d1b6b1949475aa80150f231d35254-3" href="#rest_code_2c0d1b6b1949475aa80150f231d35254-3"></a>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>.
+<div class="code"><pre class="code shell"><a id="rest_code_7379a796e0834c4eb9b40ae3dc1a4351-1" name="rest_code_7379a796e0834c4eb9b40ae3dc1a4351-1" href="#rest_code_7379a796e0834c4eb9b40ae3dc1a4351-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git://github.com/colour-science/colour.git
+<a id="rest_code_7379a796e0834c4eb9b40ae3dc1a4351-2" name="rest_code_7379a796e0834c4eb9b40ae3dc1a4351-2" href="#rest_code_7379a796e0834c4eb9b40ae3dc1a4351-2"></a><span class="nb">cd</span><span class="w"> </span>colour
+<a id="rest_code_7379a796e0834c4eb9b40ae3dc1a4351-3" name="rest_code_7379a796e0834c4eb9b40ae3dc1a4351-3" href="#rest_code_7379a796e0834c4eb9b40ae3dc1a4351-3"></a>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>.
 </pre></div>
 </section></section><section id="installation-methods-for-developing-colour"><h2>Installation Methods for Developing Colour</h2>
 <div class="alert alert-dismissible alert-info line-block">
@@ -242,18 +254,18 @@ development.</p>
 <p>Assuming <a class="reference external" href="https://www.python.org/download/releases">python &gt;= 3.11, &lt; 3.15</a> is
 available on your system, the development dependencies are installed with
 <a class="reference external" href="https://docs.astral.sh/uv">uv</a> as follows:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_e95f0420824c4f52adb8798a63516ab3-1" name="rest_code_e95f0420824c4f52adb8798a63516ab3-1" href="#rest_code_e95f0420824c4f52adb8798a63516ab3-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git://github.com/colour-science/colour.git
-<a id="rest_code_e95f0420824c4f52adb8798a63516ab3-2" name="rest_code_e95f0420824c4f52adb8798a63516ab3-2" href="#rest_code_e95f0420824c4f52adb8798a63516ab3-2"></a><span class="nb">cd</span><span class="w"> </span>colour
-<a id="rest_code_e95f0420824c4f52adb8798a63516ab3-3" name="rest_code_e95f0420824c4f52adb8798a63516ab3-3" href="#rest_code_e95f0420824c4f52adb8798a63516ab3-3"></a>uv<span class="w"> </span>sync<span class="w"> </span>--all-extras
+<div class="code"><pre class="code shell"><a id="rest_code_5895356156e24f9ca592e392ad870bd1-1" name="rest_code_5895356156e24f9ca592e392ad870bd1-1" href="#rest_code_5895356156e24f9ca592e392ad870bd1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git://github.com/colour-science/colour.git
+<a id="rest_code_5895356156e24f9ca592e392ad870bd1-2" name="rest_code_5895356156e24f9ca592e392ad870bd1-2" href="#rest_code_5895356156e24f9ca592e392ad870bd1-2"></a><span class="nb">cd</span><span class="w"> </span>colour
+<a id="rest_code_5895356156e24f9ca592e392ad870bd1-3" name="rest_code_5895356156e24f9ca592e392ad870bd1-3" href="#rest_code_5895356156e24f9ca592e392ad870bd1-3"></a>uv<span class="w"> </span>sync<span class="w"> </span>--all-extras
 </pre></div>
 <p>Those commands will create a Virtual Environment in which all the required
 python packages will be installed.</p>
 <p>Tools can then be run as follows:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_fa8ca8568d594b4b991c5b27778f6c18-1" name="rest_code_fa8ca8568d594b4b991c5b27778f6c18-1" href="#rest_code_fa8ca8568d594b4b991c5b27778f6c18-1"></a>uv<span class="w"> </span>run<span class="w"> </span>invoke<span class="w"> </span>-l
+<div class="code"><pre class="code shell"><a id="rest_code_34e4b78752b144ac99c101131c521ffc-1" name="rest_code_34e4b78752b144ac99c101131c521ffc-1" href="#rest_code_34e4b78752b144ac99c101131c521ffc-1"></a>uv<span class="w"> </span>run<span class="w"> </span>invoke<span class="w"> </span>-l
 </pre></div>
 <p>or alternatively:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_eda018531d184a959ca48aa3db706b09-1" name="rest_code_eda018531d184a959ca48aa3db706b09-1" href="#rest_code_eda018531d184a959ca48aa3db706b09-1"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-<a id="rest_code_eda018531d184a959ca48aa3db706b09-2" name="rest_code_eda018531d184a959ca48aa3db706b09-2" href="#rest_code_eda018531d184a959ca48aa3db706b09-2"></a>invoke<span class="w"> </span>-l
+<div class="code"><pre class="code shell"><a id="rest_code_251c962267c8441dac9230d15a859351-1" name="rest_code_251c962267c8441dac9230d15a859351-1" href="#rest_code_251c962267c8441dac9230d15a859351-1"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+<a id="rest_code_251c962267c8441dac9230d15a859351-2" name="rest_code_251c962267c8441dac9230d15a859351-2" href="#rest_code_251c962267c8441dac9230d15a859351-2"></a>invoke<span class="w"> </span>-l
 </pre></div>
 </section><section id="vagrant"><h3>Vagrant</h3>
 <p>An easy way to get all the pre-requisites at once is to use our
@@ -307,7 +319,7 @@ environment for <a class="reference external" href="https://www.vagrantup.com">V
         </a>
     </li>
 </ul>
-<div class="text-center text-light py-3"><span>Copyright © 2013-2025 – Colour Developers</span></div>
+<div class="text-center text-light py-3"><span>Copyright © 2013-2026 – Colour Developers</span></div>
 
     
 </footer><!-- End of Footer --><script src="../assets/js/jquery.min.js"></script><script src="../assets/js/popper.min.js"></script><script src="../assets/js/bootstrap.min.js"></script><script src="../assets/js/baguetteBox.min.js"></script><script>

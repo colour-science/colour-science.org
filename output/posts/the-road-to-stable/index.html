@@ -16,7 +16,19 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://www.colour-science.org/posts/the-road-to-stable/">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
 </script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.1/css/all.css" integrity="sha384-QI8z31KmtR+tk1MYi0DfgxrjYgpTpLLol3bqZA/Q1Y8BvH+6k7/Huoj38gQOaCS7" crossorigin="anonymous">
 <meta name="google-site-verification" content="CeWflIcbu-x7Ur7qbzTYJiRFvoGF5RljJyGZMg7H9co">
 <meta name="author" content="Colour Developers">
@@ -161,51 +173,51 @@ navbar-dark bg-dark bg-primary
 <li><p>The second is support for metadata inside the API. Most of the codebase adopts definitions/functions over classes to stay clean and lean, the aforementioned spectral implementation being a notable exception. As a consequence, it is hard to implement a non-intrusive classifying mechanism, provide usable hints on functions domain/range or create an auto-conversion layer. We have considered multiple ways of providing the necessary metadata, e.g., <a class="reference external" href="https://github.com/colour-science/colour/branches/all">experimental/medatada* branches</a>, and decided that the true elegant solution was through docstrings.</p></li>
 </ul>
 <p>The following example showcases the current implementation, defining metadata for <em>parameters</em>, <em>returns</em> and the definition by using the <em>notes</em> section:</p>
-<div class="code"><pre class="code python"><a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-1" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-1" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-1"></a><span class="k">def</span> <span class="nf">luminance_Newhall1943</span><span class="p">(</span><span class="n">V</span><span class="p">):</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-2" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-2" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-2"></a><span class="w">    </span><span class="sd">"""</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-3" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-3" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-3"></a><span class="sd">    Returns the *luminance* :math:`R_Y` of given *Munsell* value :math:`V`</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-4" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-4" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-4"></a><span class="sd">    using *Newhall et al. (1943)* method.</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-5" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-5" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-5"></a>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-6" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-6" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-6"></a><span class="sd">    Parameters</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-7" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-7" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-7"></a><span class="sd">    ----------</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-8" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-8" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-8"></a><span class="sd">    V : numeric or array_like</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-9" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-9" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-9"></a><span class="sd">        metadata : {'type': 'Munsell Value', 'symbol': 'V', 'extent': (0, 10)}</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-10" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-10" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-10"></a><span class="sd">        *Munsell* value :math:`V`.</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-11" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-11" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-11"></a>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-12" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-12" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-12"></a><span class="sd">    Returns</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-13" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-13" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-13"></a><span class="sd">    -------</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-14" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-14" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-14"></a><span class="sd">    numeric or array_like</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-15" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-15" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-15"></a><span class="sd">        metadata : {'type': 'Luminance', 'symbol': 'R_Y', 'extent': (0, 100)}</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-16" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-16" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-16"></a><span class="sd">        *luminance* :math:`R_Y`.</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-17" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-17" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-17"></a>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-18" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-18" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-18"></a><span class="sd">    Notes</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-19" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-19" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-19"></a><span class="sd">    -----</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-20" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-20" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-20"></a><span class="sd">    metadata : {'classifier': 'Luminance Conversion Function', 'method_name':</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-21" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-21" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-21"></a><span class="sd">        'Newhall 1943', 'method_strict_name': 'Newhall et al. (1943)'}</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-22" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-22" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-22"></a>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-23" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-23" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-23"></a><span class="sd">    References</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-24" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-24" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-24"></a><span class="sd">    ----------</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-25" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-25" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-25"></a><span class="sd">    .. [1]  Newhall, S. M., Nickerson, D., &amp; Judd, D. B. (1943). Final report</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-26" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-26" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-26"></a><span class="sd">            of the OSA subcommittee on the spacing of the munsell colors. JOSA,</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-27" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-27" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-27"></a><span class="sd">            33(7), 385. doi:10.1364/JOSA.33.000385</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-28" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-28" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-28"></a>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-29" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-29" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-29"></a><span class="sd">    Examples</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-30" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-30" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-30"></a><span class="sd">    --------</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-31" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-31" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-31"></a><span class="sd">    &gt;&gt;&gt; luminance_Newhall1943(3.74629715382)  # doctest: +ELLIPSIS</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-32" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-32" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-32"></a><span class="sd">    10.4089874...</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-33" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-33" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-33"></a><span class="sd">    """</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-34" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-34" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-34"></a>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-35" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-35" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-35"></a>    <span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-36" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-36" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-36"></a>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-37" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-37" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-37"></a>    <span class="n">R_Y</span> <span class="o">=</span> <span class="p">(</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-38" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-38" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-38"></a>        <span class="mf">1.2219</span> <span class="o">*</span> <span class="n">V</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-39" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-39" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-39"></a>        <span class="o">-</span> <span class="mf">0.23111</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span> <span class="o">*</span> <span class="n">V</span><span class="p">)</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-40" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-40" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-40"></a>        <span class="o">+</span> <span class="mf">0.23951</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-41" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-41" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-41"></a>        <span class="o">-</span> <span class="mf">0.021009</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-42" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-42" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-42"></a>        <span class="o">+</span> <span class="mf">0.0008404</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-43" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-43" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-43"></a>    <span class="p">)</span>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-44" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-44" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-44"></a>
-<a id="rest_code_1b82d221c83e4012b0ab860e82be2e07-45" name="rest_code_1b82d221c83e4012b0ab860e82be2e07-45" href="#rest_code_1b82d221c83e4012b0ab860e82be2e07-45"></a>    <span class="k">return</span> <span class="n">R_Y</span>
+<div class="code"><pre class="code python"><a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-1" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-1" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">luminance_Newhall1943</span><span class="p">(</span><span class="n">V</span><span class="p">):</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-2" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-2" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-2"></a><span class="w">    </span><span class="sd">"""</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-3" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-3" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-3"></a><span class="sd">    Returns the *luminance* :math:`R_Y` of given *Munsell* value :math:`V`</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-4" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-4" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-4"></a><span class="sd">    using *Newhall et al. (1943)* method.</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-5" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-5" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-5"></a>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-6" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-6" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-6"></a><span class="sd">    Parameters</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-7" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-7" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-7"></a><span class="sd">    ----------</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-8" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-8" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-8"></a><span class="sd">    V : numeric or array_like</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-9" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-9" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-9"></a><span class="sd">        metadata : {'type': 'Munsell Value', 'symbol': 'V', 'extent': (0, 10)}</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-10" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-10" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-10"></a><span class="sd">        *Munsell* value :math:`V`.</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-11" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-11" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-11"></a>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-12" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-12" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-12"></a><span class="sd">    Returns</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-13" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-13" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-13"></a><span class="sd">    -------</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-14" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-14" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-14"></a><span class="sd">    numeric or array_like</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-15" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-15" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-15"></a><span class="sd">        metadata : {'type': 'Luminance', 'symbol': 'R_Y', 'extent': (0, 100)}</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-16" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-16" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-16"></a><span class="sd">        *luminance* :math:`R_Y`.</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-17" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-17" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-17"></a>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-18" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-18" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-18"></a><span class="sd">    Notes</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-19" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-19" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-19"></a><span class="sd">    -----</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-20" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-20" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-20"></a><span class="sd">    metadata : {'classifier': 'Luminance Conversion Function', 'method_name':</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-21" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-21" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-21"></a><span class="sd">        'Newhall 1943', 'method_strict_name': 'Newhall et al. (1943)'}</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-22" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-22" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-22"></a>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-23" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-23" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-23"></a><span class="sd">    References</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-24" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-24" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-24"></a><span class="sd">    ----------</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-25" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-25" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-25"></a><span class="sd">    .. [1]  Newhall, S. M., Nickerson, D., &amp; Judd, D. B. (1943). Final report</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-26" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-26" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-26"></a><span class="sd">            of the OSA subcommittee on the spacing of the munsell colors. JOSA,</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-27" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-27" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-27"></a><span class="sd">            33(7), 385. doi:10.1364/JOSA.33.000385</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-28" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-28" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-28"></a>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-29" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-29" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-29"></a><span class="sd">    Examples</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-30" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-30" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-30"></a><span class="sd">    --------</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-31" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-31" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-31"></a><span class="sd">    &gt;&gt;&gt; luminance_Newhall1943(3.74629715382)  # doctest: +ELLIPSIS</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-32" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-32" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-32"></a><span class="sd">    10.4089874...</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-33" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-33" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-33"></a><span class="sd">    """</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-34" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-34" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-34"></a>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-35" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-35" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-35"></a>    <span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-36" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-36" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-36"></a>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-37" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-37" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-37"></a>    <span class="n">R_Y</span> <span class="o">=</span> <span class="p">(</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-38" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-38" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-38"></a>        <span class="mf">1.2219</span> <span class="o">*</span> <span class="n">V</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-39" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-39" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-39"></a>        <span class="o">-</span> <span class="mf">0.23111</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span> <span class="o">*</span> <span class="n">V</span><span class="p">)</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-40" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-40" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-40"></a>        <span class="o">+</span> <span class="mf">0.23951</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-41" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-41" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-41"></a>        <span class="o">-</span> <span class="mf">0.021009</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-42" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-42" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-42"></a>        <span class="o">+</span> <span class="mf">0.0008404</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-43" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-43" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-43"></a>    <span class="p">)</span>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-44" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-44" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-44"></a>
+<a id="rest_code_1c25adade4a54c5e9f4585f088cf1c92-45" name="rest_code_1c25adade4a54c5e9f4585f088cf1c92-45" href="#rest_code_1c25adade4a54c5e9f4585f088cf1c92-45"></a>    <span class="k">return</span> <span class="n">R_Y</span>
 </pre></div>
 <p>There is one caveat though: running Python with <code class="docutils literal"><span class="pre">-OO</span></code> argument will optimize the bytecode and trim the docstrings and as a result preventing metadata usage. This is an edge case we are aware of and it will be advertised.</p>
 <p>These two features are consequential and taking a fair amount of time to implement and test. They will also introduce backward incompatible changes.</p>
@@ -286,7 +298,7 @@ navbar-dark bg-dark bg-primary
         </a>
     </li>
 </ul>
-<div class="text-center text-light py-3"><span>Copyright © 2013-2025 – Colour Developers</span></div>
+<div class="text-center text-light py-3"><span>Copyright © 2013-2026 – Colour Developers</span></div>
 
     
 </footer><!-- End of Footer --><script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>

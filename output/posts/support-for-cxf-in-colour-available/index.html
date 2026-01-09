@@ -16,7 +16,19 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://www.colour-science.org/posts/support-for-cxf-in-colour-available/">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
 </script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.1/css/all.css" integrity="sha384-QI8z31KmtR+tk1MYi0DfgxrjYgpTpLLol3bqZA/Q1Y8BvH+6k7/Huoj38gQOaCS7" crossorigin="anonymous">
 <meta name="google-site-verification" content="CeWflIcbu-x7Ur7qbzTYJiRFvoGF5RljJyGZMg7H9co">
 <meta name="author" content="Colour Developers">
@@ -175,31 +187,31 @@ include metadata and descriptions about the color information.</p>
 <li><p>Creating <strong>CxF</strong> objects programmatically for custom color data workflows.</p></li>
 </ul></section><section id="getting-started"><h2>Getting started</h2>
 <p>Install <a class="reference external" href="https://github.com/colour-science/colour-cxf">Colour - CxF</a> via <a class="reference external" href="https://pypi.org/project/pip">pip</a>:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_7ca107ea84a242bc9ec8fe4ff9bee08c-1" name="rest_code_7ca107ea84a242bc9ec8fe4ff9bee08c-1" href="#rest_code_7ca107ea84a242bc9ec8fe4ff9bee08c-1"></a>pip<span class="w"> </span>install<span class="w"> </span>colour-cxf
+<div class="code"><pre class="code bash"><a id="rest_code_e05a587ab31c44de960e950478becc8a-1" name="rest_code_e05a587ab31c44de960e950478becc8a-1" href="#rest_code_e05a587ab31c44de960e950478becc8a-1"></a>pip<span class="w"> </span>install<span class="w"> </span>colour-cxf
 </pre></div>
 <p>or via <a class="reference external" href="https://docs.astral.sh/uv">uv</a>:</p>
-<div class="code"><pre class="code bash"><a id="rest_code_6325413306a34e609e4f80bd61b4f90e-1" name="rest_code_6325413306a34e609e4f80bd61b4f90e-1" href="#rest_code_6325413306a34e609e4f80bd61b4f90e-1"></a>uv<span class="w"> </span>add<span class="w"> </span>colour-cfx
+<div class="code"><pre class="code bash"><a id="rest_code_06d049ac96e64274ad54f69915fcfa9b-1" name="rest_code_06d049ac96e64274ad54f69915fcfa9b-1" href="#rest_code_06d049ac96e64274ad54f69915fcfa9b-1"></a>uv<span class="w"> </span>add<span class="w"> </span>colour-cfx
 </pre></div>
 <p>Then use it to read <strong>CxF</strong> data:</p>
-<div class="code"><pre class="code python"><a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-1" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-1" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-1"></a><span class="kn">import</span> <span class="nn">colour_cxf</span>
-<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-2" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-2" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-2"></a>
-<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-3" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-3" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-3"></a><span class="c1"># Reading from a string</span>
-<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-4" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-4" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-4"></a><span class="n">xml_string</span> <span class="o">=</span> <span class="s2">"""</span>
-<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-5" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-5" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-5"></a><span class="s2">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
-<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-6" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-6" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-6"></a><span class="s2">&lt;cc:CxF xmlns:cc="http://colorexchangeformat.com/CxF3-core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;</span>
-<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-7" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-7" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-7"></a><span class="s2">    &lt;cc:FileInformation&gt;</span>
-<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-8" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-8" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-8"></a><span class="s2">        &lt;cc:Creator&gt;Colour Developers&lt;/cc:Creator&gt;</span>
-<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-9" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-9" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-9"></a><span class="s2">        &lt;cc:Description&gt;Simple CxF Example&lt;/cc:Description&gt;</span>
-<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-10" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-10" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-10"></a><span class="s2">    &lt;/cc:FileInformation&gt;</span>
-<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-11" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-11" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-11"></a><span class="s2">&lt;/cc:CxF&gt;</span>
-<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-12" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-12" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-12"></a><span class="s2">"""</span>
-<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-13" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-13" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-13"></a>
-<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-14" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-14" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-14"></a><span class="c1"># Parse the XML string</span>
-<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-15" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-15" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-15"></a><span class="n">cxf</span> <span class="o">=</span> <span class="n">colour_cxf</span><span class="o">.</span><span class="n">read_cxf</span><span class="p">(</span><span class="n">xml_string</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">"utf-8"</span><span class="p">))</span>
-<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-16" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-16" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-16"></a>
-<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-17" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-17" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-17"></a><span class="c1"># Access file information</span>
-<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-18" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-18" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-18"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Creator: </span><span class="si">{</span><span class="n">cxf</span><span class="o">.</span><span class="n">file_information</span><span class="o">.</span><span class="n">creator</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<a id="rest_code_bc37fa943314464ab257d0a64e8a4dd1-19" name="rest_code_bc37fa943314464ab257d0a64e8a4dd1-19" href="#rest_code_bc37fa943314464ab257d0a64e8a4dd1-19"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Description: </span><span class="si">{</span><span class="n">cxf</span><span class="o">.</span><span class="n">file_information</span><span class="o">.</span><span class="n">description</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<div class="code"><pre class="code python"><a id="rest_code_f2cbdd2705a24f46b68c214c5c97559f-1" name="rest_code_f2cbdd2705a24f46b68c214c5c97559f-1" href="#rest_code_f2cbdd2705a24f46b68c214c5c97559f-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">colour_cxf</span>
+<a id="rest_code_f2cbdd2705a24f46b68c214c5c97559f-2" name="rest_code_f2cbdd2705a24f46b68c214c5c97559f-2" href="#rest_code_f2cbdd2705a24f46b68c214c5c97559f-2"></a>
+<a id="rest_code_f2cbdd2705a24f46b68c214c5c97559f-3" name="rest_code_f2cbdd2705a24f46b68c214c5c97559f-3" href="#rest_code_f2cbdd2705a24f46b68c214c5c97559f-3"></a><span class="c1"># Reading from a string</span>
+<a id="rest_code_f2cbdd2705a24f46b68c214c5c97559f-4" name="rest_code_f2cbdd2705a24f46b68c214c5c97559f-4" href="#rest_code_f2cbdd2705a24f46b68c214c5c97559f-4"></a><span class="n">xml_string</span> <span class="o">=</span> <span class="s2">"""</span>
+<a id="rest_code_f2cbdd2705a24f46b68c214c5c97559f-5" name="rest_code_f2cbdd2705a24f46b68c214c5c97559f-5" href="#rest_code_f2cbdd2705a24f46b68c214c5c97559f-5"></a><span class="s2">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<a id="rest_code_f2cbdd2705a24f46b68c214c5c97559f-6" name="rest_code_f2cbdd2705a24f46b68c214c5c97559f-6" href="#rest_code_f2cbdd2705a24f46b68c214c5c97559f-6"></a><span class="s2">&lt;cc:CxF xmlns:cc="http://colorexchangeformat.com/CxF3-core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;</span>
+<a id="rest_code_f2cbdd2705a24f46b68c214c5c97559f-7" name="rest_code_f2cbdd2705a24f46b68c214c5c97559f-7" href="#rest_code_f2cbdd2705a24f46b68c214c5c97559f-7"></a><span class="s2">    &lt;cc:FileInformation&gt;</span>
+<a id="rest_code_f2cbdd2705a24f46b68c214c5c97559f-8" name="rest_code_f2cbdd2705a24f46b68c214c5c97559f-8" href="#rest_code_f2cbdd2705a24f46b68c214c5c97559f-8"></a><span class="s2">        &lt;cc:Creator&gt;Colour Developers&lt;/cc:Creator&gt;</span>
+<a id="rest_code_f2cbdd2705a24f46b68c214c5c97559f-9" name="rest_code_f2cbdd2705a24f46b68c214c5c97559f-9" href="#rest_code_f2cbdd2705a24f46b68c214c5c97559f-9"></a><span class="s2">        &lt;cc:Description&gt;Simple CxF Example&lt;/cc:Description&gt;</span>
+<a id="rest_code_f2cbdd2705a24f46b68c214c5c97559f-10" name="rest_code_f2cbdd2705a24f46b68c214c5c97559f-10" href="#rest_code_f2cbdd2705a24f46b68c214c5c97559f-10"></a><span class="s2">    &lt;/cc:FileInformation&gt;</span>
+<a id="rest_code_f2cbdd2705a24f46b68c214c5c97559f-11" name="rest_code_f2cbdd2705a24f46b68c214c5c97559f-11" href="#rest_code_f2cbdd2705a24f46b68c214c5c97559f-11"></a><span class="s2">&lt;/cc:CxF&gt;</span>
+<a id="rest_code_f2cbdd2705a24f46b68c214c5c97559f-12" name="rest_code_f2cbdd2705a24f46b68c214c5c97559f-12" href="#rest_code_f2cbdd2705a24f46b68c214c5c97559f-12"></a><span class="s2">"""</span>
+<a id="rest_code_f2cbdd2705a24f46b68c214c5c97559f-13" name="rest_code_f2cbdd2705a24f46b68c214c5c97559f-13" href="#rest_code_f2cbdd2705a24f46b68c214c5c97559f-13"></a>
+<a id="rest_code_f2cbdd2705a24f46b68c214c5c97559f-14" name="rest_code_f2cbdd2705a24f46b68c214c5c97559f-14" href="#rest_code_f2cbdd2705a24f46b68c214c5c97559f-14"></a><span class="c1"># Parse the XML string</span>
+<a id="rest_code_f2cbdd2705a24f46b68c214c5c97559f-15" name="rest_code_f2cbdd2705a24f46b68c214c5c97559f-15" href="#rest_code_f2cbdd2705a24f46b68c214c5c97559f-15"></a><span class="n">cxf</span> <span class="o">=</span> <span class="n">colour_cxf</span><span class="o">.</span><span class="n">read_cxf</span><span class="p">(</span><span class="n">xml_string</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">"utf-8"</span><span class="p">))</span>
+<a id="rest_code_f2cbdd2705a24f46b68c214c5c97559f-16" name="rest_code_f2cbdd2705a24f46b68c214c5c97559f-16" href="#rest_code_f2cbdd2705a24f46b68c214c5c97559f-16"></a>
+<a id="rest_code_f2cbdd2705a24f46b68c214c5c97559f-17" name="rest_code_f2cbdd2705a24f46b68c214c5c97559f-17" href="#rest_code_f2cbdd2705a24f46b68c214c5c97559f-17"></a><span class="c1"># Access file information</span>
+<a id="rest_code_f2cbdd2705a24f46b68c214c5c97559f-18" name="rest_code_f2cbdd2705a24f46b68c214c5c97559f-18" href="#rest_code_f2cbdd2705a24f46b68c214c5c97559f-18"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Creator: </span><span class="si">{</span><span class="n">cxf</span><span class="o">.</span><span class="n">file_information</span><span class="o">.</span><span class="n">creator</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="rest_code_f2cbdd2705a24f46b68c214c5c97559f-19" name="rest_code_f2cbdd2705a24f46b68c214c5c97559f-19" href="#rest_code_f2cbdd2705a24f46b68c214c5c97559f-19"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Description: </span><span class="si">{</span><span class="n">cxf</span><span class="o">.</span><span class="n">file_information</span><span class="o">.</span><span class="n">description</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </section><section id="more-information"><h2>More Information</h2>
 <p>Visit the <a class="reference external" href="https://github.com/colour-science/colour-cxf">Colour - CxF</a> repository for more information,
@@ -288,7 +300,7 @@ for funding the work on this package through the
         </a>
     </li>
 </ul>
-<div class="text-center text-light py-3"><span>Copyright © 2013-2025 – Colour Developers</span></div>
+<div class="text-center text-light py-3"><span>Copyright © 2013-2026 – Colour Developers</span></div>
 
     
 </footer><!-- End of Footer --><script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>
