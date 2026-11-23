@@ -1,4 +1,4 @@
-.. title: Our First 1000 Stars on Github!
+.. title: Our First 1000 Stars on GitHub!
 .. slug: our-first-1000-stars-on-github
 .. date: 2020-09-28 09:39:40 UTC+01:00
 .. tags: colour, colour science, github
@@ -8,7 +8,7 @@
 .. type: text
 
 Earlier this week, `Colour <https://github.com/colour-science/colour>`__
-received its 1000th Github star ⭐ and we are proud of the achievement!
+received its 1000th GitHub star ⭐ and we are proud of the achievement!
 
 We would not be here without the help of our users, `sponsors <https://github.com/colour-science/colour/blob/develop/SPONSORS.rst>`__, `contributors <https://github.com/colour-science/colour/blob/develop/CONTRIBUTORS.rst>`__ and
 `NumFOCUS <https://numfocus.org>`__, so thank you all!
@@ -18,7 +18,7 @@ We would not be here without the help of our users, `sponsors <https://github.co
 .. image:: /images/1000_Stars.png
     :target: https://star-history.t9t.io/#colour-science/colour
 
-The development started six years ago, in April 2014 and today we reached an
+The development started six years ago, in April 2014, and today we reached an
 important and exciting milestone.
 
 .. code:: shell
@@ -115,7 +115,7 @@ accomplished to cherry-pick from:
 -   Growing number of `contributors <https://www.colour-science.org/contributors>`__
 -   Cited by a `growing number of publications <https://www.colour-science.org/cited-by>`__
 -   A few `thousands of monthly downloads <https://pypistats.org/packages/colour-science>`__
--   Trended for a few days in 2018 on Github
+-   Trended for a few days in 2018 on GitHub
 -   Used by a growing number of companies, studios, universities:
 
     -   **Google**

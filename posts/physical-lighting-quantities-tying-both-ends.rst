@@ -203,7 +203,7 @@ that will be used in this section.
     Final Treasure Island panoramic HDRI merged and stitched from the original
     .CR2 files.
 
-The authors have been kindly enough to send me the original .CR2 files so that
+The authors were kind enough to send me the original .CR2 files so that
 I could merge and stitch them.
 
 Merging was performed with `Colour - HDRI <https://github.com/colour-science/colour-hdri/blob/develop/colour_hdri/generation/radiance.py>`__,
@@ -226,14 +226,14 @@ example.
     with neutral density filters.
 
 With the various .CR2 file batches merged, the validation process involves
-comparing a cherry picked .CR2 file from one of the exposure batches with the
+comparing a cherry-picked .CR2 file from one of the exposure batches with the
 corresponding HDRI scaled to absolute luminance and imaged via the DSC Exposure
 Model using the camera settings of the .CR2 file.
 
 .. figure:: /images/Blog_Unity_Treasure_Island_Angle_Imaged.png
 
     From left to right: The HDRI scaled to absolute luminance using 51000 lux,
-    the cherry picked .CR2 file, the HDRI scaled to absolute luminance and
+    the cherry-picked .CR2 file, the HDRI scaled to absolute luminance and
     imaged with the DSC Exposure Model.
 
 Conclusion
@@ -243,7 +243,7 @@ With Treasure Island, the HDRI scaled to absolute luminance is about 14%
 brighter (clipped luminance) than the .CR2 file. This is not perfect but
 considering the scaling factors involved, it is reasonably satisfactory.
 
-Some potential source of discrepancies are:
+Some potential sources of discrepancies are:
 
 -   Lack of flat-fields to correct the neutral density filter attenuation and
     thus some manual correction was introduced.
@@ -258,9 +258,9 @@ dependent on good metering of the scene upper hemisphere illuminance along with
 non-clipped capture and correct processing of HDR imagery.
 
 Conversely and assuming a correctly implemented (DSC) Exposure Model, this
-method also allows to check if the panoramic HDRI is correctly captured and
+method also lets us check whether the panoramic HDRI is correctly captured and
 processed.
 
-Finally, I would like to thanks Sebastien Lagarde, Sebastien Lachambre and
+Finally, I would like to thank Sebastien Lagarde, Sebastien Lachambre and
 Cyril Jover for the recurring conversations on that topic during the past few
 years.

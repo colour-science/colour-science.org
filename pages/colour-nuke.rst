@@ -10,11 +10,11 @@
 **Colour - Nuke** provides an implementation of **Colour** within
 `The Foundry Nuke <http://www.thefoundry.co.uk/products/nuke-product-family/nuke>`__.
 
-This is historically where **Colour** started as a raw images colour
+This is historically where **Colour** started as a raw image colour
 conversion plugin for `The Moving Picture Company <http://www.moving-picture.com>`__
 stills ingestion pipeline.
 
-Most of the code being under NDA, it has been removed from the repository.
+Because most of the code is under NDA, it has been removed from the repository.
 
 Features
 ^^^^^^^^
@@ -39,4 +39,4 @@ Examples
 Downloads
 ^^^^^^^^^
 
--   `Colour - Nuke Github Repository <https://github.com/colour-science/colour-nuke>`__
+-   `Colour - Nuke GitHub Repository <https://github.com/colour-science/colour-nuke>`__

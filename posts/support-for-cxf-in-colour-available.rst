@@ -16,7 +16,7 @@ This extension package for **Colour** implements reading and writing files in th
 What is CxF?
 ------------
 
-**CxF** is a XML-based file format that provides a flexible way to store and exchange color data across different systems.
+**CxF** is an XML-based file format that provides a flexible way to store and exchange color data across different systems.
 It supports multiple color formats including RGB, CIELab, and spectral measurements, while providing standard ways to
 include metadata and descriptions about the color information.
 
@@ -77,4 +77,4 @@ Funding
 -------
 We would like to thank `NumFOCUS <https://numfocus.org>`__
 for funding the work on this package through the
-`The Small Development Grants program  <https://numfocus.org/programs/small-development-grants>`__.
+`Small Development Grants program <https://numfocus.org/programs/small-development-grants>`__.

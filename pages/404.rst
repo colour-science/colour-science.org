@@ -28,9 +28,7 @@ If you still can't find what you are looking for, try using the search form belo
                 name="q"
                 class="form-control"
                 placeholder="Search">
-            <button type="submit" class="btn btn-primary">
-                <span class="fas fa-search"></span>
-            </button>
+            <button type="submit" class="btn btn-primary">Search</button>
         </div>
         <input
             type="hidden"

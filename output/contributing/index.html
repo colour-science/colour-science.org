@@ -12,7 +12,8 @@
 <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta name="theme-color" content="#191919">
+<link href="../assets/css/site.css?v=6" rel="stylesheet">
+<meta name="theme-color" content="#101010">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="https://www.colour-science.org/contributing/">
@@ -28,9 +29,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
-</script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.1/css/all.css" integrity="sha384-QI8z31KmtR+tk1MYi0DfgxrjYgpTpLLol3bqZA/Q1Y8BvH+6k7/Huoj38gQOaCS7" crossorigin="anonymous">
-<meta name="google-site-verification" content="CeWflIcbu-x7Ur7qbzTYJiRFvoGF5RljJyGZMg7H9co">
+</script><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="google-site-verification" content="CeWflIcbu-x7Ur7qbzTYJiRFvoGF5RljJyGZMg7H9co">
 <meta name="author" content="Colour Developers">
 <meta property="og:site_name" content="Colour Science">
 <meta property="og:title" content="Contributing">
@@ -44,16 +43,16 @@ Reporting a defect, proposing a new feature, an enh">
 <meta property="article:published_time" content="2015-11-25T05:35:44Z">
 <meta property="article:tag" content="contributing">
 </head>
-<body>
+<body class="site-body">
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
 <!-- Menubar -->
 
-<nav class="navbar navbar-expand-xl static-top
-navbar-dark bg-dark bg-primary
+<nav aria-label="Primary" class="site-nav navbar navbar-expand-xl static-top
+navbar-dark
 "><div class="container">
 <!-- This keeps the margins nice -->
-        <a class="navbar-brand" href="https://www.colour-science.org/">
+        <a class="navbar-brand" href="../">
 
             <span id="blog-title">Colour Science</span>
         </a>
@@ -64,7 +63,7 @@ navbar-dark bg-dark bg-primary
         <div class="collapse navbar-collapse" id="bs-navbar">
             <ul class="navbar-nav mr-auto">
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Projects</button>
             <div class="dropdown-menu">
                     <a href="../apps" class="dropdown-item"><span class="font-weight-bold">Apps (Colour - Dash)</span></a>
                     <a href="http://awesome-colour.org/" class="dropdown-item"><span class="font-weight-bold">Awesome Colour</span></a>
@@ -82,7 +81,7 @@ navbar-dark bg-dark bg-primary
             </div>
             </li>
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Documentation</button>
             <div class="dropdown-menu">
                     <a href="../installation-guide" class="dropdown-item"><span class="font-weight-bold">Installation Guide</span></a>
                     <a href="https://colour.readthedocs.io/en/develop/tutorial.html" class="dropdown-item"><span class="font-weight-bold">Static Tutorial</span></a>
@@ -102,7 +101,7 @@ navbar-dark bg-dark bg-primary
             </div>
             </li>
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Blog</button>
             <div class="dropdown-menu">
                     <a href="../blog" class="dropdown-item"><span class="font-weight-bold">Posts</span></a>
                     <a href="../archive.html" class="dropdown-item"><span class="font-weight-normal">Archive</span></a>
@@ -110,50 +109,56 @@ navbar-dark bg-dark bg-primary
             </div>
                 </li>
 <li class="nav-item">
-<a href="mailto:colour-developers@colour-science.org" class="nav-link"><i class="fa-regular fa-envelope"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://github.com/colour-science/colour" class="nav-link"><i class="fa-brands fa-github"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://www.facebook.com/python.colour.science" class="nav-link"><i class="fa-brands fa-facebook"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://gitter.im/colour-science/colour" class="nav-link"><i class="fa-brands fa-gitter"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://x.com/colour_science" class="nav-link"><i class="fa-brands fa-x-twitter"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://bsky.app/profile/colour-science.bsky.social" class="nav-link"><i class="fa-brands fa-bluesky"></i></a>
+<a href="../#sponsors" class="nav-link">Sponsors</a>
 
                 
             </li>
 </ul>
-<ul class="navbar-nav navbar-right"></ul>
+<ul class="navbar-nav navbar-right">
+<li class="nav-item">
+<a href="mailto:colour-developers@colour-science.org" class="nav-link"><img class="site-icon" src="../assets/icons/envelope.svg" width="16" height="16" alt=""><span class="sr-only">Email</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://github.com/colour-science/colour" class="nav-link"><img class="site-icon" src="../assets/icons/github.svg" width="16" height="16" alt=""><span class="sr-only">GitHub</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://www.facebook.com/python.colour.science" class="nav-link"><img class="site-icon" src="../assets/icons/facebook.svg" width="16" height="16" alt=""><span class="sr-only">Facebook</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://gitter.im/colour-science/colour" class="nav-link"><img class="site-icon" src="../assets/icons/gitter.svg" width="16" height="16" alt=""><span class="sr-only">Gitter</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://x.com/colour_science" class="nav-link"><img class="site-icon" src="../assets/icons/x-twitter.svg" width="16" height="16" alt=""><span class="sr-only">X</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://bsky.app/profile/colour-science.bsky.social" class="nav-link"><img class="site-icon" src="../assets/icons/bluesky.svg" width="16" height="16" alt=""><span class="sr-only">Bluesky</span></a>
+
+                
+                
+                
+            </li>
+</ul>
 </div>
 <!-- /.navbar-collapse -->
     </div>
 <!-- /.container -->
-</nav><!-- End of Menubar --><!-- Main --><div class="container" id="content" role="main">
-    <div class="row">
+</nav><!-- End of Menubar --><!-- Main --><main class="container" id="content"><div class="row">
         <div class="col-12">
             <div class="body-content">
                 <!--Body content-->
                 
                 
                 
-<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Contributing</a></h1>
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header class="page-header"><h1 class="p-name page-heading" itemprop="headline name">Contributing</h1>
+            
 
-        
-
-    </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p><strong>Colour</strong> is open source and we happily welcome contributions. This guide will
+        </header><div class="e-content entry-content" itemprop="articleBody text">
+        <p><strong>Colour</strong> is open source and we happily welcome contributions. This guide will
 give you an overview on how to contribute.</p>
 <p>There are many ways to help:</p>
 <ul class="simple">
 <li><p>Reporting a defect, proposing a new feature, an enhancement or
-commenting existing issues on the <a class="reference external" href="https://github.com/colour-science/colour/issues">Issue
+commenting on existing issues on the <a class="reference external" href="https://github.com/colour-science/colour/issues">Issue
 Tracker</a>.</p></li>
 <li><p>Contributing new code by implementing new features or adding
 examples. For some ideas you can take a look at the issues with the
@@ -170,7 +175,7 @@ or
 <a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AEnhancement">Enhancement</a>
 labels are a good place to start.</p></li>
 <li>
-<p>Improving siblings packages:</p>
+<p>Improving sibling packages:</p>
 <ul>
 <li><p><a class="reference external" href="../colour-datasets">Colour - Datasets</a></p></li>
 <li><p><a class="reference external" href="../colour-demosaicing">Colour - Demosaicing</a></p></li>
@@ -179,10 +184,10 @@ labels are a good place to start.</p></li>
 <li><p><a class="reference external" href="../colour-visuals">Colour - Visuals</a></p></li>
 </ul>
 </li>
-<li><p>Participating in discussions on <a class="reference external" href="https://github.com/colour-science/colour/discussions">Github</a>.</p></li>
+<li><p>Participating in discussions on <a class="reference external" href="https://github.com/colour-science/colour/discussions">GitHub</a>.</p></li>
 </ul>
-<p><strong>Github</strong> hosts a <a class="reference external" href="https://github.com/firstcontributions/first-contributions">First Contributions</a>
-repository with good information for new comers.</p>
+<p><strong>GitHub</strong> hosts a <a class="reference external" href="https://github.com/firstcontributions/first-contributions">First Contributions</a>
+repository with good information for newcomers.</p>
 <section id="reporting-issues"><h2>Reporting Issues</h2>
 <p>The three major issue types one can report on the issue tracker are the
 following:</p>
@@ -199,7 +204,7 @@ Used for any kind of defect reported.</p>
 <ul>
 <li><p><a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ACritical">Critical</a>:
 Used for issues either rendering the software unusable, causing loss of
-data, or preventing people to work. These issues need to be fixed
+data, or preventing people from working. These issues need to be fixed
 immediately.</p></li>
 <li><p><a class="reference external" href="https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AMajor">Major</a>:
 Used for issues which have significant consequences on the ability of
@@ -264,43 +269,43 @@ issue tracker and we will have to label them as
 and close them.</p>
 <p>When reporting a defect please provide the output of the following command if
 possible, and if it makes sense to do so:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_f8896299de824d8a9a615eb3f377a7dd-1" name="rest_code_f8896299de824d8a9a615eb3f377a7dd-1" href="#rest_code_f8896299de824d8a9a615eb3f377a7dd-1"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import colour;colour.utilities.describe_environment()"</span>
+<div class="code"><pre class="code shell"><a id="rest_code_94b5e8b040634ebeb8f6e9971df9888b-1" name="rest_code_94b5e8b040634ebeb8f6e9971df9888b-1" href="#rest_code_94b5e8b040634ebeb8f6e9971df9888b-1"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import colour;colour.utilities.describe_environment()"</span>
 </pre></div>
 <p>The typical output is something along those lines:</p>
-<div class="code"><pre class="code text"><a id="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-1" name="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-1" href="#rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-1"></a>===============================================================================
-<a id="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-2" name="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-2" href="#rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-2"></a>*                                                                             *
-<a id="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-3" name="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-3" href="#rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-3"></a>*   Interpreter :                                                             *
-<a id="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-4" name="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-4" href="#rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-4"></a>*       python : 3.11.6 (main, Oct  2 2023, 20:46:14) [Clang 14.0.3           *
-<a id="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-5" name="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-5" href="#rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-5"></a>*   (clang-1403.0.22.14.1)]                                                   *
-<a id="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-6" name="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-6" href="#rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-6"></a>*                                                                             *
-<a id="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-7" name="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-7" href="#rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-7"></a>*   colour-science.org :                                                      *
-<a id="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-8" name="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-8" href="#rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-8"></a>*       colour : v0.4.3-61-gbfc42ac2e                                         *
-<a id="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-9" name="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-9" href="#rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-9"></a>*                                                                             *
-<a id="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-10" name="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-10" href="#rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-10"></a>*   Runtime :                                                                 *
-<a id="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-11" name="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-11" href="#rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-11"></a>*       imageio : 2.31.5                                                      *
-<a id="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-12" name="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-12" href="#rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-12"></a>*       matplotlib : 3.8.0                                                    *
-<a id="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-13" name="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-13" href="#rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-13"></a>*       networkx : 2.8.8                                                      *
-<a id="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-14" name="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-14" href="#rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-14"></a>*       numpy : 1.26.1                                                        *
-<a id="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-15" name="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-15" href="#rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-15"></a>*       pandas : 1.5.3                                                        *
-<a id="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-16" name="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-16" href="#rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-16"></a>*       pygraphviz : 1.11                                                     *
-<a id="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-17" name="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-17" href="#rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-17"></a>*       PyOpenColorIO : 2.3.0                                                 *
-<a id="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-18" name="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-18" href="#rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-18"></a>*       scipy : 1.11.3                                                        *
-<a id="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-19" name="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-19" href="#rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-19"></a>*       tqdm : 4.66.1                                                         *
-<a id="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-20" name="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-20" href="#rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-20"></a>*       trimesh : 3.23.5                                                      *
-<a id="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-21" name="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-21" href="#rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-21"></a>*       xxhash : 3.4.1                                                        *
-<a id="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-22" name="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-22" href="#rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-22"></a>*                                                                             *
-<a id="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-23" name="rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-23" href="#rest_code_5f1f32d7d99c4ef7ba1e4f39ffe0c01a-23"></a>===============================================================================
+<div class="code"><pre class="code text"><a id="rest_code_f627d43901234be28b0f96ca658b5467-1" name="rest_code_f627d43901234be28b0f96ca658b5467-1" href="#rest_code_f627d43901234be28b0f96ca658b5467-1"></a>===============================================================================
+<a id="rest_code_f627d43901234be28b0f96ca658b5467-2" name="rest_code_f627d43901234be28b0f96ca658b5467-2" href="#rest_code_f627d43901234be28b0f96ca658b5467-2"></a>*                                                                             *
+<a id="rest_code_f627d43901234be28b0f96ca658b5467-3" name="rest_code_f627d43901234be28b0f96ca658b5467-3" href="#rest_code_f627d43901234be28b0f96ca658b5467-3"></a>*   Interpreter :                                                             *
+<a id="rest_code_f627d43901234be28b0f96ca658b5467-4" name="rest_code_f627d43901234be28b0f96ca658b5467-4" href="#rest_code_f627d43901234be28b0f96ca658b5467-4"></a>*       python : 3.11.6 (main, Oct  2 2023, 20:46:14) [Clang 14.0.3           *
+<a id="rest_code_f627d43901234be28b0f96ca658b5467-5" name="rest_code_f627d43901234be28b0f96ca658b5467-5" href="#rest_code_f627d43901234be28b0f96ca658b5467-5"></a>*   (clang-1403.0.22.14.1)]                                                   *
+<a id="rest_code_f627d43901234be28b0f96ca658b5467-6" name="rest_code_f627d43901234be28b0f96ca658b5467-6" href="#rest_code_f627d43901234be28b0f96ca658b5467-6"></a>*                                                                             *
+<a id="rest_code_f627d43901234be28b0f96ca658b5467-7" name="rest_code_f627d43901234be28b0f96ca658b5467-7" href="#rest_code_f627d43901234be28b0f96ca658b5467-7"></a>*   colour-science.org :                                                      *
+<a id="rest_code_f627d43901234be28b0f96ca658b5467-8" name="rest_code_f627d43901234be28b0f96ca658b5467-8" href="#rest_code_f627d43901234be28b0f96ca658b5467-8"></a>*       colour : v0.4.3-61-gbfc42ac2e                                         *
+<a id="rest_code_f627d43901234be28b0f96ca658b5467-9" name="rest_code_f627d43901234be28b0f96ca658b5467-9" href="#rest_code_f627d43901234be28b0f96ca658b5467-9"></a>*                                                                             *
+<a id="rest_code_f627d43901234be28b0f96ca658b5467-10" name="rest_code_f627d43901234be28b0f96ca658b5467-10" href="#rest_code_f627d43901234be28b0f96ca658b5467-10"></a>*   Runtime :                                                                 *
+<a id="rest_code_f627d43901234be28b0f96ca658b5467-11" name="rest_code_f627d43901234be28b0f96ca658b5467-11" href="#rest_code_f627d43901234be28b0f96ca658b5467-11"></a>*       imageio : 2.31.5                                                      *
+<a id="rest_code_f627d43901234be28b0f96ca658b5467-12" name="rest_code_f627d43901234be28b0f96ca658b5467-12" href="#rest_code_f627d43901234be28b0f96ca658b5467-12"></a>*       matplotlib : 3.8.0                                                    *
+<a id="rest_code_f627d43901234be28b0f96ca658b5467-13" name="rest_code_f627d43901234be28b0f96ca658b5467-13" href="#rest_code_f627d43901234be28b0f96ca658b5467-13"></a>*       networkx : 2.8.8                                                      *
+<a id="rest_code_f627d43901234be28b0f96ca658b5467-14" name="rest_code_f627d43901234be28b0f96ca658b5467-14" href="#rest_code_f627d43901234be28b0f96ca658b5467-14"></a>*       numpy : 1.26.1                                                        *
+<a id="rest_code_f627d43901234be28b0f96ca658b5467-15" name="rest_code_f627d43901234be28b0f96ca658b5467-15" href="#rest_code_f627d43901234be28b0f96ca658b5467-15"></a>*       pandas : 1.5.3                                                        *
+<a id="rest_code_f627d43901234be28b0f96ca658b5467-16" name="rest_code_f627d43901234be28b0f96ca658b5467-16" href="#rest_code_f627d43901234be28b0f96ca658b5467-16"></a>*       pygraphviz : 1.11                                                     *
+<a id="rest_code_f627d43901234be28b0f96ca658b5467-17" name="rest_code_f627d43901234be28b0f96ca658b5467-17" href="#rest_code_f627d43901234be28b0f96ca658b5467-17"></a>*       PyOpenColorIO : 2.3.0                                                 *
+<a id="rest_code_f627d43901234be28b0f96ca658b5467-18" name="rest_code_f627d43901234be28b0f96ca658b5467-18" href="#rest_code_f627d43901234be28b0f96ca658b5467-18"></a>*       scipy : 1.11.3                                                        *
+<a id="rest_code_f627d43901234be28b0f96ca658b5467-19" name="rest_code_f627d43901234be28b0f96ca658b5467-19" href="#rest_code_f627d43901234be28b0f96ca658b5467-19"></a>*       tqdm : 4.66.1                                                         *
+<a id="rest_code_f627d43901234be28b0f96ca658b5467-20" name="rest_code_f627d43901234be28b0f96ca658b5467-20" href="#rest_code_f627d43901234be28b0f96ca658b5467-20"></a>*       trimesh : 3.23.5                                                      *
+<a id="rest_code_f627d43901234be28b0f96ca658b5467-21" name="rest_code_f627d43901234be28b0f96ca658b5467-21" href="#rest_code_f627d43901234be28b0f96ca658b5467-21"></a>*       xxhash : 3.4.1                                                        *
+<a id="rest_code_f627d43901234be28b0f96ca658b5467-22" name="rest_code_f627d43901234be28b0f96ca658b5467-22" href="#rest_code_f627d43901234be28b0f96ca658b5467-22"></a>*                                                                             *
+<a id="rest_code_f627d43901234be28b0f96ca658b5467-23" name="rest_code_f627d43901234be28b0f96ca658b5467-23" href="#rest_code_f627d43901234be28b0f96ca658b5467-23"></a>===============================================================================
 </pre></div>
 <p>If you are reporting an exception, please provide the complete traceback, it
 will help us understand what happened.</p>
 </section><section id="features-enhancements"><h3>Features &amp; Enhancements</h3>
 <p>If you would like a new feature to be supported or an enhancement of an
 existing feature, don't hesitate to link any resources or references you feel
-like would help its implementation: publications, wikipedia article, etc...</p>
-<p>If there is an implementation existing in another language, we will be most
-likely be able to port it although the licence must be compatible with the
+would help its implementation, such as publications or Wikipedia articles.</p>
+<p>If an implementation exists in another language, we will most likely
+be able to port it, although the licence must be compatible with the
 <a class="reference external" href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a> terms.</p>
-<p>We are also running <a class="reference external" href="http://www.mathworks.fr/products/matlab">Matlab</a>, so
+<p>We are also running <a class="reference external" href="http://www.mathworks.fr/products/matlab">MATLAB</a>, so
 don't hesitate to provide snippets for it if you have functions you would like
 to be ported.</p>
 </section></section><section id="contributing-code"><h2>Contributing Code</h2>
@@ -310,7 +315,7 @@ follow the guidelines.</p>
 <div class="alert alert-dismissible alert-info line-block">
 <div class="line"><strong>Note</strong></div>
 <div class="line"><br></div>
-<div class="line">If you are on macOS, a dedicated guide on how to setup your environment
+<div class="line">If you are on macOS, a dedicated guide on how to set up your environment
 is available here: <a class="reference external" href="../setting-up-the-development-environment-on-macos/index.html">Setting Up the Development Environment on macOS</a>.</div>
 </div>
 <p>Here is a succinct overview of the steps you will most likely go through:</p>
@@ -319,17 +324,17 @@ is available here: <a class="reference external" href="../setting-up-the-develop
 <a class="reference external" href="https://github.com/colour-science/colour">Colour</a> repository.</p>
 </section><section id="step-2"><h4>Step 2</h4>
 <p>Clone the repository locally to your workspace:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_88a1592ab9884b44bf3d641e8c99e499-1" name="rest_code_88a1592ab9884b44bf3d641e8c99e499-1" href="#rest_code_88a1592ab9884b44bf3d641e8c99e499-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:<span class="nv">$USER</span>/colour.git
+<div class="code"><pre class="code shell"><a id="rest_code_64bfed0cad67422cbe6c708c2880a4bc-1" name="rest_code_64bfed0cad67422cbe6c708c2880a4bc-1" href="#rest_code_64bfed0cad67422cbe6c708c2880a4bc-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:<span class="nv">$USER</span>/colour.git
 </pre></div>
 </section><section id="step-3"><h4>Step 3</h4>
 <p>Navigate to the <em>colour</em> directory:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_526ce125eff1483893bcc080035fa672-1" name="rest_code_526ce125eff1483893bcc080035fa672-1" href="#rest_code_526ce125eff1483893bcc080035fa672-1"></a><span class="nb">cd</span><span class="w"> </span>colour
+<div class="code"><pre class="code shell"><a id="rest_code_baa07faf3f5f44e6a2df5d0362e0b404-1" name="rest_code_baa07faf3f5f44e6a2df5d0362e0b404-1" href="#rest_code_baa07faf3f5f44e6a2df5d0362e0b404-1"></a><span class="nb">cd</span><span class="w"> </span>colour
 </pre></div>
 </section><section id="step-4"><h4>Step 4</h4>
 <p>Assuming <a class="reference external" href="https://www.python.org/download/releases">python &gt;= 3.10, &lt; 3.13</a>
 is available on your system, the development dependencies are installed with
 <a class="reference external" href="https://docs.astral.sh/uv">uv</a> as follows:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_9878fe3145274ab7948971e31c8377ee-1" name="rest_code_9878fe3145274ab7948971e31c8377ee-1" href="#rest_code_9878fe3145274ab7948971e31c8377ee-1"></a>uv<span class="w"> </span>sync<span class="w"> </span>--all-extras
+<div class="code"><pre class="code shell"><a id="rest_code_9326fa0bcdff443999cc1034dcf62c99-1" name="rest_code_9326fa0bcdff443999cc1034dcf62c99-1" href="#rest_code_9326fa0bcdff443999cc1034dcf62c99-1"></a>uv<span class="w"> </span>sync<span class="w"> </span>--all-extras
 </pre></div>
 <div class="alert alert-dismissible alert-warning line-block">
 <div class="line"><strong>Warning</strong></div>
@@ -342,25 +347,25 @@ follows: <code class="docutils literal">python <span class="pre">-c</span> "impo
 </div>
 </section><section id="step-5"><h4>Step 5</h4>
 <p>Install the <a class="reference external" href="https://pre-commit.com">pre-commit</a> hooks:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_e162f65f8dde49d79b05a2e4dae45ad4-1" name="rest_code_e162f65f8dde49d79b05a2e4dae45ad4-1" href="#rest_code_e162f65f8dde49d79b05a2e4dae45ad4-1"></a>uv<span class="w"> </span>run<span class="w"> </span>pre-commit<span class="w"> </span>install
+<div class="code"><pre class="code shell"><a id="rest_code_e1a671b1a730452d90735fe8e2509228-1" name="rest_code_e1a671b1a730452d90735fe8e2509228-1" href="#rest_code_e1a671b1a730452d90735fe8e2509228-1"></a>uv<span class="w"> </span>run<span class="w"> </span>pre-commit<span class="w"> </span>install
 </pre></div>
 </section><section id="step-6"><h4>Step 6</h4>
 <p>Connect your clone to the original <em>upstream</em> repository by adding it as a
 remote:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_a27108c6fe804e1390e3b410d5971261-1" name="rest_code_a27108c6fe804e1390e3b410d5971261-1" href="#rest_code_a27108c6fe804e1390e3b410d5971261-1"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>upstream<span class="w"> </span>git@github.com:colour-science/colour
+<div class="code"><pre class="code shell"><a id="rest_code_d125772e1d334ff89e085080b2bb0653-1" name="rest_code_d125772e1d334ff89e085080b2bb0653-1" href="#rest_code_d125772e1d334ff89e085080b2bb0653-1"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>upstream<span class="w"> </span>git@github.com:colour-science/colour
 </pre></div>
 </section><section id="step-7"><h4>Step 7</h4>
 <p>You should now have two remotes:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_a3b950325b8b46ddbdfa281f556dcf8c-1" name="rest_code_a3b950325b8b46ddbdfa281f556dcf8c-1" href="#rest_code_a3b950325b8b46ddbdfa281f556dcf8c-1"></a>git<span class="w"> </span>remote<span class="w"> </span>-v
-<a id="rest_code_a3b950325b8b46ddbdfa281f556dcf8c-2" name="rest_code_a3b950325b8b46ddbdfa281f556dcf8c-2" href="#rest_code_a3b950325b8b46ddbdfa281f556dcf8c-2"></a>origin<span class="w">  </span>https://github.com/<span class="nv">$USER</span>/colour<span class="w"> </span><span class="o">(</span>fetch<span class="o">)</span>
-<a id="rest_code_a3b950325b8b46ddbdfa281f556dcf8c-3" name="rest_code_a3b950325b8b46ddbdfa281f556dcf8c-3" href="#rest_code_a3b950325b8b46ddbdfa281f556dcf8c-3"></a>origin<span class="w">  </span>https://github.com/<span class="nv">$USER</span>/colour<span class="w"> </span><span class="o">(</span>push<span class="o">)</span>
-<a id="rest_code_a3b950325b8b46ddbdfa281f556dcf8c-4" name="rest_code_a3b950325b8b46ddbdfa281f556dcf8c-4" href="#rest_code_a3b950325b8b46ddbdfa281f556dcf8c-4"></a>upstream<span class="w">  </span>https://github.com/colour-science/colour<span class="w"> </span><span class="o">(</span>fetch<span class="o">)</span>
-<a id="rest_code_a3b950325b8b46ddbdfa281f556dcf8c-5" name="rest_code_a3b950325b8b46ddbdfa281f556dcf8c-5" href="#rest_code_a3b950325b8b46ddbdfa281f556dcf8c-5"></a>upstream<span class="w">  </span>https://github.com/colour-science/colour<span class="w"> </span><span class="o">(</span>push<span class="o">)</span>
+<div class="code"><pre class="code shell"><a id="rest_code_56ab8e0ce0d44fc4b0cb224efdb3f72e-1" name="rest_code_56ab8e0ce0d44fc4b0cb224efdb3f72e-1" href="#rest_code_56ab8e0ce0d44fc4b0cb224efdb3f72e-1"></a>git<span class="w"> </span>remote<span class="w"> </span>-v
+<a id="rest_code_56ab8e0ce0d44fc4b0cb224efdb3f72e-2" name="rest_code_56ab8e0ce0d44fc4b0cb224efdb3f72e-2" href="#rest_code_56ab8e0ce0d44fc4b0cb224efdb3f72e-2"></a>origin<span class="w">  </span>https://github.com/<span class="nv">$USER</span>/colour<span class="w"> </span><span class="o">(</span>fetch<span class="o">)</span>
+<a id="rest_code_56ab8e0ce0d44fc4b0cb224efdb3f72e-3" name="rest_code_56ab8e0ce0d44fc4b0cb224efdb3f72e-3" href="#rest_code_56ab8e0ce0d44fc4b0cb224efdb3f72e-3"></a>origin<span class="w">  </span>https://github.com/<span class="nv">$USER</span>/colour<span class="w"> </span><span class="o">(</span>push<span class="o">)</span>
+<a id="rest_code_56ab8e0ce0d44fc4b0cb224efdb3f72e-4" name="rest_code_56ab8e0ce0d44fc4b0cb224efdb3f72e-4" href="#rest_code_56ab8e0ce0d44fc4b0cb224efdb3f72e-4"></a>upstream<span class="w">  </span>https://github.com/colour-science/colour<span class="w"> </span><span class="o">(</span>fetch<span class="o">)</span>
+<a id="rest_code_56ab8e0ce0d44fc4b0cb224efdb3f72e-5" name="rest_code_56ab8e0ce0d44fc4b0cb224efdb3f72e-5" href="#rest_code_56ab8e0ce0d44fc4b0cb224efdb3f72e-5"></a>upstream<span class="w">  </span>https://github.com/colour-science/colour<span class="w"> </span><span class="o">(</span>push<span class="o">)</span>
 </pre></div>
 </section><section id="step-8"><h4>Step 8</h4>
 <p>Pull the latest changes from <em>upstream</em>:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_bf6dcf2d63bc426d881753908c000e7d-1" name="rest_code_bf6dcf2d63bc426d881753908c000e7d-1" href="#rest_code_bf6dcf2d63bc426d881753908c000e7d-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>develop
-<a id="rest_code_bf6dcf2d63bc426d881753908c000e7d-2" name="rest_code_bf6dcf2d63bc426d881753908c000e7d-2" href="#rest_code_bf6dcf2d63bc426d881753908c000e7d-2"></a>git<span class="w"> </span>pull<span class="w"> </span>upstream<span class="w"> </span>develop
+<div class="code"><pre class="code shell"><a id="rest_code_be933e75d1f844699daa05d224e2c56b-1" name="rest_code_be933e75d1f844699daa05d224e2c56b-1" href="#rest_code_be933e75d1f844699daa05d224e2c56b-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>develop
+<a id="rest_code_be933e75d1f844699daa05d224e2c56b-2" name="rest_code_be933e75d1f844699daa05d224e2c56b-2" href="#rest_code_be933e75d1f844699daa05d224e2c56b-2"></a>git<span class="w"> </span>pull<span class="w"> </span>upstream<span class="w"> </span>develop
 </pre></div>
 </section><section id="step-9"><h4>Step 9</h4>
 <p>Create a branch for your contribution:</p>
@@ -376,27 +381,27 @@ prefixes:</p>
 </ul>
 <p>As an example, working to implement <a class="reference external" href="https://en.wikipedia.org/wiki/Mie_scattering">Mie Scattering</a>
 support:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_af2259fe1a1442b4b4db9ebb558a7d1f-1" name="rest_code_af2259fe1a1442b4b4db9ebb558a7d1f-1" href="#rest_code_af2259fe1a1442b4b4db9ebb558a7d1f-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature/mie_scattering
+<div class="code"><pre class="code shell"><a id="rest_code_c6f2a8042914432e8e3dbd8bdb2e4ad4-1" name="rest_code_c6f2a8042914432e8e3dbd8bdb2e4ad4-1" href="#rest_code_c6f2a8042914432e8e3dbd8bdb2e4ad4-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature/mie_scattering
 </pre></div>
 </section><section id="step-11"><h4>Step 11</h4>
 <p>Implement your changes while making sure examples and relevant documentation
 are written.</p>
 </section><section id="step-12"><h4>Step 12</h4>
 <p>Check whether the unit tests and doctests are passing:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_1d7204eb4fef4296b94ff8cf44e48e2f-1" name="rest_code_1d7204eb4fef4296b94ff8cf44e48e2f-1" href="#rest_code_1d7204eb4fef4296b94ff8cf44e48e2f-1"></a>uv<span class="w"> </span>run<span class="w"> </span>invoke<span class="w"> </span>tests
+<div class="code"><pre class="code shell"><a id="rest_code_aa900af61445479aa51fbea650ee6ea2-1" name="rest_code_aa900af61445479aa51fbea650ee6ea2-1" href="#rest_code_aa900af61445479aa51fbea650ee6ea2-1"></a>uv<span class="w"> </span>run<span class="w"> </span>invoke<span class="w"> </span>tests
 </pre></div>
 <p>or alternatively:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_109e758cb92e46fabd6b82367698cf3f-1" name="rest_code_109e758cb92e46fabd6b82367698cf3f-1" href="#rest_code_109e758cb92e46fabd6b82367698cf3f-1"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-<a id="rest_code_109e758cb92e46fabd6b82367698cf3f-2" name="rest_code_109e758cb92e46fabd6b82367698cf3f-2" href="#rest_code_109e758cb92e46fabd6b82367698cf3f-2"></a>invoke<span class="w"> </span>tests
+<div class="code"><pre class="code shell"><a id="rest_code_c4dfc5ef07f84ff58ca40770e4c85fbb-1" name="rest_code_c4dfc5ef07f84ff58ca40770e4c85fbb-1" href="#rest_code_c4dfc5ef07f84ff58ca40770e4c85fbb-1"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+<a id="rest_code_c4dfc5ef07f84ff58ca40770e4c85fbb-2" name="rest_code_c4dfc5ef07f84ff58ca40770e4c85fbb-2" href="#rest_code_c4dfc5ef07f84ff58ca40770e4c85fbb-2"></a>invoke<span class="w"> </span>tests
 </pre></div>
 </section><section id="step-13"><h4>Step 13</h4>
 <p>Verify that the static checking from <a class="reference external" href="https://pypi.org/project/pyright">pyright</a> is passing:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_f9939815a055497aa33b04269a164104-1" name="rest_code_f9939815a055497aa33b04269a164104-1" href="#rest_code_f9939815a055497aa33b04269a164104-1"></a>uv<span class="w"> </span>run<span class="w"> </span>invoke<span class="w"> </span>quality
+<div class="code"><pre class="code shell"><a id="rest_code_e646d0e8d2ce42c5a84cf7c3c25c1b6c-1" name="rest_code_e646d0e8d2ce42c5a84cf7c3c25c1b6c-1" href="#rest_code_e646d0e8d2ce42c5a84cf7c3c25c1b6c-1"></a>uv<span class="w"> </span>run<span class="w"> </span>invoke<span class="w"> </span>quality
 </pre></div>
 </section><section id="step-14"><h4>Step 14</h4>
 <p>Commit your changes:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_5e4e27e978f04d9db12df04f855ed394-1" name="rest_code_5e4e27e978f04d9db12df04f855ed394-1" href="#rest_code_5e4e27e978f04d9db12df04f855ed394-1"></a>git<span class="w"> </span>add<span class="w"> </span>mie_scattering.py
-<a id="rest_code_5e4e27e978f04d9db12df04f855ed394-2" name="rest_code_5e4e27e978f04d9db12df04f855ed394-2" href="#rest_code_5e4e27e978f04d9db12df04f855ed394-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">'Implement "Mie Scattering" support.'</span>
+<div class="code"><pre class="code shell"><a id="rest_code_fd2b9be7df2f4cee90493eaff81616b2-1" name="rest_code_fd2b9be7df2f4cee90493eaff81616b2-1" href="#rest_code_fd2b9be7df2f4cee90493eaff81616b2-1"></a>git<span class="w"> </span>add<span class="w"> </span>mie_scattering.py
+<a id="rest_code_fd2b9be7df2f4cee90493eaff81616b2-2" name="rest_code_fd2b9be7df2f4cee90493eaff81616b2-2" href="#rest_code_fd2b9be7df2f4cee90493eaff81616b2-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">'Implement "Mie Scattering" support.'</span>
 </pre></div>
 <div class="alert alert-dismissible alert-info line-block">
 <div class="line"><strong>Note</strong></div>
@@ -413,10 +418,10 @@ issues reported.</div>
 </div>
 </section><section id="step-15"><h4>Step 15</h4>
 <p>Push your changes to <em>origin</em>, i.e., your own fork:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_35debce40286489aad5d68b4e8c8c6a6-1" name="rest_code_35debce40286489aad5d68b4e8c8c6a6-1" href="#rest_code_35debce40286489aad5d68b4e8c8c6a6-1"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>feature/mie_scattering
+<div class="code"><pre class="code shell"><a id="rest_code_f6c7c7bde0904d73b170c8293c964dff-1" name="rest_code_f6c7c7bde0904d73b170c8293c964dff-1" href="#rest_code_f6c7c7bde0904d73b170c8293c964dff-1"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>feature/mie_scattering
 </pre></div>
 </section><section id="step-16"><h4>Step 16</h4>
-<p>Visit your repository fork on <a class="reference external" href="https://github.com/$USER/colour">Github</a>.
+<p>Visit your repository fork on <a class="reference external" href="https://github.com/$USER/colour">GitHub</a>.
 Your branch should have a green <em>Pull Request</em> button, this will open a
 <em>pull request</em> and let us know that we have some code to review :)</p>
 </section><section id="step-17"><h4>Step 17</h4>
@@ -424,7 +429,7 @@ Your branch should have a green <em>Pull Request</em> button, this will open a
 suite succeeded.</p>
 </section></section></section><section id="code-review"><h2>Code Review</h2>
 <p>Your <em>pull request</em> will be reviewed by the maintainers and any other developer
-interested by the project.</p>
+interested in the project.</p>
 <p>We review all the code submitted, this is a natural process helping to raise
 the codebase quality around a friendly and constructive discussion.
 Comments will be made on various aspects such as the documentation and
@@ -433,14 +438,14 @@ although they are not meant to criticize but aim at improving the quality of
 your submission. We all learn from that process and the project ultimately
 benefits from them.</p>
 </section><section id="guidelines"><h2>Guidelines</h2>
-<p>Most of the conventions used in <strong>Colour</strong> are the same than
+<p>Most of the conventions used in <strong>Colour</strong> are the same as
 <a class="reference external" href="http://www.numpy.org">NumPy</a>, <a class="reference external" href="http://www.scipy.org">SciPy</a> and
 <a class="reference external" href="http://scikit-image.org">scikit-image</a>.</p>
 <section id="overview"><h3>Overview</h3>
 <p>We follow the <a class="reference external" href="https://google.github.io/styleguide/pyguide.html">Google Python Style Guide</a>
 and especially the <em>Python Language Rules</em> although with the main exception
 being the docstrings / documentation formatted with
-<a class="reference external" href="https://github.com/numpy/numpy/blob/master/doc/example.py">Numpy Docstrings Style</a>.</p>
+<a class="reference external" href="https://github.com/numpy/numpy/blob/master/doc/example.py">NumPy Docstrings Style</a>.</p>
 <p>We use <a class="reference external" href="https://docs.python.org/3/library/typing.html">type hints</a>  to
 statically indicate and verify the type of objects in the codebase with
 <a class="reference external" href="http://mypy-lang.org">mypy</a>.</p>
@@ -452,11 +457,11 @@ notation. It can be converted to chromaticity coordinates <strong>xy</strong> wi
 case notation. If we were to fully abide by the
 <a class="reference external" href="https://peps.python.org/pep-0008">PEP 8</a> recommendations, we
 would have written a conversion definition as follows:</p>
-<div class="code"><pre class="code python"><a id="rest_code_4c76450b6bfc4345b95bac09f9694280-1" name="rest_code_4c76450b6bfc4345b95bac09f9694280-1" href="#rest_code_4c76450b6bfc4345b95bac09f9694280-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">xyz_to_xy</span><span class="p">(</span><span class="n">xyz</span><span class="p">:</span> <span class="n">ArrayLike</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">:</span>
-<a id="rest_code_4c76450b6bfc4345b95bac09f9694280-2" name="rest_code_4c76450b6bfc4345b95bac09f9694280-2" href="#rest_code_4c76450b6bfc4345b95bac09f9694280-2"></a>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">xyz</span><span class="p">)</span>
-<a id="rest_code_4c76450b6bfc4345b95bac09f9694280-3" name="rest_code_4c76450b6bfc4345b95bac09f9694280-3" href="#rest_code_4c76450b6bfc4345b95bac09f9694280-3"></a>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span><span class="p">),</span> <span class="n">y</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span>
-<a id="rest_code_4c76450b6bfc4345b95bac09f9694280-4" name="rest_code_4c76450b6bfc4345b95bac09f9694280-4" href="#rest_code_4c76450b6bfc4345b95bac09f9694280-4"></a>
-<a id="rest_code_4c76450b6bfc4345b95bac09f9694280-5" name="rest_code_4c76450b6bfc4345b95bac09f9694280-5" href="#rest_code_4c76450b6bfc4345b95bac09f9694280-5"></a>    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+<div class="code"><pre class="code python"><a id="rest_code_504429aceb2f492b88842b9455cad0d0-1" name="rest_code_504429aceb2f492b88842b9455cad0d0-1" href="#rest_code_504429aceb2f492b88842b9455cad0d0-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">xyz_to_xy</span><span class="p">(</span><span class="n">xyz</span><span class="p">:</span> <span class="n">ArrayLike</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">:</span>
+<a id="rest_code_504429aceb2f492b88842b9455cad0d0-2" name="rest_code_504429aceb2f492b88842b9455cad0d0-2" href="#rest_code_504429aceb2f492b88842b9455cad0d0-2"></a>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">xyz</span><span class="p">)</span>
+<a id="rest_code_504429aceb2f492b88842b9455cad0d0-3" name="rest_code_504429aceb2f492b88842b9455cad0d0-3" href="#rest_code_504429aceb2f492b88842b9455cad0d0-3"></a>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span><span class="p">),</span> <span class="n">y</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span>
+<a id="rest_code_504429aceb2f492b88842b9455cad0d0-4" name="rest_code_504429aceb2f492b88842b9455cad0d0-4" href="#rest_code_504429aceb2f492b88842b9455cad0d0-4"></a>
+<a id="rest_code_504429aceb2f492b88842b9455cad0d0-5" name="rest_code_504429aceb2f492b88842b9455cad0d0-5" href="#rest_code_504429aceb2f492b88842b9455cad0d0-5"></a>    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
 </pre></div>
 <p>Abstracting the fact that the above definition is totally undocumented, it can
 be confusing to understand when we are referencing big <strong>X</strong> tristimulus value
@@ -464,11 +469,11 @@ or little <strong>x</strong> chromaticity coordinate.</p>
 <p>For those cases, and there are legions of them in Colour Science, we have
 decided to go for clarity and consistency with the literature for the object
 names:</p>
-<div class="code"><pre class="code python"><a id="rest_code_d48d677cdb894310b73425a8a5c893e8-1" name="rest_code_d48d677cdb894310b73425a8a5c893e8-1" href="#rest_code_d48d677cdb894310b73425a8a5c893e8-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">XYZ_to_xy</span><span class="p">(</span><span class="n">XYZ</span><span class="p">:</span> <span class="n">ArrayLike</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">:</span>
-<a id="rest_code_d48d677cdb894310b73425a8a5c893e8-2" name="rest_code_d48d677cdb894310b73425a8a5c893e8-2" href="#rest_code_d48d677cdb894310b73425a8a5c893e8-2"></a>    <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>
-<a id="rest_code_d48d677cdb894310b73425a8a5c893e8-3" name="rest_code_d48d677cdb894310b73425a8a5c893e8-3" href="#rest_code_d48d677cdb894310b73425a8a5c893e8-3"></a>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">X</span> <span class="o">/</span> <span class="p">(</span><span class="n">X</span> <span class="o">+</span> <span class="n">Y</span> <span class="o">+</span> <span class="n">Z</span><span class="p">),</span> <span class="n">Y</span> <span class="o">/</span> <span class="p">(</span><span class="n">X</span> <span class="o">+</span> <span class="n">Y</span> <span class="o">+</span> <span class="n">Z</span><span class="p">)</span>
-<a id="rest_code_d48d677cdb894310b73425a8a5c893e8-4" name="rest_code_d48d677cdb894310b73425a8a5c893e8-4" href="#rest_code_d48d677cdb894310b73425a8a5c893e8-4"></a>
-<a id="rest_code_d48d677cdb894310b73425a8a5c893e8-5" name="rest_code_d48d677cdb894310b73425a8a5c893e8-5" href="#rest_code_d48d677cdb894310b73425a8a5c893e8-5"></a>    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+<div class="code"><pre class="code python"><a id="rest_code_3e311592a80c41e6b9e2c0783ed6ad6d-1" name="rest_code_3e311592a80c41e6b9e2c0783ed6ad6d-1" href="#rest_code_3e311592a80c41e6b9e2c0783ed6ad6d-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">XYZ_to_xy</span><span class="p">(</span><span class="n">XYZ</span><span class="p">:</span> <span class="n">ArrayLike</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">:</span>
+<a id="rest_code_3e311592a80c41e6b9e2c0783ed6ad6d-2" name="rest_code_3e311592a80c41e6b9e2c0783ed6ad6d-2" href="#rest_code_3e311592a80c41e6b9e2c0783ed6ad6d-2"></a>    <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">XYZ</span><span class="p">)</span>
+<a id="rest_code_3e311592a80c41e6b9e2c0783ed6ad6d-3" name="rest_code_3e311592a80c41e6b9e2c0783ed6ad6d-3" href="#rest_code_3e311592a80c41e6b9e2c0783ed6ad6d-3"></a>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">X</span> <span class="o">/</span> <span class="p">(</span><span class="n">X</span> <span class="o">+</span> <span class="n">Y</span> <span class="o">+</span> <span class="n">Z</span><span class="p">),</span> <span class="n">Y</span> <span class="o">/</span> <span class="p">(</span><span class="n">X</span> <span class="o">+</span> <span class="n">Y</span> <span class="o">+</span> <span class="n">Z</span><span class="p">)</span>
+<a id="rest_code_3e311592a80c41e6b9e2c0783ed6ad6d-4" name="rest_code_3e311592a80c41e6b9e2c0783ed6ad6d-4" href="#rest_code_3e311592a80c41e6b9e2c0783ed6ad6d-4"></a>
+<a id="rest_code_3e311592a80c41e6b9e2c0783ed6ad6d-5" name="rest_code_3e311592a80c41e6b9e2c0783ed6ad6d-5" href="#rest_code_3e311592a80c41e6b9e2c0783ed6ad6d-5"></a>    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
 </pre></div>
 <p>When the reference is using upper case named variables, we try to follow
 the same convention, it is unfortunately not
@@ -480,12 +485,12 @@ reference.</p>
 <ul class="simple">
 <li><p>All the code must be annotated with type hints.</p></li>
 <li><p>All the code must be covered by unit tests and doctests.</p></li>
-<li><p>All the code must be documented to the same standard than
+<li><p>All the code must be documented to the same standard as
 <a class="reference external" href="http://www.numpy.org">NumPy</a>, <a class="reference external" href="http://www.scipy.org">SciPy</a>
 and <a class="reference external" href="http://scikit-image.org">scikit-image</a>.</p></li>
 <li><p>All the code must be checked with the <em>pre-commit</em> hooks.</p></li>
 <li><p><em>Pull requests</em> should not be merged without being reviewed and ensuring
-that the <a class="reference external" href="https://github.com/colour-science/colour/actions">Github Actions</a>
+that the <a class="reference external" href="https://github.com/colour-science/colour/actions">GitHub Actions</a>
 continuous integration suite succeeded.</p></li>
 <li><p>Examples should be provided for new features.</p></li>
 </ul></section><section id="python-style-rules"><h3>Python Style Rules</h3>
@@ -501,7 +506,7 @@ as <cite>Xp_ab</cite>.</p>
 </li>
 <li><p>Try using uppercase for author names in definitions:</p></li>
 </ul>
-<div class="code"><pre class="code python"><a id="rest_code_a4897d119cd540589731a6dd682adb12-1" name="rest_code_a4897d119cd540589731a6dd682adb12-1" href="#rest_code_a4897d119cd540589731a6dd682adb12-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">CCT_to_xy_Kang2002</span><span class="p">(</span><span class="n">CCT</span><span class="p">):</span> <span class="o">...</span>
+<div class="code"><pre class="code python"><a id="rest_code_7e7a3955c4c549cf8de84ec0509206d4-1" name="rest_code_7e7a3955c4c549cf8de84ec0509206d4-1" href="#rest_code_7e7a3955c4c549cf8de84ec0509206d4-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">CCT_to_xy_Kang2002</span><span class="p">(</span><span class="n">CCT</span><span class="p">):</span> <span class="o">...</span>
 </pre></div>
 <ul class="simple">
 <li><p>Please use <em>British English</em> words instead of <em>American English</em> ones as
@@ -510,16 +515,16 @@ the <strong>CIE</strong> does, the most important of all being <strong>colour</s
 any doubts.</p></li>
 <li><p>Import <a class="reference external" href="http://www.numpy.org">NumPy</a> as follows:</p></li>
 </ul>
-<div class="code"><pre class="code python"><a id="rest_code_9ea8157b32f24d4d85dd227be4f04afd-1" name="rest_code_9ea8157b32f24d4d85dd227be4f04afd-1" href="#rest_code_9ea8157b32f24d4d85dd227be4f04afd-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="code"><pre class="code python"><a id="rest_code_1cc47fd117ad46c9bae9b4105da9e341-1" name="rest_code_1cc47fd117ad46c9bae9b4105da9e341-1" href="#rest_code_1cc47fd117ad46c9bae9b4105da9e341-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </pre></div>
 <ul class="simple">
 <li><p>Doctests may need <strong>ellipsis</strong>, don't rely on global <strong>nose</strong> settings and
 specify it using the dedicated pragma as follows:</p></li>
 </ul>
-<div class="code"><pre class="code python"><a id="rest_code_77d77384fa864d8a9bac6d6e1054d5ed-1" name="rest_code_77d77384fa864d8a9bac6d6e1054d5ed-1" href="#rest_code_77d77384fa864d8a9bac6d6e1054d5ed-1"></a><span class="n">Lab</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">100.00000000</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.41787844</span><span class="p">,</span> <span class="o">-</span><span class="mf">15.85742105</span><span class="p">])</span>
-<a id="rest_code_77d77384fa864d8a9bac6d6e1054d5ed-2" name="rest_code_77d77384fa864d8a9bac6d6e1054d5ed-2" href="#rest_code_77d77384fa864d8a9bac6d6e1054d5ed-2"></a><span class="n">Lab_to_LCHab</span><span class="p">(</span><span class="n">Lab</span><span class="p">)</span>  <span class="c1"># doctest: +ELLIPSIS</span>
+<div class="code"><pre class="code python"><a id="rest_code_fb8eefa21ec84d96a8f4c3f8eca76421-1" name="rest_code_fb8eefa21ec84d96a8f4c3f8eca76421-1" href="#rest_code_fb8eefa21ec84d96a8f4c3f8eca76421-1"></a><span class="n">Lab</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">100.00000000</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.41787844</span><span class="p">,</span> <span class="o">-</span><span class="mf">15.85742105</span><span class="p">])</span>
+<a id="rest_code_fb8eefa21ec84d96a8f4c3f8eca76421-2" name="rest_code_fb8eefa21ec84d96a8f4c3f8eca76421-2" href="#rest_code_fb8eefa21ec84d96a8f4c3f8eca76421-2"></a><span class="n">Lab_to_LCHab</span><span class="p">(</span><span class="n">Lab</span><span class="p">)</span>  <span class="c1"># doctest: +ELLIPSIS</span>
 </pre></div>
-<div class="code"><pre class="code text"><a id="rest_code_b5d6cf1e44ad4006bb28bf9225595a7e-1" name="rest_code_b5d6cf1e44ad4006bb28bf9225595a7e-1" href="#rest_code_b5d6cf1e44ad4006bb28bf9225595a7e-1"></a>array([ 100.        ,   17.5066479...,  244.9304684...])
+<div class="code"><pre class="code text"><a id="rest_code_585f32ece9f340c9914567114596ddf7-1" name="rest_code_585f32ece9f340c9914567114596ddf7-1" href="#rest_code_585f32ece9f340c9914567114596ddf7-1"></a>array([ 100.        ,   17.5066479...,  244.9304684...])
 </pre></div>
 <ul>
 <li>
@@ -542,180 +547,180 @@ is available with the generating code.</p>
 values:</p>
 </li>
 </ul>
-<div class="code"><pre class="code text"><a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-1" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-1" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-1"></a>Recommended Values for Use in Colour Examples and Unit Tests
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-2" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-2" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-2"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-3" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-3" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-3"></a>Illuminants "xy"
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-4" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-4" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-4"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-5" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-5" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-5"></a>D65 : array([0.31270000, 0.32900000])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-6" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-6" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-6"></a>D50 : array([0.34570000, 0.35850000])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-7" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-7" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-7"></a>A : array([0.44757000, 0.40745000])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-8" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-8" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-8"></a>E : array([0.33333333, 0.33333333])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-9" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-9" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-9"></a>F2 : array([0.37208000, 0.37529000])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-10" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-10" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-10"></a>CC I : array([0.34570000, 0.35850000])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-11" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-11" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-11"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-12" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-12" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-12"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-13" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-13" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-13"></a>Illuminants "XYZ"
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-14" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-14" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-14"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-15" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-15" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-15"></a>D65 : array([0.95045593, 1.00000000, 1.08905775])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-16" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-16" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-16"></a>D50 : array([0.96429568, 1.00000000, 0.82510460])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-17" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-17" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-17"></a>A : array([1.09846607, 1.00000000, 0.35582280])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-18" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-18" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-18"></a>F2 : array([0.99144661, 1.00000000, 0.67315942])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-19" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-19" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-19"></a>E : array([1.00000000, 1.00000000, 1.00000000])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-20" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-20" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-20"></a>CC I : array([0.96429568, 1.00000000, 0.82510460])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-21" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-21" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-21"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-22" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-22" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-22"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-23" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-23" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-23"></a>ColorChecker 2005 "XYZ" Adapted to "D65"
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-24" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-24" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-24"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-25" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-25" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-25"></a>red : array([0.20654008, 0.12197225, 0.05136952])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-26" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-26" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-26"></a>green : array([0.14222010, 0.23042768, 0.10495772])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-27" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-27" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-27"></a>blue : array([0.07818780, 0.06157201, 0.28099326])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-28" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-28" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-28"></a>cyan : array([0.14525849, 0.19799077, 0.40724370])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-29" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-29" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-29"></a>yellow : array([0.55676530, 0.58671628, 0.09785344])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-30" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-30" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-30"></a>magenta : array([0.30795495, 0.20024152, 0.31071274])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-31" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-31" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-31"></a>neutral 5 (.70 D) : array([0.18182171, 0.19153665, 0.21009620])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-32" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-32" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-32"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-33" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-33" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-33"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-34" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-34" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-34"></a>ColorChecker 2005 "XYZ" Adapted to "D50"
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-35" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-35" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-35"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-36" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-36" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-36"></a>red : array([0.21638819, 0.12570000, 0.03847493])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-37" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-37" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-37"></a>green : array([0.14985004, 0.23180000, 0.07900179])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-38" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-38" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-38"></a>blue : array([0.06857861, 0.05750000, 0.21375591])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-39" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-39" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-39"></a>cyan : array([0.13605127, 0.19300000, 0.30938736])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-40" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-40" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-40"></a>yellow : array([0.59342537, 0.59810000, 0.07188823])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-41" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-41" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-41"></a>magenta : array([0.31084193, 0.20090000, 0.23565391])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-42" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-42" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-42"></a>neutral 5 (.70 D) : array([0.18438363, 0.19150000, 0.15918203])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-43" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-43" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-43"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-44" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-44" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-44"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-45" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-45" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-45"></a>ColorChecker 2005 "XYZ" Adapted to "A"
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-46" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-46" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-46"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-47" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-47" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-47"></a>red : array([0.25330530, 0.13765139, 0.01543307])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-48" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-48" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-48"></a>green : array([0.18673833, 0.23111171, 0.03285972])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-49" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-49" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-49"></a>blue : array([0.05610693, 0.04992541, 0.09429057])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-50" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-50" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-50"></a>cyan : array([0.13623492, 0.18062024, 0.13553082])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-51" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-51" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-51"></a>yellow : array([0.73088905, 0.62177441, 0.02548927])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-52" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-52" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-52"></a>magenta : array([0.34280970, 0.20770559, 0.10214220])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-53" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-53" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-53"></a>neutral 5 (.70 D) : array([0.20988974, 0.19141324, 0.06866269])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-54" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-54" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-54"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-55" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-55" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-55"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-56" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-56" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-56"></a>ColorChecker 2005 "XYZ" Adapted to "E"
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-57" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-57" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-57"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-58" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-58" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-58"></a>red : array([0.21781186, 0.12541048, 0.04697113])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-59" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-59" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-59"></a>green : array([0.15434689, 0.22960951, 0.09620221])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-60" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-60" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-60"></a>blue : array([0.07683480, 0.06006092, 0.25833845])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-61" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-61" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-61"></a>cyan : array([0.14893167, 0.19487065, 0.37427698])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-62" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-62" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-62"></a>yellow : array([0.59874058, 0.59196415, 0.08899633])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-63" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-63" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-63"></a>magenta : array([0.31991986, 0.20277158, 0.28536138])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-64" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-64" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-64"></a>neutral 5 (.70 D) : array([0.19126715, 0.19151544, 0.19291812])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-65" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-65" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-65"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-66" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-66" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-66"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-67" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-67" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-67"></a>ColorChecker 2005 "XYZ" Adapted to "F2"
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-68" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-68" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-68"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-69" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-69" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-69"></a>red : array([0.22545552, 0.12877805, 0.03103172])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-70" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-70" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-70"></a>green : array([0.15832594, 0.23204226, 0.06406107])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-71" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-71" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-71"></a>blue : array([0.06385467, 0.05509729, 0.17506386])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-72" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-72" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-72"></a>cyan : array([0.13364947, 0.18951306, 0.25307753])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-73" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-73" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-73"></a>yellow : array([0.62718558, 0.60525456, 0.05690008])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-74" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-74" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-74"></a>magenta : array([0.31720246, 0.20226568, 0.19243480])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-75" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-75" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-75"></a>neutral 5 (.70 D) : array([0.18952683, 0.19147512, 0.12987334])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-76" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-76" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-76"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-77" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-77" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-77"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-78" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-78" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-78"></a>Luminance "XYZ" Adapted to "D65"
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-79" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-79" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-79"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-80" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-80" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-80"></a>red : 12.19722535
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-81" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-81" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-81"></a>green : 23.04276781
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-82" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-82" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-82"></a>blue : 6.15720079
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-83" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-83" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-83"></a>cyan : 19.79907683
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-84" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-84" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-84"></a>yellow : 58.67162787
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-85" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-85" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-85"></a>magenta : 20.02415243
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-86" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-86" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-86"></a>neutral 5 (.70 D) : 19.15366501
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-87" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-87" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-87"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-88" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-88" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-88"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-89" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-89" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-89"></a>Luminance "XYZ" Adapted to "D50"
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-90" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-90" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-90"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-91" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-91" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-91"></a>red : 12.57000000
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-92" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-92" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-92"></a>green : 23.18000000
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-93" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-93" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-93"></a>blue : 5.75000000
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-94" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-94" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-94"></a>cyan : 19.30000000
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-95" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-95" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-95"></a>yellow : 59.81000000
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-96" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-96" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-96"></a>magenta : 20.09000000
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-97" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-97" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-97"></a>neutral 5 (.70 D) : 19.15000000
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-98" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-98" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-98"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-99" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-99" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-99"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-100" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-100" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-100"></a>Luminance "XYZ" Adapted to "A"
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-101" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-101" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-101"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-102" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-102" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-102"></a>red : 13.76513858
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-103" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-103" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-103"></a>green : 23.11117127
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-104" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-104" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-104"></a>blue : 4.99254109
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-105" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-105" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-105"></a>cyan : 18.06202404
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-106" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-106" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-106"></a>yellow : 62.17744084
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-107" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-107" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-107"></a>magenta : 20.77055938
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-108" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-108" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-108"></a>neutral 5 (.70 D) : 19.14132354
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-109" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-109" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-109"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-110" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-110" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-110"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-111" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-111" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-111"></a>Luminance "XYZ" Adapted to "E"
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-112" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-112" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-112"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-113" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-113" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-113"></a>red : 12.54104823
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-114" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-114" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-114"></a>green : 22.96095053
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-115" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-115" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-115"></a>blue : 6.00609174
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-116" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-116" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-116"></a>cyan : 19.48706483
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-117" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-117" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-117"></a>yellow : 59.19641488
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-118" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-118" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-118"></a>magenta : 20.27715822
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-119" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-119" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-119"></a>neutral 5 (.70 D) : 19.15154358
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-120" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-120" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-120"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-121" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-121" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-121"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-122" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-122" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-122"></a>Luminance "XYZ" Adapted to "F2"
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-123" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-123" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-123"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-124" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-124" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-124"></a>red : 12.87780528
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-125" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-125" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-125"></a>green : 23.20422641
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-126" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-126" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-126"></a>blue : 5.50972884
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-127" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-127" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-127"></a>cyan : 18.95130571
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-128" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-128" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-128"></a>yellow : 60.52545632
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-129" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-129" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-129"></a>magenta : 20.22656850
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-130" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-130" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-130"></a>neutral 5 (.70 D) : 19.14751195
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-131" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-131" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-131"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-132" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-132" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-132"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-133" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-133" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-133"></a>ColorChecker 2005 "sRGB - Linear" under "D65"
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-134" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-134" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-134"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-135" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-135" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-135"></a>red : array([0.45620519, 0.03081071, 0.04091952])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-136" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-136" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-136"></a>green : array([0.05433312, 0.29879493, 0.07185472])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-137" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-137" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-137"></a>blue : array([0.01862364, 0.05140184, 0.28880425])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-138" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-138" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-138"></a>cyan : array([-0.03667845, 0.24755074, 0.39815738])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-139" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-139" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-139"></a>yellow : array([0.85356364, 0.56517342, 0.01475279])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-140" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-140" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-140"></a>magenta : array([0.53522616, 0.09013008, 0.30472718])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-141" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-141" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-141"></a>neutral 5 (.70 D) : array([0.19002735, 0.19183638, 0.19312568])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-142" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-142" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-142"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-143" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-143" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-143"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-144" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-144" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-144"></a>ColorChecker 2005 "sRGB - OETF" under "D65"
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-145" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-145" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-145"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-146" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-146" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-146"></a>red : array([0.70573936, 0.19248268, 0.22354168])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-147" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-147" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-147"></a>green : array([0.25847007, 0.58276101, 0.29718877])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-148" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-148" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-148"></a>blue : array([0.14565317, 0.25130933, 0.57378757])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-149" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-149" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-149"></a>cyan : array([-0.47388561, 0.53467479, 0.66380090])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-150" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-150" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-150"></a>yellow : array([0.93264474, 0.77675390, 0.12708884])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-151" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-151" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-151"></a>magenta : array([0.75809823, 0.33206288, 0.58800664])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-152" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-152" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-152"></a>neutral 5 (.70 D) : array([0.47315229, 0.47524148, 0.47672343])
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-153" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-153" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-153"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-154" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-154" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-154"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-155" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-155" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-155"></a>ColorChecker 2005 "Munsell Value"
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-156" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-156" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-156"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-157" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-157" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-157"></a>red : 4.08244375
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-158" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-158" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-158"></a>green : 5.39132685
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-159" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-159" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-159"></a>blue : 2.97619312
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-160" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-160" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-160"></a>cyan : 5.06675596
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-161" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-161" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-161"></a>yellow : 8.04387670
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-162" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-162" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-162"></a>magenta : 5.10225899
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-163" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-163" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-163"></a>neutral 5 (.70 D) : 4.98656896
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-164" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-164" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-164"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-165" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-165" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-165"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-166" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-166" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-166"></a>ColorChecker 2005 "ASTM D1535-08e1 Luminance"
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-167" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-167" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-167"></a>
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-168" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-168" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-168"></a>red : 12.23634268
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-169" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-169" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-169"></a>green : 22.89399987
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-170" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-170" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-170"></a>blue : 6.29022535
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-171" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-171" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-171"></a>cyan : 19.86282567
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-172" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-172" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-172"></a>yellow : 58.37987916
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-173" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-173" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-173"></a>magenta : 20.18160934
-<a id="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-174" name="rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-174" href="#rest_code_d3d0b87edabd49f4afa0c2a6ca9eeb4d-174"></a>neutral 5 (.70 D) : 19.15426585
+<div class="code"><pre class="code text"><a id="rest_code_f063073b99b24594b4281fb4250979c1-1" name="rest_code_f063073b99b24594b4281fb4250979c1-1" href="#rest_code_f063073b99b24594b4281fb4250979c1-1"></a>Recommended Values for Use in Colour Examples and Unit Tests
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-2" name="rest_code_f063073b99b24594b4281fb4250979c1-2" href="#rest_code_f063073b99b24594b4281fb4250979c1-2"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-3" name="rest_code_f063073b99b24594b4281fb4250979c1-3" href="#rest_code_f063073b99b24594b4281fb4250979c1-3"></a>Illuminants "xy"
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-4" name="rest_code_f063073b99b24594b4281fb4250979c1-4" href="#rest_code_f063073b99b24594b4281fb4250979c1-4"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-5" name="rest_code_f063073b99b24594b4281fb4250979c1-5" href="#rest_code_f063073b99b24594b4281fb4250979c1-5"></a>D65 : array([0.31270000, 0.32900000])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-6" name="rest_code_f063073b99b24594b4281fb4250979c1-6" href="#rest_code_f063073b99b24594b4281fb4250979c1-6"></a>D50 : array([0.34570000, 0.35850000])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-7" name="rest_code_f063073b99b24594b4281fb4250979c1-7" href="#rest_code_f063073b99b24594b4281fb4250979c1-7"></a>A : array([0.44757000, 0.40745000])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-8" name="rest_code_f063073b99b24594b4281fb4250979c1-8" href="#rest_code_f063073b99b24594b4281fb4250979c1-8"></a>E : array([0.33333333, 0.33333333])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-9" name="rest_code_f063073b99b24594b4281fb4250979c1-9" href="#rest_code_f063073b99b24594b4281fb4250979c1-9"></a>F2 : array([0.37208000, 0.37529000])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-10" name="rest_code_f063073b99b24594b4281fb4250979c1-10" href="#rest_code_f063073b99b24594b4281fb4250979c1-10"></a>CC I : array([0.34570000, 0.35850000])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-11" name="rest_code_f063073b99b24594b4281fb4250979c1-11" href="#rest_code_f063073b99b24594b4281fb4250979c1-11"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-12" name="rest_code_f063073b99b24594b4281fb4250979c1-12" href="#rest_code_f063073b99b24594b4281fb4250979c1-12"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-13" name="rest_code_f063073b99b24594b4281fb4250979c1-13" href="#rest_code_f063073b99b24594b4281fb4250979c1-13"></a>Illuminants "XYZ"
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-14" name="rest_code_f063073b99b24594b4281fb4250979c1-14" href="#rest_code_f063073b99b24594b4281fb4250979c1-14"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-15" name="rest_code_f063073b99b24594b4281fb4250979c1-15" href="#rest_code_f063073b99b24594b4281fb4250979c1-15"></a>D65 : array([0.95045593, 1.00000000, 1.08905775])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-16" name="rest_code_f063073b99b24594b4281fb4250979c1-16" href="#rest_code_f063073b99b24594b4281fb4250979c1-16"></a>D50 : array([0.96429568, 1.00000000, 0.82510460])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-17" name="rest_code_f063073b99b24594b4281fb4250979c1-17" href="#rest_code_f063073b99b24594b4281fb4250979c1-17"></a>A : array([1.09846607, 1.00000000, 0.35582280])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-18" name="rest_code_f063073b99b24594b4281fb4250979c1-18" href="#rest_code_f063073b99b24594b4281fb4250979c1-18"></a>F2 : array([0.99144661, 1.00000000, 0.67315942])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-19" name="rest_code_f063073b99b24594b4281fb4250979c1-19" href="#rest_code_f063073b99b24594b4281fb4250979c1-19"></a>E : array([1.00000000, 1.00000000, 1.00000000])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-20" name="rest_code_f063073b99b24594b4281fb4250979c1-20" href="#rest_code_f063073b99b24594b4281fb4250979c1-20"></a>CC I : array([0.96429568, 1.00000000, 0.82510460])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-21" name="rest_code_f063073b99b24594b4281fb4250979c1-21" href="#rest_code_f063073b99b24594b4281fb4250979c1-21"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-22" name="rest_code_f063073b99b24594b4281fb4250979c1-22" href="#rest_code_f063073b99b24594b4281fb4250979c1-22"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-23" name="rest_code_f063073b99b24594b4281fb4250979c1-23" href="#rest_code_f063073b99b24594b4281fb4250979c1-23"></a>ColorChecker 2005 "XYZ" Adapted to "D65"
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-24" name="rest_code_f063073b99b24594b4281fb4250979c1-24" href="#rest_code_f063073b99b24594b4281fb4250979c1-24"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-25" name="rest_code_f063073b99b24594b4281fb4250979c1-25" href="#rest_code_f063073b99b24594b4281fb4250979c1-25"></a>red : array([0.20654008, 0.12197225, 0.05136952])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-26" name="rest_code_f063073b99b24594b4281fb4250979c1-26" href="#rest_code_f063073b99b24594b4281fb4250979c1-26"></a>green : array([0.14222010, 0.23042768, 0.10495772])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-27" name="rest_code_f063073b99b24594b4281fb4250979c1-27" href="#rest_code_f063073b99b24594b4281fb4250979c1-27"></a>blue : array([0.07818780, 0.06157201, 0.28099326])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-28" name="rest_code_f063073b99b24594b4281fb4250979c1-28" href="#rest_code_f063073b99b24594b4281fb4250979c1-28"></a>cyan : array([0.14525849, 0.19799077, 0.40724370])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-29" name="rest_code_f063073b99b24594b4281fb4250979c1-29" href="#rest_code_f063073b99b24594b4281fb4250979c1-29"></a>yellow : array([0.55676530, 0.58671628, 0.09785344])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-30" name="rest_code_f063073b99b24594b4281fb4250979c1-30" href="#rest_code_f063073b99b24594b4281fb4250979c1-30"></a>magenta : array([0.30795495, 0.20024152, 0.31071274])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-31" name="rest_code_f063073b99b24594b4281fb4250979c1-31" href="#rest_code_f063073b99b24594b4281fb4250979c1-31"></a>neutral 5 (.70 D) : array([0.18182171, 0.19153665, 0.21009620])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-32" name="rest_code_f063073b99b24594b4281fb4250979c1-32" href="#rest_code_f063073b99b24594b4281fb4250979c1-32"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-33" name="rest_code_f063073b99b24594b4281fb4250979c1-33" href="#rest_code_f063073b99b24594b4281fb4250979c1-33"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-34" name="rest_code_f063073b99b24594b4281fb4250979c1-34" href="#rest_code_f063073b99b24594b4281fb4250979c1-34"></a>ColorChecker 2005 "XYZ" Adapted to "D50"
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-35" name="rest_code_f063073b99b24594b4281fb4250979c1-35" href="#rest_code_f063073b99b24594b4281fb4250979c1-35"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-36" name="rest_code_f063073b99b24594b4281fb4250979c1-36" href="#rest_code_f063073b99b24594b4281fb4250979c1-36"></a>red : array([0.21638819, 0.12570000, 0.03847493])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-37" name="rest_code_f063073b99b24594b4281fb4250979c1-37" href="#rest_code_f063073b99b24594b4281fb4250979c1-37"></a>green : array([0.14985004, 0.23180000, 0.07900179])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-38" name="rest_code_f063073b99b24594b4281fb4250979c1-38" href="#rest_code_f063073b99b24594b4281fb4250979c1-38"></a>blue : array([0.06857861, 0.05750000, 0.21375591])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-39" name="rest_code_f063073b99b24594b4281fb4250979c1-39" href="#rest_code_f063073b99b24594b4281fb4250979c1-39"></a>cyan : array([0.13605127, 0.19300000, 0.30938736])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-40" name="rest_code_f063073b99b24594b4281fb4250979c1-40" href="#rest_code_f063073b99b24594b4281fb4250979c1-40"></a>yellow : array([0.59342537, 0.59810000, 0.07188823])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-41" name="rest_code_f063073b99b24594b4281fb4250979c1-41" href="#rest_code_f063073b99b24594b4281fb4250979c1-41"></a>magenta : array([0.31084193, 0.20090000, 0.23565391])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-42" name="rest_code_f063073b99b24594b4281fb4250979c1-42" href="#rest_code_f063073b99b24594b4281fb4250979c1-42"></a>neutral 5 (.70 D) : array([0.18438363, 0.19150000, 0.15918203])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-43" name="rest_code_f063073b99b24594b4281fb4250979c1-43" href="#rest_code_f063073b99b24594b4281fb4250979c1-43"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-44" name="rest_code_f063073b99b24594b4281fb4250979c1-44" href="#rest_code_f063073b99b24594b4281fb4250979c1-44"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-45" name="rest_code_f063073b99b24594b4281fb4250979c1-45" href="#rest_code_f063073b99b24594b4281fb4250979c1-45"></a>ColorChecker 2005 "XYZ" Adapted to "A"
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-46" name="rest_code_f063073b99b24594b4281fb4250979c1-46" href="#rest_code_f063073b99b24594b4281fb4250979c1-46"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-47" name="rest_code_f063073b99b24594b4281fb4250979c1-47" href="#rest_code_f063073b99b24594b4281fb4250979c1-47"></a>red : array([0.25330530, 0.13765139, 0.01543307])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-48" name="rest_code_f063073b99b24594b4281fb4250979c1-48" href="#rest_code_f063073b99b24594b4281fb4250979c1-48"></a>green : array([0.18673833, 0.23111171, 0.03285972])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-49" name="rest_code_f063073b99b24594b4281fb4250979c1-49" href="#rest_code_f063073b99b24594b4281fb4250979c1-49"></a>blue : array([0.05610693, 0.04992541, 0.09429057])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-50" name="rest_code_f063073b99b24594b4281fb4250979c1-50" href="#rest_code_f063073b99b24594b4281fb4250979c1-50"></a>cyan : array([0.13623492, 0.18062024, 0.13553082])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-51" name="rest_code_f063073b99b24594b4281fb4250979c1-51" href="#rest_code_f063073b99b24594b4281fb4250979c1-51"></a>yellow : array([0.73088905, 0.62177441, 0.02548927])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-52" name="rest_code_f063073b99b24594b4281fb4250979c1-52" href="#rest_code_f063073b99b24594b4281fb4250979c1-52"></a>magenta : array([0.34280970, 0.20770559, 0.10214220])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-53" name="rest_code_f063073b99b24594b4281fb4250979c1-53" href="#rest_code_f063073b99b24594b4281fb4250979c1-53"></a>neutral 5 (.70 D) : array([0.20988974, 0.19141324, 0.06866269])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-54" name="rest_code_f063073b99b24594b4281fb4250979c1-54" href="#rest_code_f063073b99b24594b4281fb4250979c1-54"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-55" name="rest_code_f063073b99b24594b4281fb4250979c1-55" href="#rest_code_f063073b99b24594b4281fb4250979c1-55"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-56" name="rest_code_f063073b99b24594b4281fb4250979c1-56" href="#rest_code_f063073b99b24594b4281fb4250979c1-56"></a>ColorChecker 2005 "XYZ" Adapted to "E"
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-57" name="rest_code_f063073b99b24594b4281fb4250979c1-57" href="#rest_code_f063073b99b24594b4281fb4250979c1-57"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-58" name="rest_code_f063073b99b24594b4281fb4250979c1-58" href="#rest_code_f063073b99b24594b4281fb4250979c1-58"></a>red : array([0.21781186, 0.12541048, 0.04697113])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-59" name="rest_code_f063073b99b24594b4281fb4250979c1-59" href="#rest_code_f063073b99b24594b4281fb4250979c1-59"></a>green : array([0.15434689, 0.22960951, 0.09620221])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-60" name="rest_code_f063073b99b24594b4281fb4250979c1-60" href="#rest_code_f063073b99b24594b4281fb4250979c1-60"></a>blue : array([0.07683480, 0.06006092, 0.25833845])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-61" name="rest_code_f063073b99b24594b4281fb4250979c1-61" href="#rest_code_f063073b99b24594b4281fb4250979c1-61"></a>cyan : array([0.14893167, 0.19487065, 0.37427698])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-62" name="rest_code_f063073b99b24594b4281fb4250979c1-62" href="#rest_code_f063073b99b24594b4281fb4250979c1-62"></a>yellow : array([0.59874058, 0.59196415, 0.08899633])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-63" name="rest_code_f063073b99b24594b4281fb4250979c1-63" href="#rest_code_f063073b99b24594b4281fb4250979c1-63"></a>magenta : array([0.31991986, 0.20277158, 0.28536138])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-64" name="rest_code_f063073b99b24594b4281fb4250979c1-64" href="#rest_code_f063073b99b24594b4281fb4250979c1-64"></a>neutral 5 (.70 D) : array([0.19126715, 0.19151544, 0.19291812])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-65" name="rest_code_f063073b99b24594b4281fb4250979c1-65" href="#rest_code_f063073b99b24594b4281fb4250979c1-65"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-66" name="rest_code_f063073b99b24594b4281fb4250979c1-66" href="#rest_code_f063073b99b24594b4281fb4250979c1-66"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-67" name="rest_code_f063073b99b24594b4281fb4250979c1-67" href="#rest_code_f063073b99b24594b4281fb4250979c1-67"></a>ColorChecker 2005 "XYZ" Adapted to "F2"
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-68" name="rest_code_f063073b99b24594b4281fb4250979c1-68" href="#rest_code_f063073b99b24594b4281fb4250979c1-68"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-69" name="rest_code_f063073b99b24594b4281fb4250979c1-69" href="#rest_code_f063073b99b24594b4281fb4250979c1-69"></a>red : array([0.22545552, 0.12877805, 0.03103172])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-70" name="rest_code_f063073b99b24594b4281fb4250979c1-70" href="#rest_code_f063073b99b24594b4281fb4250979c1-70"></a>green : array([0.15832594, 0.23204226, 0.06406107])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-71" name="rest_code_f063073b99b24594b4281fb4250979c1-71" href="#rest_code_f063073b99b24594b4281fb4250979c1-71"></a>blue : array([0.06385467, 0.05509729, 0.17506386])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-72" name="rest_code_f063073b99b24594b4281fb4250979c1-72" href="#rest_code_f063073b99b24594b4281fb4250979c1-72"></a>cyan : array([0.13364947, 0.18951306, 0.25307753])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-73" name="rest_code_f063073b99b24594b4281fb4250979c1-73" href="#rest_code_f063073b99b24594b4281fb4250979c1-73"></a>yellow : array([0.62718558, 0.60525456, 0.05690008])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-74" name="rest_code_f063073b99b24594b4281fb4250979c1-74" href="#rest_code_f063073b99b24594b4281fb4250979c1-74"></a>magenta : array([0.31720246, 0.20226568, 0.19243480])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-75" name="rest_code_f063073b99b24594b4281fb4250979c1-75" href="#rest_code_f063073b99b24594b4281fb4250979c1-75"></a>neutral 5 (.70 D) : array([0.18952683, 0.19147512, 0.12987334])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-76" name="rest_code_f063073b99b24594b4281fb4250979c1-76" href="#rest_code_f063073b99b24594b4281fb4250979c1-76"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-77" name="rest_code_f063073b99b24594b4281fb4250979c1-77" href="#rest_code_f063073b99b24594b4281fb4250979c1-77"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-78" name="rest_code_f063073b99b24594b4281fb4250979c1-78" href="#rest_code_f063073b99b24594b4281fb4250979c1-78"></a>Luminance "XYZ" Adapted to "D65"
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-79" name="rest_code_f063073b99b24594b4281fb4250979c1-79" href="#rest_code_f063073b99b24594b4281fb4250979c1-79"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-80" name="rest_code_f063073b99b24594b4281fb4250979c1-80" href="#rest_code_f063073b99b24594b4281fb4250979c1-80"></a>red : 12.19722535
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-81" name="rest_code_f063073b99b24594b4281fb4250979c1-81" href="#rest_code_f063073b99b24594b4281fb4250979c1-81"></a>green : 23.04276781
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-82" name="rest_code_f063073b99b24594b4281fb4250979c1-82" href="#rest_code_f063073b99b24594b4281fb4250979c1-82"></a>blue : 6.15720079
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-83" name="rest_code_f063073b99b24594b4281fb4250979c1-83" href="#rest_code_f063073b99b24594b4281fb4250979c1-83"></a>cyan : 19.79907683
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-84" name="rest_code_f063073b99b24594b4281fb4250979c1-84" href="#rest_code_f063073b99b24594b4281fb4250979c1-84"></a>yellow : 58.67162787
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-85" name="rest_code_f063073b99b24594b4281fb4250979c1-85" href="#rest_code_f063073b99b24594b4281fb4250979c1-85"></a>magenta : 20.02415243
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-86" name="rest_code_f063073b99b24594b4281fb4250979c1-86" href="#rest_code_f063073b99b24594b4281fb4250979c1-86"></a>neutral 5 (.70 D) : 19.15366501
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-87" name="rest_code_f063073b99b24594b4281fb4250979c1-87" href="#rest_code_f063073b99b24594b4281fb4250979c1-87"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-88" name="rest_code_f063073b99b24594b4281fb4250979c1-88" href="#rest_code_f063073b99b24594b4281fb4250979c1-88"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-89" name="rest_code_f063073b99b24594b4281fb4250979c1-89" href="#rest_code_f063073b99b24594b4281fb4250979c1-89"></a>Luminance "XYZ" Adapted to "D50"
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-90" name="rest_code_f063073b99b24594b4281fb4250979c1-90" href="#rest_code_f063073b99b24594b4281fb4250979c1-90"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-91" name="rest_code_f063073b99b24594b4281fb4250979c1-91" href="#rest_code_f063073b99b24594b4281fb4250979c1-91"></a>red : 12.57000000
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-92" name="rest_code_f063073b99b24594b4281fb4250979c1-92" href="#rest_code_f063073b99b24594b4281fb4250979c1-92"></a>green : 23.18000000
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-93" name="rest_code_f063073b99b24594b4281fb4250979c1-93" href="#rest_code_f063073b99b24594b4281fb4250979c1-93"></a>blue : 5.75000000
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-94" name="rest_code_f063073b99b24594b4281fb4250979c1-94" href="#rest_code_f063073b99b24594b4281fb4250979c1-94"></a>cyan : 19.30000000
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-95" name="rest_code_f063073b99b24594b4281fb4250979c1-95" href="#rest_code_f063073b99b24594b4281fb4250979c1-95"></a>yellow : 59.81000000
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-96" name="rest_code_f063073b99b24594b4281fb4250979c1-96" href="#rest_code_f063073b99b24594b4281fb4250979c1-96"></a>magenta : 20.09000000
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-97" name="rest_code_f063073b99b24594b4281fb4250979c1-97" href="#rest_code_f063073b99b24594b4281fb4250979c1-97"></a>neutral 5 (.70 D) : 19.15000000
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-98" name="rest_code_f063073b99b24594b4281fb4250979c1-98" href="#rest_code_f063073b99b24594b4281fb4250979c1-98"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-99" name="rest_code_f063073b99b24594b4281fb4250979c1-99" href="#rest_code_f063073b99b24594b4281fb4250979c1-99"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-100" name="rest_code_f063073b99b24594b4281fb4250979c1-100" href="#rest_code_f063073b99b24594b4281fb4250979c1-100"></a>Luminance "XYZ" Adapted to "A"
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-101" name="rest_code_f063073b99b24594b4281fb4250979c1-101" href="#rest_code_f063073b99b24594b4281fb4250979c1-101"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-102" name="rest_code_f063073b99b24594b4281fb4250979c1-102" href="#rest_code_f063073b99b24594b4281fb4250979c1-102"></a>red : 13.76513858
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-103" name="rest_code_f063073b99b24594b4281fb4250979c1-103" href="#rest_code_f063073b99b24594b4281fb4250979c1-103"></a>green : 23.11117127
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-104" name="rest_code_f063073b99b24594b4281fb4250979c1-104" href="#rest_code_f063073b99b24594b4281fb4250979c1-104"></a>blue : 4.99254109
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-105" name="rest_code_f063073b99b24594b4281fb4250979c1-105" href="#rest_code_f063073b99b24594b4281fb4250979c1-105"></a>cyan : 18.06202404
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-106" name="rest_code_f063073b99b24594b4281fb4250979c1-106" href="#rest_code_f063073b99b24594b4281fb4250979c1-106"></a>yellow : 62.17744084
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-107" name="rest_code_f063073b99b24594b4281fb4250979c1-107" href="#rest_code_f063073b99b24594b4281fb4250979c1-107"></a>magenta : 20.77055938
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-108" name="rest_code_f063073b99b24594b4281fb4250979c1-108" href="#rest_code_f063073b99b24594b4281fb4250979c1-108"></a>neutral 5 (.70 D) : 19.14132354
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-109" name="rest_code_f063073b99b24594b4281fb4250979c1-109" href="#rest_code_f063073b99b24594b4281fb4250979c1-109"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-110" name="rest_code_f063073b99b24594b4281fb4250979c1-110" href="#rest_code_f063073b99b24594b4281fb4250979c1-110"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-111" name="rest_code_f063073b99b24594b4281fb4250979c1-111" href="#rest_code_f063073b99b24594b4281fb4250979c1-111"></a>Luminance "XYZ" Adapted to "E"
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-112" name="rest_code_f063073b99b24594b4281fb4250979c1-112" href="#rest_code_f063073b99b24594b4281fb4250979c1-112"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-113" name="rest_code_f063073b99b24594b4281fb4250979c1-113" href="#rest_code_f063073b99b24594b4281fb4250979c1-113"></a>red : 12.54104823
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-114" name="rest_code_f063073b99b24594b4281fb4250979c1-114" href="#rest_code_f063073b99b24594b4281fb4250979c1-114"></a>green : 22.96095053
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-115" name="rest_code_f063073b99b24594b4281fb4250979c1-115" href="#rest_code_f063073b99b24594b4281fb4250979c1-115"></a>blue : 6.00609174
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-116" name="rest_code_f063073b99b24594b4281fb4250979c1-116" href="#rest_code_f063073b99b24594b4281fb4250979c1-116"></a>cyan : 19.48706483
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-117" name="rest_code_f063073b99b24594b4281fb4250979c1-117" href="#rest_code_f063073b99b24594b4281fb4250979c1-117"></a>yellow : 59.19641488
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-118" name="rest_code_f063073b99b24594b4281fb4250979c1-118" href="#rest_code_f063073b99b24594b4281fb4250979c1-118"></a>magenta : 20.27715822
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-119" name="rest_code_f063073b99b24594b4281fb4250979c1-119" href="#rest_code_f063073b99b24594b4281fb4250979c1-119"></a>neutral 5 (.70 D) : 19.15154358
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-120" name="rest_code_f063073b99b24594b4281fb4250979c1-120" href="#rest_code_f063073b99b24594b4281fb4250979c1-120"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-121" name="rest_code_f063073b99b24594b4281fb4250979c1-121" href="#rest_code_f063073b99b24594b4281fb4250979c1-121"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-122" name="rest_code_f063073b99b24594b4281fb4250979c1-122" href="#rest_code_f063073b99b24594b4281fb4250979c1-122"></a>Luminance "XYZ" Adapted to "F2"
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-123" name="rest_code_f063073b99b24594b4281fb4250979c1-123" href="#rest_code_f063073b99b24594b4281fb4250979c1-123"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-124" name="rest_code_f063073b99b24594b4281fb4250979c1-124" href="#rest_code_f063073b99b24594b4281fb4250979c1-124"></a>red : 12.87780528
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-125" name="rest_code_f063073b99b24594b4281fb4250979c1-125" href="#rest_code_f063073b99b24594b4281fb4250979c1-125"></a>green : 23.20422641
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-126" name="rest_code_f063073b99b24594b4281fb4250979c1-126" href="#rest_code_f063073b99b24594b4281fb4250979c1-126"></a>blue : 5.50972884
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-127" name="rest_code_f063073b99b24594b4281fb4250979c1-127" href="#rest_code_f063073b99b24594b4281fb4250979c1-127"></a>cyan : 18.95130571
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-128" name="rest_code_f063073b99b24594b4281fb4250979c1-128" href="#rest_code_f063073b99b24594b4281fb4250979c1-128"></a>yellow : 60.52545632
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-129" name="rest_code_f063073b99b24594b4281fb4250979c1-129" href="#rest_code_f063073b99b24594b4281fb4250979c1-129"></a>magenta : 20.22656850
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-130" name="rest_code_f063073b99b24594b4281fb4250979c1-130" href="#rest_code_f063073b99b24594b4281fb4250979c1-130"></a>neutral 5 (.70 D) : 19.14751195
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-131" name="rest_code_f063073b99b24594b4281fb4250979c1-131" href="#rest_code_f063073b99b24594b4281fb4250979c1-131"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-132" name="rest_code_f063073b99b24594b4281fb4250979c1-132" href="#rest_code_f063073b99b24594b4281fb4250979c1-132"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-133" name="rest_code_f063073b99b24594b4281fb4250979c1-133" href="#rest_code_f063073b99b24594b4281fb4250979c1-133"></a>ColorChecker 2005 "sRGB - Linear" under "D65"
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-134" name="rest_code_f063073b99b24594b4281fb4250979c1-134" href="#rest_code_f063073b99b24594b4281fb4250979c1-134"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-135" name="rest_code_f063073b99b24594b4281fb4250979c1-135" href="#rest_code_f063073b99b24594b4281fb4250979c1-135"></a>red : array([0.45620519, 0.03081071, 0.04091952])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-136" name="rest_code_f063073b99b24594b4281fb4250979c1-136" href="#rest_code_f063073b99b24594b4281fb4250979c1-136"></a>green : array([0.05433312, 0.29879493, 0.07185472])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-137" name="rest_code_f063073b99b24594b4281fb4250979c1-137" href="#rest_code_f063073b99b24594b4281fb4250979c1-137"></a>blue : array([0.01862364, 0.05140184, 0.28880425])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-138" name="rest_code_f063073b99b24594b4281fb4250979c1-138" href="#rest_code_f063073b99b24594b4281fb4250979c1-138"></a>cyan : array([-0.03667845, 0.24755074, 0.39815738])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-139" name="rest_code_f063073b99b24594b4281fb4250979c1-139" href="#rest_code_f063073b99b24594b4281fb4250979c1-139"></a>yellow : array([0.85356364, 0.56517342, 0.01475279])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-140" name="rest_code_f063073b99b24594b4281fb4250979c1-140" href="#rest_code_f063073b99b24594b4281fb4250979c1-140"></a>magenta : array([0.53522616, 0.09013008, 0.30472718])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-141" name="rest_code_f063073b99b24594b4281fb4250979c1-141" href="#rest_code_f063073b99b24594b4281fb4250979c1-141"></a>neutral 5 (.70 D) : array([0.19002735, 0.19183638, 0.19312568])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-142" name="rest_code_f063073b99b24594b4281fb4250979c1-142" href="#rest_code_f063073b99b24594b4281fb4250979c1-142"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-143" name="rest_code_f063073b99b24594b4281fb4250979c1-143" href="#rest_code_f063073b99b24594b4281fb4250979c1-143"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-144" name="rest_code_f063073b99b24594b4281fb4250979c1-144" href="#rest_code_f063073b99b24594b4281fb4250979c1-144"></a>ColorChecker 2005 "sRGB - OETF" under "D65"
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-145" name="rest_code_f063073b99b24594b4281fb4250979c1-145" href="#rest_code_f063073b99b24594b4281fb4250979c1-145"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-146" name="rest_code_f063073b99b24594b4281fb4250979c1-146" href="#rest_code_f063073b99b24594b4281fb4250979c1-146"></a>red : array([0.70573936, 0.19248268, 0.22354168])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-147" name="rest_code_f063073b99b24594b4281fb4250979c1-147" href="#rest_code_f063073b99b24594b4281fb4250979c1-147"></a>green : array([0.25847007, 0.58276101, 0.29718877])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-148" name="rest_code_f063073b99b24594b4281fb4250979c1-148" href="#rest_code_f063073b99b24594b4281fb4250979c1-148"></a>blue : array([0.14565317, 0.25130933, 0.57378757])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-149" name="rest_code_f063073b99b24594b4281fb4250979c1-149" href="#rest_code_f063073b99b24594b4281fb4250979c1-149"></a>cyan : array([-0.47388561, 0.53467479, 0.66380090])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-150" name="rest_code_f063073b99b24594b4281fb4250979c1-150" href="#rest_code_f063073b99b24594b4281fb4250979c1-150"></a>yellow : array([0.93264474, 0.77675390, 0.12708884])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-151" name="rest_code_f063073b99b24594b4281fb4250979c1-151" href="#rest_code_f063073b99b24594b4281fb4250979c1-151"></a>magenta : array([0.75809823, 0.33206288, 0.58800664])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-152" name="rest_code_f063073b99b24594b4281fb4250979c1-152" href="#rest_code_f063073b99b24594b4281fb4250979c1-152"></a>neutral 5 (.70 D) : array([0.47315229, 0.47524148, 0.47672343])
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-153" name="rest_code_f063073b99b24594b4281fb4250979c1-153" href="#rest_code_f063073b99b24594b4281fb4250979c1-153"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-154" name="rest_code_f063073b99b24594b4281fb4250979c1-154" href="#rest_code_f063073b99b24594b4281fb4250979c1-154"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-155" name="rest_code_f063073b99b24594b4281fb4250979c1-155" href="#rest_code_f063073b99b24594b4281fb4250979c1-155"></a>ColorChecker 2005 "Munsell Value"
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-156" name="rest_code_f063073b99b24594b4281fb4250979c1-156" href="#rest_code_f063073b99b24594b4281fb4250979c1-156"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-157" name="rest_code_f063073b99b24594b4281fb4250979c1-157" href="#rest_code_f063073b99b24594b4281fb4250979c1-157"></a>red : 4.08244375
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-158" name="rest_code_f063073b99b24594b4281fb4250979c1-158" href="#rest_code_f063073b99b24594b4281fb4250979c1-158"></a>green : 5.39132685
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-159" name="rest_code_f063073b99b24594b4281fb4250979c1-159" href="#rest_code_f063073b99b24594b4281fb4250979c1-159"></a>blue : 2.97619312
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-160" name="rest_code_f063073b99b24594b4281fb4250979c1-160" href="#rest_code_f063073b99b24594b4281fb4250979c1-160"></a>cyan : 5.06675596
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-161" name="rest_code_f063073b99b24594b4281fb4250979c1-161" href="#rest_code_f063073b99b24594b4281fb4250979c1-161"></a>yellow : 8.04387670
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-162" name="rest_code_f063073b99b24594b4281fb4250979c1-162" href="#rest_code_f063073b99b24594b4281fb4250979c1-162"></a>magenta : 5.10225899
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-163" name="rest_code_f063073b99b24594b4281fb4250979c1-163" href="#rest_code_f063073b99b24594b4281fb4250979c1-163"></a>neutral 5 (.70 D) : 4.98656896
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-164" name="rest_code_f063073b99b24594b4281fb4250979c1-164" href="#rest_code_f063073b99b24594b4281fb4250979c1-164"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-165" name="rest_code_f063073b99b24594b4281fb4250979c1-165" href="#rest_code_f063073b99b24594b4281fb4250979c1-165"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-166" name="rest_code_f063073b99b24594b4281fb4250979c1-166" href="#rest_code_f063073b99b24594b4281fb4250979c1-166"></a>ColorChecker 2005 "ASTM D1535-08e1 Luminance"
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-167" name="rest_code_f063073b99b24594b4281fb4250979c1-167" href="#rest_code_f063073b99b24594b4281fb4250979c1-167"></a>
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-168" name="rest_code_f063073b99b24594b4281fb4250979c1-168" href="#rest_code_f063073b99b24594b4281fb4250979c1-168"></a>red : 12.23634268
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-169" name="rest_code_f063073b99b24594b4281fb4250979c1-169" href="#rest_code_f063073b99b24594b4281fb4250979c1-169"></a>green : 22.89399987
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-170" name="rest_code_f063073b99b24594b4281fb4250979c1-170" href="#rest_code_f063073b99b24594b4281fb4250979c1-170"></a>blue : 6.29022535
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-171" name="rest_code_f063073b99b24594b4281fb4250979c1-171" href="#rest_code_f063073b99b24594b4281fb4250979c1-171"></a>cyan : 19.86282567
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-172" name="rest_code_f063073b99b24594b4281fb4250979c1-172" href="#rest_code_f063073b99b24594b4281fb4250979c1-172"></a>yellow : 58.37987916
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-173" name="rest_code_f063073b99b24594b4281fb4250979c1-173" href="#rest_code_f063073b99b24594b4281fb4250979c1-173"></a>magenta : 20.18160934
+<a id="rest_code_f063073b99b24594b4281fb4250979c1-174" name="rest_code_f063073b99b24594b4281fb4250979c1-174" href="#rest_code_f063073b99b24594b4281fb4250979c1-174"></a>neutral 5 (.70 D) : 19.15426585
 </pre></div>
 <ul class="simple">
 <li><p>Some commonly used dataset elements have aliases like <strong>'cie_2_1931'</strong>
@@ -736,7 +741,7 @@ via a <a class="reference external" href="https://pre-commit.com">pre-commit</a>
 <li><p>Ensure that trailing whitespaces are stripped.</p></li>
 <li><p>Prefix unused variable with an underscore:</p></li>
 </ul>
-<div class="code"><pre class="code python"><a id="rest_code_9df4a44d28ff46fd9144e9393d341925-1" name="rest_code_9df4a44d28ff46fd9144e9393d341925-1" href="#rest_code_9df4a44d28ff46fd9144e9393d341925-1"></a><span class="n">_L</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">Lab</span><span class="p">)</span>
+<div class="code"><pre class="code python"><a id="rest_code_db411e2925714eeaae9ed973d531034c-1" name="rest_code_db411e2925714eeaae9ed973d531034c-1" href="#rest_code_db411e2925714eeaae9ed973d531034c-1"></a><span class="n">_L</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">tsplit</span><span class="p">(</span><span class="n">Lab</span><span class="p">)</span>
 </pre></div>
 </section><section id="citations"><h3>Citations</h3>
 <p>It's likely that the code you contribute will be based upon references, we are
@@ -789,7 +794,7 @@ version of <strong>Colour</strong>, some automation is provided by <a class="ref
 <div id="content">
   <ul>
 <li>
-      <h4>Github - Stage 1</h4>
+      <h4>GitHub - Stage 1</h4>
       <ul>
 <li>
 <span class="task-status todo" style="margin-right:6px">TODO</span>Review the <a href="https://gist.github.com/KelSolaar/4a6ebe9ec3d389f0934b154fec8df51d">release notes</a>
@@ -839,7 +844,7 @@ version of <strong>Colour</strong>, some automation is provided by <a class="ref
       </ul>
 </li>
     <li>
-      <h4>Pypi - Stage 1</h4>
+      <h4>PyPI - Stage 1</h4>
       <ul>
 <li>
 <span class="task-status todo" style="margin-right:6px">TODO</span>Run the virtualise task: It deploys the project to a virtual environment and run the unit tests
@@ -895,17 +900,17 @@ version of <strong>Colour</strong>, some automation is provided by <a class="ref
       </ul>
 </li>
     <li>
-      <h4>Github - Stage 2</h4>
+      <h4>GitHub - Stage 2</h4>
       <ul>
 <li>
 <span class="task-status todo" style="margin-right:6px">TODO</span>Publish the <a href="https:gist.github.com/KelSolaar/4a6ebe9ec3d389f0934b154fec8df51d">release notes</a> on the <a href="https:github.com/colour-science/colour/releases">releases</a> page using the new tag</li>
       </ul>
 </li>
     <li>
-      <h4>Pypi - Stage 2</h4>
+      <h4>PyPI - Stage 2</h4>
       <ul>
 <li>
-<span class="task-status todo" style="margin-right:6px">TODO</span>Run the release task: It releases the project to Pypi with Twine
+<span class="task-status todo" style="margin-right:6px">TODO</span>Run the release task: It releases the project to PyPI with Twine
           <pre><code data-lang="bash" class="bash">uv run invoke release</code></pre>
         </li>
       </ul>
@@ -914,7 +919,7 @@ version of <strong>Colour</strong>, some automation is provided by <a class="ref
       <h4>Zenodo - Stage 2</h4>
       <ul>
 <li>
-<span class="task-status todo" style="margin-right:6px">TODO</span>Upload the Pypi package and create new version in Zenodo</li>
+<span class="task-status todo" style="margin-right:6px">TODO</span>Upload the PyPI package and create new version in Zenodo</li>
       </ul>
 </li>
     <li>
@@ -974,55 +979,53 @@ version of <strong>Colour</strong>, some automation is provided by <a class="ref
   </ul>
 </div></section>
 </div>
+
     
 
 </article><!--End of body content-->
 </div>
         </div>
     </div>
-</div>
-
-<!-- End of Main -->
-
-<!-- Footer -->
-
-<footer id="footer" class="mt-auto"><ul class="nav justify-content-center">
-<li class="nav-item mx-3">
+</main><!-- End of Main --><!-- Footer --><footer id="footer" class="mt-auto"><div class="container">
+        
+<ul class="nav justify-content-center">
+<li class="nav-item mx-1">
         <a href="mailto:colour-developers@colour-science.org">
-            <i class="fa-regular fa-envelope text-light"></i>
+            <img class="site-icon" src="../assets/icons/envelope.svg" width="16" height="16" alt=""><span class="sr-only">Email</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://github.com/colour-science/colour">
-            <i class="fa-brands fa-github text-light"></i>
+            <img class="site-icon" src="../assets/icons/github.svg" width="16" height="16" alt=""><span class="sr-only">GitHub</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://www.facebook.com/python.colour.science">
-            <i class="fa-brands fa-facebook text-light"></i>
+            <img class="site-icon" src="../assets/icons/facebook.svg" width="16" height="16" alt=""><span class="sr-only">Facebook</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://gitter.im/colour-science/colour">
-            <i class="fa-brands fa-gitter text-light"></i>
+            <img class="site-icon" src="../assets/icons/gitter.svg" width="16" height="16" alt=""><span class="sr-only">Gitter</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://x.com/colour_science">
-            <i class="fa-brands fa-x-twitter text-light"></i>
+            <img class="site-icon" src="../assets/icons/x-twitter.svg" width="16" height="16" alt=""><span class="sr-only">X</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://bsky.app/profile/colour-science.bsky.social">
-            <i class="fa-brands fa-bluesky text-light"></i>
+            <img class="site-icon" src="../assets/icons/bluesky.svg" width="16" height="16" alt=""><span class="sr-only">Bluesky</span>
         </a>
     </li>
 </ul>
-<div class="text-center text-light py-3"><span>Copyright © 2013-2026 – Colour Developers</span></div>
+<div class="text-center pt-3"><span>Copyright © 2013-2026 – Colour Developers</span></div>
 
-    
+        
+    </div>
 </footer><!-- End of Footer --><script src="../assets/js/jquery.min.js"></script><script src="../assets/js/popper.min.js"></script><script src="../assets/js/bootstrap.min.js"></script><script src="../assets/js/baguetteBox.min.js"></script><script>
-    baguetteBox.run('div#content', {
+    baguetteBox.run('#content', {
         ignoreClass: 'islink',
         captions: function(element) {
             return element.getElementsByTagName('img')[0].alt;

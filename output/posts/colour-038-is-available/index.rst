@@ -47,8 +47,8 @@ will likely create computational discrepancies.
 `Colour - Demosaicing </colour-demosaicing>`__ and `Colour - HDRI </colour-hdri>`__
 packages have been updated accordingly.
 
-Michael and I would like to thanks all the contributors for that release
-whether they contribute to the code or participate in discussions.
+Michael and I would like to thank all the contributors for that release
+whether they contributed to the code or participated in discussions.
 
 -   David Bourgeois
 -   Luke Canavan

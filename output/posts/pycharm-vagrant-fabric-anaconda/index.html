@@ -12,7 +12,8 @@
 <link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta name="theme-color" content="#191919">
+<link href="../../assets/css/site.css?v=6" rel="stylesheet">
+<meta name="theme-color" content="#101010">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://www.colour-science.org/posts/pycharm-vagrant-fabric-anaconda/">
@@ -28,9 +29,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
-</script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.1/css/all.css" integrity="sha384-QI8z31KmtR+tk1MYi0DfgxrjYgpTpLLol3bqZA/Q1Y8BvH+6k7/Huoj38gQOaCS7" crossorigin="anonymous">
-<meta name="google-site-verification" content="CeWflIcbu-x7Ur7qbzTYJiRFvoGF5RljJyGZMg7H9co">
+</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="google-site-verification" content="CeWflIcbu-x7Ur7qbzTYJiRFvoGF5RljJyGZMg7H9co">
 <meta name="author" content="Colour Developers">
 <link rel="prev" href="../the-first-public-release-of-colour-is-available/" title="The first public release of Colour is available!" type="text/html">
 <link rel="next" href="../about-rendering-engines-colourspace-agnosticism/" title="About Rendering Engines Colourspace Agnosticism" type="text/html">
@@ -51,16 +50,16 @@ deploying:">
 <meta property="article:tag" content="pycharm">
 <meta property="article:tag" content="vagrant">
 </head>
-<body>
+<body class="site-body">
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
 <!-- Menubar -->
 
-<nav class="navbar navbar-expand-xl static-top
-navbar-dark bg-dark bg-primary
+<nav aria-label="Primary" class="site-nav navbar navbar-expand-xl static-top
+navbar-dark
 "><div class="container">
 <!-- This keeps the margins nice -->
-        <a class="navbar-brand" href="https://www.colour-science.org/">
+        <a class="navbar-brand" href="../../">
 
             <span id="blog-title">Colour Science</span>
         </a>
@@ -71,7 +70,7 @@ navbar-dark bg-dark bg-primary
         <div class="collapse navbar-collapse" id="bs-navbar">
             <ul class="navbar-nav mr-auto">
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Projects</button>
             <div class="dropdown-menu">
                     <a href="../../apps" class="dropdown-item"><span class="font-weight-bold">Apps (Colour - Dash)</span></a>
                     <a href="http://awesome-colour.org/" class="dropdown-item"><span class="font-weight-bold">Awesome Colour</span></a>
@@ -89,7 +88,7 @@ navbar-dark bg-dark bg-primary
             </div>
             </li>
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Documentation</button>
             <div class="dropdown-menu">
                     <a href="../../installation-guide" class="dropdown-item"><span class="font-weight-bold">Installation Guide</span></a>
                     <a href="https://colour.readthedocs.io/en/develop/tutorial.html" class="dropdown-item"><span class="font-weight-bold">Static Tutorial</span></a>
@@ -109,7 +108,7 @@ navbar-dark bg-dark bg-primary
             </div>
             </li>
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Blog</button>
             <div class="dropdown-menu">
                     <a href="../../blog" class="dropdown-item"><span class="font-weight-bold">Posts</span></a>
                     <a href="../../archive.html" class="dropdown-item"><span class="font-weight-normal">Archive</span></a>
@@ -117,33 +116,40 @@ navbar-dark bg-dark bg-primary
             </div>
                 </li>
 <li class="nav-item">
-<a href="mailto:colour-developers@colour-science.org" class="nav-link"><i class="fa-regular fa-envelope"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://github.com/colour-science/colour" class="nav-link"><i class="fa-brands fa-github"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://www.facebook.com/python.colour.science" class="nav-link"><i class="fa-brands fa-facebook"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://gitter.im/colour-science/colour" class="nav-link"><i class="fa-brands fa-gitter"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://x.com/colour_science" class="nav-link"><i class="fa-brands fa-x-twitter"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://bsky.app/profile/colour-science.bsky.social" class="nav-link"><i class="fa-brands fa-bluesky"></i></a>
+<a href="../../#sponsors" class="nav-link">Sponsors</a>
 
                 
             </li>
 </ul>
-<ul class="navbar-nav navbar-right"></ul>
+<ul class="navbar-nav navbar-right">
+<li class="nav-item">
+<a href="mailto:colour-developers@colour-science.org" class="nav-link"><img class="site-icon" src="../../assets/icons/envelope.svg" width="16" height="16" alt=""><span class="sr-only">Email</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://github.com/colour-science/colour" class="nav-link"><img class="site-icon" src="../../assets/icons/github.svg" width="16" height="16" alt=""><span class="sr-only">GitHub</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://www.facebook.com/python.colour.science" class="nav-link"><img class="site-icon" src="../../assets/icons/facebook.svg" width="16" height="16" alt=""><span class="sr-only">Facebook</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://gitter.im/colour-science/colour" class="nav-link"><img class="site-icon" src="../../assets/icons/gitter.svg" width="16" height="16" alt=""><span class="sr-only">Gitter</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://x.com/colour_science" class="nav-link"><img class="site-icon" src="../../assets/icons/x-twitter.svg" width="16" height="16" alt=""><span class="sr-only">X</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://bsky.app/profile/colour-science.bsky.social" class="nav-link"><img class="site-icon" src="../../assets/icons/bluesky.svg" width="16" height="16" alt=""><span class="sr-only">Bluesky</span></a>
+
+                
+                
+                
+            </li>
+</ul>
 </div>
 <!-- /.navbar-collapse -->
     </div>
 <!-- /.container -->
-</nav><!-- End of Menubar --><!-- Main --><div class="container" id="content" role="main">
-    <div class="row">
+</nav><!-- End of Menubar --><!-- Main --><main class="container" id="content"><div class="row">
         <div class="col-12">
             <div class="body-content">
                 <!--Body content-->
@@ -217,14 +223,14 @@ are using <em>macOS</em>, although it should pretty much be platform agnostic.</
 <li><p>On your local filesystem, in your development workspace, create a
 directory <code>colour-science</code> and <code>cd</code> into it:</p></li>
 </ul>
-<div class="code"><pre class="code shell"><a id="rest_code_5ee8bd2197ab42829cad1066053ad240-1" name="rest_code_5ee8bd2197ab42829cad1066053ad240-1" href="#rest_code_5ee8bd2197ab42829cad1066053ad240-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>colour-science
-<a id="rest_code_5ee8bd2197ab42829cad1066053ad240-2" name="rest_code_5ee8bd2197ab42829cad1066053ad240-2" href="#rest_code_5ee8bd2197ab42829cad1066053ad240-2"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>colour-science
+<div class="code"><pre class="code shell"><a id="rest_code_14dfaba9fae346d182bb9fa2ced94253-1" name="rest_code_14dfaba9fae346d182bb9fa2ced94253-1" href="#rest_code_14dfaba9fae346d182bb9fa2ced94253-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>colour-science
+<a id="rest_code_14dfaba9fae346d182bb9fa2ced94253-2" name="rest_code_14dfaba9fae346d182bb9fa2ced94253-2" href="#rest_code_14dfaba9fae346d182bb9fa2ced94253-2"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>colour-science
 </pre></div>
 <ul class="simple">
 <li><p>Clone the <a class="reference external" href="https://github.com/colour-science/colour-vagrant">colour-vagrant</a>
 repository:</p></li>
 </ul>
-<div class="code"><pre class="code shell"><a id="rest_code_5126da709748449688c535cac4777661-1" name="rest_code_5126da709748449688c535cac4777661-1" href="#rest_code_5126da709748449688c535cac4777661-1"></a>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>git://github.com/colour-science/colour-vagrant.git
+<div class="code"><pre class="code shell"><a id="rest_code_391194daeb7e4e9ca30e65d886a43800-1" name="rest_code_391194daeb7e4e9ca30e65d886a43800-1" href="#rest_code_391194daeb7e4e9ca30e65d886a43800-1"></a>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>git://github.com/colour-science/colour-vagrant.git
 </pre></div>
 <ul>
 <li>
@@ -245,7 +251,7 @@ environment. Initially, I was provisioning with <a class="reference external" hr
 It was cumbersome to use, so I decided to go for <a class="reference external" href="http://www.fabfile.org">Fabric</a>
 and the <a class="reference external" href="https://github.com/wutali/vagrant-fabric">vagrant-fabric</a>
 plugin:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_5611135fba754287b5e2594a3d2bb1e9-1" name="rest_code_5611135fba754287b5e2594a3d2bb1e9-1" href="#rest_code_5611135fba754287b5e2594a3d2bb1e9-1"></a>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>fabric
+<div class="code"><pre class="code shell"><a id="rest_code_f6b42ded75984bc78ef666b12088678f-1" name="rest_code_f6b42ded75984bc78ef666b12088678f-1" href="#rest_code_f6b42ded75984bc78ef666b12088678f-1"></a>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>fabric
 </pre></div>
 </li>
 </ul>
@@ -299,7 +305,7 @@ plugin to <a class="reference external" href="http://www.jetbrains.com/pycharm">
 </ul>
 <p>Your configuration screen should be approximately as follows:</p>
 <img alt="/images/Blog_PyCharm_Vagrant_001.png" src="../../images/Blog_PyCharm_Vagrant_001.png"><img alt="/images/Blog_PyCharm_Vagrant_002.png" src="../../images/Blog_PyCharm_Vagrant_002.png"></section><section id="vagrant-up"><h2>Vagrant Up</h2>
-<p>With everything setup, hit the <code>PyCharm --&gt; Tools --&gt; Vagrant --&gt; Up</code>
+<p>With everything set up, hit the <code>PyCharm --&gt; Tools --&gt; Vagrant --&gt; Up</code>
 menu item to spin up the virtual machine.</p>
 <p>You can go grab a coffee, the initial provisioning will take roughly
 25-30 minutes.</p>
@@ -312,13 +318,13 @@ cloned into the <code>colour-science</code> directory right next to the
 <li><p>Remote Python environments installed into the virtual machine at the
 following location with all the dependencies needed:</p></li>
 </ul>
-<div class="code"><pre class="code shell"><a id="rest_code_e5c2e315d9ce43b591f658977c73de0f-1" name="rest_code_e5c2e315d9ce43b591f658977c73de0f-1" href="#rest_code_e5c2e315d9ce43b591f658977c73de0f-1"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/home/vagrant/miniconda/envs/
-<a id="rest_code_e5c2e315d9ce43b591f658977c73de0f-2" name="rest_code_e5c2e315d9ce43b591f658977c73de0f-2" href="#rest_code_e5c2e315d9ce43b591f658977c73de0f-2"></a>$<span class="w"> </span>ls<span class="w"> </span>-l
-<a id="rest_code_e5c2e315d9ce43b591f658977c73de0f-3" name="rest_code_e5c2e315d9ce43b591f658977c73de0f-3" href="#rest_code_e5c2e315d9ce43b591f658977c73de0f-3"></a>total<span class="w"> </span><span class="m">16</span>
-<a id="rest_code_e5c2e315d9ce43b591f658977c73de0f-4" name="rest_code_e5c2e315d9ce43b591f658977c73de0f-4" href="#rest_code_e5c2e315d9ce43b591f658977c73de0f-4"></a>drwxrwxr-x<span class="w">  </span><span class="m">4</span><span class="w"> </span>vagrant<span class="w"> </span>vagrant<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Apr<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">03</span>:12<span class="w"> </span>./
-<a id="rest_code_e5c2e315d9ce43b591f658977c73de0f-5" name="rest_code_e5c2e315d9ce43b591f658977c73de0f-5" href="#rest_code_e5c2e315d9ce43b591f658977c73de0f-5"></a>drwxrwxr-x<span class="w"> </span><span class="m">13</span><span class="w"> </span>vagrant<span class="w"> </span>vagrant<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Apr<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">03</span>:02<span class="w"> </span>../
-<a id="rest_code_e5c2e315d9ce43b591f658977c73de0f-6" name="rest_code_e5c2e315d9ce43b591f658977c73de0f-6" href="#rest_code_e5c2e315d9ce43b591f658977c73de0f-6"></a>drwxrwxr-x<span class="w"> </span><span class="m">20</span><span class="w"> </span>vagrant<span class="w"> </span>vagrant<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Apr<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">03</span>:09<span class="w"> </span>python2.7/
-<a id="rest_code_e5c2e315d9ce43b591f658977c73de0f-7" name="rest_code_e5c2e315d9ce43b591f658977c73de0f-7" href="#rest_code_e5c2e315d9ce43b591f658977c73de0f-7"></a>drwxrwxr-x<span class="w"> </span><span class="m">20</span><span class="w"> </span>vagrant<span class="w"> </span>vagrant<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Apr<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">03</span>:30<span class="w"> </span>python3.5/
+<div class="code"><pre class="code shell"><a id="rest_code_e9200b437328451f8666239667c39c42-1" name="rest_code_e9200b437328451f8666239667c39c42-1" href="#rest_code_e9200b437328451f8666239667c39c42-1"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/home/vagrant/miniconda/envs/
+<a id="rest_code_e9200b437328451f8666239667c39c42-2" name="rest_code_e9200b437328451f8666239667c39c42-2" href="#rest_code_e9200b437328451f8666239667c39c42-2"></a>$<span class="w"> </span>ls<span class="w"> </span>-l
+<a id="rest_code_e9200b437328451f8666239667c39c42-3" name="rest_code_e9200b437328451f8666239667c39c42-3" href="#rest_code_e9200b437328451f8666239667c39c42-3"></a>total<span class="w"> </span><span class="m">16</span>
+<a id="rest_code_e9200b437328451f8666239667c39c42-4" name="rest_code_e9200b437328451f8666239667c39c42-4" href="#rest_code_e9200b437328451f8666239667c39c42-4"></a>drwxrwxr-x<span class="w">  </span><span class="m">4</span><span class="w"> </span>vagrant<span class="w"> </span>vagrant<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Apr<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">03</span>:12<span class="w"> </span>./
+<a id="rest_code_e9200b437328451f8666239667c39c42-5" name="rest_code_e9200b437328451f8666239667c39c42-5" href="#rest_code_e9200b437328451f8666239667c39c42-5"></a>drwxrwxr-x<span class="w"> </span><span class="m">13</span><span class="w"> </span>vagrant<span class="w"> </span>vagrant<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Apr<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">03</span>:02<span class="w"> </span>../
+<a id="rest_code_e9200b437328451f8666239667c39c42-6" name="rest_code_e9200b437328451f8666239667c39c42-6" href="#rest_code_e9200b437328451f8666239667c39c42-6"></a>drwxrwxr-x<span class="w"> </span><span class="m">20</span><span class="w"> </span>vagrant<span class="w"> </span>vagrant<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Apr<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">03</span>:09<span class="w"> </span>python2.7/
+<a id="rest_code_e9200b437328451f8666239667c39c42-7" name="rest_code_e9200b437328451f8666239667c39c42-7" href="#rest_code_e9200b437328451f8666239667c39c42-7"></a>drwxrwxr-x<span class="w"> </span><span class="m">20</span><span class="w"> </span>vagrant<span class="w"> </span>vagrant<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Apr<span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">03</span>:30<span class="w"> </span>python3.5/
 </pre></div>
 <ul class="simple">
 <li><p>The <strong>colour-science.org</strong> website served from the virtual machine at
@@ -348,18 +354,18 @@ are as follows:</p>
 <code>PyCharm --&gt; Tools Start SSH session...</code> menu item.</p>
 <p>However if you want to be able to export the display and see the figures you
 will have to manually <code>ssh</code> into the virtual machine:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_a82d9210594f44a09ef8b22f5c04e43a-1" name="rest_code_a82d9210594f44a09ef8b22f5c04e43a-1" href="#rest_code_a82d9210594f44a09ef8b22f5c04e43a-1"></a>$<span class="w"> </span>ssh<span class="w"> </span>-X<span class="w"> </span>vagrant@192.168.32.64
+<div class="code"><pre class="code shell"><a id="rest_code_0b81eaa3b34a4c68bb53ea9fe2d6324d-1" name="rest_code_0b81eaa3b34a4c68bb53ea9fe2d6324d-1" href="#rest_code_0b81eaa3b34a4c68bb53ea9fe2d6324d-1"></a>$<span class="w"> </span>ssh<span class="w"> </span>-X<span class="w"> </span>vagrant@192.168.32.64
 </pre></div>
 <p>Password is <code>vagrant</code>.</p>
 <p>You will also need to add the virtual machine to the X11 hosts by issuing the
 following command on the <em>macOS</em> host:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_9ba4c1a977734a9c9438980bd4922f30-1" name="rest_code_9ba4c1a977734a9c9438980bd4922f30-1" href="#rest_code_9ba4c1a977734a9c9438980bd4922f30-1"></a>$<span class="w"> </span>xhost<span class="w"> </span>+<span class="w"> </span><span class="m">192</span>.168.32.64
+<div class="code"><pre class="code shell"><a id="rest_code_693ccae810794615a99594b1e3b0a8ee-1" name="rest_code_693ccae810794615a99594b1e3b0a8ee-1" href="#rest_code_693ccae810794615a99594b1e3b0a8ee-1"></a>$<span class="w"> </span>xhost<span class="w"> </span>+<span class="w"> </span><span class="m">192</span>.168.32.64
 </pre></div>
 </section><section id="jupyter-notebooks"><h3>Jupyter Notebooks</h3>
 <p>The <a class="reference external" href="http://ipython.org/notebook.html">Jupyter Notebooks</a> server is started
 as follows:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_1d679fc272284b198ffed68dfade9c55-1" name="rest_code_1d679fc272284b198ffed68dfade9c55-1" href="#rest_code_1d679fc272284b198ffed68dfade9c55-1"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/colour-science
-<a id="rest_code_1d679fc272284b198ffed68dfade9c55-2" name="rest_code_1d679fc272284b198ffed68dfade9c55-2" href="#rest_code_1d679fc272284b198ffed68dfade9c55-2"></a>$<span class="w"> </span>ipython<span class="w"> </span>notebook<span class="w"> </span>--pylab<span class="o">=</span>inline<span class="w"> </span>--ip<span class="o">=</span><span class="m">0</span>.0.0.0
+<div class="code"><pre class="code shell"><a id="rest_code_cad83cbf719e47dab73939f8a8ff3380-1" name="rest_code_cad83cbf719e47dab73939f8a8ff3380-1" href="#rest_code_cad83cbf719e47dab73939f8a8ff3380-1"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/colour-science
+<a id="rest_code_cad83cbf719e47dab73939f8a8ff3380-2" name="rest_code_cad83cbf719e47dab73939f8a8ff3380-2" href="#rest_code_cad83cbf719e47dab73939f8a8ff3380-2"></a>$<span class="w"> </span>ipython<span class="w"> </span>notebook<span class="w"> </span>--pylab<span class="o">=</span>inline<span class="w"> </span>--ip<span class="o">=</span><span class="m">0</span>.0.0.0
 </pre></div>
 <p>Then you can access it on the <em>macOS</em> host at the following url:
 <a class="reference external" href="http://localhost:8888">http://localhost:8888/</a></p>
@@ -367,10 +373,10 @@ as follows:</p>
 <p>You can activate the remote Python environments in the virtual machine by
 issuing those commands:</p>
 <p>For <strong>python2.7</strong>:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_bb88839feb2c44288c444e152fc16733-1" name="rest_code_bb88839feb2c44288c444e152fc16733-1" href="#rest_code_bb88839feb2c44288c444e152fc16733-1"></a>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>python2.7
+<div class="code"><pre class="code shell"><a id="rest_code_b5b4809e60b94ff8a61a824d6a7ddca9-1" name="rest_code_b5b4809e60b94ff8a61a824d6a7ddca9-1" href="#rest_code_b5b4809e60b94ff8a61a824d6a7ddca9-1"></a>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>python2.7
 </pre></div>
 <p>For <strong>python3.5</strong>:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_251d0dfca4c74f69ab21dd79f93d5c67-1" name="rest_code_251d0dfca4c74f69ab21dd79f93d5c67-1" href="#rest_code_251d0dfca4c74f69ab21dd79f93d5c67-1"></a>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>python3.5
+<div class="code"><pre class="code shell"><a id="rest_code_822b8428603a43449e2844850ea65a6b-1" name="rest_code_822b8428603a43449e2844850ea65a6b-1" href="#rest_code_822b8428603a43449e2844850ea65a6b-1"></a>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>python3.5
 </pre></div>
 </section></section>
 </div>
@@ -413,49 +419,46 @@ issuing those commands:</p>
 </div>
         </div>
     </div>
-</div>
-
-<!-- End of Main -->
-
-<!-- Footer -->
-
-<footer id="footer" class="mt-auto"><ul class="nav justify-content-center">
-<li class="nav-item mx-3">
+</main><!-- End of Main --><!-- Footer --><footer id="footer" class="mt-auto"><div class="container">
+        
+<ul class="nav justify-content-center">
+<li class="nav-item mx-1">
         <a href="mailto:colour-developers@colour-science.org">
-            <i class="fa-regular fa-envelope text-light"></i>
+            <img class="site-icon" src="../../assets/icons/envelope.svg" width="16" height="16" alt=""><span class="sr-only">Email</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://github.com/colour-science/colour">
-            <i class="fa-brands fa-github text-light"></i>
+            <img class="site-icon" src="../../assets/icons/github.svg" width="16" height="16" alt=""><span class="sr-only">GitHub</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://www.facebook.com/python.colour.science">
-            <i class="fa-brands fa-facebook text-light"></i>
+            <img class="site-icon" src="../../assets/icons/facebook.svg" width="16" height="16" alt=""><span class="sr-only">Facebook</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://gitter.im/colour-science/colour">
-            <i class="fa-brands fa-gitter text-light"></i>
+            <img class="site-icon" src="../../assets/icons/gitter.svg" width="16" height="16" alt=""><span class="sr-only">Gitter</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://x.com/colour_science">
-            <i class="fa-brands fa-x-twitter text-light"></i>
+            <img class="site-icon" src="../../assets/icons/x-twitter.svg" width="16" height="16" alt=""><span class="sr-only">X</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://bsky.app/profile/colour-science.bsky.social">
-            <i class="fa-brands fa-bluesky text-light"></i>
+            <img class="site-icon" src="../../assets/icons/bluesky.svg" width="16" height="16" alt=""><span class="sr-only">Bluesky</span>
         </a>
     </li>
 </ul>
-<div class="text-center text-light py-3"><span>Copyright © 2013-2026 – Colour Developers</span></div>
+<div class="text-center pt-3"><span>Copyright © 2013-2026 – Colour Developers</span></div>
 
-    
+        
+    </div>
 </footer><!-- End of Footer --><script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>
-    baguetteBox.run('div#content', {
+    baguetteBox.run('#content', {
         ignoreClass: 'islink',
         captions: function(element) {
             return element.getElementsByTagName('img')[0].alt;

@@ -7,20 +7,20 @@ ${base.html_headstart()}
 </%block>
 ${template_hooks['extra_head']()}
 </head>
-<body>
+<body class="site-body">
 <a href="#content" class="sr-only sr-only-focusable">${messages("Skip to main content")}</a>
 
 <!-- Menubar -->
 
-<nav class="navbar navbar-expand-xl static-top
+<nav aria-label="Primary" class="site-nav navbar navbar-expand-xl static-top
 % if theme_config.get('navbar_light'):
-navbar-light bg-light
+navbar-light
 % else:
-navbar-dark bg-dark bg-primary
+navbar-dark
 % endif
 ">
     <div class="container"><!-- This keeps the margins nice -->
-        <a class="navbar-brand" href="${abs_link(_link("root", None, lang))}">
+        <a class="navbar-brand" href="${_link("root", None, lang)}">
         %if logo_url:
             <img src="${logo_url}" alt="${blog_title|h}" id="logo" class="d-inline-block align-top">
         %endif
@@ -62,7 +62,7 @@ navbar-dark bg-dark bg-primary
 
 <!-- Main -->
 
-<div class="container" id="content" role="main">
+<main class="container" id="content">
     <div class="row">
         <div class="col-12">
             <div class="body-content">
@@ -74,15 +74,17 @@ navbar-dark bg-dark bg-primary
             </div>
         </div>
     </div>
-</div>
+</main>
 
 <!-- End of Main -->
 
 <!-- Footer -->
 
 <footer id="footer" class="mt-auto">
-    ${content_footer}
-    ${template_hooks['page_footer']()}
+    <div class="container">
+        ${content_footer}
+        ${template_hooks['page_footer']()}
+    </div>
 </footer>
 
 <!-- End of Footer -->
@@ -98,7 +100,7 @@ ${base.late_load_js()}
     %endif
     <%block name="extra_js"></%block>
     <script>
-    baguetteBox.run('div#content', {
+    baguetteBox.run('#content', {
         ignoreClass: 'islink',
         captions: function(element) {
             return element.getElementsByTagName('img')[0].alt;

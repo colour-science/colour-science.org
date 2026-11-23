@@ -7,8 +7,8 @@
 .. description:
 .. type: text
 
-`colour-science.org <https://www.colour-science.org>`__ has been quiet for a while
-however, it does not mean nothing happened. `Colour 0.3.9 <https://github.com/colour-science/colour/releases/tag/v0.3.9>`__
+`colour-science.org <https://www.colour-science.org>`__ has been quiet for a while,
+but there has been progress. `Colour 0.3.9 <https://github.com/colour-science/colour/releases/tag/v0.3.9>`__
 and `Colour - HDRI 0.1.2 <https://github.com/colour-science/colour-hdri/releases/tag/v0.1.2>`__
 were released today and last week, concluding a major collaborative effort, the ACES
 community addressed an important feedback paper to the Academy leadership.
@@ -18,10 +18,10 @@ community addressed an important feedback paper to the Academy leadership.
 Colour 0.3.9
 ------------
 
-This release introduces some significant spectral computations performance
-improvements and various new objects:
+This release introduces some significant performance improvements
+for spectral computations and various new objects:
 
--   Spectral code optimisations resulting in increased computations performance:
+-   Spectral code optimisations resulting in improved computational performance:
 
     -   ``colour.SpectralPowerDistribution`` and ``colour.TriSpectralPowerDistribution``
         classes are now **6.5** times faster.
@@ -105,4 +105,4 @@ Reviewers
 -   **Troy James Sobotka**, *Freelancer*
 
 The document can be found at this URL: https://doi.org/10.5281/zenodo.345624
-and the LaTex code is hosted on `Github <https://github.com/colour-science/aces-retrospective-and-enhancements>`__.
+and the LaTeX code is hosted on `GitHub <https://github.com/colour-science/aces-retrospective-and-enhancements>`__.

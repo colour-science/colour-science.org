@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Colour Science for Python | Colour Science</title>
+<title>Colour science for Python | Colour Science</title>
 <link href="assets/css/colour-science.css" rel="stylesheet" type="text/css">
 <link href="assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
 <link href="assets/css/rst.css" rel="stylesheet" type="text/css">
@@ -12,7 +12,8 @@
 <link href="assets/css/theme.css" rel="stylesheet" type="text/css">
 <link href="assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta name="theme-color" content="#191919">
+<link href="assets/css/site.css?v=6" rel="stylesheet">
+<meta name="theme-color" content="#101010">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="https://www.colour-science.org/">
@@ -28,35 +29,52 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script><!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
-</script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.1/css/all.css" integrity="sha384-QI8z31KmtR+tk1MYi0DfgxrjYgpTpLLol3bqZA/Q1Y8BvH+6k7/Huoj38gQOaCS7" crossorigin="anonymous">
-<meta name="google-site-verification" content="CeWflIcbu-x7Ur7qbzTYJiRFvoGF5RljJyGZMg7H9co">
+</script><!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><meta name="google-site-verification" content="CeWflIcbu-x7Ur7qbzTYJiRFvoGF5RljJyGZMg7H9co">
 <meta name="author" content="Colour Developers">
 <meta property="og:site_name" content="Colour Science">
-<meta property="og:title" content="Colour Science for Python">
+<meta property="og:title" content="Colour science for Python">
 <meta property="og:url" content="https://www.colour-science.org/">
-<meta property="og:description" content="Colour
-                    is an open-source Python
-                    package providing a comprehensive number of algorithms and datasets
-                    for colour science.
-                
-   ">
+<meta property="og:description" content="Colour examples
+
+        
+
+
+Most of the public Colour API is available from the colour namespace.
+
+
+
+
+
+In [1]:
+
+
+import colour
+
+
+
+
+
+
+
+
+For example, computing the CIE 2017 Colour Fidelity Index of a li">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2015-12-01T09:37:13Z">
 <meta property="article:tag" content="colour">
 <meta property="article:tag" content="colour science">
 <meta property="article:tag" content="python">
+<link rel="preload" href="assets/fonts/dm-sans/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 </head>
-<body>
+<body class="site-body">
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
 <!-- Menubar -->
 
-<nav class="navbar navbar-expand-xl static-top
-navbar-dark bg-dark bg-primary
+<nav aria-label="Primary" class="site-nav navbar navbar-expand-xl static-top
+navbar-dark
 "><div class="container">
 <!-- This keeps the margins nice -->
-        <a class="navbar-brand" href="https://www.colour-science.org/">
+        <a class="navbar-brand" href=".">
 
             <span id="blog-title">Colour Science</span>
         </a>
@@ -67,7 +85,7 @@ navbar-dark bg-dark bg-primary
         <div class="collapse navbar-collapse" id="bs-navbar">
             <ul class="navbar-nav mr-auto">
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Projects</button>
             <div class="dropdown-menu">
                     <a href="apps" class="dropdown-item"><span class="font-weight-bold">Apps (Colour - Dash)</span></a>
                     <a href="http://awesome-colour.org/" class="dropdown-item"><span class="font-weight-bold">Awesome Colour</span></a>
@@ -85,7 +103,7 @@ navbar-dark bg-dark bg-primary
             </div>
             </li>
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Documentation</button>
             <div class="dropdown-menu">
                     <a href="installation-guide" class="dropdown-item"><span class="font-weight-bold">Installation Guide</span></a>
                     <a href="https://colour.readthedocs.io/en/develop/tutorial.html" class="dropdown-item"><span class="font-weight-bold">Static Tutorial</span></a>
@@ -105,7 +123,7 @@ navbar-dark bg-dark bg-primary
             </div>
             </li>
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Blog</button>
             <div class="dropdown-menu">
                     <a href="blog" class="dropdown-item"><span class="font-weight-bold">Posts</span></a>
                     <a href="archive.html" class="dropdown-item"><span class="font-weight-normal">Archive</span></a>
@@ -113,361 +131,440 @@ navbar-dark bg-dark bg-primary
             </div>
                 </li>
 <li class="nav-item">
-<a href="mailto:colour-developers@colour-science.org" class="nav-link"><i class="fa-regular fa-envelope"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://github.com/colour-science/colour" class="nav-link"><i class="fa-brands fa-github"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://www.facebook.com/python.colour.science" class="nav-link"><i class="fa-brands fa-facebook"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://gitter.im/colour-science/colour" class="nav-link"><i class="fa-brands fa-gitter"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://x.com/colour_science" class="nav-link"><i class="fa-brands fa-x-twitter"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://bsky.app/profile/colour-science.bsky.social" class="nav-link"><i class="fa-brands fa-bluesky"></i></a>
+<a href="#sponsors" class="nav-link">Sponsors</a>
 
                 
             </li>
 </ul>
-<ul class="navbar-nav navbar-right"></ul>
+<ul class="navbar-nav navbar-right">
+<li class="nav-item">
+<a href="mailto:colour-developers@colour-science.org" class="nav-link"><img class="site-icon" src="assets/icons/envelope.svg" width="16" height="16" alt=""><span class="sr-only">Email</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://github.com/colour-science/colour" class="nav-link"><img class="site-icon" src="assets/icons/github.svg" width="16" height="16" alt=""><span class="sr-only">GitHub</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://www.facebook.com/python.colour.science" class="nav-link"><img class="site-icon" src="assets/icons/facebook.svg" width="16" height="16" alt=""><span class="sr-only">Facebook</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://gitter.im/colour-science/colour" class="nav-link"><img class="site-icon" src="assets/icons/gitter.svg" width="16" height="16" alt=""><span class="sr-only">Gitter</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://x.com/colour_science" class="nav-link"><img class="site-icon" src="assets/icons/x-twitter.svg" width="16" height="16" alt=""><span class="sr-only">X</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://bsky.app/profile/colour-science.bsky.social" class="nav-link"><img class="site-icon" src="assets/icons/bluesky.svg" width="16" height="16" alt=""><span class="sr-only">Bluesky</span></a>
+
+                
+                
+                
+            </li>
+</ul>
 </div>
 <!-- /.navbar-collapse -->
     </div>
 <!-- /.container -->
-</nav><!-- End of Menubar --><!-- Main --><div class="container" id="content" role="main">
-    <div class="row">
+</nav><!-- End of Menubar --><!-- Main --><main class="container" id="content"><div class="row">
         <div class="col-12">
             <div class="body-content">
                 <!--Body content-->
                 
                 
+<section class="home-hero" aria-labelledby="home-title"><h1 id="home-title">Colour science for Python</h1>
+
+    <div class="home-hero-body">
+        <div class="home-intro">
+            <p class="home-lead">
+                Colour is an open-source Python package with algorithms and datasets
+                for colour science.
+            </p>
+            <div class="home-actions">
+                <a class="site-button site-button-primary" href="installation-guide/">Get started</a>
+                <a class="site-button site-button-outline" href="https://github.com/colour-science/colour/archive/v0.4.7.zip">Download 0.4.7</a>
+            </div>
+            <p class="home-install">
+                <code>pip install colour-science</code>
+                <span>or <code>uv add colour-science</code></span>
+            </p>
+            <p class="home-license">
+                Released under the
+                <a href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a> license.
+            </p>
+        </div>
+
+        <div class="home-hero-art">
+            <img src="images/Colour_Logo_001.svg" width="3840" height="2160" alt="Colour logo">
+</div>
+    </div>
+</section><div class="home-affiliations">
+    <a href="https://numfocus.org/">
+        <img src="images/AffiliatedProject-LRG-transparent.png" width="144" height="40" alt="NumFOCUS Affiliated Project"></a>
+    <p>Colour is an affiliated project of NumFOCUS, a
+        <span class="text-nowrap">501(c)(3)</span> nonprofit in the United States.</p>
+</div>
+
+
                 
-<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header></header><div class="e-content entry-content" itemprop="articleBody text">
-    <div class="container px-0">
-    <div class="jumbotron">
-        <div class="row">
-            <div class="col my-auto">
-                <p class="">
-                    <strong><span class="text-primary">Colour</span></strong>
-                    is an open-source <a href="https://www.python.org/">Python</a>
-                    package providing a comprehensive number of algorithms and datasets
-                    for colour science.
-                </p>
-                <p>
-                    It is freely available under the
-                    <a href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a>
-                    terms.
-                </p>
-                <p>
-                    Developed with <a href="https://www.jetbrains.com/pycharm/">
-                    <img src="images/PyCharm_Logo.svg" width="48" alt=""> JetBrains PyCharm</a>.
-                </p>
-                <div class="pt-3">
-                    <a class="btn btn-primary btn-block mt-3" href="installation-guide/" role="button">
-                        <h5 class="text-light my-0">Get Started</h5>
-                    </a>
-                    <a class="btn btn-secondary bg-white btn-block mt-3" href="https://github.com/colour-science/colour/archive/v0.4.7.zip" role="button">
-                        <h5 class="my-0">
-<span class="fa fa-download"> </span> 0.4.7 Alpha</h5>
-                    </a>
-                </div>
-            </div>
-
-            <div class="col my-auto">
-                <img src="images/Colour_Logo_001.svg" class="img-responsive px-3" alt="Colour - Logo">
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><div class="e-content entry-content" itemprop="articleBody text">
+        <section id="colour-examples"><h2>Colour examples</h2>
+<div id="colour-science-for-python" class="entry-content">
+        <div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
-        </div>
-    </div>
-    <div class="jumbotron">
-        <div class="row">
-            <div class="col my-auto">
-                <a href="https://numfocus.org/">
-                    <img src="images/AffiliatedProject-LRG-transparent.png" class="img-responsive px-3" alt="NumFOCUS Affiliated Project"></a>
-            </div>
-
-            <div class="col my-auto">
-                <p class="pt-3">
-                    <strong><span class="text-primary">Colour</span></strong> is
-                    an affiliated project of
-                    <a href="https://numfocus.org/">NumFOCUS</a>, a 501(c)(3)
-                    nonprofit in the United States.
-                </p>
-            </div>
-        </div>
-    </div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Most of the public <strong>Colour</strong> API is available from the <code>colour</code> namespace.</p>
 </div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">colour</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For example, computing the <em>CIE 2017 Colour Fidelity Index</em> of a light source can be done as follows:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">sd</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">SDS_ILLUMINANTS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'FL2'</span><span class="p">)</span>
+<span class="n">colour</span><span class="o">.</span><span class="n">colour_fidelity_index</span><span class="p">(</span><span class="n">sd</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[2]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>70.120825477833037</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The correlated colour temperature of a <em>CIE Standard Illuminant</em> can be calculated easily:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">il</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">CCS_ILLUMINANTS</span><span class="p">[</span><span class="s1">'CIE 1931 2 Degree Standard Observer'</span><span class="p">][</span><span class="s1">'D50'</span><span class="p">]</span>
+<span class="n">colour</span><span class="o">.</span><span class="n">xy_to_CCT</span><span class="p">(</span><span class="n">il</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'Hernandez 1999'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[3]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>5001.3574639752351</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Colour</strong> also implements various plotting functions via <a href="http://matplotlib.org/">Matplotlib</a>:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">colour</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">colour_style</span><span class="p">()</span>
 
-<div id="colour-science-for-python"></div>
-<script>$('#colour-science-for-python').load('/colour-science-for-python/index.html .entry-content');</script><section id="sponsors"><h2>Sponsors</h2>
+<span class="n">colour</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">plot_visible_spectrum</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_png output_subarea">
+<img alt="The visible spectrum from violet through red, plotted against wavelength in nanometres for the CIE 1931 2° standard observer." height="710" src="data:image/png;base64,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IMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4AAAAANEiwBwAAAAANEuwBAAAAQIMEewAAAADQIMEeAAAAADRIsAcAAAAADRLsAQAAAECDBHsAAAAA0CDBHgAAAAA0SLAHAAAAAA0S7AEAAABAgwR7AAAAANAgwR4A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" width="1270">
+</div>
+</div>
+</div>
+</div>
+</div>
+        <p><a href="colour-science-for-python/">Browse the examples notebook</a></p>
+</div>
+</section><section id="sponsors"><h2>Sponsors</h2>
 <p>We are grateful for the support of our
 <a class="reference external" href="https://github.com/colour-science/colour/blob/develop/SPONSORS.rst">sponsors</a>.
 If you'd like to join them, please consider
 <a class="reference external" href="https://opencollective.com/colour-science">becoming a sponsor on OpenCollective</a>.</p>
 <section id="gold-sponsors"><h3>Gold Sponsors</h3>
-<div class="table-responsive">
-    <table class="table"><tbody><tr>
-<td align="center" valign="middle">
-                    <a href="https://makeup.land/" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:288px" src="https://images.opencollective.com/makeup-land/28c2133/logo/512.png"></a>
-                    <p><a href="https://makeup.land/" target="_blank">makeup.land</a></p>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://twitter.com/JRGoldstone" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:288px" src="https://pbs.twimg.com/profile_images/1310212058672103425/3tPPvC6m.jpg"></a>
-                    <p><a href="https://twitter.com/JRGoldstone" target="_blank">Joseph Goldstone</a></p>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://colorhythm.com" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:288px" src="images/Colorhythm_Logo.png"></a>
-                    <p><a href="https://colorhythm.com" target="_blank">Colorhythm</a></p>
-                </td>
-            </tr></tbody></table>
-</div></section><section id="silver-sponsors"><h3>Silver Sponsors</h3>
-<div class="table-responsive">
-    <table class="table"><tbody><tr>
-<td align="center" valign="middle">
-                    <a href="http://antlerpost.com/" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:176px;" src="https://pbs.twimg.com/profile_images/1394284009329504257/CZxrhA6x.jpg"></a>
-                    <p><a href="http://antlerpost.com/" target="_blank">Nick Shaw</a></p>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://dummyimage.com/126x126/f9f9f9/000000.png&amp;text=Your+Logo+Here" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:176px" src="https://dummyimage.com/126x126/f9f9f9/000000.png&amp;text=Your+Logo+Here"></a>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://dummyimage.com/126x126/f9f9f9/000000.png&amp;text=Your+Logo+Here" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:176px" src="https://dummyimage.com/126x126/f9f9f9/000000.png&amp;text=Your+Logo+Here"></a>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://dummyimage.com/126x126/f9f9f9/000000.png&amp;text=Your+Logo+Here" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:176px" src="https://dummyimage.com/126x126/f9f9f9/000000.png&amp;text=Your+Logo+Here"></a>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://dummyimage.com/126x126/f9f9f9/000000.png&amp;text=Your+Logo+Here" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:176px" src="https://dummyimage.com/126x126/f9f9f9/000000.png&amp;text=Your+Logo+Here"></a>
-                </td>
-            </tr></tbody></table>
-</div></section><section id="bronze-sponsors"><h3>Bronze Sponsors</h3>
-<div class="table-responsive">
-    <table class="table"><tbody><tr>
-<td align="center" valign="middle">
-                    <a href="https://github.com/scoopxyz" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:126px" src="https://avatars0.githubusercontent.com/u/22137450"></a>
-                    <p><a href="https://github.com/scoopxyz" target="_blank">Sean Cooper</a></p>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://caveacademy.com" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:126px" src="https://pbs.twimg.com/profile_images/1264204657548812290/y3kmV4NM.jpg"></a>
-                    <p><a href="https://caveacademy.com" target="_blank">CAVE Academy</a></p>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://www.zhannaalekseeva.nyc" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:126px" src="https://images.opencollective.com/studio-zhanna-alekseeva-nyc/a60e20f/avatar/256.png"></a>
-                    <p><a href="https://www.zhannaalekseeva.nyc" target="_blank">Studio Zhanna Alekseeva.NYC</a></p>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://opencollective.com/guest-b971dc73" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:126px" src="https://opencollective.com/static/images/default-guest-logo.svg"></a>
-                    <p><a href="https://opencollective.com/guest-b971dc73" target="_blank">James Howard</a></p>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://dummyimage.com/126x126/f9f9f9/000000.png&amp;text=Your+Logo+Here" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:126px" src="https://dummyimage.com/126x126/f9f9f9/000000.png&amp;text=Your+Logo+Here"></a>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://dummyimage.com/126x126/f9f9f9/000000.png&amp;text=Your+Logo+Here" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:126px" src="https://dummyimage.com/126x126/f9f9f9/000000.png&amp;text=Your+Logo+Here"></a>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://dummyimage.com/126x126/f9f9f9/000000.png&amp;text=Your+Logo+Here" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:126px" src="https://dummyimage.com/126x126/f9f9f9/000000.png&amp;text=Your+Logo+Here"></a>
-                </td>
-            </tr></tbody></table>
-</div></section><section id="recurring-donations"><h3>Recurring Donations</h3>
-<div class="table-responsive">
-    <table class="table"><tbody><tr>
-<td align="center" valign="middle">
-                    <a href="https://twitter.com/Pablo_g_soriano" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:98px" src="https://images.opencollective.com/cromorama-sp-z-oo/67460ce/avatar/256.png"></a>
-                    <p><a href="https://twitter.com/Pablo_g_soriano" target="_blank">Pablo Garcia Soriano</a></p>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://dummyimage.com/98x98/f9f9f9/000000.png&amp;text=Your+Logo+Here" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9f9/000000.png&amp;text=Your+Logo+Here"></a>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://dummyimage.com/98x98/f9f9f9/000000.png&amp;text=Your+Logo+Here" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9f9/000000.png&amp;text=Your+Logo+Here"></a>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://dummyimage.com/98x98/f9f9f9/000000.png&amp;text=Your+Logo+Here" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9f9/000000.png&amp;text=Your+Logo+Here"></a>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://dummyimage.com/98x98/f9f9f9/000000.png&amp;text=Your+Logo+Here" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9f9/000000.png&amp;text=Your+Logo+Here"></a>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://dummyimage.com/98x98/f9f9f9/000000.png&amp;text=Your+Logo+Here" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9f9/000000.png&amp;text=Your+Logo+Here"></a>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://dummyimage.com/98x98/f9f9f9/000000.png&amp;text=Your+Logo+Here" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9f9/000000.png&amp;text=Your+Logo+Here"></a>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://dummyimage.com/98x98/f9f9f9/000000.png&amp;text=Your+Logo+Here" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9f9/000000.png&amp;text=Your+Logo+Here"></a>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://dummyimage.com/98x98/f9f9f9/000000.png&amp;text=Your+Logo+Here" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:98px" src="https://dummyimage.com/98x98/f9f9f9/000000.png&amp;text=Your+Logo+Here"></a>
-                </td>
-            </tr></tbody></table>
-</div></section><section id="donations-special-sponsors"><h3>Donations &amp; Special Sponsors</h3>
-<div class="table-responsive">
-    <table class="table"><tbody><tr>
-<td align="center" valign="middle">
-                    <a href="https://www.jetbrains.com/" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:176px;" src="https://i.imgur.com/nN1VDUG.png"></a>
-                    <p><a href="https://www.jetbrains.com/" target="_blank">JetBrains</a></p>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://github.com/sobotka" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:176px;" src="https://avatars2.githubusercontent.com/u/59577"></a>
-                    <p><a href="https://github.com/sobotka" target="_blank">Troy James Sobotka</a></p>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://github.com/remia" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:176px;" src="https://avatars3.githubusercontent.com/u/1922806"></a>
-                    <p><a href="https://github.com/remia" target="_blank">Remi Achard</a></p>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="http://virtualmatter.org/" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:176px;" src="https://ca.slack-edge.com/T02KH93GH-UCFD09UUT-g2f156f5e08e-512"></a>
-                    <p><a href="http://virtualmatter.org/" target="_blank">Kevin Whitfield</a></p>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://www.richardlackey.com/" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:176px;" src="https://pbs.twimg.com/profile_images/1384145243096829962/CoUQPhrP.jpg"></a>
-                    <p><a href="https://www.richardlackey.com/" target="_blank">Richard Lackey</a></p>
-                </td>
-            </tr></tbody></table>
+<ul class="supporter-list" role="list">
+<li>
+        <a class="supporter-link" href="https://makeup.land/">
+            <span class="supporter-mark supporter-mark-round">
+                <img src="images/sponsors/makeup-land.png" alt="" loading="lazy" decoding="async"></span>
+            <span class="supporter-name">makeup.land</span>
+        </a>
+    </li>
+    <li>
+        <a class="supporter-link" href="https://twitter.com/JRGoldstone">
+            <span class="supporter-mark supporter-mark-round">
+                <img src="images/sponsors/joseph-goldstone.jpg" alt="" loading="lazy" decoding="async"></span>
+            <span class="supporter-name">Joseph Goldstone</span>
+        </a>
+    </li>
+    <li>
+        <a class="supporter-link" href="https://colorhythm.com">
+            <span class="supporter-mark supporter-mark-round">
+                <img src="images/Colorhythm_Logo.png" alt="" loading="lazy" decoding="async"></span>
+            <span class="supporter-name">Colorhythm</span>
+        </a>
+    </li>
+</ul></section><section id="silver-sponsors"><h3>Silver Sponsors</h3>
+<ul class="supporter-list" role="list">
+<li>
+        <a class="supporter-link" href="http://antlerpost.com/">
+            <span class="supporter-mark supporter-mark-round">
+                <img src="images/sponsors/nick-shaw.jpg" alt="" loading="lazy" decoding="async"></span>
+            <span class="supporter-name">Nick Shaw</span>
+        </a>
+    </li>
+    <li class="supporter-placeholder" aria-hidden="true"><img src="images/sponsors/your-logo-here.png" width="176" height="176" alt="" loading="lazy"></li>
+    <li class="supporter-placeholder" aria-hidden="true"><img src="images/sponsors/your-logo-here.png" width="176" height="176" alt="" loading="lazy"></li>
+    <li class="supporter-placeholder" aria-hidden="true"><img src="images/sponsors/your-logo-here.png" width="176" height="176" alt="" loading="lazy"></li>
+    <li class="supporter-placeholder" aria-hidden="true"><img src="images/sponsors/your-logo-here.png" width="176" height="176" alt="" loading="lazy"></li>
+</ul></section><section id="bronze-sponsors"><h3>Bronze Sponsors</h3>
+<ul class="supporter-list" role="list">
+<li>
+        <a class="supporter-link" href="https://github.com/scoopxyz">
+            <span class="supporter-mark supporter-mark-round">
+                <img src="images/sponsors/sean-cooper.png" alt="" loading="lazy" decoding="async"></span>
+            <span class="supporter-name">Sean Cooper</span>
+        </a>
+    </li>
+    <li>
+        <a class="supporter-link" href="https://caveacademy.com">
+            <span class="supporter-mark supporter-mark-round">
+                <img src="images/sponsors/cave-academy.jpg" alt="" loading="lazy" decoding="async"></span>
+            <span class="supporter-name">CAVE Academy</span>
+        </a>
+    </li>
+    <li>
+        <a class="supporter-link" href="https://www.zhannaalekseeva.nyc">
+            <span class="supporter-mark supporter-mark-round">
+                <img src="images/sponsors/studio-zhanna-alekseeva-nyc.png" alt="" loading="lazy" decoding="async"></span>
+            <span class="supporter-name">Studio Zhanna Alekseeva.NYC</span>
+        </a>
+    </li>
+    <li>
+        <a class="supporter-link" href="https://opencollective.com/guest-b971dc73">
+            <span class="supporter-mark supporter-mark-round">
+                <img src="images/sponsors/james-howard.svg" alt="" loading="lazy" decoding="async"></span>
+            <span class="supporter-name">James Howard</span>
+        </a>
+    </li>
+    <li class="supporter-placeholder" aria-hidden="true"><img src="images/sponsors/your-logo-here.png" width="176" height="176" alt="" loading="lazy"></li>
+    <li class="supporter-placeholder" aria-hidden="true"><img src="images/sponsors/your-logo-here.png" width="176" height="176" alt="" loading="lazy"></li>
+    <li class="supporter-placeholder" aria-hidden="true"><img src="images/sponsors/your-logo-here.png" width="176" height="176" alt="" loading="lazy"></li>
+</ul></section><section id="recurring-donations"><h3>Recurring Donations</h3>
+<ul class="supporter-list" role="list">
+<li>
+        <a class="supporter-link" href="https://twitter.com/Pablo_g_soriano">
+            <span class="supporter-mark supporter-mark-round">
+                <img src="images/sponsors/pablo-garcia-soriano.png" alt="" loading="lazy" decoding="async"></span>
+            <span class="supporter-name">Pablo Garcia Soriano</span>
+        </a>
+    </li>
+    <li class="supporter-placeholder" aria-hidden="true"><img src="images/sponsors/your-logo-here.png" width="176" height="176" alt="" loading="lazy"></li>
+    <li class="supporter-placeholder" aria-hidden="true"><img src="images/sponsors/your-logo-here.png" width="176" height="176" alt="" loading="lazy"></li>
+    <li class="supporter-placeholder" aria-hidden="true"><img src="images/sponsors/your-logo-here.png" width="176" height="176" alt="" loading="lazy"></li>
+    <li class="supporter-placeholder" aria-hidden="true"><img src="images/sponsors/your-logo-here.png" width="176" height="176" alt="" loading="lazy"></li>
+    <li class="supporter-placeholder" aria-hidden="true"><img src="images/sponsors/your-logo-here.png" width="176" height="176" alt="" loading="lazy"></li>
+    <li class="supporter-placeholder" aria-hidden="true"><img src="images/sponsors/your-logo-here.png" width="176" height="176" alt="" loading="lazy"></li>
+    <li class="supporter-placeholder" aria-hidden="true"><img src="images/sponsors/your-logo-here.png" width="176" height="176" alt="" loading="lazy"></li>
+    <li class="supporter-placeholder" aria-hidden="true"><img src="images/sponsors/your-logo-here.png" width="176" height="176" alt="" loading="lazy"></li>
+</ul></section><section id="donations-special-sponsors"><h3>Donations &amp; Special Sponsors</h3>
+<ul class="supporter-list" role="list">
+<li>
+        <a class="supporter-link" href="https://www.jetbrains.com/">
+            <span class="supporter-mark supporter-mark-wide">
+                <img src="images/sponsors/jetbrains.svg" alt="" loading="lazy" decoding="async"></span>
+            <span class="supporter-name">JetBrains</span>
+        </a>
+    </li>
+    <li>
+        <a class="supporter-link" href="https://github.com/sobotka">
+            <span class="supporter-mark supporter-mark-round">
+                <img src="images/sponsors/troy-james-sobotka.png" alt="" loading="lazy" decoding="async"></span>
+            <span class="supporter-name">Troy James Sobotka</span>
+        </a>
+    </li>
+    <li>
+        <a class="supporter-link" href="https://github.com/remia">
+            <span class="supporter-mark supporter-mark-round">
+                <img src="images/sponsors/remi-achard.png" alt="" loading="lazy" decoding="async"></span>
+            <span class="supporter-name">Remi Achard</span>
+        </a>
+    </li>
+    <li>
+        <a class="supporter-link" href="http://virtualmatter.org/">
+            <span class="supporter-mark supporter-mark-round">
+                <img src="images/sponsors/kevin-whitfield.png" alt="" loading="lazy" decoding="async"></span>
+            <span class="supporter-name">Kevin Whitfield</span>
+        </a>
+    </li>
+    <li>
+        <a class="supporter-link" href="https://www.richardlackey.com/">
+            <span class="supporter-mark supporter-mark-round">
+                <img src="images/sponsors/richard-lackey.jpg" alt="" loading="lazy" decoding="async"></span>
+            <span class="supporter-name">Richard Lackey</span>
+        </a>
+    </li>
+    <li>
+        <a class="supporter-link" href="https://www.artstation.com/monsieur_lixm">
+            <span class="supporter-mark supporter-mark-round">
+                <img src="images/sponsors/liam-collod.jpg" alt="" loading="lazy" decoding="async"></span>
+            <span class="supporter-name">Liam Collod</span>
+        </a>
+    </li>
+    <li>
+        <a class="supporter-link" href="https://twitter.com/alexmitchellmus">
+            <span class="supporter-mark supporter-mark-round">
+                <img src="images/sponsors/alex-mitchell.jpg" alt="" loading="lazy" decoding="async"></span>
+            <span class="supporter-name">Alex Mitchell</span>
+        </a>
+    </li>
+    <li>
+        <a class="supporter-link" href="https://twitter.com/ilia_sibiryakov">
+            <span class="supporter-mark supporter-mark-round">
+                <img src="images/sponsors/ilia-sibiryakov.png" alt="" loading="lazy" decoding="async"></span>
+            <span class="supporter-name">Ilia Sibiryakov</span>
+        </a>
+    </li>
+    <li>
+        <a class="supporter-link" href="https://github.com/zachlewis">
+            <span class="supporter-mark supporter-mark-round">
+                <img src="images/sponsors/zack-lewis.png" alt="" loading="lazy" decoding="async"></span>
+            <span class="supporter-name">Zack Lewis</span>
+        </a>
+    </li>
+    <li>
+        <a class="supporter-link" href="https://twitter.com/fredsavoir">
+            <span class="supporter-mark supporter-mark-round">
+                <img src="images/sponsors/frederic-savoir.jpg" alt="" loading="lazy" decoding="async"></span>
+            <span class="supporter-name">Frederic Savoir</span>
+        </a>
+    </li>
+    <li>
+        <a class="supporter-link" href="https://www.digitalimagingtech.co.uk">
+            <span class="supporter-mark supporter-mark-dark">
+                <img src="images/sponsors/howard-colin.webp" alt="" loading="lazy" decoding="async"></span>
+            <span class="supporter-name">Howard Colin</span>
+        </a>
+    </li>
+    <li>
+        <a class="supporter-link" href="https://chrisbrejon.com/">
+            <span class="supporter-mark supporter-mark-round">
+                <img src="images/sponsors/christophe-brejon.png" alt="" loading="lazy" decoding="async"></span>
+            <span class="supporter-name">Christophe Brejon</span>
+        </a>
+    </li>
+    <li>
+        <a class="supporter-link" href="https://twitter.com/MarioRokicki">
+            <span class="supporter-mark supporter-mark-round">
+                <img src="images/sponsors/mario-rokicki.jpg" alt="" loading="lazy" decoding="async"></span>
+            <span class="supporter-name">Mario Rokicki</span>
+        </a>
+    </li>
+    <li>
+        <a class="supporter-link" href="https://opencollective.com/joshua-pines">
+            <span class="supporter-mark supporter-mark-round">
+                <img src="images/sponsors/joshua-pines.png" alt="" loading="lazy" decoding="async"></span>
+            <span class="supporter-name">Joshua Pines</span>
+        </a>
+    </li>
+    <li class="supporter-placeholder" aria-hidden="true"><img src="images/sponsors/your-logo-here.png" width="176" height="176" alt="" loading="lazy"></li>
+</ul></section></section>
 </div>
 
-<div class="table-responsive">
-    <table class="table"><tbody>
-<tr>
-<td align="center" valign="middle">
-                    <a href="https://www.artstation.com/monsieur_lixm" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:176px;" src="https://pbs.twimg.com/profile_images/1469781977280786433/NncWAxCW.jpg"></a>
-                    <p><a href="https://www.artstation.com/monsieur_lixm" target="_blank">Liam Collod</a></p>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://twitter.com/alexmitchellmus" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:176px;" src="https://pbs.twimg.com/profile_images/763631280722370560/F9FN4lEz.jpg"></a>
-                    <p><a href="https://twitter.com/alexmitchellmus" target="_blank">Alex Mitchell</a></p>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://twitter.com/ilia_sibiryakov" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:176px;" src="https://avatars.githubusercontent.com/u/23642861"></a>
-                    <p><a href="https://twitter.com/ilia_sibiryakov" target="_blank">Ilia Sibiryakov</a></p>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://github.com/zachlewis" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:176px;" src="https://avatars0.githubusercontent.com/u/2228592"></a>
-                    <p><a href="https://github.com/zachlewis" target="_blank">Zack Lewis</a></p>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://twitter.com/fredsavoir" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:176px;" src="https://pbs.twimg.com/profile_images/363988638/FS_Portrait082009.jpg"></a>
-                    <p><a href="https://twitter.com/fredsavoir" target="_blank">Frederic Savoir</a></p>
-                </td>
-            </tr>
-<div class="table-responsive">
-    <table class="table"><tbody><tr>
-<td align="center" valign="middle">
-                    <a href="https://twitter.com/digitaltechltd" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:176px;" src="https://images.squarespace-cdn.com/content/v1/5ef3250008605a61d88e7240/1593263686377-LPNJQMBE7U00WRNBY6JH/DIT+Logo+-+Dark+theme+-+PNG.png"></a>
-                    <p><a href="https://www.digitalimagingtech.co.uk" target="_blank">Howard Colin</a></p>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://chrisbrejon.com/" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:176px;" src="https://i.imgur.com/Zhs53S9.png"></a>
-                    <p><a href="https://chrisbrejon.com/" target="_blank">Christophe Brejon</a></p>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://twitter.com/MarioRokicki" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:176px;" src="https://pbs.twimg.com/profile_images/1801891382/mario_pi_sq_400x400.jpg"></a>
-                    <p><a href="https://twitter.com/MarioRokicki" target="_blank">Mario Rokicki</a></p>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://opencollective.com/joshua-pines" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:176px;" src="https://images.opencollective.com/joshua-pines/ad0ec4b/avatar/256.png"></a>
-                    <p><a href="https://opencollective.com/joshua-pines" target="_blank">Joshua Pines</a></p>
-                </td>
-                <td align="center" valign="middle">
-                    <a href="https://dummyimage.com/176x176/f9f9f9/000000.png&amp;text=Your+Logo+Here" target="_blank">
-                        <img class="img-fluid img-circle" style="max-height:176px;" src="https://dummyimage.com/176x176/f9f9f9/000000.png&amp;text=Your+Logo+Here"></a>
-                </td>
-            </tr></tbody></table>
-</div>
-</tbody></table>
-</div></section></section>
-</div>
     
 
 </article><!--End of body content-->
 </div>
         </div>
     </div>
-</div>
-
-<!-- End of Main -->
-
-<!-- Footer -->
-
-<footer id="footer" class="mt-auto"><ul class="nav justify-content-center">
-<li class="nav-item mx-3">
+</main><!-- End of Main --><!-- Footer --><footer id="footer" class="mt-auto"><div class="container">
+        
+<ul class="nav justify-content-center">
+<li class="nav-item mx-1">
         <a href="mailto:colour-developers@colour-science.org">
-            <i class="fa-regular fa-envelope text-light"></i>
+            <img class="site-icon" src="assets/icons/envelope.svg" width="16" height="16" alt=""><span class="sr-only">Email</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://github.com/colour-science/colour">
-            <i class="fa-brands fa-github text-light"></i>
+            <img class="site-icon" src="assets/icons/github.svg" width="16" height="16" alt=""><span class="sr-only">GitHub</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://www.facebook.com/python.colour.science">
-            <i class="fa-brands fa-facebook text-light"></i>
+            <img class="site-icon" src="assets/icons/facebook.svg" width="16" height="16" alt=""><span class="sr-only">Facebook</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://gitter.im/colour-science/colour">
-            <i class="fa-brands fa-gitter text-light"></i>
+            <img class="site-icon" src="assets/icons/gitter.svg" width="16" height="16" alt=""><span class="sr-only">Gitter</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://x.com/colour_science">
-            <i class="fa-brands fa-x-twitter text-light"></i>
+            <img class="site-icon" src="assets/icons/x-twitter.svg" width="16" height="16" alt=""><span class="sr-only">X</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://bsky.app/profile/colour-science.bsky.social">
-            <i class="fa-brands fa-bluesky text-light"></i>
+            <img class="site-icon" src="assets/icons/bluesky.svg" width="16" height="16" alt=""><span class="sr-only">Bluesky</span>
         </a>
     </li>
 </ul>
-<div class="text-center text-light py-3"><span>Copyright © 2013-2026 – Colour Developers</span></div>
+<div class="text-center pt-3"><span>Copyright © 2013-2026 – Colour Developers</span></div>
 
-    
+        
+    </div>
 </footer><!-- End of Footer --><script src="assets/js/jquery.min.js"></script><script src="assets/js/popper.min.js"></script><script src="assets/js/bootstrap.min.js"></script><script src="assets/js/baguetteBox.min.js"></script><script>
-    baguetteBox.run('div#content', {
+    baguetteBox.run('#content', {
         ignoreClass: 'islink',
         captions: function(element) {
             return element.getElementsByTagName('img')[0].alt;

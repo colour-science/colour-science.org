@@ -17,7 +17,7 @@
 
     <h4>Sorted by maintainership status and initial contribution date order:</h4>
 
-    <div class="row my-5">
+    <div class="row contributor-row">
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -89,7 +89,7 @@
     <!-- ------------------------------------------------------------------ -->
     <!-- ------------------------------------------------------------------ -->
 
-    <div class="row my-5">
+    <div class="row contributor-row">
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -107,7 +107,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/zachlewis" class="card-link">Github</a>
+                    <a href="https://github.com/zachlewis" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -128,7 +128,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/tjdcs" class="card-link">Github</a>
+                    <a href="https://github.com/tjdcs" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -156,7 +156,7 @@
     <!-- ------------------------------------------------------------------ -->
     <!-- ------------------------------------------------------------------ -->
 
-    <div class="row my-5">
+    <div class="row contributor-row">
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -195,7 +195,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/scoopxyz" class="card-link">Github</a>
+                    <a href="https://github.com/scoopxyz" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -216,7 +216,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/jdvandenberg" class="card-link">Github</a>
+                    <a href="https://github.com/jdvandenberg" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -234,7 +234,7 @@
     <!-- ------------------------------------------------------------------ -->
     <!-- ------------------------------------------------------------------ -->
 
-    <div class="row my-5">
+    <div class="row contributor-row">
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -252,7 +252,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/njwardhan" class="card-link">Github</a>
+                    <a href="https://github.com/njwardhan" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -273,7 +273,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/OmarWagih1" class="card-link">Github</a>
+                    <a href="https://github.com/OmarWagih1" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -294,7 +294,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/enneract" class="card-link">Github</a>
+                    <a href="https://github.com/enneract" class="card-link">GitHub</a>
                     <a href="https://redman.xyz/" class="card-link">Website</a>
                 </div>
             </div>
@@ -311,7 +311,7 @@
     <!-- ------------------------------------------------------------------ -->
     <!-- ------------------------------------------------------------------ -->
 
-    <div class="row my-5">
+    <div class="row contributor-row">
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -329,7 +329,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/villirion" class="card-link">Github</a>
+                    <a href="https://github.com/villirion" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -350,7 +350,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/SGeetansh" class="card-link">Github</a>
+                    <a href="https://github.com/SGeetansh" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -367,7 +367,7 @@
 
     <h4>Sorted by initial contribution date order:</h4>
 
-    <div class="row my-5">
+    <div class="row contributor-row">
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -419,7 +419,7 @@
     <!-- ------------------------------------------------------------------ -->
     <!-- ------------------------------------------------------------------ -->
 
-    <div class="row my-5">
+    <div class="row contributor-row">
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -431,7 +431,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/katrinleinweber" class="card-link">Github</a>
+                    <a href="https://github.com/katrinleinweber" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -446,7 +446,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/jamadagni" class="card-link">Github</a>
+                    <a href="https://github.com/jamadagni" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -474,7 +474,7 @@
     <!-- ------------------------------------------------------------------ -->
     <!-- ------------------------------------------------------------------ -->
 
-    <div class="row my-5">
+    <div class="row contributor-row">
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -492,7 +492,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/domoritz" class="card-link">Github</a>
+                    <a href="https://github.com/domoritz" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -508,7 +508,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/feralpoosum" class="card-link">Github</a>
+                    <a href="https://github.com/feralpoosum" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -524,7 +524,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/Chinmayrane16" class="card-link">Github</a>
+                    <a href="https://github.com/Chinmayrane16" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -534,7 +534,7 @@
     <!-- ------------------------------------------------------------------ -->
     <!-- ------------------------------------------------------------------ -->
 
-    <div class="row my-5">
+    <div class="row contributor-row">
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -547,7 +547,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/pavithraes" class="card-link">Github</a>
+                    <a href="https://github.com/pavithraes" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -562,7 +562,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/jmertic" class="card-link">Github</a>
+                    <a href="https://github.com/jmertic" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -578,7 +578,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/BPearlstine" class="card-link">Github</a>
+                    <a href="https://github.com/BPearlstine" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -588,7 +588,7 @@
     <!-- ------------------------------------------------------------------ -->
     <!-- ------------------------------------------------------------------ -->
 
-    <div class="row my-5">
+    <div class="row contributor-row">
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -606,7 +606,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/skycaptain" class="card-link">Github</a>
+                    <a href="https://github.com/skycaptain" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -621,7 +621,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/OlliNiemitalo" class="card-link">Github</a>
+                    <a href="https://github.com/OlliNiemitalo" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -636,7 +636,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/mzszym" class="card-link">Github</a>
+                    <a href="https://github.com/mzszym" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -646,7 +646,7 @@
     <!-- ------------------------------------------------------------------ -->
     <!-- ------------------------------------------------------------------ -->
 
-    <div class="row my-5">
+    <div class="row contributor-row">
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -658,7 +658,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/MaxSchambach" class="card-link">Github</a>
+                    <a href="https://github.com/MaxSchambach" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -676,7 +676,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/sianyi" class="card-link">Github</a>
+                    <a href="https://github.com/sianyi" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -691,7 +691,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/mikewei" class="card-link">Github</a>
+                    <a href="https://github.com/mikewei" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -701,7 +701,7 @@
     <!-- ------------------------------------------------------------------ -->
     <!-- ------------------------------------------------------------------ -->
 
-    <div class="row my-5">
+    <div class="row contributor-row">
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -719,7 +719,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/JGoldstone" class="card-link">Github</a>
+                    <a href="https://github.com/JGoldstone" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -740,7 +740,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/selfshadow" class="card-link">Github</a>
+                    <a href="https://github.com/selfshadow" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -761,7 +761,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/jedypod" class="card-link">Github</a>
+                    <a href="https://github.com/jedypod" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -771,7 +771,7 @@
     <!-- ------------------------------------------------------------------ -->
     <!-- ------------------------------------------------------------------ -->
 
-    <div class="row my-5">
+    <div class="row contributor-row">
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -789,7 +789,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/fredsavoir" class="card-link">Github</a>
+                    <a href="https://github.com/fredsavoir" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -810,7 +810,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/SGeetansh" class="card-link">Github</a>
+                    <a href="https://github.com/SGeetansh" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -831,7 +831,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/SGeetansh" class="card-link">Github</a>
+                    <a href="https://github.com/SGeetansh" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -841,7 +841,7 @@
     <!-- ------------------------------------------------------------------ -->
     <!-- ------------------------------------------------------------------ -->
 
-    <div class="row my-5">
+    <div class="row contributor-row">
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -859,7 +859,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/ilia3101" class="card-link">Github</a>
+                    <a href="https://github.com/ilia3101" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -874,7 +874,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/timgates42" class="card-link">Github</a>
+                    <a href="https://github.com/timgates42" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -889,7 +889,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/gajendra0180" class="card-link">Github</a>
+                    <a href="https://github.com/gajendra0180" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -899,7 +899,7 @@
     <!-- ------------------------------------------------------------------ -->
     <!-- ------------------------------------------------------------------ -->
 
-    <div class="row my-5">
+    <div class="row contributor-row">
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -911,7 +911,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/ntessore" class="card-link">Github</a>
+                    <a href="https://github.com/ntessore" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -932,7 +932,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/ntessore" class="card-link">Github</a>
+                    <a href="https://github.com/ntessore" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -953,7 +953,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/fxthomas" class="card-link">Github</a>
+                    <a href="https://github.com/fxthomas" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -964,7 +964,7 @@
     <!-- ------------------------------------------------------------------ -->
     <!-- ------------------------------------------------------------------ -->
 
-    <div class="row my-5">
+    <div class="row contributor-row">
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -982,7 +982,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/sabarish-srinivasan" class="card-link">Github</a>
+                    <a href="https://github.com/sabarish-srinivasan" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -997,7 +997,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/Rusching" class="card-link">Github</a>
+                    <a href="https://github.com/Rusching" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -1012,7 +1012,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/chnmasta05" class="card-link">Github</a>
+                    <a href="https://github.com/chnmasta05" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -1022,7 +1022,7 @@
     <!-- ------------------------------------------------------------------ -->
     <!-- ------------------------------------------------------------------ -->
 
-    <div class="row my-5">
+    <div class="row contributor-row">
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -1034,7 +1034,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/benjaminherb" class="card-link">Github</a>
+                    <a href="https://github.com/benjaminherb" class="card-link">GitHub</a>
                     <a href="https://benjaminherb.de" class="card-link">benjaminherb.de</a>
                 </div>
             </div>
@@ -1056,7 +1056,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/tacaswell" class="card-link">Github</a>
+                    <a href="https://github.com/tacaswell" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -1077,7 +1077,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/MrLixm" class="card-link">Github</a>
+                    <a href="https://github.com/MrLixm" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -1087,7 +1087,7 @@
     <!-- ------------------------------------------------------------------ -->
     <!-- ------------------------------------------------------------------ -->
 
-    <div class="row my-5">
+    <div class="row contributor-row">
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -1099,7 +1099,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/trougnouf" class="card-link">Github</a>
+                    <a href="https://github.com/trougnouf" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -1114,7 +1114,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/mesvam" class="card-link">Github</a>
+                    <a href="https://github.com/mesvam" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -1129,7 +1129,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/xuzhaozheng" class="card-link">Github</a>
+                    <a href="https://github.com/xuzhaozheng" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -1139,7 +1139,7 @@
     <!-- ------------------------------------------------------------------ -->
     <!-- ------------------------------------------------------------------ -->
 
-    <div class="row my-5">
+    <div class="row contributor-row">
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -1151,7 +1151,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/cmuellner" class="card-link">Github</a>
+                    <a href="https://github.com/cmuellner" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -1166,7 +1166,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/jorenham" class="card-link">Github</a>
+                    <a href="https://github.com/jorenham" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -1181,7 +1181,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/UltraMo114" class="card-link">Github</a>
+                    <a href="https://github.com/UltraMo114" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -1191,7 +1191,7 @@
     <!-- ------------------------------------------------------------------ -->
     <!-- ------------------------------------------------------------------ -->
 
-    <div class="row my-5">
+    <div class="row contributor-row">
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -1203,7 +1203,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/laraPPr" class="card-link">Github</a>
+                    <a href="https://github.com/laraPPr" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -1218,7 +1218,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/Jackchou00" class="card-link">Github</a>
+                    <a href="https://github.com/Jackchou00" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -1233,7 +1233,7 @@
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a href="https://github.com/lassefschmidt" class="card-link">Github</a>
+                    <a href="https://github.com/lassefschmidt" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
@@ -1247,7 +1247,7 @@
 
     <h4>Sorted by alphabetical order:</h4>
 
-    <div class="row my-5">
+    <div class="row contributor-row">
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -1314,7 +1314,7 @@
     <!-- ------------------------------------------------------------------ -->
     <!-- ------------------------------------------------------------------ -->
 
-    <div class="row my-5">
+    <div class="row contributor-row">
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -1386,7 +1386,7 @@
     <!-- ------------------------------------------------------------------ -->
     <!-- ------------------------------------------------------------------ -->
 
-    <div class="row my-5">
+    <div class="row contributor-row">
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -1432,7 +1432,7 @@
     <!-- ------------------------------------------------------------------ -->
 
     <h1>Special Mentions</h1>
-    <div class="row my-5">
+    <div class="row contributor-row">
         <div class="col">
             <div class="card h-100">
                 <div class="card-header text-center">
@@ -1465,7 +1465,7 @@
 
     <h4>Sorted by alphabetical order:</h4>
 
-    <div class="row my-5">
+    <div class="row contributor-row">
         <div class="col">
             <div class="card h-100">
                 <div class="card-body">

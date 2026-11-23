@@ -64,16 +64,24 @@ Development Dependencies
 Installation Methods for Using Colour
 -------------------------------------
 
-Pypi
+PyPI
 ^^^^
 
-**Colour** can be easily installed from the
-`Python Package Index <https://pypi.org/project/colour-science>`__ by
-issuing this command in a shell:
+To install **Colour** from the
+`Python Package Index <https://pypi.org/project/colour-science>`__, activate
+your Python virtual environment and run:
 
 .. code:: shell
 
-    pip install --user colour-science
+    pip install colour-science
+
+To add **Colour** as a dependency of an existing
+`uv project <https://docs.astral.sh/uv/concepts/projects/dependencies/>`__,
+run this command from the project directory:
+
+.. code:: shell
+
+    uv add colour-science
 
 This *asciicast* demonstrates how to generate a pristine Python *VirtualEnv*
 environment for Colour:
@@ -89,13 +97,13 @@ The optional features dependencies are installed as follows:
 
 .. code:: shell
 
-    pip install --user 'colour-science[optional]'
+    pip install 'colour-science[optional]'
 
 The development dependencies are installed as follows:
 
 .. code:: shell
 
-    pip install --user 'colour-science[development]'
+    pip install 'colour-science[development]'
 
 The graphviz figure plotting dependencies are installed as follows:
 
@@ -107,13 +115,13 @@ The graphviz figure plotting dependencies are installed as follows:
         beforehand, please refer to the specific section for your platform on
         the `Graphviz download page <https://www.graphviz.org/download>`__.
 
-    pip install --user 'colour-science[graphviz]'
+    pip install 'colour-science[graphviz]'
 
 The meshing dependencies for gamut computations are installed as follows:
 
 .. code:: shell
 
-    pip install --user 'colour-science[meshing]'
+    pip install 'colour-science[meshing]'
 
 If you wish to read *OpenEXR* files, you will need to install the *FreeImage*
 plugin for `Imageio <https://imageio.github.io>`__ as follows:
@@ -142,15 +150,15 @@ environment for Colour:
         id="asciicast-257385" async data-speed=3>
     </script>
 
-Github
+GitHub
 ^^^^^^
 
-Alternatively, you can also install directly from
-`Github <https://github.com/colour-science/colour>`__ source repository:
+Alternatively, you can also install directly from the
+`GitHub <https://github.com/colour-science/colour>`__ source repository:
 
 .. code:: shell
 
-    git clone git://github.com/colour-science/colour.git
+    git clone https://github.com/colour-science/colour.git
     cd colour
     pip install --user .
 
@@ -161,14 +169,14 @@ Installation Methods for Developing Colour
 
     | **Note**
     |
-    | If you are on macOS, a dedicated guide on how to setup your environment
+    | If you are on macOS, a dedicated guide on how to set up your environment
         is available here: `Setting Up the Development Environment on macOS <../setting-up-the-development-environment-on-macos/index.html>`__.
 
 uv
 ^^^
 
-**Colour** adopts `uv <https://docs.astral.sh/uv>`__ to help managing its
-dependencies, this is the recommended way to get started with **Colour**
+**Colour** adopts `uv <https://docs.astral.sh/uv>`__ to help manage its
+dependencies. This is the recommended way to get started with **Colour**
 development.
 
 Assuming `python >= 3.11, < 3.15 <https://www.python.org/download/releases>`__ is
@@ -177,7 +185,7 @@ available on your system, the development dependencies are installed with
 
 .. code:: shell
 
-    git clone git://github.com/colour-science/colour.git
+    git clone https://github.com/colour-science/colour.git
     cd colour
     uv sync --all-extras
 

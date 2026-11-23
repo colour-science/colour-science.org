@@ -41,5 +41,5 @@ Examples
 Downloads
 ^^^^^^^^^
 
--   `Colour - HDRI Github Repository <https://github.com/colour-science/colour-hdri>`__
--   `Colour - HDRI - Pypi <https://pypi.org/project/colour-hdri>`__
+-   `Colour - HDRI GitHub Repository <https://github.com/colour-science/colour-hdri>`__
+-   `Colour - HDRI - PyPI <https://pypi.org/project/colour-hdri>`__

@@ -98,7 +98,7 @@ free credits melted rapidly. Ultimately, more control was required over the
 entire process.
 
 Using the augmented *Roboflow* dataset, a *YOLO v8* *nano* **detection** model
-was trained locally on a Macbook Pro M1.
+was trained locally on a MacBook Pro M1.
 
 .. code:: python
 
@@ -183,12 +183,12 @@ box for the *ColorChecker Classic 24* swatches, it was not oriented.
 Correcting the perspective distortion of the swatches within the bounding box
 involved segmenting the region-of-interest, finding the principal lines using
 `Hough Line Transform <https://docs.opencv.org/3.4/d9/db0/tutorial_hough_lines.html>`__,
-partitioning them by angle using K-means clustering, etc..
+partitioning them by angle using K-means clustering, etc.
 
 Development stalled and reached a point where the new approach was becoming
-complex, required fine tuned numbers for segmentation. Ultimately, the
-objective was to departing from image processing based segmentation and the
-current development state was heading back right to it!
+complex, required fine-tuned numbers for segmentation. Ultimately, the
+objective was to depart from image processing based segmentation and the
+current development state was heading right back to it!
 
 Taking a Step Back
 ^^^^^^^^^^^^^^^^^^
@@ -395,7 +395,7 @@ Model Training
 A new *YOLO v8* *nano* model was trained, originally at a width of 640 pixels
 but because the prediction were sometimes imprecise, it was re-trained at a larger
 1280 pixels width and using a *YOLO v8* *large* **segmentation** model as a
-baseline. As hinted by the previous snippet, and, because the Macbook Pro M1
+baseline. As hinted by the previous snippet, and, because the MacBook Pro M1
 started to suffer, the training was moved `to Google Colab <https://colab.research.google.com/drive/1-JbVKlj8oP7HxSIM37jtcW2YZmmjoc-A?usp=sharing>`__
 and an A100 GPU.
 

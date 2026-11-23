@@ -33,8 +33,8 @@ Colour 0.3.14
 `releases page <https://github.com/colour-science/colour/releases/tag/v0.3.14>`__
 for complete details or follow the highlights here.
 
-We would like to thanks all the contributors whether they are contributing code
-or participating to discussions on `Gitter <https://gitter.im/colour-science/colour>`__,
+We would like to thank all the contributors whether they are contributing code
+or participating in discussions on `Gitter <https://gitter.im/colour-science/colour>`__,
 in the `issues <https://github.com/colour-science/colour/issues>`__, on Slack
 or via email.
 
@@ -123,8 +123,8 @@ Coverage
 ========
 
 Coverage was `raised to 100% <https://coveralls.io/github/colour-science/colour>`__.
-It does not mean that all the possible code paths are covered but it certainly
-strengthen the API.
+It does not mean that all the possible code paths are covered, but it certainly
+strengthens the API.
 
 Dependency Management
 =====================
@@ -139,7 +139,7 @@ Continuous Integration
 
 `Travis-ci <https://travis-ci.com>`__ and
 `Azure Pipelines <https://azure.microsoft.com/en-us/services/devops/pipelines>`__
-have been replaced with `Github Actions <https://github.com/colour-science/colour/actions>`__.
+have been replaced with `GitHub Actions <https://github.com/colour-science/colour/actions>`__.
 
 Documentation
 =============
@@ -206,7 +206,7 @@ when trying to access or use colour science datasets:
 -   No information regarding the definitive origination of the dataset.
 
 **Colour - Datasets** offers all the above: it allows users to ingest and load
-colour science datasets with a single function call. The datasets information
+colour science datasets with a single function call. Information about the datasets
 is hosted on `Zenodo <https://zenodo.org>`__ where the record for a dataset typically contain:
 
 -   An urls.txt file describing the urls to source the dataset files from.

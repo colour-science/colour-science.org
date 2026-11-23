@@ -12,7 +12,7 @@ The colour-science Developers are pleased to announce the release of
 
 .. TEASER_END
 
-This release implements support for `Python 3.13 <https://docs.python.org/3/whatsnew/3.13.html>`__ and `Numpy 2 <https://numpy.org/devdocs/release/2.0.0-notes.html>`__.
+This release implements support for `Python 3.13 <https://docs.python.org/3/whatsnew/3.13.html>`__ and `NumPy 2 <https://numpy.org/devdocs/release/2.0.0-notes.html>`__.
 
 The highlights are as follows:
 

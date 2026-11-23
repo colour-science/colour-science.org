@@ -13,7 +13,7 @@ give you an overview on how to contribute.
 There are many ways to help:
 
 -   Reporting a defect, proposing a new feature, an enhancement or
-    commenting existing issues on the `Issue
+    commenting on existing issues on the `Issue
     Tracker <https://github.com/colour-science/colour/issues>`__.
 -   Contributing new code by implementing new features or adding
     examples. For some ideas you can take a look at the issues with the
@@ -29,7 +29,7 @@ There are many ways to help:
     or
     `Enhancement <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AEnhancement>`__
     labels are a good place to start.
--   Improving siblings packages:
+-   Improving sibling packages:
 
     -   `Colour - Datasets </colour-datasets>`__
     -   `Colour - Demosaicing </colour-demosaicing>`__
@@ -37,10 +37,10 @@ There are many ways to help:
     -   `Colour - Checker Detection </colour-checker-detection>`__
     -   `Colour - Visuals </colour-visuals>`__
 
--   Participating in discussions on `Github <https://github.com/colour-science/colour/discussions>`__.
+-   Participating in discussions on `GitHub <https://github.com/colour-science/colour/discussions>`__.
 
-**Github** hosts a `First Contributions <https://github.com/firstcontributions/first-contributions>`__
-repository with good information for new comers.
+**GitHub** hosts a `First Contributions <https://github.com/firstcontributions/first-contributions>`__
+repository with good information for newcomers.
 
 Reporting Issues
 ----------------
@@ -59,7 +59,7 @@ We currently use a large set of labels to categorise issues:
 
     -    `Critical <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3ACritical>`__:
          Used for issues either rendering the software unusable, causing loss of
-         data, or preventing people to work. These issues need to be fixed
+         data, or preventing people from working. These issues need to be fixed
          immediately.
     -    `Major <https://github.com/colour-science/colour/issues?q=is%3Aopen+is%3Aissue+label%3AMajor>`__:
          Used for issues which have significant consequences on the ability of
@@ -166,13 +166,13 @@ Features & Enhancements
 
 If you would like a new feature to be supported or an enhancement of an
 existing feature, don't hesitate to link any resources or references you feel
-like would help its implementation: publications, wikipedia article, etc...
+would help its implementation, such as publications or Wikipedia articles.
 
-If there is an implementation existing in another language, we will be most
-likely be able to port it although the licence must be compatible with the
+If an implementation exists in another language, we will most likely
+be able to port it, although the licence must be compatible with the
 `BSD-3-Clause <https://opensource.org/licenses/BSD-3-Clause>`__ terms.
 
-We are also running `Matlab <http://www.mathworks.fr/products/matlab>`__, so
+We are also running `MATLAB <http://www.mathworks.fr/products/matlab>`__, so
 don't hesitate to provide snippets for it if you have functions you would like
 to be ported.
 
@@ -189,7 +189,7 @@ Development for Colour
 
     | **Note**
     |
-    | If you are on macOS, a dedicated guide on how to setup your environment
+    | If you are on macOS, a dedicated guide on how to set up your environment
         is available here: `Setting Up the Development Environment on macOS <../setting-up-the-development-environment-on-macos/index.html>`__.
 
 Here is a succinct overview of the steps you will most likely go through:
@@ -369,7 +369,7 @@ Push your changes to *origin*, i.e., your own fork:
 Step 16
 *******
 
-Visit your repository fork on `Github <https://github.com/$USER/colour>`__.
+Visit your repository fork on `GitHub <https://github.com/$USER/colour>`__.
 Your branch should have a green *Pull Request* button, this will open a
 *pull request* and let us know that we have some code to review :)
 
@@ -383,7 +383,7 @@ Code Review
 -----------
 
 Your *pull request* will be reviewed by the maintainers and any other developer
-interested by the project.
+interested in the project.
 
 We review all the code submitted, this is a natural process helping to raise
 the codebase quality around a friendly and constructive discussion.
@@ -396,7 +396,7 @@ benefits from them.
 Guidelines
 ----------
 
-Most of the conventions used in **Colour** are the same than
+Most of the conventions used in **Colour** are the same as
 `NumPy <http://www.numpy.org>`__, `SciPy <http://www.scipy.org>`__ and
 `scikit-image <http://scikit-image.org>`__.
 
@@ -406,7 +406,7 @@ Overview
 We follow the `Google Python Style Guide <https://google.github.io/styleguide/pyguide.html>`__
 and especially the *Python Language Rules* although with the main exception
 being the docstrings / documentation formatted with
-`Numpy Docstrings Style <https://github.com/numpy/numpy/blob/master/doc/example.py>`__.
+`NumPy Docstrings Style <https://github.com/numpy/numpy/blob/master/doc/example.py>`__.
 
 We use `type hints <https://docs.python.org/3/library/typing.html>`__  to
 statically indicate and verify the type of objects in the codebase with
@@ -459,12 +459,12 @@ Python Language Rules
 
 -   All the code must be annotated with type hints.
 -   All the code must be covered by unit tests and doctests.
--   All the code must be documented to the same standard than
+-   All the code must be documented to the same standard as
     `NumPy <http://www.numpy.org>`__, `SciPy <http://www.scipy.org>`__
     and `scikit-image <http://scikit-image.org>`__.
 -   All the code must be checked with the *pre-commit* hooks.
 -   *Pull requests* should not be merged without being reviewed and ensuring
-    that the `Github Actions <https://github.com/colour-science/colour/actions>`__
+    that the `GitHub Actions <https://github.com/colour-science/colour/actions>`__
     continuous integration suite succeeded.
 -   Examples should be provided for new features.
 
@@ -807,7 +807,7 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
     <div id="content">
       <ul>
         <li>
-          <h3>Github - Stage 1</h3>
+          <h3>GitHub - Stage 1</h3>
           <ul>
             <li><span class="task-status todo" style="margin-right:6px">TODO</span>Review the <a href="https://gist.github.com/KelSolaar/4a6ebe9ec3d389f0934b154fec8df51d">release notes</a></li>
             <li><span class="task-status todo" style="margin-right:6px">TODO</span>Check open issues on the current <a href="https:github.com/colour-science/colour/milestones">milestone</a></li>
@@ -845,7 +845,7 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
           </ul>
         </li>
         <li>
-          <h3>Pypi - Stage 1</h3>
+          <h3>PyPI - Stage 1</h3>
           <ul>
             <li><span class="task-status todo" style="margin-right:6px">TODO</span>Run the virtualise task: It deploys the project to a virtual environment and run the unit tests
               <pre><code data-lang="bash" class="bash">uv run invoke virtualise</code></pre>
@@ -893,15 +893,15 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
           </ul>
         </li>
         <li>
-          <h3>Github - Stage 2</h3>
+          <h3>GitHub - Stage 2</h3>
           <ul>
             <li><span class="task-status todo" style="margin-right:6px">TODO</span>Publish the <a href="https:gist.github.com/KelSolaar/4a6ebe9ec3d389f0934b154fec8df51d">release notes</a> on the <a href="https:github.com/colour-science/colour/releases">releases</a> page using the new tag</li>
           </ul>
         </li>
         <li>
-          <h3>Pypi - Stage 2</h3>
+          <h3>PyPI - Stage 2</h3>
           <ul>
-            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Run the release task: It releases the project to Pypi with Twine
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Run the release task: It releases the project to PyPI with Twine
               <pre><code data-lang="bash" class="bash">uv run invoke release</code></pre>
             </li>
           </ul>
@@ -909,7 +909,7 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
         <li>
           <h3>Zenodo - Stage 2</h3>
           <ul>
-            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Upload the Pypi package and create new version in Zenodo</li>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Upload the PyPI package and create new version in Zenodo</li>
           </ul>
         </li>
         <li>

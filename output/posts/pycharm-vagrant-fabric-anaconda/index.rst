@@ -160,7 +160,7 @@ Your configuration screen should be approximately as follows:
 Vagrant Up
 ----------
 
-With everything setup, hit the :code:`PyCharm --> Tools --> Vagrant --> Up`
+With everything set up, hit the :code:`PyCharm --> Tools --> Vagrant --> Up`
 menu item to spin up the virtual machine.
 
 You can go grab a coffee, the initial provisioning will take roughly

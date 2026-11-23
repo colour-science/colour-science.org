@@ -7,7 +7,7 @@
 .. description:
 .. type: text
 
-This guide describes the process to setup a development environment for
+This guide describes the process of setting up a development environment for
 contributing to colour-science projects on macOS. It is by no means prescriptive,
 and not every step is required. The guide assumes `Homebrew <https://brew.sh>`__
 as the package manager and `Visual Studio Code <https://code.visualstudio.com/>`__
@@ -18,7 +18,7 @@ Additionally, the installation of complex dependencies such as
 `PyGraphviz <https://pypi.org/project/pygraphviz>`__ is described.
 
 It was contributed by `@tjdcs <https://github.com/tjdcs>`__ and last updated on
-the 2024-10-10.
+2024-10-10.
 
 Homebrew
 ========

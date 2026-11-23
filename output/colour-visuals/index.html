@@ -12,7 +12,8 @@
 <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta name="theme-color" content="#191919">
+<link href="../assets/css/site.css?v=6" rel="stylesheet">
+<meta name="theme-color" content="#101010">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="https://www.colour-science.org/colour-visuals/">
@@ -28,9 +29,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
-</script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.1/css/all.css" integrity="sha384-QI8z31KmtR+tk1MYi0DfgxrjYgpTpLLol3bqZA/Q1Y8BvH+6k7/Huoj38gQOaCS7" crossorigin="anonymous">
-<meta name="google-site-verification" content="CeWflIcbu-x7Ur7qbzTYJiRFvoGF5RljJyGZMg7H9co">
+</script><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="google-site-verification" content="CeWflIcbu-x7Ur7qbzTYJiRFvoGF5RljJyGZMg7H9co">
 <meta name="author" content="Colour Developers">
 <meta property="og:site_name" content="Colour Science">
 <meta property="og:title" content="Colour - Visuals">
@@ -50,16 +49,16 @@ Most of the objects are available from the colour_visuals nam">
 <meta property="article:tag" content="colour science">
 <meta property="article:tag" content="webgpu">
 </head>
-<body>
+<body class="site-body">
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
 <!-- Menubar -->
 
-<nav class="navbar navbar-expand-xl static-top
-navbar-dark bg-dark bg-primary
+<nav aria-label="Primary" class="site-nav navbar navbar-expand-xl static-top
+navbar-dark
 "><div class="container">
 <!-- This keeps the margins nice -->
-        <a class="navbar-brand" href="https://www.colour-science.org/">
+        <a class="navbar-brand" href="../">
 
             <span id="blog-title">Colour Science</span>
         </a>
@@ -70,7 +69,7 @@ navbar-dark bg-dark bg-primary
         <div class="collapse navbar-collapse" id="bs-navbar">
             <ul class="navbar-nav mr-auto">
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Projects</button>
             <div class="dropdown-menu">
                     <a href="../apps" class="dropdown-item"><span class="font-weight-bold">Apps (Colour - Dash)</span></a>
                     <a href="http://awesome-colour.org/" class="dropdown-item"><span class="font-weight-bold">Awesome Colour</span></a>
@@ -88,7 +87,7 @@ navbar-dark bg-dark bg-primary
             </div>
             </li>
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Documentation</button>
             <div class="dropdown-menu">
                     <a href="../installation-guide" class="dropdown-item"><span class="font-weight-bold">Installation Guide</span></a>
                     <a href="https://colour.readthedocs.io/en/develop/tutorial.html" class="dropdown-item"><span class="font-weight-bold">Static Tutorial</span></a>
@@ -108,7 +107,7 @@ navbar-dark bg-dark bg-primary
             </div>
             </li>
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Blog</button>
             <div class="dropdown-menu">
                     <a href="../blog" class="dropdown-item"><span class="font-weight-bold">Posts</span></a>
                     <a href="../archive.html" class="dropdown-item"><span class="font-weight-normal">Archive</span></a>
@@ -116,149 +115,153 @@ navbar-dark bg-dark bg-primary
             </div>
                 </li>
 <li class="nav-item">
-<a href="mailto:colour-developers@colour-science.org" class="nav-link"><i class="fa-regular fa-envelope"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://github.com/colour-science/colour" class="nav-link"><i class="fa-brands fa-github"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://www.facebook.com/python.colour.science" class="nav-link"><i class="fa-brands fa-facebook"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://gitter.im/colour-science/colour" class="nav-link"><i class="fa-brands fa-gitter"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://x.com/colour_science" class="nav-link"><i class="fa-brands fa-x-twitter"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://bsky.app/profile/colour-science.bsky.social" class="nav-link"><i class="fa-brands fa-bluesky"></i></a>
+<a href="../#sponsors" class="nav-link">Sponsors</a>
 
                 
             </li>
 </ul>
-<ul class="navbar-nav navbar-right"></ul>
+<ul class="navbar-nav navbar-right">
+<li class="nav-item">
+<a href="mailto:colour-developers@colour-science.org" class="nav-link"><img class="site-icon" src="../assets/icons/envelope.svg" width="16" height="16" alt=""><span class="sr-only">Email</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://github.com/colour-science/colour" class="nav-link"><img class="site-icon" src="../assets/icons/github.svg" width="16" height="16" alt=""><span class="sr-only">GitHub</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://www.facebook.com/python.colour.science" class="nav-link"><img class="site-icon" src="../assets/icons/facebook.svg" width="16" height="16" alt=""><span class="sr-only">Facebook</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://gitter.im/colour-science/colour" class="nav-link"><img class="site-icon" src="../assets/icons/gitter.svg" width="16" height="16" alt=""><span class="sr-only">Gitter</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://x.com/colour_science" class="nav-link"><img class="site-icon" src="../assets/icons/x-twitter.svg" width="16" height="16" alt=""><span class="sr-only">X</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://bsky.app/profile/colour-science.bsky.social" class="nav-link"><img class="site-icon" src="../assets/icons/bluesky.svg" width="16" height="16" alt=""><span class="sr-only">Bluesky</span></a>
+
+                
+                
+                
+            </li>
+</ul>
 </div>
 <!-- /.navbar-collapse -->
     </div>
 <!-- /.container -->
-</nav><!-- End of Menubar --><!-- Main --><div class="container" id="content" role="main">
-    <div class="row">
+</nav><!-- End of Menubar --><!-- Main --><main class="container" id="content"><div class="row">
         <div class="col-12">
             <div class="body-content">
                 <!--Body content-->
                 
                 
                 
-<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Colour - Visuals</a></h1>
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header class="page-header"><h1 class="p-name page-heading" itemprop="headline name">Colour - Visuals</h1>
+            
 
-        
-
-    </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p><strong>Colour - Visuals</strong> is a <a class="reference external" href="https://www.python.org">Python</a> package
+        </header><div class="e-content entry-content" itemprop="articleBody text">
+        <p><strong>Colour - Visuals</strong> is a <a class="reference external" href="https://www.python.org">Python</a> package
 implementing various <a class="reference external" href="https://github.com/gpuweb/gpuweb">WebGPU-based</a>
 visuals on top of <a class="reference external" href="https://github.com/pygfx/pygfx">pygfx</a> for colour science
 applications.</p>
 <img alt="https://raw.githubusercontent.com/colour-science/colour-visuals/master/docs/_static/Visuals_001.png" src="https://raw.githubusercontent.com/colour-science/colour-visuals/master/docs/_static/Visuals_001.png"><section id="features"><h2>Features</h2>
 <p>Most of the objects are available from the <code class="docutils literal">colour_visuals</code> namespace:</p>
-<div class="code"><pre class="code python"><a id="rest_code_99e4c68c888145758a868971b7e63afb-1" name="rest_code_99e4c68c888145758a868971b7e63afb-1" href="#rest_code_99e4c68c888145758a868971b7e63afb-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">colour_visuals</span>
+<div class="code"><pre class="code python"><a id="rest_code_3b3dd7d65d384b18946b689766d291da-1" name="rest_code_3b3dd7d65d384b18946b689766d291da-1" href="#rest_code_3b3dd7d65d384b18946b689766d291da-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">colour_visuals</span>
 </pre></div>
 <section id="api"><h3>API</h3>
 <p>The main technical reference for <a class="reference external" href="https://github.com/colour-science/colour-visuals">Colour - Visuals</a>
 is the <a class="reference external" href="https://colour-visuals.readthedocs.io/en/latest/reference.html">API Reference</a>.</p>
-<div class="code"><pre class="code python"><a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-1" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-1" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">colour_visuals</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-2" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-2" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-3" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-3" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pygfx</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gfx</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-4" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-4" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">wgpu.gui.auto</span><span class="w"> </span><span class="kn">import</span> <span class="n">WgpuCanvas</span><span class="p">,</span> <span class="n">run</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-5" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-5" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-5"></a>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-6" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-6" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-6"></a><span class="n">canvas</span> <span class="o">=</span> <span class="n">WgpuCanvas</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">960</span><span class="p">,</span> <span class="mi">540</span><span class="p">))</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-7" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-7" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-7"></a><span class="n">renderer</span> <span class="o">=</span> <span class="n">gfx</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">WgpuRenderer</span><span class="p">(</span><span class="n">canvas</span><span class="p">)</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-8" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-8" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-8"></a><span class="n">camera</span> <span class="o">=</span> <span class="n">gfx</span><span class="o">.</span><span class="n">PerspectiveCamera</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">16</span> <span class="o">/</span> <span class="mi">9</span><span class="p">)</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-9" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-9" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-9"></a><span class="n">controller</span> <span class="o">=</span> <span class="n">gfx</span><span class="o">.</span><span class="n">OrbitController</span><span class="p">(</span><span class="n">camera</span><span class="p">)</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-10" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-10" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-10"></a><span class="n">controller</span><span class="o">.</span><span class="n">register_events</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-11" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-11" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-11"></a>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-12" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-12" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-12"></a><span class="n">scene</span> <span class="o">=</span> <span class="n">gfx</span><span class="o">.</span><span class="n">Scene</span><span class="p">()</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-13" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-13" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-13"></a><span class="n">scene</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">gfx</span><span class="o">.</span><span class="n">Background</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">gfx</span><span class="o">.</span><span class="n">BackgroundMaterial</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.18</span><span class="p">,</span> <span class="mf">0.18</span><span class="p">,</span> <span class="mf">0.18</span><span class="p">]))))</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-14" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-14" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-14"></a>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-15" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-15" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-15"></a><span class="n">visuals</span> <span class="o">=</span> <span class="p">[</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-16" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-16" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-16"></a>    <span class="n">colour_visuals</span><span class="o">.</span><span class="n">VisualGrid</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-17" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-17" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-17"></a>    <span class="n">colour_visuals</span><span class="o">.</span><span class="n">VisualChromaticityDiagramCIE1931</span><span class="p">(</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-18" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-18" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-18"></a>        <span class="n">kwargs_visual_chromaticity_diagram</span><span class="o">=</span><span class="p">{</span><span class="s2">"opacity"</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">}</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-19" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-19" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-19"></a>    <span class="p">),</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-20" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-20" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-20"></a>    <span class="n">colour_visuals</span><span class="o">.</span><span class="n">VisualRGBColourspace2D</span><span class="p">(</span><span class="s2">"ACEScg"</span><span class="p">),</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-21" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-21" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-21"></a>    <span class="n">colour_visuals</span><span class="o">.</span><span class="n">VisualRGBColourspace2D</span><span class="p">(</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-22" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-22" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-22"></a>        <span class="s2">"Display P3"</span><span class="p">,</span> <span class="n">colours</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-23" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-23" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-23"></a>    <span class="p">),</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-24" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-24" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-24"></a>    <span class="n">colour_visuals</span><span class="o">.</span><span class="n">VisualRGBColourspace3D</span><span class="p">(</span><span class="s2">"Display P3"</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">wireframe</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-25" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-25" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-25"></a>    <span class="n">colour_visuals</span><span class="o">.</span><span class="n">VisualRGBScatter3D</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">([</span><span class="mi">24</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">]),</span> <span class="s2">"ACEScg"</span><span class="p">),</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-26" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-26" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-26"></a><span class="p">]</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-27" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-27" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-27"></a>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-28" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-28" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-28"></a><span class="n">group</span> <span class="o">=</span> <span class="n">gfx</span><span class="o">.</span><span class="n">Group</span><span class="p">()</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-29" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-29" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-29"></a><span class="k">for</span> <span class="n">visual</span> <span class="ow">in</span> <span class="n">visuals</span><span class="p">:</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-30" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-30" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-30"></a>    <span class="n">group</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">visual</span><span class="p">)</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-31" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-31" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-31"></a>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-32" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-32" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-32"></a><span class="n">scene</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-33" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-33" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-33"></a>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-34" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-34" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-34"></a><span class="n">camera</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-35" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-35" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-35"></a><span class="n">camera</span><span class="o">.</span><span class="n">show_pos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">]))</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-36" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-36" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-36"></a>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-37" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-37" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-37"></a><span class="n">canvas</span><span class="o">.</span><span class="n">request_draw</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">renderer</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">scene</span><span class="p">,</span> <span class="n">camera</span><span class="p">))</span>
-<a id="rest_code_7119d8c508a149c1a73bdd692fb8c38a-38" name="rest_code_7119d8c508a149c1a73bdd692fb8c38a-38" href="#rest_code_7119d8c508a149c1a73bdd692fb8c38a-38"></a><span class="n">run</span><span class="p">()</span>
+<div class="code"><pre class="code python"><a id="rest_code_708baa37168049c6bc565b0a9982c4f8-1" name="rest_code_708baa37168049c6bc565b0a9982c4f8-1" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">colour_visuals</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-2" name="rest_code_708baa37168049c6bc565b0a9982c4f8-2" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-3" name="rest_code_708baa37168049c6bc565b0a9982c4f8-3" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pygfx</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gfx</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-4" name="rest_code_708baa37168049c6bc565b0a9982c4f8-4" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">wgpu.gui.auto</span><span class="w"> </span><span class="kn">import</span> <span class="n">WgpuCanvas</span><span class="p">,</span> <span class="n">run</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-5" name="rest_code_708baa37168049c6bc565b0a9982c4f8-5" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-5"></a>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-6" name="rest_code_708baa37168049c6bc565b0a9982c4f8-6" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-6"></a><span class="n">canvas</span> <span class="o">=</span> <span class="n">WgpuCanvas</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">960</span><span class="p">,</span> <span class="mi">540</span><span class="p">))</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-7" name="rest_code_708baa37168049c6bc565b0a9982c4f8-7" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-7"></a><span class="n">renderer</span> <span class="o">=</span> <span class="n">gfx</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">WgpuRenderer</span><span class="p">(</span><span class="n">canvas</span><span class="p">)</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-8" name="rest_code_708baa37168049c6bc565b0a9982c4f8-8" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-8"></a><span class="n">camera</span> <span class="o">=</span> <span class="n">gfx</span><span class="o">.</span><span class="n">PerspectiveCamera</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">16</span> <span class="o">/</span> <span class="mi">9</span><span class="p">)</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-9" name="rest_code_708baa37168049c6bc565b0a9982c4f8-9" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-9"></a><span class="n">controller</span> <span class="o">=</span> <span class="n">gfx</span><span class="o">.</span><span class="n">OrbitController</span><span class="p">(</span><span class="n">camera</span><span class="p">)</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-10" name="rest_code_708baa37168049c6bc565b0a9982c4f8-10" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-10"></a><span class="n">controller</span><span class="o">.</span><span class="n">register_events</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-11" name="rest_code_708baa37168049c6bc565b0a9982c4f8-11" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-11"></a>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-12" name="rest_code_708baa37168049c6bc565b0a9982c4f8-12" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-12"></a><span class="n">scene</span> <span class="o">=</span> <span class="n">gfx</span><span class="o">.</span><span class="n">Scene</span><span class="p">()</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-13" name="rest_code_708baa37168049c6bc565b0a9982c4f8-13" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-13"></a><span class="n">scene</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">gfx</span><span class="o">.</span><span class="n">Background</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">gfx</span><span class="o">.</span><span class="n">BackgroundMaterial</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.18</span><span class="p">,</span> <span class="mf">0.18</span><span class="p">,</span> <span class="mf">0.18</span><span class="p">]))))</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-14" name="rest_code_708baa37168049c6bc565b0a9982c4f8-14" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-14"></a>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-15" name="rest_code_708baa37168049c6bc565b0a9982c4f8-15" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-15"></a><span class="n">visuals</span> <span class="o">=</span> <span class="p">[</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-16" name="rest_code_708baa37168049c6bc565b0a9982c4f8-16" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-16"></a>    <span class="n">colour_visuals</span><span class="o">.</span><span class="n">VisualGrid</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-17" name="rest_code_708baa37168049c6bc565b0a9982c4f8-17" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-17"></a>    <span class="n">colour_visuals</span><span class="o">.</span><span class="n">VisualChromaticityDiagramCIE1931</span><span class="p">(</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-18" name="rest_code_708baa37168049c6bc565b0a9982c4f8-18" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-18"></a>        <span class="n">kwargs_visual_chromaticity_diagram</span><span class="o">=</span><span class="p">{</span><span class="s2">"opacity"</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">}</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-19" name="rest_code_708baa37168049c6bc565b0a9982c4f8-19" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-19"></a>    <span class="p">),</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-20" name="rest_code_708baa37168049c6bc565b0a9982c4f8-20" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-20"></a>    <span class="n">colour_visuals</span><span class="o">.</span><span class="n">VisualRGBColourspace2D</span><span class="p">(</span><span class="s2">"ACEScg"</span><span class="p">),</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-21" name="rest_code_708baa37168049c6bc565b0a9982c4f8-21" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-21"></a>    <span class="n">colour_visuals</span><span class="o">.</span><span class="n">VisualRGBColourspace2D</span><span class="p">(</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-22" name="rest_code_708baa37168049c6bc565b0a9982c4f8-22" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-22"></a>        <span class="s2">"Display P3"</span><span class="p">,</span> <span class="n">colours</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-23" name="rest_code_708baa37168049c6bc565b0a9982c4f8-23" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-23"></a>    <span class="p">),</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-24" name="rest_code_708baa37168049c6bc565b0a9982c4f8-24" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-24"></a>    <span class="n">colour_visuals</span><span class="o">.</span><span class="n">VisualRGBColourspace3D</span><span class="p">(</span><span class="s2">"Display P3"</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">wireframe</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-25" name="rest_code_708baa37168049c6bc565b0a9982c4f8-25" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-25"></a>    <span class="n">colour_visuals</span><span class="o">.</span><span class="n">VisualRGBScatter3D</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">([</span><span class="mi">24</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">]),</span> <span class="s2">"ACEScg"</span><span class="p">),</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-26" name="rest_code_708baa37168049c6bc565b0a9982c4f8-26" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-26"></a><span class="p">]</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-27" name="rest_code_708baa37168049c6bc565b0a9982c4f8-27" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-27"></a>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-28" name="rest_code_708baa37168049c6bc565b0a9982c4f8-28" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-28"></a><span class="n">group</span> <span class="o">=</span> <span class="n">gfx</span><span class="o">.</span><span class="n">Group</span><span class="p">()</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-29" name="rest_code_708baa37168049c6bc565b0a9982c4f8-29" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-29"></a><span class="k">for</span> <span class="n">visual</span> <span class="ow">in</span> <span class="n">visuals</span><span class="p">:</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-30" name="rest_code_708baa37168049c6bc565b0a9982c4f8-30" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-30"></a>    <span class="n">group</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">visual</span><span class="p">)</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-31" name="rest_code_708baa37168049c6bc565b0a9982c4f8-31" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-31"></a>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-32" name="rest_code_708baa37168049c6bc565b0a9982c4f8-32" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-32"></a><span class="n">scene</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-33" name="rest_code_708baa37168049c6bc565b0a9982c4f8-33" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-33"></a>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-34" name="rest_code_708baa37168049c6bc565b0a9982c4f8-34" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-34"></a><span class="n">camera</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-35" name="rest_code_708baa37168049c6bc565b0a9982c4f8-35" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-35"></a><span class="n">camera</span><span class="o">.</span><span class="n">show_pos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">]))</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-36" name="rest_code_708baa37168049c6bc565b0a9982c4f8-36" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-36"></a>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-37" name="rest_code_708baa37168049c6bc565b0a9982c4f8-37" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-37"></a><span class="n">canvas</span><span class="o">.</span><span class="n">request_draw</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">renderer</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">scene</span><span class="p">,</span> <span class="n">camera</span><span class="p">))</span>
+<a id="rest_code_708baa37168049c6bc565b0a9982c4f8-38" name="rest_code_708baa37168049c6bc565b0a9982c4f8-38" href="#rest_code_708baa37168049c6bc565b0a9982c4f8-38"></a><span class="n">run</span><span class="p">()</span>
 </pre></div>
 <img alt="https://raw.githubusercontent.com/colour-science/colour-visuals/master/docs/_static/Visuals_002.png" src="https://raw.githubusercontent.com/colour-science/colour-visuals/master/docs/_static/Visuals_002.png"></section><section id="downloads"><h3>Downloads</h3>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/colour-science/colour-visuals">Colour - Visuals Github Repository</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/colour-visuals">Colour - Visuals - Pypi</a></p></li>
+<li><p><a class="reference external" href="https://github.com/colour-science/colour-visuals">Colour - Visuals GitHub Repository</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/colour-visuals">Colour - Visuals - PyPI</a></p></li>
 </ul></section></section>
 </div>
+
     
 
 </article><!--End of body content-->
 </div>
         </div>
     </div>
-</div>
-
-<!-- End of Main -->
-
-<!-- Footer -->
-
-<footer id="footer" class="mt-auto"><ul class="nav justify-content-center">
-<li class="nav-item mx-3">
+</main><!-- End of Main --><!-- Footer --><footer id="footer" class="mt-auto"><div class="container">
+        
+<ul class="nav justify-content-center">
+<li class="nav-item mx-1">
         <a href="mailto:colour-developers@colour-science.org">
-            <i class="fa-regular fa-envelope text-light"></i>
+            <img class="site-icon" src="../assets/icons/envelope.svg" width="16" height="16" alt=""><span class="sr-only">Email</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://github.com/colour-science/colour">
-            <i class="fa-brands fa-github text-light"></i>
+            <img class="site-icon" src="../assets/icons/github.svg" width="16" height="16" alt=""><span class="sr-only">GitHub</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://www.facebook.com/python.colour.science">
-            <i class="fa-brands fa-facebook text-light"></i>
+            <img class="site-icon" src="../assets/icons/facebook.svg" width="16" height="16" alt=""><span class="sr-only">Facebook</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://gitter.im/colour-science/colour">
-            <i class="fa-brands fa-gitter text-light"></i>
+            <img class="site-icon" src="../assets/icons/gitter.svg" width="16" height="16" alt=""><span class="sr-only">Gitter</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://x.com/colour_science">
-            <i class="fa-brands fa-x-twitter text-light"></i>
+            <img class="site-icon" src="../assets/icons/x-twitter.svg" width="16" height="16" alt=""><span class="sr-only">X</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://bsky.app/profile/colour-science.bsky.social">
-            <i class="fa-brands fa-bluesky text-light"></i>
+            <img class="site-icon" src="../assets/icons/bluesky.svg" width="16" height="16" alt=""><span class="sr-only">Bluesky</span>
         </a>
     </li>
 </ul>
-<div class="text-center text-light py-3"><span>Copyright © 2013-2026 – Colour Developers</span></div>
+<div class="text-center pt-3"><span>Copyright © 2013-2026 – Colour Developers</span></div>
 
-    
+        
+    </div>
 </footer><!-- End of Footer --><script src="../assets/js/jquery.min.js"></script><script src="../assets/js/popper.min.js"></script><script src="../assets/js/bootstrap.min.js"></script><script src="../assets/js/baguetteBox.min.js"></script><script>
-    baguetteBox.run('div#content', {
+    baguetteBox.run('#content', {
         ignoreClass: 'islink',
         captions: function(element) {
             return element.getElementsByTagName('img')[0].alt;

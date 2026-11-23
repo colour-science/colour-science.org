@@ -50,4 +50,4 @@ Funding
 -------
 We would like to thank `NumFOCUS <https://numfocus.org>`__
 for funding the work on this package through the
-`The Small Development Grants program  <https://numfocus.org/programs/small-development-grants>`__.
+`Small Development Grants program <https://numfocus.org/programs/small-development-grants>`__.

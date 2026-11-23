@@ -12,7 +12,8 @@
 <link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta name="theme-color" content="#191919">
+<link href="../../assets/css/site.css?v=6" rel="stylesheet">
+<meta name="theme-color" content="#101010">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://www.colour-science.org/posts/the-importance-of-terminology-and-srgb-uncertainty/">
@@ -28,9 +29,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
-</script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.1/css/all.css" integrity="sha384-QI8z31KmtR+tk1MYi0DfgxrjYgpTpLLol3bqZA/Q1Y8BvH+6k7/Huoj38gQOaCS7" crossorigin="anonymous">
-<meta name="google-site-verification" content="CeWflIcbu-x7Ur7qbzTYJiRFvoGF5RljJyGZMg7H9co">
+</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="google-site-verification" content="CeWflIcbu-x7Ur7qbzTYJiRFvoGF5RljJyGZMg7H9co">
 <meta name="author" content="Colour Developers">
 <link rel="prev" href="../a-new-logo-and-website/" title="A New Logo and Website!" type="text/html">
 <link rel="next" href="../colour-037-is-available/" title="Colour 0.3.7 is available!" type="text/html">
@@ -59,16 +58,16 @@ back about the missing descri">
 <meta property="article:tag" content="transfer function">
 <meta property="article:tag" content="whitepoint">
 </head>
-<body>
+<body class="site-body">
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
 <!-- Menubar -->
 
-<nav class="navbar navbar-expand-xl static-top
-navbar-dark bg-dark bg-primary
+<nav aria-label="Primary" class="site-nav navbar navbar-expand-xl static-top
+navbar-dark
 "><div class="container">
 <!-- This keeps the margins nice -->
-        <a class="navbar-brand" href="https://www.colour-science.org/">
+        <a class="navbar-brand" href="../../">
 
             <span id="blog-title">Colour Science</span>
         </a>
@@ -79,7 +78,7 @@ navbar-dark bg-dark bg-primary
         <div class="collapse navbar-collapse" id="bs-navbar">
             <ul class="navbar-nav mr-auto">
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Projects</button>
             <div class="dropdown-menu">
                     <a href="../../apps" class="dropdown-item"><span class="font-weight-bold">Apps (Colour - Dash)</span></a>
                     <a href="http://awesome-colour.org/" class="dropdown-item"><span class="font-weight-bold">Awesome Colour</span></a>
@@ -97,7 +96,7 @@ navbar-dark bg-dark bg-primary
             </div>
             </li>
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Documentation</button>
             <div class="dropdown-menu">
                     <a href="../../installation-guide" class="dropdown-item"><span class="font-weight-bold">Installation Guide</span></a>
                     <a href="https://colour.readthedocs.io/en/develop/tutorial.html" class="dropdown-item"><span class="font-weight-bold">Static Tutorial</span></a>
@@ -117,7 +116,7 @@ navbar-dark bg-dark bg-primary
             </div>
             </li>
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Blog</button>
             <div class="dropdown-menu">
                     <a href="../../blog" class="dropdown-item"><span class="font-weight-bold">Posts</span></a>
                     <a href="../../archive.html" class="dropdown-item"><span class="font-weight-normal">Archive</span></a>
@@ -125,33 +124,40 @@ navbar-dark bg-dark bg-primary
             </div>
                 </li>
 <li class="nav-item">
-<a href="mailto:colour-developers@colour-science.org" class="nav-link"><i class="fa-regular fa-envelope"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://github.com/colour-science/colour" class="nav-link"><i class="fa-brands fa-github"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://www.facebook.com/python.colour.science" class="nav-link"><i class="fa-brands fa-facebook"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://gitter.im/colour-science/colour" class="nav-link"><i class="fa-brands fa-gitter"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://x.com/colour_science" class="nav-link"><i class="fa-brands fa-x-twitter"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://bsky.app/profile/colour-science.bsky.social" class="nav-link"><i class="fa-brands fa-bluesky"></i></a>
+<a href="../../#sponsors" class="nav-link">Sponsors</a>
 
                 
             </li>
 </ul>
-<ul class="navbar-nav navbar-right"></ul>
+<ul class="navbar-nav navbar-right">
+<li class="nav-item">
+<a href="mailto:colour-developers@colour-science.org" class="nav-link"><img class="site-icon" src="../../assets/icons/envelope.svg" width="16" height="16" alt=""><span class="sr-only">Email</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://github.com/colour-science/colour" class="nav-link"><img class="site-icon" src="../../assets/icons/github.svg" width="16" height="16" alt=""><span class="sr-only">GitHub</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://www.facebook.com/python.colour.science" class="nav-link"><img class="site-icon" src="../../assets/icons/facebook.svg" width="16" height="16" alt=""><span class="sr-only">Facebook</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://gitter.im/colour-science/colour" class="nav-link"><img class="site-icon" src="../../assets/icons/gitter.svg" width="16" height="16" alt=""><span class="sr-only">Gitter</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://x.com/colour_science" class="nav-link"><img class="site-icon" src="../../assets/icons/x-twitter.svg" width="16" height="16" alt=""><span class="sr-only">X</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://bsky.app/profile/colour-science.bsky.social" class="nav-link"><img class="site-icon" src="../../assets/icons/bluesky.svg" width="16" height="16" alt=""><span class="sr-only">Bluesky</span></a>
+
+                
+                
+                
+            </li>
+</ul>
 </div>
 <!-- /.navbar-collapse -->
     </div>
 <!-- /.container -->
-</nav><!-- End of Menubar --><!-- Main --><div class="container" id="content" role="main">
-    <div class="row">
+</nav><!-- End of Menubar --><!-- Main --><main class="container" id="content"><div class="row">
         <div class="col-12">
             <div class="body-content">
                 <!--Body content-->
@@ -197,7 +203,7 @@ set of <strong>primaries</strong>, <strong>whitepoint</strong> and <strong>trans
 (<strong>EOTF</strong>) is exact, it may be confusing for non experts by omitting an explicit
 emphasis of the components of an <em>RGB</em> colourspace.</p>
 <p>For people experienced with colour theory and science, the post title and the
-mention of <strong>Gamma</strong> indicates that the article will likely only involves the
+mention of <strong>Gamma</strong> indicates that the article will likely only involve the
 <em>sRGB</em> colourspace <strong>EOTF</strong> and its inverse.</p>
 <div class="alert alert-dismissible alert-warning line-block">
 <div class="line"><strong>Warning</strong></div>
@@ -213,7 +219,7 @@ known as <em>Gamma</em>.</div>
 <div class="line">Charles Poynton's <a class="reference external" href="http://www.poynton.com/notes/colour_and_gamma/GammaFAQ.html">Gamma FAQ</a>
 is an extensive reference on <em>Gamma</em> correction.</div>
 </div>
-<p>Tom confirms that intuition a few paragraph later:</p>
+<p>Tom confirms that intuition a few paragraphs later:</p>
 <blockquote>
 <p><em>(the broader sRGB standard also has a bunch of gamut and colour-transform
 specifications, but we’ll ignore those and just focus on the gamma-curve
@@ -269,7 +275,7 @@ CIE chromaticity values for a set of additive RGB primaries and a colour
 space white point, together with a colour component transfer function.</p>
 </blockquote>
 <section id="primaries"><h3>Primaries</h3>
-<p>The <strong>primaries</strong> <em>chromaticity coordinates</em> define the <strong>gamut</strong> (the triangle
+<p>The <em>chromaticity coordinates</em> of the <strong>primaries</strong> define the <strong>gamut</strong> (the triangle
 of colours) that can be encoded by a given <em>RGB colourspace</em>.</p>
 <div class="alert alert-dismissible alert-info line-block">
 <div class="line"><strong>Note</strong></div>
@@ -302,7 +308,7 @@ volume.
 (<a class="reference external" href="https://github.com/colour-science/colour-analysis">Colour - Analysis</a>)</p>
 </figcaption></figure><p>An <em>RGB colourspace</em> can have
 <a class="reference external" href="https://github.com/colour-science/colour-notebooks/blob/master/notebooks/colorimetry/illuminants.ipynb">different whitepoints</a>
-depending its context usage, <em>sRGB colourspace</em> <em>IEC 61966-2-1:1999 Standard</em>
+depending on its context of use. The <em>sRGB colourspace</em> <em>IEC 61966-2-1:1999 Standard</em>
 adopts <a class="reference external" href="https://en.wikipedia.org/wiki/Illuminant_D65">CIE Standard Illuminant D65</a>
 as <strong>whitepoint</strong> but an <a class="reference external" href="https://en.wikipedia.org/wiki/International_Color_Consortium">ICC</a>
 <em>sRGB colourspace</em> profile would likely have been chromatically adapted to
@@ -354,7 +360,7 @@ composes an <em>RGB colourspace</em>, as a result they don't properly differenti
 <strong>gamut</strong> and <strong>transfer functions</strong>. The cursory <strong>terminology</strong> recurrently
 used online is probably the root cause for that.</p>
 <p>When one talks about <em>sRGB</em>, is he describing the colourspace <strong>primaries</strong> or
-its <strong>transfer functions</strong>? Discussing about <em>sRGB</em> to <em>linear</em> transformation
+its <strong>transfer functions</strong>? Discussing <em>sRGB</em> to <em>linear</em> transformation
 without emphasis on the <strong>EOTF</strong> component is unsettling: a rendering
 engine using linear <em>sRGB</em> colourspace input colours and textures, renders with
 the <em>sRGB</em> colourspace <strong>primaries</strong> and <strong>whitepoint</strong> (assuming no colour
@@ -400,7 +406,7 @@ essential three components:</p>
 <li><p>When writing on the <em>RGB</em> colourspace topic, one should ideally mention the
 previous point, it will help people getting the grasp on the theory.</p></li>
 <li>
-<p>When discussing about a given <em>RGB</em> colourspace component, one should make a
+<p>When discussing a given <em>RGB</em> colourspace component, one should make a
 point of describing which specification's component he is referring to:</p>
 <blockquote>
 <p><em>sRGB is a slight tweaking of the simple gamma 2.2 curve.</em></p>
@@ -489,49 +495,46 @@ Wiley. ISBN:B00DAYO8E2</p>
 </div>
         </div>
     </div>
-</div>
-
-<!-- End of Main -->
-
-<!-- Footer -->
-
-<footer id="footer" class="mt-auto"><ul class="nav justify-content-center">
-<li class="nav-item mx-3">
+</main><!-- End of Main --><!-- Footer --><footer id="footer" class="mt-auto"><div class="container">
+        
+<ul class="nav justify-content-center">
+<li class="nav-item mx-1">
         <a href="mailto:colour-developers@colour-science.org">
-            <i class="fa-regular fa-envelope text-light"></i>
+            <img class="site-icon" src="../../assets/icons/envelope.svg" width="16" height="16" alt=""><span class="sr-only">Email</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://github.com/colour-science/colour">
-            <i class="fa-brands fa-github text-light"></i>
+            <img class="site-icon" src="../../assets/icons/github.svg" width="16" height="16" alt=""><span class="sr-only">GitHub</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://www.facebook.com/python.colour.science">
-            <i class="fa-brands fa-facebook text-light"></i>
+            <img class="site-icon" src="../../assets/icons/facebook.svg" width="16" height="16" alt=""><span class="sr-only">Facebook</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://gitter.im/colour-science/colour">
-            <i class="fa-brands fa-gitter text-light"></i>
+            <img class="site-icon" src="../../assets/icons/gitter.svg" width="16" height="16" alt=""><span class="sr-only">Gitter</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://x.com/colour_science">
-            <i class="fa-brands fa-x-twitter text-light"></i>
+            <img class="site-icon" src="../../assets/icons/x-twitter.svg" width="16" height="16" alt=""><span class="sr-only">X</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://bsky.app/profile/colour-science.bsky.social">
-            <i class="fa-brands fa-bluesky text-light"></i>
+            <img class="site-icon" src="../../assets/icons/bluesky.svg" width="16" height="16" alt=""><span class="sr-only">Bluesky</span>
         </a>
     </li>
 </ul>
-<div class="text-center text-light py-3"><span>Copyright © 2013-2026 – Colour Developers</span></div>
+<div class="text-center pt-3"><span>Copyright © 2013-2026 – Colour Developers</span></div>
 
-    
+        
+    </div>
 </footer><!-- End of Footer --><script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>
-    baguetteBox.run('div#content', {
+    baguetteBox.run('#content', {
         ignoreClass: 'islink',
         captions: function(element) {
             return element.getElementsByTagName('img')[0].alt;

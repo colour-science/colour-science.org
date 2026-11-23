@@ -36,5 +36,5 @@ Examples
 Downloads
 ^^^^^^^^^
 
--   `Colour - Demosaicing Github Repository <https://github.com/colour-science/colour-demosaicing>`__
--   `Colour - Demosaicing - Pypi <https://pypi.org/project/colour-demosaicing>`__
+-   `Colour - Demosaicing GitHub Repository <https://github.com/colour-science/colour-demosaicing>`__
+-   `Colour - Demosaicing - PyPI <https://pypi.org/project/colour-demosaicing>`__

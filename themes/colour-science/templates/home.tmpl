@@ -1,0 +1,50 @@
+## -*- coding: utf-8 -*-
+<%inherit file="page.tmpl"/>
+
+<%block name="extra_head">
+    ${parent.extra_head()}
+    <link rel="preload" href="/assets/fonts/dm-sans/dm-sans-latin-wght-normal.woff2"
+          as="font" type="font/woff2" crossorigin>
+</%block>
+
+<%block name="extra_header">
+<section class="home-hero" aria-labelledby="home-title">
+    <h1 id="home-title">${post.title()|h}</h1>
+
+    <div class="home-hero-body">
+        <div class="home-intro">
+            <p class="home-lead">
+                Colour is an open-source Python package with algorithms and datasets
+                for colour science.
+            </p>
+            <div class="home-actions">
+                <a class="site-button site-button-primary" href="/installation-guide/">Get started</a>
+                <a class="site-button site-button-outline"
+                   href="https://github.com/colour-science/colour/archive/v0.4.7.zip">Download 0.4.7</a>
+            </div>
+            <p class="home-install">
+                <code>pip install colour-science</code>
+                <span>or <code>uv add colour-science</code></span>
+            </p>
+            <p class="home-license">
+                Released under the
+                <a href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a> license.
+            </p>
+        </div>
+
+        <div class="home-hero-art">
+            <img src="/images/Colour_Logo_001.svg" width="3840" height="2160" alt="Colour logo">
+        </div>
+    </div>
+</section>
+
+<div class="home-affiliations">
+    <a href="https://numfocus.org/">
+        <img src="/images/AffiliatedProject-LRG-transparent.png" width="144" height="40"
+             alt="NumFOCUS Affiliated Project">
+    </a>
+    <p>Colour is an affiliated project of NumFOCUS, a
+        <span class="text-nowrap">501(c)(3)</span> nonprofit in the United States.</p>
+</div>
+
+</%block>

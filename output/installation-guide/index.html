@@ -12,7 +12,8 @@
 <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta name="theme-color" content="#191919">
+<link href="../assets/css/site.css?v=6" rel="stylesheet">
+<meta name="theme-color" content="#101010">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="https://www.colour-science.org/installation-guide/">
@@ -28,9 +29,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
-</script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.1/css/all.css" integrity="sha384-QI8z31KmtR+tk1MYi0DfgxrjYgpTpLLol3bqZA/Q1Y8BvH+6k7/Huoj38gQOaCS7" crossorigin="anonymous">
-<meta name="google-site-verification" content="CeWflIcbu-x7Ur7qbzTYJiRFvoGF5RljJyGZMg7H9co">
+</script><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="google-site-verification" content="CeWflIcbu-x7Ur7qbzTYJiRFvoGF5RljJyGZMg7H9co">
 <meta name="author" content="Colour Developers">
 <meta property="og:site_name" content="Colour Science">
 <meta property="og:title" content="Installation Guide">
@@ -44,16 +43,16 @@ your intended use case, i.e., using or developi">
 <meta property="article:published_time" content="2015-11-24T09:38:23Z">
 <meta property="article:tag" content="installation">
 </head>
-<body>
+<body class="site-body">
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
 <!-- Menubar -->
 
-<nav class="navbar navbar-expand-xl static-top
-navbar-dark bg-dark bg-primary
+<nav aria-label="Primary" class="site-nav navbar navbar-expand-xl static-top
+navbar-dark
 "><div class="container">
 <!-- This keeps the margins nice -->
-        <a class="navbar-brand" href="https://www.colour-science.org/">
+        <a class="navbar-brand" href="../">
 
             <span id="blog-title">Colour Science</span>
         </a>
@@ -64,7 +63,7 @@ navbar-dark bg-dark bg-primary
         <div class="collapse navbar-collapse" id="bs-navbar">
             <ul class="navbar-nav mr-auto">
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Projects</button>
             <div class="dropdown-menu">
                     <a href="../apps" class="dropdown-item"><span class="font-weight-bold">Apps (Colour - Dash)</span></a>
                     <a href="http://awesome-colour.org/" class="dropdown-item"><span class="font-weight-bold">Awesome Colour</span></a>
@@ -82,7 +81,7 @@ navbar-dark bg-dark bg-primary
             </div>
             </li>
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Documentation</button>
             <div class="dropdown-menu">
                     <a href="../installation-guide" class="dropdown-item"><span class="font-weight-bold">Installation Guide</span></a>
                     <a href="https://colour.readthedocs.io/en/develop/tutorial.html" class="dropdown-item"><span class="font-weight-bold">Static Tutorial</span></a>
@@ -102,7 +101,7 @@ navbar-dark bg-dark bg-primary
             </div>
             </li>
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Blog</button>
             <div class="dropdown-menu">
                     <a href="../blog" class="dropdown-item"><span class="font-weight-bold">Posts</span></a>
                     <a href="../archive.html" class="dropdown-item"><span class="font-weight-normal">Archive</span></a>
@@ -110,45 +109,51 @@ navbar-dark bg-dark bg-primary
             </div>
                 </li>
 <li class="nav-item">
-<a href="mailto:colour-developers@colour-science.org" class="nav-link"><i class="fa-regular fa-envelope"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://github.com/colour-science/colour" class="nav-link"><i class="fa-brands fa-github"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://www.facebook.com/python.colour.science" class="nav-link"><i class="fa-brands fa-facebook"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://gitter.im/colour-science/colour" class="nav-link"><i class="fa-brands fa-gitter"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://x.com/colour_science" class="nav-link"><i class="fa-brands fa-x-twitter"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://bsky.app/profile/colour-science.bsky.social" class="nav-link"><i class="fa-brands fa-bluesky"></i></a>
+<a href="../#sponsors" class="nav-link">Sponsors</a>
 
                 
             </li>
 </ul>
-<ul class="navbar-nav navbar-right"></ul>
+<ul class="navbar-nav navbar-right">
+<li class="nav-item">
+<a href="mailto:colour-developers@colour-science.org" class="nav-link"><img class="site-icon" src="../assets/icons/envelope.svg" width="16" height="16" alt=""><span class="sr-only">Email</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://github.com/colour-science/colour" class="nav-link"><img class="site-icon" src="../assets/icons/github.svg" width="16" height="16" alt=""><span class="sr-only">GitHub</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://www.facebook.com/python.colour.science" class="nav-link"><img class="site-icon" src="../assets/icons/facebook.svg" width="16" height="16" alt=""><span class="sr-only">Facebook</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://gitter.im/colour-science/colour" class="nav-link"><img class="site-icon" src="../assets/icons/gitter.svg" width="16" height="16" alt=""><span class="sr-only">Gitter</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://x.com/colour_science" class="nav-link"><img class="site-icon" src="../assets/icons/x-twitter.svg" width="16" height="16" alt=""><span class="sr-only">X</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://bsky.app/profile/colour-science.bsky.social" class="nav-link"><img class="site-icon" src="../assets/icons/bluesky.svg" width="16" height="16" alt=""><span class="sr-only">Bluesky</span></a>
+
+                
+                
+                
+            </li>
+</ul>
 </div>
 <!-- /.navbar-collapse -->
     </div>
 <!-- /.container -->
-</nav><!-- End of Menubar --><!-- Main --><div class="container" id="content" role="main">
-    <div class="row">
+</nav><!-- End of Menubar --><!-- Main --><main class="container" id="content"><div class="row">
         <div class="col-12">
             <div class="body-content">
                 <!--Body content-->
                 
                 
                 
-<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Installation Guide</a></h1>
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header class="page-header"><h1 class="p-name page-heading" itemprop="headline name">Installation Guide</h1>
+            
 
-        
-
-    </header><div class="e-content entry-content" itemprop="articleBody text">
-    <section id="dependencies"><h2>Dependencies</h2>
+        </header><div class="e-content entry-content" itemprop="articleBody text">
+        <section id="dependencies"><h2>Dependencies</h2>
 <p><strong>Colour</strong> requires various dependencies in order to run and follows the
 <a class="reference external" href="https://scientific-python.org/specs/spec-0000">minimum supported versions</a>
 as given by <a class="reference external" href="https://scientific-python.org">Scientific Python</a>. Depending on
@@ -193,20 +198,25 @@ and <a class="reference internal" href="#installation-methods-for-developing-col
 <li><p><a class="reference external" href="https://pypi.org/project/toml">toml</a></p></li>
 <li><p><a class="reference external" href="https://pypi.org/project/twine">twine</a></p></li>
 </ul></section></section><section id="installation-methods-for-using-colour"><h2>Installation Methods for Using Colour</h2>
-<section id="pypi"><h3>Pypi</h3>
-<p><strong>Colour</strong> can be easily installed from the
-<a class="reference external" href="https://pypi.org/project/colour-science">Python Package Index</a> by
-issuing this command in a shell:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_ba4f439509b74daca46ac869f4b1773a-1" name="rest_code_ba4f439509b74daca46ac869f4b1773a-1" href="#rest_code_ba4f439509b74daca46ac869f4b1773a-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>colour-science
+<section id="pypi"><h3>PyPI</h3>
+<p>To install <strong>Colour</strong> from the
+<a class="reference external" href="https://pypi.org/project/colour-science">Python Package Index</a>, activate
+your Python virtual environment and run:</p>
+<div class="code"><pre class="code shell"><a id="rest_code_705959ad75444c4e8d152fc9fe56eb2f-1" name="rest_code_705959ad75444c4e8d152fc9fe56eb2f-1" href="#rest_code_705959ad75444c4e8d152fc9fe56eb2f-1"></a>pip<span class="w"> </span>install<span class="w"> </span>colour-science
+</pre></div>
+<p>To add <strong>Colour</strong> as a dependency of an existing
+<a class="reference external" href="https://docs.astral.sh/uv/concepts/projects/dependencies/">uv project</a>,
+run this command from the project directory:</p>
+<div class="code"><pre class="code shell"><a id="rest_code_d3b3ce5533e148d99fc834811bd2416b-1" name="rest_code_d3b3ce5533e148d99fc834811bd2416b-1" href="#rest_code_d3b3ce5533e148d99fc834811bd2416b-1"></a>uv<span class="w"> </span>add<span class="w"> </span>colour-science
 </pre></div>
 <p>This <em>asciicast</em> demonstrates how to generate a pristine Python <em>VirtualEnv</em>
 environment for Colour:</p>
 <script type="text/javascript" src="https://asciinema.org/a/257384.js" id="asciicast-257384" async data-speed="3">
 </script><p>The optional features dependencies are installed as follows:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_86256d58662c4c0aaa12326c0fd630b2-1" name="rest_code_86256d58662c4c0aaa12326c0fd630b2-1" href="#rest_code_86256d58662c4c0aaa12326c0fd630b2-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span><span class="s1">'colour-science[optional]'</span>
+<div class="code"><pre class="code shell"><a id="rest_code_ce8fbb402fb14d25942983e03219ff5c-1" name="rest_code_ce8fbb402fb14d25942983e03219ff5c-1" href="#rest_code_ce8fbb402fb14d25942983e03219ff5c-1"></a>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">'colour-science[optional]'</span>
 </pre></div>
 <p>The development dependencies are installed as follows:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_4321c97e07ce4d9da85476d6b92f4e27-1" name="rest_code_4321c97e07ce4d9da85476d6b92f4e27-1" href="#rest_code_4321c97e07ce4d9da85476d6b92f4e27-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span><span class="s1">'colour-science[development]'</span>
+<div class="code"><pre class="code shell"><a id="rest_code_c9a76b4299f14a198c76658e5eeaf8c4-1" name="rest_code_c9a76b4299f14a198c76658e5eeaf8c4-1" href="#rest_code_c9a76b4299f14a198c76658e5eeaf8c4-1"></a>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">'colour-science[development]'</span>
 </pre></div>
 <p>The graphviz figure plotting dependencies are installed as follows:</p>
 <div class="alert alert-dismissible alert-info line-block">
@@ -217,55 +227,55 @@ environment for Colour:</p>
 beforehand, please refer to the specific section for your platform on
 the <a class="reference external" href="https://www.graphviz.org/download">Graphviz download page</a>.</div>
 </div>
-<p class="alert alert-dismissible alert-info">pip install --user 'colour-science[graphviz]'</p>
+<p class="alert alert-dismissible alert-info">pip install 'colour-science[graphviz]'</p>
 <p>The meshing dependencies for gamut computations are installed as follows:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_3b8981f2033f44cda704d3f78594fd18-1" name="rest_code_3b8981f2033f44cda704d3f78594fd18-1" href="#rest_code_3b8981f2033f44cda704d3f78594fd18-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span><span class="s1">'colour-science[meshing]'</span>
+<div class="code"><pre class="code shell"><a id="rest_code_b4ee6924f22a4606a61e7aff5b8cdb42-1" name="rest_code_b4ee6924f22a4606a61e7aff5b8cdb42-1" href="#rest_code_b4ee6924f22a4606a61e7aff5b8cdb42-1"></a>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">'colour-science[meshing]'</span>
 </pre></div>
 <p>If you wish to read <em>OpenEXR</em> files, you will need to install the <em>FreeImage</em>
 plugin for <a class="reference external" href="https://imageio.github.io">Imageio</a> as follows:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_7d8341bc8941474aa41e852b47eef364-1" name="rest_code_7d8341bc8941474aa41e852b47eef364-1" href="#rest_code_7d8341bc8941474aa41e852b47eef364-1"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import imageio;imageio.plugins.freeimage.download()"</span>
+<div class="code"><pre class="code shell"><a id="rest_code_4f9a80868b754489b28e712a5f866c9a-1" name="rest_code_4f9a80868b754489b28e712a5f866c9a-1" href="#rest_code_4f9a80868b754489b28e712a5f866c9a-1"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import imageio;imageio.plugins.freeimage.download()"</span>
 </pre></div>
 </section><section id="continuum-analytics-anaconda"><h3>Continuum Analytics Anaconda</h3>
 <p><strong>Colour</strong> is also available for <a class="reference external" href="https://www.anaconda.com">Anaconda</a>
 from <em>Continuum Analytics</em> via <a class="reference external" href="https://conda-forge.org">conda-forge</a>:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_e7e9719b59734f0da3eb88929d0d2791-1" name="rest_code_e7e9719b59734f0da3eb88929d0d2791-1" href="#rest_code_e7e9719b59734f0da3eb88929d0d2791-1"></a>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>colour-science
+<div class="code"><pre class="code shell"><a id="rest_code_ead8c6cdb82440bfaf98d2b7fa92ec95-1" name="rest_code_ead8c6cdb82440bfaf98d2b7fa92ec95-1" href="#rest_code_ead8c6cdb82440bfaf98d2b7fa92ec95-1"></a>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>colour-science
 </pre></div>
 <p>This <em>asciicast</em> demonstrates how to generate a pristine Python <em>conda</em>
 environment for Colour:</p>
 <script type="text/javascript" src="https://asciinema.org/a/257385.js" id="asciicast-257385" async data-speed="3">
-</script></section><section id="github"><h3>Github</h3>
-<p>Alternatively, you can also install directly from
-<a class="reference external" href="https://github.com/colour-science/colour">Github</a> source repository:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_7379a796e0834c4eb9b40ae3dc1a4351-1" name="rest_code_7379a796e0834c4eb9b40ae3dc1a4351-1" href="#rest_code_7379a796e0834c4eb9b40ae3dc1a4351-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git://github.com/colour-science/colour.git
-<a id="rest_code_7379a796e0834c4eb9b40ae3dc1a4351-2" name="rest_code_7379a796e0834c4eb9b40ae3dc1a4351-2" href="#rest_code_7379a796e0834c4eb9b40ae3dc1a4351-2"></a><span class="nb">cd</span><span class="w"> </span>colour
-<a id="rest_code_7379a796e0834c4eb9b40ae3dc1a4351-3" name="rest_code_7379a796e0834c4eb9b40ae3dc1a4351-3" href="#rest_code_7379a796e0834c4eb9b40ae3dc1a4351-3"></a>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>.
+</script></section><section id="github"><h3>GitHub</h3>
+<p>Alternatively, you can also install directly from the
+<a class="reference external" href="https://github.com/colour-science/colour">GitHub</a> source repository:</p>
+<div class="code"><pre class="code shell"><a id="rest_code_ba2a1b0623d34e1c9f4a7a58262467b1-1" name="rest_code_ba2a1b0623d34e1c9f4a7a58262467b1-1" href="#rest_code_ba2a1b0623d34e1c9f4a7a58262467b1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/colour-science/colour.git
+<a id="rest_code_ba2a1b0623d34e1c9f4a7a58262467b1-2" name="rest_code_ba2a1b0623d34e1c9f4a7a58262467b1-2" href="#rest_code_ba2a1b0623d34e1c9f4a7a58262467b1-2"></a><span class="nb">cd</span><span class="w"> </span>colour
+<a id="rest_code_ba2a1b0623d34e1c9f4a7a58262467b1-3" name="rest_code_ba2a1b0623d34e1c9f4a7a58262467b1-3" href="#rest_code_ba2a1b0623d34e1c9f4a7a58262467b1-3"></a>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>.
 </pre></div>
 </section></section><section id="installation-methods-for-developing-colour"><h2>Installation Methods for Developing Colour</h2>
 <div class="alert alert-dismissible alert-info line-block">
 <div class="line"><strong>Note</strong></div>
 <div class="line"><br></div>
-<div class="line">If you are on macOS, a dedicated guide on how to setup your environment
+<div class="line">If you are on macOS, a dedicated guide on how to set up your environment
 is available here: <a class="reference external" href="../setting-up-the-development-environment-on-macos/index.html">Setting Up the Development Environment on macOS</a>.</div>
 </div>
 <section id="uv"><h3>uv</h3>
-<p><strong>Colour</strong> adopts <a class="reference external" href="https://docs.astral.sh/uv">uv</a> to help managing its
-dependencies, this is the recommended way to get started with <strong>Colour</strong>
+<p><strong>Colour</strong> adopts <a class="reference external" href="https://docs.astral.sh/uv">uv</a> to help manage its
+dependencies. This is the recommended way to get started with <strong>Colour</strong>
 development.</p>
 <p>Assuming <a class="reference external" href="https://www.python.org/download/releases">python &gt;= 3.11, &lt; 3.15</a> is
 available on your system, the development dependencies are installed with
 <a class="reference external" href="https://docs.astral.sh/uv">uv</a> as follows:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_5895356156e24f9ca592e392ad870bd1-1" name="rest_code_5895356156e24f9ca592e392ad870bd1-1" href="#rest_code_5895356156e24f9ca592e392ad870bd1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git://github.com/colour-science/colour.git
-<a id="rest_code_5895356156e24f9ca592e392ad870bd1-2" name="rest_code_5895356156e24f9ca592e392ad870bd1-2" href="#rest_code_5895356156e24f9ca592e392ad870bd1-2"></a><span class="nb">cd</span><span class="w"> </span>colour
-<a id="rest_code_5895356156e24f9ca592e392ad870bd1-3" name="rest_code_5895356156e24f9ca592e392ad870bd1-3" href="#rest_code_5895356156e24f9ca592e392ad870bd1-3"></a>uv<span class="w"> </span>sync<span class="w"> </span>--all-extras
+<div class="code"><pre class="code shell"><a id="rest_code_a4ad9a65f5914b5d8c4322058aba3b93-1" name="rest_code_a4ad9a65f5914b5d8c4322058aba3b93-1" href="#rest_code_a4ad9a65f5914b5d8c4322058aba3b93-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/colour-science/colour.git
+<a id="rest_code_a4ad9a65f5914b5d8c4322058aba3b93-2" name="rest_code_a4ad9a65f5914b5d8c4322058aba3b93-2" href="#rest_code_a4ad9a65f5914b5d8c4322058aba3b93-2"></a><span class="nb">cd</span><span class="w"> </span>colour
+<a id="rest_code_a4ad9a65f5914b5d8c4322058aba3b93-3" name="rest_code_a4ad9a65f5914b5d8c4322058aba3b93-3" href="#rest_code_a4ad9a65f5914b5d8c4322058aba3b93-3"></a>uv<span class="w"> </span>sync<span class="w"> </span>--all-extras
 </pre></div>
 <p>Those commands will create a Virtual Environment in which all the required
 python packages will be installed.</p>
 <p>Tools can then be run as follows:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_34e4b78752b144ac99c101131c521ffc-1" name="rest_code_34e4b78752b144ac99c101131c521ffc-1" href="#rest_code_34e4b78752b144ac99c101131c521ffc-1"></a>uv<span class="w"> </span>run<span class="w"> </span>invoke<span class="w"> </span>-l
+<div class="code"><pre class="code shell"><a id="rest_code_ff41b51465cf428087552b3a193e5505-1" name="rest_code_ff41b51465cf428087552b3a193e5505-1" href="#rest_code_ff41b51465cf428087552b3a193e5505-1"></a>uv<span class="w"> </span>run<span class="w"> </span>invoke<span class="w"> </span>-l
 </pre></div>
 <p>or alternatively:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_251c962267c8441dac9230d15a859351-1" name="rest_code_251c962267c8441dac9230d15a859351-1" href="#rest_code_251c962267c8441dac9230d15a859351-1"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-<a id="rest_code_251c962267c8441dac9230d15a859351-2" name="rest_code_251c962267c8441dac9230d15a859351-2" href="#rest_code_251c962267c8441dac9230d15a859351-2"></a>invoke<span class="w"> </span>-l
+<div class="code"><pre class="code shell"><a id="rest_code_4f8e4b21839e4ceca44356e4f08476b7-1" name="rest_code_4f8e4b21839e4ceca44356e4f08476b7-1" href="#rest_code_4f8e4b21839e4ceca44356e4f08476b7-1"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+<a id="rest_code_4f8e4b21839e4ceca44356e4f08476b7-2" name="rest_code_4f8e4b21839e4ceca44356e4f08476b7-2" href="#rest_code_4f8e4b21839e4ceca44356e4f08476b7-2"></a>invoke<span class="w"> </span>-l
 </pre></div>
 </section><section id="vagrant"><h3>Vagrant</h3>
 <p>An easy way to get all the pre-requisites at once is to use our
@@ -275,55 +285,53 @@ environment for <a class="reference external" href="https://www.vagrantup.com">V
 <a class="reference external" href="../posts/pycharm-vagrant-ansible-poetry">PyCharm, Vagrant, Ansible &amp; Poetry</a></p>
 </section></section>
 </div>
+
     
 
 </article><!--End of body content-->
 </div>
         </div>
     </div>
-</div>
-
-<!-- End of Main -->
-
-<!-- Footer -->
-
-<footer id="footer" class="mt-auto"><ul class="nav justify-content-center">
-<li class="nav-item mx-3">
+</main><!-- End of Main --><!-- Footer --><footer id="footer" class="mt-auto"><div class="container">
+        
+<ul class="nav justify-content-center">
+<li class="nav-item mx-1">
         <a href="mailto:colour-developers@colour-science.org">
-            <i class="fa-regular fa-envelope text-light"></i>
+            <img class="site-icon" src="../assets/icons/envelope.svg" width="16" height="16" alt=""><span class="sr-only">Email</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://github.com/colour-science/colour">
-            <i class="fa-brands fa-github text-light"></i>
+            <img class="site-icon" src="../assets/icons/github.svg" width="16" height="16" alt=""><span class="sr-only">GitHub</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://www.facebook.com/python.colour.science">
-            <i class="fa-brands fa-facebook text-light"></i>
+            <img class="site-icon" src="../assets/icons/facebook.svg" width="16" height="16" alt=""><span class="sr-only">Facebook</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://gitter.im/colour-science/colour">
-            <i class="fa-brands fa-gitter text-light"></i>
+            <img class="site-icon" src="../assets/icons/gitter.svg" width="16" height="16" alt=""><span class="sr-only">Gitter</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://x.com/colour_science">
-            <i class="fa-brands fa-x-twitter text-light"></i>
+            <img class="site-icon" src="../assets/icons/x-twitter.svg" width="16" height="16" alt=""><span class="sr-only">X</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://bsky.app/profile/colour-science.bsky.social">
-            <i class="fa-brands fa-bluesky text-light"></i>
+            <img class="site-icon" src="../assets/icons/bluesky.svg" width="16" height="16" alt=""><span class="sr-only">Bluesky</span>
         </a>
     </li>
 </ul>
-<div class="text-center text-light py-3"><span>Copyright © 2013-2026 – Colour Developers</span></div>
+<div class="text-center pt-3"><span>Copyright © 2013-2026 – Colour Developers</span></div>
 
-    
+        
+    </div>
 </footer><!-- End of Footer --><script src="../assets/js/jquery.min.js"></script><script src="../assets/js/popper.min.js"></script><script src="../assets/js/bootstrap.min.js"></script><script src="../assets/js/baguetteBox.min.js"></script><script>
-    baguetteBox.run('div#content', {
+    baguetteBox.run('#content', {
         ignoreClass: 'islink',
         captions: function(element) {
             return element.getElementsByTagName('img')[0].alt;

@@ -12,7 +12,8 @@
 <link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta name="theme-color" content="#191919">
+<link href="../../assets/css/site.css?v=6" rel="stylesheet">
+<meta name="theme-color" content="#101010">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://www.colour-science.org/posts/numfocus-colour-0314-and-colour-datasets-010/">
@@ -28,9 +29,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
-</script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.1/css/all.css" integrity="sha384-QI8z31KmtR+tk1MYi0DfgxrjYgpTpLLol3bqZA/Q1Y8BvH+6k7/Huoj38gQOaCS7" crossorigin="anonymous">
-<meta name="google-site-verification" content="CeWflIcbu-x7Ur7qbzTYJiRFvoGF5RljJyGZMg7H9co">
+</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="google-site-verification" content="CeWflIcbu-x7Ur7qbzTYJiRFvoGF5RljJyGZMg7H9co">
 <meta name="author" content="Colour Developers">
 <link rel="prev" href="../srgb-eotf-pure-gamma-22-or-piece-wise-function/" title="sRGB EOTF: Pure Gamma 2.2 Function or Piece-Wise Function?" type="text/html">
 <link rel="next" href="../pycharm-vagrant-ansible-poetry/" title="PyCharm, Vagrant, Ansible &amp; Poetry" type="text/html">
@@ -46,16 +45,16 @@ a new Python package">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2019-10-27T08:39:18Z">
 </head>
-<body>
+<body class="site-body">
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
 <!-- Menubar -->
 
-<nav class="navbar navbar-expand-xl static-top
-navbar-dark bg-dark bg-primary
+<nav aria-label="Primary" class="site-nav navbar navbar-expand-xl static-top
+navbar-dark
 "><div class="container">
 <!-- This keeps the margins nice -->
-        <a class="navbar-brand" href="https://www.colour-science.org/">
+        <a class="navbar-brand" href="../../">
 
             <span id="blog-title">Colour Science</span>
         </a>
@@ -66,7 +65,7 @@ navbar-dark bg-dark bg-primary
         <div class="collapse navbar-collapse" id="bs-navbar">
             <ul class="navbar-nav mr-auto">
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Projects</button>
             <div class="dropdown-menu">
                     <a href="../../apps" class="dropdown-item"><span class="font-weight-bold">Apps (Colour - Dash)</span></a>
                     <a href="http://awesome-colour.org/" class="dropdown-item"><span class="font-weight-bold">Awesome Colour</span></a>
@@ -84,7 +83,7 @@ navbar-dark bg-dark bg-primary
             </div>
             </li>
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Documentation</button>
             <div class="dropdown-menu">
                     <a href="../../installation-guide" class="dropdown-item"><span class="font-weight-bold">Installation Guide</span></a>
                     <a href="https://colour.readthedocs.io/en/develop/tutorial.html" class="dropdown-item"><span class="font-weight-bold">Static Tutorial</span></a>
@@ -104,7 +103,7 @@ navbar-dark bg-dark bg-primary
             </div>
             </li>
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Blog</button>
             <div class="dropdown-menu">
                     <a href="../../blog" class="dropdown-item"><span class="font-weight-bold">Posts</span></a>
                     <a href="../../archive.html" class="dropdown-item"><span class="font-weight-normal">Archive</span></a>
@@ -112,33 +111,40 @@ navbar-dark bg-dark bg-primary
             </div>
                 </li>
 <li class="nav-item">
-<a href="mailto:colour-developers@colour-science.org" class="nav-link"><i class="fa-regular fa-envelope"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://github.com/colour-science/colour" class="nav-link"><i class="fa-brands fa-github"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://www.facebook.com/python.colour.science" class="nav-link"><i class="fa-brands fa-facebook"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://gitter.im/colour-science/colour" class="nav-link"><i class="fa-brands fa-gitter"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://x.com/colour_science" class="nav-link"><i class="fa-brands fa-x-twitter"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://bsky.app/profile/colour-science.bsky.social" class="nav-link"><i class="fa-brands fa-bluesky"></i></a>
+<a href="../../#sponsors" class="nav-link">Sponsors</a>
 
                 
             </li>
 </ul>
-<ul class="navbar-nav navbar-right"></ul>
+<ul class="navbar-nav navbar-right">
+<li class="nav-item">
+<a href="mailto:colour-developers@colour-science.org" class="nav-link"><img class="site-icon" src="../../assets/icons/envelope.svg" width="16" height="16" alt=""><span class="sr-only">Email</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://github.com/colour-science/colour" class="nav-link"><img class="site-icon" src="../../assets/icons/github.svg" width="16" height="16" alt=""><span class="sr-only">GitHub</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://www.facebook.com/python.colour.science" class="nav-link"><img class="site-icon" src="../../assets/icons/facebook.svg" width="16" height="16" alt=""><span class="sr-only">Facebook</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://gitter.im/colour-science/colour" class="nav-link"><img class="site-icon" src="../../assets/icons/gitter.svg" width="16" height="16" alt=""><span class="sr-only">Gitter</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://x.com/colour_science" class="nav-link"><img class="site-icon" src="../../assets/icons/x-twitter.svg" width="16" height="16" alt=""><span class="sr-only">X</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://bsky.app/profile/colour-science.bsky.social" class="nav-link"><img class="site-icon" src="../../assets/icons/bluesky.svg" width="16" height="16" alt=""><span class="sr-only">Bluesky</span></a>
+
+                
+                
+                
+            </li>
+</ul>
 </div>
 <!-- /.navbar-collapse -->
     </div>
 <!-- /.container -->
-</nav><!-- End of Menubar --><!-- Main --><div class="container" id="content" role="main">
-    <div class="row">
+</nav><!-- End of Menubar --><!-- Main --><main class="container" id="content"><div class="row">
         <div class="col-12">
             <div class="body-content">
                 <!--Body content-->
@@ -183,8 +189,8 @@ and helps it grow and reach maturity.</p>
 <p><strong>Colour 0.3.14</strong> has been released over the weekend, please visit the
 <a class="reference external" href="https://github.com/colour-science/colour/releases/tag/v0.3.14">releases page</a>
 for complete details or follow the highlights here.</p>
-<p>We would like to thanks all the contributors whether they are contributing code
-or participating to discussions on <a class="reference external" href="https://gitter.im/colour-science/colour">Gitter</a>,
+<p>We would like to thank all the contributors whether they are contributing code
+or participating in discussions on <a class="reference external" href="https://gitter.im/colour-science/colour">Gitter</a>,
 in the <a class="reference external" href="https://github.com/colour-science/colour/issues">issues</a>, on Slack
 or via email.</p>
 <p>With this release we are getting close to have a beta candidate in the coming
@@ -215,24 +221,24 @@ guides.</p>
 <p><em>Colour</em> now implements an automatic colour conversion graph based on
 <a class="reference external" href="https://networkx.github.io">NetworkX</a> and enabling easier colour
 conversions:</p>
-<div class="code"><pre class="code python"><a id="rest_code_0ed606ae29744ae3b837656a47d23eca-1" name="rest_code_0ed606ae29744ae3b837656a47d23eca-1" href="#rest_code_0ed606ae29744ae3b837656a47d23eca-1"></a><span class="n">sd</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">COLOURCHECKERS_SDS</span><span class="p">[</span><span class="s2">"ColorChecker N Ohta"</span><span class="p">][</span><span class="s2">"dark skin"</span><span class="p">]</span>
-<a id="rest_code_0ed606ae29744ae3b837656a47d23eca-2" name="rest_code_0ed606ae29744ae3b837656a47d23eca-2" href="#rest_code_0ed606ae29744ae3b837656a47d23eca-2"></a><span class="n">convert</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="s2">"Spectral Distribution"</span><span class="p">,</span> <span class="s2">"sRGB"</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="p">{</span><span class="s2">"mode"</span><span class="p">:</span> <span class="s2">"Short"</span><span class="p">})</span>
+<div class="code"><pre class="code python"><a id="rest_code_90d41cdf21dd4081a70ef3dc3dec8e64-1" name="rest_code_90d41cdf21dd4081a70ef3dc3dec8e64-1" href="#rest_code_90d41cdf21dd4081a70ef3dc3dec8e64-1"></a><span class="n">sd</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">COLOURCHECKERS_SDS</span><span class="p">[</span><span class="s2">"ColorChecker N Ohta"</span><span class="p">][</span><span class="s2">"dark skin"</span><span class="p">]</span>
+<a id="rest_code_90d41cdf21dd4081a70ef3dc3dec8e64-2" name="rest_code_90d41cdf21dd4081a70ef3dc3dec8e64-2" href="#rest_code_90d41cdf21dd4081a70ef3dc3dec8e64-2"></a><span class="n">convert</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="s2">"Spectral Distribution"</span><span class="p">,</span> <span class="s2">"sRGB"</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="p">{</span><span class="s2">"mode"</span><span class="p">:</span> <span class="s2">"Short"</span><span class="p">})</span>
 </pre></div>
-<div class="code"><pre class="code text"><a id="rest_code_db6c26d0fe184de191467447cba9c59f-1" name="rest_code_db6c26d0fe184de191467447cba9c59f-1" href="#rest_code_db6c26d0fe184de191467447cba9c59f-1"></a>===============================================================================
-<a id="rest_code_db6c26d0fe184de191467447cba9c59f-2" name="rest_code_db6c26d0fe184de191467447cba9c59f-2" href="#rest_code_db6c26d0fe184de191467447cba9c59f-2"></a>*                                                                             *
-<a id="rest_code_db6c26d0fe184de191467447cba9c59f-3" name="rest_code_db6c26d0fe184de191467447cba9c59f-3" href="#rest_code_db6c26d0fe184de191467447cba9c59f-3"></a>*   [ Conversion Path ]                                                       *
-<a id="rest_code_db6c26d0fe184de191467447cba9c59f-4" name="rest_code_db6c26d0fe184de191467447cba9c59f-4" href="#rest_code_db6c26d0fe184de191467447cba9c59f-4"></a>*                                                                             *
-<a id="rest_code_db6c26d0fe184de191467447cba9c59f-5" name="rest_code_db6c26d0fe184de191467447cba9c59f-5" href="#rest_code_db6c26d0fe184de191467447cba9c59f-5"></a>*   "sd_to_XYZ" --&gt; "XYZ_to_sRGB"                                             *
-<a id="rest_code_db6c26d0fe184de191467447cba9c59f-6" name="rest_code_db6c26d0fe184de191467447cba9c59f-6" href="#rest_code_db6c26d0fe184de191467447cba9c59f-6"></a>*                                                                             *
-<a id="rest_code_db6c26d0fe184de191467447cba9c59f-7" name="rest_code_db6c26d0fe184de191467447cba9c59f-7" href="#rest_code_db6c26d0fe184de191467447cba9c59f-7"></a>===============================================================================
-<a id="rest_code_db6c26d0fe184de191467447cba9c59f-8" name="rest_code_db6c26d0fe184de191467447cba9c59f-8" href="#rest_code_db6c26d0fe184de191467447cba9c59f-8"></a>array([ 0.45675795,  0.30986982,  0.24861924])
+<div class="code"><pre class="code text"><a id="rest_code_2df2a55fa6924a5cb611af97df646a9f-1" name="rest_code_2df2a55fa6924a5cb611af97df646a9f-1" href="#rest_code_2df2a55fa6924a5cb611af97df646a9f-1"></a>===============================================================================
+<a id="rest_code_2df2a55fa6924a5cb611af97df646a9f-2" name="rest_code_2df2a55fa6924a5cb611af97df646a9f-2" href="#rest_code_2df2a55fa6924a5cb611af97df646a9f-2"></a>*                                                                             *
+<a id="rest_code_2df2a55fa6924a5cb611af97df646a9f-3" name="rest_code_2df2a55fa6924a5cb611af97df646a9f-3" href="#rest_code_2df2a55fa6924a5cb611af97df646a9f-3"></a>*   [ Conversion Path ]                                                       *
+<a id="rest_code_2df2a55fa6924a5cb611af97df646a9f-4" name="rest_code_2df2a55fa6924a5cb611af97df646a9f-4" href="#rest_code_2df2a55fa6924a5cb611af97df646a9f-4"></a>*                                                                             *
+<a id="rest_code_2df2a55fa6924a5cb611af97df646a9f-5" name="rest_code_2df2a55fa6924a5cb611af97df646a9f-5" href="#rest_code_2df2a55fa6924a5cb611af97df646a9f-5"></a>*   "sd_to_XYZ" --&gt; "XYZ_to_sRGB"                                             *
+<a id="rest_code_2df2a55fa6924a5cb611af97df646a9f-6" name="rest_code_2df2a55fa6924a5cb611af97df646a9f-6" href="#rest_code_2df2a55fa6924a5cb611af97df646a9f-6"></a>*                                                                             *
+<a id="rest_code_2df2a55fa6924a5cb611af97df646a9f-7" name="rest_code_2df2a55fa6924a5cb611af97df646a9f-7" href="#rest_code_2df2a55fa6924a5cb611af97df646a9f-7"></a>===============================================================================
+<a id="rest_code_2df2a55fa6924a5cb611af97df646a9f-8" name="rest_code_2df2a55fa6924a5cb611af97df646a9f-8" href="#rest_code_2df2a55fa6924a5cb611af97df646a9f-8"></a>array([ 0.45675795,  0.30986982,  0.24861924])
 </pre></div>
 <img alt="https://colour.readthedocs.io/en/develop/_static/Examples_Colour_Automatic_Conversion_Graph.png" src="https://colour.readthedocs.io/en/develop/_static/Examples_Colour_Automatic_Conversion_Graph.png"></section><section id="image-input-and-output"><h3>Image Input and Output</h3>
 <p><a class="reference external" href="http://imageio.github.io">Imageio</a> is now a requirement for reading and
 writing images, it will be used if <a class="reference external" href="https://github.com/OpenImageIO/oiio">OpenImageIO</a>
 is not available. If you wish to read <em>OpenEXR</em> files or develop <em>Colour</em>, you
 will need to install the FreeImage plugin as follows:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_af86c8e242f248fa9f8fe0ff1994cfec-1" name="rest_code_af86c8e242f248fa9f8fe0ff1994cfec-1" href="#rest_code_af86c8e242f248fa9f8fe0ff1994cfec-1"></a>$<span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import imageio;imageio.plugins.freeimage.download()"</span>
+<div class="code"><pre class="code shell"><a id="rest_code_5ad3b613c7d541deaca1e399855efe59-1" name="rest_code_5ad3b613c7d541deaca1e399855efe59-1" href="#rest_code_5ad3b613c7d541deaca1e399855efe59-1"></a>$<span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import imageio;imageio.plugins.freeimage.download()"</span>
 </pre></div>
 <p>Support for <a class="reference external" href="https://github.com/OpenImageIO/oiio/releases/tag/Release-2.0.3">OpenImageIO 2.x</a>
 has also been implemented.</p>
@@ -245,8 +251,8 @@ definition.</p>
 names and, docstrings.</p>
 </section><section id="coverage"><h3>Coverage</h3>
 <p>Coverage was <a class="reference external" href="https://coveralls.io/github/colour-science/colour">raised to 100%</a>.
-It does not mean that all the possible code paths are covered but it certainly
-strengthen the API.</p>
+It does not mean that all the possible code paths are covered, but it certainly
+strengthens the API.</p>
 </section><section id="dependency-management"><h3>Dependency Management</h3>
 <p>We have adopted <a class="reference external" href="https://poetry.eustace.io">Poetry</a> to manage the
 development dependencies, the <code class="docutils literal">setup.py</code> file has been replaced with a
@@ -255,7 +261,7 @@ file.</p>
 </section><section id="continuous-integration"><h3>Continuous Integration</h3>
 <p><a class="reference external" href="https://travis-ci.com">Travis-ci</a> and
 <a class="reference external" href="https://azure.microsoft.com/en-us/services/devops/pipelines">Azure Pipelines</a>
-have been replaced with <a class="reference external" href="https://github.com/colour-science/colour/actions">Github Actions</a>.</p>
+have been replaced with <a class="reference external" href="https://github.com/colour-science/colour/actions">GitHub Actions</a>.</p>
 </section><section id="documentation"><h3>Documentation</h3>
 <p>The <a class="reference external" href="https://github.com/colour-science/colour/blob/develop/README.rst">README</a>
 and the <a class="reference external" href="https://colour.readthedocs.io/en/develop">Manual</a> have been
@@ -270,36 +276,36 @@ science datasets management.</p>
 <a class="reference external" href="https://zenodo.org">Zenodo</a> under the
 <a class="reference external" href="https://zenodo.org/communities/colour-science-datasets">Colour Science - Datasets</a>
 community:</p>
-<div class="code"><pre class="code python"><a id="rest_code_d6405649cdb347ab862829ac9eb661c9-1" name="rest_code_d6405649cdb347ab862829ac9eb661c9-1" href="#rest_code_d6405649cdb347ab862829ac9eb661c9-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">colour_datasets</span>
-<a id="rest_code_d6405649cdb347ab862829ac9eb661c9-2" name="rest_code_d6405649cdb347ab862829ac9eb661c9-2" href="#rest_code_d6405649cdb347ab862829ac9eb661c9-2"></a>
-<a id="rest_code_d6405649cdb347ab862829ac9eb661c9-3" name="rest_code_d6405649cdb347ab862829ac9eb661c9-3" href="#rest_code_d6405649cdb347ab862829ac9eb661c9-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">colour_datasets</span><span class="o">.</span><span class="n">datasets</span><span class="p">())</span>
+<div class="code"><pre class="code python"><a id="rest_code_686056839545489ba51d1c5e102e61eb-1" name="rest_code_686056839545489ba51d1c5e102e61eb-1" href="#rest_code_686056839545489ba51d1c5e102e61eb-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">colour_datasets</span>
+<a id="rest_code_686056839545489ba51d1c5e102e61eb-2" name="rest_code_686056839545489ba51d1c5e102e61eb-2" href="#rest_code_686056839545489ba51d1c5e102e61eb-2"></a>
+<a id="rest_code_686056839545489ba51d1c5e102e61eb-3" name="rest_code_686056839545489ba51d1c5e102e61eb-3" href="#rest_code_686056839545489ba51d1c5e102e61eb-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">colour_datasets</span><span class="o">.</span><span class="n">datasets</span><span class="p">())</span>
 </pre></div>
-<div class="code"><pre class="code text"><a id="rest_code_9bdce4fb20154096ae62f659a31a4f6b-1" name="rest_code_9bdce4fb20154096ae62f659a31a4f6b-1" href="#rest_code_9bdce4fb20154096ae62f659a31a4f6b-1"></a>colour-science-datasets
-<a id="rest_code_9bdce4fb20154096ae62f659a31a4f6b-2" name="rest_code_9bdce4fb20154096ae62f659a31a4f6b-2" href="#rest_code_9bdce4fb20154096ae62f659a31a4f6b-2"></a>=======================
-<a id="rest_code_9bdce4fb20154096ae62f659a31a4f6b-3" name="rest_code_9bdce4fb20154096ae62f659a31a4f6b-3" href="#rest_code_9bdce4fb20154096ae62f659a31a4f6b-3"></a>
-<a id="rest_code_9bdce4fb20154096ae62f659a31a4f6b-4" name="rest_code_9bdce4fb20154096ae62f659a31a4f6b-4" href="#rest_code_9bdce4fb20154096ae62f659a31a4f6b-4"></a>Datasets : 16
-<a id="rest_code_9bdce4fb20154096ae62f659a31a4f6b-5" name="rest_code_9bdce4fb20154096ae62f659a31a4f6b-5" href="#rest_code_9bdce4fb20154096ae62f659a31a4f6b-5"></a>Synced   : 1
-<a id="rest_code_9bdce4fb20154096ae62f659a31a4f6b-6" name="rest_code_9bdce4fb20154096ae62f659a31a4f6b-6" href="#rest_code_9bdce4fb20154096ae62f659a31a4f6b-6"></a>URL      : https://zenodo.org/communities/colour-science-datasets/
-<a id="rest_code_9bdce4fb20154096ae62f659a31a4f6b-7" name="rest_code_9bdce4fb20154096ae62f659a31a4f6b-7" href="#rest_code_9bdce4fb20154096ae62f659a31a4f6b-7"></a>
-<a id="rest_code_9bdce4fb20154096ae62f659a31a4f6b-8" name="rest_code_9bdce4fb20154096ae62f659a31a4f6b-8" href="#rest_code_9bdce4fb20154096ae62f659a31a4f6b-8"></a>Datasets
-<a id="rest_code_9bdce4fb20154096ae62f659a31a4f6b-9" name="rest_code_9bdce4fb20154096ae62f659a31a4f6b-9" href="#rest_code_9bdce4fb20154096ae62f659a31a4f6b-9"></a>--------
-<a id="rest_code_9bdce4fb20154096ae62f659a31a4f6b-10" name="rest_code_9bdce4fb20154096ae62f659a31a4f6b-10" href="#rest_code_9bdce4fb20154096ae62f659a31a4f6b-10"></a>
-<a id="rest_code_9bdce4fb20154096ae62f659a31a4f6b-11" name="rest_code_9bdce4fb20154096ae62f659a31a4f6b-11" href="#rest_code_9bdce4fb20154096ae62f659a31a4f6b-11"></a>[ ] 3269926 : Agfa IT8.7/2 Set
-<a id="rest_code_9bdce4fb20154096ae62f659a31a4f6b-12" name="rest_code_9bdce4fb20154096ae62f659a31a4f6b-12" href="#rest_code_9bdce4fb20154096ae62f659a31a4f6b-12"></a>[ ] 3245883 : Camera Spectral Sensitivity Database
-<a id="rest_code_9bdce4fb20154096ae62f659a31a4f6b-13" name="rest_code_9bdce4fb20154096ae62f659a31a4f6b-13" href="#rest_code_9bdce4fb20154096ae62f659a31a4f6b-13"></a>[ ] 3367463 : Constant Hue Loci Data
-<a id="rest_code_9bdce4fb20154096ae62f659a31a4f6b-14" name="rest_code_9bdce4fb20154096ae62f659a31a4f6b-14" href="#rest_code_9bdce4fb20154096ae62f659a31a4f6b-14"></a>[ ] 3362536 : Constant Perceived-Hue Data
-<a id="rest_code_9bdce4fb20154096ae62f659a31a4f6b-15" name="rest_code_9bdce4fb20154096ae62f659a31a4f6b-15" href="#rest_code_9bdce4fb20154096ae62f659a31a4f6b-15"></a>[ ] 3270903 : Corresponding-Colour Datasets
-<a id="rest_code_9bdce4fb20154096ae62f659a31a4f6b-16" name="rest_code_9bdce4fb20154096ae62f659a31a4f6b-16" href="#rest_code_9bdce4fb20154096ae62f659a31a4f6b-16"></a>[ ] 3269920 : Forest Colors
-<a id="rest_code_9bdce4fb20154096ae62f659a31a4f6b-17" name="rest_code_9bdce4fb20154096ae62f659a31a4f6b-17" href="#rest_code_9bdce4fb20154096ae62f659a31a4f6b-17"></a>[x] 3245875 : Labsphere SRS-99-020
-<a id="rest_code_9bdce4fb20154096ae62f659a31a4f6b-18" name="rest_code_9bdce4fb20154096ae62f659a31a4f6b-18" href="#rest_code_9bdce4fb20154096ae62f659a31a4f6b-18"></a>[ ] 3269924 : Lumber Spectra
-<a id="rest_code_9bdce4fb20154096ae62f659a31a4f6b-19" name="rest_code_9bdce4fb20154096ae62f659a31a4f6b-19" href="#rest_code_9bdce4fb20154096ae62f659a31a4f6b-19"></a>[ ] 3269918 : Munsell Colors Glossy (All) (Spectrofotometer Measured)
-<a id="rest_code_9bdce4fb20154096ae62f659a31a4f6b-20" name="rest_code_9bdce4fb20154096ae62f659a31a4f6b-20" href="#rest_code_9bdce4fb20154096ae62f659a31a4f6b-20"></a>[ ] 3269916 : Munsell Colors Glossy (Spectrofotometer Measured)
-<a id="rest_code_9bdce4fb20154096ae62f659a31a4f6b-21" name="rest_code_9bdce4fb20154096ae62f659a31a4f6b-21" href="#rest_code_9bdce4fb20154096ae62f659a31a4f6b-21"></a>[ ] 3269914 : Munsell Colors Matt (AOTF Measured)
-<a id="rest_code_9bdce4fb20154096ae62f659a31a4f6b-22" name="rest_code_9bdce4fb20154096ae62f659a31a4f6b-22" href="#rest_code_9bdce4fb20154096ae62f659a31a4f6b-22"></a>[ ] 3269912 : Munsell Colors Matt (Spectrofotometer Measured)
-<a id="rest_code_9bdce4fb20154096ae62f659a31a4f6b-23" name="rest_code_9bdce4fb20154096ae62f659a31a4f6b-23" href="#rest_code_9bdce4fb20154096ae62f659a31a4f6b-23"></a>[ ] 3245895 : New Color Specifications for ColorChecker SG and Classic Charts
-<a id="rest_code_9bdce4fb20154096ae62f659a31a4f6b-24" name="rest_code_9bdce4fb20154096ae62f659a31a4f6b-24" href="#rest_code_9bdce4fb20154096ae62f659a31a4f6b-24"></a>[ ] 3252742 : Observer Function Database
-<a id="rest_code_9bdce4fb20154096ae62f659a31a4f6b-25" name="rest_code_9bdce4fb20154096ae62f659a31a4f6b-25" href="#rest_code_9bdce4fb20154096ae62f659a31a4f6b-25"></a>[ ] 3269922 : Paper Spectra
-<a id="rest_code_9bdce4fb20154096ae62f659a31a4f6b-26" name="rest_code_9bdce4fb20154096ae62f659a31a4f6b-26" href="#rest_code_9bdce4fb20154096ae62f659a31a4f6b-26"></a>[ ] 3372171 : RAW to ACES Utility Data
+<div class="code"><pre class="code text"><a id="rest_code_c81d7fd9af604d53b27522db00ba5331-1" name="rest_code_c81d7fd9af604d53b27522db00ba5331-1" href="#rest_code_c81d7fd9af604d53b27522db00ba5331-1"></a>colour-science-datasets
+<a id="rest_code_c81d7fd9af604d53b27522db00ba5331-2" name="rest_code_c81d7fd9af604d53b27522db00ba5331-2" href="#rest_code_c81d7fd9af604d53b27522db00ba5331-2"></a>=======================
+<a id="rest_code_c81d7fd9af604d53b27522db00ba5331-3" name="rest_code_c81d7fd9af604d53b27522db00ba5331-3" href="#rest_code_c81d7fd9af604d53b27522db00ba5331-3"></a>
+<a id="rest_code_c81d7fd9af604d53b27522db00ba5331-4" name="rest_code_c81d7fd9af604d53b27522db00ba5331-4" href="#rest_code_c81d7fd9af604d53b27522db00ba5331-4"></a>Datasets : 16
+<a id="rest_code_c81d7fd9af604d53b27522db00ba5331-5" name="rest_code_c81d7fd9af604d53b27522db00ba5331-5" href="#rest_code_c81d7fd9af604d53b27522db00ba5331-5"></a>Synced   : 1
+<a id="rest_code_c81d7fd9af604d53b27522db00ba5331-6" name="rest_code_c81d7fd9af604d53b27522db00ba5331-6" href="#rest_code_c81d7fd9af604d53b27522db00ba5331-6"></a>URL      : https://zenodo.org/communities/colour-science-datasets/
+<a id="rest_code_c81d7fd9af604d53b27522db00ba5331-7" name="rest_code_c81d7fd9af604d53b27522db00ba5331-7" href="#rest_code_c81d7fd9af604d53b27522db00ba5331-7"></a>
+<a id="rest_code_c81d7fd9af604d53b27522db00ba5331-8" name="rest_code_c81d7fd9af604d53b27522db00ba5331-8" href="#rest_code_c81d7fd9af604d53b27522db00ba5331-8"></a>Datasets
+<a id="rest_code_c81d7fd9af604d53b27522db00ba5331-9" name="rest_code_c81d7fd9af604d53b27522db00ba5331-9" href="#rest_code_c81d7fd9af604d53b27522db00ba5331-9"></a>--------
+<a id="rest_code_c81d7fd9af604d53b27522db00ba5331-10" name="rest_code_c81d7fd9af604d53b27522db00ba5331-10" href="#rest_code_c81d7fd9af604d53b27522db00ba5331-10"></a>
+<a id="rest_code_c81d7fd9af604d53b27522db00ba5331-11" name="rest_code_c81d7fd9af604d53b27522db00ba5331-11" href="#rest_code_c81d7fd9af604d53b27522db00ba5331-11"></a>[ ] 3269926 : Agfa IT8.7/2 Set
+<a id="rest_code_c81d7fd9af604d53b27522db00ba5331-12" name="rest_code_c81d7fd9af604d53b27522db00ba5331-12" href="#rest_code_c81d7fd9af604d53b27522db00ba5331-12"></a>[ ] 3245883 : Camera Spectral Sensitivity Database
+<a id="rest_code_c81d7fd9af604d53b27522db00ba5331-13" name="rest_code_c81d7fd9af604d53b27522db00ba5331-13" href="#rest_code_c81d7fd9af604d53b27522db00ba5331-13"></a>[ ] 3367463 : Constant Hue Loci Data
+<a id="rest_code_c81d7fd9af604d53b27522db00ba5331-14" name="rest_code_c81d7fd9af604d53b27522db00ba5331-14" href="#rest_code_c81d7fd9af604d53b27522db00ba5331-14"></a>[ ] 3362536 : Constant Perceived-Hue Data
+<a id="rest_code_c81d7fd9af604d53b27522db00ba5331-15" name="rest_code_c81d7fd9af604d53b27522db00ba5331-15" href="#rest_code_c81d7fd9af604d53b27522db00ba5331-15"></a>[ ] 3270903 : Corresponding-Colour Datasets
+<a id="rest_code_c81d7fd9af604d53b27522db00ba5331-16" name="rest_code_c81d7fd9af604d53b27522db00ba5331-16" href="#rest_code_c81d7fd9af604d53b27522db00ba5331-16"></a>[ ] 3269920 : Forest Colors
+<a id="rest_code_c81d7fd9af604d53b27522db00ba5331-17" name="rest_code_c81d7fd9af604d53b27522db00ba5331-17" href="#rest_code_c81d7fd9af604d53b27522db00ba5331-17"></a>[x] 3245875 : Labsphere SRS-99-020
+<a id="rest_code_c81d7fd9af604d53b27522db00ba5331-18" name="rest_code_c81d7fd9af604d53b27522db00ba5331-18" href="#rest_code_c81d7fd9af604d53b27522db00ba5331-18"></a>[ ] 3269924 : Lumber Spectra
+<a id="rest_code_c81d7fd9af604d53b27522db00ba5331-19" name="rest_code_c81d7fd9af604d53b27522db00ba5331-19" href="#rest_code_c81d7fd9af604d53b27522db00ba5331-19"></a>[ ] 3269918 : Munsell Colors Glossy (All) (Spectrofotometer Measured)
+<a id="rest_code_c81d7fd9af604d53b27522db00ba5331-20" name="rest_code_c81d7fd9af604d53b27522db00ba5331-20" href="#rest_code_c81d7fd9af604d53b27522db00ba5331-20"></a>[ ] 3269916 : Munsell Colors Glossy (Spectrofotometer Measured)
+<a id="rest_code_c81d7fd9af604d53b27522db00ba5331-21" name="rest_code_c81d7fd9af604d53b27522db00ba5331-21" href="#rest_code_c81d7fd9af604d53b27522db00ba5331-21"></a>[ ] 3269914 : Munsell Colors Matt (AOTF Measured)
+<a id="rest_code_c81d7fd9af604d53b27522db00ba5331-22" name="rest_code_c81d7fd9af604d53b27522db00ba5331-22" href="#rest_code_c81d7fd9af604d53b27522db00ba5331-22"></a>[ ] 3269912 : Munsell Colors Matt (Spectrofotometer Measured)
+<a id="rest_code_c81d7fd9af604d53b27522db00ba5331-23" name="rest_code_c81d7fd9af604d53b27522db00ba5331-23" href="#rest_code_c81d7fd9af604d53b27522db00ba5331-23"></a>[ ] 3245895 : New Color Specifications for ColorChecker SG and Classic Charts
+<a id="rest_code_c81d7fd9af604d53b27522db00ba5331-24" name="rest_code_c81d7fd9af604d53b27522db00ba5331-24" href="#rest_code_c81d7fd9af604d53b27522db00ba5331-24"></a>[ ] 3252742 : Observer Function Database
+<a id="rest_code_c81d7fd9af604d53b27522db00ba5331-25" name="rest_code_c81d7fd9af604d53b27522db00ba5331-25" href="#rest_code_c81d7fd9af604d53b27522db00ba5331-25"></a>[ ] 3269922 : Paper Spectra
+<a id="rest_code_c81d7fd9af604d53b27522db00ba5331-26" name="rest_code_c81d7fd9af604d53b27522db00ba5331-26" href="#rest_code_c81d7fd9af604d53b27522db00ba5331-26"></a>[ ] 3372171 : RAW to ACES Utility Data
 </pre></div>
 <p><strong>Colour - Datasets</strong> was created to overcome issues encountered frequently
 when trying to access or use colour science datasets:</p>
@@ -310,7 +316,7 @@ when trying to access or use colour science datasets:</p>
 <li><p>No information regarding the definitive origination of the dataset.</p></li>
 </ul>
 <p><strong>Colour - Datasets</strong> offers all the above: it allows users to ingest and load
-colour science datasets with a single function call. The datasets information
+colour science datasets with a single function call. Information about the datasets
 is hosted on <a class="reference external" href="https://zenodo.org">Zenodo</a> where the record for a dataset typically contain:</p>
 <ul class="simple">
 <li><p>An urls.txt file describing the urls to source the dataset files from.</p></li>
@@ -361,49 +367,46 @@ will follow in the coming days.</p>
 </div>
         </div>
     </div>
-</div>
-
-<!-- End of Main -->
-
-<!-- Footer -->
-
-<footer id="footer" class="mt-auto"><ul class="nav justify-content-center">
-<li class="nav-item mx-3">
+</main><!-- End of Main --><!-- Footer --><footer id="footer" class="mt-auto"><div class="container">
+        
+<ul class="nav justify-content-center">
+<li class="nav-item mx-1">
         <a href="mailto:colour-developers@colour-science.org">
-            <i class="fa-regular fa-envelope text-light"></i>
+            <img class="site-icon" src="../../assets/icons/envelope.svg" width="16" height="16" alt=""><span class="sr-only">Email</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://github.com/colour-science/colour">
-            <i class="fa-brands fa-github text-light"></i>
+            <img class="site-icon" src="../../assets/icons/github.svg" width="16" height="16" alt=""><span class="sr-only">GitHub</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://www.facebook.com/python.colour.science">
-            <i class="fa-brands fa-facebook text-light"></i>
+            <img class="site-icon" src="../../assets/icons/facebook.svg" width="16" height="16" alt=""><span class="sr-only">Facebook</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://gitter.im/colour-science/colour">
-            <i class="fa-brands fa-gitter text-light"></i>
+            <img class="site-icon" src="../../assets/icons/gitter.svg" width="16" height="16" alt=""><span class="sr-only">Gitter</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://x.com/colour_science">
-            <i class="fa-brands fa-x-twitter text-light"></i>
+            <img class="site-icon" src="../../assets/icons/x-twitter.svg" width="16" height="16" alt=""><span class="sr-only">X</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://bsky.app/profile/colour-science.bsky.social">
-            <i class="fa-brands fa-bluesky text-light"></i>
+            <img class="site-icon" src="../../assets/icons/bluesky.svg" width="16" height="16" alt=""><span class="sr-only">Bluesky</span>
         </a>
     </li>
 </ul>
-<div class="text-center text-light py-3"><span>Copyright © 2013-2026 – Colour Developers</span></div>
+<div class="text-center pt-3"><span>Copyright © 2013-2026 – Colour Developers</span></div>
 
-    
+        
+    </div>
 </footer><!-- End of Footer --><script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>
-    baguetteBox.run('div#content', {
+    baguetteBox.run('#content', {
         ignoreClass: 'islink',
         captions: function(element) {
             return element.getElementsByTagName('img')[0].alt;

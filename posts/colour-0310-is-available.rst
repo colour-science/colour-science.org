@@ -28,4 +28,4 @@ The highlights of this release are:
 Please refer to the `releases page <https://github.com/colour-science/colour/releases/tag/v0.3.10>`__
 for complete details.
 
-Michael and I would like to thanks Katherine Crowson and Nick Shaw for their contributions to that release.
+Michael and I would like to thank Katherine Crowson and Nick Shaw for their contributions to that release.

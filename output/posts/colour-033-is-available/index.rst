@@ -12,7 +12,7 @@ is available!
 
 .. TEASER_END
 
-We would like to thanks `Luke Canavan <https://github.com/canavandl>`__
+We would like to thank `Luke Canavan <https://github.com/canavandl>`__
 and `Steve Agland <https://github.com/sagland>`__ for their contributions
 and help.
 
@@ -48,7 +48,7 @@ name that are now partially title-cased. Please take a look at the
 `releases <https://github.com/colour-science/colour/releases/tag/v0.3.3>`__
 page for exact details.
 
-Michael and myself won't have too much time in the coming weeks, thus
+Michael and I won't have too much time in the coming weeks, thus
 the project may look slightly stalled. Still, we have started working
 toward the next major milestone which will be centered around code
 optimisation and vectorisation. The initial results are exciting with

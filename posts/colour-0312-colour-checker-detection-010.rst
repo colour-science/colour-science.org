@@ -26,7 +26,7 @@ contributing with code or through discussions.
 was severely delayed because of the involvement of some of us in
 the authoring of the upcoming `Cinematic Color <http://cinematiccolor.org>`__
 update. `Colour <https://github.com/colour-science/colour>`__ is used to produce
-an significant amount of figures in this work and it was important to improve the
+a significant number of figures in this work and it was important to improve the
 plotting capabilities.
 
 The highlights of this release are:
@@ -57,8 +57,8 @@ Domain-Range Scales
 ===================
 
 The colour science field adopts many input domains and output ranges. Those are
-challenging when designing an API. Picking a unique domain-range scale over an
-other has caused surprise and grief to practitioners of different industries in
+challenging when designing an API. Picking one domain-range scale over
+another has caused surprise and grief to practitioners of different industries in
 other software.
 
 [Colour](https://github.com/colour-science/colour/) has always used the
@@ -80,7 +80,7 @@ LUT3x1D, LUT3D and LUT Sequences.
 Polynomial Colour Correction
 ============================
 
-Polynomial colour correction was added, it is a useful tool to correct for
+Polynomial colour correction was added. It is a useful tool to correct for
 non-linearity of data, for example, film stocks colours. With great powers come
 great responsibilities and polynomials will eventually alter significantly
 colour data that is not present in the original fitting set.

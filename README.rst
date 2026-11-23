@@ -6,6 +6,26 @@ Introduction
 
 Website code for https://www.colour-science.org/
 
+Building the website
+--------------------
+
+Install the Python dependencies with ``uv sync``, make Dart Sass and Node.js
+20 or newer available on your PATH, and install the frontend dependencies
+with ``npm ci``.
+Run ``uv run nikola build`` to render the Mako templates and compile both
+stylesheets into ``output/``, which is the deployment directory. Build in
+place and preserve historical documentation in that directory. Include the
+updated generated files when committing a website release. Serve the result
+locally with ``uv run nikola serve``.
+
+Use ``uv run invoke clean`` to reset the build cache while retaining
+``output/``.
+
+The shared templates and Tailwind stylesheet are in
+``themes/colour-science/templates/`` and
+``themes/colour-science/tailwind/site.css``. The existing Sass stylesheet
+supplies Bootstrap compatibility for older site content and widgets.
+
 Code of Conduct
 ---------------
 

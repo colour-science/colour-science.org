@@ -12,7 +12,8 @@
 <link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta name="theme-color" content="#191919">
+<link href="../../assets/css/site.css?v=6" rel="stylesheet">
+<meta name="theme-color" content="#101010">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://www.colour-science.org/posts/a-plea-for-colour-analysis-tools-in-dcc-applications/">
@@ -28,9 +29,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
-</script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.1/css/all.css" integrity="sha384-QI8z31KmtR+tk1MYi0DfgxrjYgpTpLLol3bqZA/Q1Y8BvH+6k7/Huoj38gQOaCS7" crossorigin="anonymous">
-<meta name="google-site-verification" content="CeWflIcbu-x7Ur7qbzTYJiRFvoGF5RljJyGZMg7H9co">
+</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="google-site-verification" content="CeWflIcbu-x7Ur7qbzTYJiRFvoGF5RljJyGZMg7H9co">
 <meta name="author" content="Colour Developers">
 <link rel="prev" href="../about-reflectance-recovery/" title="About Reflectance Recovery - Smits (1999) Method" type="text/html">
 <link rel="next" href="../about-rgb-colourspace-models-performance/" title="About RGB Colourspace Models Performance" type="text/html">
@@ -44,7 +43,7 @@ MathJax.Hub.Config({
 
 
 
-As we are increasingly using wide gamut colourspaces (ACES RGB, Rec. 2020, ProPhoto RGB) in the VFX industry, the need for better colour analysis tools is more important than ever.">
+As we are increasingly using wide-gamut colourspaces (ACES RGB, Rec. 2020, ProPhoto RGB) in the VFX industry, the need for better colour analysis tools is more important than ever.">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2014-10-01T03:55:00-13:00">
 <meta property="article:tag" content="chromaticity diagram">
@@ -54,16 +53,16 @@ As we are increasingly using wide gamut colourspaces (ACES RGB, Rec. 2020, ProPh
 <meta property="article:tag" content="RGB colourspace">
 <meta property="article:tag" content="spectral">
 </head>
-<body>
+<body class="site-body">
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
 <!-- Menubar -->
 
-<nav class="navbar navbar-expand-xl static-top
-navbar-dark bg-dark bg-primary
+<nav aria-label="Primary" class="site-nav navbar navbar-expand-xl static-top
+navbar-dark
 "><div class="container">
 <!-- This keeps the margins nice -->
-        <a class="navbar-brand" href="https://www.colour-science.org/">
+        <a class="navbar-brand" href="../../">
 
             <span id="blog-title">Colour Science</span>
         </a>
@@ -74,7 +73,7 @@ navbar-dark bg-dark bg-primary
         <div class="collapse navbar-collapse" id="bs-navbar">
             <ul class="navbar-nav mr-auto">
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Projects</button>
             <div class="dropdown-menu">
                     <a href="../../apps" class="dropdown-item"><span class="font-weight-bold">Apps (Colour - Dash)</span></a>
                     <a href="http://awesome-colour.org/" class="dropdown-item"><span class="font-weight-bold">Awesome Colour</span></a>
@@ -92,7 +91,7 @@ navbar-dark bg-dark bg-primary
             </div>
             </li>
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Documentation</button>
             <div class="dropdown-menu">
                     <a href="../../installation-guide" class="dropdown-item"><span class="font-weight-bold">Installation Guide</span></a>
                     <a href="https://colour.readthedocs.io/en/develop/tutorial.html" class="dropdown-item"><span class="font-weight-bold">Static Tutorial</span></a>
@@ -112,7 +111,7 @@ navbar-dark bg-dark bg-primary
             </div>
             </li>
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Blog</button>
             <div class="dropdown-menu">
                     <a href="../../blog" class="dropdown-item"><span class="font-weight-bold">Posts</span></a>
                     <a href="../../archive.html" class="dropdown-item"><span class="font-weight-normal">Archive</span></a>
@@ -120,33 +119,40 @@ navbar-dark bg-dark bg-primary
             </div>
                 </li>
 <li class="nav-item">
-<a href="mailto:colour-developers@colour-science.org" class="nav-link"><i class="fa-regular fa-envelope"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://github.com/colour-science/colour" class="nav-link"><i class="fa-brands fa-github"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://www.facebook.com/python.colour.science" class="nav-link"><i class="fa-brands fa-facebook"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://gitter.im/colour-science/colour" class="nav-link"><i class="fa-brands fa-gitter"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://x.com/colour_science" class="nav-link"><i class="fa-brands fa-x-twitter"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://bsky.app/profile/colour-science.bsky.social" class="nav-link"><i class="fa-brands fa-bluesky"></i></a>
+<a href="../../#sponsors" class="nav-link">Sponsors</a>
 
                 
             </li>
 </ul>
-<ul class="navbar-nav navbar-right"></ul>
+<ul class="navbar-nav navbar-right">
+<li class="nav-item">
+<a href="mailto:colour-developers@colour-science.org" class="nav-link"><img class="site-icon" src="../../assets/icons/envelope.svg" width="16" height="16" alt=""><span class="sr-only">Email</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://github.com/colour-science/colour" class="nav-link"><img class="site-icon" src="../../assets/icons/github.svg" width="16" height="16" alt=""><span class="sr-only">GitHub</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://www.facebook.com/python.colour.science" class="nav-link"><img class="site-icon" src="../../assets/icons/facebook.svg" width="16" height="16" alt=""><span class="sr-only">Facebook</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://gitter.im/colour-science/colour" class="nav-link"><img class="site-icon" src="../../assets/icons/gitter.svg" width="16" height="16" alt=""><span class="sr-only">Gitter</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://x.com/colour_science" class="nav-link"><img class="site-icon" src="../../assets/icons/x-twitter.svg" width="16" height="16" alt=""><span class="sr-only">X</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://bsky.app/profile/colour-science.bsky.social" class="nav-link"><img class="site-icon" src="../../assets/icons/bluesky.svg" width="16" height="16" alt=""><span class="sr-only">Bluesky</span></a>
+
+                
+                
+                
+            </li>
+</ul>
 </div>
 <!-- /.navbar-collapse -->
     </div>
 <!-- /.container -->
-</nav><!-- End of Menubar --><!-- Main --><div class="container" id="content" role="main">
-    <div class="row">
+</nav><!-- End of Menubar --><!-- Main --><main class="container" id="content"><div class="row">
         <div class="col-12">
             <div class="body-content">
                 <!--Body content-->
@@ -190,8 +196,8 @@ navbar-dark bg-dark bg-primary
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As we are increasingly using wide gamut colourspaces (<em>ACES RGB</em>, <em>Rec. 2020</em>, <em>ProPhoto RGB</em>) in the VFX industry, the need for better colour analysis tools is more important than ever. Today, nothing prevents an artist to generate or pick colours outside a given volume.</p>
-<p>We think that people working with DCC applications from <a href="http://www.autodesk.com/">Autodesk</a>, <a href="http://www.adobe.com/">Adobe</a> and <a href="http://www.thefoundry.co.uk/">The Foundry</a> need better tools to work with colour. This is especially true when we tend to work in scene referred lighting with floating point values.</p>
+<p>As we are increasingly using wide-gamut colourspaces (<em>ACES RGB</em>, <em>Rec. 2020</em>, <em>ProPhoto RGB</em>) in the VFX industry, the need for better colour analysis tools is more important than ever. Today, nothing prevents an artist from generating or picking colours outside a given volume.</p>
+<p>We think that people working with DCC applications from <a href="http://www.autodesk.com/">Autodesk</a>, <a href="http://www.adobe.com/">Adobe</a> and <a href="http://www.thefoundry.co.uk/">The Foundry</a> need better tools to work with colour. This is especially true when we tend to work in scene-referred lighting with floating point values.</p>
 <p>We are using the <em>ACES RGB</em> <em>Sony F35</em> still life image from this directory for our manipulation:</p>
 <p><a href="https://www.dropbox.com/sh/2uo12yepe8gg422/AAAtzFqm0eJgyf7TDHmTCXQFa/aces?dl=0">https://www.dropbox.com/sh/2uo12yepe8gg422/AAAtzFqm0eJgyf7TDHmTCXQFa/aces?dl=0</a></p>
 <p>More images are available there: <a href="https://www.dropbox.com/sh/bwfrqgyt20gz4dp/XShJffwvXR">https://www.dropbox.com/sh/bwfrqgyt20gz4dp/XShJffwvXR</a></p>
@@ -223,7 +229,7 @@ navbar-dark bg-dark bg-primary
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We first read the image using <a href="https://sites.google.com/site/openimageio/home">OpenimageIO</a> and display it directly onto our <em>sRGB</em> display device. We apply the <em>sRGB</em> colourspace opto-electronic conversion function and ensure that values are in domain [0, 1] so that <a href="http://matplotlib.org/">Matplotlib</a> can display the image.</p>
+<p>We first read the image using <a href="https://sites.google.com/site/openimageio/home">OpenImageIO</a> and display it directly onto our <em>sRGB</em> display device. We apply the <em>sRGB</em> colourspace opto-electronic conversion function and ensure that values are in the domain [0, 1] so that <a href="http://matplotlib.org/">Matplotlib</a> can display the image.</p>
 </div>
 </div>
 </div>
@@ -297,9 +303,9 @@ navbar-dark bg-dark bg-primary
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We will convert the existing data to <em>sRGB</em> colourspace, in order to do so, we first compute the transformation matrix.</p>
+<p>We will convert the existing data to the <em>sRGB</em> colourspace. To do so, we first compute the transformation matrix.</p>
 <blockquote>
-<p>Note: We are using <em>CAT02</em> chromatic adaptation transform (CAT).</p>
+<p>Note: We are using the <em>CAT02</em> chromatic adaptation transform (CAT).</p>
 </blockquote>
 </div>
 </div>
@@ -508,8 +514,8 @@ navbar-dark bg-dark bg-primary
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Unsurprisingly, <em>sRGB</em> colourspace doesn't hold all the colours of the image, however it is interesting to note that the chromaticities are partially outside the spectral locus, illustrating a potential problem with the image: the S-Log1 black level set to code 64 is yielding negative values in that case.</p>
-<p>A lot of them are also not contained within <em>Pointer's Gamut</em>, which again is not surprising, we are not dealing with true reflectance data but reflected spectra: Reflectance values have already been multiplied by the spectra of multiple different light sources and by the reflected spectra from neighbour surfaces. Pointer's Gamut also doesn't take in account refracted spectra.</p>
+<p>Unsurprisingly, the <em>sRGB</em> colourspace doesn't hold all the colours of the image. However, it is interesting to note that the chromaticities are partially outside the spectral locus, illustrating a potential problem with the image: the S-Log1 black level set to code 64 is yielding negative values in that case.</p>
+<p>A lot of them are also not contained within <em>Pointer's Gamut</em>, which again is not surprising. We are not dealing with true reflectance data but reflected spectra: Reflectance values have already been multiplied by the spectra of multiple different light sources and by the reflected spectra from neighbouring surfaces. Pointer's Gamut also doesn't take into account refracted spectra.</p>
 </div>
 </div>
 </div>
@@ -528,9 +534,9 @@ navbar-dark bg-dark bg-primary
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We isolate image areas representing colours outside <em>sRGB</em> colourspace volume boundaries. We qualify any colour outside a given volume "illegal" colour. For practical reasons, we are just considering the projected area onto the chromaticity diagram, but the following computations can be run on complete volumes.</p>
+<p>We isolate image areas representing colours outside <em>sRGB</em> colourspace volume boundaries. We call any colour outside a given volume an "illegal" colour. For practical reasons, we are just considering the projected area onto the chromaticity diagram, but the following computations can be run on complete volumes.</p>
 <blockquote>
-<p>Note: In the current context, finding colours outside the <em>sRGB</em> colourspace volume boundaries is equivalent to check $RGB$ triplets with negative values.</p>
+<p>Note: In the current context, finding colours outside the <em>sRGB</em> colourspace volume boundaries is equivalent to checking $RGB$ triplets with negative values.</p>
 </blockquote>
 </div>
 </div>
@@ -711,7 +717,7 @@ navbar-dark bg-dark bg-primary
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We isolate image areas representing imaginary colours outside the spectral locus boundaries.</p>
 <blockquote>
-<p>Note: They are visible in the image below because we ensure that the final displayed colours are within [0, 1] domain.</p>
+<p>Note: They are visible in the image below because we ensure that the final displayed colours are within the domain [0, 1].</p>
 </blockquote>
 </div>
 </div>
@@ -759,10 +765,10 @@ navbar-dark bg-dark bg-primary
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The above images illustrate a simple case where we have taken a real world frame. More complex situations arise when you use an HDRI similarly exhibiting a wide colours volume to lit a scene, yielding "illegal" colours very quickly.</p>
-<p>As it was recentely shown by <a href="http://nbviewer.jupyter.org/gist/sagland/3c791e79353673fd24fa">Steve Agland</a> and <a href="https://www.colour-science.org/posts/about-rendering-engines-colourspaces-agnosticism/">us</a>, it has turned into a problematic issue.</p>
-<p>We don't think there is an easy and elegant way to fix that however DCC applications vendors can help us by providing new tools that will let us analyse colours properly. Such tools would also have shown that there is an issue with the image we are using.</p>
-<p>Follows some specifications on what we think would be useful:</p>
+<p>The above images illustrate a simple case where we have taken a real-world frame. More complex situations arise when you use an HDRI similarly exhibiting a wide colour volume to light a scene, yielding "illegal" colours very quickly.</p>
+<p>As was recently shown by <a href="http://nbviewer.jupyter.org/gist/sagland/3c791e79353673fd24fa">Steve Agland</a> and <a href="https://www.colour-science.org/posts/about-rendering-engines-colourspaces-agnosticism/">us</a>, it has turned into a problematic issue.</p>
+<p>We don't think there is an easy and elegant way to fix that. However, DCC application vendors can help us by providing new tools that will let us analyse colours properly. Such tools would also have shown that there is an issue with the image we are using.</p>
+<p>Here are some specifications we think would be useful:</p>
 <p>Given the following major volumes:</p>
 <ul>
 <li>
@@ -774,7 +780,7 @@ navbar-dark bg-dark bg-primary
 <li>
 <strong>Real object surface colour gamut volume and / or Macadam limits</strong>.</li>
 </ul>
-<p>We define a simple function $F$ returning if a given colour $C$ lies within a volume $V$ as follows:</p>
+<p>We define a simple function $F$ that tests whether a given colour $C$ lies within a volume $V$ as follows:</p>
 <p>$$
 \begin{equation}
 F=C\in V
@@ -783,15 +789,15 @@ $$</p>
 <p>We can then build the following basic tools around that function:</p>
 <ul>
 <li>
-<strong>Display Tools</strong>: Visual feedback of colours according to the mask produced by $F$. They can be shown using zebras, isolated like the above images, etc...</li>
+<strong>Display Tools</strong>: Visual feedback of colours according to the mask produced by $F$. The colours can be shown using zebras, isolated like the above images, and so on.</li>
 <li>
-<strong>Selection Tools</strong>: Colours selection using $F$ as a mask.</li>
+<strong>Selection Tools</strong>: Colour selection using $F$ as a mask.</li>
 <li>
-<strong>Colour Picking Tools</strong>: Colours picking while using $F$ as a constraint.</li>
+<strong>Colour Picking Tools</strong>: Colour picking while using $F$ as a constraint.</li>
 <li>
-<strong>Correction Tools</strong>: Colours correction while using $F$ as a mask and the <strong>Display Tools</strong>.</li>
+<strong>Correction Tools</strong>: Colour correction while using $F$ as a mask and the <strong>Display Tools</strong>.</li>
 </ul>
-<p>The above tools are really the basics of what would be needed. Autodesk Maya, Side FX Houdini, The Foundry Nuke, etc..., should have those capabilities and they are straightforward to implement.</p>
+<p>The above tools are really the basics of what would be needed. Autodesk Maya, Side FX Houdini, The Foundry Nuke, and similar applications should have those capabilities, and they are straightforward to implement.</p>
 </div>
 </div>
 </div>
@@ -849,49 +855,46 @@ MathJax.Hub.Config({
 </div>
         </div>
     </div>
-</div>
-
-<!-- End of Main -->
-
-<!-- Footer -->
-
-<footer id="footer" class="mt-auto"><ul class="nav justify-content-center">
-<li class="nav-item mx-3">
+</main><!-- End of Main --><!-- Footer --><footer id="footer" class="mt-auto"><div class="container">
+        
+<ul class="nav justify-content-center">
+<li class="nav-item mx-1">
         <a href="mailto:colour-developers@colour-science.org">
-            <i class="fa-regular fa-envelope text-light"></i>
+            <img class="site-icon" src="../../assets/icons/envelope.svg" width="16" height="16" alt=""><span class="sr-only">Email</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://github.com/colour-science/colour">
-            <i class="fa-brands fa-github text-light"></i>
+            <img class="site-icon" src="../../assets/icons/github.svg" width="16" height="16" alt=""><span class="sr-only">GitHub</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://www.facebook.com/python.colour.science">
-            <i class="fa-brands fa-facebook text-light"></i>
+            <img class="site-icon" src="../../assets/icons/facebook.svg" width="16" height="16" alt=""><span class="sr-only">Facebook</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://gitter.im/colour-science/colour">
-            <i class="fa-brands fa-gitter text-light"></i>
+            <img class="site-icon" src="../../assets/icons/gitter.svg" width="16" height="16" alt=""><span class="sr-only">Gitter</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://x.com/colour_science">
-            <i class="fa-brands fa-x-twitter text-light"></i>
+            <img class="site-icon" src="../../assets/icons/x-twitter.svg" width="16" height="16" alt=""><span class="sr-only">X</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://bsky.app/profile/colour-science.bsky.social">
-            <i class="fa-brands fa-bluesky text-light"></i>
+            <img class="site-icon" src="../../assets/icons/bluesky.svg" width="16" height="16" alt=""><span class="sr-only">Bluesky</span>
         </a>
     </li>
 </ul>
-<div class="text-center text-light py-3"><span>Copyright © 2013-2026 – Colour Developers</span></div>
+<div class="text-center pt-3"><span>Copyright © 2013-2026 – Colour Developers</span></div>
 
-    
+        
+    </div>
 </footer><!-- End of Footer --><script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>
-    baguetteBox.run('div#content', {
+    baguetteBox.run('#content', {
         ignoreClass: 'islink',
         captions: function(element) {
             return element.getElementsByTagName('img')[0].alt;

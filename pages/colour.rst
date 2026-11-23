@@ -20,7 +20,7 @@ It is freely available under the
 Features
 ^^^^^^^^
 
-**Colour** features a rich dataset and collection of objects, please see the
+**Colour** features a rich dataset and a collection of objects. Please see the
 `features <https://www.colour-science.org/features>`__ page for more
 information.
 
@@ -48,5 +48,5 @@ Examples
 Downloads
 ^^^^^^^^^
 
--   `Colour - Pypi <https://pypi.org/project/colour-science>`__
--   `Colour - Github Repository <https://github.com/colour-science/colour>`__
+-   `Colour - PyPI <https://pypi.org/project/colour-science>`__
+-   `Colour - GitHub Repository <https://github.com/colour-science/colour>`__

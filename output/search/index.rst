@@ -7,28 +7,25 @@
 .. description:
 .. type: text
 
-Use the form below to perform a search on the whole website.
-
 .. raw:: html
 
     <form method="get"
         action="https://www.google.com/search"
         id="search-form"
-        class="form-inline"
         role="search">
-        <div class="form-group">
+        <div class="site-search">
+            <label class="sr-only" for="site-search-query">Search Colour Science</label>
             <input
-                type="text"
+                type="search"
                 name="q"
+                id="site-search-query"
+                required
                 class="form-control"
-                placeholder="Search">
-            <button type="submit" class="btn btn-primary">
-                <span class="fas fa-search"></span>
-            </button>
+                placeholder="Search Colour Science">
+            <button type="submit" class="btn btn-primary">Search</button>
         </div>
         <input
             type="hidden"
             name="sitesearch"
             value="https://www.colour-science.org/">
     </form>
-    <div class="mt-5"></div>

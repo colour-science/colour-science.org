@@ -6,6 +6,8 @@ Invoke - Tasks
 from __future__ import annotations
 
 import inspect
+from pathlib import Path
+from shutil import rmtree
 
 if not hasattr(inspect, "getargspec"):
     inspect.getargspec = inspect.getfullargspec
@@ -28,7 +30,7 @@ def clean(
     ctx: Context,
 ):
     """
-    Clean the project.
+    Clear Nikola's build cache while keeping the deployed site.
 
     Parameters
     ----------
@@ -38,10 +40,12 @@ def clean(
 
     print("Cleaning project...")
 
-    patterns = ["output", ".doit.db"]
+    cache = Path("cache")
+    if cache.is_dir():
+        rmtree(cache)
 
-    for pattern in patterns:
-        ctx.run(f"rm -rf {pattern}")
+    for database in (Path(".doit.db"), *Path().glob(".doit.db.*")):
+        database.unlink(missing_ok=True)
 
 
 @task

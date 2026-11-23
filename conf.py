@@ -269,44 +269,54 @@ NAVIGATION_LINKS = {
             ),
             "Blog",
         ),
-        (
-            "mailto:colour-developers@colour-science.org",
-            '<i class="fa-regular fa-envelope"></i>',
-        ),
-        (
-            "https://github.com/colour-science/colour",
-            '<i class="fa-brands fa-github"></i>',
-        ),
-        (
-            "https://www.facebook.com/python.colour.science",
-            '<i class="fa-brands fa-facebook"></i>',
-        ),
-        (
-            "https://gitter.im/colour-science/colour",
-            '<i class="fa-brands fa-gitter"></i>',
-        ),
-        (
-            "https://x.com/colour_science",
-            '<i class="fa-brands fa-x-twitter"></i>',
-        ),
-        (
-            "https://bsky.app/profile/colour-science.bsky.social",
-            '<i class="fa-brands fa-bluesky"></i>',
-        ),
+        ("/#sponsors", "Sponsors"),
     ),
 }
 
 # Alternative navigation links. Works the same way NAVIGATION_LINKS does,
 # although themes may not always support them. (translatable)
 # (Bootstrap 4: right-side of navbar, Bootblog 4: right side of title)
-NAVIGATION_ALT_LINKS = {DEFAULT_LANG: {}}
+NAVIGATION_ALT_LINKS = {
+    DEFAULT_LANG: (
+        (
+            "mailto:colour-developers@colour-science.org",
+            '<img class="site-icon" src="/assets/icons/envelope.svg" width="16" height="16" alt="">'
+            '<span class="sr-only">Email</span>',
+        ),
+        (
+            "https://github.com/colour-science/colour",
+            '<img class="site-icon" src="/assets/icons/github.svg" width="16" height="16" alt="">'
+            '<span class="sr-only">GitHub</span>',
+        ),
+        (
+            "https://www.facebook.com/python.colour.science",
+            '<img class="site-icon" src="/assets/icons/facebook.svg" width="16" height="16" alt="">'
+            '<span class="sr-only">Facebook</span>',
+        ),
+        (
+            "https://gitter.im/colour-science/colour",
+            '<img class="site-icon" src="/assets/icons/gitter.svg" width="16" height="16" alt="">'
+            '<span class="sr-only">Gitter</span>',
+        ),
+        (
+            "https://x.com/colour_science",
+            '<img class="site-icon" src="/assets/icons/x-twitter.svg" width="16" height="16" alt="">'
+            '<span class="sr-only">X</span>',
+        ),
+        (
+            "https://bsky.app/profile/colour-science.bsky.social",
+            '<img class="site-icon" src="/assets/icons/bluesky.svg" width="16" height="16" alt="">'
+            '<span class="sr-only">Bluesky</span>',
+        ),
+    ),
+}
 
 # Name of the theme to use.
 THEME = "colour-science"
 
 # Primary color of your theme. This will be used to customize your theme.
 # Must be a HEX value.
-THEME_COLOR = "#191919"
+THEME_COLOR = "#101010"
 
 # Theme configuration. Fully theme-dependent. (translatable)
 # Examples below are for bootblog4.
@@ -697,7 +707,9 @@ INDEX_PATH = "blog"
 
 # Optional HTML that displayed on “main” blog index.html files.
 # May be used for a greeting. (translatable)
-FRONT_INDEX_HEADER = {DEFAULT_LANG: ""}
+FRONT_INDEX_HEADER = {
+    DEFAULT_LANG: '<header class="blog-heading"><h1>Blog</h1></header>'
+}
 
 # Create per-month archives instead of per-year
 # CREATE_MONTHLY_ARCHIVE = False
@@ -1085,38 +1097,44 @@ LICENSE = ""
 # (translatable)
 CONTENT_FOOTER = """
 <ul class="nav justify-content-center">
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="mailto:colour-developers@colour-science.org">
-            <i class="fa-regular fa-envelope text-light"></i>
+            <img class="site-icon" src="/assets/icons/envelope.svg" width="16" height="16" alt="">
+            <span class="sr-only">Email</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://github.com/colour-science/colour">
-            <i class="fa-brands fa-github text-light"></i>
+            <img class="site-icon" src="/assets/icons/github.svg" width="16" height="16" alt="">
+            <span class="sr-only">GitHub</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://www.facebook.com/python.colour.science">
-            <i class="fa-brands fa-facebook text-light"></i>
+            <img class="site-icon" src="/assets/icons/facebook.svg" width="16" height="16" alt="">
+            <span class="sr-only">Facebook</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://gitter.im/colour-science/colour">
-            <i class="fa-brands fa-gitter text-light"></i>
+            <img class="site-icon" src="/assets/icons/gitter.svg" width="16" height="16" alt="">
+            <span class="sr-only">Gitter</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://x.com/colour_science">
-            <i class="fa-brands fa-x-twitter text-light"></i>
+            <img class="site-icon" src="/assets/icons/x-twitter.svg" width="16" height="16" alt="">
+            <span class="sr-only">X</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://bsky.app/profile/colour-science.bsky.social">
-            <i class="fa-brands fa-bluesky text-light"></i>
+            <img class="site-icon" src="/assets/icons/bluesky.svg" width="16" height="16" alt="">
+            <span class="sr-only">Bluesky</span>
         </a>
     </li>
 </ul>
-<div class="text-center text-light py-3"><span>Copyright © 2013-{date} – {author}</span></div>
+<div class="text-center pt-3"><span>Copyright © 2013-{date} – {author}</span></div>
 """
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
@@ -1392,14 +1410,6 @@ USE_CDN = False
 # before </head>
 # (translatable)
 EXTRA_HEAD_DATA = """
-<script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous">
-</script>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.1/css/all.css"
-    integrity="sha384-QI8z31KmtR+tk1MYi0DfgxrjYgpTpLLol3bqZA/Q1Y8BvH+6k7/Huoj38gQOaCS7"
-    crossorigin="anonymous">
 <meta name="google-site-verification" content="CeWflIcbu-x7Ur7qbzTYJiRFvoGF5RljJyGZMg7H9co" />
 """
 

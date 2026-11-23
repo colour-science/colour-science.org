@@ -35,82 +35,84 @@ To this day, we still do not have full understanding of how human vision works, 
 
 .. raw:: html
 
-    <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Repository</th>
-        <th scope="col">LoC (Python)</th>
-        <th scope="col">Commits</th>
-        <th scope="col">Stars</th>
-        <th scope="col">Forks</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td scope="row"><a href="https://github.com/colour-science/colour">colour</a></td>
-        <td scope="row">207000</td>
-        <td scope="row">4970</td>
-        <td scope="row">1936</td>
-        <td scope="row">85</td>
-      </tr>
-      <tr>
-        <td scope="row"><a href="https://github.com/colour-science/colour-checker-detection">colour-checker-detection</a></td>
-        <td scope="row">3900</td>
-        <td scope="row">362</td>
-        <td scope="row">202</td>
-        <td scope="row">28</td>
-      </tr>
-      <tr>
-        <td scope="row"><a href="https://github.com/colour-science/colour-datasets">colour-datasets</a></td>
-        <td scope="row">12000</td>
-        <td scope="row">358</td>
-        <td scope="row">52</td>
-        <td scope="row">11</td>
-      </tr>
-      <tr>
-        <td scope="row"><a href="https://github.com/colour-science/colour-demosaicing">colour-demosaicing</a></td>
-        <td scope="row">1500</td>
-        <td scope="row">457<br></td>
-        <td scope="row">260</td>
-        <td scope="row">57</td>
-      </tr>
-      <tr>
-        <td scope="row"><a href="https://github.com/colour-science/colour-hdri">colour-hdri</a></td>
-        <td scope="row">8500</td>
-        <td scope="row">661</td>
-        <td scope="row">126</td>
-        <td scope="row">18</td>
-      </tr>
-      <tr>
-        <td scope="row"><a href="https://github.com/colour-science/colour-specio">colour-specio</a></td>
-        <td scope="row">1450</td>
-        <td scope="row">74</td>
-        <td scope="row">3</td>
-        <td scope="row">1</td>
-      </tr>
-      <tr>
-        <td scope="row"><a href="https://github.com/colour-science/colour-visuals">colour-visuals</a></td>
-        <td scope="row">4600</td>
-        <td scope="row">40</td>
-        <td scope="row">29</td>
-        <td scope="row">1</td>
-      </tr>
-      <tr>
-        <td scope="row"><a href="https://github.com/colour-science/colour-science.org">colour-science.org</a></td>
-        <td scope="row">N/A</td>
-        <td scope="row">523</td>
-        <td scope="row">10</td>
-        <td scope="row">3</td>
-      </tr>
-      <tr>
-        <td scope="row"><a href="https://github.com/colour-science/awesome-colour">awesome-colour</a></td>
-        <td scope="row">N/A</td>
-        <td scope="row">114</td>
-        <td scope="row">251</td>
-        <td scope="row">19</td>
-      </tr>
-    </tbody>
-    </table>
+    <div class="table-responsive" tabindex="0" role="region" aria-label="Colour Science repositories">
+        <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Repository</th>
+            <th scope="col">LoC (Python)</th>
+            <th scope="col">Commits</th>
+            <th scope="col">Stars</th>
+            <th scope="col">Forks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row"><a href="https://github.com/colour-science/colour">colour</a></td>
+            <td scope="row">207000</td>
+            <td scope="row">4970</td>
+            <td scope="row">1936</td>
+            <td scope="row">85</td>
+          </tr>
+          <tr>
+            <td scope="row"><a href="https://github.com/colour-science/colour-checker-detection">colour-checker-detection</a></td>
+            <td scope="row">3900</td>
+            <td scope="row">362</td>
+            <td scope="row">202</td>
+            <td scope="row">28</td>
+          </tr>
+          <tr>
+            <td scope="row"><a href="https://github.com/colour-science/colour-datasets">colour-datasets</a></td>
+            <td scope="row">12000</td>
+            <td scope="row">358</td>
+            <td scope="row">52</td>
+            <td scope="row">11</td>
+          </tr>
+          <tr>
+            <td scope="row"><a href="https://github.com/colour-science/colour-demosaicing">colour-demosaicing</a></td>
+            <td scope="row">1500</td>
+            <td scope="row">457<br></td>
+            <td scope="row">260</td>
+            <td scope="row">57</td>
+          </tr>
+          <tr>
+            <td scope="row"><a href="https://github.com/colour-science/colour-hdri">colour-hdri</a></td>
+            <td scope="row">8500</td>
+            <td scope="row">661</td>
+            <td scope="row">126</td>
+            <td scope="row">18</td>
+          </tr>
+          <tr>
+            <td scope="row"><a href="https://github.com/colour-science/colour-specio">colour-specio</a></td>
+            <td scope="row">1450</td>
+            <td scope="row">74</td>
+            <td scope="row">3</td>
+            <td scope="row">1</td>
+          </tr>
+          <tr>
+            <td scope="row"><a href="https://github.com/colour-science/colour-visuals">colour-visuals</a></td>
+            <td scope="row">4600</td>
+            <td scope="row">40</td>
+            <td scope="row">29</td>
+            <td scope="row">1</td>
+          </tr>
+          <tr>
+            <td scope="row"><a href="https://github.com/colour-science/colour-science.org">colour-science.org</a></td>
+            <td scope="row">N/A</td>
+            <td scope="row">523</td>
+            <td scope="row">10</td>
+            <td scope="row">3</td>
+          </tr>
+          <tr>
+            <td scope="row"><a href="https://github.com/colour-science/awesome-colour">awesome-colour</a></td>
+            <td scope="row">N/A</td>
+            <td scope="row">114</td>
+            <td scope="row">251</td>
+            <td scope="row">19</td>
+          </tr>
+        </tbody>
+        </table>
+    </div>
 
 To update what we `wrote 4 years ago <../our-first-1000-stars-on-github/index.html>`__, here are the highlights at this date:
 
@@ -132,7 +134,7 @@ To update what we `wrote 4 years ago <../our-first-1000-stars-on-github/index.ht
 -   Affiliated project of `NumFOCUS <https://numfocus.org>`__
 -   `First successful Google Summer of Code <https://i.imgur.com/PDwex2j.png>`__
 -   A `collective <https://opencollective.com/colour-science>`__ to track our expenses
--   Active participation to other Open Source projects:
+-   Active participation in other Open Source projects:
 
     -   `Academy ACES <https://www.oscars.org/science-technology/sci-tech-projects/aces>`__
 
@@ -154,9 +156,9 @@ To update what we `wrote 4 years ago <../our-first-1000-stars-on-github/index.ht
 -   Growing number of `contributors <https://www.colour-science.org/contributors>`__
 -   Cited by a `growing number of publications <https://www.colour-science.org/cited-by>`__
 -   `Dozen of thousands of monthly downloads <https://pypistats.org/packages/colour-science>`__
--   Trended for a few days in 2018 on Github
--   Two `GSoC participation <https://github.com/colour-science/GSoC>`__
--   Used by an ever growing number of companies, studios and universities:
+-   Trended for a few days in 2018 on GitHub
+-   Participated twice in `GSoC <https://github.com/colour-science/GSoC>`__
+-   Used by an ever-growing number of companies, studios and universities:
 
     -   **Google**
 
@@ -192,10 +194,10 @@ To update what we `wrote 4 years ago <../our-first-1000-stars-on-github/index.ht
     -   and much more...
 
 What is the future of **Colour**? We thought we could merge the GPU backend four years ago and ultimately decided against. The main issue is that it was very much vendor locked because of `Cupy <https://cupy.dev>`__.
-In a hindsight, this was a good decision as there has been some exciting new development with the `Python Array API Standard <https://data-apis.org/array-api/latest/index.html>`__. We haven't started work yet to support it, but we have certainly `discussed about it <https://github.com/colour-science/colour/issues/1244>`__.
+In hindsight, this was a good decision as there has been some exciting new development with the `Python Array API Standard <https://data-apis.org/array-api/latest/index.html>`__. We haven't started work yet to support it, but we have certainly `discussed it <https://github.com/colour-science/colour/issues/1244>`__.
 
-We also thought that 1.0.0 would be released, but this did not happened! We instead continued to improve the API and a stable release will only be possible after adoption of the Python Array API standard.
+We also thought that 1.0.0 would be released, but this did not happen! We instead continued to improve the API and a stable release will only be possible after adoption of the Python Array API standard.
 
-With all the written, we are hoping to continue for at least another decade. Feel free to join us on `Github Discussions <https://github.com/colour-science/colour/discussions>`__, contact us on `Gitter <https://gitter.im/colour-science/colour>`__ or by `email <mailto:colour-developers@colour-science.org>`__.
+With all that written, we are hoping to continue for at least another decade. Feel free to join us on `GitHub Discussions <https://github.com/colour-science/colour/discussions>`__, contact us on `Gitter <https://gitter.im/colour-science/colour>`__ or by `email <mailto:colour-developers@colour-science.org>`__.
 
 **The Colour Developers**

@@ -28,7 +28,7 @@ While this depiction of *sRGB* colourspace **Electro-Optical Transfer Function**
 emphasis of the components of an *RGB* colourspace.
 
 For people experienced with colour theory and science, the post title and the
-mention of **Gamma** indicates that the article will likely only involves the
+mention of **Gamma** indicates that the article will likely only involve the
 *sRGB* colourspace **EOTF** and its inverse.
 
 .. class:: alert alert-dismissible alert-warning
@@ -47,7 +47,7 @@ mention of **Gamma** indicates that the article will likely only involves the
     | Charles Poynton's `Gamma FAQ <http://www.poynton.com/notes/colour_and_gamma/GammaFAQ.html>`__
         is an extensive reference on *Gamma* correction.
 
-Tom confirms that intuition a few paragraph later:
+Tom confirms that intuition a few paragraphs later:
 
     *(the broader sRGB standard also has a bunch of gamut and colour-transform
     specifications, but we’ll ignore those and just focus on the gamma-curve
@@ -113,7 +113,7 @@ quoted in its entirety for reference:
 Primaries
 ^^^^^^^^^
 
-The **primaries** *chromaticity coordinates* define the **gamut** (the triangle
+The *chromaticity coordinates* of the **primaries** define the **gamut** (the triangle
 of colours) that can be encoded by a given *RGB colourspace*.
 
 .. class:: alert alert-dismissible alert-info
@@ -161,7 +161,7 @@ no matter their *Luminance*, will be neutral to that *RGB colourspace*.
 
 An *RGB colourspace* can have
 `different whitepoints <https://github.com/colour-science/colour-notebooks/blob/master/notebooks/colorimetry/illuminants.ipynb>`__
-depending its context usage, *sRGB colourspace* *IEC 61966-2-1:1999 Standard*
+depending on its context of use. The *sRGB colourspace* *IEC 61966-2-1:1999 Standard*
 adopts `CIE Standard Illuminant D65 <https://en.wikipedia.org/wiki/Illuminant_D65>`__
 as **whitepoint** but an `ICC <https://en.wikipedia.org/wiki/International_Color_Consortium>`__
 *sRGB colourspace* profile would likely have been chromatically adapted to
@@ -226,7 +226,7 @@ composes an *RGB colourspace*, as a result they don't properly differentiate
 used online is probably the root cause for that.
 
 When one talks about *sRGB*, is he describing the colourspace **primaries** or
-its **transfer functions**? Discussing about *sRGB* to *linear* transformation
+its **transfer functions**? Discussing *sRGB* to *linear* transformation
 without emphasis on the **EOTF** component is unsettling: a rendering
 engine using linear *sRGB* colourspace input colours and textures, renders with
 the *sRGB* colourspace **primaries** and **whitepoint** (assuming no colour
@@ -275,7 +275,7 @@ to lessen the uncertainty and improve the **terminology** used, we suggest that:
     - `Transfer Functions`_
 -   When writing on the *RGB* colourspace topic, one should ideally mention the
     previous point, it will help people getting the grasp on the theory.
--   When discussing about a given *RGB* colourspace component, one should make a
+-   When discussing a given *RGB* colourspace component, one should make a
     point of describing which specification's component he is referring to:
 
         *sRGB is a slight tweaking of the simple gamma 2.2 curve.*

@@ -6,4 +6,4 @@
 .. description:
 .. type: text
 
-**Colour** tutorial is available on `Read the Docs <https://colour.readthedocs.io/en/develop/tutorial.html>`__.
+The **Colour** tutorial is available on `Read the Docs <https://colour.readthedocs.io/en/develop/tutorial.html>`__.

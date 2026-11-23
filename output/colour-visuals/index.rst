@@ -75,5 +75,5 @@ is the `API Reference <https://colour-visuals.readthedocs.io/en/latest/reference
 Downloads
 ^^^^^^^^^
 
--   `Colour - Visuals Github Repository <https://github.com/colour-science/colour-visuals>`__
--   `Colour - Visuals - Pypi <https://pypi.org/project/colour-visuals>`__
+-   `Colour - Visuals GitHub Repository <https://github.com/colour-science/colour-visuals>`__
+-   `Colour - Visuals - PyPI <https://pypi.org/project/colour-visuals>`__

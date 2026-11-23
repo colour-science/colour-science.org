@@ -8,7 +8,7 @@
 .. type: text
 
 **Colour - Datasets** is a `Python <https://www.python.org>`__ package
-dedicated to colour science datasets management.
+dedicated to managing colour science datasets.
 
 The existing datasets are hosted in
 `Zenodo <https://zenodo.org>`__ under the
@@ -64,5 +64,5 @@ Examples
 Downloads
 ^^^^^^^^^
 
--   `Colour - Datasets Github Repository <https://github.com/colour-science/colour-datasets>`__
--   `Colour - Datasets - Pypi <https://pypi.org/project/colour-datasets>`__
+-   `Colour - Datasets GitHub Repository <https://github.com/colour-science/colour-datasets>`__
+-   `Colour - Datasets - PyPI <https://pypi.org/project/colour-datasets>`__

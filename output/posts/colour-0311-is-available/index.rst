@@ -15,7 +15,7 @@ is available!
 Colour 0.3.11
 -------------
 
-This was a release long in the making. It is an an important milestone on
+This was a release long in the making. It is an important milestone on
 `The Road to Stable <https://www.colour-science.org/posts/the-road-to-stable>`__ and
 it introduces many new features, changes and fixes. The highlights of this
 release are:
@@ -34,5 +34,5 @@ release are:
 Please refer to the `releases page <https://github.com/colour-science/colour/releases/tag/v0.3.11>`__
 for complete details.
 
-Michael and I would like to thanks all the contributors and especially Nick Shaw
+Michael and I would like to thank all the contributors and especially Nick Shaw
 for his contributions to that release.

@@ -12,7 +12,8 @@
 <link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta name="theme-color" content="#191919">
+<link href="../../assets/css/site.css?v=6" rel="stylesheet">
+<meta name="theme-color" content="#101010">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://www.colour-science.org/posts/about-rgb-colourspace-models-performance/">
@@ -28,9 +29,7 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
-</script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.1/css/all.css" integrity="sha384-QI8z31KmtR+tk1MYi0DfgxrjYgpTpLLol3bqZA/Q1Y8BvH+6k7/Huoj38gQOaCS7" crossorigin="anonymous">
-<meta name="google-site-verification" content="CeWflIcbu-x7Ur7qbzTYJiRFvoGF5RljJyGZMg7H9co">
+</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="google-site-verification" content="CeWflIcbu-x7Ur7qbzTYJiRFvoGF5RljJyGZMg7H9co">
 <meta name="author" content="Colour Developers">
 <link rel="prev" href="../a-plea-for-colour-analysis-tools-in-dcc-applications/" title="A Plea for Colour Analysis Tools in DCC Applications" type="text/html">
 <link rel="next" href="../colour-033-is-available/" title="Colour 0.3.3 is available!" type="text/html">
@@ -44,8 +43,8 @@ MathJax.Hub.Config({
 
 
 
-The purpose of this document is to compare RGB colourspaces operations performance against spectral reference.
-In a RGB colourspace, the basis vectors are defined by the primaries.">
+The purpose of this document is to compare the performance of operations in RGB colourspaces against a spectral reference.
+In an RGB colourspace, the basis vectors are defined by t">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2014-10-09T03:38:00-13:00">
 <meta property="article:tag" content="chromaticity diagram">
@@ -54,16 +53,16 @@ In a RGB colourspace, the basis vectors are defined by the primaries.">
 <meta property="article:tag" content="RGB colourspace">
 <meta property="article:tag" content="spectral">
 </head>
-<body>
+<body class="site-body">
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
 <!-- Menubar -->
 
-<nav class="navbar navbar-expand-xl static-top
-navbar-dark bg-dark bg-primary
+<nav aria-label="Primary" class="site-nav navbar navbar-expand-xl static-top
+navbar-dark
 "><div class="container">
 <!-- This keeps the margins nice -->
-        <a class="navbar-brand" href="https://www.colour-science.org/">
+        <a class="navbar-brand" href="../../">
 
             <span id="blog-title">Colour Science</span>
         </a>
@@ -74,7 +73,7 @@ navbar-dark bg-dark bg-primary
         <div class="collapse navbar-collapse" id="bs-navbar">
             <ul class="navbar-nav mr-auto">
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Projects</button>
             <div class="dropdown-menu">
                     <a href="../../apps" class="dropdown-item"><span class="font-weight-bold">Apps (Colour - Dash)</span></a>
                     <a href="http://awesome-colour.org/" class="dropdown-item"><span class="font-weight-bold">Awesome Colour</span></a>
@@ -92,7 +91,7 @@ navbar-dark bg-dark bg-primary
             </div>
             </li>
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Documentation</button>
             <div class="dropdown-menu">
                     <a href="../../installation-guide" class="dropdown-item"><span class="font-weight-bold">Installation Guide</span></a>
                     <a href="https://colour.readthedocs.io/en/develop/tutorial.html" class="dropdown-item"><span class="font-weight-bold">Static Tutorial</span></a>
@@ -112,7 +111,7 @@ navbar-dark bg-dark bg-primary
             </div>
             </li>
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Blog</button>
             <div class="dropdown-menu">
                     <a href="../../blog" class="dropdown-item"><span class="font-weight-bold">Posts</span></a>
                     <a href="../../archive.html" class="dropdown-item"><span class="font-weight-normal">Archive</span></a>
@@ -120,33 +119,40 @@ navbar-dark bg-dark bg-primary
             </div>
                 </li>
 <li class="nav-item">
-<a href="mailto:colour-developers@colour-science.org" class="nav-link"><i class="fa-regular fa-envelope"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://github.com/colour-science/colour" class="nav-link"><i class="fa-brands fa-github"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://www.facebook.com/python.colour.science" class="nav-link"><i class="fa-brands fa-facebook"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://gitter.im/colour-science/colour" class="nav-link"><i class="fa-brands fa-gitter"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://x.com/colour_science" class="nav-link"><i class="fa-brands fa-x-twitter"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://bsky.app/profile/colour-science.bsky.social" class="nav-link"><i class="fa-brands fa-bluesky"></i></a>
+<a href="../../#sponsors" class="nav-link">Sponsors</a>
 
                 
             </li>
 </ul>
-<ul class="navbar-nav navbar-right"></ul>
+<ul class="navbar-nav navbar-right">
+<li class="nav-item">
+<a href="mailto:colour-developers@colour-science.org" class="nav-link"><img class="site-icon" src="../../assets/icons/envelope.svg" width="16" height="16" alt=""><span class="sr-only">Email</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://github.com/colour-science/colour" class="nav-link"><img class="site-icon" src="../../assets/icons/github.svg" width="16" height="16" alt=""><span class="sr-only">GitHub</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://www.facebook.com/python.colour.science" class="nav-link"><img class="site-icon" src="../../assets/icons/facebook.svg" width="16" height="16" alt=""><span class="sr-only">Facebook</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://gitter.im/colour-science/colour" class="nav-link"><img class="site-icon" src="../../assets/icons/gitter.svg" width="16" height="16" alt=""><span class="sr-only">Gitter</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://x.com/colour_science" class="nav-link"><img class="site-icon" src="../../assets/icons/x-twitter.svg" width="16" height="16" alt=""><span class="sr-only">X</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://bsky.app/profile/colour-science.bsky.social" class="nav-link"><img class="site-icon" src="../../assets/icons/bluesky.svg" width="16" height="16" alt=""><span class="sr-only">Bluesky</span></a>
+
+                
+                
+                
+            </li>
+</ul>
 </div>
 <!-- /.navbar-collapse -->
     </div>
 <!-- /.container -->
-</nav><!-- End of Menubar --><!-- Main --><div class="container" id="content" role="main">
-    <div class="row">
+</nav><!-- End of Menubar --><!-- Main --><main class="container" id="content"><div class="row">
         <div class="col-12">
             <div class="body-content">
                 <!--Body content-->
@@ -190,11 +196,11 @@ navbar-dark bg-dark bg-primary
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The purpose of this document is to compare <em>RGB</em> colourspaces operations performance against spectral reference.</p>
-<p>In a <em>RGB</em> colourspace, the basis vectors are defined by the primaries. Mathematical operations are dependent on the chosen basis vectors. As an example, a triplet of <em>tristimulus values</em>, converted to three different <em>RGB</em> colourspaces value, subsequently <em>exponentiated</em>, and converted back to <em>CIE XYZ</em> colourpace will produce different <em>tristimulus values</em> triplets, one for each of the three <em>RGB</em> colourspaces. In this context, the result of the <em>multiplication</em>, <em>division</em> and <em>power</em> operations is dependent on the <em>RGB</em> colourspace primaries, producing three different final <em>tristimulus values</em> while <em>addition</em> and <em>subtraction</em> operations would produce three equal <em>tristimulus values</em>.</p>
-<p>The <em>rgb_colourspace_primaries_dependency</em> definition below demonstrates this behaviour: Two colours are selected from the colour rendition chart, they are then used as operands for different operations happening respectively in <em>sRGB</em> and <em>Rec. 2020</em> colourspaces. The two resulting colours are then converted back to <em>CIE XYZ</em> colourspace and compared.</p>
+<p>The purpose of this document is to compare the performance of operations in <em>RGB</em> colourspaces against a spectral reference.</p>
+<p>In an <em>RGB</em> colourspace, the basis vectors are defined by the primaries. Mathematical operations are dependent on the chosen basis vectors. As an example, a triplet of <em>tristimulus values</em>, converted to values in three different <em>RGB</em> colourspaces, subsequently <em>exponentiated</em>, and converted back to the <em>CIE XYZ</em> colourspace will produce different triplets of <em>tristimulus values</em>, one for each of the three <em>RGB</em> colourspaces. In this context, the result of the <em>multiplication</em>, <em>division</em> and <em>power</em> operations is dependent on the <em>RGB</em> colourspace primaries, producing three different final triplets of <em>tristimulus values</em> while <em>addition</em> and <em>subtraction</em> operations would produce three equal triplets of <em>tristimulus values</em>.</p>
+<p>The <em>rgb_colourspace_primaries_dependency</em> definition below demonstrates this behaviour: Two colours are selected from the colour rendition chart. They are then used as operands for different operations happening respectively in <em>sRGB</em> and <em>Rec. 2020</em> colourspaces. The two resulting colours are then converted back to <em>CIE XYZ</em> colourspace and compared.</p>
 <blockquote>
-<p>Note: A companion spreadsheet is available at the following url: <a href="http://goo.gl/akrH5m">http://goo.gl/akrH5m</a></p>
+<p>Note: A companion spreadsheet is available at the following URL: <a href="http://goo.gl/akrH5m">http://goo.gl/akrH5m</a></p>
 </blockquote>
 </div>
 </div>
@@ -349,7 +355,7 @@ pow:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We have decided to test <em>multiplication</em> operation because it is affected by <em>RGB</em> colourspace primaries dependencies and especially because it is easily possible to design synthetic spectral power distributions that can be applied on existing spectral data, like the one from a colour rendition chart and also on the same data converted to <em>RGB</em> upon conversion to tristimulus values.</p>
-<p>In early versions of this document, the synthetic spectral power distributions were named <em>filters</em> as they were designed to mimic existing filter sets from real life. However we discovered that referencing existing real life <em>filters</em> was introducing an important bias in the results. We were basically finding the best colourspace for a given set of filters thus we decided to change the <em>filters</em> design so that we have a very large amount of different synthetic spectral power distributions.</p>
+<p>In early versions of this document, the synthetic spectral power distributions were named <em>filters</em> as they were designed to mimic existing filter sets from real life. However, we discovered that referencing existing real life <em>filters</em> was introducing an important bias in the results. We were basically finding the best colourspace for a given set of filters thus we decided to change the <em>filters</em> design so that we have a very large amount of different synthetic spectral power distributions.</p>
 <p>The methodology implementation code is available in the <a href="#Process">Process</a> section and is illustrated in the following figure:</p>
 </div>
 </div>
@@ -384,7 +390,7 @@ pow:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The spectral test data is coming from <em>N. Ohta Colour Rendition Chart Classic</em> and <em>X-Rite Colour Rendition Chart SG</em> colour rendition charts.</p>
 <p>The filters design will be detailed in the <a href="#Filters-Design">Filters Design</a> section but let's assume that we have a large number of random spectral power distributions providing coverage of the spectral locus.</p>
-<p>Picking a test sample, a random filter and a <em>RGB</em> colourspace model, we follow two paths:</p>
+<p>Picking a test sample, a random filter and an <em>RGB</em> colourspace model, we follow two paths:</p>
 <ul>
 <li>The first path is the spectral path where the test sample is weighted by the random filter and then converted to tristimulus values under the <em>RGB</em> colourspace model illuminant. The tristimulus values are then converted to <em>CIE Lab</em> and labeled as the <em>Reference Lab</em> matrix.</li>
 <li>The second path is the <em>RGB</em> path where the test sample and the random filter are converted to tristimulus values under the <em>RGB</em> colourspace model illuminant, then respectively converted to <em>RGB</em>. The test sample <em>RGB</em> triplet is then weighted by the random filter <em>RGB</em> triplet. The resulting <em>RGB</em> triplet is also converted to <em>CIE Lab</em> and labeled as the <em>Test Lab</em> matrix.</li>
@@ -416,17 +422,17 @@ pow:
 <li>
 <em>Bowl</em> distribution: A distribution with the shape of a bowl and that can be centered on an arbitrary wavelength. Its purpose is to provide coverage for the spectral locus line of purples that cannot be reached using a normal distribution.</li>
 <li>
-<em>Random Spline</em> distribution: This distribution is used to generate random splines distribution with very low points count.</li>
+<em>Random Spline</em> distribution: This distribution is used to generate random spline distributions with very few points.</li>
 </ul>
 <p>From the base distributions the filters are designed:</p>
 <ul>
-<li>The first step is to generate the initial filters using the <em>Normal</em> and <em>Bowl</em> distributions, the wavelengths have been cherry picked to provide as much as possible an evenly spaced coverage of the spectral locus boundaries as seen in the <a href="#Initial-Spectral-Power-Distributions">Initial Spectral Power Distributions</a> section.</li>
+<li>The first step is to generate the initial filters using the <em>Normal</em> and <em>Bowl</em> distributions, the wavelengths have been cherry-picked to provide coverage as evenly spaced as possible of the spectral locus boundaries as seen in the <a href="#Initial-Spectral-Power-Distributions">Initial Spectral Power Distributions</a> section.</li>
 <li>We then start designing the final filters: the initial filters are randomly offset along the spectrum and averaged with a <em>Random Spline</em> distribution using ratio 0.85 / 0.15 in order to provide variation.</li>
-<li>The resulting set of filters is combined with a pool of pure <em>Random Spline</em> distributions with a 0.5 / 0.5 ratio, we label that pool of filters <em>Random Filters</em>.</li>
+<li>The resulting set of filters is combined with a pool of pure <em>Random Spline</em> distributions with a 0.5 / 0.5 ratio. We label that pool of filters <em>Random Filters</em>.</li>
 <li>The <em>Random Filters</em> are then saturated to regain spectral locus coverage. The ratio is 1/3 default <em>Random Filters</em>, 1/3 square saturated <em>Random Filters</em>, 1/3 cubic saturated <em>Random Filters</em>.</li>
-<li>The <em>Random Filters</em> are checked for uniqueness and all-most-equal ones are discarded.</li>
+<li>The <em>Random Filters</em> are checked for uniqueness and almost-equal ones are discarded.</li>
 </ul>
-<p>The <em>Random Filters</em> can be seen in the <a href="#Random-Filters---Design">Random Filters - Design</a> section and their design process is illustrated in the below figure:</p>
+<p>The <em>Random Filters</em> can be seen in the <a href="#Random-Filters---Design">Random Filters - Design</a> section and their design process is illustrated in the figure below:</p>
 </div>
 </div>
 </div>
@@ -1732,9 +1738,9 @@ pow:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We won't provide any conclusions because the results in the given tests context are self explanatory.</p>
+<p>We won't provide any conclusions because the results in the context of the tests are self-explanatory.</p>
 <p>For specific work in the VFX industry <em>ACEScc</em> and <em>ACEScg</em> using <em>ACES Primaries 1</em> are the best performing RGB colourspace models.</p>
-<p>A detailed spreadsheet with the various colour rendition chart results is available at the following url: <a href="http://goo.gl/akrH5m">http://goo.gl/akrH5m</a></p>
+<p>A detailed spreadsheet with the various colour rendition chart results is available at the following URL: <a href="http://goo.gl/akrH5m">http://goo.gl/akrH5m</a></p>
 </div>
 </div>
 </div>
@@ -1875,49 +1881,46 @@ MathJax.Hub.Config({
 </div>
         </div>
     </div>
-</div>
-
-<!-- End of Main -->
-
-<!-- Footer -->
-
-<footer id="footer" class="mt-auto"><ul class="nav justify-content-center">
-<li class="nav-item mx-3">
+</main><!-- End of Main --><!-- Footer --><footer id="footer" class="mt-auto"><div class="container">
+        
+<ul class="nav justify-content-center">
+<li class="nav-item mx-1">
         <a href="mailto:colour-developers@colour-science.org">
-            <i class="fa-regular fa-envelope text-light"></i>
+            <img class="site-icon" src="../../assets/icons/envelope.svg" width="16" height="16" alt=""><span class="sr-only">Email</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://github.com/colour-science/colour">
-            <i class="fa-brands fa-github text-light"></i>
+            <img class="site-icon" src="../../assets/icons/github.svg" width="16" height="16" alt=""><span class="sr-only">GitHub</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://www.facebook.com/python.colour.science">
-            <i class="fa-brands fa-facebook text-light"></i>
+            <img class="site-icon" src="../../assets/icons/facebook.svg" width="16" height="16" alt=""><span class="sr-only">Facebook</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://gitter.im/colour-science/colour">
-            <i class="fa-brands fa-gitter text-light"></i>
+            <img class="site-icon" src="../../assets/icons/gitter.svg" width="16" height="16" alt=""><span class="sr-only">Gitter</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://x.com/colour_science">
-            <i class="fa-brands fa-x-twitter text-light"></i>
+            <img class="site-icon" src="../../assets/icons/x-twitter.svg" width="16" height="16" alt=""><span class="sr-only">X</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://bsky.app/profile/colour-science.bsky.social">
-            <i class="fa-brands fa-bluesky text-light"></i>
+            <img class="site-icon" src="../../assets/icons/bluesky.svg" width="16" height="16" alt=""><span class="sr-only">Bluesky</span>
         </a>
     </li>
 </ul>
-<div class="text-center text-light py-3"><span>Copyright © 2013-2026 – Colour Developers</span></div>
+<div class="text-center pt-3"><span>Copyright © 2013-2026 – Colour Developers</span></div>
 
-    
+        
+    </div>
 </footer><!-- End of Footer --><script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>
-    baguetteBox.run('div#content', {
+    baguetteBox.run('#content', {
         ignoreClass: 'islink',
         captions: function(element) {
             return element.getElementsByTagName('img')[0].alt;

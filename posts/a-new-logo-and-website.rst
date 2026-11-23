@@ -24,7 +24,7 @@ We also now have a proper dedicated `blog </blog>`__ section.
 
 `Colour 0.3.7 <https://github.com/colour-science/colour/milestones/v0.3.7>`__
 is around the corner. This is a maintenance release providing API support
-for the soon to be deployed
+for the soon-to-be-deployed
 `Colour - Demosaicing <https://github.com/colour-science/colour-demosaicing>`__
 and
 `Colour - HDRI <https://github.com/colour-science/colour-hdri>`__ repositories.
@@ -40,6 +40,6 @@ Finally we have a work in progress toy project based on
 
 It provides various image and RGB colourspace analysis features. A
 `nasty issue <https://github.com/colour-science/colour-analysis/issues/1>`__
-on Vispy side currently prevent us to release it but we keep an eye on it!
+in Vispy currently prevents us from releasing it, but we're keeping an eye on it!
 
 .. image::  https://raw.githubusercontent.com/colour-science/colour-analysis/master/docs/_static/Colour_Analysis.png

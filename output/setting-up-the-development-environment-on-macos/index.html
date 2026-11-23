@@ -12,7 +12,8 @@
 <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta name="theme-color" content="#191919">
+<link href="../assets/css/site.css?v=6" rel="stylesheet">
+<meta name="theme-color" content="#101010">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="https://www.colour-science.org/setting-up-the-development-environment-on-macos/">
@@ -28,30 +29,28 @@ MathJax.Hub.Config({
         styles: {'.MathJax_Display': {"margin": 0}}
     }
 });
-</script><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
-</script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.1/css/all.css" integrity="sha384-QI8z31KmtR+tk1MYi0DfgxrjYgpTpLLol3bqZA/Q1Y8BvH+6k7/Huoj38gQOaCS7" crossorigin="anonymous">
-<meta name="google-site-verification" content="CeWflIcbu-x7Ur7qbzTYJiRFvoGF5RljJyGZMg7H9co">
+</script><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="google-site-verification" content="CeWflIcbu-x7Ur7qbzTYJiRFvoGF5RljJyGZMg7H9co">
 <meta name="author" content="Colour Developers">
 <meta property="og:site_name" content="Colour Science">
 <meta property="og:title" content="Setting Up the Development Environment on macOS">
 <meta property="og:url" content="https://www.colour-science.org/setting-up-the-development-environment-on-macos/">
-<meta property="og:description" content="This guide describes the process to setup a development environment for
+<meta property="og:description" content="This guide describes the process of setting up a development environment for
 contributing to colour-science projects on macOS. It is by no means prescriptive,
-and not every step is required. The guide assu">
+and not every step is required. The guide">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2023-07-25T05:35:44Z">
 <meta property="article:tag" content="contributing">
 </head>
-<body>
+<body class="site-body">
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
 <!-- Menubar -->
 
-<nav class="navbar navbar-expand-xl static-top
-navbar-dark bg-dark bg-primary
+<nav aria-label="Primary" class="site-nav navbar navbar-expand-xl static-top
+navbar-dark
 "><div class="container">
 <!-- This keeps the margins nice -->
-        <a class="navbar-brand" href="https://www.colour-science.org/">
+        <a class="navbar-brand" href="../">
 
             <span id="blog-title">Colour Science</span>
         </a>
@@ -62,7 +61,7 @@ navbar-dark bg-dark bg-primary
         <div class="collapse navbar-collapse" id="bs-navbar">
             <ul class="navbar-nav mr-auto">
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Projects</button>
             <div class="dropdown-menu">
                     <a href="../apps" class="dropdown-item"><span class="font-weight-bold">Apps (Colour - Dash)</span></a>
                     <a href="http://awesome-colour.org/" class="dropdown-item"><span class="font-weight-bold">Awesome Colour</span></a>
@@ -80,7 +79,7 @@ navbar-dark bg-dark bg-primary
             </div>
             </li>
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Documentation</button>
             <div class="dropdown-menu">
                     <a href="../installation-guide" class="dropdown-item"><span class="font-weight-bold">Installation Guide</span></a>
                     <a href="https://colour.readthedocs.io/en/develop/tutorial.html" class="dropdown-item"><span class="font-weight-bold">Static Tutorial</span></a>
@@ -100,7 +99,7 @@ navbar-dark bg-dark bg-primary
             </div>
             </li>
 <li class="nav-item dropdown">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+<button type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Blog</button>
             <div class="dropdown-menu">
                     <a href="../blog" class="dropdown-item"><span class="font-weight-bold">Posts</span></a>
                     <a href="../archive.html" class="dropdown-item"><span class="font-weight-normal">Archive</span></a>
@@ -108,45 +107,51 @@ navbar-dark bg-dark bg-primary
             </div>
                 </li>
 <li class="nav-item">
-<a href="mailto:colour-developers@colour-science.org" class="nav-link"><i class="fa-regular fa-envelope"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://github.com/colour-science/colour" class="nav-link"><i class="fa-brands fa-github"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://www.facebook.com/python.colour.science" class="nav-link"><i class="fa-brands fa-facebook"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://gitter.im/colour-science/colour" class="nav-link"><i class="fa-brands fa-gitter"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://x.com/colour_science" class="nav-link"><i class="fa-brands fa-x-twitter"></i></a>
-                </li>
-<li class="nav-item">
-<a href="https://bsky.app/profile/colour-science.bsky.social" class="nav-link"><i class="fa-brands fa-bluesky"></i></a>
+<a href="../#sponsors" class="nav-link">Sponsors</a>
 
                 
             </li>
 </ul>
-<ul class="navbar-nav navbar-right"></ul>
+<ul class="navbar-nav navbar-right">
+<li class="nav-item">
+<a href="mailto:colour-developers@colour-science.org" class="nav-link"><img class="site-icon" src="../assets/icons/envelope.svg" width="16" height="16" alt=""><span class="sr-only">Email</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://github.com/colour-science/colour" class="nav-link"><img class="site-icon" src="../assets/icons/github.svg" width="16" height="16" alt=""><span class="sr-only">GitHub</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://www.facebook.com/python.colour.science" class="nav-link"><img class="site-icon" src="../assets/icons/facebook.svg" width="16" height="16" alt=""><span class="sr-only">Facebook</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://gitter.im/colour-science/colour" class="nav-link"><img class="site-icon" src="../assets/icons/gitter.svg" width="16" height="16" alt=""><span class="sr-only">Gitter</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://x.com/colour_science" class="nav-link"><img class="site-icon" src="../assets/icons/x-twitter.svg" width="16" height="16" alt=""><span class="sr-only">X</span></a>
+                </li>
+<li class="nav-item">
+<a href="https://bsky.app/profile/colour-science.bsky.social" class="nav-link"><img class="site-icon" src="../assets/icons/bluesky.svg" width="16" height="16" alt=""><span class="sr-only">Bluesky</span></a>
+
+                
+                
+                
+            </li>
+</ul>
 </div>
 <!-- /.navbar-collapse -->
     </div>
 <!-- /.container -->
-</nav><!-- End of Menubar --><!-- Main --><div class="container" id="content" role="main">
-    <div class="row">
+</nav><!-- End of Menubar --><!-- Main --><main class="container" id="content"><div class="row">
         <div class="col-12">
             <div class="body-content">
                 <!--Body content-->
                 
                 
                 
-<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Setting Up the Development Environment on macOS</a></h1>
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header class="page-header"><h1 class="p-name page-heading" itemprop="headline name">Setting Up the Development Environment on macOS</h1>
+            
 
-        
-
-    </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p>This guide describes the process to setup a development environment for
+        </header><div class="e-content entry-content" itemprop="articleBody text">
+        <p>This guide describes the process of setting up a development environment for
 contributing to colour-science projects on macOS. It is by no means prescriptive,
 and not every step is required. The guide assumes <a class="reference external" href="https://brew.sh">Homebrew</a>
 as the package manager and <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a>
@@ -155,41 +160,41 @@ as the IDE / text editor.</p>
 <a class="reference external" href="https://github.com/OpenImageIO/oiio">OpenImageIO</a> and
 <a class="reference external" href="https://pypi.org/project/pygraphviz">PyGraphviz</a> is described.</p>
 <p>It was contributed by <a class="reference external" href="https://github.com/tjdcs">@tjdcs</a> and last updated on
-the 2024-10-10.</p>
+2024-10-10.</p>
 <section id="homebrew"><h2>Homebrew</h2>
 <p>Install <a class="reference external" href="https://brew.sh">Homebrew</a>:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_01b669056e56420fb33148205ad5557f-1" name="rest_code_01b669056e56420fb33148205ad5557f-1" href="#rest_code_01b669056e56420fb33148205ad5557f-1"></a>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">"</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">"</span>
+<div class="code"><pre class="code shell"><a id="rest_code_ba4cfc97405749c9b7baaee7c6ac8e54-1" name="rest_code_ba4cfc97405749c9b7baaee7c6ac8e54-1" href="#rest_code_ba4cfc97405749c9b7baaee7c6ac8e54-1"></a>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">"</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">"</span>
 </pre></div>
 <p>Install the required Python versions:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_740cb2be43bb4c7f957ebceda2fafbb5-1" name="rest_code_740cb2be43bb4c7f957ebceda2fafbb5-1" href="#rest_code_740cb2be43bb4c7f957ebceda2fafbb5-1"></a>brew<span class="w"> </span>install<span class="w"> </span>python@3.9<span class="w"> </span>python@3.10<span class="w"> </span>python@3.11<span class="w"> </span>python@3.12
+<div class="code"><pre class="code shell"><a id="rest_code_0279b5dc684b4e2aa1d7e1f756f8fa22-1" name="rest_code_0279b5dc684b4e2aa1d7e1f756f8fa22-1" href="#rest_code_0279b5dc684b4e2aa1d7e1f756f8fa22-1"></a>brew<span class="w"> </span>install<span class="w"> </span>python@3.9<span class="w"> </span>python@3.10<span class="w"> </span>python@3.11<span class="w"> </span>python@3.12
 </pre></div>
 </section><section id="uv"><h2>uv</h2>
 <p>(Re)Install <a class="reference external" href="https://docs.astral.sh/uv">uv</a>:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_dddb7e18ae364e408fb19e91af744a4d-1" name="rest_code_dddb7e18ae364e408fb19e91af744a4d-1" href="#rest_code_dddb7e18ae364e408fb19e91af744a4d-1"></a>curl<span class="w"> </span>-LsSf<span class="w"> </span>https://astral.sh/uv/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+<div class="code"><pre class="code shell"><a id="rest_code_85af4230201348d5836127fb2d77e9b3-1" name="rest_code_85af4230201348d5836127fb2d77e9b3-1" href="#rest_code_85af4230201348d5836127fb2d77e9b3-1"></a>curl<span class="w"> </span>-LsSf<span class="w"> </span>https://astral.sh/uv/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
 </pre></div>
 </section><section id="graphviz-and-openimageio"><h2>graphviz and OpenImageIO</h2>
 <p>Using Homebrew:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_9089723df92d43809dbd42c3929ff9f8-1" name="rest_code_9089723df92d43809dbd42c3929ff9f8-1" href="#rest_code_9089723df92d43809dbd42c3929ff9f8-1"></a>brew<span class="w"> </span>install<span class="w"> </span>graphviz<span class="w"> </span>OpenImageIO
+<div class="code"><pre class="code shell"><a id="rest_code_9cddcbb17b9d4473aa65da4339105b4e-1" name="rest_code_9cddcbb17b9d4473aa65da4339105b4e-1" href="#rest_code_9cddcbb17b9d4473aa65da4339105b4e-1"></a>brew<span class="w"> </span>install<span class="w"> </span>graphviz<span class="w"> </span>OpenImageIO
 </pre></div>
 <p>Then append the following exports to your shell dotfile, e.g., <code class="docutils literal"><span class="pre">~/.zshrc</span></code>:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_674706cf0a424d0b8e8d9ccd39bee469-1" name="rest_code_674706cf0a424d0b8e8d9ccd39bee469-1" href="#rest_code_674706cf0a424d0b8e8d9ccd39bee469-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">LIBRARY_PATH</span><span class="o">=</span><span class="nv">$LIBRARY_PATH</span>:<span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="w"> </span>graphviz<span class="k">)</span>/lib/
-<a id="rest_code_674706cf0a424d0b8e8d9ccd39bee469-2" name="rest_code_674706cf0a424d0b8e8d9ccd39bee469-2" href="#rest_code_674706cf0a424d0b8e8d9ccd39bee469-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">CPATH</span><span class="o">=</span><span class="nv">$CPATH</span>:<span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="w"> </span>graphviz<span class="k">)</span>/include/
-<a id="rest_code_674706cf0a424d0b8e8d9ccd39bee469-3" name="rest_code_674706cf0a424d0b8e8d9ccd39bee469-3" href="#rest_code_674706cf0a424d0b8e8d9ccd39bee469-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$PYTHONPATH</span>:<span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="w"> </span>OpenImageIO<span class="k">)</span>/lib/python3.12/site-packages/OpenImageIO/
+<div class="code"><pre class="code shell"><a id="rest_code_a889f4a3aaf949c6af3518dca5663856-1" name="rest_code_a889f4a3aaf949c6af3518dca5663856-1" href="#rest_code_a889f4a3aaf949c6af3518dca5663856-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">LIBRARY_PATH</span><span class="o">=</span><span class="nv">$LIBRARY_PATH</span>:<span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="w"> </span>graphviz<span class="k">)</span>/lib/
+<a id="rest_code_a889f4a3aaf949c6af3518dca5663856-2" name="rest_code_a889f4a3aaf949c6af3518dca5663856-2" href="#rest_code_a889f4a3aaf949c6af3518dca5663856-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">CPATH</span><span class="o">=</span><span class="nv">$CPATH</span>:<span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="w"> </span>graphviz<span class="k">)</span>/include/
+<a id="rest_code_a889f4a3aaf949c6af3518dca5663856-3" name="rest_code_a889f4a3aaf949c6af3518dca5663856-3" href="#rest_code_a889f4a3aaf949c6af3518dca5663856-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$PYTHONPATH</span>:<span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="w"> </span>OpenImageIO<span class="k">)</span>/lib/python3.12/site-packages/OpenImageIO/
 </pre></div>
 </section><section id="cloning-colour-s-repository"><h2>Cloning colour's Repository</h2>
 <p>First, <a class="reference external" href="https://github.com/colour-science/colour/fork">fork the colour repository</a>,
 making sure to set or replace the environment variables in these commands.</p>
-<div class="code"><pre class="code shell"><a id="rest_code_731d040d3c9f4c23bc137d4cf9f97675-1" name="rest_code_731d040d3c9f4c23bc137d4cf9f97675-1" href="#rest_code_731d040d3c9f4c23bc137d4cf9f97675-1"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$DEVELOPMENT_DIRECTORY</span>
-<a id="rest_code_731d040d3c9f4c23bc137d4cf9f97675-2" name="rest_code_731d040d3c9f4c23bc137d4cf9f97675-2" href="#rest_code_731d040d3c9f4c23bc137d4cf9f97675-2"></a>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:<span class="nv">$GITHUB_USER</span>/colour.git
-<a id="rest_code_731d040d3c9f4c23bc137d4cf9f97675-3" name="rest_code_731d040d3c9f4c23bc137d4cf9f97675-3" href="#rest_code_731d040d3c9f4c23bc137d4cf9f97675-3"></a><span class="nb">cd</span><span class="w"> </span>colour
+<div class="code"><pre class="code shell"><a id="rest_code_235353f3a410447c9c48113fa1c1c91c-1" name="rest_code_235353f3a410447c9c48113fa1c1c91c-1" href="#rest_code_235353f3a410447c9c48113fa1c1c91c-1"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$DEVELOPMENT_DIRECTORY</span>
+<a id="rest_code_235353f3a410447c9c48113fa1c1c91c-2" name="rest_code_235353f3a410447c9c48113fa1c1c91c-2" href="#rest_code_235353f3a410447c9c48113fa1c1c91c-2"></a>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:<span class="nv">$GITHUB_USER</span>/colour.git
+<a id="rest_code_235353f3a410447c9c48113fa1c1c91c-3" name="rest_code_235353f3a410447c9c48113fa1c1c91c-3" href="#rest_code_235353f3a410447c9c48113fa1c1c91c-3"></a><span class="nb">cd</span><span class="w"> </span>colour
 </pre></div>
 </section><section id="working-with-visual-studio-code-from-the-terminal"><h2>Working with Visual Studio Code from the Terminal</h2>
 <p>Create the virtual environment</p>
-<div class="code"><pre class="code shell"><a id="rest_code_6620d74e8f174af1be4771c4e7c9451f-1" name="rest_code_6620d74e8f174af1be4771c4e7c9451f-1" href="#rest_code_6620d74e8f174af1be4771c4e7c9451f-1"></a>uv<span class="w"> </span>sync<span class="w"> </span>--all-extras
+<div class="code"><pre class="code shell"><a id="rest_code_a81a645a589747cba77cffb681f04f3e-1" name="rest_code_a81a645a589747cba77cffb681f04f3e-1" href="#rest_code_a81a645a589747cba77cffb681f04f3e-1"></a>uv<span class="w"> </span>sync<span class="w"> </span>--all-extras
 </pre></div>
 </section><section id="opening-visual-studio-code"><h2>Opening Visual Studio Code</h2>
 <p>In <strong>colour</strong>'s directory, issue the following command to launch Visual Studio Code:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_f6b0d85f2b6549768502f8e9012e5f75-1" name="rest_code_f6b0d85f2b6549768502f8e9012e5f75-1" href="#rest_code_f6b0d85f2b6549768502f8e9012e5f75-1"></a>code<span class="w"> </span>.
+<div class="code"><pre class="code shell"><a id="rest_code_0085a15cd20a486684d56a65f205d45f-1" name="rest_code_0085a15cd20a486684d56a65f205d45f-1" href="#rest_code_0085a15cd20a486684d56a65f205d45f-1"></a>code<span class="w"> </span>.
 </pre></div>
 <div class="alert alert-dismissible alert-info line-block">
 <div class="line"><strong>Note</strong></div>
@@ -202,11 +207,11 @@ to bring up the <em>Command Palette</em>, then type
 </section><section id="running-the-unit-tests-preflight"><h2>Running the Unit Tests / Preflight</h2>
 <p><strong>colour</strong> uses the <a class="reference external" href="https://pypi.org/project/invoke">invoke</a> framework to
 expose several useful preflight commands:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_e1d33897c4a24c939fe6aea74ef6c01b-1" name="rest_code_e1d33897c4a24c939fe6aea74ef6c01b-1" href="#rest_code_e1d33897c4a24c939fe6aea74ef6c01b-1"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$DEVELOPMENT_DIRECTORY</span>/colour
-<a id="rest_code_e1d33897c4a24c939fe6aea74ef6c01b-2" name="rest_code_e1d33897c4a24c939fe6aea74ef6c01b-2" href="#rest_code_e1d33897c4a24c939fe6aea74ef6c01b-2"></a>uv<span class="w"> </span>run<span class="w"> </span>invoke<span class="w"> </span>formatting<span class="w"> </span>quality<span class="w"> </span>precommit<span class="w"> </span>tests
+<div class="code"><pre class="code shell"><a id="rest_code_f15284c5a3294f7f97b24b79c3676b43-1" name="rest_code_f15284c5a3294f7f97b24b79c3676b43-1" href="#rest_code_f15284c5a3294f7f97b24b79c3676b43-1"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$DEVELOPMENT_DIRECTORY</span>/colour
+<a id="rest_code_f15284c5a3294f7f97b24b79c3676b43-2" name="rest_code_f15284c5a3294f7f97b24b79c3676b43-2" href="#rest_code_f15284c5a3294f7f97b24b79c3676b43-2"></a>uv<span class="w"> </span>run<span class="w"> </span>invoke<span class="w"> </span>formatting<span class="w"> </span>quality<span class="w"> </span>precommit<span class="w"> </span>tests
 </pre></div>
 <p>or if you just want to run the tests, including the doctests:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_25f64e07765646dd944a0396915c2d92-1" name="rest_code_25f64e07765646dd944a0396915c2d92-1" href="#rest_code_25f64e07765646dd944a0396915c2d92-1"></a>uv<span class="w"> </span>run<span class="w"> </span>invoke<span class="w"> </span>tests
+<div class="code"><pre class="code shell"><a id="rest_code_e5fdd7009fec44ccb372e127d188f0e3-1" name="rest_code_e5fdd7009fec44ccb372e127d188f0e3-1" href="#rest_code_e5fdd7009fec44ccb372e127d188f0e3-1"></a>uv<span class="w"> </span>run<span class="w"> </span>invoke<span class="w"> </span>tests
 </pre></div>
 </section><section id="ctl-optional"><h2>CTL (Optional)</h2>
 <p><strong>colour</strong> provides a wrapper to the AMPAS <a class="reference external" href="https://github.com/ampas/CTL">Color Transformation Language</a> (CTL)
@@ -214,72 +219,70 @@ If you want to be able to fully build and contribute to this part of the
 codebase, it needs to be installed. Unfortunately, the version currently
 provided by Homebrew does not appear to work on the latest macOS and the relevant
 environments, thus, it must be installed from source at the moment:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_46df65623a194c62bc94cf05ce02979a-1" name="rest_code_46df65623a194c62bc94cf05ce02979a-1" href="#rest_code_46df65623a194c62bc94cf05ce02979a-1"></a>brew<span class="w"> </span>install<span class="w"> </span>cmake<span class="w"> </span>ilmBase<span class="w"> </span>openexr<span class="w"> </span>libtiff<span class="w"> </span>aces_container
-<a id="rest_code_46df65623a194c62bc94cf05ce02979a-2" name="rest_code_46df65623a194c62bc94cf05ce02979a-2" href="#rest_code_46df65623a194c62bc94cf05ce02979a-2"></a>
-<a id="rest_code_46df65623a194c62bc94cf05ce02979a-3" name="rest_code_46df65623a194c62bc94cf05ce02979a-3" href="#rest_code_46df65623a194c62bc94cf05ce02979a-3"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$TMPDIR</span>
-<a id="rest_code_46df65623a194c62bc94cf05ce02979a-4" name="rest_code_46df65623a194c62bc94cf05ce02979a-4" href="#rest_code_46df65623a194c62bc94cf05ce02979a-4"></a>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:ampas/CTL.git
-<a id="rest_code_46df65623a194c62bc94cf05ce02979a-5" name="rest_code_46df65623a194c62bc94cf05ce02979a-5" href="#rest_code_46df65623a194c62bc94cf05ce02979a-5"></a>
-<a id="rest_code_46df65623a194c62bc94cf05ce02979a-6" name="rest_code_46df65623a194c62bc94cf05ce02979a-6" href="#rest_code_46df65623a194c62bc94cf05ce02979a-6"></a><span class="nb">cd</span><span class="w"> </span>CTL
-<a id="rest_code_46df65623a194c62bc94cf05ce02979a-7" name="rest_code_46df65623a194c62bc94cf05ce02979a-7" href="#rest_code_46df65623a194c62bc94cf05ce02979a-7"></a>mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
-<a id="rest_code_46df65623a194c62bc94cf05ce02979a-8" name="rest_code_46df65623a194c62bc94cf05ce02979a-8" href="#rest_code_46df65623a194c62bc94cf05ce02979a-8"></a>
-<a id="rest_code_46df65623a194c62bc94cf05ce02979a-9" name="rest_code_46df65623a194c62bc94cf05ce02979a-9" href="#rest_code_46df65623a194c62bc94cf05ce02979a-9"></a>cmake<span class="w"> </span>..<span class="w"> </span>-J<span class="w"> </span><span class="m">10</span>
-<a id="rest_code_46df65623a194c62bc94cf05ce02979a-10" name="rest_code_46df65623a194c62bc94cf05ce02979a-10" href="#rest_code_46df65623a194c62bc94cf05ce02979a-10"></a>make
-<a id="rest_code_46df65623a194c62bc94cf05ce02979a-11" name="rest_code_46df65623a194c62bc94cf05ce02979a-11" href="#rest_code_46df65623a194c62bc94cf05ce02979a-11"></a>sudo<span class="w"> </span>make<span class="w"> </span>install
+<div class="code"><pre class="code shell"><a id="rest_code_d7ae8f80d190498f832118619f2df9dc-1" name="rest_code_d7ae8f80d190498f832118619f2df9dc-1" href="#rest_code_d7ae8f80d190498f832118619f2df9dc-1"></a>brew<span class="w"> </span>install<span class="w"> </span>cmake<span class="w"> </span>ilmBase<span class="w"> </span>openexr<span class="w"> </span>libtiff<span class="w"> </span>aces_container
+<a id="rest_code_d7ae8f80d190498f832118619f2df9dc-2" name="rest_code_d7ae8f80d190498f832118619f2df9dc-2" href="#rest_code_d7ae8f80d190498f832118619f2df9dc-2"></a>
+<a id="rest_code_d7ae8f80d190498f832118619f2df9dc-3" name="rest_code_d7ae8f80d190498f832118619f2df9dc-3" href="#rest_code_d7ae8f80d190498f832118619f2df9dc-3"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$TMPDIR</span>
+<a id="rest_code_d7ae8f80d190498f832118619f2df9dc-4" name="rest_code_d7ae8f80d190498f832118619f2df9dc-4" href="#rest_code_d7ae8f80d190498f832118619f2df9dc-4"></a>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:ampas/CTL.git
+<a id="rest_code_d7ae8f80d190498f832118619f2df9dc-5" name="rest_code_d7ae8f80d190498f832118619f2df9dc-5" href="#rest_code_d7ae8f80d190498f832118619f2df9dc-5"></a>
+<a id="rest_code_d7ae8f80d190498f832118619f2df9dc-6" name="rest_code_d7ae8f80d190498f832118619f2df9dc-6" href="#rest_code_d7ae8f80d190498f832118619f2df9dc-6"></a><span class="nb">cd</span><span class="w"> </span>CTL
+<a id="rest_code_d7ae8f80d190498f832118619f2df9dc-7" name="rest_code_d7ae8f80d190498f832118619f2df9dc-7" href="#rest_code_d7ae8f80d190498f832118619f2df9dc-7"></a>mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
+<a id="rest_code_d7ae8f80d190498f832118619f2df9dc-8" name="rest_code_d7ae8f80d190498f832118619f2df9dc-8" href="#rest_code_d7ae8f80d190498f832118619f2df9dc-8"></a>
+<a id="rest_code_d7ae8f80d190498f832118619f2df9dc-9" name="rest_code_d7ae8f80d190498f832118619f2df9dc-9" href="#rest_code_d7ae8f80d190498f832118619f2df9dc-9"></a>cmake<span class="w"> </span>..<span class="w"> </span>-J<span class="w"> </span><span class="m">10</span>
+<a id="rest_code_d7ae8f80d190498f832118619f2df9dc-10" name="rest_code_d7ae8f80d190498f832118619f2df9dc-10" href="#rest_code_d7ae8f80d190498f832118619f2df9dc-10"></a>make
+<a id="rest_code_d7ae8f80d190498f832118619f2df9dc-11" name="rest_code_d7ae8f80d190498f832118619f2df9dc-11" href="#rest_code_d7ae8f80d190498f832118619f2df9dc-11"></a>sudo<span class="w"> </span>make<span class="w"> </span>install
 </pre></div>
 </section><section id="see-also"><h2>See Also</h2>
 <p>Please refer to <a class="reference external" href="https://www.colour-science.org/contributing/">the contributing guide</a>
 for more information about the contributing process.</p>
 </section>
 </div>
+
     
 
 </article><!--End of body content-->
 </div>
         </div>
     </div>
-</div>
-
-<!-- End of Main -->
-
-<!-- Footer -->
-
-<footer id="footer" class="mt-auto"><ul class="nav justify-content-center">
-<li class="nav-item mx-3">
+</main><!-- End of Main --><!-- Footer --><footer id="footer" class="mt-auto"><div class="container">
+        
+<ul class="nav justify-content-center">
+<li class="nav-item mx-1">
         <a href="mailto:colour-developers@colour-science.org">
-            <i class="fa-regular fa-envelope text-light"></i>
+            <img class="site-icon" src="../assets/icons/envelope.svg" width="16" height="16" alt=""><span class="sr-only">Email</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://github.com/colour-science/colour">
-            <i class="fa-brands fa-github text-light"></i>
+            <img class="site-icon" src="../assets/icons/github.svg" width="16" height="16" alt=""><span class="sr-only">GitHub</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://www.facebook.com/python.colour.science">
-            <i class="fa-brands fa-facebook text-light"></i>
+            <img class="site-icon" src="../assets/icons/facebook.svg" width="16" height="16" alt=""><span class="sr-only">Facebook</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://gitter.im/colour-science/colour">
-            <i class="fa-brands fa-gitter text-light"></i>
+            <img class="site-icon" src="../assets/icons/gitter.svg" width="16" height="16" alt=""><span class="sr-only">Gitter</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://x.com/colour_science">
-            <i class="fa-brands fa-x-twitter text-light"></i>
+            <img class="site-icon" src="../assets/icons/x-twitter.svg" width="16" height="16" alt=""><span class="sr-only">X</span>
         </a>
     </li>
-    <li class="nav-item mx-3">
+    <li class="nav-item mx-1">
         <a href="https://bsky.app/profile/colour-science.bsky.social">
-            <i class="fa-brands fa-bluesky text-light"></i>
+            <img class="site-icon" src="../assets/icons/bluesky.svg" width="16" height="16" alt=""><span class="sr-only">Bluesky</span>
         </a>
     </li>
 </ul>
-<div class="text-center text-light py-3"><span>Copyright © 2013-2026 – Colour Developers</span></div>
+<div class="text-center pt-3"><span>Copyright © 2013-2026 – Colour Developers</span></div>
 
-    
+        
+    </div>
 </footer><!-- End of Footer --><script src="../assets/js/jquery.min.js"></script><script src="../assets/js/popper.min.js"></script><script src="../assets/js/bootstrap.min.js"></script><script src="../assets/js/baguetteBox.min.js"></script><script>
-    baguetteBox.run('div#content', {
+    baguetteBox.run('#content', {
         ignoreClass: 'islink',
         captions: function(element) {
             return element.getElementsByTagName('img')[0].alt;
