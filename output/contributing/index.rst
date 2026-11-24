@@ -203,11 +203,11 @@ Step 1
 Step 2
 ******
 
-Clone the repository locally to your workspace:
+Clone your fork, replacing ``YOUR-GITHUB-USERNAME`` with your GitHub username:
 
 .. code:: shell
 
-    git clone git@github.com:$USER/colour.git
+    git clone https://github.com/YOUR-GITHUB-USERNAME/colour.git
 
 Step 3
 ******
@@ -217,35 +217,29 @@ Navigate to the *colour* directory:
 .. code:: shell
 
     cd colour
+    git switch develop
 
 Step 4
 ******
 
-Assuming `python >= 3.10, < 3.13 <https://www.python.org/download/releases>`__
-is available on your system, the development dependencies are installed with
-`uv <https://docs.astral.sh/uv>`__ as follows:
+Install `uv <https://docs.astral.sh/uv/getting-started/installation/>`__ and
+sync the development environment. Python 3.13 supports the broadest set of
+optional packages used by the ``develop`` branch.
 
 .. code:: shell
 
-    uv sync --all-extras
+    uv sync --python 3.13 --all-extras
 
-.. class:: alert alert-dismissible alert-warning
-
-    | **Warning**
-    |
-    | Various **Colour** unit tests require being able to perform IO with
-        `OpenEXR <https://www.openexr.com>`__ images. You will need to install
-        the *FreeImage* plugin for `Imageio <http://imageio.github.io>`__ as
-        follows: ``python -c "import imageio;imageio.plugins.freeimage.download()"``
+This installs OpenImageIO for tests that read or write OpenEXR images.
 
 Step 5
 ******
 
-Install the `pre-commit <https://pre-commit.com>`__ hooks:
+Install the Git hooks with `prek <https://prek.j178.dev/>`__:
 
 .. code:: shell
 
-    uv run pre-commit install
+    uv run prek install
 
 Step 6
 ******
@@ -255,7 +249,7 @@ remote:
 
 .. code:: shell
 
-    git remote add upstream git@github.com:colour-science/colour
+    git remote add upstream https://github.com/colour-science/colour.git
 
 Step 7
 ******
@@ -265,10 +259,10 @@ You should now have two remotes:
 .. code:: shell
 
     git remote -v
-    origin  https://github.com/$USER/colour (fetch)
-    origin  https://github.com/$USER/colour (push)
-    upstream  https://github.com/colour-science/colour (fetch)
-    upstream  https://github.com/colour-science/colour (push)
+    origin  https://github.com/YOUR-GITHUB-USERNAME/colour.git (fetch)
+    origin  https://github.com/YOUR-GITHUB-USERNAME/colour.git (push)
+    upstream  https://github.com/colour-science/colour.git (fetch)
+    upstream  https://github.com/colour-science/colour.git (push)
 
 Step 8
 ******
@@ -277,8 +271,7 @@ Pull the latest changes from *upstream*:
 
 .. code:: shell
 
-    git checkout develop
-    git pull upstream develop
+    git pull --ff-only upstream develop
 
 Step 9
 ******
@@ -300,15 +293,15 @@ support:
 
 .. code:: shell
 
-    git checkout -b feature/mie_scattering
+    git switch -c feature/mie_scattering
 
-Step 11
+Step 10
 *******
 
 Implement your changes while making sure examples and relevant documentation
 are written.
 
-Step 12
+Step 11
 *******
 
 Check whether the unit tests and doctests are passing:
@@ -317,23 +310,17 @@ Check whether the unit tests and doctests are passing:
 
     uv run invoke tests
 
-or alternatively:
-
-.. code:: shell
-
-    source .venv/bin/activate
-    invoke tests
-
-Step 13
+Step 12
 *******
 
-Verify that the static checking from `pyright <https://pypi.org/project/pyright>`__ is passing:
+Run the full preflight, which includes formatting, static checks, Git hooks,
+tests and examples:
 
 .. code:: shell
 
-    uv run invoke quality
+    uv run invoke preflight
 
-Step 14
+Step 13
 *******
 
 Commit your changes:
@@ -341,39 +328,33 @@ Commit your changes:
 .. code:: shell
 
     git add mie_scattering.py
-    git commit -m 'Implement "Mie Scattering" support.'
+    git commit -m 'Implement *Mie Scattering* support.'
 
 .. class:: alert alert-dismissible alert-info
 
     | **Note**
     |
-    | The *pre-commit* hooks will run before committing, notably
-        `codespell <https://pypi.org/project/codespell>`__,
-        `flynt <https://pypi.org/project/flynt>`__,
-        `isort <https://pypi.org/project/isort>`__,
-        `ruff <https://pypi.org/project/ruff>`__,
-        `blacken-docs <https://pypi.org/project/blacken-docs>`__,
-        `prettier <https://github.com/pre-commit/mirrors-prettier>`__, thus depending on
-        their status, you might not be able to commit until you have fixed the
-        issues reported.
+    | The Git hooks run before committing. Review any changes made by the
+        hooks and stage the corrected files before retrying the commit.
 
-Step 15
+Step 14
 *******
 
 Push your changes to *origin*, i.e., your own fork:
 
 .. code:: shell
 
-    git push origin feature/mie_scattering
+    git push -u origin feature/mie_scattering
 
-Step 16
+Step 15
 *******
 
-Visit your repository fork on `GitHub <https://github.com/$USER/colour>`__.
-Your branch should have a green *Pull Request* button, this will open a
-*pull request* and let us know that we have some code to review :)
+Open a pull request from your feature branch on GitHub and select
+``colour-science/colour:develop`` as the base branch.
 
-Step 17
+.. _step-17:
+
+Step 16
 *******
 
 Check that the `continuous integration <https://github.com/colour-science/colour/actions>`__
@@ -406,15 +387,14 @@ Overview
 We follow the `Google Python Style Guide <https://google.github.io/styleguide/pyguide.html>`__
 and especially the *Python Language Rules* although with the main exception
 being the docstrings / documentation formatted with
-`NumPy Docstrings Style <https://github.com/numpy/numpy/blob/master/doc/example.py>`__.
+`NumPy docstring conventions <https://numpydoc.readthedocs.io/en/latest/format.html>`__.
 
 We use `type hints <https://docs.python.org/3/library/typing.html>`__  to
 statically indicate and verify the type of objects in the codebase with
-`mypy <http://mypy-lang.org>`__.
+`Pyright <https://pypi.org/project/pyright>`__.
 
-The code has to be `PEP 8 <https://peps.python.org/pep-0008>`__
-compliant although but before anything else, it needs to be consistent with the
-Colour Science literature:
+Follow `PEP 8 <https://peps.python.org/pep-0008>`__ and preserve the
+notation used in the colour science literature:
 
 For example, the base **CIE** colourspace is **CIE XYZ** with upper case
 notation. It can be converted to chromaticity coordinates **xy** with lower
@@ -462,7 +442,7 @@ Python Language Rules
 -   All the code must be documented to the same standard as
     `NumPy <http://www.numpy.org>`__, `SciPy <http://www.scipy.org>`__
     and `scikit-image <http://scikit-image.org>`__.
--   All the code must be checked with the *pre-commit* hooks.
+-   All the code must pass the Git hooks run by *prek*.
 -   *Pull requests* should not be merged without being reviewed and ensuring
     that the `GitHub Actions <https://github.com/colour-science/colour/actions>`__
     continuous integration suite succeeded.
@@ -495,8 +475,7 @@ Python Style Rules
 
     import numpy as np
 
--   Doctests may need **ellipsis**, don't rely on global **nose** settings and
-    specify it using the dedicated pragma as follows:
+-   If a doctest needs ellipsis matching, enable it with the dedicated pragma:
 
 .. code:: python
 
@@ -518,7 +497,7 @@ Python Style Rules
     -   Doctests output numbers trimmed with **ellipsis** to 7 digits.
 
 -   We recommend a set of values for use with examples and unit tests.
-    A `Gist <https://gist.github.com/KelSolaar/2ca5f4107a8ae05ec57a55a9ae2f3a13>`__
+    A `Gist <https://gist.github.com/thomasmansencal/2ca5f4107a8ae05ec57a55a9ae2f3a13>`__
     is available with the generating code.
 
     Priority should be given for CIE Standard Illuminant D Series D65 computed
@@ -713,7 +692,7 @@ Python Style Rules
     we have already too much of them.
 -   Avoid **/** to wrap lines, prefer using the parenthesis **()**.
 -   The code formatting is performed using `ruff <https://pypi.org/project/ruff>`__
-    via a `pre-commit <https://pre-commit.com>`__ hook.
+    through a Git hook run by *prek*.
 -   Inline comments must have two spaces.
 -   Ensure that you have blank line at the end of the files.
 -   Ensure that trailing whitespaces are stripped.
@@ -799,56 +778,36 @@ Releasing Colour
 ----------------
 
 The following stages help maintainers navigate through the release of a new
-version of **Colour**, some automation is provided by `Invoke <http://www.pyinvoke.org>`__:
+version of **Colour**, with automation provided by `Invoke <https://www.pyinvoke.org/>`__.
 
 .. raw:: html
 
     <!-- directives: [] -->
-    <div id="content">
+    <div class="release-checklist">
       <ul>
         <li>
           <h3>GitHub - Stage 1</h3>
           <ul>
-            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Review the <a href="https://gist.github.com/KelSolaar/4a6ebe9ec3d389f0934b154fec8df51d">release notes</a></li>
-            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Check open issues on the current <a href="https:github.com/colour-science/colour/milestones">milestone</a></li>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Review the <a href="https://gist.github.com/thomasmansencal/4a6ebe9ec3d389f0934b154fec8df51d">release notes</a></li>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Check open issues on the current <a href="https://github.com/colour-science/colour/milestones">milestone</a></li>
           </ul>
         </li>
         <li>
           <h3>Zenodo - Stage 1</h3>
           <ul>
-            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Reserve the <a href="https:zenodo.org/record/3757045">Zenodo DOI</a></li>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Reserve the DOI for the new version in <a href="https://zenodo.org/">Zenodo</a></li>
           </ul>
         </li>
         <li>
           <h3>Colour - Stage 1</h3>
           <ul>
-            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Check <a href="https:app.codacy.com/gh/colour-science/colour/dashboard">codacy</a> status</li>
-            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Check documentation build warnings
-              <pre><code data-lang="bash" class="bash">uv run invoke docs</code></pre>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Check <a href="https://app.codacy.com/gh/colour-science/colour/dashboard">Codacy</a> status</li>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Run the pre-release checks. This builds the documentation and distributions, tests the package in a separate environment, and prints the distribution checksums. The PDF build requires TeX.
+              <pre><code data-lang="bash" class="bash">uv sync --python 3.13 --all-extras</code>
+    <code data-lang="bash" class="bash">uv run invoke pre-release</code></pre>
             </li>
-            <li>Rebuild a clean <i>uv</i> environment
-              <ul>
-                <li><span class="task-status todo" style="margin-right:6px">TODO</span>Remove the current <i>uv</i> environment
-                  <pre><code data-lang="bash" class="bash">rm -rf .venv</code></pre>
-                </li>
-                <li><span class="task-status todo" style="margin-right:6px">TODO</span>Create a pristine <i>uv</i> environment
-                  <pre><code data-lang="bash" class="bash">rm uv.lock &amp;&amp; uv sync --all-extras</code></pre>
-                </li>
-                <li><span class="task-status todo" style="margin-right:6px">TODO</span>Run the examples task with figures: They need to be visually assessed for correctness
-                  <pre><code>uv run invoke examples --plots</code></pre>
-                </li>
-                <li><span class="task-status todo" style="margin-right:6px">TODO</span>Run the build task: It cleans the project, runs the pre-commit hooks, the examples, the unit tests, etc...
-                  <pre><code data-lang="bash" class="bash"> invoke build</code></pre>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <h3>PyPI - Stage 1</h3>
-          <ul>
-            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Run the virtualise task: It deploys the project to a virtual environment and run the unit tests
-              <pre><code data-lang="bash" class="bash">uv run invoke virtualise</code></pre>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Run the examples with figures and inspect the plots
+              <pre><code>uv run invoke examples --plots</code></pre>
             </li>
           </ul>
         </li>
@@ -860,7 +819,7 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
                 <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>__init__.py</code></li>
                 <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>pyproject.toml</code></li>
                 <li>A typical commit message for version raise is as follows:
-                  <blockquote>Raise package version to 0.3.16.</blockquote>
+                  <blockquote>Raise package version to X.Y.Z.</blockquote>
                 </li>
               </ul>
             </li>
@@ -880,22 +839,22 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
             <li>A typical tag message for a Colour version is as follows:
               <ul>
                 <li>
-                  <blockquote>Create Colour v0.3.16 version.</blockquote>
+                  <blockquote>Create Colour vX.Y.Z version.</blockquote>
                 </li>
               </ul>
             </li>
-            <li>In the eventuality where the tag creation failed, it might be created manually as follows:
-              <pre><code data-lang="bash" class="bash">git tag -a -m &quot;Create Colour v0.3.16 version.&quot; v0.3.16</code></pre>
+            <li>If the tag must be created manually, verify the intended release commit first and replace <code>X.Y.Z</code> with the release version:
+              <pre><code data-lang="bash" class="bash">git tag -a -m &quot;Create Colour vX.Y.Z version.&quot; vX.Y.Z</code></pre>
             </li>
             <li>Push the <code>master</code> and <code>develop</code> branches along with the newly created tag:
-              <pre><code data-lang="bash" class="bash">git push upstream master develop --tags</code></pre>
+              <pre><code data-lang="bash" class="bash">git push upstream master develop refs/tags/vX.Y.Z</code></pre>
             </li>
           </ul>
         </li>
         <li>
           <h3>GitHub - Stage 2</h3>
           <ul>
-            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Publish the <a href="https:gist.github.com/KelSolaar/4a6ebe9ec3d389f0934b154fec8df51d">release notes</a> on the <a href="https:github.com/colour-science/colour/releases">releases</a> page using the new tag</li>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Publish the <a href="https://gist.github.com/thomasmansencal/4a6ebe9ec3d389f0934b154fec8df51d">release notes</a> on the <a href="https://github.com/colour-science/colour/releases">releases</a> page using the new tag</li>
           </ul>
         </li>
         <li>
@@ -925,21 +884,22 @@ version of **Colour**, some automation is provided by `Invoke <http://www.pyinvo
           <ul>
             <li>Update the release links
               <ul>
-                <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>conf.py</code></li>
-                <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>index.rst</code></li>
+                <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>themes/colour-science/templates/home.tmpl</code></li>
+                <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>pages/installation-guide.rst</code></li>
+                <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>pages/tutorial.rst</code></li>
               </ul>
             </li>
             <li>Update the documentation links
               <ul>
-                <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>api-reference.rst</code></li>
+                <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>pages/api-reference.rst</code></li>
               </ul>
             </li>
-            <li>Update the Zenodo badge
+            <li>Update the Zenodo citation link
               <ul>
                 <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>conf.py</code></li>
-                <li><span class="task-status todo" style="margin-right:6px">TODO</span><code>api-status-and-badges.rst</code></li>
               </ul>
             </li>
+            <li><span class="task-status todo" style="margin-right:6px">TODO</span>Build with <code>uv run nikola build</code> and include the updated <code>output/</code> in the website release</li>
           </ul>
         </li>
         <li>

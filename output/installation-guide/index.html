@@ -35,10 +35,10 @@ MathJax.Hub.Config({
 <meta property="og:title" content="Installation Guide">
 <meta property="og:url" content="https://www.colour-science.org/installation-guide/">
 <meta property="og:description" content="Dependencies
-Colour requires various dependencies in order to run and follows the
-minimum supported versions
-as given by Scientific Python. Depending on
-your intended use case, i.e., using or developi">
+The current PyPI release of Colour supports Python 3.11 through 3.14
+and requires NumPy 2.0 or newer in the 2.x series. The package manager
+installs NumPy automatically. See the
+release m">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2015-11-24T09:38:23Z">
 <meta property="article:tag" content="installation">
@@ -154,135 +154,77 @@ navbar-dark
 
         </header><div class="e-content entry-content" itemprop="articleBody text">
         <section id="dependencies"><h2>Dependencies</h2>
-<p><strong>Colour</strong> requires various dependencies in order to run and follows the
-<a class="reference external" href="https://scientific-python.org/specs/spec-0000">minimum supported versions</a>
-as given by <a class="reference external" href="https://scientific-python.org">Scientific Python</a>. Depending on
-your intended use case, i.e., using or developing, you may not need to install
-all of them.</p>
-<p>Please refer to the <a class="reference internal" href="#installation-methods-for-using-colour">Installation Methods for Using Colour</a>
-and <a class="reference internal" href="#installation-methods-for-developing-colour">Installation Methods for Developing Colour</a> sections below.</p>
-<section id="primary-dependencies"><h3>Primary Dependencies</h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.python.org/download/releases">python &gt;= 3.11, &lt; 3.15</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/numpy">numpy &gt;= 2.0.0, &lt; 3</a></p></li>
-</ul></section><section id="optional-meshing-and-plotting-dependencies"><h3>Optional, Meshing and Plotting Dependencies</h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://imageio.github.io">imageio &gt;= 2, &lt; 3</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/matplotlib">matplotlib &gt;= 3.9</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/networkx">networkx &gt;= 3.3, &lt; 4</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/opencolorio">opencolorio &gt;= 2, &lt; 3</a></p></li>
-<li><p><a class="reference external" href="https://github.com/OpenImageIO/oiio">openimageio &gt;= 3, &lt; 4</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/pandas">pandas &gt;= 2.2, &lt; 3</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/pydot">pydot &gt;= 3, &lt; 4</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/scipy">scipy &gt;= 1.13.0, &lt; 2</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/tqdm">tqdm &gt;= 4, &lt; 5</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/trimesh">trimesh &gt;= 4, &lt; 5</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/xxhash">xxhash &gt;= 3, &lt; 4</a></p></li>
-</ul></section><section id="development-dependencies"><h3>Development Dependencies</h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://pypi.org/project/biblib-simple">biblib-simple</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/coverage">coverage</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/coveralls">coveralls</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/hatch">hatch</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/invoke">invoke</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/jupyter">jupyter</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/pre-commit">pre-commit</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/pyright">pyright</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/pydata-sphinx-theme">pydata-sphinx-theme</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/pytest">pytest</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/pytest-cov">pytest-cov</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/pytest-xdist">pytest-xdist</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/restructuredtext-lint">restructuredtext-lint</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/sphinx">sphinx</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/sphinxcontrib-bibtex">sphinxcontrib-bibtex</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/toml">toml</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/twine">twine</a></p></li>
-</ul></section></section><section id="installation-methods-for-using-colour"><h2>Installation Methods for Using Colour</h2>
+<p id="primary-dependencies">The current PyPI release of <strong>Colour</strong> supports Python 3.11 through 3.14
+and requires NumPy 2.0 or newer in the 2.x series. The package manager
+installs NumPy automatically. See the
+<a class="reference external" href="https://pypi.org/project/colour-science/">release metadata</a> for the
+requirements of the published package.</p>
+<p>The development branch has its own requirements. See
+<a class="reference internal" href="#installation-methods-for-developing-colour">Installation Methods for Developing Colour</a> if you are contributing to
+the project.</p>
+</section><section id="installation-methods-for-using-colour"><h2>Installation Methods for Using Colour</h2>
 <section id="pypi"><h3>PyPI</h3>
-<p>To install <strong>Colour</strong> from the
-<a class="reference external" href="https://pypi.org/project/colour-science">Python Package Index</a>, activate
-your Python virtual environment and run:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_705959ad75444c4e8d152fc9fe56eb2f-1" name="rest_code_705959ad75444c4e8d152fc9fe56eb2f-1" href="#rest_code_705959ad75444c4e8d152fc9fe56eb2f-1"></a>pip<span class="w"> </span>install<span class="w"> </span>colour-science
+<p>Create a virtual environment with a supported Python version:</p>
+<div class="code"><pre class="code shell"><a id="rest_code_d0c65c9145c84986a6799db77f2687b0-1" name="rest_code_d0c65c9145c84986a6799db77f2687b0-1" href="#rest_code_d0c65c9145c84986a6799db77f2687b0-1"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
 </pre></div>
-<p>To add <strong>Colour</strong> as a dependency of an existing
-<a class="reference external" href="https://docs.astral.sh/uv/concepts/projects/dependencies/">uv project</a>,
-run this command from the project directory:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_d3b3ce5533e148d99fc834811bd2416b-1" name="rest_code_d3b3ce5533e148d99fc834811bd2416b-1" href="#rest_code_d3b3ce5533e148d99fc834811bd2416b-1"></a>uv<span class="w"> </span>add<span class="w"> </span>colour-science
+<p>Activate it with <code class="docutils literal">source .venv/bin/activate</code> on macOS or Linux, or
+<code class="docutils literal">.venv\Scripts\Activate.ps1</code> in Windows PowerShell. Then install <strong>Colour</strong>
+from the <a class="reference external" href="https://pypi.org/project/colour-science">Python Package Index</a>:</p>
+<div class="code"><pre class="code shell"><a id="rest_code_5665d38dc0d547a98eb02dfb62de8999-1" name="rest_code_5665d38dc0d547a98eb02dfb62de8999-1" href="#rest_code_5665d38dc0d547a98eb02dfb62de8999-1"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>colour-science
+<a id="rest_code_5665d38dc0d547a98eb02dfb62de8999-2" name="rest_code_5665d38dc0d547a98eb02dfb62de8999-2" href="#rest_code_5665d38dc0d547a98eb02dfb62de8999-2"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import colour; print(colour.__version__)"</span>
 </pre></div>
-<p>This <em>asciicast</em> demonstrates how to generate a pristine Python <em>VirtualEnv</em>
-environment for Colour:</p>
-<script type="text/javascript" src="https://asciinema.org/a/257384.js" id="asciicast-257384" async data-speed="3">
-</script><p>The optional features dependencies are installed as follows:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_ce8fbb402fb14d25942983e03219ff5c-1" name="rest_code_ce8fbb402fb14d25942983e03219ff5c-1" href="#rest_code_ce8fbb402fb14d25942983e03219ff5c-1"></a>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">'colour-science[optional]'</span>
+<p>If you manage your project with <a class="reference external" href="https://docs.astral.sh/uv/guides/projects/">uv</a>,
+use a Python version supported by the release and run these commands from
+the project directory:</p>
+<div class="code"><pre class="code shell"><a id="rest_code_4ff3e37d80a845cba538397688b74ff5-1" name="rest_code_4ff3e37d80a845cba538397688b74ff5-1" href="#rest_code_4ff3e37d80a845cba538397688b74ff5-1"></a>uv<span class="w"> </span>add<span class="w"> </span>colour-science
+<a id="rest_code_4ff3e37d80a845cba538397688b74ff5-2" name="rest_code_4ff3e37d80a845cba538397688b74ff5-2" href="#rest_code_4ff3e37d80a845cba538397688b74ff5-2"></a>uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import colour; print(colour.__version__)"</span>
 </pre></div>
-<p>The development dependencies are installed as follows:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_c9a76b4299f14a198c76658e5eeaf8c4-1" name="rest_code_c9a76b4299f14a198c76658e5eeaf8c4-1" href="#rest_code_c9a76b4299f14a198c76658e5eeaf8c4-1"></a>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">'colour-science[development]'</span>
+</section><section id="optional-dependencies"><h3>Optional dependencies</h3>
+<p id="optional-meshing-and-plotting-dependencies">The <code class="docutils literal">optional</code> extra enables features such as plotting and image I/O.
+The basic installation may report missing SciPy or Matplotlib when you
+import <code class="docutils literal">colour</code>. Install the extra if you need those features.
+The published release also provides a <code class="docutils literal">meshing</code> extra for gamut computations
+and a <code class="docutils literal">docs</code> extra for building the documentation.</p>
+<div class="code"><pre class="code shell"><a id="rest_code_b7c68d38ff18410ba08910ca904a3f3d-1" name="rest_code_b7c68d38ff18410ba08910ca904a3f3d-1" href="#rest_code_b7c68d38ff18410ba08910ca904a3f3d-1"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">'colour-science[optional]'</span>
+<a id="rest_code_b7c68d38ff18410ba08910ca904a3f3d-2" name="rest_code_b7c68d38ff18410ba08910ca904a3f3d-2" href="#rest_code_b7c68d38ff18410ba08910ca904a3f3d-2"></a>uv<span class="w"> </span>add<span class="w"> </span><span class="s1">'colour-science[optional]'</span>
 </pre></div>
-<p>The graphviz figure plotting dependencies are installed as follows:</p>
-<div class="alert alert-dismissible alert-info line-block">
-<div class="line"><strong>Note</strong></div>
-<div class="line"><br></div>
-<div class="line">
-<a class="reference external" href="https://www.graphviz.org">Graphviz</a> might need to be installed
-beforehand, please refer to the specific section for your platform on
-the <a class="reference external" href="https://www.graphviz.org/download">Graphviz download page</a>.</div>
-</div>
-<p class="alert alert-dismissible alert-info">pip install 'colour-science[graphviz]'</p>
-<p>The meshing dependencies for gamut computations are installed as follows:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_b4ee6924f22a4606a61e7aff5b8cdb42-1" name="rest_code_b4ee6924f22a4606a61e7aff5b8cdb42-1" href="#rest_code_b4ee6924f22a4606a61e7aff5b8cdb42-1"></a>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">'colour-science[meshing]'</span>
+<p>Use the command for your package manager. For OpenEXR image I/O, the
+<code class="docutils literal">optional</code> extra includes OpenImageIO. To render conversion graphs, also
+install the <a class="reference external" href="https://www.graphviz.org/download/">Graphviz command-line tools</a>
+for your platform.</p>
+</section><section id="conda"><span id="continuum-analytics-anaconda"></span><h3>Conda</h3>
+<p>To create a Conda environment with <strong>Colour</strong> from
+<a class="reference external" href="https://anaconda.org/conda-forge/colour-science">conda-forge</a>:</p>
+<div class="code"><pre class="code shell"><a id="rest_code_19697620df8049f6868e52c00381d88c-1" name="rest_code_19697620df8049f6868e52c00381d88c-1" href="#rest_code_19697620df8049f6868e52c00381d88c-1"></a>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>colour-science<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>colour-science
+<a id="rest_code_19697620df8049f6868e52c00381d88c-2" name="rest_code_19697620df8049f6868e52c00381d88c-2" href="#rest_code_19697620df8049f6868e52c00381d88c-2"></a>conda<span class="w"> </span>activate<span class="w"> </span>colour-science
+<a id="rest_code_19697620df8049f6868e52c00381d88c-3" name="rest_code_19697620df8049f6868e52c00381d88c-3" href="#rest_code_19697620df8049f6868e52c00381d88c-3"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import colour; print(colour.__version__)"</span>
 </pre></div>
-<p>If you wish to read <em>OpenEXR</em> files, you will need to install the <em>FreeImage</em>
-plugin for <a class="reference external" href="https://imageio.github.io">Imageio</a> as follows:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_4f9a80868b754489b28e712a5f866c9a-1" name="rest_code_4f9a80868b754489b28e712a5f866c9a-1" href="#rest_code_4f9a80868b754489b28e712a5f866c9a-1"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import imageio;imageio.plugins.freeimage.download()"</span>
-</pre></div>
-</section><section id="continuum-analytics-anaconda"><h3>Continuum Analytics Anaconda</h3>
-<p><strong>Colour</strong> is also available for <a class="reference external" href="https://www.anaconda.com">Anaconda</a>
-from <em>Continuum Analytics</em> via <a class="reference external" href="https://conda-forge.org">conda-forge</a>:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_ead8c6cdb82440bfaf98d2b7fa92ec95-1" name="rest_code_ead8c6cdb82440bfaf98d2b7fa92ec95-1" href="#rest_code_ead8c6cdb82440bfaf98d2b7fa92ec95-1"></a>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>colour-science
-</pre></div>
-<p>This <em>asciicast</em> demonstrates how to generate a pristine Python <em>conda</em>
-environment for Colour:</p>
-<script type="text/javascript" src="https://asciinema.org/a/257385.js" id="asciicast-257385" async data-speed="3">
-</script></section><section id="github"><h3>GitHub</h3>
-<p>Alternatively, you can also install directly from the
-<a class="reference external" href="https://github.com/colour-science/colour">GitHub</a> source repository:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_ba2a1b0623d34e1c9f4a7a58262467b1-1" name="rest_code_ba2a1b0623d34e1c9f4a7a58262467b1-1" href="#rest_code_ba2a1b0623d34e1c9f4a7a58262467b1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/colour-science/colour.git
-<a id="rest_code_ba2a1b0623d34e1c9f4a7a58262467b1-2" name="rest_code_ba2a1b0623d34e1c9f4a7a58262467b1-2" href="#rest_code_ba2a1b0623d34e1c9f4a7a58262467b1-2"></a><span class="nb">cd</span><span class="w"> </span>colour
-<a id="rest_code_ba2a1b0623d34e1c9f4a7a58262467b1-3" name="rest_code_ba2a1b0623d34e1c9f4a7a58262467b1-3" href="#rest_code_ba2a1b0623d34e1c9f4a7a58262467b1-3"></a>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>.
+</section><section id="github"><h3>GitHub</h3>
+<p>To install a specific release from source, activate a virtual environment
+as described under <a class="reference internal" href="#pypi">PyPI</a> and check out the corresponding
+<a class="reference external" href="https://github.com/colour-science/colour/tags">release tag</a>:</p>
+<div class="code"><pre class="code shell"><a id="rest_code_29bdb3705cec46f6acd72fe918a6bbc6-1" name="rest_code_29bdb3705cec46f6acd72fe918a6bbc6-1" href="#rest_code_29bdb3705cec46f6acd72fe918a6bbc6-1"></a>git<span class="w"> </span>clone<span class="w"> </span>--branch<span class="w"> </span>v0.4.7<span class="w"> </span>https://github.com/colour-science/colour.git
+<a id="rest_code_29bdb3705cec46f6acd72fe918a6bbc6-2" name="rest_code_29bdb3705cec46f6acd72fe918a6bbc6-2" href="#rest_code_29bdb3705cec46f6acd72fe918a6bbc6-2"></a><span class="nb">cd</span><span class="w"> </span>colour
+<a id="rest_code_29bdb3705cec46f6acd72fe918a6bbc6-3" name="rest_code_29bdb3705cec46f6acd72fe918a6bbc6-3" href="#rest_code_29bdb3705cec46f6acd72fe918a6bbc6-3"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>.
 </pre></div>
 </section></section><section id="installation-methods-for-developing-colour"><h2>Installation Methods for Developing Colour</h2>
-<div class="alert alert-dismissible alert-info line-block">
-<div class="line"><strong>Note</strong></div>
-<div class="line"><br></div>
-<div class="line">If you are on macOS, a dedicated guide on how to set up your environment
-is available here: <a class="reference external" href="../setting-up-the-development-environment-on-macos/index.html">Setting Up the Development Environment on macOS</a>.</div>
-</div>
 <section id="uv"><h3>uv</h3>
-<p><strong>Colour</strong> adopts <a class="reference external" href="https://docs.astral.sh/uv">uv</a> to help manage its
-dependencies. This is the recommended way to get started with <strong>Colour</strong>
-development.</p>
-<p>Assuming <a class="reference external" href="https://www.python.org/download/releases">python &gt;= 3.11, &lt; 3.15</a> is
-available on your system, the development dependencies are installed with
-<a class="reference external" href="https://docs.astral.sh/uv">uv</a> as follows:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_a4ad9a65f5914b5d8c4322058aba3b93-1" name="rest_code_a4ad9a65f5914b5d8c4322058aba3b93-1" href="#rest_code_a4ad9a65f5914b5d8c4322058aba3b93-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/colour-science/colour.git
-<a id="rest_code_a4ad9a65f5914b5d8c4322058aba3b93-2" name="rest_code_a4ad9a65f5914b5d8c4322058aba3b93-2" href="#rest_code_a4ad9a65f5914b5d8c4322058aba3b93-2"></a><span class="nb">cd</span><span class="w"> </span>colour
-<a id="rest_code_a4ad9a65f5914b5d8c4322058aba3b93-3" name="rest_code_a4ad9a65f5914b5d8c4322058aba3b93-3" href="#rest_code_a4ad9a65f5914b5d8c4322058aba3b93-3"></a>uv<span class="w"> </span>sync<span class="w"> </span>--all-extras
+<p id="development-dependencies">The <code class="docutils literal">develop</code> branch currently supports Python 3.13 through 3.15.
+Use Python 3.13 for the broadest coverage of optional packages such as
+OpenColorIO. Install <a class="reference external" href="https://docs.astral.sh/uv/getting-started/installation/">uv</a>
+and run:</p>
+<div class="code"><pre class="code shell"><a id="rest_code_5b43d0e457434b3bbba1f1dbb80f269f-1" name="rest_code_5b43d0e457434b3bbba1f1dbb80f269f-1" href="#rest_code_5b43d0e457434b3bbba1f1dbb80f269f-1"></a>git<span class="w"> </span>clone<span class="w"> </span>--branch<span class="w"> </span>develop<span class="w"> </span>https://github.com/colour-science/colour.git
+<a id="rest_code_5b43d0e457434b3bbba1f1dbb80f269f-2" name="rest_code_5b43d0e457434b3bbba1f1dbb80f269f-2" href="#rest_code_5b43d0e457434b3bbba1f1dbb80f269f-2"></a><span class="nb">cd</span><span class="w"> </span>colour
+<a id="rest_code_5b43d0e457434b3bbba1f1dbb80f269f-3" name="rest_code_5b43d0e457434b3bbba1f1dbb80f269f-3" href="#rest_code_5b43d0e457434b3bbba1f1dbb80f269f-3"></a>uv<span class="w"> </span>sync<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.13<span class="w"> </span>--all-extras
+<a id="rest_code_5b43d0e457434b3bbba1f1dbb80f269f-4" name="rest_code_5b43d0e457434b3bbba1f1dbb80f269f-4" href="#rest_code_5b43d0e457434b3bbba1f1dbb80f269f-4"></a>uv<span class="w"> </span>run<span class="w"> </span>invoke<span class="w"> </span>-l
 </pre></div>
-<p>Those commands will create a Virtual Environment in which all the required
-python packages will be installed.</p>
-<p>Tools can then be run as follows:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_ff41b51465cf428087552b3a193e5505-1" name="rest_code_ff41b51465cf428087552b3a193e5505-1" href="#rest_code_ff41b51465cf428087552b3a193e5505-1"></a>uv<span class="w"> </span>run<span class="w"> </span>invoke<span class="w"> </span>-l
-</pre></div>
-<p>or alternatively:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_4f8e4b21839e4ceca44356e4f08476b7-1" name="rest_code_4f8e4b21839e4ceca44356e4f08476b7-1" href="#rest_code_4f8e4b21839e4ceca44356e4f08476b7-1"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-<a id="rest_code_4f8e4b21839e4ceca44356e4f08476b7-2" name="rest_code_4f8e4b21839e4ceca44356e4f08476b7-2" href="#rest_code_4f8e4b21839e4ceca44356e4f08476b7-2"></a>invoke<span class="w"> </span>-l
-</pre></div>
+<p>The <a class="reference external" href="../contributing/">contributing guide</a> covers forking and preflight
+checks. For macOS-specific setup, see
+<a class="reference external" href="../setting-up-the-development-environment-on-macos/">Setting Up the Development Environment on macOS</a>.</p>
 </section><section id="vagrant"><h3>Vagrant</h3>
-<p>An easy way to get all the pre-requisites at once is to use our
-<a class="reference external" href="https://github.com/colour-science/colour-vagrant">colour-vagrant</a>
-environment for <a class="reference external" href="https://www.vagrantup.com">Vagrant</a>.</p>
-<p>Please refer to the dedicated blog post for more details about its deployment:
-<a class="reference external" href="../posts/pycharm-vagrant-ansible-poetry">PyCharm, Vagrant, Ansible &amp; Poetry</a></p>
+<p>The <a class="reference external" href="../posts/pycharm-vagrant-ansible-poetry/">Vagrant article</a> documents
+an earlier development setup. Use the uv instructions above for current
+development.</p>
 </section></section>
 </div>
 

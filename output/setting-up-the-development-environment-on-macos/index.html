@@ -34,9 +34,13 @@ MathJax.Hub.Config({
 <meta property="og:site_name" content="Colour Science">
 <meta property="og:title" content="Setting Up the Development Environment on macOS">
 <meta property="og:url" content="https://www.colour-science.org/setting-up-the-development-environment-on-macos/">
-<meta property="og:description" content="This guide describes the process of setting up a development environment for
-contributing to colour-science projects on macOS. It is by no means prescriptive,
-and not every step is required. The guide">
+<meta property="og:description" content="This guide covers the macOS setup for contributing to Colour.
+It uses Homebrew and includes optional steps for
+Visual Studio Code, Graphviz and CTL. It was originally contributed by
+@tjdcs.
+
+Homebrew
+">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2023-07-25T05:35:44Z">
 <meta property="article:tag" content="contributing">
@@ -151,89 +155,61 @@ navbar-dark
             
 
         </header><div class="e-content entry-content" itemprop="articleBody text">
-        <p>This guide describes the process of setting up a development environment for
-contributing to colour-science projects on macOS. It is by no means prescriptive,
-and not every step is required. The guide assumes <a class="reference external" href="https://brew.sh">Homebrew</a>
-as the package manager and <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a>
-as the IDE / text editor.</p>
-<p>Additionally, the installation of complex dependencies such as
-<a class="reference external" href="https://github.com/OpenImageIO/oiio">OpenImageIO</a> and
-<a class="reference external" href="https://pypi.org/project/pygraphviz">PyGraphviz</a> is described.</p>
-<p>It was contributed by <a class="reference external" href="https://github.com/tjdcs">@tjdcs</a> and last updated on
-2024-10-10.</p>
+        <p>This guide covers the macOS setup for contributing to <strong>Colour</strong>.
+It uses <a class="reference external" href="https://brew.sh">Homebrew</a> and includes optional steps for
+Visual Studio Code, Graphviz and CTL. It was originally contributed by
+<a class="reference external" href="https://github.com/tjdcs">@tjdcs</a>.</p>
 <section id="homebrew"><h2>Homebrew</h2>
-<p>Install <a class="reference external" href="https://brew.sh">Homebrew</a>:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_ba4cfc97405749c9b7baaee7c6ac8e54-1" name="rest_code_ba4cfc97405749c9b7baaee7c6ac8e54-1" href="#rest_code_ba4cfc97405749c9b7baaee7c6ac8e54-1"></a>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">"</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">"</span>
-</pre></div>
-<p>Install the required Python versions:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_0279b5dc684b4e2aa1d7e1f756f8fa22-1" name="rest_code_0279b5dc684b4e2aa1d7e1f756f8fa22-1" href="#rest_code_0279b5dc684b4e2aa1d7e1f756f8fa22-1"></a>brew<span class="w"> </span>install<span class="w"> </span>python@3.9<span class="w"> </span>python@3.10<span class="w"> </span>python@3.11<span class="w"> </span>python@3.12
-</pre></div>
+<p>If you need Homebrew, follow the <a class="reference external" href="https://brew.sh">official installation instructions</a>.</p>
 </section><section id="uv"><h2>uv</h2>
-<p>(Re)Install <a class="reference external" href="https://docs.astral.sh/uv">uv</a>:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_85af4230201348d5836127fb2d77e9b3-1" name="rest_code_85af4230201348d5836127fb2d77e9b3-1" href="#rest_code_85af4230201348d5836127fb2d77e9b3-1"></a>curl<span class="w"> </span>-LsSf<span class="w"> </span>https://astral.sh/uv/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+<p>Install <a class="reference external" href="https://docs.astral.sh/uv/">uv</a>:</p>
+<div class="code"><pre class="code shell"><a id="rest_code_7a8c3f58490e48c6a73c225aed4acec7-1" name="rest_code_7a8c3f58490e48c6a73c225aed4acec7-1" href="#rest_code_7a8c3f58490e48c6a73c225aed4acec7-1"></a>brew<span class="w"> </span>install<span class="w"> </span>uv
 </pre></div>
-</section><section id="graphviz-and-openimageio"><h2>graphviz and OpenImageIO</h2>
-<p>Using Homebrew:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_9cddcbb17b9d4473aa65da4339105b4e-1" name="rest_code_9cddcbb17b9d4473aa65da4339105b4e-1" href="#rest_code_9cddcbb17b9d4473aa65da4339105b4e-1"></a>brew<span class="w"> </span>install<span class="w"> </span>graphviz<span class="w"> </span>OpenImageIO
-</pre></div>
-<p>Then append the following exports to your shell dotfile, e.g., <code class="docutils literal"><span class="pre">~/.zshrc</span></code>:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_a889f4a3aaf949c6af3518dca5663856-1" name="rest_code_a889f4a3aaf949c6af3518dca5663856-1" href="#rest_code_a889f4a3aaf949c6af3518dca5663856-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">LIBRARY_PATH</span><span class="o">=</span><span class="nv">$LIBRARY_PATH</span>:<span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="w"> </span>graphviz<span class="k">)</span>/lib/
-<a id="rest_code_a889f4a3aaf949c6af3518dca5663856-2" name="rest_code_a889f4a3aaf949c6af3518dca5663856-2" href="#rest_code_a889f4a3aaf949c6af3518dca5663856-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">CPATH</span><span class="o">=</span><span class="nv">$CPATH</span>:<span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="w"> </span>graphviz<span class="k">)</span>/include/
-<a id="rest_code_a889f4a3aaf949c6af3518dca5663856-3" name="rest_code_a889f4a3aaf949c6af3518dca5663856-3" href="#rest_code_a889f4a3aaf949c6af3518dca5663856-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$PYTHONPATH</span>:<span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="w"> </span>OpenImageIO<span class="k">)</span>/lib/python3.12/site-packages/OpenImageIO/
-</pre></div>
-</section><section id="cloning-colour-s-repository"><h2>Cloning colour's Repository</h2>
-<p>First, <a class="reference external" href="https://github.com/colour-science/colour/fork">fork the colour repository</a>,
-making sure to set or replace the environment variables in these commands.</p>
-<div class="code"><pre class="code shell"><a id="rest_code_235353f3a410447c9c48113fa1c1c91c-1" name="rest_code_235353f3a410447c9c48113fa1c1c91c-1" href="#rest_code_235353f3a410447c9c48113fa1c1c91c-1"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$DEVELOPMENT_DIRECTORY</span>
-<a id="rest_code_235353f3a410447c9c48113fa1c1c91c-2" name="rest_code_235353f3a410447c9c48113fa1c1c91c-2" href="#rest_code_235353f3a410447c9c48113fa1c1c91c-2"></a>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:<span class="nv">$GITHUB_USER</span>/colour.git
-<a id="rest_code_235353f3a410447c9c48113fa1c1c91c-3" name="rest_code_235353f3a410447c9c48113fa1c1c91c-3" href="#rest_code_235353f3a410447c9c48113fa1c1c91c-3"></a><span class="nb">cd</span><span class="w"> </span>colour
+<p>The project setup below uses Python 3.13, which uv can install automatically.</p>
+</section><section id="cloning-colour-s-repository"><h2>Cloning Colour's Repository</h2>
+<p><a class="reference external" href="https://github.com/colour-science/colour/fork">Fork the Colour repository</a>,
+then replace <code class="docutils literal"><span class="pre">YOUR-GITHUB-USERNAME</span></code> with your GitHub username:</p>
+<div class="code"><pre class="code shell"><a id="rest_code_340b7e7d28d24c04a26f688f73a2fdf1-1" name="rest_code_340b7e7d28d24c04a26f688f73a2fdf1-1" href="#rest_code_340b7e7d28d24c04a26f688f73a2fdf1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/YOUR-GITHUB-USERNAME/colour.git
+<a id="rest_code_340b7e7d28d24c04a26f688f73a2fdf1-2" name="rest_code_340b7e7d28d24c04a26f688f73a2fdf1-2" href="#rest_code_340b7e7d28d24c04a26f688f73a2fdf1-2"></a><span class="nb">cd</span><span class="w"> </span>colour
+<a id="rest_code_340b7e7d28d24c04a26f688f73a2fdf1-3" name="rest_code_340b7e7d28d24c04a26f688f73a2fdf1-3" href="#rest_code_340b7e7d28d24c04a26f688f73a2fdf1-3"></a>git<span class="w"> </span>switch<span class="w"> </span>develop
 </pre></div>
 </section><section id="working-with-visual-studio-code-from-the-terminal"><h2>Working with Visual Studio Code from the Terminal</h2>
-<p>Create the virtual environment</p>
-<div class="code"><pre class="code shell"><a id="rest_code_a81a645a589747cba77cffb681f04f3e-1" name="rest_code_a81a645a589747cba77cffb681f04f3e-1" href="#rest_code_a81a645a589747cba77cffb681f04f3e-1"></a>uv<span class="w"> </span>sync<span class="w"> </span>--all-extras
+<p>Create the development environment:</p>
+<div class="code"><pre class="code shell"><a id="rest_code_758d8d0810a54ef1b863f6763b411885-1" name="rest_code_758d8d0810a54ef1b863f6763b411885-1" href="#rest_code_758d8d0810a54ef1b863f6763b411885-1"></a>uv<span class="w"> </span>sync<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.13<span class="w"> </span>--all-extras
+<a id="rest_code_758d8d0810a54ef1b863f6763b411885-2" name="rest_code_758d8d0810a54ef1b863f6763b411885-2" href="#rest_code_758d8d0810a54ef1b863f6763b411885-2"></a>uv<span class="w"> </span>run<span class="w"> </span>prek<span class="w"> </span>install
 </pre></div>
+<p>uv installs OpenImageIO into the project's virtual environment as part of
+the optional dependencies.</p>
 </section><section id="opening-visual-studio-code"><h2>Opening Visual Studio Code</h2>
-<p>In <strong>colour</strong>'s directory, issue the following command to launch Visual Studio Code:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_0085a15cd20a486684d56a65f205d45f-1" name="rest_code_0085a15cd20a486684d56a65f205d45f-1" href="#rest_code_0085a15cd20a486684d56a65f205d45f-1"></a>code<span class="w"> </span>.
+<p>From the <code class="docutils literal">colour</code> directory:</p>
+<div class="code"><pre class="code shell"><a id="rest_code_9a093cf5c6f040af9419ad56049253d7-1" name="rest_code_9a093cf5c6f040af9419ad56049253d7-1" href="#rest_code_9a093cf5c6f040af9419ad56049253d7-1"></a>code<span class="w"> </span>.
 </pre></div>
-<div class="alert alert-dismissible alert-info line-block">
-<div class="line"><strong>Note</strong></div>
-<div class="line"><br></div>
-<div class="line">If the code command is not available in your shell environment, open up
-Visual Studio Code from the Applications folder, press <code class="docutils literal">Cmd + Shift + P</code>
-to bring up the <em>Command Palette</em>, then type
-<cite>Shell Command: Install 'code' command in PATH</cite> and press enter.</div>
-</div>
+<p>If <code class="docutils literal">code</code> is unavailable, open the Command Palette in
+<a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a> and run
+<code class="docutils literal">Shell Command: Install 'code' command in PATH</code>. Select the
+<code class="docutils literal">.venv/bin/python</code> interpreter for the project.</p>
 </section><section id="running-the-unit-tests-preflight"><h2>Running the Unit Tests / Preflight</h2>
-<p><strong>colour</strong> uses the <a class="reference external" href="https://pypi.org/project/invoke">invoke</a> framework to
-expose several useful preflight commands:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_f15284c5a3294f7f97b24b79c3676b43-1" name="rest_code_f15284c5a3294f7f97b24b79c3676b43-1" href="#rest_code_f15284c5a3294f7f97b24b79c3676b43-1"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$DEVELOPMENT_DIRECTORY</span>/colour
-<a id="rest_code_f15284c5a3294f7f97b24b79c3676b43-2" name="rest_code_f15284c5a3294f7f97b24b79c3676b43-2" href="#rest_code_f15284c5a3294f7f97b24b79c3676b43-2"></a>uv<span class="w"> </span>run<span class="w"> </span>invoke<span class="w"> </span>formatting<span class="w"> </span>quality<span class="w"> </span>precommit<span class="w"> </span>tests
+<p>Run the tests and doctests with:</p>
+<div class="code"><pre class="code shell"><a id="rest_code_26ea2f5c496d4b10b28d3de8e2746b6b-1" name="rest_code_26ea2f5c496d4b10b28d3de8e2746b6b-1" href="#rest_code_26ea2f5c496d4b10b28d3de8e2746b6b-1"></a>uv<span class="w"> </span>run<span class="w"> </span>invoke<span class="w"> </span>tests
 </pre></div>
-<p>or if you just want to run the tests, including the doctests:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_e5fdd7009fec44ccb372e127d188f0e3-1" name="rest_code_e5fdd7009fec44ccb372e127d188f0e3-1" href="#rest_code_e5fdd7009fec44ccb372e127d188f0e3-1"></a>uv<span class="w"> </span>run<span class="w"> </span>invoke<span class="w"> </span>tests
+<p>To run the full preflight, including formatting, static checks, hooks,
+tests and examples:</p>
+<div class="code"><pre class="code shell"><a id="rest_code_f18709d401f74693aeadbab6938faaf0-1" name="rest_code_f18709d401f74693aeadbab6938faaf0-1" href="#rest_code_f18709d401f74693aeadbab6938faaf0-1"></a>uv<span class="w"> </span>run<span class="w"> </span>invoke<span class="w"> </span>preflight
+</pre></div>
+</section><section id="graphviz-optional"><span id="graphviz-and-openimageio"></span><h2>Graphviz (Optional)</h2>
+<p>Install Graphviz if you need to render conversion graphs:</p>
+<div class="code"><pre class="code shell"><a id="rest_code_383df6f0d46b4ef1855dcaa8dc63b2d7-1" name="rest_code_383df6f0d46b4ef1855dcaa8dc63b2d7-1" href="#rest_code_383df6f0d46b4ef1855dcaa8dc63b2d7-1"></a>brew<span class="w"> </span>install<span class="w"> </span>graphviz
 </pre></div>
 </section><section id="ctl-optional"><h2>CTL (Optional)</h2>
-<p><strong>colour</strong> provides a wrapper to the AMPAS <a class="reference external" href="https://github.com/ampas/CTL">Color Transformation Language</a> (CTL)
-If you want to be able to fully build and contribute to this part of the
-codebase, it needs to be installed. Unfortunately, the version currently
-provided by Homebrew does not appear to work on the latest macOS and the relevant
-environments, thus, it must be installed from source at the moment:</p>
-<div class="code"><pre class="code shell"><a id="rest_code_d7ae8f80d190498f832118619f2df9dc-1" name="rest_code_d7ae8f80d190498f832118619f2df9dc-1" href="#rest_code_d7ae8f80d190498f832118619f2df9dc-1"></a>brew<span class="w"> </span>install<span class="w"> </span>cmake<span class="w"> </span>ilmBase<span class="w"> </span>openexr<span class="w"> </span>libtiff<span class="w"> </span>aces_container
-<a id="rest_code_d7ae8f80d190498f832118619f2df9dc-2" name="rest_code_d7ae8f80d190498f832118619f2df9dc-2" href="#rest_code_d7ae8f80d190498f832118619f2df9dc-2"></a>
-<a id="rest_code_d7ae8f80d190498f832118619f2df9dc-3" name="rest_code_d7ae8f80d190498f832118619f2df9dc-3" href="#rest_code_d7ae8f80d190498f832118619f2df9dc-3"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$TMPDIR</span>
-<a id="rest_code_d7ae8f80d190498f832118619f2df9dc-4" name="rest_code_d7ae8f80d190498f832118619f2df9dc-4" href="#rest_code_d7ae8f80d190498f832118619f2df9dc-4"></a>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:ampas/CTL.git
-<a id="rest_code_d7ae8f80d190498f832118619f2df9dc-5" name="rest_code_d7ae8f80d190498f832118619f2df9dc-5" href="#rest_code_d7ae8f80d190498f832118619f2df9dc-5"></a>
-<a id="rest_code_d7ae8f80d190498f832118619f2df9dc-6" name="rest_code_d7ae8f80d190498f832118619f2df9dc-6" href="#rest_code_d7ae8f80d190498f832118619f2df9dc-6"></a><span class="nb">cd</span><span class="w"> </span>CTL
-<a id="rest_code_d7ae8f80d190498f832118619f2df9dc-7" name="rest_code_d7ae8f80d190498f832118619f2df9dc-7" href="#rest_code_d7ae8f80d190498f832118619f2df9dc-7"></a>mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
-<a id="rest_code_d7ae8f80d190498f832118619f2df9dc-8" name="rest_code_d7ae8f80d190498f832118619f2df9dc-8" href="#rest_code_d7ae8f80d190498f832118619f2df9dc-8"></a>
-<a id="rest_code_d7ae8f80d190498f832118619f2df9dc-9" name="rest_code_d7ae8f80d190498f832118619f2df9dc-9" href="#rest_code_d7ae8f80d190498f832118619f2df9dc-9"></a>cmake<span class="w"> </span>..<span class="w"> </span>-J<span class="w"> </span><span class="m">10</span>
-<a id="rest_code_d7ae8f80d190498f832118619f2df9dc-10" name="rest_code_d7ae8f80d190498f832118619f2df9dc-10" href="#rest_code_d7ae8f80d190498f832118619f2df9dc-10"></a>make
-<a id="rest_code_d7ae8f80d190498f832118619f2df9dc-11" name="rest_code_d7ae8f80d190498f832118619f2df9dc-11" href="#rest_code_d7ae8f80d190498f832118619f2df9dc-11"></a>sudo<span class="w"> </span>make<span class="w"> </span>install
+<p>Colour's <a class="reference external" href="https://github.com/aces-aswf/CTL">Color Transformation Language</a>
+wrapper needs the <code class="docutils literal">ctlrender</code> command. Install the
+<a class="reference external" href="https://formulae.brew.sh/formula/ctl">Homebrew CTL formula</a> if you are
+working on that functionality:</p>
+<div class="code"><pre class="code shell"><a id="rest_code_3d657b9ac34e4989beb467b0a5f6fb30-1" name="rest_code_3d657b9ac34e4989beb467b0a5f6fb30-1" href="#rest_code_3d657b9ac34e4989beb467b0a5f6fb30-1"></a>brew<span class="w"> </span>install<span class="w"> </span>ctl
 </pre></div>
 </section><section id="see-also"><h2>See Also</h2>
-<p>Please refer to <a class="reference external" href="https://www.colour-science.org/contributing/">the contributing guide</a>
-for more information about the contributing process.</p>
+<p>The <a class="reference external" href="../contributing/">contributing guide</a> covers updating your fork,
+creating a branch and opening a pull request.</p>
 </section>
 </div>
 

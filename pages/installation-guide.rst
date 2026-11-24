@@ -10,56 +10,17 @@
 Dependencies
 ------------
 
-**Colour** requires various dependencies in order to run and follows the
-`minimum supported versions <https://scientific-python.org/specs/spec-0000>`__
-as given by `Scientific Python <https://scientific-python.org>`__. Depending on
-your intended use case, i.e., using or developing, you may not need to install
-all of them.
+.. _primary-dependencies:
 
-Please refer to the `Installation Methods for Using Colour`_
-and `Installation Methods for Developing Colour`_ sections below.
+The current PyPI release of **Colour** supports Python 3.11 through 3.14
+and requires NumPy 2.0 or newer in the 2.x series. The package manager
+installs NumPy automatically. See the
+`release metadata <https://pypi.org/project/colour-science/>`__ for the
+requirements of the published package.
 
-Primary Dependencies
-^^^^^^^^^^^^^^^^^^^^
-
--   `python >= 3.11, < 3.15 <https://www.python.org/download/releases>`__
--   `numpy >= 2.0.0, < 3 <https://pypi.org/project/numpy>`__
-
-Optional, Meshing and Plotting Dependencies
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
--   `imageio >= 2, < 3 <https://imageio.github.io>`__
--   `matplotlib >= 3.9 <https://pypi.org/project/matplotlib>`__
--   `networkx >= 3.3, < 4 <https://pypi.org/project/networkx>`__
--   `opencolorio >= 2, < 3 <https://pypi.org/project/opencolorio>`__
--   `openimageio >= 3, < 4 <https://github.com/OpenImageIO/oiio>`__
--   `pandas >= 2.2, < 3 <https://pypi.org/project/pandas>`__
--   `pydot >= 3, < 4 <https://pypi.org/project/pydot>`__
--   `scipy >= 1.13.0, < 2 <https://pypi.org/project/scipy>`__
--   `tqdm >= 4, < 5 <https://pypi.org/project/tqdm>`__
--   `trimesh >= 4, < 5 <https://pypi.org/project/trimesh>`__
--   `xxhash >= 3, < 4 <https://pypi.org/project/xxhash>`__
-
-Development Dependencies
-^^^^^^^^^^^^^^^^^^^^^^^^
-
--   `biblib-simple <https://pypi.org/project/biblib-simple>`__
--   `coverage <https://pypi.org/project/coverage>`__
--   `coveralls <https://pypi.org/project/coveralls>`__
--   `hatch <https://pypi.org/project/hatch>`__
--   `invoke <https://pypi.org/project/invoke>`__
--   `jupyter <https://pypi.org/project/jupyter>`__
--   `pre-commit <https://pypi.org/project/pre-commit>`__
--   `pyright <https://pypi.org/project/pyright>`__
--   `pydata-sphinx-theme <https://pypi.org/project/pydata-sphinx-theme>`__
--   `pytest <https://pypi.org/project/pytest>`__
--   `pytest-cov <https://pypi.org/project/pytest-cov>`__
--   `pytest-xdist <https://pypi.org/project/pytest-xdist>`__
--   `restructuredtext-lint <https://pypi.org/project/restructuredtext-lint>`__
--   `sphinx <https://pypi.org/project/sphinx>`__
--   `sphinxcontrib-bibtex <https://pypi.org/project/sphinxcontrib-bibtex>`__
--   `toml <https://pypi.org/project/toml>`__
--   `twine <https://pypi.org/project/twine>`__
+The development branch has its own requirements. See
+`Installation Methods for Developing Colour`_ if you are contributing to
+the project.
 
 Installation Methods for Using Colour
 -------------------------------------
@@ -67,150 +28,105 @@ Installation Methods for Using Colour
 PyPI
 ^^^^
 
-To install **Colour** from the
-`Python Package Index <https://pypi.org/project/colour-science>`__, activate
-your Python virtual environment and run:
+Create a virtual environment with a supported Python version:
 
 .. code:: shell
 
-    pip install colour-science
+    python -m venv .venv
 
-To add **Colour** as a dependency of an existing
-`uv project <https://docs.astral.sh/uv/concepts/projects/dependencies/>`__,
-run this command from the project directory:
+Activate it with ``source .venv/bin/activate`` on macOS or Linux, or
+``.venv\Scripts\Activate.ps1`` in Windows PowerShell. Then install **Colour**
+from the `Python Package Index <https://pypi.org/project/colour-science>`__:
+
+.. code:: shell
+
+    python -m pip install colour-science
+    python -c "import colour; print(colour.__version__)"
+
+If you manage your project with `uv <https://docs.astral.sh/uv/guides/projects/>`__,
+use a Python version supported by the release and run these commands from
+the project directory:
 
 .. code:: shell
 
     uv add colour-science
+    uv run python -c "import colour; print(colour.__version__)"
 
-This *asciicast* demonstrates how to generate a pristine Python *VirtualEnv*
-environment for Colour:
+Optional dependencies
+^^^^^^^^^^^^^^^^^^^^^
 
-.. raw:: html
+.. _optional-meshing-and-plotting-dependencies:
 
-    <script type="text/javascript"
-        src="https://asciinema.org/a/257384.js"
-        id="asciicast-257384" async data-speed=3>
-    </script>
-
-The optional features dependencies are installed as follows:
-
-.. code:: shell
-
-    pip install 'colour-science[optional]'
-
-The development dependencies are installed as follows:
+The ``optional`` extra enables features such as plotting and image I/O.
+The basic installation may report missing SciPy or Matplotlib when you
+import ``colour``. Install the extra if you need those features.
+The published release also provides a ``meshing`` extra for gamut computations
+and a ``docs`` extra for building the documentation.
 
 .. code:: shell
 
-    pip install 'colour-science[development]'
+    python -m pip install 'colour-science[optional]'
+    uv add 'colour-science[optional]'
 
-The graphviz figure plotting dependencies are installed as follows:
+Use the command for your package manager. For OpenEXR image I/O, the
+``optional`` extra includes OpenImageIO. To render conversion graphs, also
+install the `Graphviz command-line tools <https://www.graphviz.org/download/>`__
+for your platform.
 
-.. class:: alert alert-dismissible alert-info
+.. _continuum-analytics-anaconda:
 
-    | **Note**
-    |
-    | `Graphviz <https://www.graphviz.org>`__ might need to be installed
-        beforehand, please refer to the specific section for your platform on
-        the `Graphviz download page <https://www.graphviz.org/download>`__.
+Conda
+^^^^^
 
-    pip install 'colour-science[graphviz]'
-
-The meshing dependencies for gamut computations are installed as follows:
-
-.. code:: shell
-
-    pip install 'colour-science[meshing]'
-
-If you wish to read *OpenEXR* files, you will need to install the *FreeImage*
-plugin for `Imageio <https://imageio.github.io>`__ as follows:
+To create a Conda environment with **Colour** from
+`conda-forge <https://anaconda.org/conda-forge/colour-science>`__:
 
 .. code:: shell
 
-    python -c "import imageio;imageio.plugins.freeimage.download()"
-
-Continuum Analytics Anaconda
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Colour** is also available for `Anaconda <https://www.anaconda.com>`__
-from *Continuum Analytics* via `conda-forge <https://conda-forge.org>`__:
-
-.. code:: shell
-
-    conda install -c conda-forge colour-science
-
-This *asciicast* demonstrates how to generate a pristine Python *conda*
-environment for Colour:
-
-.. raw:: html
-
-    <script type="text/javascript"
-        src="https://asciinema.org/a/257385.js"
-        id="asciicast-257385" async data-speed=3>
-    </script>
+    conda create -n colour-science -c conda-forge colour-science
+    conda activate colour-science
+    python -c "import colour; print(colour.__version__)"
 
 GitHub
 ^^^^^^
 
-Alternatively, you can also install directly from the
-`GitHub <https://github.com/colour-science/colour>`__ source repository:
+To install a specific release from source, activate a virtual environment
+as described under `PyPI`_ and check out the corresponding
+`release tag <https://github.com/colour-science/colour/tags>`__:
 
 .. code:: shell
 
-    git clone https://github.com/colour-science/colour.git
+    git clone --branch v0.4.7 https://github.com/colour-science/colour.git
     cd colour
-    pip install --user .
+    python -m pip install .
 
 Installation Methods for Developing Colour
 ------------------------------------------
 
-.. class:: alert alert-dismissible alert-info
-
-    | **Note**
-    |
-    | If you are on macOS, a dedicated guide on how to set up your environment
-        is available here: `Setting Up the Development Environment on macOS <../setting-up-the-development-environment-on-macos/index.html>`__.
-
 uv
-^^^
+^^
 
-**Colour** adopts `uv <https://docs.astral.sh/uv>`__ to help manage its
-dependencies. This is the recommended way to get started with **Colour**
-development.
+.. _development-dependencies:
 
-Assuming `python >= 3.11, < 3.15 <https://www.python.org/download/releases>`__ is
-available on your system, the development dependencies are installed with
-`uv <https://docs.astral.sh/uv>`__ as follows:
+The ``develop`` branch currently supports Python 3.13 through 3.15.
+Use Python 3.13 for the broadest coverage of optional packages such as
+OpenColorIO. Install `uv <https://docs.astral.sh/uv/getting-started/installation/>`__
+and run:
 
 .. code:: shell
 
-    git clone https://github.com/colour-science/colour.git
+    git clone --branch develop https://github.com/colour-science/colour.git
     cd colour
-    uv sync --all-extras
-
-Those commands will create a Virtual Environment in which all the required
-python packages will be installed.
-
-Tools can then be run as follows:
-
-.. code:: shell
-
+    uv sync --python 3.13 --all-extras
     uv run invoke -l
 
-or alternatively:
-
-.. code:: shell
-
-    source .venv/bin/activate
-    invoke -l
+The `contributing guide </contributing/>`__ covers forking and preflight
+checks. For macOS-specific setup, see
+`Setting Up the Development Environment on macOS </setting-up-the-development-environment-on-macos/>`__.
 
 Vagrant
 ^^^^^^^
 
-An easy way to get all the pre-requisites at once is to use our
-`colour-vagrant <https://github.com/colour-science/colour-vagrant>`__
-environment for `Vagrant <https://www.vagrantup.com>`__.
-
-Please refer to the dedicated blog post for more details about its deployment:
-`PyCharm, Vagrant, Ansible & Poetry </posts/pycharm-vagrant-ansible-poetry>`__
+The `Vagrant article </posts/pycharm-vagrant-ansible-poetry/>`__ documents
+an earlier development setup. Use the uv instructions above for current
+development.
