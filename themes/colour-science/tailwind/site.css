@@ -194,7 +194,7 @@
 }
 
 .site-nav .dropdown-item {
-  @apply tw:rounded-md tw:px-3 tw:py-2 tw:text-base tw:text-foreground;
+  @apply tw:rounded-md tw:px-3 tw:py-2 tw:text-base tw:text-foreground tw:whitespace-normal;
 }
 
 .site-nav .dropdown-item:is(:hover, :focus, .active) {
@@ -211,15 +211,21 @@
 }
 
 .site-nav .dropdown-menu {
-  @apply tw:max-w-full tw:rounded-md tw:border tw:border-border tw:bg-card tw:p-1.5;
+  @apply tw:rounded-md tw:border tw:border-border tw:bg-card tw:p-1.5;
   --ring: #525252;
 }
 
-.site-nav .dropdown-item {
-  @apply tw:whitespace-normal;
+@media (width >= 1200px) {
+  .site-nav .dropdown-menu {
+    inline-size: max-content;
+  }
 }
 
 @media (width < 1200px) {
+  .site-nav .dropdown-menu {
+    max-inline-size: 100%;
+  }
+
   .site-nav button.dropdown-toggle {
     @apply tw:w-full;
   }
