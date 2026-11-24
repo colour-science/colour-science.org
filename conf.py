@@ -269,7 +269,6 @@ NAVIGATION_LINKS = {
             ),
             "Blog",
         ),
-        ("/#sponsors", "Sponsors"),
     ),
 }
 
